@@ -6,36 +6,36 @@
                 <!-- single counetr -->
                 <div class="single-counter text-center">
                     <span class="counter">
-                      <countTo :startVal='0' :endVal='startCounter ? 4789 : 0' :duration='3000'></countTo>
+                      <countTo :startVal='0' :endVal='startCounter ? 120 : 0' :duration='3000'></countTo>
                     </span>
-                    <p>Downloads</p>
+                    <p>Attendees</p>
                 </div><!-- single counetr -->
             </div>
             <div class="col-md-3 col-sm-6">
                 <!-- single counetr -->
                 <div class="single-counter text-center">
                     <span class="counter">
-                      <countTo :startVal='0' :endVal='startCounter ? 6389 : 0' :duration='3000'></countTo>
+                      <countTo :startVal='0' :endVal='startCounter ? 9 : 0' :duration='3000'></countTo>
                     </span>
-                    <p>Liks</p>
+                    <p>Speakers</p>
                 </div><!-- single counetr -->
             </div>
             <div class="col-md-3 col-sm-6">
                 <!-- single counetr -->
                 <div class="single-counter text-center">
                     <span class="counter">
-                      <countTo :startVal='0' :endVal='startCounter ? 900 : 0' :duration='3000'></countTo>
+                      <countTo :startVal='0' :endVal='startCounter ? 12 : 0' :duration='3000'></countTo>
                     </span>
-                    <p>5 Star Reating</p>
+                    <p>Over 12 countries represented</p>
                 </div><!-- single counetr -->
             </div>
             <div class="col-md-3 col-sm-6">
                 <!-- single counetr -->
                 <div class="single-counter text-center">
                     <span class="counter">
-                      <countTo :startVal='0' :endVal='startCounter ? 489 : 0' :duration='3000'></countTo>
+                      <countTo :startVal='0' :endVal='startCounter ? 1 : 0' :duration='3000'></countTo>
                     </span>
-                    <p>Awards</p>
+                    <p>Epic MC</p>
                 </div><!-- single counetr -->
             </div><!-- /.col -->
         </div><!-- /.row -->

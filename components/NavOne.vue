@@ -37,7 +37,7 @@
                                                 <!-- </li>-->
                                                 <li><a href="#features">Highlights</a></li>
                                                 <li><a href="#app">Speakers</a></li>
-                                                <li><a href="#pricing">Conference platform</a></li>
+                                                <li><a href="#platform">Conference platform</a></li>
                                                 <!-- <li>-->
                                                 <!-- <a href="#">Blog</a>-->
                                                 <!-- <ul>-->
@@ -60,11 +60,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm-5 d-md-block d-none">
+                    <!--    <div class="col-lg-3 col-md-4 col-sm-5 d-md-block d-none">
                             <div class="urgent-call text-right">
                                 <a href="#" class="btn">Get Tickets!</a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

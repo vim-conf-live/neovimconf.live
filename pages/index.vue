@@ -5,15 +5,15 @@
     <Features />
     <Counter />
     <ServiceOne />
-    <ServiceTwo />
-    <Video />
+    <!-- <ServiceTwo />-->
+    <!-- <Video />-->
     <Screenshots />
-    <Pricing />
-    <Testimonial />
-    <ClientsLogo />
-    <BlogHome />
-    <DownloadApp />
-    <Footer />
+    <!-- <Pricing />-->
+    <!-- <Testimonial />-->
+    <!-- <ClientsLogo />-->
+    <!-- <BlogHome />-->
+    <!-- <DownloadApp />-->
+    <!-- <Footer />-->
   </div>
 
 </template>

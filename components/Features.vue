@@ -6,8 +6,10 @@
               <div class="col-md-12 col-lg-8">
                   <!-- section title -->
                   <div class="section-title text-center">
-                      <h2>App Advance Features</h2>
-                      <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit lorem ipsum anim id est laborum perspiciatis unde.</p>
+                      <h2>What to look forward to!</h2>
+                      <p>Our aim is to bring you the most interesting, engaging and enlightening vim
+                      content to bring new ideas to your world and always help you reach that next
+                      step in your vim journey.</p>
                   </div>
                   <!-- End of section title -->
               </div>
@@ -22,8 +24,10 @@
                       <!-- single feature inner -->
                       <div class="single-feature-inner text-center">
                           <div class="feature-icon"><img src="/assets/img/icons/project-management.svg" class="svg" alt=""></div>
-                          <h5>New Artwork<br> Unveiled</h5>
-                          <p>There are many variations of passages of lorem Ipsum but majority have suffered.</p>
+                          <h5>New vim horizons<br> Unveiled</h5>
+                          <p>We all want to see what the future will bring for vim, and here we aim
+                          to bring the brightest minds working on the future of the vim world to
+                          share their works.</p>
                       </div>
                       <!-- End of single feature inner -->
                       </swiper-slide>
@@ -32,8 +36,9 @@
                       <!-- single feature inner -->
                       <div class="single-feature-inner text-center">
                           <div class="feature-icon"><img src="/assets/img/icons/solution.svg" class="svg" alt=""></div>
-                          <h5>Company Growth<br> Strategy</h5>
-                          <p>There are many variations of passages of lorem Ipsum but majority have suffered.</p>
+                          <h5>Vim in your<br> Workflow</h5>
+                          <p>Lectures on how people are using vim everday in their work and ways you
+                          can implement it as well!</p>
                       </div>
                       <!-- End of single feature inner -->
                       </swiper-slide>
@@ -42,8 +47,9 @@
                       <!-- single feature inner -->
                       <div class="single-feature-inner text-center">
                           <div class="feature-icon"><img src="/assets/img/icons/planning.svg" class="svg" alt=""></div>
-                          <h5>Perfect Application Intergration</h5>
-                          <p>There are many variations of passages of lorem Ipsum but majority have suffered.</p>
+                          <h5>Plugins</h5>
+                          <p>The world of vim plugins are vast and enthralling. We aim to bring you
+                          the cutting edge in plugin capabilities.</p>
                       </div>
                       <!-- End of single feature inner -->
                       </swiper-slide>
@@ -52,8 +58,10 @@
                       <!-- single feature inner -->
                       <div class="single-feature-inner text-center">
                           <div class="feature-icon"><img src="/assets/img/icons/goal.svg" class="svg" alt=""></div>
-                          <h5>Creative App<br>Display</h5>
-                          <p>There are many variations of passages of lorem Ipsum but majority have suffered.</p>
+                          <h5>Find solutions to your vim question</h5>
+                          <p>We all run into issues in vim, at the conference you'll have the chance
+                          to connect with other experienced vimmers and pick their brain for
+                          support.</p>
                       </div><!-- End of single feature inner -->
                       </swiper-slide>
                       <div class="swiper-pagination" slot="pagination"></div>

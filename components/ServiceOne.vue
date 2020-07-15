@@ -1,11 +1,11 @@
 <template>
-  <section class="bg-2 pt-120 pb-120">
+  <section id="platform" class="bg-2 pt-120 pb-120">
       <div class="container">
           <div class="row">
               <div class="col-lg-7 col-sm-7">
                   <!-- user interact image -->
                   <div class="user-interact-image">
-                      <img src="/assets/img/feature/user-interact.png"  alt="">
+                      <img src="/assets/img/hopin.to.png"  alt="">
                   </div>
                   <!-- End of user interact image -->
               </div>
@@ -15,12 +15,15 @@
                       <div class="interact-icon">
                           <img src="/assets/img/icons/teamwork.svg" class="svg" alt="">
                       </div>
-                      <h2>Interact With Your Users On Every Single Platform</h2>
+                      <h2>The best video conference tech: hopin.to</h2>
                       <p>
-                          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
-                          by injected humour.
+                          We want to provide the absolute best conference experience, even if its
+                          digital. We're teaming up with hopin.to, leveraging their platform to
+                          bring you a cutting edge conference experience which allows you to not
+                          only connect with speakers but other attendees both at large and in 1:1
+                          chats.
                       </p>
-                      <a href="#" class="btn">Get Started</a>
+                      <a href="#" class="btn">Sign me up!</a>
                   </div>
                   <!--End of user ineract text -->
               </div>
