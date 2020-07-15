@@ -7,7 +7,7 @@ export default {
     components: {},
     head() {
         return {
-            title: "Jironis - Vue Nuxt App Landing One Page Template"
+            title: "Vimconf.live - The world's virtual vim conference."
         };
     },
     mounted() {

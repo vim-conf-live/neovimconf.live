@@ -5,8 +5,10 @@
                     <div class="col-md-12 col-lg-8">
                         <!-- section title -->
                         <div class="section-title text-center">
-                            <h2>Jironis App Screens</h2>
-                            <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt <br> mollit lorem ipsum anim id est laborum perspiciatis unde.</p>
+                            <h2>Our Speakers</h2>
+                            <p>From across the globe, some of the best and brightest minds in the
+                            <br> vim community are coming to share their experience and expertise
+                            with the community.</p>
                         </div>
                         <!-- End of section title -->
                     </div>

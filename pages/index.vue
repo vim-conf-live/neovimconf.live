@@ -14,6 +14,7 @@
     <!-- <BlogHome />-->
     <!-- <DownloadApp />-->
     <!-- <Footer />-->
+    <Footer2 />
   </div>
 
 </template>
@@ -21,6 +22,7 @@
   import NavOne from "../components/NavOne";
   import BannerOne from "../components/BannerOne";
   import Footer from "../components/Footer";
+  import Footer2 from "../components/Footer2";
   import Features from "../components/Features";
   import Counter from "../components/Counter";
   import ServiceTwo from "../components/ServiceTwo";
@@ -45,7 +47,7 @@
       ServiceTwo,
       Counter,
       Features,
-      Footer,
+      Footer2,
       BannerOne,
       NavOne
     }
