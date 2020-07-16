@@ -64,7 +64,7 @@
                     <div class="col-lg-5 offset-lg-1 col-md-4 offse-xl-2">
                         <!-- banner image-->
                         <div class="banner-image">
-                            <img src="/assets/img/vim-banner-prime.png" alt="" />
+                            <img src="/assets/img/vim-banner.png" alt="" />
                         </div>
                         <!--End of banner image-->
                     </div>
@@ -124,7 +124,8 @@ export default {
 
 <style scoped>
 #email {
-    padding-left: 25px;
+    padding-left: 5px;
+    width:250px;
 }
 #successMessage {
     margin-bottom: 0px;

@@ -1067,8 +1067,8 @@ label input[type=radio] {
 }
 
 .banner-image{
-    -webkit-animation: bounce 1s ease-in-out 0s infinite alternate;
-            animation: bounce 1s ease-in-out 0s infinite alternate;
+    /*-webkit-animation: bounce 1s ease-in-out 0s infinite alternate;*/
+            /*animation: bounce 1s ease-in-out 0s infinite alternate;*/
 }
 .main-header.sticky .logo .main-logo2 {
     display: none;

@@ -9,11 +9,12 @@
                             <p>From across the globe, some of the best and brightest minds in the
                             <br> vim community are coming to share their experience and expertise
                             with the community.</p>
+                            <h2>More info coming shortly!</h2>
                         </div>
                         <!-- End of section title -->
                     </div>
                 </div>
-                  <div class="app-shot-one__carousel thm__owl-carousel">
+                  <div v-if="showslide" class="app-shot-one__carousel thm__owl-carousel">
 
                     <swiper :options="swiperOptions">
 
@@ -79,6 +80,7 @@
       data() {
         return {
           swiperOptions: {
+            showslide : false,
             slidesPerView : 5,
             loop: true,
             speed: 1000,

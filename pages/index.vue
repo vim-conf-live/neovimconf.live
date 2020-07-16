@@ -4,10 +4,10 @@
     <BannerOne />
     <Features />
     <Counter />
+   <Screenshots />
     <ServiceOne />
     <!-- <ServiceTwo />-->
     <!-- <Video />-->
-    <Screenshots />
     <!-- <Pricing />-->
     <!-- <Testimonial />-->
     <!-- <ClientsLogo />-->
