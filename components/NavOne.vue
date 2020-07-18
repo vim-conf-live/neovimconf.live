@@ -15,7 +15,7 @@
                             </div>
                             <!-- End of Logo -->
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-4 col-6 menu-button">
+                        <div class="col-xl-8 col-lg-6 col-md-4 col-6 menu-button">
                             <div class="menu--inner-area clearfix">
                                 <div class="menu-wraper">
                                     <nav>
@@ -37,6 +37,8 @@
                                                 <!-- </li>-->
                                                 <li><a href="#features">Highlights</a></li>
                                                 <li><a href="#app">Speakers</a></li>
+                                                <li><a href="#agenda">Agenda</a></li>
+                                                <li><a href="#sponsor">Sponsors</a></li>
                                                 <li><a href="#platform">Conference platform</a></li>
                                                 <!-- <li>-->
                                                 <!-- <a href="#">Blog</a>-->

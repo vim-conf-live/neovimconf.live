@@ -5,8 +5,9 @@
     <Features />
     <Counter />
    <Screenshots />
+<ServiceTwo />
+    <ServiceThree />
     <ServiceOne />
-    <!-- <ServiceTwo />-->
     <!-- <Video />-->
     <!-- <Pricing />-->
     <!-- <Testimonial />-->
@@ -27,6 +28,7 @@
   import Counter from "../components/Counter";
   import ServiceTwo from "../components/ServiceTwo";
   import ServiceOne from "../components/ServiceOne";
+  import ServiceThree from "../components/ServiceThree";
   import Video from "../components/Video";
   import Screenshots from "../components/Screenshots";
   import Pricing from "../components/Pricing";
@@ -45,6 +47,7 @@
       Video,
       ServiceOne,
       ServiceTwo,
+      ServiceThree,
       Counter,
       Features,
       Footer2,
