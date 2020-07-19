@@ -1,7 +1,7 @@
 {
-    "name": "jironis",
+    "name": "Vimconf.live",
     "version": "1.0.0",
-    "description": Vimconf.Live - The virtual vim conference,
+    "description": "Vimconf.Live - The virtual vim conference",
     "author": "Layerdrops",
     "private": true,
     "scripts": {
