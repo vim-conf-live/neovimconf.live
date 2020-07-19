@@ -5,12 +5,8 @@
                 <div class="col-md-12 col-lg-8">
                     <!-- section title -->
                     <div class="section-title text-center">
-                        <h2>Sponsors</h2>
-                        <p id="sponsorheader">
-                            We're grateful to have the following sponsors supporting this event and
-                            vim love globally!
-                        </p>
-                        <img src="/assets/img/sponsor-onivim.png" alt="" />
+                        <h2>Register with eventbrite</h2>
+                        <div id="eventbrite-widget-container-114007880640"></div>
                     </div>
                     <!-- End of section title -->
                 </div>
@@ -69,6 +65,22 @@ export default {
             }
         };
     },
+    mounted() {
+        var exampleCallback = function() {
+            console.log("Order complete!");
+        };
+
+        window.EBWidgets.createWidget({
+            // Required
+            widgetType: "checkout",
+            eventId: "114007880640",
+            iframeContainerId: "eventbrite-widget-container-114007880640",
+
+            // Optional
+            iframeContainerHeight: 425, // Widget height in pixels. Defaults to a minimum of 425px if not provided
+            onOrderComplete: exampleCallback // Method called when an order has successfully completed
+        });
+    }
 };
 </script>
 

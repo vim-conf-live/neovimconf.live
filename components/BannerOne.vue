@@ -55,8 +55,9 @@
                             <input id="email" v-model="email" placeholder="Enter email..." />
 
                             <button id="signUpBtn" class="btn" v-on:click="signUp()">
-                                I want in!
+                                Email me
                             </button>
+                            
                             <!-- <a href="#" class="btn">See spea</a>-->
                         </div>
                         <!-- banner text -->
