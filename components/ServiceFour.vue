@@ -6,6 +6,8 @@
                     <!-- section title -->
                     <div class="section-title text-center">
                         <h2>Register with eventbrite</h2>
+                        <p>The current date is tentative! It will most likely change. We will update
+                        as it does.</p>
                         <div id="eventbrite-widget-container-114007880640"></div>
                     </div>
                     <!-- End of section title -->
