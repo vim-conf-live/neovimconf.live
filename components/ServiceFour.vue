@@ -1,5 +1,5 @@
 <template>
-    <section class="pt-120 pb-115 app-shot-one" id="sponsor">
+    <section class="pt-120 pb-115 app-shot-one" id="tickets">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-8">
