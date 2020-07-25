@@ -65,6 +65,13 @@
                         </div>
                         <!-- slingle app image -->
                     </swiper-slide>
+                    <swiper-slide>
+                        <!-- slingle app image -->
+                        <div class="item">
+                            <img src="/assets/img/speaker-jeremy.png" alt="" />
+                        </div>
+                        <!-- slingle app image -->
+                    </swiper-slide>
                 </swiper>
                 <div class="swiper-pagination owl-dots" slot="pagination"></div>
             </div>
