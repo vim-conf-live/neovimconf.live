@@ -15,7 +15,7 @@
                             </div>
                             <!-- End of Logo -->
                         </div>
-                        <div class="col-xl-8 col-lg-6 col-md-4 col-6 menu-button">
+                        <div class="col-xl-9 col-lg-7 col-md-5 col-7 menu-button">
                             <div class="menu--inner-area clearfix">
                                 <div class="menu-wraper">
                                     <nav>
@@ -35,6 +35,7 @@
                                                       2</nuxt-link></li>-->
                                                 <!-- </ul>-->
                                                 <!-- </li>-->
+                                                <li><a target="_blank" rel="noopener noreferrer" id="iconAnchor" href="https://discord.gg/Cz9J4ZD"><img style="height: 60px; width: 50 px; padding: 0px;" src="../static/assets/img/Discord-Logo-Color.png" alt=""></a></li>
                                                 <li><a href="#features">Highlights</a></li>
                                                 <li><a href="#app">Speakers</a></li>
                                                 <li><a href="#agenda">Agenda</a></li>
@@ -112,4 +113,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+#iconAnchor{
+
+padding: 0px;
+}
+</style>
