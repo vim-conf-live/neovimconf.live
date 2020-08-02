@@ -46,7 +46,7 @@
                                 </div>
                             </div>
 
-                            <h1>Come join the world's first virtual vim conf</h1>
+                            <h1>Come join the world's first virtual vim conf!</h1>
                             <p>
                                 We're bringing together Vimmers from all around the world to connect
                                 and share their love and passion for all things vim!
