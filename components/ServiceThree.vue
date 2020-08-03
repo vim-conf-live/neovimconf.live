@@ -10,7 +10,21 @@
                             We're grateful to have the following sponsors supporting this event and
                             vim love globally!
                         </p>
-                        <img src="/assets/img/sponsor-onivim.png" alt="" />
+                        <a target="_blank" rel="noopener noreferrer" href="https://v2.onivim.io/"
+                            ><img 
+
+                            style="margin-right: 50px; width: 300px; height 400px;"
+                            src="/assets/img/sponsor-onivim.png" alt=""
+                        /></a>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://vimtricks.com/"
+                            ><img 
+
+                            style="margin-left: 50px; width: 400px; height 400px;"
+                            src="/assets/img/vimtricks-2.png" alt=""
+                        /></a>
                     </div>
                     <!-- End of section title -->
                 </div>
@@ -68,7 +82,7 @@ export default {
                 }
             }
         };
-    },
+    }
 };
 </script>
 
