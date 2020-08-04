@@ -10,7 +10,7 @@
                             <div class="logo">
                                 <nuxt-link to="/">
                                     <!-- <img src="/assets/img/logo.png" alt="VimConf.Live"> -->
-                                    <h2>VimConf.Live</h2>
+                                    <img src="../static/assets/img/vim-conf-banner-logo.png" alt="">
                                 </nuxt-link>
                             </div>
                             <!-- End of Logo -->

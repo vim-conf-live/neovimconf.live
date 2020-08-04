@@ -65,7 +65,7 @@
                     <div class="col-lg-5 offset-lg-1 col-md-4 offse-xl-2">
                         <!-- banner image-->
                         <div class="banner-image">
-                            <img src="/assets/img/vim-banner.png" alt="" />
+                            <img src="/assets/img/vim-conf-logo.png" alt="" />
                         </div>
                         <!--End of banner image-->
                     </div>
