@@ -12,7 +12,7 @@
     },
     "dependencies": {
         "eslint-plugin-vue": "^6.2.2",
-        "nuxt": "2.14.1",
+        "nuxt": "^2.0.0",
         "swiper": "^5.3.7",
         "userbase-js": "^2.0.1",
         "vue-awesome-swiper": "^4.1.0",
