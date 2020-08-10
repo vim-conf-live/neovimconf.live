@@ -6,7 +6,7 @@
                 <!-- single counetr -->
                 <div class="single-counter text-center">
                     <span class="counter">
-                      <countTo :startVal='0' :endVal='startCounter ? 809 : 0' :duration='3000'></countTo>
+                      <countTo :startVal='0' :endVal='startCounter ? 955 : 0' :duration='3000'></countTo>
                     </span>
                     <p>Attendees and  <br/> counting</p>
                 </div><!-- single counetr -->
@@ -15,7 +15,7 @@
                 <!-- single counetr -->
                 <div class="single-counter text-center">
                     <span class="counter">
-                      <countTo :startVal='0' :endVal='startCounter ? 13 : 0' :duration='3000'></countTo>
+                      <countTo :startVal='0' :endVal='startCounter ? 14 : 0' :duration='3000'></countTo>
                     </span>
                     <p>Speakers</p>
                 </div><!-- single counetr -->
