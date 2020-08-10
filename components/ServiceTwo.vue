@@ -167,7 +167,14 @@
 
  "
                             >
-                                <button>Shreyansh Chouhan</button>
+                                <button>
+                                    <a
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                        href="bk1603.github.io"
+                                        >Shreyansh Chouhan</a
+                                    >
+                                </button>
                                 <h4 style="margin-left: 20px; margin-top: 6px;">
                                     The Open-source summer experience ⛺
                                 </h4>
