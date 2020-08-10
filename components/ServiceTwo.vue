@@ -183,6 +183,23 @@
 
  "
                             >
+                                <button><a href="">Ashkan Kiani</a></button>
+                                <h4 style="margin-left: 20px; margin-top: 6px;">
+                                    What *can't* you do in Neovim? 🤷
+                                </h4>
+                            </div>
+                            <p style="margin-top: 20px;">
+                                Ashkan Kiani spends his days figuring out the limitations of what
+                                you should put inside of an editor and ignoring those limitations. A
+                                demonstration of plugin's from simple to *advanced* and beyond
+                            </p>
+                            <div
+                                class="agenda-header"
+                                style="display: flex;
+  flex-direction: row;  text-align: middle;align-items: center;
+
+ "
+                            >
                                 <button>
                                     <a
                                         target="_blank"
