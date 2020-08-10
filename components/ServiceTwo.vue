@@ -64,7 +64,14 @@
 
  "
                             >
-                                <button>TJ Devries</button>
+                                <button>
+                                    <a
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href="https://www.twitch.tv/teej_dv"
+                                        >TJ Devries</a
+                                    >
+                                </button>
                                 <h4 style="margin-left: 20px; margin-top: 6px;">
                                     Why Lua? 🤔
                                 </h4>
@@ -136,7 +143,15 @@
 
  "
                             >
-                                <button>David Begin</button>
+                                <button>
+                                    <a
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                        href="https://www.twitch.tv/beginbot"
+                                        >David Begin</a
+                                    >
+                                </button>
+
                                 <h4 style="margin-left: 20px; margin-top: 6px;">
                                     Vim isn't an Editor it's an Instrument 🎛️
                                 </h4>
@@ -264,7 +279,14 @@
 
  "
                             >
-                                <button>Matt Boehm</button>
+                                <button>
+                                    <a
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href="https://twitter.com/mattboehm"
+                                        >Matt Boehm</a
+                                    >
+                                </button>
                                 <h4 style="margin-left: 20px; margin-top: 6px;">
                                     Learning Vim: the path to mastery 🧘
                                 </h4>
