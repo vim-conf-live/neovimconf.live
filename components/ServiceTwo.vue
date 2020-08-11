@@ -23,7 +23,14 @@
 
  "
                             >
-                                <button>ThePrimeagen</button>
+                                <button>
+                                    <a
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                        href="https://www.twitch.tv/theprimeagen"
+                                        >ThePrimeagen</a
+                                    >
+                                </button>
                                 <h4 style="margin-left: 20px; margin-top: 6px;">Vim Speed 🏃</h4>
                             </div>
                             <p style="margin-top: 20px;">
@@ -87,7 +94,14 @@
 
  "
                             >
-                                <button>TJ Devries</button>
+                                <button>
+                                    <a
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href="https://www.twitch.tv/teej_dv"
+                                        >TJ Devries</a
+                                    >
+                                </button>
                                 <h4 style="margin-left: 20px; margin-top: 6px;">
                                     Builtin LSP 🎙️
                                 </h4>
@@ -102,7 +116,14 @@
 
  "
                             >
-                                <button>Bryan Phelps</button>
+                                <button>
+                                    <a
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href="https://v2.onivim.io/"
+                                        >Bryan Phelps</a
+                                    >
+                                </button>
                                 <h4 style="margin-left: 20px; margin-top: 6px;">
                                     Onivim: Modal Editing from the Future 👾
                                 </h4>
