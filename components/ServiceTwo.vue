@@ -119,7 +119,14 @@
 
  "
                             >
-                                <button>Leeren chang</button>
+                                <button>
+                                    <a
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href="https://www.youtube.com/leerentalks"
+                                        >Leeren chang</a
+                                    >
+                                </button>
                                 <h4 style="margin-left: 20px; margin-top: 6px;">
                                     IDE-like navigation & tooling for any language, plugin-free! 🧰
                                 </h4>
@@ -190,7 +197,14 @@
 
  "
                             >
-                                <button><a href="">Ashkan Kiani</a></button>
+                                <button>
+                                    <a
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                        href="https://github.com/norcalli"
+                                        >Ashkan Kiani</a
+                                    >
+                                </button>
                                 <h4 style="margin-left: 20px; margin-top: 6px;">
                                     What *can't* you do in Neovim? 🤷
                                 </h4>
