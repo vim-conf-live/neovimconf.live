@@ -352,8 +352,7 @@
                             </div>
                             <p style="margin-top: 20px;">
                                 Tips on useful resources and building muscle memory, with some demos
-                                of useful plugins and tricks along the way. (I can work with
-                                Adam/Greg to make sure content doesn't overlap too much)
+                                of useful plugins and tricks along the way.
                             </p>
                         </div>
                     </div>
