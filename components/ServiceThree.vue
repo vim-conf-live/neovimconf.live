@@ -11,8 +11,7 @@
                             vim love globally!
                         </p>
                         <div
-                            style="display: flex;  justify-content: center;
-  align-items: center;"
+                            style="display: flex;  justify-content: center; align-items: center;"
                         >
                             <a
                                 target="_blank"
