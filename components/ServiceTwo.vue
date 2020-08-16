@@ -9,6 +9,22 @@
                             <img src="/assets/img/icons/solution1.svg" class="svg" alt="" />
                         </div>
                         <h2>Agenda</h2>
+                        <p style="margin-top: 50px;">
+                            <a
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                href="https://calendar.google.com/calendar/ical/c_pmamnjmfa6b2ii3v1ei1te5mm4%40group.calendar.google.com/public/basic.ics"
+                                >📥 Download the event calendar</a
+                            >
+                        </p>
+                        <p>
+                            <a
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                href="https://calendar.google.com/calendar/b/0?cid=Y19wbWFtbmptZmE2YjJpaTN2MWVpMXRlNW1tNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+                                >🗓️ Add to Google calendar</a
+                            >
+                        </p>
                     </div>
                     <!--End of user ineract text -->
                 </div>
