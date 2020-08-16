@@ -10,21 +10,38 @@
                             We're grateful to have the following sponsors supporting this event and
                             vim love globally!
                         </p>
-                        <a target="_blank" rel="noopener noreferrer" href="https://v2.onivim.io/"
-                            ><img 
-
-                            style="margin-right: 50px; width: 300px; height 400px;"
-                            src="/assets/img/sponsor-onivim.png" alt=""
-                        /></a>
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href="https://vimtricks.com/"
-                            ><img 
-
-                            style="margin-left: 50px; width: 400px; height 400px;"
-                            src="/assets/img/vimtricks-2.png" alt=""
-                        /></a>
+                        <div
+                            style="display: flex;  justify-content: center;
+  align-items: center;"
+                        >
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://v2.onivim.io/"
+                                ><img
+                                    style="margin-right: 50px; width: 300px; height 400px;"
+                                    src="/assets/img/sponsor-onivim.png"
+                                    alt=""
+                            /></a>
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://vimtricks.com/"
+                                ><img
+                                    style="margin-left: 50px; width: 400px; height 400px;"
+                                    src="/assets/img/vimtricks-2.png"
+                                    alt=""
+                            /></a>
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://bit.ly/novetta_vim"
+                                ><img
+                                    style="margin-left: 50px; width: 400px; height 400px;"
+                                    src="/assets/img/sponsor-novetta.png"
+                                    alt=""
+                            /></a>
+                        </div>
                     </div>
                     <!-- End of section title -->
                 </div>
