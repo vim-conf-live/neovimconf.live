@@ -65,6 +65,33 @@
                             >
                                 <button>
                                     <a
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        href="https://www.codingcommanders.com/"
+                                        >Commander Candy</a
+                                    >
+                                </button>
+                                <h4 style="margin-left: 20px; margin-top: 6px;">
+                                    Vim as a Word Processor 📝
+                                </h4>
+                            </div>
+                            <p style="margin-top: 20px;">
+                                We will discuss why you want to use Vim as a word processor and go
+                                over configurations, plugin's, and command-line tools that will help
+                                you do so. My presentation will be completely beginner-friendly.
+                                Whether you are brand new to Vim or an experienced Vim-veteran, you
+                                will leave my presentation with the confidence and knowledge to
+                                configure your own Vim word processor.
+                            </p>
+                            <div
+                                class="agenda-header"
+                                style="display: flex;
+  flex-direction: row;  text-align: middle;align-items: center;
+
+ "
+                            >
+                                <button>
+                                    <a
                                         href="https://github.com/vigoux"
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -369,6 +396,27 @@
                             <p style="margin-top: 20px;">
                                 Tips on useful resources and building muscle memory, with some demos
                                 of useful plugins and tricks along the way.
+                            </p>
+                            <div
+                                class="agenda-header"
+                                style="display: flex;
+  flex-direction: row;  text-align: middle;align-items: center;
+
+ "
+                            >
+                                <button>
+                                    <a target="_blank" rel="noopener noreferrer" href=""
+                                        >Prabir Shrestha</a
+                                    >
+                                </button>
+                                <h4 style="margin-left: 20px; margin-top: 6px;">
+                                    Learning VimScript 🧐
+                                </h4>
+                            </div>
+                            <p style="margin-top: 20px;">
+                                We will spend time learning VimScript as a programming language
+                                familiarizing with keywords, syntax, functions and gotchas and
+                                finally build a plugin.
                             </p>
                         </div>
                     </div>
