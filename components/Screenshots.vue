@@ -29,7 +29,7 @@
                     <swiper-slide>
                         <!-- slingle app image -->
                         <div class="item">
-                            <img src="/assets/img/speaker-tj.png" alt="" />
+                            <img src="/assets/img/speaker-maria.png" alt="" />
                         </div>
                         <!-- slingle app image -->
                     </swiper-slide>
@@ -50,6 +50,13 @@
                         <!-- slingle app image -->
                     </swiper-slide>
 
+                    <swiper-slide>
+                        <!-- slingle app image -->
+                        <div class="item">
+                            <img src="/assets/img/speaker-tj.png" alt="" />
+                        </div>
+                        <!-- slingle app image -->
+                    </swiper-slide>
                     <swiper-slide>
                         <!-- slingle app image -->
                         <div class="item">

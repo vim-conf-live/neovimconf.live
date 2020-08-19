@@ -116,6 +116,28 @@
                             >
                                 <button>
                                     <a
+                                        href="https://www.linkedin.com/in/maria-hernandez-6305583/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        >Maria Hernandez</a
+                                    >
+                                </button>
+                                <h4 style="margin-left: 20px; margin-top: 6px;">
+                                    Putting the Neo in NeoVim
+                                </h4>
+                            </div>
+                            <p style="margin-top: 20px;">
+                                What it took for me to finally switch to NeoVim after being a vim user for 20+ years ✨
+                            </p>
+                            <div
+                                class="agenda-header"
+                                style="display: flex;
+  flex-direction: row;  text-align: middle;align-items: center;
+
+ "
+                            >
+                                <button>
+                                    <a
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         href="https://www.twitch.tv/teej_dv"
