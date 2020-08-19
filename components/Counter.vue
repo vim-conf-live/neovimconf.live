@@ -15,7 +15,7 @@
                 <!-- single counetr -->
                 <div class="single-counter text-center">
                     <span class="counter">
-                      <countTo :startVal='0' :endVal='startCounter ? 14 : 0' :duration='3000'></countTo>
+                      <countTo :startVal='0' :endVal='startCounter ? 16 : 0' :duration='3000'></countTo>
                     </span>
                     <p>Speakers</p>
                 </div><!-- single counetr -->
