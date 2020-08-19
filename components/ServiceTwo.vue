@@ -123,11 +123,12 @@
                                     >
                                 </button>
                                 <h4 style="margin-left: 20px; margin-top: 6px;">
-                                    Putting the Neo in NeoVim
+                                    Putting the Neo in NeoVim ✨
                                 </h4>
                             </div>
                             <p style="margin-top: 20px;">
-                                What it took for me to finally switch to NeoVim after being a vim user for 20+ years ✨
+                                What it took for me to finally switch to NeoVim after being a vim
+                                user for 20+ years.
                             </p>
                             <div
                                 class="agenda-header"
