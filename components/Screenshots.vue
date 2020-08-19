@@ -53,6 +53,14 @@
                     <swiper-slide>
                         <!-- slingle app image -->
                         <div class="item">
+                            <img src="/assets/img/speaker-candy.png" alt="" />
+                        </div>
+                        <!-- slingle app image -->
+                    </swiper-slide>
+
+                    <swiper-slide>
+                        <!-- slingle app image -->
+                        <div class="item">
                             <img src="/assets/img/speaker-shreyansh.png" alt="" />
                         </div>
                         <!-- slingle app image -->
