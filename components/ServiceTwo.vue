@@ -446,6 +446,17 @@
                     <!-- End of user interact image -->
                 </div>
             </div>
+            <div id="iframe-container" class="col-lg-4 col-sm-4">
+            <h2>Schedule</h2>
+                <iframe
+                    src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%2333B679&amp;ctz=Asia%2FJerusalem&amp;src=Y19wbWFtbmptZmE2YjJpaTN2MWVpMXRlNW1tNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23B39DDB&amp;showTitle=0&amp;showNav=0&amp;mode=AGENDA&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0"
+                    style="border:solid 1px #777"
+                    width="700"
+                    height="450"
+                    frameborder="0"
+                    scrolling="no"
+                ></iframe>
+            </div>
         </div>
     </section>
 </template>
@@ -467,5 +478,8 @@ export default {
 }
 .agenda-header {
     padding-top: 30px;
+}
+#iframe-container {
+    padding-top: 80px;
 }
 </style>
