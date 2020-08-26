@@ -5,10 +5,18 @@
                 <div class="col-md-12 col-lg-8">
                     <!-- section title -->
                     <div class="section-title text-center">
-                        <h2>Register with eventbrite</h2>
-                        <p>The current date is tentative! It will most likely change. We will update
-                        as it does.</p>
-                        <div id="eventbrite-widget-container-114007880640"></div>
+                        <h2>Register with hopin.to</h2>
+                        <img style="height: 200px;"   src="/assets/img/hopin.to.png" alt="">
+                        <p>
+                            We will be using hopin.to as our virtual conference platform. Please
+                            register for the event using the link below!
+                        </p>
+                        <a
+                            href="https://hopin.to/events/vimconf-live"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            ><button  class="btn">Register Now!</button></a
+                        >
                     </div>
                     <!-- End of section title -->
                 </div>

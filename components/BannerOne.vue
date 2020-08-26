@@ -52,12 +52,15 @@
                                 and share their love and passion for all things vim!
                             </p>
                             <!-- <a href="#" class="btn">Get tickets!</a>-->
-                            <input id="email" v-model="email" placeholder="Enter email..." />
-
+                            <!-- <input id="email" v-model="email" placeholder="Enter email..." />
+                            -->
+                            <!--
                             <button id="signUpBtn" class="btn" v-on:click="signUp()">
-                                Email me
+                                Register me!
                             </button>
-                            
+-->
+                            <a href="#tickets"><button class="btn">Register Me!</button></a>
+
                             <!-- <a href="#" class="btn">See spea</a>-->
                         </div>
                         <!-- banner text -->
@@ -126,7 +129,7 @@ export default {
 <style scoped>
 #email {
     padding-left: 5px;
-    width:250px;
+    width: 250px;
 }
 #successMessage {
     margin-bottom: 0px;
