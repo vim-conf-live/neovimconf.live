@@ -141,6 +141,28 @@
                                     <a
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        href="https://twitter.com/bfredlbfredl"
+                                        >Björn Linse</a
+                                    >
+                                </button>
+                                <h4 style="margin-left: 20px; margin-top: 6px;">
+                                    Neovim 0.5: a vision
+                                </h4>
+                            </div>
+                            <p style="margin-top: 20px;">
+                                @bfredl's crazy plans for Neovim 0.5 and beyond
+                            </p>
+                            <div
+                                class="agenda-header"
+                                style="display: flex;
+  flex-direction: row;  text-align: middle;align-items: center;
+
+ "
+                            >
+                                <button>
+                                    <a
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         href="https://www.twitch.tv/teej_dv"
                                         >TJ Devries</a
                                     >
