@@ -296,8 +296,7 @@
                                 </h4>
                             </div>
                             <p style="margin-top: 20px;">
-                                What is GSoC? What have I been working on this summer? How did I get
-                                involved with neovim? What did I work on? How can you do what I did?
+                                What is GSoC? What was my project? How did I get involved with neovim? How can you do what I did?
                             </p>
                             <div
                                 class="agenda-header"
