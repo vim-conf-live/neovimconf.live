@@ -116,7 +116,6 @@
                         </div>
                         <!-- slingle app image -->
                     </swiper-slide>
-                    <swiper-slide>
 
                     <swiper-slide>
                         <!-- slingle app image -->
