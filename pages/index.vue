@@ -8,7 +8,6 @@
         <Screenshots />
         <ServiceTwo />
         <ServiceThree />
-        <ServiceOne />
         <!-- <Video />-->
         <!-- <Pricing />-->
         <!-- <Testimonial />-->

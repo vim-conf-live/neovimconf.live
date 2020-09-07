@@ -296,7 +296,8 @@
                                 </h4>
                             </div>
                             <p style="margin-top: 20px;">
-                                What is GSoC? What was my project? How did I get involved with neovim? How can you do what I did?
+                                What is GSoC? What was my project? How did I get involved with
+                                neovim? How can you do what I did?
                             </p>
                             <div
                                 class="agenda-header"
@@ -466,17 +467,6 @@
                     </div>
                     <!-- End of user interact image -->
                 </div>
-            </div>
-            <div id="iframe-container" class="col-lg-4 col-sm-4">
-            <h2>Schedule</h2>
-                <iframe
-                    src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%2333B679&amp;ctz=Etc%2FGMT&amp;src=Y19wbWFtbmptZmE2YjJpaTN2MWVpMXRlNW1tNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23B39DDB&amp;showTitle=0&amp;showNav=0&amp;mode=AGENDA&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0" 
-                    style="border:solid 1px #777"
-                    width="700"
-                    height="450"
-                    frameborder="0"
-                    scrolling="no"
-                ></iframe>
             </div>
         </div>
     </section>

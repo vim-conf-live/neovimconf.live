@@ -36,11 +36,10 @@
                                                 <!-- </ul>-->
                                                 <!-- </li>-->
                                                 <li><a target="_blank" rel="noopener noreferrer" id="iconAnchor" href="https://discord.gg/Cz9J4ZD"><img style="height: 60px; width: 50 px; padding: 0px;" src="../static/assets/img/Discord-Logo-Color.png" alt=""></a></li>
-                                                <li><a href="#tickets">Registration</a></li>
+                                                <li><a href="#lectures">Lectures</a></li>
                                                 <li><a href="#app">Speakers</a></li>
                                                 <li><a href="#agenda">Agenda</a></li>
                                                 <li><a href="#sponsor">Sponsors</a></li>
-                                                <li><a href="#platform">Conference platform</a></li>
                                                 <!-- <li>-->
                                                 <!-- <a href="#">Blog</a>-->
                                                 <!-- <ul>-->

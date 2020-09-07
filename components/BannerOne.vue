@@ -59,7 +59,7 @@
                                 Register me!
                             </button>
 -->
-                            <a href="#tickets"><button class="btn">Register Me!</button></a>
+                            <a href="#lectures"><button class="btn">Watch the Lectures</button></a>
 
                             <!-- <a href="#" class="btn">See spea</a>-->
                         </div>

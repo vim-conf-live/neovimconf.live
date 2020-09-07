@@ -1,21 +1,19 @@
 <template>
-    <section class="pt-120 pb-115 app-shot-one" id="tickets">
+    <section class="pt-120 pb-115 app-shot-one" id="lectures">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-8">
                     <!-- section title -->
                     <div class="section-title text-center">
-                        <h2>Register with hopin.to</h2>
-                        <img style="height: 200px;"   src="/assets/img/hopin.to.png" alt="">
+                        <h2>Watch all the lectures on <span style="color:red;">YouTube</span></h2>
                         <p>
-                            We will be using hopin.to as our virtual conference platform. Please
-                            register for the event using the link below!
+                            You can find all the lectures from the event on our YouTube channel
                         </p>
                         <a
-                            href="https://hopin.to/events/vimconf-live"
+                            href="https://www.youtube.com/channel/UCPK_UHtbfcWABCi0F0GPG6w"
                             rel="noopener noreferrer"
                             target="_blank"
-                            ><button  class="btn">Register Now!</button></a
+                            ><button  class="btn">Watch Now!</button></a
                         >
                     </div>
                     <!-- End of section title -->
