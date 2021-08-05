@@ -28,6 +28,9 @@ module.exports = {
     extend: {
       colors: {
         cyan: colors.cyan,
+        brand: {
+          discord: '#7289DA',
+        },
       },
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
@@ -36,7 +39,10 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      // ...
+      opacity: ['hover'],
+    },
   },
   plugins: [tailwindcssForms, tailwindcssTypography, tailwindcssAspectRatio],
 }
