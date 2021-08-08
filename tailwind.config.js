@@ -28,6 +28,7 @@ module.exports = {
     extend: {
       colors: {
         cyan: colors.cyan,
+        orange: colors.orange,
         brand: {
           discord: '#7289DA',
         },

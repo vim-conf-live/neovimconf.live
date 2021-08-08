@@ -1,12 +1,11 @@
 <template>
-  <div class="relative bg-white overflow-hidden">
+  <div class="relative bg-gray-900 overflow-hidden">
     <div class="max-w-7xl mx-auto">
       <div
         class="
           relative
           z-10
           pb-8
-          bg-white
           sm:pb-16
           md:pb-20
           lg:max-w-2xl lg:w-full lg:pb-28
@@ -22,9 +21,9 @@
             inset-y-0
             h-full
             w-48
-            text-white
+            text-gray-900
             transform
-            translate-x-1/2
+            translate-x-1/3
           "
           fill="currentColor"
           viewBox="0 0 100 100"
@@ -62,14 +61,14 @@
                     <button
                       type="button"
                       class="
-                        bg-white
+                        bg-gray-800
                         rounded-md
                         p-2
                         inline-flex
                         items-center
                         justify-center
-                        text-gray-400
-                        hover:text-gray-500 hover:bg-gray-100
+                        text-gray-200
+                        hover:text-gray-400 hover:bg-gray-100
                         focus:outline-none
                         focus:ring-2
                         focus:ring-inset
@@ -106,8 +105,8 @@
                   :to="item.link"
                   class="
                     font-medium
-                    text-gray-500
-                    hover:text-gray-900
+                    text-gray-200
+                    hover:text-gray-300
                     font-roboto
                   "
                   >{{ item.title }}</nuxt-link
@@ -217,7 +216,7 @@
                     rounded-md
                     text-base
                     font-medium
-                    text-gray-700
+                    text-gray-200
                     hover:text-gray-900 hover:bg-gray-50
                   "
                   >{{ item.title }}</nuxt-link
@@ -261,20 +260,20 @@
                 text-4xl
                 tracking-tight
                 font-extrabold
-                text-gray-900
+                text-white
                 sm:text-5xl
                 md:text-6xl
               "
             >
               <span class="block xl:inline">{{ header.title }}</span>
-              <span class="block xl:inline text-purple-600">{{
+              <span class="block xl:inline text-orange-500">{{
                 header.subTitle
               }}</span>
             </h1>
             <p
               class="
                 mt-3
-                text-base text-gray-500
+                text-base text-gray-200
                 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto
                 md:mt-5 md:text-xl
                 lg:mx-0
@@ -300,13 +299,37 @@
                     font-medium
                     rounded-md
                     text-white
-                    bg-purple-600
-                    hover:bg-purple-700
+                    bg-orange-600
+                    hover:bg-orange-700
                     md:py-4 md:text-lg md:px-10
                   "
                 >
                   {{ cta.title }}
                 </nuxt-link>
+              </div>
+              <div class="mt-3 sm:mt-0 sm:ml-3">
+                <a
+                  :href="cta2.link"
+                  :target="cta2.target"
+                  class="
+                    w-full
+                    flex
+                    items-center
+                    justify-center
+                    px-8
+                    py-3
+                    border border-transparent
+                    text-base
+                    font-medium
+                    rounded-md
+                    text-orange-700
+                    bg-orange-100
+                    hover:bg-orange-200
+                    md:py-4 md:text-lg md:px-10
+                  "
+                >
+                  {{ cta2.title }}
+                </a>
               </div>
             </div>
           </div>
@@ -356,6 +379,11 @@ export default {
       cta: {
         title: 'Watch the Lectures',
         link: '#lectures',
+      },
+      cta2: {
+        title: 'Be a speaker',
+        link: 'https://forms.gle/t3hHEpnoopXmRxaHA',
+        target: '_blank',
       },
     }
   },
