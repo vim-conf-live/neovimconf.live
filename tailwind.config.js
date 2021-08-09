@@ -30,7 +30,7 @@ module.exports = {
         cyan: colors.cyan,
         orange: colors.orange,
         brand: {
-          discord: '#7289DA',
+          discord: '#5865F2',
         },
       },
       fontFamily: {
