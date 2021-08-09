@@ -60,6 +60,20 @@ export default {
 
   publicRuntimeConfig: {
     discordInvite: process.env.DISCORD_INVITE,
+    watch: {
+      header:
+        process.env.WATCH_TYPE === 'YouTube'
+          ? process.env.WATCH_YOUTUBE_HEADER
+          : process.env.WATCH_TWITCH_HEADER,
+      subheader:
+        process.env.WATCH_TYPE === 'YouTube'
+          ? process.env.WATCH_YOUTUBE_SUB_HEADER
+          : process.env.WATCH_TWITCH_SUB_HEADER,
+      link:
+        process.env.WATCH_TYPE === 'YouTube'
+          ? process.env.WATCH_YOUTUBE_LINK
+          : process.env.WATCH_TWITCH_LINK,
+    },
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

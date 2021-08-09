@@ -1,3 +1,6 @@
 <template>
-  <LandingHero />
+  <div id="content">
+    <LandingHero />
+    <LandingWatch />
+  </div>
 </template>
