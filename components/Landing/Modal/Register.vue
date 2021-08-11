@@ -161,7 +161,7 @@ export default {
     })
   },
   methods: {
-    async togglModel() {
+    async toggleModal() {
       await this.$store.dispatch('modal/TOGGLE_MODAL')
     },
     async hideModal() {
