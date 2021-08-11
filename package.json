@@ -23,6 +23,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.16.1",
     "nuxt": "^2.15.7",
+    "portal-vue": "^2.1.7",
     "swiper": "^6.8.1",
     "vue-awesome-swiper": "^4.1.1"
   },

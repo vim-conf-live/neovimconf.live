@@ -1,6 +1,9 @@
 <template>
-  <div class="bg-gray-900">
-    <Nuxt />
+  <div>
+    <portal to="destination"></portal>
+    <div class="bg-gray-900">
+      <Nuxt />
+    </div>
   </div>
 </template>
 

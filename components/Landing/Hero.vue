@@ -8,9 +8,7 @@
           pb-8
           sm:pb-16
           md:pb-20
-          lg:max-w-2xl
-          lg:w-full
-          lg:pb-28
+          lg:max-w-2xl lg:w-full lg:pb-28
           xl:pb-32
         "
       >
@@ -133,10 +131,11 @@
                         items-center
                         justify-center
                         text-gray-200
-                        hover:text-gray-400
-                        hover:bg-gray-100
+                        hover:text-gray-400 hover:bg-gray-100
                         focus:outline-none
-                        focus:ring-2 focus:ring-inset focus:ring-indigo-500
+                        focus:ring-2
+                        focus:ring-inset
+                        focus:ring-indigo-500
                       "
                       :aria-expanded="mobileMenu.isOpen.toString()"
                       @click="toggleMobileMenu"
@@ -302,10 +301,11 @@
                       items-center
                       justify-center
                       text-gray-400
-                      hover:text-gray-500
-                      hover:bg-gray-100
+                      hover:text-gray-500 hover:bg-gray-100
                       focus:outline-none
-                      focus:ring-2 focus:ring-inset focus:ring-indigo-500
+                      focus:ring-2
+                      focus:ring-inset
+                      focus:ring-indigo-500
                     "
                     @click="toggleMobileMenu"
                   >
@@ -342,8 +342,7 @@
                     text-base
                     font-medium
                     text-gray-200
-                    hover:text-gray-900
-                    hover:bg-gray-50
+                    hover:text-gray-900 hover:bg-gray-50
                   "
                   >{{ item.title }}</nuxt-link
                 >
@@ -374,11 +373,9 @@
             mx-auto
             max-w-7xl
             px-4
-            sm:mt-12
-            sm:px-6
+            sm:mt-12 sm:px-6
             md:mt-16
-            lg:mt-20
-            lg:px-8
+            lg:mt-20 lg:px-8
             xl:mt-28
           "
         >
@@ -402,12 +399,8 @@
               class="
                 mt-3
                 text-base text-gray-200
-                sm:mt-5
-                sm:text-lg
-                sm:max-w-xl
-                sm:mx-auto
-                md:mt-5
-                md:text-xl
+                sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto
+                md:mt-5 md:text-xl
                 lg:mx-0
               "
             >
@@ -416,7 +409,7 @@
             <div
               class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
             >
-              <div class="rounded-md shadow">
+              <div v-if="cta.enabled" class="rounded-md shadow">
                 <nuxt-link
                   :to="cta.link"
                   class="
@@ -433,13 +426,34 @@
                     text-white
                     bg-orange-600
                     hover:bg-orange-700
-                    md:py-4
-                    md:text-lg
-                    md:px-10
+                    md:py-4 md:text-lg md:px-10
                   "
                 >
                   {{ cta.title }}
                 </nuxt-link>
+              </div>
+              <div v-else class="rounded-md shadow">
+                <button
+                  class="
+                    w-full
+                    flex
+                    items-center
+                    justify-center
+                    px-8
+                    py-3
+                    border border-transparent
+                    text-base
+                    font-medium
+                    rounded-md
+                    text-white
+                    bg-orange-600
+                    hover:bg-orange-700
+                    md:py-4 md:text-lg md:px-10l
+                  "
+                  @click="showModal"
+                >
+                  Register me!
+                </button>
               </div>
               <div class="mt-3 sm:mt-0 sm:ml-3">
                 <a
@@ -459,9 +473,7 @@
                     text-orange-700
                     bg-orange-100
                     hover:bg-orange-200
-                    md:py-4
-                    md:text-lg
-                    md:px-10
+                    md:py-4 md:text-lg md:px-10
                   "
                 >
                   {{ cta2.title }}
@@ -476,9 +488,13 @@
       <img
         class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
         src="~/assets/img/hero.png"
-        alt=""
       />
     </div>
+    <portal-target name="showModal">
+      <transition name="fade">
+        <LandingModalRegister v-if="$store.state.modal.showModal" />
+      </transition>
+    </portal-target>
   </div>
 </template>
 
@@ -513,10 +529,12 @@ export default {
         },
       ],
       cta: {
+        enabled: false,
         title: 'Watch the Lectures',
         link: '#lectures',
       },
       cta2: {
+        enabled: true,
         title: 'Be a speaker',
         link: 'https://forms.gle/t3hHEpnoopXmRxaHA',
         target: '_blank',
@@ -529,6 +547,9 @@ export default {
     },
     closeMobileMenu() {
       this.mobileMenu.isOpen = false
+    },
+    async showModal() {
+      await this.$store.commit('modal/SET_MODAL', true)
     },
   },
 }
