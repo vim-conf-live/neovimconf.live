@@ -1,5 +1,5 @@
 <template>
-  <div class="relative bg-gray-900 overflow-hidden">
+  <div class="relative overflow-hidden">
     <div class="max-w-7xl mx-auto">
       <div
         class="

@@ -1,19 +1,40 @@
 <template>
-  <client-only>
-    <swiper class="swiper" :options="swiperOption">
-      <swiper-slide>Slide 1</swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
-      <swiper-slide>Slide 4</swiper-slide>
-      <swiper-slide>Slide 5</swiper-slide>
-      <swiper-slide>Slide 6</swiper-slide>
-      <swiper-slide>Slide 7</swiper-slide>
-      <swiper-slide>Slide 8</swiper-slide>
-      <swiper-slide>Slide 9</swiper-slide>
-      <swiper-slide>Slide 10</swiper-slide>
-      <div slot="pagination" class="swiper-pagination"></div>
-    </swiper>
-  </client-only>
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+    <h2 class="text-3xl font-extrabold text-white sm:text-4xl text-center">
+      Sponsors
+    </h2>
+    <p
+      class="
+        mt-2
+        text-center text-base
+        font-semibold
+        uppercase
+        text-gray-200
+        tracking-wider
+      "
+    >
+      We're grateful to have the following sponsors supporting this event and
+      vim love globally!
+    </p>
+    <div class="mt-3 lg:mt-6">
+      <client-only>
+        <swiper class="swiper" :options="swiperOption">
+          <swiper-slide>
+            <nuxt-img src="/img/sponsors/sponsor-onivim.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <nuxt-img src="/img/sponsors/vimtricks-2.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <nuxt-img src="/img/sponsors/sponsor-novetta.png" />
+          </swiper-slide>
+          <div slot="pagination" class="swiper-pagination"></div>
+          <div slot="button-prev" class="swiper-button-prev"></div>
+          <div slot="button-next" class="swiper-button-next"></div>
+        </swiper>
+      </client-only>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -23,9 +44,17 @@ export default {
       swiperOption: {
         slidesPerView: 3,
         spaceBetween: 30,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
         pagination: {
           el: '.swiper-pagination',
-          clickable: true,
+          type: 'fraction',
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
       },
     }
@@ -33,10 +62,14 @@ export default {
 }
 </script>
 
-<style scoped>
+<style post>
 .swiper {
   height: 300px;
   width: 100%;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  --swiper-theme-color: #f97316;
 }
 .swiper .swiper-slide {
   display: flex;
@@ -45,6 +78,5 @@ export default {
   text-align: center;
   font-weight: bold;
   font-size: 16px;
-  background-color: #fff;
 }
 </style>
