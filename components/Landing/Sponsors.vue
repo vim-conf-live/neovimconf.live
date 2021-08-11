@@ -19,14 +19,8 @@
     <div class="mt-3 lg:mt-6">
       <client-only>
         <swiper class="swiper" :options="swiperOption">
-          <swiper-slide>
-            <nuxt-img src="/img/sponsors/sponsor-onivim.png" />
-          </swiper-slide>
-          <swiper-slide>
-            <nuxt-img src="/img/sponsors/vimtricks-2.png" />
-          </swiper-slide>
-          <swiper-slide>
-            <nuxt-img src="/img/sponsors/sponsor-novetta.png" />
+          <swiper-slide v-for="(item, index) in sponsors" :key="index">
+            <nuxt-img :src="item.src" :alt="item.alt" />
           </swiper-slide>
           <div slot="pagination" class="swiper-pagination"></div>
           <div slot="button-prev" class="swiper-button-prev"></div>
@@ -41,6 +35,20 @@
 export default {
   data() {
     return {
+      sponsors: [
+        {
+          src: '/img/sponsors/sponsor-onivim.png',
+          alt: 'Onivim Sponsor',
+        },
+        {
+          src: '/img/sponsors/sponsor-vimtricks.png',
+          alt: 'VimTricks Sponsor',
+        },
+        {
+          src: '/img/sponsors/sponsor-novetta.png',
+          alt: 'Novetta Sponsor',
+        },
+      ],
       swiperOption: {
         slidesPerView: 3,
         spaceBetween: 30,
