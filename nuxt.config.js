@@ -77,6 +77,10 @@ export default {
           ? process.env.WATCH_YOUTUBE_LINK
           : process.env.WATCH_TWITCH_LINK,
     },
+    agenda: {
+      downloadEventCal: process.env.DOWNLOAD_EVENT_CAL,
+      addToCal: process.env.ADD_TO_CAL,
+    },
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
