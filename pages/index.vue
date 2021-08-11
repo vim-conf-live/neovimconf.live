@@ -1,8 +1,8 @@
 <template>
   <div id="content">
     <LandingHero />
-    <LandingWatch />
-    <LandingSponsors />
-    <LandingSpeakers />
+    <LandingWatch id="lectures" />
+    <LandingSpeakers id="speakers" />
+    <LandingSponsors id="sponsor" />
   </div>
 </template>
