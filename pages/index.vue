@@ -3,5 +3,6 @@
     <LandingHero />
     <LandingWatch />
     <LandingSponsors />
+    <LandingSpeakers />
   </div>
 </template>
