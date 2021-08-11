@@ -20,7 +20,7 @@
       <client-only>
         <swiper class="swiper" :options="swiperOption">
           <swiper-slide v-for="(item, index) in sponsors" :key="index">
-            <nuxt-img :src="item.src" :alt="item.alt" />
+            <nuxt-img provider="static" :src="item.src" :alt="item.alt" />
           </swiper-slide>
           <div slot="pagination" class="swiper-pagination"></div>
           <div slot="button-prev" class="swiper-button-prev"></div>

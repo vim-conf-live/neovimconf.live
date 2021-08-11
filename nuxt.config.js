@@ -27,7 +27,15 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    '@nuxt/image',
+    [
+      '@nuxt/image',
+      {
+        image: {
+          staticFilename: '[publicPath]/images/[name]-[hash][ext]',
+          dir: 'static/images',
+        },
+      },
+    ],
     '@nuxtjs/color-mode',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
@@ -50,6 +58,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/svg',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -83,5 +92,8 @@ export default {
         ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
       ],
     },
+  },
+  generate: {
+    fallback: true,
   },
 }
