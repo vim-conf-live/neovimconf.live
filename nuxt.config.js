@@ -27,15 +27,6 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    [
-      '@nuxt/image',
-      {
-        image: {
-          staticFilename: '[publicPath]/images/[name]-[hash][ext]',
-          dir: 'static/images',
-        },
-      },
-    ],
     '@nuxtjs/color-mode',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
