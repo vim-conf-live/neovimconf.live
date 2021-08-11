@@ -6,11 +6,6 @@
 
 <script>
 export default {
-  head() {
-    return {
-      title: "Vimconf.live - The world's virtual vim conference.",
-    }
-  },
   mounted() {
     this.$nextTick(() => {
       this.$nuxt.$loading.start()

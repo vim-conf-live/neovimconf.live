@@ -1,0 +1,39 @@
+{
+  "speakers": [
+    {
+      "name": "John Doe",
+      "job": "Developer",
+      "picture": "http://placehold.it/128x128"
+    },
+    {
+      "name": "John Doe",
+      "job": "Developer",
+      "picture": "http://placehold.it/128x128"
+    },
+    {
+      "name": "John Doe",
+      "job": "Developer",
+      "picture": "http://placehold.it/128x128"
+    },
+    {
+      "name": "John Doe",
+      "job": "Developer",
+      "picture": "http://placehold.it/128x128"
+    },
+    {
+      "name": "John Doe",
+      "job": "Developer",
+      "picture": "http://placehold.it/128x128"
+    },
+    {
+      "name": "John Doe",
+      "job": "Developer",
+      "picture": "http://placehold.it/128x128"
+    },
+    {
+      "name": "John Doe",
+      "job": "Developer",
+      "picture": "http://placehold.it/128x128"
+    }
+  ]
+}
