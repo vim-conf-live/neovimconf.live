@@ -27,27 +27,12 @@
       "
       @click.stop
     >
-      <form>
+      <form @submit.prevent @submit="register">
         <div class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
           <div class="sm:flex sm:items-start">
-            <div
-              class="
-                flex
-                items-center
-                justify-center
-                flex-shrink-0
-                w-12
-                h-12
-                mx-auto
-                rounded-full
-                bg-primary-100
-                sm:mx-0 sm:h-10 sm:w-10
-              "
-            >
-              <fa :icon="['fas', 'lock']" class="w-6 h-6 text-primary-600" />
-            </div>
             <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-              <div>
+              <div class="flex">
+                <fa :icon="['fas', 'ticket-alt']" class="w-6 h-6 mr-2 text-primary-600" />
                 <h3 class="text-xl font-medium leading-6 text-primary-500">
                   Register
                 </h3>
@@ -56,10 +41,28 @@
               <div class="my-3"></div>
             </div>
           </div>
-          <div class="px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse">
+          <div class="my-10 sm:ml-12">
+            <label for="email" class="text-gray-700 text-sm font-bold mb-2 px-2">
+              Email Address
+            </label>
+            <input
+              id="email"
+              ref="email"
+              type="email"
+              placeholder="johndoe@vimconf.com"
+              class="
+                border
+                rounded
+                shadow
+                text-orange-600
+              "
+            />
+          </div>
+          <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
             <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
               <button
                 type="submit"
+                :disabled="isRegistering"
                 class="
                   inline-flex
                   justify-center
@@ -81,7 +84,21 @@
                   focus:outline-none focus:ring
                 "
               >
-                Register
+                <span v-if="!isRegistering">Register</span>
+                <span v-else>
+                  <fa
+                    :icon="['fas', 'circle']"
+                    class="inline-block w-2 h-2 mr-0.5 text-white -animate-delay-1 animate-bounce"
+                  />
+                  <fa
+                    :icon="['fas', 'circle']"
+                    class="inline-block w-2 h-2 mr-0.5 text-white -animate-delay-2 animate-bounce"
+                  />
+                  <fa
+                    :icon="['fas', 'circle']"
+                    class="inline-block w-2 h-2 mr-0.5 text-white animate-bounce"
+                  />
+                </span>
               </button>
             </span>
             <span
@@ -110,7 +127,7 @@
                   focus:outline-none focus:border-blue-300 focus:ring
                   sm:text-sm sm:leading-5
                 "
-                @click="toggleModal"
+                @click="hideModal"
                 @keydown.esc="hideModal"
               >
                 Cancel
@@ -125,8 +142,17 @@
 
 <script>
 export default {
+  data() {
+    return {
+      isRegistering: false,
+    }
+  },
   mounted() {
     this.popupItem = this.$refs.background
+
+    // Auto-focus email input
+    const emailInput = this.$refs.email;
+    emailInput.focus();
 
     const close = (e) => {
       const ESC = 27
@@ -166,6 +192,57 @@ export default {
     },
     async hideModal() {
       await this.$store.commit('modal/SET_MODAL', false)
+    },
+    async register() {
+      if (this.isRegistering) {
+        return;
+      }
+
+      const options = {
+        position: "top-center",
+        className: "px-6 px-6",
+      };
+
+      this.isRegistering = true
+      this.$toast.show('Putting you on the list... 🎟️', options)
+
+      try {
+        const email = this.$refs.email.value
+        await this.$userbase.signUp({
+            email,
+            username: email,
+            password: "vimconf",
+            rememberMe: "none",
+        })
+
+        this.$toast.clear();
+        this.$toast.success("You're going to VimConf 2021! 🎉", {
+          ...options,
+          duration: 3000,
+        })
+
+        await this.hideModal()
+      } catch (e) {
+        const [code] = e.toString().split(':');
+
+        let message = "Unable to register, please try again later."
+        switch (code) {
+          case "EmailNotValid":
+            message = "Please enter a valid email."
+            break;
+          case "UsernameAlreadyExists":
+            message = "This email has already been registered!"
+            break;
+        }
+
+        this.$toast.clear();
+        this.$toast.error(message, {
+          ...options,
+          duration: 3000,
+        })
+      }
+
+      this.isRegistering = false
     },
   },
 }

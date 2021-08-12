@@ -9,6 +9,7 @@ const tailwindcssForms = require('@tailwindcss/forms')
 const tailwindcssTypography = require('@tailwindcss/typography')
 const tailwindcssAspectRatio = require('@tailwindcss/aspect-ratio')
 const colors = require('tailwindcss/colors')
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   purge: {
@@ -45,5 +46,20 @@ module.exports = {
       opacity: ['hover'],
     },
   },
-  plugins: [tailwindcssForms, tailwindcssTypography, tailwindcssAspectRatio],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        '.-animate-delay-1': {
+          'animation-delay': '-0.32s',
+        },
+        '.-animate-delay-2': {
+          'animation-delay': '-0.16s',
+        },
+      }
+      addUtilities(newUtilities)
+    }),
+    tailwindcssForms,
+    tailwindcssTypography,
+    tailwindcssAspectRatio,
+  ],
 }

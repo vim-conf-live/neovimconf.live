@@ -24,7 +24,10 @@ export default {
   css: ['swiper/swiper-bundle.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [{ src: '~/plugins/vue-awesome-swiper', ssr: false }],
+  plugins: [
+    { src: '~/plugins/vue-awesome-swiper', ssr: false },
+    "~/plugins/userbase.client.js",
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -36,6 +39,20 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://github.com/nuxt-community/fontawesome-module#readme
+    [
+      '@nuxtjs/fontawesome',
+      {
+        component: 'fa',
+        icons: {
+          solid: [
+            'faCircle',
+            'faLock',
+            'faTicketAlt',
+          ],
+        }
+      }
+    ],
     [
       '@nuxtjs/google-fonts',
       {
@@ -54,6 +71,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    // https://github.com/nuxt-community/community-modules/tree/master/packages/toast
+    '@nuxtjs/toast',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -81,6 +100,9 @@ export default {
     agenda: {
       downloadEventCal: process.env.DOWNLOAD_EVENT_CAL,
       addToCal: process.env.ADD_TO_CAL,
+    },
+    userbase: {
+      appId: process.env.USERBASE_APP_ID,
     },
   },
 
