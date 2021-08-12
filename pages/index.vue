@@ -1,5 +1,6 @@
 <template>
   <div id="content">
+    <LandingPast />
     <LandingHero />
     <LandingWatch id="lectures" />
     <LandingSpeakers  id="speakers" />
