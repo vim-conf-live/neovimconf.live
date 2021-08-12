@@ -37,16 +37,16 @@ export default {
     return {
       sponsors: [
         {
-          src: '/img/sponsors/sponsor-onivim.png',
-          alt: 'Onivim Sponsor',
+          src: 'http://placehold.it/512x512',
+          alt: 'Sponsor',
         },
         {
-          src: '/img/sponsors/sponsor-vimtricks.png',
-          alt: 'VimTricks Sponsor',
+          src: 'http://placehold.it/512x512',
+          alt: 'Sponsor',
         },
         {
-          src: '/img/sponsors/sponsor-novetta.png',
-          alt: 'Novetta Sponsor',
+          src: 'http://placehold.it/512x512',
+          alt: 'Sponsor',
         },
       ],
       swiperOption: {
