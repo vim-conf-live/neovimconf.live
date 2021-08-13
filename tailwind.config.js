@@ -8,6 +8,7 @@
 const tailwindcssForms = require('@tailwindcss/forms')
 const tailwindcssTypography = require('@tailwindcss/typography')
 const tailwindcssAspectRatio = require('@tailwindcss/aspect-ratio')
+const tailwindcssScrollbar = require('tailwind-scrollbar')
 const colors = require('tailwindcss/colors')
 const plugin = require('tailwindcss/plugin')
 
@@ -61,5 +62,6 @@ module.exports = {
     tailwindcssForms,
     tailwindcssTypography,
     tailwindcssAspectRatio,
+    tailwindcssScrollbar,
   ],
 }
