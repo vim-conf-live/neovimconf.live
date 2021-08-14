@@ -10,10 +10,14 @@
 	   			id="email"
 	   			ref="email"
 	   			type="email"
+          autocomplete="off"
 	   			placeholder="johndoe@vimconf.com"
 	   			class="rounded shadow h-12 text-orange-600"
+          @focus="showDisclaimer()"
 	   			/>
-	   			<span class="text-gray-200 text-sm italic">By registering you agree to our code of conduct</span>
+          <transition name="fade">
+	   			  <span v-show="shouldShowDisclaimer" class="text-gray-200 text-sm italic">By registering you agree to our code of conduct</span>
+          </transition>
 	   		</div>
 	   		<div class="pt-6 col-span-5 md:col-span-3">
 	   			<button
@@ -57,6 +61,7 @@
 		data() {
 			return {
         isRegistering: false,
+        shouldShowDisclaimer: false,
 				speakerSubmission: {
 					enabled: true,
 					title: 'Be a speaker',
@@ -66,6 +71,9 @@
 			}
 		},
 		methods: {
+      showDisclaimer() {
+        this.shouldShowDisclaimer = true;
+      },
       async register() {
       if (this.isRegistering) {
         return;
@@ -119,3 +127,11 @@
    }
 	}
 </script>
+<style scoped>
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+</style>
