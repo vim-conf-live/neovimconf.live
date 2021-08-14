@@ -37,15 +37,15 @@ export default {
     return {
       sponsors: [
         {
-          src: 'http://placehold.it/512x512',
+          src: 'https://via.placeholder.com/512x512',
           alt: 'Sponsor',
         },
         {
-          src: 'http://placehold.it/512x512',
+          src: 'https://via.placeholder.com/512x512',
           alt: 'Sponsor',
         },
         {
-          src: 'http://placehold.it/512x512',
+          src: 'https://via.placeholder.com/512x512',
           alt: 'Sponsor',
         },
       ],
