@@ -23,10 +23,16 @@
           tracking-wider
         "
       >
-        <a class="mt-4 text-lg text-gray-300 block"
+        <a
+          :href="$config.agenda.downloadEventCal"
+          class="mt-4 text-lg text-gray-300 block"
           >📥 Download the event calendar</a
         >
-        <a class="mt-6 text-lg text-gray-300 blck">🗓️ Add to Google calendar</a>
+        <a
+          :href="$config.agenda.addToCal"
+          class="mt-6 text-lg text-gray-300 blck"
+          >🗓️ Add to Google calendar</a
+        >
       </p>
       <dl
         class="
