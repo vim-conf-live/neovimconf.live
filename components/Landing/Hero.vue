@@ -8,7 +8,9 @@
           pb-8
           sm:pb-16
           md:pb-20
-          lg:max-w-2xl lg:w-full lg:pb-28
+          lg:max-w-2xl
+          lg:w-full
+          lg:pb-28
           xl:pb-32
         "
       >
@@ -131,11 +133,10 @@
                         items-center
                         justify-center
                         text-gray-200
-                        hover:text-gray-400 hover:bg-gray-100
+                        hover:text-gray-400
+                        hover:bg-gray-100
                         focus:outline-none
-                        focus:ring-2
-                        focus:ring-inset
-                        focus:ring-indigo-500
+                        focus:ring-2 focus:ring-inset focus:ring-indigo-500
                       "
                       :aria-expanded="mobileMenu.isOpen.toString()"
                       @click="toggleMobileMenu"
@@ -301,11 +302,10 @@
                       items-center
                       justify-center
                       text-gray-400
-                      hover:text-gray-500 hover:bg-gray-100
+                      hover:text-gray-500
+                      hover:bg-gray-100
                       focus:outline-none
-                      focus:ring-2
-                      focus:ring-inset
-                      focus:ring-indigo-500
+                      focus:ring-2 focus:ring-inset focus:ring-indigo-500
                     "
                     @click="toggleMobileMenu"
                   >
@@ -342,7 +342,8 @@
                     text-base
                     font-medium
                     text-gray-200
-                    hover:text-gray-900 hover:bg-gray-50
+                    hover:text-gray-900
+                    hover:bg-gray-50
                   "
                   >{{ item.title }}</nuxt-link
                 >
@@ -373,9 +374,11 @@
             mx-auto
             max-w-7xl
             px-4
-            sm:mt-12 sm:px-6
+            sm:mt-12
+            sm:px-6
             md:mt-16
-            lg:mt-20 lg:px-8
+            lg:mt-20
+            lg:px-8
             xl:mt-28
           "
         >
@@ -394,20 +397,26 @@
               <span class="block xl:inline text-orange-500">{{
                 header.subTitle
               }}</span>
+              <span class="block text-3xl text-orange-400">{{
+                header.dateTitle
+              }}</span>
             </h1>
             <p
               class="
                 mt-3
                 text-base text-gray-200
-                sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto
-                md:mt-5 md:text-xl
+                sm:mt-5
+                sm:text-lg
+                sm:max-w-xl
+                sm:mx-auto
+                md:mt-5
+                md:text-xl
                 lg:mx-0
               "
             >
               {{ desc }}
             </p>
-
-            <LandingRegistration />
+          <LandingRegistration />
           </div>
            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
             <div v-if="cta.enabled" class="rounded-md shadow">
@@ -459,10 +468,11 @@ export default {
         isOpen: false,
       },
       header: {
-        title: "Come join the world's first",
+        title: "Join the world's first",
         subTitle: 'virtual vim conf',
+        dateTitle: 'Oct  29/30th',
       },
-      desc: "We're bringing together Vimmers from all around the world to connect and share their love and passion for all things vim!",
+      desc: 'Our second annual event is going to be better than ever! Connecting the vim community to share their love and passion for all things vim!',
       links: [
         {
           title: 'Lectures',
@@ -488,7 +498,7 @@ export default {
       },
       speakerSubmission: {
         enabled: true,
-        title: 'Be a speaker',
+        title: 'Speak at Vimconf!',
         link: 'https://forms.gle/t3hHEpnoopXmRxaHA',
         target: '_blank',
       },
