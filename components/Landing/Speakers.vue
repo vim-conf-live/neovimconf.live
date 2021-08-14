@@ -13,9 +13,9 @@
         tracking-wider
       "
     >
-      From across the globe, some of the best and brightest minds in the vim
-      community are coming to share their experience and expertise with the
-      community.
+      Vim enthusiasts span the globe with diverse backgrounds and expertise. We
+      are gathering some of the best and brightest to share their experiences to
+      enrich the community!
     </p>
     <div class="mt-3 lg:mt-6">
       <client-only>

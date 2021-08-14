@@ -29,7 +29,7 @@
           sm:w-auto
         "
       >
-        Watch Now!
+        Coming soon.
       </a>
     </div>
   </div>
