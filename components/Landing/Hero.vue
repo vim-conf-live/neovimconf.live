@@ -26,11 +26,11 @@
             translate-x-1/3
           "
           fill="currentColor"
-          viewBox="0 0 100 100"
+          viewBox="0 0 110 40"
           preserveAspectRatio="none"
           aria-hidden="true"
         >
-          <polygon points="50,0 100,0 50,100 0,100" />
+          <polygon points="50,0 100,0 50,80 0,100" />
         </svg>
 
         <div>
@@ -406,79 +406,32 @@
             >
               {{ desc }}
             </p>
-            <div
-              class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
-            >
-              <div v-if="cta.enabled" class="rounded-md shadow">
-                <nuxt-link
-                  :to="cta.link"
-                  class="
-                    w-full
-                    flex
-                    items-center
-                    justify-center
-                    px-8
-                    py-3
-                    border border-transparent
-                    text-base
-                    font-medium
-                    rounded-md
-                    text-white
-                    bg-orange-600
-                    hover:bg-orange-700
-                    md:py-4 md:text-lg md:px-10
-                  "
+
+            <LandingRegistration />
+          </div>
+           <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+            <div v-if="cta.enabled" class="rounded-md shadow">
+              <nuxt-link
+                :to="cta.link"
+                class="
+                w-full
+                flex
+                items-center
+                justify-center
+                px-8
+                py-3
+                border border-transparent
+                text-base
+                font-medium
+                rounded-md
+                text-white
+                bg-orange-600
+                hover:bg-orange-700
+                md:py-4 md:text-lg md:px-10
+                "
                 >
-                  {{ cta.title }}
-                </nuxt-link>
-              </div>
-              <div v-else class="rounded-md shadow">
-                <button
-                  class="
-                    w-full
-                    flex
-                    items-center
-                    justify-center
-                    px-8
-                    py-3
-                    border border-transparent
-                    text-base
-                    font-medium
-                    rounded-md
-                    text-white
-                    bg-orange-600
-                    hover:bg-orange-700
-                    md:py-4 md:text-lg md:px-10l
-                  "
-                  @click="showModal"
-                >
-                  Register me!
-                </button>
-              </div>
-              <div class="mt-3 sm:mt-0 sm:ml-3">
-                <a
-                  :href="cta2.link"
-                  :target="cta2.target"
-                  class="
-                    w-full
-                    flex
-                    items-center
-                    justify-center
-                    px-8
-                    py-3
-                    border border-transparent
-                    text-base
-                    font-medium
-                    rounded-md
-                    text-orange-700
-                    bg-orange-100
-                    hover:bg-orange-200
-                    md:py-4 md:text-lg md:px-10
-                  "
-                >
-                  {{ cta2.title }}
-                </a>
-              </div>
+                {{ cta.title }}
+              </nuxt-link>
             </div>
           </div>
         </main>
@@ -533,7 +486,7 @@ export default {
         title: 'Watch the Lectures',
         link: '#lectures',
       },
-      cta2: {
+      speakerSubmission: {
         enabled: true,
         title: 'Be a speaker',
         link: 'https://forms.gle/t3hHEpnoopXmRxaHA',
