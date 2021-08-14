@@ -20,7 +20,7 @@
           class="
             text-center
             font-bold
-            text-xl text-white text-under
+            text-md text-white text-under
             w-full
             h-full
             no-underline
@@ -40,8 +40,8 @@ export default {
     return {
       past: [
         {
-          year: '2020',
-          site: 'https://google.com',
+          year: '2020 lectures',
+          site: 'https://www.youtube.com/channel/UCPK_UHtbfcWABCi0F0GPG6w',
         },
       ],
     }
