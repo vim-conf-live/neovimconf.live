@@ -16,26 +16,26 @@
       transform
       origin-top-right
       md:hidden
+      rounded-lg
     "
   >
     <div
       class="
         rounded-lg
         shadow-md
-        bg-white
+        bg-gray-800
         ring-1 ring-black ring-opacity-5
         overflow-hidden
       "
     >
       <div class="px-5 pt-4 flex items-center justify-between">
         <div>
-          <Logo color="black" />
+          <Logo color="white" />
         </div>
         <div class="-mr-2">
           <button
             type="button"
             class="
-              bg-white
               rounded-md
               p-2
               inline-flex
