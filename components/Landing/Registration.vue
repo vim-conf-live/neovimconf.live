@@ -21,7 +21,7 @@
               <nuxt-link
                 :to="'/code-of-conduct'"
                 target="_blank"
-                class="font-semibold underline"
+                class="underline"
               >
                 Code of Conduct
               </nuxt-link>
