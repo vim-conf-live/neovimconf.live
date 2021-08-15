@@ -6,6 +6,7 @@
     <LandingSpeakers  id="speakers" />
     <LandingAgenda  id="agenda" />
     <LandingSponsors id="sponsor" />
+    <LandingFooter />
   </div>
 </template>
 
