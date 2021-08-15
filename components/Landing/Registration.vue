@@ -1,7 +1,7 @@
 <template>
 	<main class="registration-form">
     <form @submit.prevent @submit="register">
-	   	<div class="grid grid-cols-12 mt-6 gap-1 md:gap-0">
+	   	<div class="grid grid-cols-12 mt-6 gap-1">
 	   		<div class="col-span-7 md:col-span-4">
 	   			<label for="email" class="text-sm font-bold mb-2 px-0 text-base text-gray-200">
 	   				Email Address
@@ -12,7 +12,7 @@
 	   			type="email"
           autocomplete="off"
 	   			placeholder="johndoe@vimconf.com"
-	   			class="rounded shadow h-12 text-orange-600"
+	   			class="rounded shadow h-12 text-orange-600 firefox-fix"
           @focus="showDisclaimer()"
 	   			/>
           <transition name="fade">
@@ -128,6 +128,9 @@
 	}
 </script>
 <style scoped>
+  .firefox-fix {
+    width: -moz-available;
+  }
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;
   }
