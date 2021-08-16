@@ -39,6 +39,41 @@ module.exports = {
         roboto: ['Roboto', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.gray.200'),
+            a: {
+              color: theme('colors.gray.900'),
+              textDecoration: 'underline',
+            },
+            strong: {
+              color: theme('colors.white'),
+            },
+            'ol > li::before': {
+              color: theme('colors.gray.100'),
+            },
+            'ul > li::before': {
+              backgroundColor: theme('colors.gray.100'),
+            },
+            hr: {
+              borderColor: theme('colors.gray.200'),
+            },
+            h1: {
+              color: theme('colors.white'),
+            },
+            h2: {
+              color: theme('colors.white'),
+            },
+            h3: {
+              color: theme('colors.white'),
+            },
+            h4: {
+              color: theme('colors.white'),
+            },
+          },
+        },
+      }),
     },
   },
   variants: {
