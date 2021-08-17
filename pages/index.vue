@@ -18,7 +18,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: "Oct 29/30th",
+        content: "October 29/30th",
       },
 
       {
