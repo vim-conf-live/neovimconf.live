@@ -8,7 +8,7 @@
           <!-- <h2 class="text-3xl font-extrabold text-white sm:text-4xl text-center">
             {{ title }}
           </h2> -->
-          <div class="sm:px-5 lg:px-20 prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
+          <div class="sm:px-5 lg:px-28 prose prose-sm sm:prose lg:prose xl:prose-lg">
             <h1 id="code-of-conduct">Code of Conduct</h1>
             <p>Vimconf.live is an inclusive community.</p>
             <h2 id="join-us">Join us!</h2>

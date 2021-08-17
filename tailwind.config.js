@@ -43,6 +43,7 @@ module.exports = {
         DEFAULT: {
           css: {
             color: theme('colors.gray.200'),
+            maxWidth: null,
             a: {
               color: theme('colors.gray.900'),
               textDecoration: 'underline',
