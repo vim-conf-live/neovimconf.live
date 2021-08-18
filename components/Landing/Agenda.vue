@@ -34,7 +34,20 @@
           >🗓️ Add to Google calendar</a
         >
       </p>
-      <dl
+      <h2
+        class="
+          mt-32
+          text-2xl
+          font-extrabold
+          text-white
+          sm:text-2xl
+          uppercase
+          text-center
+        "
+      >
+        COMING SOON!
+      </h2>
+      <!--      <dl
         class="
           mt-8
           space-y-10
@@ -58,7 +71,7 @@
             {{ item.desc }}
           </dd>
         </div>
-      </dl>
+      </dl> -->
     </div>
   </div>
 </template>
