@@ -53,7 +53,12 @@ export default {
         },
       ],
       swiperOption: {
-        slidesPerView: 3,
+        slidesPerView:
+          this.$screen.breakpoint === 'xs'
+            ? 1
+            : this.$screen.breakpoint === 'sm'
+            ? 2
+            : 4,
         spaceBetween: 30,
         autoplay: {
           delay: 2500,

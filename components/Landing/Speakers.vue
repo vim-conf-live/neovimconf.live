@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
     <h2 class="text-3xl font-extrabold text-white sm:text-4xl text-center">
-      Our Speakers $screen.breakpoint {{ $screen.breakpoint }}
+      Our Speakers
     </h2>
 
     <p
