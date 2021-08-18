@@ -67,7 +67,7 @@ export default {
 
       {
         name: "twitter:site",
-        content: "@vimconf"
+        content: "@VimconfLive"
       },
       { name: "twitter:card",
         content: "/vimconf.jpg"
