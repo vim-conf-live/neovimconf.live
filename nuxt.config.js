@@ -7,14 +7,86 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: `Vimconf.live - The world's virtual vim conference.`,
+    title: "Vimconf 2021 - it's on!",
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: 'Vimconf.Live - The virtual vim conference',
+        content: 'October 29/30th',
+      },
+
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: "Vim Virtual's Conf",
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://www.vimconf.live/',
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: "Join the world's first virtual Vim conference Oct 29/30th",
+      },
+      {
+        hid: 'theme-color',
+        property: 'theme-color',
+        content: '#111827',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          'Connecting the vim community to share their love and passion for all things vim!',
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: '/vimconf.jpg',
+      },
+      {
+        property: 'og:image:width',
+        content: '256',
+      },
+      {
+        property: 'og:image:height',
+        content: '256',
+      },
+
+      {
+        name: 'twitter:site',
+        content: '@vimconf',
+      },
+      { name: 'twitter:card', content: '/vimconf.jpg' },
+      {
+        hid: 'twitter:url',
+        name: 'twitter:url',
+        content: 'https://www.vimconf.live',
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: "Join the world's first virtual Vim conference Oct 29/30th",
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content:
+          'Connecting the vim community to share their love and passion for all things vim!',
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: '/vimconf.jpg',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
