@@ -1,8 +1,9 @@
 <template>
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
     <h2 class="text-3xl font-extrabold text-white sm:text-4xl text-center">
-      Our Speakers
+      Our Speakers $screen.breakpoint {{ $screen.breakpoint }}
     </h2>
+
     <p
       class="
         mt-2
@@ -96,7 +97,12 @@ export default {
       speakers,
       swiperOption: {
         autoHeight: true,
-        slidesPerView: 4,
+        slidesPerView:
+          this.$screen.breakpoint === 'xs'
+            ? 1
+            : this.$screen.breakpoint === 'sm'
+            ? 2
+            : 4,
         spaceBetween: 30,
         autoplay: {
           delay: 2500,

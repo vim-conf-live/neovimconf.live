@@ -26,7 +26,7 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     { src: '~/plugins/vue-awesome-swiper', ssr: false },
-    "~/plugins/userbase.client.js",
+    '~/plugins/userbase.client.js',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -45,13 +45,9 @@ export default {
       {
         component: 'fa',
         icons: {
-          solid: [
-            'faCircle',
-            'faLock',
-            'faTicketAlt',
-          ],
-        }
-      }
+          solid: ['faCircle', 'faLock', 'faTicketAlt'],
+        },
+      },
     ],
     [
       '@nuxtjs/google-fonts',
@@ -66,6 +62,7 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    'vue-screen/nuxt',
     'portal-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
@@ -104,6 +101,10 @@ export default {
     userbase: {
       appId: process.env.USERBASE_APP_ID,
     },
+  },
+
+  screen: {
+    extend: 'tailwind',
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

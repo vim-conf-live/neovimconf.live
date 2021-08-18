@@ -27,7 +27,8 @@
     "portal-vue": "^2.1.7",
     "swiper": "^6.8.1",
     "userbase-js": "^2.8.0",
-    "vue-awesome-swiper": "^4.1.1"
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-screen": "^1.5.3"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
