@@ -34,7 +34,12 @@
                 </div>
                 <ul class="flex justify-center space-x-5">
                   <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <a
+                      :href="item.twitter"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      class="text-gray-400 hover:text-gray-500"
+                    >
                       <span class="sr-only">Twitter</span>
                       <svg
                         class="w-5 h-5"
@@ -49,7 +54,12 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <a
+                      href="#"
+                      class="text-gray-400 hover:text-gray-500"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
                       <span class="sr-only">LinkedIn</span>
                       <svg
                         class="w-5 h-5"

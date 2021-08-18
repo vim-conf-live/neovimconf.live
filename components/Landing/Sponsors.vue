@@ -20,7 +20,9 @@
       <client-only>
         <swiper class="swiper" :options="swiperOption">
           <swiper-slide v-for="(item, index) in sponsors" :key="index">
-            <img provider="static" :src="item.src" :alt="item.alt" />
+            <a :href="item.url" rel="noopener noreferrer" target="_blank">
+              <img provider="static" :src="item.src" :alt="item.alt"
+            /></a>
           </swiper-slide>
           <div slot="pagination" class="swiper-pagination"></div>
           <div slot="button-prev" class="swiper-button-prev"></div>
@@ -37,8 +39,9 @@ export default {
     return {
       sponsors: [
         {
-          src: 'https://via.placeholder.com/512x512',
+          src: 'https://cdn.discordapp.com/attachments/731764420744839288/877561144569634836/conf.jpg',
           alt: 'Sponsor',
+          url: 'https://t.co/JYLmoH7ftf?amp=1',
         },
         {
           src: 'https://via.placeholder.com/512x512',
