@@ -51,22 +51,25 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '/vimconf.jpg',
+        content: 'https://www.vimconf.live/vimconf.jpg',
       },
       {
         property: 'og:image:width',
-        content: '256',
+        content: '1200',
       },
       {
         property: 'og:image:height',
-        content: '256',
+        content: '630',
       },
 
       {
         name: 'twitter:site',
-        content: '@vimconf',
+        content: '@VimconfLive',
       },
-      { name: 'twitter:card', content: '/vimconf.jpg' },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
       {
         hid: 'twitter:url',
         name: 'twitter:url',
@@ -84,9 +87,14 @@ export default {
           'Connecting the vim community to share their love and passion for all things vim!',
       },
       {
+        hid: 'twitter:creator',
+        name: 'twitter:creator',
+        content: '@VimconfLive',
+      },
+      {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: '/vimconf.jpg',
+        content: 'https://www.vimconf.live/vimconf.jpg',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],

@@ -16,16 +16,16 @@
             @focus="showDisclaimer()"
 	   			/>
           <transition name="fade">
-	   			  <span v-show="shouldShowDisclaimer" class="text-gray-200 text-sm italic">
+	   			  <div v-show="shouldShowDisclaimer" class="block text-gray-200 text-sm italic">
               By registering you agree to our
               <nuxt-link
                 :to="'/code-of-conduct'"
                 target="_blank"
-                class="underline"
+                class="underline block"
               >
                 Code of Conduct
               </nuxt-link>
-            </span>
+            </div>
           </transition>
 	   		</div>
 	   		<div class="pt-6 col-span-5 md:col-span-3">
