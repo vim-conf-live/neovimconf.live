@@ -5,7 +5,7 @@
     <LandingWatch id="lectures" />
     <LandingSpeakers id="speakers" />
     <LandingAgenda id="agenda" />
-    <LandingSponsors id="sponsor" />
+    <LandingSponsors id="sponsors" />
     <LandingFooter />
   </div>
 </template>
