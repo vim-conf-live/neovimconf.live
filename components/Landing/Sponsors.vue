@@ -44,8 +44,9 @@ export default {
           url: 'https://t.co/JYLmoH7ftf?amp=1',
         },
         {
-          src: 'https://via.placeholder.com/512x512',
+          src: 'https://cdn.discordapp.com/attachments/731764420744839288/879024918015143984/RGB_-_Linode_-_Square_-_FC_-_BLK2x.png',
           alt: 'Sponsor',
+          url: 'https://www.linode.com/',
         },
         {
           src: 'https://via.placeholder.com/512x512',
