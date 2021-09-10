@@ -48,12 +48,10 @@ export default {
           alt: 'Sponsor',
           url: 'https://www.linode.com/',
         },
-        {
-          src: 'https://via.placeholder.com/512x512',
-          alt: 'Sponsor',
-        },
       ],
       swiperOption: {
+        centeredSlides: true,
+        initialSlide: 1,
         slidesPerView:
           this.$screen.breakpoint === 'xs'
             ? 1
@@ -89,9 +87,6 @@ export default {
   --swiper-theme-color: #f97316;
 }
 .swiper .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   font-weight: bold;
   font-size: 16px;
