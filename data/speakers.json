@@ -51,7 +51,7 @@
     {
       "name": "Jesse Atkinson",
       "job": "Senior Software Engineer",
-      "picture": "../static/img/speakers/jesse-atkinson.jpg",
+      "picture": "/img/speakers/jesse-atkinson.jpg",
       "twitter": "https://twitter.com/jsatk"
     }
   ]
