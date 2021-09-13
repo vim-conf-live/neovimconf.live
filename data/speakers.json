@@ -47,6 +47,12 @@
       "job": "Senior Developer Advocate",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/884181603394408529/mike-headshot-2_1.png",
       "twitter": ""
+    },
+    {
+      "name": "Jesse Atkinson",
+      "job": "Senior Software Engineer",
+      "picture": "../static/img/speakers/jesse-atkinson.jpg",
+      "twitter": "https://twitter.com/jsatk"
     }
   ]
 }
