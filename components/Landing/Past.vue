@@ -1,5 +1,5 @@
 <template>
-  <div class="p-0 m-0 fixed left-0 top-20 md:top-28 z-40">
+  <div class="p-0 m-0 absolute left-0 top-20 md:top-28 z-40">
     <ul class="absolute w-60 z-10">
       <li
         v-for="(item, index) in past"
