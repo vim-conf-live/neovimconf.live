@@ -4,7 +4,6 @@
       <div
         class="
           relative
-          z-10
           pb-8
           sm:pb-16
           md:pb-20

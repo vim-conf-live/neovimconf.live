@@ -1,6 +1,6 @@
 <template>
   <div class="p-0 m-0 fixed left-0 top-20 md:top-28 z-40">
-    <ul class="sticky">
+    <ul class="absolute w-60 z-10">
       <li
         v-for="(item, index) in past"
         :key="index"
@@ -23,6 +23,7 @@
             text-md text-white text-under
             w-full
             h-full
+            w-60
             no-underline
           "
           :href="item.site"
