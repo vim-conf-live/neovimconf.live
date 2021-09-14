@@ -1,31 +1,8 @@
 <template>
   <div class="relative overflow-hidden">
     <div class="max-w-7xl mx-auto">
-      <div
-        class="
-          relative
-          pb-8
-          sm:pb-16
-          md:pb-20
-          lg:max-w-2xl
-          lg:w-full
-          lg:pb-28
-          xl:pb-32
-        "
-      >
-        <svg
-          class="
-            hidden
-            lg:block
-            absolute
-            right-0
-            inset-y-0
-            h-full
-            w-48
-            text-gray-900
-            transform
-            translate-x-1/3
-          "
+      <div class=" relative pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 ">
+        <svg class=" hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-gray-900 transform translate-x-1/3"
           fill="currentColor"
           viewBox="0 0 110 40"
           preserveAspectRatio="none"
@@ -36,31 +13,9 @@
 
         <Navigation />
 
-        <main
-          class="
-            mt-10
-            mx-auto
-            max-w-7xl
-            px-4
-            sm:mt-12
-            sm:px-6
-            md:mt-16
-            lg:mt-20
-            lg:px-8
-            xl:mt-28
-          "
-        >
+        <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
           <div class="sm:text-center lg:text-left">
-            <h1
-              class="
-                text-4xl
-                tracking-tight
-                font-extrabold
-                text-white
-                sm:text-5xl
-                md:text-6xl
-              "
-            >
+            <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
               <span class="block xl:inline">{{ header.title }}</span>
               <span class="block xl:inline text-orange-500">{{
                 header.subTitle
@@ -69,19 +24,7 @@
                 header.dateTitle
               }}</span>
             </h1>
-            <p
-              class="
-                mt-3
-                text-base text-gray-200
-                sm:mt-5
-                sm:text-lg
-                sm:max-w-xl
-                sm:mx-auto
-                md:mt-5
-                md:text-xl
-                lg:mx-0
-              "
-            >
+            <p class="mt-3 text-base text-gray-200 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
               {{ desc }}
             </p>
             <LandingRegistration />
@@ -90,25 +33,7 @@
             <div v-if="cta.enabled" class="rounded-md shadow">
               <nuxt-link
                 :to="cta.link"
-                class="
-                  w-full
-                  flex
-                  items-center
-                  justify-center
-                  px-8
-                  py-3
-                  border border-transparent
-                  text-base
-                  font-medium
-                  rounded-md
-                  text-white
-                  bg-orange-600
-                  hover:bg-orange-700
-                  md:py-4
-                  md:text-lg
-                  md:px-10
-                "
-              >
+                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 md:py-4 md:text-lg md:px-10">
                 {{ cta.title }}
               </nuxt-link>
             </div>

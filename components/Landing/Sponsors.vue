@@ -3,16 +3,7 @@
     <h2 class="text-3xl font-extrabold text-white sm:text-4xl text-center">
       Sponsors
     </h2>
-    <p
-      class="
-        mt-2
-        text-center text-base
-        font-semibold
-        uppercase
-        text-gray-200
-        tracking-wider
-      "
-    >
+    <p class="mt-2 text-center text-base font-semibold uppercase text-gray-200 tracking-wider">
       We're grateful to have the following sponsors supporting this event and
       vim love globally!
     </p>
