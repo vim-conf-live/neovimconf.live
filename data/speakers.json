@@ -15,6 +15,13 @@
     {
       "name": "TJ DeVries",
       "job": "Wannabe Prime",
+      "highlights": [
+        {
+          "name": "Neovim Core",
+          "url": "https://neovim.io/",
+          "image": ""
+        }
+      ],
       "picture": "https://cdn.discordapp.com/attachments/834806296455675905/877205035166081034/4466899.jpeg",
       "twitter": "https://twitter.com/TeejDeVries"
     },
@@ -39,7 +46,6 @@
     {
       "name": "Justin Restivo",
       "job": "Embedded Software Engineer",
-      "picture": "https://filehost.restivo.me/code/view/wiggly-yarn-foregoing-hope.txt",
       "twitter": ""
     },
     {

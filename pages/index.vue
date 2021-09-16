@@ -3,7 +3,7 @@
     <LandingPast />
     <LandingHero />
     <LandingWatch id="lectures" />
-    <LandingSpeakers id="speakers" />
+    <LandingSpeakersGrid />
     <LandingAgenda id="agenda" />
     <LandingSponsors id="sponsors" />
     <LandingFooter />
