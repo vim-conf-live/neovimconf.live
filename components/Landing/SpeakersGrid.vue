@@ -27,7 +27,12 @@
           <div class="speaker-name font-bold text-xl text-gray-100 font-lg">{{ item.name }}</div>
           <div class="speaker-job text-gray-400 mb-2 font-xs italic">{{ item.job }}</div>
           <p class="speaker-highlights text-gray-200">
-            <a class="badge" v-for="(highlight, index) in item.highlights" :key="index" :href="highlight.url">
+            <a
+              v-for="(highlight, highlightIndex) in item.highlights"
+              :key="highlightIndex"
+              :href="highlight.url"
+              class="badge"
+            >
               {{highlight.name}}
             </a>
           </p>
@@ -83,7 +88,6 @@
 
   </div>
 </template>
-
 
 <script>
 import { speakers } from '../../data/speakers.json'

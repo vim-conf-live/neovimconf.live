@@ -2,7 +2,7 @@
   <div class="relative overflow-hidden">
     <div class="max-w-7xl mx-auto">
       <div class=" relative pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 ">
-        <svg class=" hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-gray-900 transform translate-x-1/3"
+        <svg class="fancySkew hidden z-20 lg:block absolute right-0 inset-y-0 h-full w-48 text-gray-900 transform translate-x-1/3"
           fill="currentColor"
           viewBox="0 0 110 40"
           preserveAspectRatio="none"

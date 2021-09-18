@@ -59,6 +59,12 @@
       "job": "Senior Software Engineer",
       "picture": "/img/speakers/jesse-atkinson.jpg",
       "twitter": "https://twitter.com/jsatk"
+    },
+    {
+      "name": "Anton Kastritskiy",
+      "job": "Sr Frontend Engineer",
+      "picture": "https://github.com/antonk52.png",
+      "twitter": "https://twitter.com/antonk52"
     }
   ]
 }
