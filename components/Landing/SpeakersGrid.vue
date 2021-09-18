@@ -28,7 +28,8 @@
           <div class="speaker-job text-gray-400 mb-2 font-xs italic">{{ item.job }}</div>
           <p class="speaker-highlights text-gray-200">
             <a
-              v-for="(highlight, highlightIndex) in item.highlights"
+              v-for="(highlight, highlightIndex) in shuffle(item.highlights || [])"
+              v-show="highlightIndex == 0"
               :key="highlightIndex"
               :href="highlight.url"
               class="badge"
@@ -61,7 +62,7 @@
             </li>
             <li>
               <a
-                href="#"
+                :href="item.linkedin"
                 class="text-gray-400 hover:text-gray-500"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -124,6 +125,13 @@ export default {
     openCard() {
       this.isCardOpen = true;
     },
+    shuffle(a) {
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    },
   }
 }
 </script>
@@ -155,8 +163,9 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
   }
+  /* .speaker-card.card-mod */
   .speaker-card.card-mod {
-    padding: 1em;
+    border-bottom: #f97316;
   }
   .card-image {
     height: 100px;

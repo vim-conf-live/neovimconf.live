@@ -4,13 +4,15 @@
       "name": "ThePrimeagen",
       "job": "MC of Vimconf",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/879023809049542696/MeScience.jpeg",
-      "twitter": "https://twitter.com/ThePrimeagen"
+      "twitter": "https://twitter.com/ThePrimeagen",
+      "linkedin": "#"
     },
     {
       "name": "Jess Archer",
       "job": "Web App Developer",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/884899717320933407/jessarcher.jpg",
-      "twitter": "https://twitter.com/jessarchercodes"
+      "twitter": "https://twitter.com/jessarchercodes",
+      "linkedin": "#"
     },
     {
       "name": "TJ DeVries",
@@ -23,48 +25,80 @@
         }
       ],
       "picture": "https://cdn.discordapp.com/attachments/834806296455675905/877205035166081034/4466899.jpeg",
-      "twitter": "https://twitter.com/TeejDeVries"
+      "twitter": "https://twitter.com/TeejDeVries",
+      "linkedin": "#"
     },
     {
       "name": "Mark Hegreberg",
       "job": "Software engineer in Civic Tech",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/877558813220307054/square_prof.png",
-      "twitter": ""
+      "twitter": "",
+      "linkedin": "#"
     },
     {
       "name": "Theena Kumaragurunathan",
       "job": "Novelist",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/879023663272329236/avatarforVimConf.jpg",
-      "twitter": ""
+      "twitter": "",
+      "linkedin": "#"
     },
     {
       "name": "Waylon Walker",
       "job": "Data Science Team Lead",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/883791580174110800/vimconf-waylonwalker-profile.jpg",
-      "twitter": "https://twitter.com/_WaylonWalker"
+      "twitter": "https://twitter.com/_WaylonWalker",
+      "linkedin": "#"
     },
     {
       "name": "Justin Restivo",
       "job": "Embedded Software Engineer",
-      "twitter": ""
+      "twitter": "",
+      "linkedin": "#"
     },
     {
       "name": "Mike Hartington",
       "job": "Senior Developer Advocate",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/884181603394408529/mike-headshot-2_1.png",
-      "twitter": ""
+      "twitter": "",
+      "linkedin": "#"
     },
     {
       "name": "Jesse Atkinson",
       "job": "Senior Software Engineer",
       "picture": "/img/speakers/jesse-atkinson.jpg",
-      "twitter": "https://twitter.com/jsatk"
+      "twitter": "https://twitter.com/jsatk",
+      "linkedin": "#"
     },
     {
       "name": "Anton Kastritskiy",
       "job": "Sr Frontend Engineer",
       "picture": "https://github.com/antonk52.png",
-      "twitter": "https://twitter.com/antonk52"
+      "twitter": "https://twitter.com/antonk52",
+      "linkedin": "#"
+    },
+    {
+      "name": "Chip Senkbeil",
+      "job": "Solutions Engineer",
+      "highlights": [
+        {
+          "name": "Apache Toree PPMC",
+          "url": "https://toree.incubator.apache.org/",
+          "image": ""
+        },
+        {
+          "name": "Distant Author",
+          "url": "https://github.com/chipsenkbeil/distant",
+          "image": ""
+        },
+        {
+          "name": "Vimwiki Maintainer",
+          "url": "https://github.com/vimwiki/vimwiki",
+          "image": ""
+        }
+      ],
+      "picture": "/img/speakers/chipsenkbeil.jpg",
+      "twitter": "https://twitter.com/ChipSenkbeil",
+      "linkedin": "https://www.linkedin.com/in/robertsenkbeil"
     }
   ]
 }
