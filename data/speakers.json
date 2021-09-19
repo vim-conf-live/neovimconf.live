@@ -5,7 +5,14 @@
       "job": "MC of Vimconf",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/879023809049542696/MeScience.jpeg",
       "twitter": "https://twitter.com/ThePrimeagen",
-      "linkedin": "#"
+      "linkedin": "#",
+      "highlights": [
+        {
+          "name": "Harpoon",
+          "url": "https://github.com/ThePrimeagen/harpoon",
+          "image": "https://github.com/ThePrimeagen/harpoon/raw/master/harpoon.png"
+        }
+      ]
     },
     {
       "name": "Jess Archer",
@@ -22,6 +29,11 @@
           "name": "Neovim Core",
           "url": "https://neovim.io/",
           "image": ""
+        },
+        {
+          "name": "Telescope",
+          "url": "https://github.com/nvim-telescope",
+          "image": "https://avatars.githubusercontent.com/u/74419533?s=200&v=4"
         }
       ],
       "picture": "https://cdn.discordapp.com/attachments/834806296455675905/877205035166081034/4466899.jpeg",
