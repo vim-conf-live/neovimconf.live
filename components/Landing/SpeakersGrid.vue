@@ -212,6 +212,7 @@ export default {
     margin-right: .5em;
   }
   .card-info .links {
+    margin-top: 5px;
     padding: .2rem;
   }
 
