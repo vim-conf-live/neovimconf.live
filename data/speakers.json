@@ -79,7 +79,7 @@
       "job": "Senior Software Engineer",
       "picture": "/img/speakers/jesse-atkinson.jpg",
       "twitter": "https://twitter.com/jsatk",
-      "linkedin": "#"
+      "linkedin": "https://jsatk.us/about/"
     },
     {
       "name": "Anton Kastritskiy",
@@ -87,6 +87,27 @@
       "picture": "https://github.com/antonk52.png",
       "twitter": "https://twitter.com/antonk52",
       "linkedin": "#"
+    },
+    {
+      "name": "Hao Wang",
+      "job": "Leand Engineer @ Soundcloud",
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889252307894698054/pic_1.jpg",
+      "twitter": "",
+      "linkedin": "#"
+    },
+    {
+      "name": "Jonas B. Rossi",
+      "job": "Former Backend Dev moving into Ops",
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889255896318877727/rossijonas-profile-pic.jpg",
+      "twitter": "https://twitter.com/rossijonas",
+      "linkedin": "http://alldrops.info/"
+    },
+    {
+      "name": "Ben Smith",
+      "job": "Web Developer",
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889256386368782397/ben-128-128.jpeg",
+      "twitter": "",
+      "linkedin": ""
     },
     {
       "name": "Chip Senkbeil",
