@@ -31,6 +31,7 @@
               v-for="(highlight, highlightIndex) in shuffle(item.highlights || [])"
               v-show="highlightIndex == 0"
               :key="highlightIndex"
+              target="_blank"
               :href="highlight.url"
               class="badge"
             >
@@ -43,8 +44,8 @@
             <li>
               <a
                 :href="item.twitter"
-                rel="noopener noreferrer"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="text-gray-400 hover:text-gray-500"
               >
                 <span class="sr-only">Twitter</span>
@@ -97,20 +98,19 @@ import { speakers } from '../../data/speakers.json'
  * Shuffles array in place. ES6 version
  * @param {Array} a items An array containing the items.
  */
-function shuffle(a) {
-    for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-}
-const shuffledSpeakers = shuffle(speakers);
+/* function shuffle(a) { */
+/*     for (let i = a.length - 1; i > 0; i--) { */
+/*         const j = Math.floor(Math.random() * (i + 1)); */
+/*         [a[i], a[j]] = [a[j], a[i]]; */
+/*     } */
+/*     return a; */
+/* } */
 
 export default {
   data() {
     return {
         speakers,
-        shuffledSpeakers,
+        shuffledSpeakers: this.shuffle(speakers),
         isCardOpen: false,
       }
   },
@@ -163,7 +163,6 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
   }
-  /* .speaker-card.card-mod */
   .speaker-card.card-mod {
     border-bottom: #f97316;
   }
@@ -192,7 +191,6 @@ export default {
     height: 200px;
     width: 200px;
   }
-
   .card-info {
     padding: 1px;
   }
@@ -205,7 +203,7 @@ export default {
   .card-info .general .speaker-highlights {
     margin-top: 2px;
   }
-  .card-info .general .speaker-highlights >a {
+  .card-info .general .speaker-highlights > a {
     background-color: rgba(234, 88, 12, var(--tw-bg-opacity));
     border-radius: 3px;
     padding: 2px;
