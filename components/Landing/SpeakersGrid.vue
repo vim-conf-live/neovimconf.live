@@ -16,7 +16,7 @@
       :class="{ open: isCardOpen}"
       @click="toggleCard()"
       >
-      <div class="card-image rounded-full w-100 h-80 overflow-hidden object-fill">
+      <div class="card-image rounded-full overflow-hidden object-fill">
         <img v-show="item.picture" :src="item.picture"
           alt="item.name || ''"
           class="w-full"
@@ -141,7 +141,6 @@ export default {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
@@ -162,15 +161,18 @@ export default {
     color: white;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
+    display: flex;
+    align-items: center;
   }
   .speaker-card.card-mod {
     border-bottom: #f97316;
   }
   .card-image {
-    height: 100px;
-    width: 100px;
+    height: 115px;
+    width: 115px;
     border-radius: 99999px;
     overflow: hidden;
+    min-width: 120px;
   }
   .card-image img {
     height: 100%;
@@ -193,6 +195,7 @@ export default {
   }
   .card-info {
     padding: 1px;
+    padding-left: 1em;
   }
   .card-info .general {
     height: 75%;
@@ -220,7 +223,6 @@ export default {
       width: 100%;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
       grid-column-gap: 10px;
       grid-row-gap: 10px;
       grid-auto-rows: minmax(100px, auto);
