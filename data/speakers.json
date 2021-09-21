@@ -22,6 +22,13 @@
       "linkedin": "#"
     },
     {
+      "name": "Tae Won Ha",
+      "job": "IT Consultant",
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889535613563437117/Tae_Won_HA_square_128.png",
+      "twitter": "https://twitter.com/hataewon",
+      "linkedin": "https://www.linkedin.com/in/tae-won-ha-a0069830"
+    },
+    {
       "name": "TJ DeVries",
       "job": "Wannabe Prime",
       "highlights": [
@@ -46,6 +53,13 @@
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/877558813220307054/square_prof.png",
       "twitter": "",
       "linkedin": "#"
+    },
+    {
+      "name": "Robertus Chris",
+      "job": "Fresh graduate",
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889538508925054976/profile-picture.png",
+      "twitter": "",
+      "linkedin": "https://linktr.ee/bruhtus"
     },
     {
       "name": "Theena Kumaragurunathan",
@@ -79,14 +93,35 @@
       "job": "Senior Software Engineer",
       "picture": "/img/speakers/jesse-atkinson.jpg",
       "twitter": "https://twitter.com/jsatk",
-      "linkedin": "#"
+      "linkedin": "https://jsatk.us/about/"
     },
     {
       "name": "Anton Kastritskiy",
-      "job": "Sr Frontend Engineer",
+      "job": "Sr. Frontend Engineer",
       "picture": "https://github.com/antonk52.png",
       "twitter": "https://twitter.com/antonk52",
       "linkedin": "#"
+    },
+    {
+      "name": "Hao Wang",
+      "job": "Lead Engineer @ Soundcloud",
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889252307894698054/pic_1.jpg",
+      "twitter": "",
+      "linkedin": "#"
+    },
+    {
+      "name": "Jonas B. Rossi",
+      "job": "Former Backend Dev moving into Ops",
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889255896318877727/rossijonas-profile-pic.jpg",
+      "twitter": "https://twitter.com/rossijonas",
+      "linkedin": "http://alldrops.info/"
+    },
+    {
+      "name": "Ben Smith",
+      "job": "Web Developer",
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889256386368782397/ben-128-128.jpeg",
+      "twitter": "",
+      "linkedin": ""
     },
     {
       "name": "Chip Senkbeil",
