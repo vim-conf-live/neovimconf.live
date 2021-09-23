@@ -174,9 +174,6 @@ export default {
     overflow: hidden;
     min-width: 120px;
   }
-  .card-image img {
-    height: 100%;
-  }
   .speaker-card.open {
     width: 90vw;
     height: 85vh;

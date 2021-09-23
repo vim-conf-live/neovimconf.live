@@ -45,7 +45,7 @@ export default {
         initialSlide: 1,
         slidesPerView:
           this.$screen.breakpoint === 'xs'
-            ? 1
+            ? 1.5
             : this.$screen.breakpoint === 'sm'
             ? 2
             : 4,
@@ -81,5 +81,11 @@ export default {
   text-align: center;
   font-weight: bold;
   font-size: 16px;
+}
+@media (max-width: 980px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
 }
 </style>
