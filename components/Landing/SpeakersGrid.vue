@@ -41,7 +41,7 @@
         </div>
         <div class="links">
           <ul class="flex space-x-5">
-            <li>
+            <li v-if="currentSpeaker.twitter && currentSpeaker.length > 2">
               <a
                 :href="currentSpeaker.twitter"
                 target="_blank"
@@ -52,7 +52,7 @@
                 <LandingSvgIconsTwitter />
               </a>
             </li>
-            <li>
+            <li v-if="currentSpeaker.linkedin && currentSpeaker.linkedin.length > 2">
               <a
                 :href="currentSpeaker.linkedin"
                 class="text-gray-400 hover:text-gray-500"
@@ -63,7 +63,7 @@
                 <LandingSvgIconsLinkedIn />
               </a>
             </li>
-            <li>
+            <li v-if="currentSpeaker.github && currentSpeaker.github.length > 2">
               <a
                 :href="currentSpeaker.github"
                 class="text-gray-400 hover:text-gray-500"
@@ -74,7 +74,7 @@
                 <LandingSvgIconsGithub />
               </a>
             </li>
-            <li>
+            <li v-if="currentSpeaker.website && currentSpeaker.website.length > 2">
               <a
                 :href="currentSpeaker.website"
                 class="text-gray-400 hover:text-gray-500"
