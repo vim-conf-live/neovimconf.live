@@ -41,7 +41,7 @@
         </div>
         <div class="links">
           <ul class="flex space-x-5">
-            <li v-if="currentSpeaker.twitter && currentSpeaker.length > 2">
+            <li v-if="currentSpeaker.twitter && currentSpeaker.twitter.length > 2">
               <a
                 :href="currentSpeaker.twitter"
                 target="_blank"
