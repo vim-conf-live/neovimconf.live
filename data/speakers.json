@@ -89,7 +89,15 @@
       "picture": "https://raw.githubusercontent.com/DieracDelta/DieracDelta.github.io/master/images/selfie_resized.jpg",
       "twitter": "",
       "github": "https://github.com/DieracDelta",
-      "linkedin": "https://www.linkedin.com/in/justinprestivo/"
+      "linkedin": "https://www.linkedin.com/in/justinprestivo/",
+      "website": "https://justin.restivo.me",
+      "highlights": [
+        {
+          "name": "Personal Website",
+          "url": "https://justin.restivo.me",
+          "image": ""
+        }
+      ]
     },
     {
       "name": "Mike Hartington",
@@ -110,6 +118,7 @@
       "job": "Sr. Frontend Engineer",
       "picture": "https://github.com/antonk52.png",
       "twitter": "https://twitter.com/antonk52",
+      "github": "https://github.com/antonk52",
       "linkedin": "#"
     },
     {
@@ -155,6 +164,7 @@
       ],
       "picture": "/img/speakers/chipsenkbeil.jpg",
       "twitter": "https://twitter.com/ChipSenkbeil",
+      "github": "https://github.com/chipsenkbeil",
       "linkedin": "https://www.linkedin.com/in/robertsenkbeil"
     }
   ]
