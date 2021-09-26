@@ -11,24 +11,24 @@
           enrich the community!
         </p>
     </div>
-    <div v-for="(item, index) in speakers" :key="index"
-       class="speaker-card bg-white h-100 p-4 w-auto rounded-2xl mx-auto"
+    <div v-for="(currentSpeaker, index) in speakers" :key="index"
+      class="speaker-card bg-white h-100 p-4 w-auto rounded-2xl mx-auto"
       :class="{ open: isCardOpen}"
       @click="toggleCard()"
       >
       <div class="card-image rounded-full overflow-hidden object-fill">
-        <img v-show="item.picture" :src="item.picture"
-          alt="item.name || ''"
+        <img v-show="currentSpeaker.picture" :src="currentSpeaker.picture"
+          alt="currentSpeaker.name || ''"
           class="w-full"
         >
       </div>
       <div class="card-info">
         <div class="general">
-          <div class="speaker-name font-bold text-xl text-gray-100 font-lg">{{ item.name }}</div>
-          <div class="speaker-job text-gray-400 mb-2 font-xs italic">{{ item.job }}</div>
+          <div class="speaker-name font-bold text-xl text-gray-100 font-lg">{{ currentSpeaker.name }}</div>
+          <div class="speaker-job text-gray-400 mb-2 font-xs italic">{{ currentSpeaker.job }}</div>
           <p class="speaker-highlights text-gray-200">
             <a
-              v-for="(highlight, highlightIndex) in shuffle(item.highlights || [])"
+              v-for="(highlight, highlightIndex) in shuffle(currentSpeaker.highlights || [])"
               v-show="highlightIndex == 0"
               :key="highlightIndex"
               target="_blank"
@@ -43,7 +43,7 @@
           <ul class="flex space-x-5">
             <li>
               <a
-                :href="item.twitter"
+                :href="currentSpeaker.twitter"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-gray-400 hover:text-gray-500"
@@ -63,7 +63,7 @@
             </li>
             <li>
               <a
-                :href="item.linkedin"
+                :href="currentSpeaker.linkedin"
                 class="text-gray-400 hover:text-gray-500"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -83,28 +83,26 @@
                 </svg>
               </a>
             </li>
+            <li>
+              <a
+                :href="currentSpeaker.github"
+                class="text-gray-400 hover:text-gray-500"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span class="sr-only">Github</span>
+                <LandingSvgIconsGithub />
+              </a>
+            </li>
           </ul>
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
 import { speakers } from '../../data/speakers.json'
-
-/**
- * Shuffles array in place. ES6 version
- * @param {Array} a items An array containing the items.
- */
-/* function shuffle(a) { */
-/*     for (let i = a.length - 1; i > 0; i--) { */
-/*         const j = Math.floor(Math.random() * (i + 1)); */
-/*         [a[i], a[j]] = [a[j], a[i]]; */
-/*     } */
-/*     return a; */
-/* } */
 
 export default {
   data() {
