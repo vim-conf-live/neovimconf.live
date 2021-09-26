@@ -74,6 +74,17 @@
                 <LandingSvgIconsGithub />
               </a>
             </li>
+            <li>
+              <a
+                :href="currentSpeaker.website"
+                class="text-gray-400 hover:text-gray-500"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span class="sr-only">Website</span>
+                <LandingSvgIconsWebsite />
+              </a>
+            </li>
           </ul>
         </div>
       </div>
