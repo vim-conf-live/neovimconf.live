@@ -11,10 +11,10 @@
           enrich the community!
         </p>
     </div>
-    <div v-for="(currentSpeaker, index) in speakers" :key="index"
+    <div v-for="(currentSpeaker, index ) in speakers" :key="index"
       class="speaker-card bg-white h-100 p-4 w-auto rounded-2xl mx-auto"
-      :class="{ open: isCardOpen}"
-      @click="toggleCard()"
+      :class="{ open: isCardOpen && currentCard === index}"
+      @click="toggleCard(index)"
       >
       <div class="card-image rounded-full overflow-hidden object-fill">
         <img v-show="currentSpeaker.picture" :src="currentSpeaker.picture"
@@ -98,18 +98,21 @@ import { speakers } from '../../data/speakers.json'
 export default {
   data() {
     return {
+        currentCard: null,
         speakers,
         shuffledSpeakers: this.shuffle(speakers),
         isCardOpen: false,
       }
   },
   methods: {
-    toggleCard() {
-      // if (this.isCardOpen) {
-      //   this.isCardOpen = false;
-      // } else {
-      //   this.isCardOpen = true;
-      // }
+    toggleCard(targetCard) {
+      /* if (this.isCardOpen) { */
+      /*   this.currentCard = null; */
+      /*   this.isCardOpen = false; */
+      /* } else { */
+      /*   this.currentCard = targetCard; */
+      /*   this.isCardOpen = true; */
+      /* } */
     },
     openCard() {
       this.isCardOpen = true;
