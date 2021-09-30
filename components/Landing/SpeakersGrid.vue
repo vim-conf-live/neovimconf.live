@@ -132,10 +132,17 @@ export default {
     min-height: 300px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
+    /* grid-template-columns: repeat(1, 1fr); */
+    /* grid-column-gap: 10px; */
+    /* grid-row-gap: 10px; */
+    /* grid-auto-rows: minmax(100px, auto); */
+
+
+    /* grid-auto-columns: 1fr; */
+    /* grid-auto-flow: column; */
+
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
     padding: 20px;
   }
 
