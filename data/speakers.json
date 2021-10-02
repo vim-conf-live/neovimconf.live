@@ -44,22 +44,23 @@
         }
       ],
       "picture": "https://cdn.discordapp.com/attachments/834806296455675905/877205035166081034/4466899.jpeg",
-      "twitter": "https://twitter.com/TeejDeVries",
-      "linkedin": "#"
+      "twitter": "https://twitter.com/TeejDeVries"
     },
     {
       "name": "Mark Hegreberg",
       "job": "Software engineer in Civic Tech",
-      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/877558813220307054/square_prof.png",
-      "twitter": "",
-      "linkedin": "#"
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/877558813220307054/square_prof.png"
+    },
+    {
+      "name": "Ghjuvan Lacambre",
+      "job": "Compiler engineer",
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/893947156472410142/tmp.jpg",
+      "github": "https://github.com/glacambre"
     },
     {
       "name": "Doron Linder",
       "job": "Making games for programmers & full stack JavaScript developer",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/893945878509928448/DoronLinder.jpg",
-      "twitter": "",
-      "linkedin": "#"
       "website": "https://vim-adventures.com/",
       "highlights": [
         {
