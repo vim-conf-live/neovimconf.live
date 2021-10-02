@@ -55,6 +55,21 @@
       "linkedin": "#"
     },
     {
+      "name": "Doron Linder",
+      "job": "Making games for programmers & full stack JavaScript developer",
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/893945878509928448/DoronLinder.jpg",
+      "twitter": "",
+      "linkedin": "#"
+      "website": "https://vim-adventures.com/",
+      "highlights": [
+        {
+          "name": "Youtube Creator",
+          "url": "https://www.youtube.com/channel/UCjx7lFzXZ9kDYk-jF-Uq2ag",
+          "image": ""
+        }
+      ]
+    },
+    {
       "name": "Robertus Chris",
       "job": "Fresh graduate",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889538508925054976/profile-picture.png",
