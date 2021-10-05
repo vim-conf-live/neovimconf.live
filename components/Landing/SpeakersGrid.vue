@@ -85,6 +85,28 @@
                 <LandingSvgIconsWebsite />
               </a>
             </li>
+            <li v-if="currentSpeaker.twitch && currentSpeaker.twitch.length > 2">
+              <a
+                :href="currentSpeaker.twitch"
+                class="text-gray-400 hover:text-gray-500"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span class="sr-only">Twitch</span>
+                <LandingSvgIconsTwitch />
+              </a>
+            </li>
+            <li v-if="currentSpeaker.youtube && currentSpeaker.youtube.length > 2">
+              <a
+                :href="currentSpeaker.youtube"
+                class="text-gray-400 hover:text-gray-500"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span class="sr-only">Youtube</span>
+                <LandingSvgIconsYoutube />
+              </a>
+            </li>
           </ul>
         </div>
       </div>

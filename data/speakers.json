@@ -6,6 +6,8 @@
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/879023809049542696/MeScience.jpeg",
       "twitter": "https://twitter.com/ThePrimeagen",
       "linkedin": "#",
+      "twitch": "https://www.twitch.tv/ThePrimeagen",
+      "youtube": "https://www.youtube.com/c/ThePrimeagen",
       "highlights": [
         {
           "name": "Harpoon",
@@ -31,6 +33,8 @@
     {
       "name": "TJ DeVries",
       "job": "Wannabe Prime",
+      "twitch": "https://www.twitch.tv/teej_dv",
+      "youtube": "https://www.youtube.com/c/TJDeVries",
       "highlights": [
         {
           "name": "Neovim Core",
@@ -62,6 +66,7 @@
       "job": "Making games for programmers & full stack JavaScript developer",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/893945878509928448/DoronLinder.jpg",
       "website": "https://vim-adventures.com/",
+      "youtube": "https://www.youtube.com/channel/UCjx7lFzXZ9kDYk-jF-Uq2ag",
       "highlights": [
         {
           "name": "Youtube Creator",
@@ -82,8 +87,8 @@
       "name": "Chris Griffing",
       "job": "Senior Web Developer",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889964213114646598/cmg-128.jpg",
-      "twitter": "",
-      "linkedin": ""
+      "twitch": "https://www.twitch.tv/cmgriffing",
+      "twitter": ""
     },
     {
       "name": "Theena Kumaragurunathan",
