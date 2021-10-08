@@ -7,20 +7,15 @@
       We're grateful to have the following sponsors supporting this event and
       vim love globally!
     </p>
-    <div class="mt-3 lg:mt-6">
-      <client-only>
-        <swiper class="swiper" :options="swiperOption">
-          <swiper-slide v-for="(item, index) in sponsors" :key="index">
-            <a :href="item.url" rel="noopener noreferrer" target="_blank">
-              <img provider="static" :src="item.src" :alt="item.alt"
-            /></a>
-          </swiper-slide>
-          <div slot="pagination" class="swiper-pagination"></div>
-          <div slot="button-prev" class="swiper-button-prev"></div>
-          <div slot="button-next" class="swiper-button-next"></div>
-        </swiper>
-      </client-only>
-    </div>
+    <div class="mt-3 flex justify-between lg:mt-6">
+      <div v-for="(item, index) in sponsors" :key="index"
+        class="sponsor-card"
+       >
+        <a :href="item.url" rel="noopener noreferrer" target="_blank">
+          <img class="" provider="static" :src="item.src" :alt="item.alt"
+          /></a>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -40,52 +35,18 @@ export default {
           url: 'https://www.linode.com/',
         },
       ],
-      swiperOption: {
-        centeredSlides: true,
-        initialSlide: 1,
-        slidesPerView:
-          this.$screen.breakpoint === 'xs'
-            ? 1.5
-            : this.$screen.breakpoint === 'sm'
-            ? 2
-            : 4,
-        spaceBetween: 30,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'fraction',
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      },
     }
   },
 }
 </script>
 
-<style post>
-.swiper {
-  height: 300px;
-  width: 100%;
-}
-.swiper-button-prev,
-.swiper-button-next {
-  --swiper-theme-color: #f97316;
-}
-.swiper .swiper-slide {
-  text-align: center;
-  font-weight: bold;
-  font-size: 16px;
-}
-@media (max-width: 980px) {
-  .swiper-button-prev,
-  .swiper-button-next {
-    display: none;
+<style lang="scss">
+  .sponsor-card {
+    width: 220px;
+    height: 120px;
+    img {
+      width: 100%;
+    }
   }
-}
 </style>
+

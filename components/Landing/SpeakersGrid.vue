@@ -128,13 +128,13 @@ export default {
   },
   methods: {
     toggleCard(targetCard) {
-      /* if (this.isCardOpen) { */
-      /*   this.currentCard = null; */
-      /*   this.isCardOpen = false; */
-      /* } else { */
-      /*   this.currentCard = targetCard; */
-      /*   this.isCardOpen = true; */
-      /* } */
+      if (this.isCardOpen) {
+        this.currentCard = null;
+        this.isCardOpen = false;
+      } else {
+        this.currentCard = targetCard;
+        this.isCardOpen = true;
+      }
     },
     openCard() {
       this.isCardOpen = true;
@@ -149,25 +149,18 @@ export default {
   }
 }
 </script>
-<style scoped>
+
+
+
+<style lang="scss" scoped>
   .speakers-container {
     min-height: 300px;
     width: 100%;
     display: grid;
-    /* grid-template-columns: repeat(1, 1fr); */
-    /* grid-column-gap: 10px; */
-    /* grid-row-gap: 10px; */
-    /* grid-auto-rows: minmax(100px, auto); */
-
-
-    /* grid-auto-columns: 1fr; */
-    /* grid-auto-flow: column; */
-
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1em;
     padding: 20px;
   }
-
   .regular-card {
     width: 100%;
     transition: height 0.3s ease-in-out, width 0.2s ease-in-out;
@@ -184,28 +177,28 @@ export default {
     grid-template-columns: 1fr 1.5fr;
     display: flex;
     align-items: center;
-  }
-  .speaker-card.card-mod {
-    border-bottom: #f97316;
-  }
-  .card-image {
-    height: 115px;
-    width: 115px;
-    border-radius: 99999px;
-    overflow: hidden;
-    min-width: 120px;
-  }
-  .speaker-card.open {
-    width: 90vw;
-    height: 85vh;
-    position: fixed;
-    bottom: 0px;
-    left: 0;
-    margin: 0 4vw;
-    z-index: 999;
-    box-shadow: 0 0 100px rgba(0, 0, 0, .5);
-    border-bottom-left-radius: 0%;
-    border-bottom-right-radius: 0%;
+    .card-mod {
+      border-bottom: #f97316;
+    }
+    .card-image {
+      height: 115px;
+      width: 115px;
+      border-radius: 99999px;
+      overflow: hidden;
+      min-width: 120px;
+    }
+    &.open {
+      width: 90vw;
+      height: 85vh;
+      position: fixed;
+      bottom: 0px;
+      left: 0;
+      margin: 0 4vw;
+      z-index: 999;
+      box-shadow: 0 0 100px rgba(0, 0, 0, .5);
+      border-bottom-left-radius: 0%;
+      border-bottom-right-radius: 0%;
+    }
   }
   .speaker-card.open .card-image {
     height: 200px;

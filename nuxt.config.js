@@ -105,11 +105,9 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ['swiper/swiper-bundle.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    { src: '~/plugins/vue-awesome-swiper', ssr: false },
     '~/plugins/userbase.client.js',
   ],
 
@@ -118,6 +116,7 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
+    '@nuxtjs/style-resources',
     '@nuxtjs/color-mode',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
