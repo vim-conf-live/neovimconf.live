@@ -150,8 +150,6 @@ export default {
 }
 </script>
 
-
-
 <style lang="scss" scoped>
   .speakers-container {
     min-height: 300px;
@@ -188,44 +186,44 @@ export default {
       min-width: 120px;
     }
     &.open {
-      width: 90vw;
-      height: 85vh;
-      position: fixed;
-      bottom: 0px;
-      left: 0;
-      margin: 0 4vw;
-      z-index: 999;
-      box-shadow: 0 0 100px rgba(0, 0, 0, .5);
-      border-bottom-left-radius: 0%;
-      border-bottom-right-radius: 0%;
+      /* width: 90vw; */
+      /* height: 85vh; */
+      /* position: fixed; */
+      /* bottom: 0px; */
+      /* left: 0; */
+      /* margin: 0 4vw; */
+      /* z-index: 999; */
+      /* box-shadow: 0 0 100px rgba(0, 0, 0, .5); */
+      /* border-bottom-left-radius: 0%; */
+      /* border-bottom-right-radius: 0%; */
+      /* .card-image { */
+      /*   height: 200px; */
+      /*   width: 200px; */
+      /* } */
     }
-  }
-  .speaker-card.open .card-image {
-    height: 200px;
-    width: 200px;
   }
   .card-info {
     padding: 1px;
     padding-left: 1em;
-  }
-  .card-info .general {
-    height: 75%;
-  }
-  .card-info .general .title {
-    color: white;
-  }
-  .card-info .general .speaker-highlights {
-    margin-top: 2px;
-  }
-  .card-info .general .speaker-highlights > a {
-    background-color: rgba(234, 88, 12, var(--tw-bg-opacity));
-    border-radius: 3px;
-    padding: 2px;
-    margin-right: .5em;
-  }
-  .card-info .links {
-    margin-top: 5px;
-    padding: .2rem;
+    .links {
+      margin-top: 5px;
+      padding: .2rem;
+    }
+    .general {
+      height: 75%;
+      .speaker-highlights {
+        margin-top: 2px;
+      }
+      .title {
+        color: white;
+      }
+      .speaker-highlights > a {
+        background-color: rgba(234, 88, 12, var(--tw-bg-opacity));
+        border-radius: 3px;
+        padding: 2px;
+        margin-right: .5em;
+      }
+    }
   }
 
   @media (min-width: 980px) {
