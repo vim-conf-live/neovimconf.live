@@ -3,19 +3,26 @@
     <h2 class="text-3xl font-extrabold text-white sm:text-4xl text-center">
       Sponsors
     </h2>
-    <p class="mt-2 text-center text-base font-semibold uppercase text-gray-200 tracking-wider">
+    <p
+      class="
+        mt-2
+        text-center text-base
+        font-semibold
+        uppercase
+        text-gray-200
+        tracking-wider
+      "
+    >
       We're grateful to have the following sponsors supporting this event and
       vim love globally!
     </p>
     <div class="mt-3 flex justify-between lg:mt-6">
-      <div v-for="(item, index) in sponsors" :key="index"
-        class="sponsor-card"
-       >
+      <div v-for="(item, index) in sponsors" :key="index" class="sponsor-card">
         <a :href="item.url" rel="noopener noreferrer" target="_blank">
           <img class="" provider="static" :src="item.src" :alt="item.alt"
-          /></a>
-        </div>
+        /></a>
       </div>
+    </div>
   </div>
 </template>
 
@@ -32,7 +39,7 @@ export default {
         {
           src: 'https://cdn.discordapp.com/attachments/731764420744839288/879024918015143984/RGB_-_Linode_-_Square_-_FC_-_BLK2x.png',
           alt: 'Sponsor',
-          url: 'https://www.linode.com/',
+          url: 'http://linode.com/vimconf',
         },
       ],
     }
@@ -41,12 +48,12 @@ export default {
 </script>
 
 <style lang="scss">
-  .sponsor-card {
-    width: 220px;
-    height: 120px;
-    img {
-      width: 100%;
-    }
+.sponsor-card {
+  width: 220px;
+  height: 120px;
+  img {
+    width: 100%;
   }
+}
 </style>
 
