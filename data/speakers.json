@@ -59,7 +59,10 @@
     {
       "name": "Mark Hegreberg",
       "job": "Software engineer in Civic Tech",
-      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/877558813220307054/square_prof.png"
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/877558813220307054/square_prof.png",
+      "twitter": "https://twitter.com/potatoes_twice",
+      "website": "https://hegreberg.io/",
+      "github": "https://github.com/mhegreberg"
     },
     {
       "name": "Josh Medeski",
