@@ -1,113 +1,124 @@
 <template>
   <div class="speakers-container">
     <div class="regular-card bg-white h-100 p-4 w-auto rounded-2xl mx-auto">
-        <h2 class="text-3xl font-extrabold text-white sm:text-4xl text-center">
-          Our Speakers
-        </h2>
-        <p
-          class="mt-2 text-xs text-center lg:text-base font-semibold uppercase text-gray-200 tracking-wider">
-          Vim enthusiasts span the globe with diverse backgrounds and expertise. We
-          are gathering some of the best and brightest to share their experiences to
-          enrich the community!
-        </p>
+      <h2 class="text-3xl font-extrabold text-white sm:text-4xl text-center">
+        Our Speakers
+      </h2>
+      <p
+        class="mt-2 text-xs text-center lg:text-base font-semibold uppercase text-gray-200 tracking-wider">
+        Vim enthusiasts span the globe with diverse backgrounds and expertise. We
+        are gathering some of the best and brightest to share their experiences to
+        enrich the community!
+      </p>
     </div>
+
     <div v-for="(currentSpeaker, index ) in speakers" :key="index"
-      class="speaker-card bg-white h-100 p-4 w-auto rounded-2xl mx-auto"
-      :class="{ open: isCardOpen && currentCard === index}"
+      class="speaker-card-container h-100w-auto rounded-2xl mx-auto relative"
+      :class="{ open: currentCard !== null && currentCard === index}"
       @click="toggleCard(index)"
-      >
-      <div class="card-image rounded-full overflow-hidden object-fill">
-        <img v-show="currentSpeaker.picture" :src="currentSpeaker.picture"
-          alt="currentSpeaker.name || ''"
-          class="w-full"
-        >
+    >
+      <div class="expand-button absolute top-3 right-3">
+        <LandingSvgIconsExpandCard />
       </div>
-      <div class="card-info">
-        <div class="general">
-          <div class="speaker-name font-bold text-xl text-gray-100 font-lg">{{ currentSpeaker.name }}</div>
-          <div class="speaker-job text-gray-400 mb-2 font-xs italic">{{ currentSpeaker.job }}</div>
-          <p class="speaker-highlights text-gray-200">
-            <a
-              v-for="(highlight, highlightIndex) in shuffle(currentSpeaker.highlights || [])"
-              v-show="highlightIndex == 0"
-              :key="highlightIndex"
-              target="_blank"
-              :href="highlight.url"
-              class="badge"
-            >
-              {{highlight.name}}
-            </a>
-          </p>
+      <div class="speaker-card bg-white rounded-2xl p-4"
+        :class="{ open: currentCard !== null && currentCard === index}"
+      >
+        <div class="shrink-button absolute top-3 right-3">
+          <LandingSvgIconsShrinkCard />
         </div>
-        <div class="links">
-          <ul class="flex space-x-5">
-            <li v-if="currentSpeaker.twitter && currentSpeaker.twitter.length > 2">
+        <div class="card-image rounded-full overflow-hidden object-fill">
+          <img v-show="currentSpeaker.picture" :src="currentSpeaker.picture"
+            alt="currentSpeaker.name || ''"
+            class="w-full"
+          >
+        </div>
+        <div class="card-info">
+          <div class="general">
+            <div class="speaker-name font-bold text-xl text-gray-100 font-lg">{{ currentSpeaker.name }}</div>
+            <div class="speaker-job text-gray-400 mb-2 font-xs italic">{{ currentSpeaker.job }}</div>
+            <p class="speaker-highlights text-gray-200">
               <a
-                :href="currentSpeaker.twitter"
+                v-for="(highlight, highlightIndex) in shuffle(currentSpeaker.highlights || [])"
+                v-show="highlightIndex == 0"
+                :key="highlightIndex"
                 target="_blank"
-                rel="noopener noreferrer"
-                class="text-gray-400 hover:text-gray-500"
+                :href="highlight.url"
+                class="badge"
               >
-                <span class="sr-only">Twitter</span>
-                <LandingSvgIconsTwitter />
+                {{highlight.name}}
               </a>
-            </li>
-            <li v-if="currentSpeaker.linkedin && currentSpeaker.linkedin.length > 2">
-              <a
-                :href="currentSpeaker.linkedin"
-                class="text-gray-400 hover:text-gray-500"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <span class="sr-only">LinkedIn</span>
-                <LandingSvgIconsLinkedIn />
-              </a>
-            </li>
-            <li v-if="currentSpeaker.github && currentSpeaker.github.length > 2">
-              <a
-                :href="currentSpeaker.github"
-                class="text-gray-400 hover:text-gray-500"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <span class="sr-only">Github</span>
-                <LandingSvgIconsGithub />
-              </a>
-            </li>
-            <li v-if="currentSpeaker.website && currentSpeaker.website.length > 2">
-              <a
-                :href="currentSpeaker.website"
-                class="text-gray-400 hover:text-gray-500"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <span class="sr-only">Website</span>
-                <LandingSvgIconsWebsite />
-              </a>
-            </li>
-            <li v-if="currentSpeaker.twitch && currentSpeaker.twitch.length > 2">
-              <a
-                :href="currentSpeaker.twitch"
-                class="text-gray-400 hover:text-gray-500"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <span class="sr-only">Twitch</span>
-                <LandingSvgIconsTwitch />
-              </a>
-            </li>
-            <li v-if="currentSpeaker.youtube && currentSpeaker.youtube.length > 2">
-              <a
-                :href="currentSpeaker.youtube"
-                class="text-gray-400 hover:text-gray-500"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <span class="sr-only">Youtube</span>
-                <LandingSvgIconsYoutube />
-              </a>
-            </li>
-          </ul>
+            </p>
+          </div>
+          <div class="links">
+            <ul class="flex space-x-5">
+              <li v-if="currentSpeaker.twitter && currentSpeaker.twitter.length > 2">
+                <a
+                  :href="currentSpeaker.twitter"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-gray-400 hover:text-gray-500"
+                >
+                  <span class="sr-only">Twitter</span>
+                  <LandingSvgIconsTwitter />
+                </a>
+              </li>
+              <li v-if="currentSpeaker.linkedin && currentSpeaker.linkedin.length > 2">
+                <a
+                  :href="currentSpeaker.linkedin"
+                  class="text-gray-400 hover:text-gray-500"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span class="sr-only">LinkedIn</span>
+                  <LandingSvgIconsLinkedIn />
+                </a>
+              </li>
+              <li v-if="currentSpeaker.github && currentSpeaker.github.length > 2">
+                <a
+                  :href="currentSpeaker.github"
+                  class="text-gray-400 hover:text-gray-500"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span class="sr-only">Github</span>
+                  <LandingSvgIconsGithub />
+                </a>
+              </li>
+              <li v-if="currentSpeaker.website && currentSpeaker.website.length > 2">
+                <a
+                  :href="currentSpeaker.website"
+                  class="text-gray-400 hover:text-gray-500"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span class="sr-only">Website</span>
+                  <LandingSvgIconsWebsite />
+                </a>
+              </li>
+              <li v-if="currentSpeaker.twitch && currentSpeaker.twitch.length > 2">
+                <a
+                  :href="currentSpeaker.twitch"
+                  class="text-gray-400 hover:text-gray-500"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span class="sr-only">Twitch</span>
+                  <LandingSvgIconsTwitch />
+                </a>
+              </li>
+              <li v-if="currentSpeaker.youtube && currentSpeaker.youtube.length > 2">
+                <a
+                  :href="currentSpeaker.youtube"
+                  class="text-gray-400 hover:text-gray-500"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span class="sr-only">Youtube</span>
+                  <LandingSvgIconsYoutube />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -128,12 +139,10 @@ export default {
   },
   methods: {
     toggleCard(targetCard) {
-      if (this.isCardOpen) {
+      if (this.currentCard !== null) {
         this.currentCard = null;
-        this.isCardOpen = false;
       } else {
         this.currentCard = targetCard;
-        this.isCardOpen = true;
       }
     },
     openCard() {
@@ -155,8 +164,12 @@ export default {
     min-height: 300px;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 1em;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+
     padding: 20px;
   }
   .regular-card {
@@ -165,6 +178,38 @@ export default {
     background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
     color: white;
     font-size: 14px;
+  }
+  .speaker-card-container {
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    display: flex;
+    align-items: center;
+    .shrink-button {
+      display: none;
+    }
+    .expand-button {
+      display: block;
+    }
+    .open {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      z-index: 99;
+      background-color: rgba(31, 41, 55, 0.9);
+      background-color: rgba(31, 41, 55, 0.99);
+      .expand-button {
+        display: none;
+      }
+      .shrink-button {
+        display: block;
+      }
+    }
   }
   .speaker-card {
     width: 100%;
@@ -175,6 +220,15 @@ export default {
     grid-template-columns: 1fr 1.5fr;
     display: flex;
     align-items: center;
+
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+    color: white;
+    display: flex;
+    align-items: center;
+
     .card-mod {
       border-bottom: #f97316;
     }
@@ -186,20 +240,14 @@ export default {
       min-width: 120px;
     }
     &.open {
+      /* transition: height 0.3s ease-in-out, width 0.2s ease-in-out 0.1s; */
       /* width: 90vw; */
       /* height: 85vh; */
-      /* position: fixed; */
-      /* bottom: 0px; */
+      /* bottom: 0; */
       /* left: 0; */
-      /* margin: 0 4vw; */
+      /* margin: 7vh 4vw; */
       /* z-index: 999; */
       /* box-shadow: 0 0 100px rgba(0, 0, 0, .5); */
-      /* border-bottom-left-radius: 0%; */
-      /* border-bottom-right-radius: 0%; */
-      /* .card-image { */
-      /*   height: 200px; */
-      /*   width: 200px; */
-      /* } */
     }
   }
   .card-info {
@@ -236,6 +284,18 @@ export default {
       grid-row-gap: 10px;
       grid-auto-rows: minmax(100px, auto);
       padding: 20px;
+    }
+  }
+
+  @media (max-width: 432px) {
+    .speakers-container {
+      padding: 10px 1px;
+    }
+    .speaker-card-container {
+      width: 100%;
+    }
+    .regular-card {
+      width: 100%;
     }
   }
 </style>
