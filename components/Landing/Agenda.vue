@@ -16,9 +16,14 @@
           >🗓️ Add to Google calendar</a
         >
       </p>
-      <h2 class=" mt-32 text-2xl font-extrabold text-white sm:text-2xl uppercase text-center">
-        COMING SOON!
-      </h2>
+    </div>
+    <div class="hidden">
+      <FullCalendar :options='calendarOptions' />
+    </div>
+    <div>
+      <iframe
+        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23EF6C00&ctz=America%2FSantiago&mode=AGENDA&showTitle=0&showNav=0&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&src=Y18wNXMzMTcyYmk0N3VjZWlpNG9raTRwN3NpMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%238E24AA"
+        style="border-width:0; margin: 0 auto;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
   </div>
 </template>
