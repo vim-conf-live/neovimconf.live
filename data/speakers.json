@@ -77,7 +77,9 @@
     {
       "name": "Camilo Payan",
       "job": "Software Consultant",
-      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/895659889853091870/CamiloPayan.jpeg"
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/895659889853091870/CamiloPayan.jpeg",
+      "website": "https://cam.bio/",
+      "twitter": "https://twitter.com/camdotbio"
     },
     {
       "name": "Ghjuvan Lacambre",
@@ -112,7 +114,9 @@
       "job": "Senior Web Developer",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889964213114646598/cmg-128.jpg",
       "twitch": "https://www.twitch.tv/cmgriffing",
-      "twitter": ""
+      "website": "https://chrisgriffing.com",
+      "github": "https://github.com/cmgriffing",
+      "twitter": "https://twitter.com/cmgriffing"
     },
     {
       "name": "Theena Kumaragurunathan",
