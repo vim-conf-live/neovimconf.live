@@ -119,6 +119,19 @@
               </li>
             </ul>
           </div>
+          <div
+            v-if="currentSpeaker.talk"
+            class="talk"
+          >
+            <h3 v-if="currentSpeaker.talk && currentSpeaker.talk.title && currentSpeaker.talk.title.length > 2"
+              class="font-bold text-xl text-gray-100 font-lg"
+            >
+              {{ currentSpeaker.talk.title }}
+            </h3>
+            <p v-if="currentSpeaker.talk && currentSpeaker.talk.description && currentSpeaker.talk.description.length > 2">
+              {{ currentSpeaker.talk.description }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -160,18 +173,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .speakers-container {
-    min-height: 300px;
-    width: 100%;
-    display: grid;
-    gap: 1em;
-    grid-template-columns: repeat(1, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
-
-    padding: 20px;
-  }
   .regular-card {
     width: 100%;
     transition: height 0.3s ease-in-out, width 0.2s ease-in-out;
@@ -183,8 +184,6 @@ export default {
     width: 100%;
     background-color: transparent;
     color: white;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
     display: flex;
     align-items: center;
     .shrink-button {
@@ -216,11 +215,8 @@ export default {
     transition: height 0.3s ease-in-out, width 0.2s ease-in-out;
     background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
     color: white;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
     display: flex;
     align-items: center;
-
 
     width: 100%;
     height: 100%;
@@ -239,15 +235,48 @@ export default {
       overflow: hidden;
       min-width: 120px;
     }
+    .talk {
+      margin-top: 1rem;
+      text-align: center;
+      width: 100%;
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+    .awesome-pictures {
+      margin-top: 2rem;
+      text-align: center;
+      width: 100%;
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
     &.open {
-      /* transition: height 0.3s ease-in-out, width 0.2s ease-in-out 0.1s; */
-      /* width: 90vw; */
-      /* height: 85vh; */
-      /* bottom: 0; */
-      /* left: 0; */
-      /* margin: 7vh 4vw; */
-      /* z-index: 999; */
-      /* box-shadow: 0 0 100px rgba(0, 0, 0, .5); */
+      display: block;
+      .card-image {
+        height: 215px;
+        width: 215px;
+        margin: 0 auto;
+        margin-top: 2rem;
+        border-radius: 99999px;
+      }
+      .card-info {
+        margin-top: 2rem;
+        text-align: center;
+        width: 100%;
+        .links {
+          display: inline-block;
+          text-align: center;
+        }
+      }
+      .talk {
+        display: block;
+      }
+      .awesome-pictures {
+        display: block;
+      }
+      @media (min-width: 980px) {
+      }
     }
   }
   .card-info {
@@ -289,7 +318,10 @@ export default {
 
   @media (max-width: 432px) {
     .speakers-container {
-      padding: 10px 1px;
+      display: grid;
+      padding: 10px;
+      grid-column-gap: 2px;
+      grid-row-gap: 10px;
     }
     .speaker-card-container {
       width: 100%;

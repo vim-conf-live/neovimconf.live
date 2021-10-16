@@ -21,20 +21,32 @@
       "job": "Web App Developer",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/884899717320933407/jessarcher.jpg",
       "twitter": "https://twitter.com/jessarchercodes",
-      "linkedin": "#"
+      "linkedin": "#",
+      "talk": {
+        "title": "how to turn neovim into a powerful and beautiful ide",
+        "description": ""
+      }
     },
     {
       "name": "Tae Won Ha",
       "job": "IT Consultant",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889535613563437117/Tae_Won_HA_square_128.png",
       "twitter": "https://twitter.com/hataewon",
-      "linkedin": "https://www.linkedin.com/in/tae-won-ha-a0069830"
+      "linkedin": "https://www.linkedin.com/in/tae-won-ha-a0069830",
+      "talk": {
+        "title": "The making of VimR",
+        "description": ""
+      }
     },
     {
       "name": "Justin M. Keyes",
       "job": "Engineer at AWS",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/896835473111130152/justin.jpeg",
-      "twitter": "https://twitter.com/justinmk"
+      "twitter": "https://twitter.com/justinmk",
+      "talk": {
+        "title": "Neovim roadmap",
+        "description": ""
+      }
     },
     {
       "name": "TJ DeVries",
@@ -62,30 +74,50 @@
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/877558813220307054/square_prof.png",
       "twitter": "https://twitter.com/potatoes_twice",
       "website": "https://hegreberg.io/",
-      "github": "https://github.com/mhegreberg"
+      "github": "https://github.com/mhegreberg",
+      "talk": {
+        "title": "Heresy: Using vim in a Microsoft ecosystem",
+        "description": ""
+      }
     },
     {
       "name": "Josh Medeski",
       "job": "Full-Stack Developer",
-      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/897195668286894080/josh-medeski.jpg"
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/897195668286894080/josh-medeski.jpg",
+      "talk": {
+        "title": "Abbreviate Everything: Lessons from a Stenographer",
+        "description": ""
+      }
     },
     {
       "name": "Furkan Uzumcu",
       "job": "Senior Software Engineer @ Autodesk",
-      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/895658345460039710/Untitled.png"
+      "picture": "https://cdn.discordapp.com/attachments/731764420744839288/895658345460039710/Untitled.png",
+      "talk": {
+        "title": "Buffer is king",
+        "description": ""
+      }
     },
     {
       "name": "Camilo Payan",
       "job": "Software Consultant",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/895659889853091870/CamiloPayan.jpeg",
       "website": "https://cam.bio/",
-      "twitter": "https://twitter.com/camdotbio"
+      "twitter": "https://twitter.com/camdotbio",
+      "talk": {
+        "title": "Mastering the Macro Machine",
+        "description": "Lorem Ipsum dolorem sit amet consequcter"
+      }
     },
     {
       "name": "Ghjuvan Lacambre",
       "job": "Compiler engineer",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/893947156472410142/tmp.jpg",
-      "github": "https://github.com/glacambre"
+      "github": "https://github.com/glacambre",
+      "talk": {
+        "title": "Firenvim: How it Works and Why it Sucks",
+        "description": ""
+      }
     },
     {
       "name": "Doron Linder",
@@ -99,7 +131,11 @@
           "url": "https://www.youtube.com/channel/UCjx7lFzXZ9kDYk-jF-Uq2ag",
           "image": ""
         }
-      ]
+      ],
+      "talk": {
+        "title": "Fron Side Project to Online Business. My VIM-Adventures Journey",
+        "description": ""
+      }
     },
     {
       "name": "Robertus Chris",
@@ -107,7 +143,11 @@
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889538508925054976/profile-picture.png",
       "twitter": "https://twitter.com/diawanchris",
       "github": "https://github.com/bruhtus",
-      "linkedin": "https://www.linkedin.com/in/bruhtus/"
+      "linkedin": "https://www.linkedin.com/in/bruhtus/",
+      "talk": {
+        "title": "Vim-como: copy or move one line in vim withoug a hassle",
+        "description": ""
+      }
     },
     {
       "name": "Chris Griffing",
@@ -116,7 +156,11 @@
       "twitch": "https://www.twitch.tv/cmgriffing",
       "website": "https://chrisgriffing.com",
       "github": "https://github.com/cmgriffing",
-      "twitter": "https://twitter.com/cmgriffing"
+      "twitter": "https://twitter.com/cmgriffing",
+      "talk": {
+        "title": "Neovim + Tree-sitter = Easy plugins",
+        "description": ""
+      }
     },
     {
       "name": "Theena Kumaragurunathan",
@@ -125,14 +169,22 @@
       "twitter": "",
       "github": "https://github.com/MiragianCycle",
       "website": "https://theena.net/",
-      "linkedin": "https://www.linkedin.com/in/theenaklk"
+      "linkedin": "https://www.linkedin.com/in/theenaklk",
+      "talk": {
+        "title": "ViWrite: Writing, Editing and World-Building on Vim",
+        "description": ""
+      }
     },
     {
       "name": "Waylon Walker",
       "job": "Data Science Team Lead",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/883791580174110800/vimconf-waylonwalker-profile.jpg",
       "twitter": "https://twitter.com/_WaylonWalker",
-      "linkedin": "#"
+      "linkedin": "#",
+      "talk": {
+        "title": "IDE's are too slow",
+        "description": "Lorem Ipsum dolorem sit amet consequcter"
+      }
     },
     {
       "name": "Justin Restivo",
@@ -142,6 +194,10 @@
       "github": "https://github.com/DieracDelta",
       "linkedin": "https://www.linkedin.com/in/justinprestivo/",
       "website": "https://justin.restivo.me",
+      "talk": {
+        "title": "Configuring Vim with NixOS",
+        "description": ""
+      },
       "highlights": [
         {
           "name": "Personal Website",
@@ -156,14 +212,22 @@
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/884181603394408529/mike-headshot-2_1.png",
       "twitter": "https://twitter.com/mhartington",
       "github": "https://github.com/mhartington",
-      "twitch": "http://twitch.tv/mhartington"
+      "twitch": "http://twitch.tv/mhartington",
+      "talk": {
+        "title": "Vim for the Frontend",
+        "description": ""
+      }
     },
     {
       "name": "Dan Phillips",
       "job": "Software Engineer in Boulder, CO",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/896482071411822662/dan_phillips_128.jpeg",
       "twitter": "",
-      "linkedin": "#"
+      "linkedin": "#",
+      "talk": {
+        "title": "We could all use a little :help",
+        "description": ""
+      }
     },
     {
       "name": "Jesse Atkinson",
@@ -171,7 +235,11 @@
       "picture": "/img/speakers/jesse-atkinson.jpg",
       "twitter": "https://twitter.com/jsatk",
       "github": "https://github.com/jsatk",
-      "website": "https://jsatk.us/"
+      "website": "https://jsatk.us/",
+      "talk": {
+        "title": "Vim + Fugitive: Git harmony in Vim",
+        "description": ""
+      }
     },
     {
       "name": "Anton Kastritskiy",
@@ -179,21 +247,33 @@
       "picture": "https://github.com/antonk52.png",
       "twitter": "https://twitter.com/antonk52",
       "github": "https://github.com/antonk52",
-      "linkedin": "#"
+      "linkedin": "#",
+      "talk": {
+        "title": "DIY Quality of life improvements",
+        "description": ""
+      }
     },
     {
       "name": "Hao Wang",
       "job": "Lead Engineer @ Soundcloud",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889252307894698054/pic_1.jpg",
       "twitter": "",
-      "linkedin": "#"
+      "linkedin": "#",
+      "talk": {
+        "title": "We have built nice things",
+        "description": ""
+      }
     },
     {
       "name": "Ben Smith",
       "job": "Web Developer",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889256386368782397/ben-128-128.jpeg",
       "twitter": "",
-      "linkedin": ""
+      "linkedin": "",
+      "talk": {
+        "title": "Migrating from init.vim to init.lua",
+        "description": ""
+      }
     },
     {
       "name": "Chip Senkbeil",
@@ -215,6 +295,10 @@
           "image": ""
         }
       ],
+      "talk": {
+        "title": "Building and Alternative to VSCode Remote Development",
+        "description": ""
+      },
       "picture": "/img/speakers/chipsenkbeil.jpg",
       "twitter": "https://twitter.com/ChipSenkbeil",
       "github": "https://github.com/chipsenkbeil",
