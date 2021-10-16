@@ -285,10 +285,11 @@
     },
     {
       "name": "Ben Smith",
-      "job": "Web Developer",
+      "job": "Web Developer at Vincit USA",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/889256386368782397/ben-128-128.jpeg",
-      "twitter": "",
-      "linkedin": "",
+      "twitter": "https://twitter.com/smithbm2316",
+      "github": "https://github.com/smithbm2316",
+      "website": "https://ben-smith.dev/",
       "talk": {
         "title": "Migrating from init.vim to init.lua",
         "description": "",
