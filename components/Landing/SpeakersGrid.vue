@@ -132,6 +132,22 @@
               {{ currentSpeaker.talk.description }}
             </p>
           </div>
+
+          <div
+            v-if="currentSpeaker.talk"
+            class="awesome-pictures"
+          >
+            <p
+            >
+              {{  }}
+            </p>
+            <img
+              v-if="currentSpeaker.talk && currentSpeaker.talk.picture && currentSpeaker.talk.picture.length > 2"
+              :src="currentSpeaker.talk.picture"
+              alt="currentSpeaker.talk.title || ''"
+              class="w-full"
+            >
+          </div>
         </div>
       </div>
     </div>

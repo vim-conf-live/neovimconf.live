@@ -24,7 +24,8 @@
       "linkedin": "#",
       "talk": {
         "title": "how to turn neovim into a powerful and beautiful ide",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -35,7 +36,8 @@
       "linkedin": "https://www.linkedin.com/in/tae-won-ha-a0069830",
       "talk": {
         "title": "The making of VimR",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -45,7 +47,8 @@
       "twitter": "https://twitter.com/justinmk",
       "talk": {
         "title": "Neovim roadmap",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -77,7 +80,8 @@
       "github": "https://github.com/mhegreberg",
       "talk": {
         "title": "Heresy: Using vim in a Microsoft ecosystem",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -86,7 +90,8 @@
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/897195668286894080/josh-medeski.jpg",
       "talk": {
         "title": "Abbreviate Everything: Lessons from a Stenographer",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -95,7 +100,8 @@
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/895658345460039710/Untitled.png",
       "talk": {
         "title": "Buffer is king",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -106,7 +112,8 @@
       "twitter": "https://twitter.com/camdotbio",
       "talk": {
         "title": "Mastering the Macro Machine",
-        "description": "Lorem Ipsum dolorem sit amet consequcter"
+        "description": "Lorem Ipsum dolorem sit amet consequcter",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -116,7 +123,8 @@
       "github": "https://github.com/glacambre",
       "talk": {
         "title": "Firenvim: How it Works and Why it Sucks",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -134,7 +142,8 @@
       ],
       "talk": {
         "title": "Fron Side Project to Online Business. My VIM-Adventures Journey",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -146,7 +155,8 @@
       "linkedin": "https://www.linkedin.com/in/bruhtus/",
       "talk": {
         "title": "Vim-como: copy or move one line in vim withoug a hassle",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -159,7 +169,8 @@
       "twitter": "https://twitter.com/cmgriffing",
       "talk": {
         "title": "Neovim + Tree-sitter = Easy plugins",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -172,7 +183,8 @@
       "linkedin": "https://www.linkedin.com/in/theenaklk",
       "talk": {
         "title": "ViWrite: Writing, Editing and World-Building on Vim",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -183,7 +195,8 @@
       "linkedin": "#",
       "talk": {
         "title": "IDE's are too slow",
-        "description": "Lorem Ipsum dolorem sit amet consequcter"
+        "description": "Lorem Ipsum dolorem sit amet consequcter",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -196,7 +209,8 @@
       "website": "https://justin.restivo.me",
       "talk": {
         "title": "Configuring Vim with NixOS",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       },
       "highlights": [
         {
@@ -215,7 +229,8 @@
       "twitch": "http://twitch.tv/mhartington",
       "talk": {
         "title": "Vim for the Frontend",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -226,7 +241,8 @@
       "linkedin": "#",
       "talk": {
         "title": "We could all use a little :help",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -238,7 +254,8 @@
       "website": "https://jsatk.us/",
       "talk": {
         "title": "Vim + Fugitive: Git harmony in Vim",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -250,7 +267,8 @@
       "linkedin": "#",
       "talk": {
         "title": "DIY Quality of life improvements",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -261,7 +279,8 @@
       "linkedin": "#",
       "talk": {
         "title": "We have built nice things",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -272,7 +291,8 @@
       "linkedin": "",
       "talk": {
         "title": "Migrating from init.vim to init.lua",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
     {
@@ -297,7 +317,8 @@
       ],
       "talk": {
         "title": "Building and Alternative to VSCode Remote Development",
-        "description": ""
+        "description": "",
+        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       },
       "picture": "/img/speakers/chipsenkbeil.jpg",
       "twitter": "https://twitter.com/ChipSenkbeil",
