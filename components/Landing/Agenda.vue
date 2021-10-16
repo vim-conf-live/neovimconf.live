@@ -20,10 +20,13 @@
     <div class="hidden">
       <FullCalendar :options='calendarOptions' />
     </div>
-    <div>
+    <div class="google-agenda">
       <iframe
+        class="w-full h-96 md:w-3/5 md:h-96"
         src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23EF6C00&ctz=America%2FSantiago&mode=AGENDA&showTitle=0&showNav=0&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&src=Y18wNXMzMTcyYmk0N3VjZWlpNG9raTRwN3NpMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%238E24AA"
-        style="border-width:0; margin: 0 auto;" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        style="border-width:0; margin: 0 auto;"
+        frameborder="0"
+        scrolling="no"></iframe>
     </div>
   </div>
 </template>

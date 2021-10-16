@@ -28,6 +28,11 @@ module.exports = {
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
+      spacing: {
+        '72': '18rem',
+        '84': '21rem',
+        '96': '24rem',
+      },
       colors: {
         cyan: colors.cyan,
         orange: colors.orange,
@@ -84,7 +89,7 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function ({ addUtilities }) {
+    plugin(function({ addUtilities }) {
       const newUtilities = {
         '.-animate-delay-1': {
           'animation-delay': '-0.32s',
