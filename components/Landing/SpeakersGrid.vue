@@ -206,6 +206,7 @@ export default {
       display: none;
     }
     .expand-button {
+      cursor:pointer;
       display: block;
     }
     .open {
@@ -268,6 +269,7 @@ export default {
       display: none;
     }
     &.open {
+      cursor:pointer;
       display: block;
       .card-image {
         height: 215px;
