@@ -15,15 +15,20 @@
     <div v-for="(currentSpeaker, index ) in speakers" :key="index"
       class="speaker-card-container h-100w-auto rounded-2xl mx-auto relative"
       :class="{ open: currentCard !== null && currentCard === index}"
-      @click="toggleCard(index)"
     >
-      <div class="expand-button absolute top-3 right-3">
+      <div
+        class="expand-button absolute top-3 right-3"
+        @click="openCard(index)"
+      >
         <LandingSvgIconsExpandCard />
       </div>
       <div class="speaker-card bg-white rounded-2xl p-4"
         :class="{ open: currentCard !== null && currentCard === index}"
+        @click="closeCard()"
       >
-        <div class="shrink-button absolute top-3 right-3">
+        <div
+          class="shrink-button absolute top-3 right-3"
+        >
           <LandingSvgIconsShrinkCard />
         </div>
         <div class="card-image rounded-full overflow-hidden object-fill">
@@ -163,7 +168,6 @@ export default {
         currentCard: null,
         speakers,
         shuffledSpeakers: this.shuffle(speakers),
-        isCardOpen: false,
       }
   },
   methods: {
@@ -174,8 +178,11 @@ export default {
         this.currentCard = targetCard;
       }
     },
-    openCard() {
-      this.isCardOpen = true;
+    openCard(card) {
+      this.currentCard = card;
+    },
+    closeCard() {
+      this.currentCard = null;
     },
     shuffle(a) {
       for (let i = a.length - 1; i > 0; i--) {
