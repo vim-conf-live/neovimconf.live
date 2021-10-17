@@ -15,6 +15,8 @@
     <div v-for="(currentSpeaker, index ) in speakers" :key="index"
       class="speaker-card-container h-100w-auto rounded-2xl mx-auto relative"
       :class="{ open: currentCard !== null && currentCard === index}"
+      @keyup.esc="closeCard()"
+      tabindex="0"
     >
       <div
         class="expand-button absolute top-3 right-3"
