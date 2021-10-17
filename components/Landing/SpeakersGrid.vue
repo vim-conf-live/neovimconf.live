@@ -26,10 +26,10 @@
       </div>
       <div class="speaker-card bg-white rounded-2xl p-4"
         :class="{ open: currentCard !== null && currentCard === index}"
-        @click="closeCard()"
       >
         <div
           class="shrink-button absolute top-3 right-3"
+          @click="closeCard()"
         >
           <LandingSvgIconsShrinkCard />
         </div>
@@ -212,6 +212,7 @@ export default {
     display: flex;
     align-items: center;
     .shrink-button {
+      cursor:pointer;
       display: none;
     }
     .expand-button {
@@ -278,7 +279,6 @@ export default {
       display: none;
     }
     &.open {
-      cursor:pointer;
       display: block;
       .card-image {
         height: 215px;
