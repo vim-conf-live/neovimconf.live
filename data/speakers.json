@@ -23,8 +23,8 @@
       "twitter": "https://twitter.com/jessarchercodes",
       "linkedin": "#",
       "talk": {
-        "title": "how to turn neovim into a powerful and beautiful ide",
-        "description": "",
+        "title": "How to turn Neovim into a powerful and beautiful IDE",
+        "description": "In this talk I will show you my approach for configuring stock Neovim with essential settings, keymaps and plugins to achieve context-aware code completion and code navigation. As well as workflows for refactoring, testing and git. I'll also show you how I keep my config file clean and maintainable!",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -36,7 +36,7 @@
       "linkedin": "https://www.linkedin.com/in/tae-won-ha-a0069830",
       "talk": {
         "title": "The making of VimR",
-        "description": "",
+        "description": "I will briefly describe the (short) history of VimR, how it started as a MacVim with a file browser and Markdown preview and how it was re-written from scratch to be a macOS native Neovim GUI. Afterwards, I'll talk about the current inner workings of VimR, what challenges I had and how it's different to other Neovim GUI's etc.",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -47,7 +47,7 @@
       "twitter": "https://twitter.com/justinmk",
       "talk": {
         "title": "Neovim roadmap",
-        "description": "",
+        "description": "Near-term and long-term features/changes planned for Neovim",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -80,7 +80,7 @@
       "github": "https://github.com/mhegreberg",
       "talk": {
         "title": "Heresy: Using vim in a Microsoft ecosystem",
-        "description": "",
+        "description": "At work I use Powershell, C#, Azure and other Microsoft technologies for a Windows environment. Getting vim to work how I like it in Windows has been an adventure. I'd like to share that adventure with you all",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -90,7 +90,7 @@
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/897195668286894080/josh-medeski.jpg",
       "talk": {
         "title": "Abbreviate Everything: Lessons from a Stenographer",
-        "description": "",
+        "description": "After studying Stenography, I learned how to use abbreviations to take my productivity to the next level. Now I will show you how too.",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -100,7 +100,7 @@
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/895658345460039710/Untitled.png",
       "talk": {
         "title": "Buffer is king",
-        "description": "",
+        "description": "From the simple origins of being a line editor to fully fledged IDEs, text editors have come a long way. But at its core, all we really do is process input and produce output. As a Neovim user, it's important to be as efficient as possible when it comes to the use of buffers. In this talk we will discuss all things Buffer and understand why its King",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -112,7 +112,7 @@
       "twitter": "https://twitter.com/camdotbio",
       "talk": {
         "title": "Mastering the Macro Machine",
-        "description": "Lorem Ipsum dolorem sit amet consequcter",
+        "description": "In this talk we'll learn about Macros, their use in completely eliminating repetitive typing tasks in Vim. The power of macros can be unleashed through clever use of movements and registers. A well-planned macro can be applied to any size file or problem!",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -123,7 +123,7 @@
       "github": "https://github.com/glacambre",
       "talk": {
         "title": "Firenvim: How it Works and Why it Sucks",
-        "description": "",
+        "description": "I am going to describe Firenvim, give a brief overview of how Neovim GUI's and browser extensions work and then describe how browsers and website work very hard to make Firenvim suck.",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -154,7 +154,7 @@
       "github": "https://github.com/bruhtus",
       "linkedin": "https://www.linkedin.com/in/bruhtus/",
       "talk": {
-        "title": "Vim-como: copy or move one line in vim withoug a hassle",
+        "title": "A quick way to access normal mode command from insert mode",
         "description": "",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
@@ -169,7 +169,7 @@
       "twitter": "https://twitter.com/cmgriffing",
       "talk": {
         "title": "Neovim + Tree-sitter = Easy plugins",
-        "description": "",
+        "description": "There was a Flutter / Dart plugin that inspired me to build my own tool for navigating parenthesis. What started out as something small with Language servers and VSCode and ended up with Tree-sitter and a Neovim plugin that supports many more languages than my original VSCode implementation.",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -183,7 +183,7 @@
       "linkedin": "https://www.linkedin.com/in/theenaklk",
       "talk": {
         "title": "ViWrite: Writing, Editing and World-Building on Vim",
-        "description": "",
+        "description": "I will walk you through the journey of how I ended up using Vim to craft novels.",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -195,7 +195,7 @@
       "linkedin": "#",
       "talk": {
         "title": "IDE's are too slow",
-        "description": "Lorem Ipsum dolorem sit amet consequcter",
+        "description": "Struggling to manage so many concurrent projects as a Team lead using VsCode, I turned to Vim + Tmux to manage my workflow at blazing speeds. Heres how its done.",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -209,7 +209,7 @@
       "website": "https://justin.restivo.me",
       "talk": {
         "title": "Configuring Vim with NixOS",
-        "description": "",
+        "description": "Configuring NeoVim on each machine you develop on is a major pain (especially if you don't have sudo!). In this tutorial, we'll learn how to side-step this requirement and create a portable customized user-level NeoVim install with the Nix package manager and Github Actions.",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       },
       "highlights": [
@@ -229,7 +229,7 @@
       "twitch": "http://twitch.tv/mhartington",
       "talk": {
         "title": "Vim for the Frontend",
-        "description": "",
+        "description": "Picture this: You see someone open up Vim. You think, 'Oh wow, they must be doing some hardcore C/C++ coding or something'. But then you notice, they're writing HTML, CSS, and JavaScript? In the world of modern editors, Vim might not seem like the right tool for frontend development. But you can for sure teach an old dog new tricks. We'll look at how to make your frontend development experience in Vim the best it can be.",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -241,7 +241,7 @@
       "linkedin": "#",
       "talk": {
         "title": "We could all use a little :help",
-        "description": "",
+        "description": "A global pandemic happened, so I decided to try to read the entire Vim User and Reference Manuals 'cover-to-cover'. Here's what I learned.",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -254,7 +254,7 @@
       "website": "https://jsatk.us/",
       "talk": {
         "title": "Vim + Fugitive: Git harmony in Vim",
-        "description": "",
+        "description": "Join me as I walk you through how to optimize using fugitive to navigate git in vim. Everything from basics like 'how to make a commit' to interactively staging commits, interactive rebasing, fixup commits, opening GitHub PRs etc. all from Vim.",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -267,7 +267,7 @@
       "linkedin": "#",
       "talk": {
         "title": "DIY Quality of life improvements",
-        "description": "",
+        "description": "Modern IDE's are made for the vast majority. Vim let’s you be as specific and precise as you wish. I would like to leverage this to show how we can craft something truly our own.",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -279,7 +279,7 @@
       "linkedin": "#",
       "talk": {
         "title": "We have built nice things",
-        "description": "",
+        "description": "Inspired by the talk 'We can have nice things', I went on to build some nice things for the Vim community. But this talk is not about the things that I have built, but rather, the underlying Neovim platform, which empowers developers like myself everyday.",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -292,7 +292,7 @@
       "website": "https://ben-smith.dev/",
       "talk": {
         "title": "Migrating from init.vim to init.lua",
-        "description": "",
+        "description": "Have you wanted to make the switch to an init.lua but haven’t had the time to learn the basics? Haven’t switched because your init.vim setup is comfy and if it ain’t broke don’t fix it? Don’t know where to start with writing Lua in Neovim? If you answered ”Yes” to any of these, this presentation is for you!",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
@@ -318,7 +318,7 @@
       ],
       "talk": {
         "title": "Building and Alternative to VSCode Remote Development",
-        "description": "",
+        "description": "We will take a dive into the design behind building a plugin (w/ Rust companion binary) to provide a remote development experience similar to VSCode Remote Development & Facebook's Nuclide",
         "picture": "https://camo.githubusercontent.com/f3c5f97c153622f764ac636483451bf904f4404d9820c9efe78cf98ef2b0e776/68747470733a2f2f696d672e796f75747562652e636f6d2f76692f775641736270427951336f2f302e6a7067"
       },
       "website": "https://chipsenkbeil.com/",
