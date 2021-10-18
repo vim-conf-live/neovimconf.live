@@ -35,7 +35,7 @@
         </nuxt-link>
 
         <a :href="$config.discordInvite"
-          class="rounded-md px-3 py-2 font-medium bg-brand-discord text-white hover:opacity-80"
+          class="rounded-md px-3 py-2 font-medium bg-brand-discord text-white hover:opacity-80 z-30 relative"
         >
           Join Discord
         </a>
