@@ -155,7 +155,7 @@
       "linkedin": "https://www.linkedin.com/in/bruhtus/",
       "talk": {
         "title": "A quick way to access normal mode command from insert mode",
-        "description": "",
+        "description": "Have you ever feel that pressing Esc every time you want to use Normal mode command too slow? If you ever feel like that then you might want to take a loot at Alt/Meta key or Ctrl-O in insert mode.",
         "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
       }
     },
