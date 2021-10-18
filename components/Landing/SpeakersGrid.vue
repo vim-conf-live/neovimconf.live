@@ -15,8 +15,8 @@
     <div v-for="(currentSpeaker, index ) in speakers" :key="index"
       class="speaker-card-container h-100w-auto rounded-2xl mx-auto relative"
       :class="{ open: currentCard !== null && currentCard === index}"
-      @keyup.esc="closeCard()"
       tabindex="0"
+      @keyup.esc="closeCard()"
     >
       <div
         class="expand-button absolute top-3 right-3"
@@ -135,7 +135,9 @@
             >
               {{ currentSpeaker.talk.title }}
             </h3>
-            <p v-if="currentSpeaker.talk && currentSpeaker.talk.description && currentSpeaker.talk.description.length > 2">
+            <p v-if="currentSpeaker.talk && currentSpeaker.talk.description && currentSpeaker.talk.description.length > 2"
+              class="talk-description text-gray-400 pt-4 md:max-w-sm md:m-auto"
+            >
               {{ currentSpeaker.talk.description }}
             </p>
           </div>
@@ -144,10 +146,6 @@
             v-if="currentSpeaker.talk"
             class="awesome-pictures"
           >
-            <p
-            >
-              {{  }}
-            </p>
             <img
               v-if="currentSpeaker.talk && currentSpeaker.talk.picture && currentSpeaker.talk.picture.length > 2"
               :src="currentSpeaker.talk.picture"
@@ -167,10 +165,10 @@ import { speakers } from '../../data/speakers.json'
 export default {
   data() {
     return {
-        currentCard: null,
-        speakers,
-        shuffledSpeakers: this.shuffle(speakers),
-      }
+      currentCard: null,
+      speakers,
+      shuffledSpeakers: this.shuffle(speakers),
+    }
   },
   methods: {
     toggleCard(targetCard) {
