@@ -88,10 +88,14 @@
       "name": "Josh Medeski",
       "job": "Full-Stack Developer",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/897195668286894080/josh-medeski.jpg",
+      "twitter": "https://twitter.com/joshmedeski",
+      "twitch": "https://www.twitch.tv/joshmedeski",
+      "website": "https://joshmedeski.com",
+      "github": "https://github.com/joshmedeski",
       "talk": {
         "title": "Abbreviate Everything: Lessons from a Stenographer",
         "description": "After studying Stenography, I learned how to use abbreviations to take my productivity to the next level. Now I will show you how too.",
-        "picture": "https://github.com/vim-conf-live/vimconflive2021-colorscheme/raw/master/img/looks.png"
+        "picture": "/img/talks/abbreviate-everything-josh.jpg"
       }
     },
     {
