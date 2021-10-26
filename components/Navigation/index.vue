@@ -62,7 +62,7 @@
           />
         </div>
       </div>
-      <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+      <div class="desktop-navigation hidden md:block md:ml-5 md:pr-4 md:space-x-8">
         <nuxt-link
           v-for="(item, index) in links"
           :key="index"
