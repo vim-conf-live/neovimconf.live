@@ -40,9 +40,10 @@
     </div>
     <div class="google-agenda">
       <iframe
-        class="w-full h-96 md:w-3/5 md:h-96"
-        src="https://calendar.google.com/calendar/embed?src=c_05s3172bi47uceii4oki4p7si0%40group.calendar.google.com"
-        style="border-width: 0; margin: 0 auto"
+        src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%23ffffff&ctz=America%2FLos_Angeles&mode=WEEK&showTz=1&showCalendars=0&showTabs=0&showPrint=0&showDate=0&showTitle=1&title=Vimconf%202021&src=Y18wNXMzMTcyYmk0N3VjZWlpNG9raTRwN3NpMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%238E24AA"
+        style="border: solid 1px #777"
+        width="800"
+        height="500"
         frameborder="0"
         scrolling="no"
       ></iframe>
