@@ -1,10 +1,28 @@
 <template>
   <div class="bg-gray-800">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-      <h2 class="text-3xl font-extrabold text-white sm:text-4xl uppercase text-center">
+      <h2
+        class="
+          text-3xl
+          font-extrabold
+          text-white
+          sm:text-4xl
+          uppercase
+          text-center
+        "
+      >
         Agenda
       </h2>
-      <p class="mt-2 text-center text-base font-semibold uppercase text-gray-200 tracking-wider">
+      <p
+        class="
+          mt-2
+          text-center text-base
+          font-semibold
+          uppercase
+          text-gray-200
+          tracking-wider
+        "
+      >
         <a
           :href="$config.agenda.downloadEventCal"
           class="mt-4 text-lg text-gray-300 block"
@@ -18,15 +36,16 @@
       </p>
     </div>
     <div class="hidden">
-      <FullCalendar :options='calendarOptions' />
+      <FullCalendar :options="calendarOptions" />
     </div>
     <div class="google-agenda">
       <iframe
         class="w-full h-96 md:w-3/5 md:h-96"
-        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23EF6C00&ctz=America%2FSantiago&mode=AGENDA&showTitle=0&showNav=0&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&src=Y18wNXMzMTcyYmk0N3VjZWlpNG9raTRwN3NpMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%238E24AA"
-        style="border-width:0; margin: 0 auto;"
+        src="https://calendar.google.com/calendar/embed?src=c_05s3172bi47uceii4oki4p7si0%40group.calendar.google.com"
+        style="border-width: 0; margin: 0 auto"
         frameborder="0"
-        scrolling="no"></iframe>
+        scrolling="no"
+      ></iframe>
     </div>
   </div>
 </template>
