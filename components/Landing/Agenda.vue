@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-800">
-    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:pb-8 lg:px-8">
       <h2 class="text-3xl font-extrabold text-white sm:text-4xl uppercase text-center">
         Agenda
       </h2>
@@ -8,17 +8,22 @@
         <a
           :href="$config.agenda.downloadEventCal"
           class="mt-4 text-lg text-gray-300 block"
-          >📥 Download the event calendar</a
+          >📥 Download the event calendar .ics</a
         >
         <a
           :href="$config.agenda.addToCal"
-          class="mt-6 text-lg text-gray-300 blck"
+          class="mt-6 text-lg text-gray-300 block"
           >🗓️ Add to Google calendar</a
         >
       </p>
     </div>
-    <div class="hidden">
-      <FullCalendar :options='calendarOptions' />
+    <div class="mt-4 mb-4">
+      <h3 class="text-2xl font-bold text-white sm:text-2xl text-center">
+        The event starts 9am PST on the 29th
+      </h3>
+      <p class="text-center text-base font-semibold text-gray-200">
+        Start the Hype! 🥳
+      </p>
     </div>
     <div class="google-agenda">
       <iframe
