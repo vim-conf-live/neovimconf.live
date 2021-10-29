@@ -45,6 +45,13 @@
       "job": "Engineer at AWS",
       "picture": "https://cdn.discordapp.com/attachments/731764420744839288/896835473111130152/justin.jpeg",
       "twitter": "https://twitter.com/justinmk",
+      "highlights": [
+        {
+          "name": "Neovim Core",
+          "url": "https://neovim.io/",
+          "image": ""
+        }
+      ],
       "talk": {
         "title": "Neovim roadmap",
         "description": "Near-term and long-term features/changes planned for Neovim",
