@@ -3,9 +3,6 @@
     <div
       class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8"
     >
-      <h3 class="text-2xl font-bold text-white sm:text-2xl text-center">
-        The event is live right now!
-      </h3>
       <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
         <span class="block">{{ $config.watch.header }}</span>
       </h2>
