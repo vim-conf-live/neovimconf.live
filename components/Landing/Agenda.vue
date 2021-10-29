@@ -19,10 +19,10 @@
     </div>
     <div class="mt-4 mb-4">
       <h3 class="text-2xl font-bold text-white sm:text-2xl text-center">
-        The event starts 9am PST on the 29th
+        The event is live right now!
       </h3>
       <p class="text-center text-base font-semibold text-gray-200">
-        🌟 Start the Hype! 🥳 🌟
+        🌟 Join the Hype! 🥳 🌟
       </p>
     </div>
     <div class="google-agenda">
