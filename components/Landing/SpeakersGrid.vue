@@ -146,12 +146,33 @@
             v-if="currentSpeaker.talk"
             class="awesome-pictures"
           >
+            <div
+              v-if="currentSpeaker.talk && currentSpeaker.talk.youtubeEmbedded && currentSpeaker.talk.youtubeEmbedded.length > 2"
+              :src="currentSpeaker.talk.youtubeEmbedded"
+              alt="currentSpeaker.talk.title || ''"
+              @click="loadVideo(currentSpeaker.talk.youtubeEmbedded)"
+              class="wrapper w-full"
+            >
+              <div
+                data-embed="currentSpeaker.talk.youtubeEmbedded"
+                class="youtube"
+              >
+                <div
+                  v-show="!videoLoaded"
+                  class="play-button"></div>
+                <div
+                  v-show="videoLoaded"
+                  v-html="currentVideo"
+                >
+                </div>
+              </div>
+            </div>
             <img
               v-if="currentSpeaker.talk && currentSpeaker.talk.picture && currentSpeaker.talk.picture.length > 2"
               :src="currentSpeaker.talk.picture"
               alt="currentSpeaker.talk.title || ''"
               class="w-full"
-            >
+            />
           </div>
         </div>
       </div>
@@ -166,6 +187,8 @@ export default {
   data() {
     return {
       currentCard: null,
+      currentVideo: null,
+      videoLoaded: false,
       speakers,
       shuffledSpeakers: this.shuffle(speakers),
     }
@@ -191,6 +214,22 @@ export default {
       }
       return a;
     },
+    loadVideo(videoID) {
+      this.currentVideo = `<iframe
+      src="https://www.youtube.com/embed/${videoID}"
+      style="width: 100%; height: 100%;"
+      frameborder="0"
+      allow="accelerometer;
+      autoplay;
+      clipboard-write;
+      encrypted-media;
+      gyroscope;
+      picture-in-picture"
+      allowfullscreen>
+      </iframe>`;
+
+      this.videoLoaded = true;
+    }
   }
 }
 </script>
@@ -198,7 +237,7 @@ export default {
 <style lang="scss" scoped>
   .regular-card {
     width: 100%;
-    transition: height 0.3s ease-in-out, width 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out, width 0.2s ease-in-out;
     background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
     color: white;
     font-size: 14px;
@@ -249,6 +288,7 @@ export default {
     color: white;
     display: flex;
     align-items: center;
+    transition: .3s all ease-in-out;
 
     .card-mod {
       border-bottom: #f97316;
@@ -264,8 +304,7 @@ export default {
       margin-top: 1rem;
       text-align: center;
       width: 100%;
-      width: 100%;
-      height: 100%;
+      overflow-y: scroll;
       display: none;
     }
     .awesome-pictures {
@@ -289,6 +328,12 @@ export default {
         margin-top: 2rem;
         text-align: center;
         width: 100%;
+        height: -webkit-fill-available;
+        height: object-fill;
+        overflow-y: auto;
+        .general {
+          height: auto;
+        }
         .links {
           display: inline-block;
           text-align: center;
@@ -307,6 +352,7 @@ export default {
   .card-info {
     padding: 1px;
     padding-left: 1em;
+
     .links {
       margin-top: 5px;
       padding: .2rem;
@@ -354,6 +400,88 @@ export default {
     .regular-card {
       width: 100%;
     }
+  }
+
+
+  // Youtube embed
+  .wrapper {
+    max-width: 680px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+
+  .youtube {
+    background-color: #000;
+    /* margin-bottom: 30px; */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    img {
+      width: 100%;
+      top: -16.82%;
+      left: 0;
+      opacity: 0.7;
+    }
+    div > iframe {
+      position: relative;
+      width: 100%;
+    }
+    .play-button {
+      width: 90px;
+      height: 60px;
+      background-color: #333;
+      box-shadow: 0 0 30px rgba( 0,0,0,0.6 );
+      z-index: 1;
+      opacity: 0.8;
+      border-radius: 6px;
+      &:before {
+        content: "";
+        border-style: solid;
+        border-width: 15px 0 15px 26.0px;
+        border-color: transparent transparent transparent #fff;
+      }
+    }
+    img, .play-button {
+      cursor: pointer;
+    }
+    iframe {
+      margin: 0 auto;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+  .youtube {
+    width: 100%;
+    height: 400px;
+    div {
+      width: 100%;
+      height: 100%;
+      display: block;
+      > iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  #speakers > div.speaker-card-container.h-100w-auto.rounded-2xl.mx-auto.relative.open > div.speaker-card.bg-white.rounded-2xl.p-4.open > div.card-info > div.awesome-pictures > div > div > div:nth-child(2) > iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .youtube img,
+  .youtube iframe,
+  .youtube .play-button,
+  .youtube .play-button:before {
+    position: absolute;
+  }
+  .youtube .play-button,
+  .youtube .play-button:before {
+    top: 50%;
+    left: 50%;
+    transform: translate3d( -50%, -50%, 0 );
   }
 </style>
 
