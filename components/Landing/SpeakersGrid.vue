@@ -325,12 +325,13 @@ export default {
         border-radius: 99999px;
       }
       .card-info {
-        margin-top: 2rem;
+        margin-top: 1rem;
         text-align: center;
         width: 100%;
         height: -webkit-fill-available;
         height: object-fill;
         overflow-y: auto;
+        margin-bottom: 3rem;
         .general {
           height: auto;
         }
