@@ -206,6 +206,8 @@ export default {
     },
     closeCard() {
       this.currentCard = null;
+      this.currentVideo = null;
+      this.videoLoaded = false;
     },
     shuffle(a) {
       for (let i = a.length - 1; i > 0; i--) {
