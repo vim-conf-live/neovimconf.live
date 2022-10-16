@@ -1,0 +1,37 @@
+{
+  "name": "project-template",
+  "version": "0.1.0",
+  "repository": "github:carlesandres/project-template",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "csslint": "npx stylelint \"**/*.css\"",
+    "prettify": "npx prettier --write .",
+    "lint": "tsc --noEmit && next lint --fix && yarn csslint",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "headlessui": "^0.0.0",
+    "next": "12.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "@types/react": "^18.0.20",
+    "autoprefixer": "^10.4.11",
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.0",
+    "eslint-plugin-react": "7.31.8",
+    "husky": "8.0.1",
+    "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.11.0",
+    "stylelint-config-standard": "^28.0.0",
+    "tailwindcss": "^3.1.8",
+    "typescript": "^4.8.3"
+  }
+}
