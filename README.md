@@ -1,15 +1,17 @@
-# Project template
+# Neovim Conf site 2022
 
-Execute:
-
-`yarn create next-app -e https://github.com/carlesandres/project-template`
-
-You **don't** need to create the project subfolder before executing the command.
-
-This project template includes:
+This project runs the Neovim conf 2022 based on the following libraries:
 
 - Next.js
 - Tailwind
+
+With the help of the following developer tools:
+
 - Eslint
 - Stylelint
 - Husky
+
+# Up and running
+
+After cloning run `yarn` to install the dependencies and `yarn dev` to run
+the project in development mode. It should running on port 3000 by default.
