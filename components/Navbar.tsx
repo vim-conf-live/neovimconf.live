@@ -22,6 +22,7 @@ const Navbar = (props: NavbarProps) => {
     <nav
       className={`fixed top-0 right-0 left-0 h-16
         flex items-center px-4 justify-between text-gray-800
+        transition duration-300
         ${scrollingClass}`}
     >
       <Image src="/neovim-logo.svg" alt="Neovim logo" width={160} height={40} />
@@ -34,7 +35,7 @@ const Navbar = (props: NavbarProps) => {
           value={email}
           onChange={handleChangeEmail}
           className={`rounded p-1 bg-white/20 outline-none 
-border border-white/10 placeholder:text-gray-500`}
+            border border-white/10 placeholder:text-gray-500`}
         />
       </div>
     </nav>
