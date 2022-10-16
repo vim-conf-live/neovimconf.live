@@ -25,15 +25,16 @@ const Navbar = (props: NavbarProps) => {
         ${scrollingClass}`}
     >
       <Image src="/neovim-logo.svg" alt="Neovim logo" width={160} height={40} />
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-2 text-sm">
         <label htmlFor="email">Register:</label>
         <input
           type="text"
-          placeholder="Your email"
+          placeholder="Enter your email"
           name="email"
           value={email}
           onChange={handleChangeEmail}
-          className="rounded p-1 bg-gray-100/10"
+          className={`rounded p-1 bg-white/20 outline-none 
+border border-white/10 placeholder:text-gray-500`}
         />
       </div>
     </nav>
