@@ -1,6 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
 import Navbar from 'components/Navbar';
+import HeroSection from 'components/HeroSection';
+import DatesSection from 'components/DatesSection';
+import ScheduleSection from 'components/ScheduleSection';
+import SpeakersSection from 'components/SpeakersSection';
 
 export default function Home() {
   const [scrolling, setScrolling] = useState(false);
@@ -27,18 +31,10 @@ export default function Home() {
         className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center
         mt-16"
       >
-        <h1
-          className="my-16 text-6xl sm:text-8xl xl:text-9xl font-bold
-          text-transparent bg-gradient-to-r from-[#1478AA] to-[#5B9636] 
-          bg-clip-text
-          "
-        >
-          Neovim&nbsp;Conf 2022
-        </h1>
-
-        <div className="font-bold text-white text-5xl sm:text-7xl xl:text-8xl">
-          December 9
-        </div>
+        <HeroSection />
+        <DatesSection />
+        <ScheduleSection />
+        <SpeakersSection />
       </main>
     </div>
   );
