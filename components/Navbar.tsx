@@ -25,7 +25,9 @@ const Navbar = (props: NavbarProps) => {
         transition duration-300
         ${scrollingClass}`}
     >
-      <Image src="/neovim-logo.svg" alt="Neovim logo" width={160} height={40} />
+      <a style={{ cursor: "pointer" }} onClick={() => document.documentElement.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <Image src="/neovim-logo.svg" alt="Neovim" width={160} height={40} />
+      </a>
       <div className="flex items-center space-x-2 text-sm">
         <label htmlFor="email">Register:</label>
         <input
