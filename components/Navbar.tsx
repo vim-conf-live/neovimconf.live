@@ -25,10 +25,21 @@ const Navbar = (props: NavbarProps) => {
         transition duration-300
         ${scrollingClass}`}
     >
-      <a style={{ cursor: "pointer" }} onClick={() => document.documentElement.scrollTo({ top: 0, behavior: 'smooth' })}>
-        <Image src="/neovim-logo.svg" alt="Neovim" width={160} height={40} />
+      <a
+        style={{ cursor: 'pointer' }}
+        onClick={() =>
+          document.documentElement.scrollTo({ top: 0, behavior: 'smooth' })
+        }
+      >
+        <Image
+          src="/XMLID-15.svg"
+          alt="Neovim"
+          className="h-14"
+          width={40}
+          height={40}
+        />
       </a>
-      <div className="flex items-center space-x-2 text-sm">
+      <div className="hidden items-center space-x-2 text-sm">
         <label htmlFor="email">Register:</label>
         <input
           type="text"

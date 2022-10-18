@@ -9,3 +9,15 @@ body {
 section h2 {
   @apply font-bold text-6xl;
 }
+
+.rebranding h1 {
+  @apply text-3xl sm:text-5xl mb-4;
+}
+
+.rebranding h2 {
+  @apply text-lg sm:text-2xl mb-2;
+}
+
+.rebranding p {
+  @apply text-green-500 mb-12;
+}
