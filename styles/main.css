@@ -7,17 +7,17 @@ body {
 }
 
 section h2 {
-  @apply font-bold text-6xl;
+  @apply text-6xl font-bold;
 }
 
 .rebranding h1 {
-  @apply text-3xl sm:text-5xl mb-4;
+  @apply mb-4 text-3xl sm:text-5xl;
 }
 
 .rebranding h2 {
-  @apply text-lg sm:text-2xl mb-2;
+  @apply mb-2 text-lg sm:text-2xl;
 }
 
 .rebranding p {
-  @apply text-green-500 mb-12;
+  @apply mb-12 text-green-500;
 }

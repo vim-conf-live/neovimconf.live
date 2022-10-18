@@ -27,12 +27,12 @@ export default function Home() {
       </Head>
 
       <main
-        className="flex flex-col items-center justify-center w-full flex-1 text-center
-        mt-16"
+        className="mt-16 flex w-full flex-1 flex-col items-center justify-center
+        text-center"
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 justify-items-center justify-center items-center content-center">
+        <div className="grid grid-cols-1 content-center items-center justify-center justify-items-center sm:grid-cols-2">
           <HeroSection />
-          <div className="info grid grid-hero-info gap-8 p-4 justify-items-center content-center">
+          <div className="info grid-hero-info grid content-center justify-items-center gap-8 p-4">
             <a
               style={{ cursor: 'pointer' }}
               onClick={() =>
@@ -44,16 +44,16 @@ export default function Home() {
             >
               <Image src="/XMLID-15.svg" alt="Neovim" width={160} height={40} />
             </a>
-            <div className="grid grid-cols-2 gap-4 text-8">
+            <div className="text-8 grid grid-cols-2 gap-4">
               <Link href="/rebranding-rationale">
-                <a className="p-2 bg-green-500 rounded-lg hover:bg-green-600 transition">
+                <a className="rounded-lg bg-green-500 p-2 transition hover:bg-green-600">
                   The Rebranding Rationale
                 </a>
               </Link>
               <Link href="https://forms.gle/hU18jSEWL2r9xmqP9" target="_blank">
                 <a
                   target="_blank"
-                  className="p-2 bg-green-500 rounded-lg hover:bg-green-600 transition"
+                  className="rounded-lg bg-green-500 p-2 transition hover:bg-green-600"
                 >
                   Speaker Signup
                 </a>
