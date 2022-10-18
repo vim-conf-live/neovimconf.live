@@ -27,7 +27,7 @@ export default function Home() {
       </Head>
 
       <main
-        className="flex flex-col items-center justify-center w-full flex-1 text-center
+        className="flex flex-col items-center justify-center flex-1 text-center
         mt-16"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 justify-items-center justify-center items-center content-center">
