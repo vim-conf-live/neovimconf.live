@@ -37,7 +37,7 @@ function RebrandingRationale() {
       </p>
     </main>
   );
-};
+}
 
 RebrandingRationale.getLayout = (page: ReactNode) => {
   return <NavbarLayout>{page}</NavbarLayout>;
