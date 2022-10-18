@@ -1,4 +1,7 @@
-const RebrandingRationale = () => {
+import { ReactNode } from 'react';
+import NavbarLayout from 'components/NavbarLayout';
+
+function RebrandingRationale() {
   return (
     <main className="rebranding container mx-auto mt-6 max-w-[75ch] p-4 font-mono text-gray-100 sm:mt-20">
       <h1>Hello all!</h1>
@@ -34,6 +37,10 @@ const RebrandingRationale = () => {
       </p>
     </main>
   );
+};
+
+RebrandingRationale.getLayout = (page: ReactNode) => {
+  return <NavbarLayout>{page}</NavbarLayout>;
 };
 
 export default RebrandingRationale;

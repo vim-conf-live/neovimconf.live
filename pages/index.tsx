@@ -1,27 +1,13 @@
-import { useState, useEffect, useCallback } from 'react';
+import { ReactNode } from 'react';
 import Head from 'next/head';
-import Navbar from 'components/Navbar';
 import HeroSection from 'components/HeroSection';
 import Link from 'next/link';
 import Image from 'next/future/image';
+import NavbarLayout from 'components/NavbarLayout';
 
-export default function Home() {
-  const [scrolling, setScrolling] = useState(false);
-
-  // TO-DO: We need to debounce this
-  const handleScroll = useCallback(() => {
-    const isScrolling = document.documentElement.scrollTop > 0;
-    setScrolling(isScrolling);
-  }, []);
-
-  useEffect(() => {
-    document.addEventListener('scroll', handleScroll);
-    return () => document.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
-
+function Home() {
   return (
-    <div className="min-h-screen text-gray-200">
-      <Navbar scrolling={scrolling} />
+    <>
       <Head>
         <title>Neovim Conf 2022</title>
       </Head>
@@ -62,6 +48,12 @@ export default function Home() {
           </div>
         </div>
       </main>
-    </div>
+    </>
   );
 }
+
+Home.getLayout = (page: ReactNode) => {
+  return <NavbarLayout>{page}</NavbarLayout>;
+};
+
+export default Home;
