@@ -4,7 +4,7 @@ import userbase from 'userbase-js';
 const RegistrationPage = () => {
   const [email, setEmail] = useState('');
 
-  useEffect( () => {
+  useEffect(() => {
     console.log('userbase', userbase);
   }, []);
 
@@ -13,7 +13,7 @@ const RegistrationPage = () => {
 
   const handleSubmitRegistration = useCallback(() => {
     console.log('email', email);
-  },[email]);
+  }, [email]);
 
   return (
     <div>
