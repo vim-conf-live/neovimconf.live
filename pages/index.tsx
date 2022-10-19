@@ -32,14 +32,14 @@ function Home() {
             </a>
             <div className="text-8 grid grid-cols-2 gap-4">
               <Link href="/rebranding-rationale">
-                <a className="rounded-lg bg-green-500 p-2 transition hover:bg-green-600">
+                <a className="grid content-center rounded-lg bg-green-500 p-2 transition hover:bg-green-600">
                   The Rebranding Rationale
                 </a>
               </Link>
               <Link href="https://forms.gle/hU18jSEWL2r9xmqP9" target="_blank">
                 <a
                   target="_blank"
-                  className="rounded-lg bg-green-500 p-2 transition hover:bg-green-600"
+                  className="grid content-center rounded-lg bg-green-500 p-2 transition hover:bg-green-600"
                 >
                   Speaker Signup
                 </a>
