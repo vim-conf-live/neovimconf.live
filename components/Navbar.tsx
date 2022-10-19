@@ -1,5 +1,6 @@
 import { ChangeEvent, useState, useCallback } from 'react';
 import Image from 'next/future/image';
+import { useRouter } from 'next/router';
 import JoinDiscordButton from './JoinDiscordButton';
 
 export interface NavbarProps {
@@ -17,6 +18,15 @@ const Navbar = (props: NavbarProps) => {
     []
   );
 
+  const router = useRouter();
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.preventDefault();
+    if (router.pathname == '/')
+      document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+    else router.push('/', undefined, { scroll: false });
+  };
+
   const scrollingClass = scrolling ? 'bg-black' : '';
 
   return (
@@ -26,23 +36,14 @@ const Navbar = (props: NavbarProps) => {
         transition duration-300
         ${scrollingClass}`}
     >
-      <div>
-        <a
-          style={{ cursor: 'pointer' }}
-          onClick={() =>
-            document.documentElement.scrollTo({ top: 0, behavior: 'smooth' })
-          }
-          className="flex"
-        >
-          <Image
-            src="/neovimconf-logo.svg"
-            alt="NeovimConf logo"
-            className="h-14"
-            width={40}
-            height={40}
-          />
-          <span className="self-center px-3">NeovimConf</span>
-        </a>
+      <div className="flex cursor-pointer" onClick={(e) => handleLogoClick(e)}>
+        <Image
+          src="/neovimconf-logo.svg"
+          alt="NeovimConf logo"
+          width={40}
+          height={40}
+        />
+        <span className="self-center px-3">NeovimConf</span>
       </div>
 
       <JoinDiscordButton />
