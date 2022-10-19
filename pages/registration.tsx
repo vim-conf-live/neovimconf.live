@@ -9,8 +9,8 @@ const USERBASE_APP_ID = process.env.NEXT_PUBLIC_USERBASE_APP_ID;
 
 function RegistrationPage() {
   const [email, setEmail] = useState('');
-  const [ success, setSuccess ] = useState(false);
-  const [ error, setError ] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (USERBASE_APP_ID) {
@@ -44,7 +44,7 @@ function RegistrationPage() {
   }
 
   if (error) {
-    return <RegistrationErrorMsg />
+    return <RegistrationErrorMsg />;
   }
 
   return (
