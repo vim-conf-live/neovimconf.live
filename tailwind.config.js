@@ -10,6 +10,15 @@ module.exports = {
         //'16': 'repeat(16, minmax(0, 1fr))',
         'hero-info': '200px minmax(900px, 1fr) 100px',
       },
+      colors: {
+        brand: {
+          discord: '#5865F2',
+        },
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+      },
     },
   },
   variants: {
