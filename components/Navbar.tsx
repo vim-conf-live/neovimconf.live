@@ -17,29 +17,34 @@ const Navbar = (props: NavbarProps) => {
     []
   );
 
-  const scrollingClass = scrolling ? 'bg-black' : 'bg-green-500';
+  const scrollingClass = scrolling ? 'bg-black' : '';
 
   return (
     <nav
       className={`fixed top-0 right-0 left-0 flex
-        h-16 items-center justify-between px-4 text-gray-800
+        h-16 items-center justify-between px-4 text-white
         transition duration-300
         ${scrollingClass}`}
     >
-      <a
-        style={{ cursor: 'pointer' }}
-        onClick={() =>
-          document.documentElement.scrollTo({ top: 0, behavior: 'smooth' })
-        }
-      >
-        <Image
-          src="/XMLID-15.svg"
-          alt="Neovim"
-          className="h-14"
-          width={40}
-          height={40}
-        />
-      </a>
+      <div>
+        <a
+          style={{ cursor: 'pointer' }}
+          onClick={() =>
+            document.documentElement.scrollTo({ top: 0, behavior: 'smooth' })
+          }
+          className="flex"
+        >
+          <Image
+            src="/neovimconf-logo.svg"
+            alt="NeovimConf logo"
+            className="h-14"
+            width={40}
+            height={40}
+          />
+          <span className="self-center px-3">NeovimConf</span>
+        </a>
+      </div>
+
       <JoinDiscordButton />
       <div className="hidden items-center space-x-2 text-sm">
         <label htmlFor="email">Register:</label>
