@@ -1,5 +1,6 @@
 import { ChangeEvent, useState, useCallback } from 'react';
 import Image from 'next/future/image';
+import JoinDiscordButton from './JoinDiscordButton';
 
 export interface NavbarProps {
   scrolling?: boolean;
@@ -39,6 +40,7 @@ const Navbar = (props: NavbarProps) => {
           height={40}
         />
       </a>
+      <JoinDiscordButton />
       <div className="hidden items-center space-x-2 text-sm">
         <label htmlFor="email">Register:</label>
         <input
