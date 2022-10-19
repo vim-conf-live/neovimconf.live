@@ -13,8 +13,8 @@ function Home() {
       </Head>
 
       <main
-        className="mt-16 flex w-full flex-1 flex-col items-center justify-center
-        text-center"
+        className="flex flex-col items-center justify-center flex-1 text-center
+        mt-16"
       >
         <div className="grid grid-cols-1 content-center items-center justify-center justify-items-center sm:grid-cols-2">
           <HeroSection />
