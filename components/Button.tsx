@@ -9,7 +9,7 @@ const Button = (props: ButtonProps) => {
   const { onClick, children } = props;
 
   return (
-    <button className="border p-4 rounded" onClick={onClick}>
+    <button className="rounded border p-4" onClick={onClick}>
       {children}
     </button>
   );

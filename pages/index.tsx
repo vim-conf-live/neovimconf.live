@@ -1,27 +1,13 @@
-import { useState, useEffect, useCallback } from 'react';
+import { ReactNode } from 'react';
 import Head from 'next/head';
-import Navbar from 'components/Navbar';
 import HeroSection from 'components/HeroSection';
 import Link from 'next/link';
 import Image from 'next/future/image';
+import NavbarLayout from 'components/NavbarLayout';
 
-export default function Home() {
-  const [scrolling, setScrolling] = useState(false);
-
-  // TO-DO: We need to debounce this
-  const handleScroll = useCallback(() => {
-    const isScrolling = document.documentElement.scrollTop > 0;
-    setScrolling(isScrolling);
-  }, []);
-
-  useEffect(() => {
-    document.addEventListener('scroll', handleScroll);
-    return () => document.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
-
+function Home() {
   return (
-    <div className="min-h-screen text-gray-200">
-      <Navbar scrolling={scrolling} />
+    <>
       <Head>
         <title>Neovim Conf 2022</title>
       </Head>
@@ -30,9 +16,9 @@ export default function Home() {
         className="flex flex-col items-center justify-center flex-1 text-center
         mt-16"
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 justify-items-center justify-center items-center content-center">
+        <div className="grid grid-cols-1 content-center items-center justify-center justify-items-center sm:grid-cols-2">
           <HeroSection />
-          <div className="info grid grid-hero-info gap-8 p-4 justify-items-center content-center">
+          <div className="info grid-hero-info grid content-center justify-items-center gap-8 p-4">
             <a
               style={{ cursor: 'pointer' }}
               onClick={() =>
@@ -44,16 +30,16 @@ export default function Home() {
             >
               <Image src="/XMLID-15.svg" alt="Neovim" width={160} height={40} />
             </a>
-            <div className="grid grid-cols-2 gap-4 text-8">
+            <div className="text-8 grid grid-cols-2 gap-4">
               <Link href="/rebranding-rationale">
-                <a className="p-2 bg-green-500 rounded-lg hover:bg-green-600 transition">
+                <a className="grid content-center rounded-lg bg-green-500 p-2 transition hover:bg-green-600">
                   The Rebranding Rationale
                 </a>
               </Link>
               <Link href="https://forms.gle/hU18jSEWL2r9xmqP9" target="_blank">
                 <a
                   target="_blank"
-                  className="p-2 bg-green-500 rounded-lg hover:bg-green-600 transition"
+                  className="grid content-center rounded-lg bg-green-500 p-2 transition hover:bg-green-600"
                 >
                   Speaker Signup
                 </a>
@@ -62,6 +48,12 @@ export default function Home() {
           </div>
         </div>
       </main>
-    </div>
+    </>
   );
 }
+
+Home.getLayout = (page: ReactNode) => {
+  return <NavbarLayout>{page}</NavbarLayout>;
+};
+
+export default Home;

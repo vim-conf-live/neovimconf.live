@@ -1,5 +1,6 @@
 import { ChangeEvent, useState, useCallback } from 'react';
 import Image from 'next/future/image';
+import JoinDiscordButton from './JoinDiscordButton';
 
 export interface NavbarProps {
   scrolling?: boolean;
@@ -20,8 +21,8 @@ const Navbar = (props: NavbarProps) => {
 
   return (
     <nav
-      className={`fixed top-0 right-0 left-0 h-16
-        flex items-center px-4 justify-between text-gray-800
+      className={`fixed top-0 right-0 left-0 flex
+        h-16 items-center justify-between px-4 text-gray-800
         transition duration-300
         ${scrollingClass}`}
     >
@@ -39,6 +40,7 @@ const Navbar = (props: NavbarProps) => {
           height={40}
         />
       </a>
+      <JoinDiscordButton />
       <div className="hidden items-center space-x-2 text-sm">
         <label htmlFor="email">Register:</label>
         <input
@@ -47,8 +49,8 @@ const Navbar = (props: NavbarProps) => {
           name="email"
           value={email}
           onChange={handleChangeEmail}
-          className={`rounded p-1 bg-white/20 outline-none 
-            border border-white/10 placeholder:text-gray-500`}
+          className={`rounded border border-white/10 bg-white/20 
+            p-1 outline-none placeholder:text-gray-500`}
         />
       </div>
     </nav>
