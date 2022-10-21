@@ -9,7 +9,7 @@
     "start": "next start",
     "csslint": "npx stylelint \"**/*.css\"",
     "prettify": "npx prettier --write .",
-    "lint": "tsc --noEmit && next lint --fix && yarn csslint",
+    "lint": "tsc --noEmit && next lint --fix",
     "prepare": "husky install"
   },
   "dependencies": {
