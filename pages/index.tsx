@@ -16,32 +16,34 @@ function Home() {
         className="mt-16 flex flex-1 flex-col items-center justify-center
         text-center"
       >
-        <div className="grid grid-cols-1 content-center items-center justify-center justify-items-center sm:grid-cols-2">
-          <HeroSection />
-          <div className="info grid-hero-info grid content-center justify-items-center gap-8 p-4">
-            <div className="logo">
-              <Image
-                src="/neovimconf-logo.svg"
-                alt="NeovimConf logo"
-                width={200}
-                height={200}
-              />
-              <div className="blur"></div>
-            </div>
-            <div className="text-8 grid grid-cols-2 gap-4">
-              <Link href="/rebranding-rationale">
-                <a className="grid content-center rounded-lg bg-green-500 p-2 transition hover:bg-green-600">
-                  The Rebranding Rationale
-                </a>
-              </Link>
-              <Link href="https://forms.gle/hU18jSEWL2r9xmqP9" target="_blank">
-                <a
-                  target="_blank"
-                  className="grid content-center rounded-lg bg-green-500 p-2 transition hover:bg-green-600"
-                >
-                  Speaker Signup
-                </a>
-              </Link>
+        <div className="circuit-background">
+          <div className="dim-background grid grid-cols-1 content-center items-center justify-center justify-items-center sm:grid-cols-2">
+            <HeroSection />
+            <div className="info grid-hero-info grid content-center justify-items-center gap-8 p-4">
+              <div className="logo">
+                <Image
+                  src="/neovimconf-logo.svg"
+                  alt="NeovimConf logo"
+                  width={200}
+                  height={200}
+                />
+                <div className="blur"></div>
+              </div>
+              <div className="text-8 grid grid-cols-2 gap-4">
+                <Link href="/rebranding-rationale">
+                  <a className="grid content-center rounded-lg bg-green-500 p-2 transition hover:bg-green-600">
+                    The Rebranding Rationale
+                  </a>
+                </Link>
+                <Link href="https://forms.gle/hU18jSEWL2r9xmqP9" target="_blank">
+                  <a
+                    target="_blank"
+                    className="grid content-center rounded-lg bg-green-500 p-2 transition hover:bg-green-600"
+                  >
+                    Speaker Signup
+                  </a>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

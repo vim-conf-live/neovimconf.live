@@ -6,6 +6,14 @@ body {
   @apply bg-gray-900;
 }
 
+.circuit-background {
+  background-image: url(/neovimconf-circuit.png);
+  background-size: cover;
+}
+.dim-background {
+  background-color: rgb(17 24 39 / 90%);
+}
+
 section h2 {
   @apply text-6xl font-bold;
 }
@@ -34,4 +42,18 @@ section h2 {
   width: 100%;
   height: 100%;
   transform: translate(0%, -100%);
+  opacity: 0;
+  animation: 6s ease infinite alternate fadeIn;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+    background-size: 10%;
+  }
+
+  100% {
+    background-size: 100%;
+    opacity: 1;
+  }
 }
