@@ -3,8 +3,8 @@ const HeroSection = () => {
     <div className="p-4">
       <h1
         className="bg-gradient-to-r from-[#1478AA]
-        to-[#5B9636] bg-clip-text text-6xl font-bold 
-        text-transparent
+        to-[#5B9636] bg-clip-text text-4xl font-bold text-transparent 
+        sm:text-7xl
         "
       >
         Neovim&nbsp;Conf 2022
