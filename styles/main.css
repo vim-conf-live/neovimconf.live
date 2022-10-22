@@ -11,7 +11,8 @@ body {
   background-size: cover;
 }
 .dim-background {
-  background-color: rgb(17 24 39 / 90%);
+  background-color: rgb(17 24 39 / 100%);
+  animation: 3s ease forwards dimBackground;
 }
 
 section h2 {
@@ -58,6 +59,16 @@ section h2 {
   opacity: 0;
   animation: 6s ease infinite alternate fadeIn;
 }
+
+@keyframes dimBackground {
+  0% {
+    background-color: rgb(17 24 39 / 100%);
+  }
+  100% {
+    background-color: rgb(17 24 39 / 90%);
+  }
+}
+
 
 @keyframes fadeIn {
   0% {
