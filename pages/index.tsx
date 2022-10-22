@@ -17,7 +17,7 @@ function Home() {
         text-center"
       >
         <div className="circuit-background">
-          <div className="dim-background grid grid-cols-1 content-center items-center justify-center justify-items-center sm:grid-cols-2">
+          <div className="dim-background grid grid-cols-1 content-center items-center justify-center justify-items-center py-2 sm:grid-cols-2">
             <HeroSection />
             <div className="info grid-hero-info grid content-center justify-items-center gap-16 p-4">
               <div className="logo">
@@ -31,8 +31,10 @@ function Home() {
               </div>
               <div className="text-8 grid grid-cols-2 gap-4">
                 <Link href="/rebranding-rationale">
-                  <a className={`grid content-center rounded-lg bg-green-700 text-sm 
-                    py-3 px-4 transition duration-300 hover:bg-green-800`}>
+                  <a
+                    className={`grid content-center rounded-lg bg-green-700 py-3 
+                    px-4 text-sm transition duration-300 hover:bg-green-800`}
+                  >
                     The Rebranding Rationale
                   </a>
                 </Link>
@@ -43,7 +45,7 @@ function Home() {
                   <a
                     target="_blank"
                     className={`grid content-center rounded-lg bg-green-700 py-3 px-4
-                      transition duration-300 text-sm hover:bg-green-800`}
+                      text-sm transition duration-300 hover:bg-green-800`}
                   >
                     Speaker Signup
                   </a>
