@@ -1,22 +1,16 @@
 import { ReactNode, MouseEvent } from 'react';
 import NavbarLayout from 'components/NavbarLayout';
 import { useState, useEffect, useCallback, ChangeEvent } from 'react';
-import userbase from 'userbase-js';
+import { supabase } from 'components/supabaseClient';
 import RegistrationSuccessMsg from 'components/RegistrationSuccessMsg';
 import RegistrationErrorMsg from 'components/RegistrationErrorMsg';
 
-const USERBASE_APP_ID = process.env.NEXT_PUBLIC_USERBASE_APP_ID;
+const NEOVIM_CONF_2022_ID = 'adc031c3-9a8b-409c-b487-1ae56b470eb6';
 
 function RegistrationPage() {
   const [email, setEmail] = useState('');
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
-
-  useEffect(() => {
-    if (USERBASE_APP_ID) {
-      userbase.init({ appId: USERBASE_APP_ID });
-    }
-  }, []);
 
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) =>
     setEmail(event.target.value);
@@ -26,17 +20,37 @@ function RegistrationPage() {
       event.preventDefault();
       setError(false);
       setSuccess(false);
-      try {
-        await userbase.signUp({
-          email,
-          username: email,
-          password: 'vimconf2',
-          rememberMe: 'none',
-        });
-        setSuccess(true);
-      } catch (err) {
+
+      const { data, error: attendee_error } = await supabase
+        .from('attendees')
+        .insert([
+          {
+            email,
+          }
+        ])
+        .select();
+
+      if (attendee_error) {
         setError(true);
+        return;
       }
+
+        const attendeeId = data[0].id;
+
+      console.log('data', data);
+      const { error } = await supabase
+        .from('registrations')
+        .insert([
+          {
+            attendee_id: attendeeId,
+            event_id: NEOVIM_CONF_2022_ID
+          }
+        ]);
+      if (error) {
+        setError(true);
+        return;
+      }
+        setSuccess(true);
     },
     [email]
   );
@@ -44,10 +58,10 @@ function RegistrationPage() {
   return (
     <div
       className={`mx-auto mt-20 min-h-screen max-w-screen-sm text-center
-       sm:mt-40 
+       sm:mt-40
     `}
     >
-      <h1 className="mb-16 text-4xl">Register as a speaker</h1>
+      <h1 className="mb-16 text-4xl">Register to attend the conference</h1>
       <form className="mb-4 flex items-center justify-center">
         <input
           className="w-72 rounded-l p-2 text-gray-800"
@@ -58,7 +72,7 @@ function RegistrationPage() {
         />
         <button
           type="submit"
-          className={`rounded-r bg-gray-300 px-4 py-2 text-blue-900 shadow 
+          className={`rounded-r bg-gray-300 px-4 py-2 text-blue-900 shadow
             transition hover:bg-gray-400`}
           onClick={handleSubmitRegistration}
         >
