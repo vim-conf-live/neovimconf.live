@@ -11,7 +11,7 @@ const RegistrationSuccessMsg = (props: Props) => {
 
   return (
     <div className="text-sm text-green-500">
-      <p>{`Thanks! You have registered as a speaker. We will contact you shortly.`}</p>
+      <p>{`Yay! You are going to NeovimConf 2022! Make sure to save the date.`}</p>
     </div>
   );
 };
