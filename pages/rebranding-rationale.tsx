@@ -3,7 +3,7 @@ import NavbarLayout from 'components/NavbarLayout';
 
 function RebrandingRationale() {
   return (
-    <main className="rebranding container mx-auto mt-6 max-w-[75ch] p-4 font-mono text-gray-100 sm:mt-20">
+    <main className="rebranding container mx-auto mt-16 max-w-[75ch] p-4 font-mono text-gray-100">
       <h1>Hello all!</h1>
       <p>
         Last years conference was truly amazing and we were so awed by community
