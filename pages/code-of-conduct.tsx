@@ -1,6 +1,9 @@
+import { ReactNode } from 'react';
+import NavbarLayout from 'components/NavbarLayout';
+
 function CodeOfConduct() {
   return (
-    <main className="rebranding container mx-auto mt-6 max-w-[75ch] p-4 font-mono text-gray-100 sm:mt-20">
+    <main className="rebranding container mx-auto mt-16 max-w-[75ch] p-4 font-mono text-gray-100 sm:mt-20">
       <h1>Code of Conduct</h1>
 
       <p>NeovimConf.live is an inclusive community.</p>
@@ -91,7 +94,7 @@ function CodeOfConduct() {
         Discord Code of Conduct
       </h2>
 
-      <ul>
+      <ul role="list">
         <li>
           Written communication is easy to misinterpret. Ask for clarification
           before jumping to conclusions.
@@ -148,7 +151,7 @@ function CodeOfConduct() {
         seriously. They will ask you details such as:
       </p>
 
-      <ul>
+      <ul role="list">
         <li>time / place / manner of the alleged violation.</li>
         <li>
           whether there were additional witnesses or other people
@@ -203,6 +206,10 @@ function CodeOfConduct() {
       </p>
     </main>
   );
+}
+
+CodeOfConduct.getLayout = (page: ReactNode) => {
+  return <NavbarLayout>{page}</NavbarLayout>;
 }
 
 export default CodeOfConduct;
