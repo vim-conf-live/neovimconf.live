@@ -1,6 +1,3 @@
-import { ReactNode } from 'react';
-import NavbarLayout from 'components/NavbarLayout';
-
 function CodeOfConduct() {
   return (
     <main className="rebranding container mx-auto mt-16 max-w-[75ch] p-4 font-mono text-gray-100 sm:mt-20">
@@ -135,49 +132,48 @@ function CodeOfConduct() {
       </p>
 
       <p>
-        <strong>If it seems safe</strong>, try and speak with the
-        person privately,<strong> in person </strong>if you can. Try
-        and work to a resolution together. If it goes well, great!
-        If it does not go well, please speak to an organizer as soon
-        as you can.
+        <strong>If it seems safe</strong>, try and speak with the person
+        privately,<strong> in person </strong>if you can. Try and work to a
+        resolution together. If it goes well, great! If it does not go well,
+        please speak to an organizer as soon as you can.
       </p>
 
       <p>
-        <strong>If it does not seem safe</strong>, or the
-        conversation did not go well, speak to an organizer about
-        what happened as soon as you can.
+        <strong>If it does not seem safe</strong>, or the conversation did not
+        go well, speak to an organizer about what happened as soon as you can.
       </p>
 
       <p>
-        <strong>After the fact: </strong>Organizers are familiar with
-        this Code of Conduct and will take reports of CoC violations
-        seriously. They will ask you details such as:
+        <strong>After the fact: </strong>Organizers are familiar with this Code
+        of Conduct and will take reports of CoC violations seriously. They will
+        ask you details such as:
       </p>
 
       <ul role="list">
         <li>time / place / manner of the alleged violation.</li>
         <li>
-          whether there were additional witnesses or other people
-          involved.
+          whether there were additional witnesses or other people involved.
         </li>
         <li>
-          contact or identifying information about the person who
-          allegedly violated the CoC.
+          contact or identifying information about the person who allegedly
+          violated the CoC.
         </li>
         <li>
-          Whether or not you would prefer to have your complaint be
-          kept anonymous in the situation.
+          Whether or not you would prefer to have your complaint be kept
+          anonymous in the situation.
         </li>
       </ul>
 
       <p>
-        You can help us by giving us much detail as you can about what
-        occurred Organizers will work with staff to evaluate what
-        happened, inform the person(s) in question that a violation
-        was reported, and establish next steps.
+        You can help us by giving us much detail as you can about what occurred
+        Organizers will work with staff to evaluate what happened, inform the
+        person(s) in question that a violation was reported, and establish next
+        steps.
       </p>
 
-      <h2 className="my-8 text-3xl" id="enforcement">Enforcement</h2>
+      <h2 className="my-8 text-3xl" id="enforcement">
+        Enforcement
+      </h2>
       <p>
         This Code of Conduct covers a variety of different spaces of
         interaction.
@@ -185,34 +181,30 @@ function CodeOfConduct() {
       <p>If you’d like to report a CoC violation that happens…</p>
       <ul role="list">
         <li>
-          in the Discord Server, please speak to ABD. Please do note we
-          may be out of your timezone, but we will respond.
+          in the Discord Server, please speak to ABD. Please do note we may be
+          out of your timezone, but we will respond.
         </li>
         <li>
-          during our online events, please speak with the organizers, who
-          can be reached in the discord server.
+          during our online events, please speak with the organizers, who can be
+          reached in the discord server.
         </li>
       </ul>
       <p>
-        All group organizers are required to relay all reports of CoC
-        violations and complaints to Vimconf.live staff within one week,
-        regardless of how “severe” they are, so we can be accountable and
-        responsible for resolving issues promptly.
+        All group organizers are required to relay all reports of CoC violations
+        and complaints to Vimconf.live staff within one week, regardless of how
+        “severe” they are, so we can be accountable and responsible for
+        resolving issues promptly.
       </p>
       <p>
         Depending on the severity of the issue, the person may receive a
-        last-chance warning, may be asked to leave the activity/group, or
-        may receive a future ban. In very severe cases, we reserve the
-        right to involve law enforcement should we feel it necessary.
-        Tickets or other participation fees won’t be refunded for people
-        who are removed for CoC violations.
+        last-chance warning, may be asked to leave the activity/group, or may
+        receive a future ban. In very severe cases, we reserve the right to
+        involve law enforcement should we feel it necessary. Tickets or other
+        participation fees won’t be refunded for people who are removed for CoC
+        violations.
       </p>
     </main>
   );
-}
-
-CodeOfConduct.getLayout = (page: ReactNode) => {
-  return <NavbarLayout>{page}</NavbarLayout>;
 }
 
 export default CodeOfConduct;

@@ -1,10 +1,8 @@
 import Head from 'next/head';
 import 'styles/main.css';
+import NavbarLayout from 'components/NavbarLayout';
 
 function MyApp({ Component, pageProps }) {
-  const getLayout = Component.getLayout || ((page: any) => page);
-  const renderedComp = getLayout(<Component {...pageProps} />);
-
   // <link rel="canonical" href={canonicalURL} />
   return (
     <>
@@ -41,7 +39,10 @@ function MyApp({ Component, pageProps }) {
         />
         <meta name="description" content="Neovim Conf 2022" />
       </Head>
-      {renderedComp}
+      <NavbarLayout>
+        <Component {...pageProps} />
+      </NavbarLayout>
+      ;
     </>
   );
 }

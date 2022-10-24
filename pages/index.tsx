@@ -1,9 +1,7 @@
-import { ReactNode } from 'react';
 import Head from 'next/head';
 import HeroSection from 'components/HeroSection';
 import Link from 'next/link';
 import Image from 'next/future/image';
-import NavbarLayout from 'components/NavbarLayout';
 
 function Home() {
   return (
@@ -78,9 +76,5 @@ function Home() {
     </>
   );
 }
-
-Home.getLayout = (page: ReactNode) => {
-  return <NavbarLayout>{page}</NavbarLayout>;
-};
 
 export default Home;

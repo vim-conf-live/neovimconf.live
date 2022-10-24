@@ -1,6 +1,3 @@
-import { ReactNode } from 'react';
-import NavbarLayout from 'components/NavbarLayout';
-
 function RebrandingRationale() {
   return (
     <main className="rebranding container mx-auto mt-16 max-w-[75ch] p-4 font-mono text-gray-100">
@@ -38,9 +35,5 @@ function RebrandingRationale() {
     </main>
   );
 }
-
-RebrandingRationale.getLayout = (page: ReactNode) => {
-  return <NavbarLayout>{page}</NavbarLayout>;
-};
 
 export default RebrandingRationale;
