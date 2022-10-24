@@ -27,13 +27,13 @@ const Navbar = (props: NavbarProps) => {
     else router.push('/', undefined, { scroll: false });
   };
 
-  const scrollingClass = scrolling ? 'bg-black' : '';
+  const scrollingClass = scrolling ? 'drop-shadow-md' : '';
 
   return (
     <nav
       className={`fixed top-0 right-0 left-0 flex
-        h-16 items-center justify-between px-4 text-white
-        transition duration-300
+        h-16 items-center justify-between bg-gray-900 px-4
+        text-white transition duration-300
         ${scrollingClass}`}
     >
       <div
