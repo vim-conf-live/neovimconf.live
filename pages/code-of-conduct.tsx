@@ -29,31 +29,31 @@ function CodeOfConduct() {
 
       <ul role="list">
         <li>We approach interactions with thoughtfulness and care.</li>
-
-        <li>
+      
+        <p className="my-7">
           We are patient &amp; kind to others. We don’t dismiss someone because
           they have a different level of experience, are of a different
           background, or have a difference of opinion than us.
-        </li>
+        </p>
 
         <li>We are respectful when we disagree with someone.</li>
 
-        <li>
+        <p className="my-7">
           There is a human in front of us. We don’t allow frustration to turn
           into a personal attack. A community where people feel uncomfortable or
           threatened is not a productive one. We are collectively responsible
           for each other.
-        </li>
+        </p>
 
         <li>We work to correct mistakes when they occur.</li>
 
-        <li>
+        <p className="my-7">
           No one is expected to always be perfect or to know everything -
           sometimes even good intentions have unwanted outcomes. But how we
           respond to criticism is important. If someone criticizes our conduct,
           or points out ways we have harmed someone, we listen without taking it
           personally, and work towards a resolution - together.
-        </li>
+        </p>
       </ul>
 
       <h2 className="my-8 text-3xl" id="we-will-not-tolerate-the-following">
@@ -180,7 +180,7 @@ function CodeOfConduct() {
         interaction.
       </p>
       <p>If you’d like to report a CoC violation that happens…</p>
-      <ul>
+      <ul role="list">
         <li>
           in the Discord Server, please speak to ABD. Please do note we
           may be out of your timezone, but we will respond.
