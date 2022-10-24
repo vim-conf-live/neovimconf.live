@@ -32,6 +32,9 @@ section h2 {
   @apply mb-12 text-green-500;
 }
 
+.rebranding p.neovim-community{
+  @apply mb-4;
+}
 .rebranding ul {
   @apply ml-5 mb-12 list-outside list-disc text-green-500;
 }
