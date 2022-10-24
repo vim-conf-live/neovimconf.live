@@ -1,6 +1,5 @@
-import { ReactNode, MouseEvent } from 'react';
-import NavbarLayout from 'components/NavbarLayout';
-import { useState, useEffect, useCallback, ChangeEvent } from 'react';
+import { MouseEvent } from 'react';
+import { useState, useCallback, ChangeEvent } from 'react';
 import { supabase } from 'components/supabaseClient';
 import RegistrationSuccessMsg from 'components/RegistrationSuccessMsg';
 import RegistrationErrorMsg from 'components/RegistrationErrorMsg';
@@ -26,7 +25,7 @@ function RegistrationPage() {
         .insert([
           {
             email,
-          }
+          },
         ])
         .select();
 
@@ -35,22 +34,20 @@ function RegistrationPage() {
         return;
       }
 
-        const attendeeId = data[0].id;
+      const attendeeId = data[0].id;
 
       console.log('data', data);
-      const { error } = await supabase
-        .from('registrations')
-        .insert([
-          {
-            attendee_id: attendeeId,
-            event_id: NEOVIM_CONF_2022_ID
-          }
-        ]);
+      const { error } = await supabase.from('registrations').insert([
+        {
+          attendee_id: attendeeId,
+          event_id: NEOVIM_CONF_2022_ID,
+        },
+      ]);
       if (error) {
         setError(true);
         return;
       }
-        setSuccess(true);
+      setSuccess(true);
     },
     [email]
   );
@@ -84,9 +81,5 @@ function RegistrationPage() {
     </div>
   );
 }
-
-RegistrationPage.getLayout = (page: ReactNode) => {
-  return <NavbarLayout>{page}</NavbarLayout>;
-};
 
 export default RegistrationPage;
