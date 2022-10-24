@@ -3,6 +3,8 @@ function CodeOfConduct() {
     <main className="rebranding container mx-auto mt-6 max-w-[75ch] p-4 font-mono text-gray-100 sm:mt-20">
       <h1>Code of Conduct</h1>
 
+      <p>NeovimConf.live is an inclusive community.</p>
+
       <p>
         We strive to create a friendly, welcoming, judgement- and
         harassment-free place for individuals to learn, connect, and share their
@@ -85,7 +87,7 @@ function CodeOfConduct() {
         section.
       </p>
 
-      <h2 className="text-3xl" id="discord-code-of-conduct">
+      <h2 className="my-8 text-3xl" id="discord-code-of-conduct">
         Discord Code of Conduct
       </h2>
 
@@ -113,7 +115,7 @@ function CodeOfConduct() {
           feel spammy.
         </li>
       </ul>
-      <h2 className="text-3xl" id="resolving-code-of-conduct-violations">
+      <h2 className="my-8 text-3xl" id="resolving-code-of-conduct-violations">
         Resolving Code of Conduct Violations
       </h2>
       <p>
@@ -124,6 +126,80 @@ function CodeOfConduct() {
       <p>
         <strong>In the moment: </strong>Are you safe? If not, get to a safe
         place. Can you talk to someone you trust about what happened?
+      </p>
+
+      <p>
+        <strong>If it seems safe</strong>, try and speak with the
+        person privately,<strong> in person </strong>if you can. Try
+        and work to a resolution together. If it goes well, great!
+        If it does not go well, please speak to an organizer as soon
+        as you can.
+      </p>
+
+      <p>
+        <strong>If it does not seem safe</strong>, or the
+        conversation did not go well, speak to an organizer about
+        what happened as soon as you can.
+      </p>
+
+      <p>
+        <strong>After the fact: </strong>Organizers are familiar with
+        this Code of Conduct and will take reports of CoC violations
+        seriously. They will ask you details such as:
+      </p>
+
+      <ul>
+        <li>time / place / manner of the alleged violation.</li>
+        <li>
+          whether there were additional witnesses or other people
+          involved.
+        </li>
+        <li>
+          contact or identifying information about the person who
+          allegedly violated the CoC.
+        </li>
+        <li>
+          Whether or not you would prefer to have your complaint be
+          kept anonymous in the situation.
+        </li>
+      </ul>
+
+      <p>
+        You can help us by giving us much detail as you can about what
+        occurred Organizers will work with staff to evaluate what
+        happened, inform the person(s) in question that a violation
+        was reported, and establish next steps.
+      </p>
+
+      <h2 className="my-8 text-3xl" id="enforcement">Enforcement</h2>
+      <p>
+        This Code of Conduct covers a variety of different spaces of
+        interaction.
+      </p>
+      <p>If you’d like to report a CoC violation that happens…</p>
+      <ul>
+        <li>
+          in the Discord Server, please speak to ABD. Please do note we
+          may be out of your timezone, but we will respond.
+        </li>
+        <li>
+          during our online events, please speak with the organizers, who
+          can be reached in the discord server.
+        </li>
+      </ul>
+      <p>
+        All group organizers are required to relay all reports of CoC
+        violations and complaints to Vimconf.live staff within one week,
+        regardless of how “severe” they are, so we can be accountable and
+        responsible for resolving issues promptly.
+      </p>
+      <p>
+        Depending on the severity of the issue, the person may receive a
+        last-chance warning, may be asked to leave the activity/group, or
+        may receive a future ban. In very severe cases, we reserve the
+        right to involve law enforcement should we feel it necessary.
+        Tickets or other participation fees won’t be refunded for people
+        who are removed for CoC violations.
       </p>
     </main>
   );
