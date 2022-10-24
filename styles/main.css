@@ -32,6 +32,10 @@ section h2 {
   @apply mb-12 text-green-500;
 }
 
+.rebranding ul {
+  @apply ml-5 mb-12 list-outside list-disc text-green-500;
+}
+
 .youtube-embed {
   height: 240px;
   width: 100%;
