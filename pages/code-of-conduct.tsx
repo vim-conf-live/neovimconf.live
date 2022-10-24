@@ -6,7 +6,10 @@ function CodeOfConduct() {
     <main className="rebranding container mx-auto mt-16 max-w-[75ch] p-4 font-mono text-gray-100 sm:mt-20">
       <h1>Code of Conduct</h1>
 
-      <p>NeovimConf.live is an inclusive community.</p>
+      <p className="neovim-community">NeovimConf.live is an inclusive community.</p>
+
+
+      <h2 className="text-3xl mb-6">Join Us!</h2>
 
       <p>
         We strive to create a friendly, welcoming, judgement- and
