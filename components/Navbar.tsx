@@ -33,7 +33,7 @@ const Navbar = (props: NavbarProps) => {
   return (
     <nav
       className={`fixed top-0 right-0 left-0 flex
-        h-16 items-center gap-8 bg-gray-900 px-4 
+        h-16 items-center gap-2 sm:gap-8 bg-gray-900 px-4 
         text-white transition duration-300
         ${scrollingClass}`}
     >
@@ -51,8 +51,14 @@ const Navbar = (props: NavbarProps) => {
       </div>
 
       <Link href="/rebranding-rationale">
+        <a className="cursor-pointer transition duration-300 hover:opacity-70 ">
+          Rebranding <span className="hidden sm:inline">Rationale</span>
+        </a>
+      </Link>
+
+      <Link href="/code-of-conduct">
         <a className="cursor-pointer transition duration-300 hover:opacity-70">
-          Rebranding Rationale
+          Code Of Conduct
         </a>
       </Link>
 
