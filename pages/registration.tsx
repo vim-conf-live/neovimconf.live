@@ -3,6 +3,7 @@ import { useState, useCallback, ChangeEvent } from 'react';
 import { supabase } from 'components/supabaseClient';
 import RegistrationSuccessMsg from 'components/RegistrationSuccessMsg';
 import RegistrationErrorMsg from 'components/RegistrationErrorMsg';
+import { FaSpinner } from 'react-icons/fa';
 
 const NEOVIM_CONF_2022_ID = 'adc031c3-9a8b-409c-b487-1ae56b470eb6';
 
@@ -10,6 +11,7 @@ function RegistrationPage() {
   const [email, setEmail] = useState('');
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) =>
     setEmail(event.target.value);
@@ -17,12 +19,13 @@ function RegistrationPage() {
   const handleSubmitRegistration = useCallback(
     async (event: MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
+      setLoading(true);
       setError(false);
       setSuccess(false);
 
       const { data, error: attendee_error } = await supabase
         .from('attendees')
-        .insert([
+        .upsert([
           {
             email,
           },
@@ -31,6 +34,7 @@ function RegistrationPage() {
 
       if (attendee_error) {
         setError(true);
+        setLoading(false);
         return;
       }
 
@@ -45,11 +49,19 @@ function RegistrationPage() {
       ]);
       if (error) {
         setError(true);
+        setLoading(false);
         return;
       }
       setSuccess(true);
+      setLoading(false);
     },
     [email]
+  );
+
+  const buttonContent = loading ? (
+    <FaSpinner className="inline-block animate-spin" />
+  ) : (
+    <span>Register</span>
   );
 
   return (
@@ -59,7 +71,7 @@ function RegistrationPage() {
     `}
     >
       <h1 className="mb-16 text-4xl">Register to attend the conference</h1>
-      <form className="mb-4 flex items-center justify-center">
+      <form className="mb-4 flex items-stretch justify-center">
         <input
           className="w-72 rounded-l p-2 text-gray-800"
           type="text"
@@ -69,11 +81,11 @@ function RegistrationPage() {
         />
         <button
           type="submit"
-          className={`rounded-r bg-gray-300 px-4 py-2 text-blue-900 shadow
-            transition hover:bg-gray-400`}
+          className={`w-28 rounded-r bg-gray-300 px-4 py-2 
+            text-blue-900 shadow transition hover:bg-gray-400`}
           onClick={handleSubmitRegistration}
         >
-          Register
+          {buttonContent}
         </button>
       </form>
       <RegistrationErrorMsg show={Boolean(error)} />
