@@ -50,8 +50,10 @@ function RegistrationPage() {
       <h1 className="mb-16 text-4xl">Register to attend the conference</h1>
       <form className="mb-4 flex items-stretch justify-center">
         <input
-          className="w-72 rounded-l p-2 text-gray-800"
-          type="text"
+          className="w-72 rounded-l p-2 text-gray-800 
+          invalid:text-red-500
+          invalid:outline-red-500"
+          type="email"
           placeholder="Your email address"
           value={email}
           onChange={handleEmailChange}
