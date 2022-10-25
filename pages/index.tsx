@@ -27,15 +27,7 @@ function Home() {
                 />
                 <div className="blur"></div>
               </div>
-              <div className="text-8 grid grid-cols-2 gap-4">
-                <Link href="/rebranding-rationale">
-                  <a
-                    className={`grid content-center rounded-lg bg-green-700 py-3 
-                    px-4 text-sm transition duration-300 hover:bg-green-800`}
-                  >
-                    The Rebranding Rationale
-                  </a>
-                </Link>
+              <div>
                 <Link
                   href="https://forms.gle/hU18jSEWL2r9xmqP9"
                   target="_blank"

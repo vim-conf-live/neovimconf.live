@@ -1,6 +1,7 @@
 import { ChangeEvent, useState, useCallback } from 'react';
 import Image from 'next/future/image';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import JoinDiscordButton from './JoinDiscordButton';
 
 export interface NavbarProps {
@@ -32,7 +33,7 @@ const Navbar = (props: NavbarProps) => {
   return (
     <nav
       className={`fixed top-0 right-0 left-0 flex
-        h-16 items-center justify-between bg-gray-900 px-4
+        h-16 items-center gap-8 bg-gray-900 px-4 
         text-white transition duration-300
         ${scrollingClass}`}
     >
@@ -46,8 +47,14 @@ const Navbar = (props: NavbarProps) => {
           width={40}
           height={40}
         />
-        <span className="self-center px-3">NeovimConf</span>
+        <span className="hidden self-center px-3 md:block">NeovimConf</span>
       </div>
+
+      <Link href="/rebranding-rationale">
+        <a className="cursor-pointer transition duration-300 hover:opacity-70">
+          Rebranding Rationale
+        </a>
+      </Link>
 
       <JoinDiscordButton />
       <div className="hidden items-center space-x-2 text-sm">
