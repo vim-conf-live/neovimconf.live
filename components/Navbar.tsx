@@ -47,7 +47,7 @@ const Navbar = (props: NavbarProps) => {
           width={40}
           height={40}
         />
-        <span className="self-center px-3">NeovimConf</span>
+        <span className="hidden self-center px-3 md:block">NeovimConf</span>
       </div>
 
       <Link href="/rebranding-rationale">

@@ -11,7 +11,7 @@ const JoinDiscordButton = () => (
       target="_blank"
     >
       <FaDiscord className="text-lg" />
-      <span>Join Discord</span>
+      <span className="hidden md:block">Join Discord</span>
     </a>
   </Link>
 );
