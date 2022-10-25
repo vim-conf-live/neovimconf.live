@@ -2,20 +2,19 @@ const genericErrorMsg = `There has been a problem with your registration.
 Please try again or contact us on our Discord channel`;
 
 interface Props {
-  message?: string;
-  show: boolean;
+  error: boolean;
 }
 
 const RegistrationErrorMsg = (props: Props) => {
-  const { show, message = genericErrorMsg } = props;
+  const { error } = props;
 
-  if (!show) {
+  if (!error) {
     return null;
   }
 
   return (
     <div className="text-sm text-red-400">
-      <p>{message}</p>
+      <p>{genericErrorMsg}</p>
     </div>
   );
 };

@@ -1,16 +1,16 @@
 import { MouseEvent } from 'react';
 import { useState, useCallback, ChangeEvent } from 'react';
-import { supabase } from 'components/supabaseClient';
 import RegistrationSuccessMsg from 'components/RegistrationSuccessMsg';
 import RegistrationErrorMsg from 'components/RegistrationErrorMsg';
 import { FaSpinner } from 'react-icons/fa';
+import registerToConf from 'utils/registerToConf';
 
 const NEOVIM_CONF_2022_ID = 'adc031c3-9a8b-409c-b487-1ae56b470eb6';
 
 function RegistrationPage() {
   const [email, setEmail] = useState('');
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false);
 
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) =>
@@ -23,30 +23,7 @@ function RegistrationPage() {
       setError(false);
       setSuccess(false);
 
-      const { data, error: attendee_error } = await supabase
-        .from('attendees')
-        .upsert([
-          {
-            email,
-          },
-        ])
-        .select();
-
-      if (attendee_error) {
-        setError(true);
-        setLoading(false);
-        return;
-      }
-
-      const attendeeId = data[0].id;
-
-      console.log('data', data);
-      const { error } = await supabase.from('registrations').insert([
-        {
-          attendee_id: attendeeId,
-          event_id: NEOVIM_CONF_2022_ID,
-        },
-      ]);
+      const  error  = await registerToConf(email, NEOVIM_CONF_2022_ID);
       if (error) {
         setError(true);
         setLoading(false);
@@ -88,7 +65,7 @@ function RegistrationPage() {
           {buttonContent}
         </button>
       </form>
-      <RegistrationErrorMsg show={Boolean(error)} />
+      <RegistrationErrorMsg error={error} />
       <RegistrationSuccessMsg show={Boolean(success)} />
     </div>
   );
