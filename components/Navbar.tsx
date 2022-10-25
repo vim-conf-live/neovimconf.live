@@ -23,6 +23,7 @@ const Navbar = (props: NavbarProps) => {
 
   const handleLogoClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
+    setActiveClass(null);
     if (router.pathname === '/')
       document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
     else router.push('/', undefined, { scroll: false });
@@ -30,11 +31,13 @@ const Navbar = (props: NavbarProps) => {
 
   const scrollingClass = scrolling ? 'drop-shadow-md' : '';
 
+  const [activeClass, setActiveClass] = useState(null);
+
   return (
     <nav
       className={`fixed top-0 right-0 left-0 flex
-        h-16 items-center gap-8 bg-gray-900 px-4 
-        text-white transition duration-300
+        h-16 items-center gap-2 bg-gray-900 px-4 text-white
+        transition duration-300 sm:gap-8
         ${scrollingClass}`}
     >
       <div
@@ -51,8 +54,26 @@ const Navbar = (props: NavbarProps) => {
       </div>
 
       <Link href="/rebranding-rationale">
-        <a className="cursor-pointer transition duration-300 hover:opacity-70">
-          Rebranding Rationale
+        <a
+          className={`${
+            activeClass == 'rebranding' ? 'active' : ''
+          } navBarLink cursor-pointer transition duration-300 sm:hover:opacity-70`}
+          onClick={() => setActiveClass('rebranding')}
+        >
+          Rebranding <span className="hidden sm:inline">Rationale</span>
+        </a>
+      </Link>
+
+      <Link href="/code-of-conduct">
+        <a
+          className={`
+          ${
+            activeClass == 'codeofconduct' ? 'active' : ''
+          } navBarLink cursor-pointer transition duration-300 sm:hover:opacity-70
+          `}
+          onClick={() => setActiveClass('codeofconduct')}
+        >
+          Code Of Conduct
         </a>
       </Link>
 
@@ -65,7 +86,7 @@ const Navbar = (props: NavbarProps) => {
           name="email"
           value={email}
           onChange={handleChangeEmail}
-          className={`rounded border border-white/10 bg-white/20 
+          className={`rounded border border-white/10 bg-white/20
             p-1 outline-none placeholder:text-gray-500`}
         />
       </div>
