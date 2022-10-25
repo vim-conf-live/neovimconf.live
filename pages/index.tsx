@@ -2,6 +2,7 @@ import Head from 'next/head';
 import HeroSection from 'components/HeroSection';
 import Link from 'next/link';
 import Image from 'next/future/image';
+import SpeakersSection from 'components/SpeakersSection';
 
 function Home() {
   return (
@@ -64,6 +65,7 @@ function Home() {
             allowFullScreen
           ></iframe>
         </div>
+        <SpeakersSection />
       </main>
     </>
   );

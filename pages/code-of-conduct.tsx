@@ -3,10 +3,11 @@ function CodeOfConduct() {
     <main className="rebranding container mx-auto mt-16 max-w-[75ch] p-4 font-mono text-gray-100 sm:mt-20">
       <h1>Code of Conduct</h1>
 
-      <p className="neovim-community">NeovimConf.live is an inclusive community.</p>
+      <p className="neovim-community">
+        NeovimConf.live is an inclusive community.
+      </p>
 
-
-      <h2 className="text-3xl mb-6">Join Us!</h2>
+      <h2 className="mb-6 text-3xl">Join Us!</h2>
 
       <p>
         We strive to create a friendly, welcoming, judgement- and
@@ -29,7 +30,7 @@ function CodeOfConduct() {
 
       <ul role="list">
         <li>We approach interactions with thoughtfulness and care.</li>
-      
+
         <p className="my-7">
           We are patient &amp; kind to others. We don’t dismiss someone because
           they have a different level of experience, are of a different
