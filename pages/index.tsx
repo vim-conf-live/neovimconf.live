@@ -2,7 +2,7 @@ import Head from 'next/head';
 import HeroSection from 'components/HeroSection';
 import Link from 'next/link';
 import Image from 'next/future/image';
-import SpeakersSection from 'components/SpeakersSection';
+import { HiIdentification } from 'react-icons/hi';
 
 function Home() {
   return (
@@ -33,12 +33,13 @@ function Home() {
                   href="https://forms.gle/hU18jSEWL2r9xmqP9"
                   target="_blank"
                 >
+                
                   <a
                     target="_blank"
-                    className={`grid content-center rounded-lg bg-green-700 py-3 px-4
-                      text-sm transition duration-300 hover:bg-green-800`}
+                    className={`flex content-center items-center gap-2 rounded-lg border border-[#28eb6f] bg-[#42b72a] py-3 px-8
+                      text-lg font-bold transition duration-300 hover:bg-green-800`}
                   >
-                    Speaker Signup
+                    Speaker Signup <HiIdentification className="text-4xl" />
                   </a>
                 </Link>
               </div>
@@ -65,7 +66,6 @@ function Home() {
             allowFullScreen
           ></iframe>
         </div>
-        <SpeakersSection />
       </main>
     </>
   );
