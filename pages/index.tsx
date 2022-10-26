@@ -36,8 +36,8 @@ function Home() {
                 
                   <a
                     target="_blank"
-                    className={`flex content-center items-center gap-2 rounded-lg border border-[#28eb6f] bg-[#42b72a] py-3 px-8
-                      text-lg font-bold transition duration-300 hover:bg-green-800`}
+                    className={`flex content-center items-center gap-2 rounded-lg bg-[#42b72a] py-3 px-8
+                      text-lg font-bold transition duration-300 hover:bg-[#0f951a]`}
                   >
                     Speaker Signup <HiIdentification className="text-4xl" />
                   </a>
