@@ -5,7 +5,7 @@ interface AddVimmerResp {
   attendeeId: string;
 }
 
-const addVimmer = async (email: string):Promise<AddVimmerResp> => {
+const addVimmer = async (email: string): Promise<AddVimmerResp> => {
   const { data, error: attError } = await supabase
     .from('attendees')
     .select()
@@ -31,7 +31,10 @@ const addVimmer = async (email: string):Promise<AddVimmerResp> => {
   return { error: false, attendeeId: newEntryData.id };
 };
 
-const registerToConf = async (email: string, conferenceId: String):Promise<string | null> => {
+const registerToConf = async (
+  email: string,
+  conferenceId: String
+): Promise<string | null> => {
   const sanitisedEmail = email.trim().toLowerCase();
   const { attendeeId, error } = await addVimmer(sanitisedEmail);
   if (error) {

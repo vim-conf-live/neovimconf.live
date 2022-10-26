@@ -10,7 +10,7 @@ const NEOVIM_CONF_2022_ID = 'adc031c3-9a8b-409c-b487-1ae56b470eb6';
 function RegistrationPage() {
   const [email, setEmail] = useState('');
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) =>
@@ -23,7 +23,7 @@ function RegistrationPage() {
       setError(false);
       setSuccess(false);
 
-      const  error  = await registerToConf(email, NEOVIM_CONF_2022_ID);
+      const error = await registerToConf(email, NEOVIM_CONF_2022_ID);
       if (error) {
         setError(true);
         setLoading(false);
