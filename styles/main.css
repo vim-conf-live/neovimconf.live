@@ -48,14 +48,44 @@ section h2 {
 }
 
 .youtube-embed {
-  height: 240px;
-  width: 100%;
+  width: 240px;
+  height: 134px;
+  margin: auto;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 480px) {
   .youtube-embed {
-    height: 480px;
-    width: 100%;
+    width: 360px;
+    height: 203px;
+  }
+}
+
+
+@media only screen and (min-width: 720px) {
+  .youtube-embed {
+    width: 480px;
+    height: 270px;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .youtube-embed {
+    width: 720px;
+    height: 405px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .youtube-embed {
+    width: 1080px;
+    height: 608px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .youtube-embed {
+    width: 1280px;
+    height: 720px;
   }
 }
 
