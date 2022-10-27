@@ -5,7 +5,29 @@ const SpeakersSection = () => {
     <section className="py-16">
       <h2 className="">Speakers</h2>
       <p className="my-4">Coming soon</p>
-      <Card />
+      <Card
+        name="Ms Neovim"
+        src="/placeholder.png"
+        about="This is a long text to check how the component looks with long text
+"
+        github="https://www.github.com"
+      />
+      <Card
+        name="Mr VSCode"
+        src="/placeholder.png"
+        about="Trying to exit vim"
+        github="https://www.github.com"
+        twitter="https://www.twitter.com"
+        twitch="https://www.twitch.com"
+        website="https://www.example.com"
+        linkedin="https://www.linkedin.com"
+        youtube="https://www.youtube.com"
+      />
+      <Card
+        name="Mr NoSocial"
+        src="/placeholder.png"
+        about="Practicing social media detox"
+      />
     </section>
   );
 };
