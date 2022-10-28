@@ -35,7 +35,7 @@ const Card = (props: Props) => {
 
   return (
     <article className="flex max-w-md gap-5 bg-gray-800 p-5 shadow-lg md:rounded-lg">
-      <section className="relative h-32 w-32 flex-shrink-0 self-center overflow-hidden">
+      <section className="relative h-32 w-32 flex-shrink-0 overflow-hidden">
         <Image
           fill
           object-fit="cover"
@@ -45,7 +45,7 @@ const Card = (props: Props) => {
         />
       </section>
 
-      <section className="flex flex-col justify-center gap-2 text-left">
+      <section className="flex flex-col gap-2 text-left">
         <h3 className="text-xl font-bold text-gray-300 md:text-2xl">{name}</h3>
         <p className="text-md text-gray-400 md:text-lg">{about}</p>
         <ul className="mt-2 flex gap-4">
