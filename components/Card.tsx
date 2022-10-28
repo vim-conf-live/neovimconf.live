@@ -48,7 +48,7 @@ const Card = (props: Props) => {
           />
         </section>
 
-        <section className="flex flex-col justify-center text-left">
+        <section className="flex flex-col justify-center gap-2 text-left">
           <h3 className="text-xl font-bold text-gray-300 md:text-2xl">
             {name}
           </h3>
