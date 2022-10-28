@@ -2,8 +2,11 @@ import Head from 'next/head';
 import HeroSection from 'components/HeroSection';
 import LogoSection from 'components/LogoSection';
 import PastVideos from 'components/PastVideos';
+import useVimMappings from 'hooks/useVimMappings';
 
 function Home() {
+  useVimMappings();
+
   return (
     <>
       <Head>
