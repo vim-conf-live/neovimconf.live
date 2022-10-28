@@ -38,7 +38,7 @@ const Card = (props: Props) => {
   return (
     <div className="card-container w-50vh my-5 min-w-[50vw]">
       <article className="flex gap-5 rounded-lg bg-gray-800 p-5 shadow-lg">
-        <section className="relative h-32 w-32 flex-shrink-0 overflow-hidden">
+        <section className="relative h-32 w-32 flex-shrink-0 self-center overflow-hidden">
           <Image
             fill
             object-fit="cover"
