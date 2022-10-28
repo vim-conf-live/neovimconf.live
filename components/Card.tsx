@@ -52,42 +52,42 @@ const Card = (props: Props) => {
           {github && (
             <li>
               <a href={github} target={'_blank'} rel={'noreferrer'}>
-                <FaGithub className="text-xl text-gray-400" />
+                <FaGithub className="text-xl text-gray-400 hover:opacity-70" />
               </a>
             </li>
           )}
           {twitter && (
             <li>
               <a href={twitter} target={'_blank'} rel={'noreferrer'}>
-                <FaTwitter className="text-xl text-gray-400" />
+                <FaTwitter className="text-xl text-gray-400 hover:opacity-70" />
               </a>
             </li>
           )}
           {twitch && (
             <li>
               <a href={twitch} target={'_blank'} rel={'noreferrer'}>
-                <FaTwitch className="text-xl text-gray-400" />
+                <FaTwitch className="text-xl text-gray-400 hover:opacity-70" />
               </a>
             </li>
           )}
           {website && (
             <li>
               <a href={website} target={'_blank'} rel={'noreferrer'}>
-                <FaGlobe className="text-xl text-gray-400" />
+                <FaGlobe className="text-xl text-gray-400 hover:opacity-70" />
               </a>
             </li>
           )}
           {linkedin && (
             <li>
               <a href={linkedin} target={'_blank'} rel={'noreferrer'}>
-                <FaLinkedin className="text-xl text-gray-400" />
+                <FaLinkedin className="text-xl text-gray-400 hover:opacity-70" />
               </a>
             </li>
           )}
           {youtube && (
             <li>
               <a href={youtube} target={'_blank'} rel={'noreferrer'}>
-                <FaYoutube className="text-xl text-gray-400" />
+                <FaYoutube className="text-xl text-gray-400 hover:opacity-70" />
               </a>
             </li>
           )}
