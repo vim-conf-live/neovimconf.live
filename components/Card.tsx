@@ -37,8 +37,8 @@ const Card = (props: Props) => {
 
   return (
     <div className="card-container w-50vh my-5 min-w-[50vw]">
-      <div className="flex gap-5 rounded-lg bg-gray-800 p-5 shadow-lg">
-        <div className="relative h-32 w-32 flex-shrink-0 overflow-hidden">
+      <article className="flex gap-5 rounded-lg bg-gray-800 p-5 shadow-lg">
+        <section className="relative h-32 w-32 flex-shrink-0 overflow-hidden">
           <Image
             fill
             object-fit="cover"
@@ -46,47 +46,59 @@ const Card = (props: Props) => {
             alt="speaker profile image"
             className="rounded-full"
           />
-        </div>
+        </section>
 
-        <div className="flex flex-col justify-center text-left">
-          <div className="text-xl font-bold text-gray-300 md:text-2xl">
+        <section className="flex flex-col justify-center text-left">
+          <h3 className="text-xl font-bold text-gray-300 md:text-2xl">
             {name}
-          </div>
-          <div className="text-md text-gray-400 md:text-lg">{about}</div>
-          <div className="mt-2 flex gap-4">
+          </h3>
+          <p className="text-md text-gray-400 md:text-lg">{about}</p>
+          <ul className="mt-2 flex gap-4">
             {github && (
-              <a href={github} target={'_blank'} rel={'noreferrer'}>
-                <FaGithub className="text-xl text-gray-400" />
-              </a>
+              <li>
+                <a href={github} target={'_blank'} rel={'noreferrer'}>
+                  <FaGithub className="text-xl text-gray-400" />
+                </a>
+              </li>
             )}
             {twitter && (
-              <a href={twitter} target={'_blank'} rel={'noreferrer'}>
-                <FaTwitter className="text-xl text-gray-400" />
-              </a>
+              <li>
+                <a href={twitter} target={'_blank'} rel={'noreferrer'}>
+                  <FaTwitter className="text-xl text-gray-400" />
+                </a>
+              </li>
             )}
             {twitch && (
-              <a href={twitch} target={'_blank'} rel={'noreferrer'}>
-                <FaTwitch className="text-xl text-gray-400" />
-              </a>
+              <li>
+                <a href={twitch} target={'_blank'} rel={'noreferrer'}>
+                  <FaTwitch className="text-xl text-gray-400" />
+                </a>
+              </li>
             )}
             {website && (
-              <a href={website} target={'_blank'} rel={'noreferrer'}>
-                <FaGlobe className="text-xl text-gray-400" />
-              </a>
+              <li>
+                <a href={website} target={'_blank'} rel={'noreferrer'}>
+                  <FaGlobe className="text-xl text-gray-400" />
+                </a>
+              </li>
             )}
             {linkedin && (
-              <a href={linkedin} target={'_blank'} rel={'noreferrer'}>
-                <FaLinkedin className="text-xl text-gray-400" />
-              </a>
+              <li>
+                <a href={linkedin} target={'_blank'} rel={'noreferrer'}>
+                  <FaLinkedin className="text-xl text-gray-400" />
+                </a>
+              </li>
             )}
             {youtube && (
-              <a href={youtube} target={'_blank'} rel={'noreferrer'}>
-                <FaYoutube className="text-xl text-gray-400" />
-              </a>
+              <li>
+                <a href={youtube} target={'_blank'} rel={'noreferrer'}>
+                  <FaYoutube className="text-xl text-gray-400" />
+                </a>
+              </li>
             )}
-          </div>
-        </div>
-      </div>
+          </ul>
+        </section>
+      </article>
     </div>
   );
 };
