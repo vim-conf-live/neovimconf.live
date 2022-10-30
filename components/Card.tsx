@@ -48,7 +48,7 @@ const Card = (props: Props) => {
       <section className="flex flex-col gap-2 text-left">
         <h3 className="text-xl font-bold text-gray-300 lg:text-2xl">{name}</h3>
         <p className="text-md text-gray-400 lg:text-lg">{about}</p>
-        <ul className="mt-2 flex gap-4">
+        <ul className="mt-2 flex flex-wrap gap-4">
           {github && (
             <li>
               <a href={github} target={'_blank'} rel={'noreferrer'}>
