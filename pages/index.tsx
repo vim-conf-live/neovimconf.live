@@ -2,6 +2,8 @@ import Head from 'next/head';
 import HeroSection from 'components/HeroSection';
 import LogoSection from 'components/LogoSection';
 import PastVideos from 'components/PastVideos';
+import SpeakersSection from 'components/SpeakersSection';
+import SponsorsSection from 'components/SponsorsSection';
 
 function Home() {
   return (
@@ -21,6 +23,8 @@ function Home() {
           </div>
         </div>
         <PastVideos />
+        <SpeakersSection />
+        <SponsorsSection />
       </main>
     </>
   );
