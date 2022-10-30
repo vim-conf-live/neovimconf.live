@@ -15,6 +15,10 @@ body {
   animation: 3s ease forwards dimBackground;
 }
 
+section {
+  @apply h-72 mt-24;
+}
+
 section h2 {
   @apply text-6xl font-bold;
 }
@@ -25,7 +29,7 @@ section h2 {
 
 .rebranding,
 .last-years-videos h2 {
-  @apply mb-2 text-lg sm:text-2xl;
+  @apply mb-4 text-lg sm:text-2xl;
 }
 
 .rebranding p {

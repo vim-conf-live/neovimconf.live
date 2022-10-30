@@ -35,7 +35,7 @@ const Card = (props: Props) => {
 
   return (
     <article className="mx-5 flex max-w-md gap-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0">
-      <section className="relative h-24 w-24 flex-shrink-0 overflow-hidden lg:h-32 lg:w-32">
+      <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden lg:h-32 lg:w-32">
         <Image
           fill
           object-fit="cover"
@@ -43,7 +43,7 @@ const Card = (props: Props) => {
           alt="speaker profile image"
           className="rounded-full"
         />
-      </section>
+      </div>
 
       <section className="flex flex-col gap-2 text-left">
         <h3 className="text-xl font-bold text-gray-300 lg:text-2xl">{name}</h3>
