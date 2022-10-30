@@ -1,9 +1,11 @@
-import Head from 'next/head';
 import 'styles/main.css';
+import Head from 'next/head';
 import NavbarLayout from 'components/NavbarLayout';
+import useVimMappings from 'hooks/useVimMappings';
 
 function MyApp({ Component, pageProps }) {
-  // <link rel="canonical" href={canonicalURL} />
+  useVimMappings();
+
   return (
     <>
       <Head>
