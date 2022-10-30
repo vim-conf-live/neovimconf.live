@@ -35,9 +35,9 @@ const Navbar = (props: NavbarProps) => {
 
   return (
     <nav
-      className={`fixed top-0 right-0 left-0 flex
-        h-16 items-center gap-2 bg-gray-900 px-4 text-white
-        transition duration-300 sm:gap-8
+      className={`fixed top-0 right-0 left-0 z-10
+        flex h-16 items-center gap-2 bg-gray-900 px-4
+        text-white transition duration-300 sm:gap-8
         ${scrollingClass}`}
     >
       <div
