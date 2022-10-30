@@ -5,7 +5,7 @@ const SpeakersSection = () => {
     <section className="mt-16">
       <h2 className="">Speakers</h2>
       <p className="my-4">Coming soon</p>
-      <div className="grid gap-6 md:mx-5 lg:grid-cols-2">
+      <div className="grid gap-6 md:mx-5 md:grid-cols-2">
         <Card
           name="Ms Neovim"
           src="/placeholder.png"
