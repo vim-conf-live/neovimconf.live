@@ -1,6 +1,6 @@
 function CodeOfConduct() {
   return (
-    <main className="rebranding container mx-auto mt-16 max-w-[75ch] p-4 font-mono text-gray-100 sm:mt-20">
+    <main className="rebranding container mx-auto mt-16 mb-32 max-w-[75ch] p-4 font-mono text-gray-100 sm:mt-20">
       <h1>Code of Conduct</h1>
 
       <p className="neovim-community">
