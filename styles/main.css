@@ -20,7 +20,7 @@ section {
 }
 
 section h2 {
-  @apply text-6xl font-bold;
+  @apply text-4xl sm:text-6xl font-bold;
 }
 
 .rebranding h1 {
