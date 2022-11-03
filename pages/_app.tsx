@@ -42,8 +42,11 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="NeovimConf 2022" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.neovimconf.live" />
-        <meta property="og:title" content="NeovimConf" />
+        <meta property="og:title" content="NeovimConf 2022" />
+        <meta property="og:site_name" content="NeovimConf" />
         <meta property="og:image" content="/neovimconf.png" />
+        <meta property="og:image:width" content="1080" />
+        <meta property="og:image:width" content="566" />
         <meta
           property="og:description"
           content="Connecting the neovim community to share their love and passion for all things neovim!"
