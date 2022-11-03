@@ -46,7 +46,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:image" content="/neovimconf.png" />
         <meta
           property="og:description"
-          content="A conference to showcase speakers and communities of text editors"
+          content="Connecting the vim community to share their love and passion for all things neovim!"
         />
       </Head>
       <NavbarLayout>
