@@ -51,6 +51,16 @@ function MyApp({ Component, pageProps }) {
           property="og:description"
           content="Connecting the neovim community to share their love and passion for all things neovim!"
         />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.neovimconf.live" />
+        <meta name="twitter:title" content="NeovimConf 2022" />
+        <meta name="twitter:image" content="/neovimconf.png" />
+        <meta
+          name="twitter:description"
+          content="Connecting the neovim community to share their love and passion for all things neovim!"
+        />
+        <meta name="twitter:site" content="@VimconfLive" />
+        <meta name="twitter:creator" content="@VimconfLive" />
       </Head>
       <NavbarLayout>
         <Component {...pageProps} />
