@@ -39,7 +39,15 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="initial-scale=1.0, width=device-width, maximum-scale=1"
         />
-        <meta name="description" content="Neovim Conf 2022" />
+        <meta name="description" content="NeovimConf 2022" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://www.neovimconf.live" />
+        <meta property="og:title" content="NeovimConf" />
+        <meta property="og:image" content="/neovimconf.png" />
+        <meta
+          property="og:description"
+          content="A conference to showcase speakers and communities of text editors"
+        />
       </Head>
       <NavbarLayout>
         <Component {...pageProps} />
