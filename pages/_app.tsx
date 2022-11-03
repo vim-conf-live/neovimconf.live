@@ -41,12 +41,12 @@ function MyApp({ Component, pageProps }) {
         />
         <meta name="description" content="NeovimConf 2022" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://www.neovimconf.live" />
+        <meta property="og:url" content="https://www.neovimconf.live" />
         <meta property="og:title" content="NeovimConf" />
         <meta property="og:image" content="/neovimconf.png" />
         <meta
           property="og:description"
-          content="Connecting the vim community to share their love and passion for all things neovim!"
+          content="Connecting the neovim community to share their love and passion for all things neovim!"
         />
       </Head>
       <NavbarLayout>
