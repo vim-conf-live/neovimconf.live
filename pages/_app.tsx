@@ -39,7 +39,21 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="initial-scale=1.0, width=device-width, maximum-scale=1"
         />
-        <meta name="description" content="Neovim Conf 2022" />
+        <meta name="description" content="NeovimConf 2022" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.neovimconf.live" />
+        <meta property="og:title" content="NeovimConf 2022" />
+        <meta property="og:site_name" content="NeovimConf" />
+        <meta property="og:image" content="/neovimconf.png" />
+        <meta property="og:image:width" content="1080" />
+        <meta property="og:image:width" content="566" />
+        <meta
+          property="og:description"
+          content="Connecting the neovim community to share their love and passion for all things neovim!"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@VimconfLive" />
+        <meta name="twitter:creator" content="@VimconfLive" />
       </Head>
       <NavbarLayout>
         <Component {...pageProps} />
