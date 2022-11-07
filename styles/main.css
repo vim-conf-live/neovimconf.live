@@ -23,6 +23,16 @@ section h2 {
   @apply text-4xl sm:text-6xl font-bold;
 }
 
+.Countdown {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.day,.hour,.minute,.second {
+  font-size: 3rem;
+}
+
 .rebranding h1 {
   @apply mt-12 mb-4 text-3xl sm:text-5xl;
 }
