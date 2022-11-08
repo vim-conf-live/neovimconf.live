@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>{`Neovim Conf 2002`}</title>
+        <title>{`Neovim Conf 2022`}</title>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
