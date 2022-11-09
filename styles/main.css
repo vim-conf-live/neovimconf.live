@@ -16,11 +16,24 @@ body {
 }
 
 section {
-  @apply h-72 mt-24;
+  @apply mt-24 h-72;
 }
 
 section h2 {
-  @apply text-4xl sm:text-6xl font-bold;
+  @apply text-4xl font-bold sm:text-6xl;
+}
+
+.Countdown {
+  /* width: 100%;*/
+  display: flex;
+  justify-content: space-around;
+}
+
+.day,
+.hour,
+.minute,
+.second {
+  font-size: 3rem;
 }
 
 .rebranding h1 {
