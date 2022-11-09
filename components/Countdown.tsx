@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
 const Countdown = () => {
-  const [days, setDays] = useState();
-  const [hours, setHours] = useState();
-  const [minutes, setMinutes] = useState();
-  const [seconds, setSeconds] = useState();
+  const [days, setDays] = useState('');
+  const [hours, setHours] = useState('');
+  const [minutes, setMinutes] = useState('');
+  const [seconds, setSeconds] = useState('');
   const [evenStarted, setEventStarted] = useState(false);
 
   const calcCountdown = () => {
@@ -21,10 +21,10 @@ const Countdown = () => {
     const hour = minute * 60;
     const day = hour * 24;
 
-    const textDay = Math.floor(gap / day);
-    const textHour = Math.floor((gap % day) / hour);
-    const textMinute = Math.floor((gap % hour) / minute);
-    const textSecond = Math.floor((gap % minute) / second);
+    const textDay = Math.floor(gap / day).toString();
+    const textHour = Math.floor((gap % day) / hour).toString();
+    const textMinute = Math.floor((gap % hour) / minute).toString();
+    const textSecond = Math.floor((gap % minute) / second).toString();
 
     setDays(textDay);
     setHours(textHour);
