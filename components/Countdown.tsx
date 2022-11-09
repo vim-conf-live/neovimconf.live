@@ -8,8 +8,9 @@ const Countdown = () => {
   const [evenStarted, setEventStarted] = useState(false);
 
   const calcCountdown = () => {
-    const countDate = new Date('dec 09, 2022 17:00:00 UTC:-5:00').getTime();
+    const countDate = new Date('Dec 09 2022 17:00:00 UTC-05:00').getTime();
     const now = new Date().getTime();
+
     const gap = countDate - now;
 
     if (gap <= 0) {
