@@ -23,7 +23,7 @@ const SpeakersSection = () => {
     github="https://github.com/MiragianCycle"
     website="https://theena.net"
     linkedin="https://github.com/MiragianCycle"
-    amazon="https://www.amazon.com/First-Utterance-Miragian-Cycles-Book-ebook/dp/B08MBX8GRZ"
+    website="https://www.amazon.com/First-Utterance-Miragian-Cycles-Book-ebook/dp/B08MBX8GRZ"
   />
 //   <Card
 //     name="Mr NoSocial"
