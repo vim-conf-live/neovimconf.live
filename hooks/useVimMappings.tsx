@@ -13,7 +13,10 @@ export default function useVimMappings() {
         document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
         break;
       case 'G':
-        document.documentElement.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        document.documentElement.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth',
+        });
         break;
       default:
         break;
