@@ -22,9 +22,9 @@ function Home() {
             <LogoSection />
           </div>
         </div>
-        <PastVideos />
         <SpeakersSection />
         <SponsorsSection />
+        <PastVideos />
       </main>
     </>
   );
