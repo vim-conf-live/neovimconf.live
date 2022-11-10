@@ -1,5 +1,6 @@
 import Image from 'next/future/image';
 import {
+  FaAmazon,
   FaGithub,
   FaGlobe,
   FaLinkedin,
@@ -18,6 +19,7 @@ interface Props {
   website?: string | null;
   linkedin?: string | null;
   youtube?: string | null;
+  amazon?: string | null;
 }
 
 const Card = (props: Props) => {
@@ -31,7 +33,29 @@ const Card = (props: Props) => {
     website,
     linkedin,
     youtube,
+    amazon,
   } = { ...props };
+
+  // show "read more" button only if about paragraph is truncated
+  let isAboutTruncated = false;
+
+  const titleCase = (str: string) => {
+    return str
+      .toLowerCase()
+      .split(' ')
+      .map(function (word) {
+        return word.replace(word[0], word[0].toUpperCase());
+      })
+      .join(' ');
+  };
+
+  const truncate = (str: string) => {
+    if (str.length > 140) {
+      isAboutTruncated = true;
+      return str.substring(0, 137) + '...';
+    }
+    return str;
+  };
 
   return (
     <article className="mx-5 flex max-w-md gap-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0">
@@ -45,9 +69,16 @@ const Card = (props: Props) => {
         />
       </div>
 
-      <section className="flex flex-col gap-2 text-left">
-        <h3 className="text-xl font-bold text-gray-300 lg:text-2xl">{name}</h3>
-        <p className="text-md text-gray-400 lg:text-lg">{about}</p>
+      <div className="flex flex-col gap-2 text-left">
+        <h3 className="text-xl font-bold text-gray-300 lg:text-2xl">
+          {titleCase(name)}
+        </h3>
+        <p className="text-md text-gray-400 lg:text-lg">{truncate(about)}</p>
+        {isAboutTruncated && (
+          <button className="w-fit rounded-sm bg-gray-400 px-1 text-gray-800 hover:opacity-70">
+            Read more
+          </button>
+        )}
         <ul className="mt-2 flex flex-wrap gap-4">
           {github && (
             <li>
@@ -91,8 +122,15 @@ const Card = (props: Props) => {
               </a>
             </li>
           )}
+          {amazon && (
+            <li>
+              <a href={amazon} target={'_blank'} rel={'noreferrer'}>
+                <FaAmazon className="text-xl text-gray-400 hover:opacity-70" />
+              </a>
+            </li>
+          )}
         </ul>
-      </section>
+      </div>
     </article>
   );
 };
