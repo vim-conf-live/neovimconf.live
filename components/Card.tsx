@@ -33,6 +33,16 @@ const Card = (props: Props) => {
     youtube,
   } = { ...props };
 
+  function titleCase(str: string) {
+    return str
+      .toLowerCase()
+      .split(' ')
+      .map(function (word) {
+        return word.replace(word[0], word[0].toUpperCase());
+      })
+      .join(' ');
+  }
+
   return (
     <article className="mx-5 flex max-w-md gap-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0">
       <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden lg:h-32 lg:w-32">
@@ -46,7 +56,9 @@ const Card = (props: Props) => {
       </div>
 
       <div className="flex flex-col gap-2 text-left">
-        <h3 className="text-xl font-bold text-gray-300 lg:text-2xl">{name}</h3>
+        <h3 className="text-xl font-bold text-gray-300 lg:text-2xl">
+          {titleCase(name)}
+        </h3>
         <p className="text-md text-gray-400 lg:text-lg">{about}</p>
         <ul className="mt-2 flex flex-wrap gap-4">
           {github && (
