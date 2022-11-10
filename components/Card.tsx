@@ -43,6 +43,10 @@ const Card = (props: Props) => {
       .join(' ');
   }
 
+  const truncate = (str: string) => {
+    return str.length > 140 ? str.substring(0, 137) + '...' : str;
+  };
+
   return (
     <article className="mx-5 flex max-w-md gap-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0">
       <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden lg:h-32 lg:w-32">
@@ -59,7 +63,7 @@ const Card = (props: Props) => {
         <h3 className="text-xl font-bold text-gray-300 lg:text-2xl">
           {titleCase(name)}
         </h3>
-        <p className="text-md text-gray-400 lg:text-lg">{about}</p>
+        <p className="text-md text-gray-400 lg:text-lg">{truncate(about)}</p>
         <ul className="mt-2 flex flex-wrap gap-4">
           {github && (
             <li>
