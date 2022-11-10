@@ -13,7 +13,12 @@ const SpeakersSection = () => {
           github="https://github.com/MiragianCycle"
           website="https://theena.net"
           linkedin="https://github.com/MiragianCycle"
-          // website="https://www.amazon.com/First-Utterance-Miragian-Cycles-Book-ebook/dp/B08MBX8GRZ"
+          amazon="https://www.amazon.com/First-Utterance-Miragian-Cycles-Book-ebook/dp/B08MBX8GRZ"
+        />
+        <Card
+          name="Mr NoSocial"
+          src="/placeholder.png"
+          about="Practicing social media detox"
         />
       </div>
     </section>

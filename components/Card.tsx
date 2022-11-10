@@ -1,5 +1,6 @@
 import Image from 'next/future/image';
 import {
+  FaAmazon,
   FaGithub,
   FaGlobe,
   FaLinkedin,
@@ -18,6 +19,7 @@ interface Props {
   website?: string | null;
   linkedin?: string | null;
   youtube?: string | null;
+  amazon?: string | null;
 }
 
 const Card = (props: Props) => {
@@ -31,6 +33,7 @@ const Card = (props: Props) => {
     website,
     linkedin,
     youtube,
+    amazon,
   } = { ...props };
 
   function titleCase(str: string) {
@@ -104,6 +107,13 @@ const Card = (props: Props) => {
             <li>
               <a href={youtube} target={'_blank'} rel={'noreferrer'}>
                 <FaYoutube className="text-xl text-gray-400 hover:opacity-70" />
+              </a>
+            </li>
+          )}
+          {amazon && (
+            <li>
+              <a href={amazon} target={'_blank'} rel={'noreferrer'}>
+                <FaAmazon className="text-xl text-gray-400 hover:opacity-70" />
               </a>
             </li>
           )}
