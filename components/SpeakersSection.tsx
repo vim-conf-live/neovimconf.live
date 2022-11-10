@@ -15,11 +15,6 @@ const SpeakersSection = () => {
           linkedin="https://github.com/MiragianCycle"
           amazon="https://www.amazon.com/First-Utterance-Miragian-Cycles-Book-ebook/dp/B08MBX8GRZ"
         />
-        <Card
-          name="Mr NoSocial"
-          src="/placeholder.png"
-          about="Practicing social media detox"
-        />
       </div>
     </section>
   );
