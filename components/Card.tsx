@@ -36,6 +36,9 @@ const Card = (props: Props) => {
     amazon,
   } = { ...props };
 
+  // show "read more" button only if about paragraph is truncated
+  let isAboutTruncated = false;
+
   const titleCase = (str: string) => {
     return str
       .toLowerCase()
@@ -47,7 +50,11 @@ const Card = (props: Props) => {
   };
 
   const truncate = (str: string) => {
-    return str.length > 140 ? str.substring(0, 137) + '...' : str;
+    if (str.length > 140) {
+      isAboutTruncated = true;
+      return str.substring(0, 137) + '...';
+    }
+    return str;
   };
 
   return (
@@ -67,6 +74,11 @@ const Card = (props: Props) => {
           {titleCase(name)}
         </h3>
         <p className="text-md text-gray-400 lg:text-lg">{truncate(about)}</p>
+        {isAboutTruncated && (
+          <button className="w-fit rounded-sm bg-gray-400 px-1 text-gray-800 hover:opacity-70">
+            Read more
+          </button>
+        )}
         <ul className="mt-2 flex flex-wrap gap-4">
           {github && (
             <li>
