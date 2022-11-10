@@ -36,7 +36,7 @@ const Card = (props: Props) => {
     amazon,
   } = { ...props };
 
-  function titleCase(str: string) {
+  const titleCase = (str: string) => {
     return str
       .toLowerCase()
       .split(' ')
@@ -44,7 +44,7 @@ const Card = (props: Props) => {
         return word.replace(word[0], word[0].toUpperCase());
       })
       .join(' ');
-  }
+  };
 
   const truncate = (str: string) => {
     return str.length > 140 ? str.substring(0, 137) + '...' : str;
