@@ -3,8 +3,7 @@ import Card from './Card';
 const SpeakersSection = () => {
   return (
     <section className="h-fit">
-      <h2 className="text-[#21ee4b]">Speakers</h2>
-      <p className="my-4">Coming soon</p>
+      <h2 className="my-4 sm:my-8 text-[#21ee4b]">Speakers</h2>
       <div className="grid gap-6 md:mx-5 md:grid-cols-2">
         <Card
           name="THEENA KUMARAGURUNATHAN"
