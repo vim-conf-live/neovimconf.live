@@ -19,6 +19,13 @@ const SpeakersSection = () => {
           src="/FidelHViegasProfile.jpg"
           about="Fidel H Viegas works as CTO and Lead Programmer at Metagnosis. From an early age, he understood that resourcefulness was synonymous with restrictions and limitations. Unable to get games for his Amstrad CPC 464, he learned to program in BASIC from the manual. Later, discovering that BASIC existed in different dialects, he learned to translate between them. Throughout his career, he developed several systems: ERPs, CMSs, decompilers, binary file converters, and transpilers. He also has experience reverse engineering binary file formats and computer software, an expertise he used to recover the source code of his employer's ERP. He is also working independently on a VimScript to Lua transpiler, and recently joined the Modula-2 Software Foundation to work on a bootstrap compiler for the revised Modula-2 language."
         />
+         <Card
+          name="Björn Linse"
+          src="/bfredl.jpg"
+          about="Björn Linse is an independent software developer and part of the Neovim core team. He is currently working full-time for the Neovim project"
+          website="https://matrix.to/#/@bfredl:matrix.org"
+          twitter="https://twitter.com/bfredlbfredl"
+        />
       </div>
     </section>
   );
