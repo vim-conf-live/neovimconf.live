@@ -4,6 +4,7 @@ import {
   FaGithub,
   FaGlobe,
   FaLinkedin,
+  FaMicrophone,
   FaTwitch,
   FaTwitter,
   FaYoutube,
@@ -13,6 +14,8 @@ interface Props {
   name: string;
   about: string;
   src: string;
+  // make lecture title optional till all title is added
+  lectureTitle?: string;
   github?: string | null;
   twitter?: string | null;
   twitch?: string | null;
@@ -27,6 +30,7 @@ const Card = (props: Props) => {
     name,
     about,
     src,
+    lectureTitle,
     github,
     twitter,
     twitch,
@@ -70,7 +74,11 @@ const Card = (props: Props) => {
       </div>
 
       <div className="flex flex-col gap-2 text-left">
-        <h3 className="text-xl font-bold text-gray-300 lg:text-2xl">
+        <h3 className="text-2xl font-bold text-gray-100 lg:text-3xl">
+          {lectureTitle}
+        </h3>
+        <h3 className="text-lg text-gray-300 lg:text-2xl">
+          <FaMicrophone className="mr-2 inline-block text-gray-400" />
           {titleCase(name)}
         </h3>
         <p className="text-md text-gray-400 lg:text-lg">{truncate(about)}</p>
