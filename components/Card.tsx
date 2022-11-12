@@ -66,7 +66,7 @@ const Card = (props: Props) => {
       <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden lg:h-32 lg:w-32">
         <Image
           fill
-          object-fit="cover"
+          object-fit="contain"
           src={src}
           alt="speaker profile image"
           className="rounded-full"
