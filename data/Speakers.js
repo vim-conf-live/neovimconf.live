@@ -35,6 +35,15 @@ const speakers = [
     website: 'https://johncodes.com/',
     twitter: 'https://twitter.com/johncodezzz'
   },
+      {
+    name: 'Emiliano Ruiz Carletti',
+    imagesrc: '/speaker-images/emiliano.png',
+    about:
+      "Long term Neovim user and learner-by-teaching powered by open source. IT Museum volunteer and Software Engineer at MercadoLibre.",
+    github: 'https://github.com/eruizc-dev',
+    website: 'https://eruizc.dev/',
+    twitter: 'https://twitter.com/eruizc_dev'
+  },
 ];
 
 export default speakers;
