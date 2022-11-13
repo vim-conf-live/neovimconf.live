@@ -16,6 +16,7 @@ const SpeakersSection = () => {
               about={speaker.about}
               github={speaker.github}
               website={speaker.website}
+	      youtube={speaker.youtube}
               linkedin={speaker.linkedin}
               amazon={speaker.amazon}
             />
