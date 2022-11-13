@@ -1,6 +1,6 @@
 const SponsorsSection = () => {
   return (
-    <section className="">
+    <section className="h-72">
       <h2 className="text-[#0f74d0]">Sponsors</h2>
       <p className="my-4">Coming soon</p>
     </section>
