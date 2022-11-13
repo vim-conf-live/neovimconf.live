@@ -18,6 +18,7 @@ const SpeakersSection = () => {
               website={speaker.website}
 	      youtube={speaker.youtube}
               linkedin={speaker.linkedin}
+              matrix={speaker.matrix}
               amazon={speaker.amazon}
             />
           );

@@ -8,6 +8,7 @@ import {
   FaTwitch,
   FaTwitter,
   FaYoutube,
+  SiMatrix,
 } from 'react-icons/fa';
 
 interface Props {
@@ -23,6 +24,7 @@ interface Props {
   linkedin?: string | null;
   youtube?: string | null;
   amazon?: string | null;
+  matrix?: string | null;
 }
 
 const Card = (props: Props) => {
@@ -38,6 +40,7 @@ const Card = (props: Props) => {
     linkedin,
     youtube,
     amazon,
+    matrix,
   } = { ...props };
 
   // show "read more" button only if about paragraph is truncated
@@ -112,6 +115,13 @@ const Card = (props: Props) => {
           {website && (
             <li>
               <a href={website} target={'_blank'} rel={'noreferrer'}>
+                <FaGlobe className="text-xl text-gray-400 hover:opacity-70" />
+              </a>
+            </li>
+          )}
+          {matrix && (
+            <li>
+              <a href={matrix} target={'_blank'} rel={'noreferrer'}>
                 <FaGlobe className="text-xl text-gray-400 hover:opacity-70" />
               </a>
             </li>

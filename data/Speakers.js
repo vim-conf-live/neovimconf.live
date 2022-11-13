@@ -14,7 +14,7 @@ const speakers = [
     imagesrc: '/speaker-images/bfredl.jpg',
     about:
       'Björn Linse is an independent software developer and part of the Neovim core team. He is currently working full-time for the Neovim project.',
-    website: 'https://matrix.to/#/@bfredl:matrix.org',
+    matrix: 'https://matrix.to/#/@bfredl:matrix.org',
     twitter: 'https://twitter.com/bfredlbfredl',
   },
   {
