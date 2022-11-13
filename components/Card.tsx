@@ -8,8 +8,8 @@ import {
   FaTwitch,
   FaTwitter,
   FaYoutube,
-  SiMatrix,
 } from 'react-icons/fa';
+import { SiMatrix } from 'react-icons/si';
 
 interface Props {
   name: string;
