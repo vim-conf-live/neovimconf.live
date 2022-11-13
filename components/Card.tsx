@@ -122,7 +122,7 @@ const Card = (props: Props) => {
           {matrix && (
             <li>
               <a href={matrix} target={'_blank'} rel={'noreferrer'}>
-                <FaGlobe className="text-xl text-gray-400 hover:opacity-70" />
+                <SiMatrix className="text-xl text-gray-400 hover:opacity-70" />
               </a>
             </li>
           )}
