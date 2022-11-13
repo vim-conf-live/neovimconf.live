@@ -7,8 +7,7 @@ const speakers = [
     github: 'https://github.com/MiragianCycle',
     website: 'https://theena.net',
     linkedin: 'https://github.com/MiragianCycle',
-    amazon:
-      'https://www.amazon.com/First-Utterance-Miragian-Cycles-Book-ebook/dp/B08MBX8GRZ',
+    amazon: 'https://www.amazon.com/First-Utterance-Miragian-Cycles-Book-ebook/dp/B08MBX8GRZ',
   },
   {
     name: 'Björn Linse',
@@ -23,6 +22,18 @@ const speakers = [
     imagesrc: '/speaker-images/FidelHViegasProfile.jpg',
     about:
       "Fidel H Viegas works as CTO and Lead Programmer at Metagnosis. From an early age, he understood that resourcefulness was synonymous with restrictions and limitations. Unable to get games for his Amstrad CPC 464, he learned to program in BASIC from the manual. Later, discovering that BASIC existed in different dialects, he learned to translate between them. Throughout his career, he developed several systems: ERPs, CMSs, decompilers, binary file converters, and transpilers. He also has experience reverse engineering binary file formats and computer software, an expertise he used to recover the source code of his employer's ERP. He is also working independently on a VimScript to Lua transpiler, and recently joined the Modula-2 Software Foundation to work on a bootstrap compiler for the revised Modula-2 language.",
+    wesbite: 'https://www.linkedin.com/in/fidelhviegas/',
+    github: 'https://github.com/viegasfh'
+  },
+    {
+    name: 'John McBride',
+    imagesrc: '/speaker-images/johnspeaker.jpg',
+    about:
+      "John is a Software Engineer working on secure linux operating systems, containers, and kubernetes. He is a maintainer of spf13/cobra, a CLI bootstrapping library. In the past, he has worked on open source Kubernetes platforms and lead teams building observability products. He is a vim enthusiast and makes occasional content for vim users.",
+    github: 'https://github.com/',
+    website: 'https://www.youtube.com/c/JohnCodes',
+    website: 'https://johncodes.com/',
+    twitter: 'https://twitter.com/johncodezzz'
   },
 ];
 
