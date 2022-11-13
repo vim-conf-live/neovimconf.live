@@ -12,12 +12,16 @@ const SpeakersSection = () => {
             <Card
               key={index}
               name={speaker.name}
-              src={speaker.imagesrc}
               about={speaker.about}
+              src={speaker.imagesrc}
               github={speaker.github}
+              twitter={speaker.twitter}
+              twitch={speaker.twitch}
               website={speaker.website}
               linkedin={speaker.linkedin}
+	      youtube={speaker.youtube}
               amazon={speaker.amazon}
+              matrix={speaker.matrix}
             />
           );
         })}

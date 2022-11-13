@@ -14,7 +14,7 @@ const speakers = [
     imagesrc: '/speaker-images/bfredl.jpg',
     about:
       'Björn Linse is an independent software developer and part of the Neovim core team. He is currently working full-time for the Neovim project.',
-    website: 'https://matrix.to/#/@bfredl:matrix.org',
+    matrix: 'https://matrix.to/#/@bfredl:matrix.org',
     twitter: 'https://twitter.com/bfredlbfredl',
   },
   {
@@ -31,7 +31,7 @@ const speakers = [
     about:
       "John is a Software Engineer working on secure linux operating systems, containers, and kubernetes. He is a maintainer of spf13/cobra, a CLI bootstrapping library. In the past, he has worked on open source Kubernetes platforms and lead teams building observability products. He is a vim enthusiast and makes occasional content for vim users.",
     github: 'https://github.com/',
-    website: 'https://www.youtube.com/c/JohnCodes',
+    youtube: 'https://www.youtube.com/c/JohnCodes',
     website: 'https://johncodes.com/',
     twitter: 'https://twitter.com/johncodezzz'
   },
