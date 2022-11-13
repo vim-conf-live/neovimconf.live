@@ -1,3 +1,4 @@
+import { useState, useCallback } from 'react';
 import Image from 'next/future/image';
 import {
   FaAmazon,
@@ -9,6 +10,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from 'react-icons/fa';
+import { SiMatrix } from 'react-icons/si';
 
 interface Props {
   name: string;
@@ -23,9 +25,11 @@ interface Props {
   linkedin?: string | null;
   youtube?: string | null;
   amazon?: string | null;
+  matrix?: string | null;
 }
 
 const Card = (props: Props) => {
+  const [ showFullText, setShowFullText ] = useState(false);
   const {
     name,
     about,
@@ -38,10 +42,10 @@ const Card = (props: Props) => {
     linkedin,
     youtube,
     amazon,
+    matrix,
   } = { ...props };
 
-  // show "read more" button only if about paragraph is truncated
-  let isAboutTruncated = false;
+  const toggleReadMore = useCallback( () => setShowFullText(state => !state), []);
 
   const titleCase = (str: string) => {
     return str
@@ -53,13 +57,10 @@ const Card = (props: Props) => {
       .join(' ');
   };
 
-  const truncate = (str: string) => {
-    if (str.length > 140) {
-      isAboutTruncated = true;
-      return str.substring(0, 137) + '...';
-    }
-    return str;
-  };
+  const aboutNeedsTruncate = about.length > 140;
+  const shownAbout = (aboutNeedsTruncate && !showFullText) ?
+    `${about.substring(0, 137)}...` : about;
+  const readMoreButtonLabel = showFullText ? 'Read less' : 'Read more';
 
   return (
     <article className="mx-5 flex max-w-md gap-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0">
@@ -81,10 +82,14 @@ const Card = (props: Props) => {
           <FaMicrophone className="mr-2 inline-block text-gray-400" />
           {titleCase(name)}
         </h3>
-        <p className="text-md text-gray-400 lg:text-lg">{truncate(about)}</p>
-        {isAboutTruncated && (
-          <button className="w-fit rounded-sm bg-gray-400 px-1 text-gray-800 hover:opacity-70">
-            Read more
+        <p className="text-md text-gray-400 lg:text-lg">{shownAbout}</p>
+        {aboutNeedsTruncate && (
+          <button
+            onClick={toggleReadMore}
+            className={`w-fit rounded-sm bg-gray-400 px-1 
+                text-gray-800 hover:opacity-70`}
+          >
+            {readMoreButtonLabel}
           </button>
         )}
         <ul className="mt-2 flex flex-wrap gap-4">
@@ -113,6 +118,13 @@ const Card = (props: Props) => {
             <li>
               <a href={website} target={'_blank'} rel={'noreferrer'}>
                 <FaGlobe className="text-xl text-gray-400 hover:opacity-70" />
+              </a>
+            </li>
+          )}
+          {matrix && (
+            <li>
+              <a href={matrix} target={'_blank'} rel={'noreferrer'}>
+                <SiMatrix className="text-xl text-gray-400 hover:opacity-70" />
               </a>
             </li>
           )}

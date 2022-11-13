@@ -4,6 +4,7 @@ import LogoSection from 'components/LogoSection';
 import PastVideos from 'components/PastVideos';
 import SpeakersSection from 'components/SpeakersSection';
 import SponsorsSection from 'components/SponsorsSection';
+import TwitchSection from 'components/TwitchSection';
 import MCSection from 'components/MCSection';
 
 function Home() {
@@ -25,6 +26,7 @@ function Home() {
         </div>
         <MCSection />
         <SpeakersSection />
+        <TwitchSection />
         <SponsorsSection />
         <PastVideos />
       </main>
