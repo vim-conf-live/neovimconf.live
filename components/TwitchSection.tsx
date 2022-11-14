@@ -10,7 +10,7 @@ const TwitchSection = () => {
 
   return (
     <section className="w-full">
-      <h2 className="text-[#0f74d0]">Watch live on Twitch!</h2>
+      <h2 className="text-[#0f74d0] sm:mb-4">Watch live on Twitch!</h2>
       <h3 className="text-gray-300">
         The conference will be streamed on Twitch and free to the world.
       </h3>
