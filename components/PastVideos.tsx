@@ -1,7 +1,7 @@
 const PastVideos = () => {
   return (
     <section>
-      <h2 className="text-[#0f74d0]">Last year's talks</h2>
+      <h2 className="text-[#0f74d0]">{`Last year's talks`}</h2>
       <div className="last-years-videos grid w-full content-center items-center p-4 sm:w-2/3 ">
         <h3 className="mt-4 mb-8 text-xl text-blue-200 font-bold">
           Watch the conference highlights
