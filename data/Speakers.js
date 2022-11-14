@@ -67,8 +67,7 @@ const speakers = [
     {
     name: 'Jorres Tarasov',
     imagesrc: '/speaker-images/jorresspeaker.jpeg',
-    about:
-      "First year Masters student, DevOps engineer at Yandex. Long-term Neovim fanatic and a learning afficionado who’s working on his next challenge”,
+    about: "First year Masters student, DevOps engineer at Yandex. Long-term Neovim fanatic and a learning afficionado who’s working on his next challenge"
   },
 ];
 
