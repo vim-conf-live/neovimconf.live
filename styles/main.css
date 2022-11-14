@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@property --rotate {
+  syntax: '<angle>';
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 400px;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
 body {
   @apply bg-gray-900;
 }
@@ -119,6 +130,84 @@ section h2 {
   transform: translate(0%, -100%);
   opacity: 0;
   animation: 6s ease infinite alternate fadeIn;
+}
+
+.mc-card {
+  background: #333335;
+  color: #fafafa;
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  border-radius: 6px;
+  text-align: center;
+  background-size: cover;
+  background-position: top;
+  box-shadow: inset 0px 0px 50px rgb(0 0 0);
+  transition: 2s all ease;
+}
+.mc-card img {
+  width: 100%;
+}
+.mc-card h1 {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0 0 0 / 50%);
+  display: block;
+  width: 100%;
+  padding: 16px;
+  font-size: 24px;
+  box-shadow: 0px 0px 30px rgb(0 0 0);
+}
+.mc-card:before {
+  content: '';
+  width: 104%;
+  height: 103%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  background-image: linear-gradient(var(--rotate), #0f74d0, #21ee4b 43%);
+  position: absolute;
+  z-index: -1;
+  top: -1.5%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+.mc-card:after {
+  position: absolute;
+  content: '';
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 63%,
+    #4e00c2
+  );
+  background-image: linear-gradient(var(--rotate), #0f74d0, #21ee4b 63%);
+  background-image: linear-gradient(var(--rotate), #21ee4b, #0f74d0 63%);
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
 }
 
 @keyframes dimBackground {
