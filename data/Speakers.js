@@ -44,13 +44,24 @@ const speakers = [
     website: 'https://eruizc.dev/',
     twitter: 'https://twitter.com/eruizc_dev'
   },
-        {
+    {
     name: 'Lorenz Schmidt',
     imagesrc: '/speaker-images/lorenzspeaker.jpg',
     about:
       "Lorenz is a second year PhD and extensive user of Vim, for coding as well as writing. When he is not reading some paper, he is actively working on Vim plugins to improve his note taking and linkage process. He also maintains Linfa, a statistical learning framework and is member of the Rust Machine Learning group.",
     github: 'https://github.com/bytesnake/',
     website: 'https://lorenzschmidt.com/',
+  },
+  {
+    name: 'Joe Previte',
+    imagesrc: '/speaker-images/joeprevitespeaker.png',
+    about:
+      "Joe is an Open Source TypeScript Engineer at Coder and maintainer of code-server. He has a passion for teaching and learning and aims to help developers learn faster through interactive courses like Vim for VS Code and TypeScript Course. Outside that, he likes getting people excited about webdev and indie hacking.",
+    github: 'https://github.com/jsjoeio',
+    website: 'https://joeprevite.com/',
+    twitter: 'https://twitter.com/jsjoeio',
+    youtube: 'https://www.youtube.com/c/jsjoeio',
+    website: 'https://www.twitch.tv/jsjoeio'
   },
 ];
 
