@@ -29,7 +29,7 @@ interface Props {
 }
 
 const Card = (props: Props) => {
-  const [ showFullText, setShowFullText ] = useState(false);
+  const [showFullText, setShowFullText] = useState(false);
   const {
     name,
     about,
@@ -45,7 +45,10 @@ const Card = (props: Props) => {
     matrix,
   } = { ...props };
 
-  const toggleReadMore = useCallback( () => setShowFullText(state => !state), []);
+  const toggleReadMore = useCallback(
+    () => setShowFullText((state) => !state),
+    []
+  );
 
   const titleCase = (str: string) => {
     return str
@@ -58,8 +61,10 @@ const Card = (props: Props) => {
   };
 
   const aboutNeedsTruncate = about.length > 140;
-  const shownAbout = (aboutNeedsTruncate && !showFullText) ?
-    `${about.substring(0, 137)}...` : about;
+  const shownAbout =
+    aboutNeedsTruncate && !showFullText
+      ? `${about.substring(0, 137)}...`
+      : about;
   const readMoreButtonLabel = showFullText ? 'Read less' : 'Read more';
 
   return (
@@ -82,11 +87,13 @@ const Card = (props: Props) => {
           <FaMicrophone className="mr-2 inline-block text-gray-400" />
           {titleCase(name)}
         </h3>
-        <p className="text-md text-gray-400 lg:text-lg">{shownAbout}</p>
+        <p className="text-md min-w-0 overflow-auto text-gray-400 lg:text-lg">
+          {shownAbout}
+        </p>
         {aboutNeedsTruncate && (
           <button
             onClick={toggleReadMore}
-            className={`w-fit rounded-sm bg-gray-400 px-1 
+            className={`w-fit rounded-sm bg-gray-400 px-2 
                 text-gray-800 hover:opacity-70`}
           >
             {readMoreButtonLabel}
