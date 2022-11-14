@@ -143,7 +143,7 @@ section h2 {
   background-size: cover;
   background-position: top;
   box-shadow: inset 0px 0px 50px rgb(0 0 0);
-  transition: 2s all ease;
+  transition: 2s width ease;
 }
 .mc-card img {
   width: 100%;
