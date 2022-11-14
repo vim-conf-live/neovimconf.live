@@ -11,8 +11,10 @@ const TwitchSection = () => {
   return (
     <section className="w-full">
       <h2 className="text-[#0f74d0]">Watch live on Twitch!</h2>
-      <h3 className="text-gray-300">The conference will be streamed on Twitch and free to the world.</h3>
-      <div className="image relative mx-auto mt-12 max-w-4xl flex h-96 items-center justify-center ">
+      <h3 className="text-gray-300">
+        The conference will be streamed on Twitch and free to the world.
+      </h3>
+      <div className="image relative mx-auto mt-12 flex h-96 max-w-4xl items-center justify-center ">
         <style jsx>
           {`
             .image:before {
@@ -32,9 +34,11 @@ const TwitchSection = () => {
           `}
         </style>
         <Link href="https://www.twitch.tv/theprimeagen">
-          <div className={`flex items-center font-bold bg-white p-2 px-4 z-10 
-            cursor-pointer transition hover:bg-yellow-100 
-            rounded text-gray-800 space-x-2 shadow-lg`}>
+          <div
+            className={`z-10 flex cursor-pointer items-center space-x-2 rounded bg-white 
+            p-2 px-4 font-bold 
+            text-gray-800 shadow-lg transition hover:bg-yellow-100`}
+          >
             <ImTwitch className="text-5xl" />
             <span>Official conference twitch channel</span>
           </div>

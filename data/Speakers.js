@@ -7,7 +7,8 @@ const speakers = [
     github: 'https://github.com/MiragianCycle',
     website: 'https://theena.net',
     linkedin: 'https://github.com/MiragianCycle',
-    amazon: 'https://www.amazon.com/First-Utterance-Miragian-Cycles-Book-ebook/dp/B08MBX8GRZ',
+    amazon:
+      'https://www.amazon.com/First-Utterance-Miragian-Cycles-Book-ebook/dp/B08MBX8GRZ',
   },
   {
     name: 'Björn Linse',
@@ -24,32 +25,32 @@ const speakers = [
       "Fidel H Viegas works as CTO and Lead Programmer at Metagnosis. From an early age, he understood that resourcefulness was synonymous with restrictions and limitations. Unable to get games for his Amstrad CPC 464, he learned to program in BASIC from the manual. Later, discovering that BASIC existed in different dialects, he learned to translate between them. Throughout his career, he developed several systems: ERPs, CMSs, decompilers, binary file converters, and transpilers. He also has experience reverse engineering binary file formats and computer software, an expertise he used to recover the source code of his employer's ERP. He is also working independently on a VimScript to Lua transpiler, and recently joined the Modula-2 Software Foundation to work on a bootstrap compiler for the revised Modula-2 language.",
     linkedin: 'https://www.linkedin.com/in/fidelhviegas/',
     website: 'https://www.geekstakulus.com/',
-    github: 'https://github.com/viegasfh'
+    github: 'https://github.com/viegasfh',
   },
-    {
+  {
     name: 'John McBride',
     imagesrc: '/speaker-images/johnspeaker.jpg',
     about:
-      "John is a Software Engineer working on secure linux operating systems, containers, and kubernetes. He is a maintainer of spf13/cobra, a CLI bootstrapping library. In the past, he has worked on open source Kubernetes platforms and lead teams building observability products. He is a vim enthusiast and makes occasional content for vim users.",
+      'John is a Software Engineer working on secure linux operating systems, containers, and kubernetes. He is a maintainer of spf13/cobra, a CLI bootstrapping library. In the past, he has worked on open source Kubernetes platforms and lead teams building observability products. He is a vim enthusiast and makes occasional content for vim users.',
     github: 'https://github.com/',
     youtube: 'https://www.youtube.com/c/JohnCodes',
     website: 'https://johncodes.com/',
-    twitter: 'https://twitter.com/johncodezzz'
+    twitter: 'https://twitter.com/johncodezzz',
   },
-      {
+  {
     name: 'Emiliano Ruiz Carletti',
     imagesrc: '/speaker-images/emiliano.png',
     about:
-      "Long term Neovim user and learner-by-teaching powered by open source. IT Museum volunteer and Software Engineer at MercadoLibre.",
+      'Long term Neovim user and learner-by-teaching powered by open source. IT Museum volunteer and Software Engineer at MercadoLibre.',
     github: 'https://github.com/eruizc-dev',
     website: 'https://eruizc.dev/',
-    twitter: 'https://twitter.com/eruizc_dev'
+    twitter: 'https://twitter.com/eruizc_dev',
   },
-    {
+  {
     name: 'Lorenz Schmidt',
     imagesrc: '/speaker-images/lorenzspeaker.jpg',
     about:
-      "Lorenz is a second year PhD and extensive user of Vim, for coding as well as writing. When he is not reading some paper, he is actively working on Vim plugins to improve his note taking and linkage process. He also maintains Linfa, a statistical learning framework and is member of the Rust Machine Learning group.",
+      'Lorenz is a second year PhD and extensive user of Vim, for coding as well as writing. When he is not reading some paper, he is actively working on Vim plugins to improve his note taking and linkage process. He also maintains Linfa, a statistical learning framework and is member of the Rust Machine Learning group.',
     github: 'https://github.com/bytesnake/',
     website: 'https://lorenzschmidt.com/',
   },
@@ -57,17 +58,18 @@ const speakers = [
     name: 'Joe Previte',
     imagesrc: '/speaker-images/joeprevitespeaker.png',
     about:
-      "Joe is an Open Source TypeScript Engineer at Coder and maintainer of code-server. He has a passion for teaching and learning and aims to help developers learn faster through interactive courses like Vim for VS Code and TypeScript Course. Outside that, he likes getting people excited about webdev and indie hacking.",
+      'Joe is an Open Source TypeScript Engineer at Coder and maintainer of code-server. He has a passion for teaching and learning and aims to help developers learn faster through interactive courses like Vim for VS Code and TypeScript Course. Outside that, he likes getting people excited about webdev and indie hacking.',
     github: 'https://github.com/jsjoeio',
     website: 'https://joeprevite.com/',
     twitter: 'https://twitter.com/jsjoeio',
     youtube: 'https://www.youtube.com/c/jsjoeio',
-    website: 'https://www.twitch.tv/jsjoeio'
+    website: 'https://www.twitch.tv/jsjoeio',
   },
-    {
+  {
     name: 'Jorres Tarasov',
     imagesrc: '/speaker-images/jorresspeaker.jpeg',
-    about: "First year Masters student, DevOps engineer at Yandex. Long-term Neovim fanatic and a learning afficionado who’s working on his next challenge"
+    about:
+      'First year Masters student, DevOps engineer at Yandex. Long-term Neovim fanatic and a learning afficionado who’s working on his next challenge',
   },
 ];
 
