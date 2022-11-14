@@ -64,6 +64,12 @@ const speakers = [
     youtube: 'https://www.youtube.com/c/jsjoeio',
     website: 'https://www.twitch.tv/jsjoeio'
   },
+    {
+    name: 'Jorres Tarasov',
+    imagesrc: '/speaker-images/jorresspeaker.jpeg',
+    about:
+      "First year Masters student, DevOps engineer at Yandex. Long-term Neovim fanatic and a learning afficionado who’s working on his next challenge”,
+  },
 ];
 
 export default speakers;
