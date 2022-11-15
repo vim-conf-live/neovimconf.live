@@ -87,6 +87,9 @@ const speakers = [
     imagesrc: '/speaker-images/danielspeaker.jpeg',
     about:
       'Hello ! Im Daniel Mathiot, aka Danymat. Some people know me in the community for creating the Neogen plugin, others for implementing the Getting Things Done methodology in Neorg. Besides that, I graduated this year and Im currently working as a Penetration Tester in my company. Im very grateful to be part of this years Neovim Conf edition, and I will be delighted to welcome you during my first open-source presentation.',
+      github:'https://github.com/danymat',
+      website:'https://danielmathiot.tech/notes',
+      linkedin:'https://linkedin.com/in/danielmathiot'        
   },
 ];
 
