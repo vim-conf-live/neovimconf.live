@@ -70,6 +70,8 @@ const speakers = [
     imagesrc: '/speaker-images/jorresspeaker.jpeg',
     about:
       'First year Masters student, DevOps engineer at Yandex. Long-term Neovim fanatic and a learning afficionado who’s working on his next challenge',
+    github:'https://github.com/Jorres',
+    linkedin:'https://www.linkedin.com/in/jorres-tarasov/'
   },
     {
     name: 'Benny Powers',
