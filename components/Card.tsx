@@ -9,6 +9,7 @@ import {
   FaTwitch,
   FaTwitter,
   FaYoutube,
+  FaMastodon,
 } from 'react-icons/fa';
 import { SiMatrix } from 'react-icons/si';
 
@@ -26,6 +27,7 @@ interface Props {
   youtube?: string | null;
   amazon?: string | null;
   matrix?: string | null;
+  mastodon?: string | null;
 }
 
 const Card = (props: Props) => {
@@ -43,6 +45,7 @@ const Card = (props: Props) => {
     youtube,
     amazon,
     matrix,
+    mastodon,
   } = { ...props };
 
   const toggleReadMore = useCallback(
@@ -104,6 +107,13 @@ const Card = (props: Props) => {
             <li>
               <a href={github} target={'_blank'} rel={'noreferrer'}>
                 <FaGithub className="text-xl text-gray-400 hover:opacity-70" />
+              </a>
+            </li>
+          )}
+          {mastodon && (
+            <li>
+              <a href={mastodon} target={'_blank'} rel={'noreferrer'}>
+                <FaMastodon className="text-xl text-gray-400 hover:opacity-70" />
               </a>
             </li>
           )}
