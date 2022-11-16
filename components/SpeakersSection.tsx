@@ -21,6 +21,7 @@ const SpeakersSection = () => {
               youtube={speaker.youtube}
               amazon={speaker.amazon}
               matrix={speaker.matrix}
+              mastodon={speaker.mastodon}
             />
           );
         })}
