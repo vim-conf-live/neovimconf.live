@@ -63,7 +63,7 @@ const Card = (props: Props) => {
   const AboutTruncated = () => {
     if (!isExpanded)
       return (
-        <p className="text-md min-w-0 overflow-auto text-left text-gray-400 lg:text-lg">
+        <p className="text-md text-left text-gray-400 lg:text-lg">
           {about.substring(0, 137)}...`
         </p>
       );
@@ -73,7 +73,7 @@ const Card = (props: Props) => {
   const About = () => {
     if (isExpanded)
       return (
-        <p className="text-md mt-5 min-w-0 overflow-auto px-3 text-left text-gray-400 lg:text-lg">
+        <p className="text-md mt-5 px-3 text-left text-gray-400 lg:text-lg">
           {about}
         </p>
       );
@@ -91,9 +91,15 @@ const Card = (props: Props) => {
       </button>
     );
   };
+  const modalStyle = isExpanded
+    ? ' ' +
+      'fixed top-16 md:left-4 z-20 h-5/6 md:top-24  md:w-1/2 overflow-y-scroll md:overflow-hidden'
+    : ' ' + 'md:max-w-md';
+  const style =
+    'mx-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0' + modalStyle;
 
   return (
-    <article className="relative mx-5 max-w-md rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0">
+    <article className={style}>
       {isExpanded && (
         <button
           onClick={() => setisExpanded(!isExpanded)}
