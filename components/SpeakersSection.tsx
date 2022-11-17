@@ -5,7 +5,7 @@ const SpeakersSection = () => {
   return (
     <section className="h-fit">
       <h2 className="my-4 text-[#21ee4b] sm:my-8">Speakers</h2>
-      <div className="grid gap-6 md:mx-5 md:grid-cols-2">
+      <div className="grid gap-6 md:mx-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-8">
         {speakers.map((speaker, index) => {
           return (
             <Card
