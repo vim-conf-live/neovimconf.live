@@ -61,24 +61,15 @@ const Card = (props: Props) => {
       .join(' ');
   };
 
-  const AboutTruncated = () => {
-    if (!isExpanded)
-      return (
-        <p className="text-md mt-5 text-left text-gray-400 lg:text-lg">
-          {about.substring(0, 137)}...`
-        </p>
-      );
-    return null;
-  };
-
   const About = () => {
-    if (isExpanded)
-      return (
-        <p className="text-md mt-5 px-3 text-left text-gray-400 lg:text-lg">
-          {about}
-        </p>
-      );
-    return null;
+    const lineClamp = isExpanded ? '' : 'line-clamp-3';
+    return (
+      <p
+        className={`text-md mt-5 px-3 text-left text-gray-400 lg:text-lg ${lineClamp}`}
+      >
+        {about}
+      </p>
+    );
   };
 
   const ModalButton = () => {
@@ -191,7 +182,6 @@ const Card = (props: Props) => {
           </ul>
         </div>
       </div>
-      <AboutTruncated />
       <About />
     </article>
   );
