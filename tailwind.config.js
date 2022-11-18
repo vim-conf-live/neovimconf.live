@@ -20,6 +20,17 @@ module.exports = {
         montserrat: ['Montserrat', 'sans-serif'],
       },
     },
+    keyframes: {
+      appear: {
+        from: {
+          opacity: '0',
+          transform: 'translateY(20px)',
+        },
+      },
+    },
+    animation: {
+      appear: 'appear 0.5s',
+    },
   },
   variants: {
     extend: {},

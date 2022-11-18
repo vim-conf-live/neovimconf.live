@@ -51,8 +51,6 @@ const Card = (props: Props) => {
 
   const [isExpanded, setisExpanded] = useState(false);
 
-  const lineClamp = isExpanded ? '' : 'line-clamp-3';
-
   const titleCase = (str: string) => {
     return str
       .toLowerCase()
@@ -168,6 +166,10 @@ const Card = (props: Props) => {
     return null;
   };
 
+  const lineClamp = isExpanded ? '' : 'line-clamp-3';
+
+  const animate = isExpanded ? 'animate-appear' : '';
+
   const modalStyle = isExpanded
     ? ' ' +
       'fixed top-20 md:left-4 z-20 h-5/6 md:top-24  md:w-1/2 overflow-y-auto'
@@ -176,7 +178,7 @@ const Card = (props: Props) => {
   return (
     <>
       <article
-        className={`mx-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0 ${modalStyle}`}
+        className={`mx-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0 ${animate} ${modalStyle}`}
       >
         <ModalButton />
         <div className="flex gap-5">
