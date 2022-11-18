@@ -159,7 +159,10 @@ const Card = (props: Props) => {
   const BackgroundOverlay = () => {
     if (isExpanded)
       return (
-        <div className="fixed top-16 left-0 z-10 h-full w-full bg-black opacity-90"></div>
+        <div
+          className="fixed top-16 left-0 z-10 h-full w-full bg-black opacity-90"
+          onClick={() => setisExpanded(false)}
+        ></div>
       );
     return null;
   };
