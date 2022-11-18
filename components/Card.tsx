@@ -72,10 +72,22 @@ const Card = (props: Props) => {
     );
   };
 
+  const handleCardExpand = () => {
+    if (isExpanded) {
+      document.body.style.overflow = 'unset';
+      setisExpanded(false);
+    } else {
+      if (typeof window != 'undefined' && window.document) {
+        document.body.style.overflow = 'hidden';
+        setisExpanded(true);
+      }
+    }
+  };
+
   const ModalButton = () => {
     return (
       <button
-        onClick={() => setisExpanded(!isExpanded)}
+        onClick={handleCardExpand}
         className="absolute right-3 top-3 cursor-pointer text-gray-400"
       >
         {isExpanded && <MdClose className="text-2xl" />}
