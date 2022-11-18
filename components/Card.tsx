@@ -156,6 +156,14 @@ const Card = (props: Props) => {
     );
   };
 
+  const BackgroundOverlay = () => {
+    if (isExpanded)
+      return (
+        <div className="fixed top-16 left-0 z-10 block h-full w-full bg-black opacity-70 "></div>
+      );
+    return null;
+  };
+
   const modalStyle = isExpanded
     ? ' ' +
       'fixed top-16 md:left-4 z-20 h-5/6 md:top-24  md:w-1/2 overflow-y-scroll md:overflow-hidden'
@@ -164,32 +172,35 @@ const Card = (props: Props) => {
     'mx-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0' + modalStyle;
 
   return (
-    <article className={style}>
-      <ModalButton />
-      <div className="flex gap-5">
-        <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden lg:h-32 lg:w-32">
-          <Image
-            fill
-            object-fit="contain"
-            src={src}
-            alt="speaker profile image"
-            className="rounded-full"
-          />
-        </div>
+    <>
+      <article className={style}>
+        <ModalButton />
+        <div className="flex gap-5">
+          <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden lg:h-32 lg:w-32">
+            <Image
+              fill
+              object-fit="contain"
+              src={src}
+              alt="speaker profile image"
+              className="rounded-full"
+            />
+          </div>
 
-        <div className="flex flex-col gap-2 text-left">
-          <h3 className="text-2xl font-bold text-gray-100 lg:text-2xl">
-            {lectureTitle}
-          </h3>
-          <h3 className="text-lg text-gray-300 lg:text-xl">
-            <FaMicrophone className="mr-2 inline-block text-gray-400" />
-            {titleCase(name)}
-          </h3>
-          <SocialLinks />
+          <div className="flex flex-col gap-2 text-left">
+            <h3 className="text-2xl font-bold text-gray-100 lg:text-2xl">
+              {lectureTitle}
+            </h3>
+            <h3 className="text-lg text-gray-300 lg:text-xl">
+              <FaMicrophone className="mr-2 inline-block text-gray-400" />
+              {titleCase(name)}
+            </h3>
+            <SocialLinks />
+          </div>
         </div>
-      </div>
-      <About />
-    </article>
+        <About />
+      </article>
+      <BackgroundOverlay />
+    </>
   );
 };
 
