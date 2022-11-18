@@ -166,7 +166,7 @@ const Card = (props: Props) => {
     return null;
   };
 
-  const lineClamp = isExpanded ? '' : 'line-clamp-3';
+  const lineClamp = isExpanded ? '' : 'line-clamp-4';
 
   const animate = isExpanded ? 'animate-appear' : '';
 
