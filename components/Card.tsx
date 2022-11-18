@@ -172,12 +172,12 @@ const Card = (props: Props) => {
     ? ' ' +
       'fixed top-20 md:left-4 z-20 h-5/6 md:top-24  md:w-1/2 overflow-y-auto'
     : ' ' + 'relative md:max-w-sm';
-  const style =
-    'mx-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0' + modalStyle;
 
   return (
     <>
-      <article className={style}>
+      <article
+        className={`mx-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0 ${modalStyle}`}
+      >
         <ModalButton />
         <div className="flex gap-5">
           <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden lg:h-32 lg:w-32">
