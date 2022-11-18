@@ -91,6 +91,15 @@ const speakers = [
       website:'https://danielmathiot.tech/notes',
       linkedin:'https://linkedin.com/in/danielmathiot'        
   },
+        {
+    name: 'Olivier Abdesselam',
+    imagesrc: '/speaker-images/yazgoospeaker.png',
+    about:
+      'Hi, Im Olivier Abdesselam aka Yazgoo, senior software engineer in the analytics team in Teads. I like functional programming, realtime streaming. I enjoy using neovim, developping terminal apps, mostly in rust.',
+      github:'https://github.com/yazgoo/',
+      website:'https://mastodon.opportunis.me/@oogzay',
+      linkedin:'https://www.linkedin.com/in/olivier-abdesselam'        
+  },
 ];
 
 export default speakers;
