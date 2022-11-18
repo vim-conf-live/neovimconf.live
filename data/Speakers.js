@@ -77,7 +77,7 @@ const speakers = [
     name: 'Benny Powers',
     imagesrc: '/speaker-images/bennyspeaker.jpg',
     about:
-      'Principal Web Developer @Red Hat, working on design systems and web components. Atom refugee pining for the good old days of vim-mode-plus and neovim plugin author.',
+      'Principal UX engineer @Red Hat, working on design systems and web components. Atom refugee pining for the good old days of vim-mode-plus and neovim plugin author.',
       github:'https://github.com/bennypowers',
       twitter:'https://social.bennypowers.dev/@i',
       website:'https://bennypowers.dev/'
