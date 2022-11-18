@@ -35,7 +35,7 @@ const TwitchSection = () => {
         </style>
         <Link href="https://www.twitch.tv/theprimeagen">
           <div
-            className={`z-10 flex cursor-pointer items-center space-x-2 rounded bg-white 
+            className={`z-[2] flex cursor-pointer items-center space-x-2 rounded bg-white 
             p-2 px-4 font-bold 
             text-gray-800 shadow-lg transition hover:bg-yellow-100`}
           >
