@@ -79,7 +79,7 @@ const Card = (props: Props) => {
         className="absolute right-3 top-3 cursor-pointer text-gray-400"
       >
         {isExpanded && <MdClose className="text-2xl" />}
-        {!isExpanded && about.length > 137 && (
+        {!isExpanded && (
           <CgArrowsExpandRight className="animate-zoom text-xl" />
         )}
       </button>
