@@ -169,7 +169,7 @@ const Card = (props: Props) => {
 
   const modalStyle = isExpanded
     ? ' ' +
-      'fixed top-16 md:left-4 z-20 h-5/6 md:top-24  md:w-1/2 overflow-y-scroll md:overflow-hidden'
+      'fixed top-20 md:left-4 z-20 h-5/6 md:top-24  md:w-1/2 overflow-y-scroll md:overflow-hidden'
     : ' ' + 'relative md:max-w-sm';
   const style =
     'mx-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0' + modalStyle;
