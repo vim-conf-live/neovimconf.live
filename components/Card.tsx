@@ -51,6 +51,8 @@ const Card = (props: Props) => {
 
   const [isExpanded, setisExpanded] = useState(false);
 
+  const lineClamp = isExpanded ? '' : 'line-clamp-3';
+
   const titleCase = (str: string) => {
     return str
       .toLowerCase()
@@ -61,17 +63,6 @@ const Card = (props: Props) => {
       .join(' ');
   };
 
-  const About = () => {
-    const lineClamp = isExpanded ? '' : 'line-clamp-3';
-    return (
-      <p
-        className={`text-md mt-5 px-3 text-left text-gray-400 lg:text-lg ${lineClamp}`}
-      >
-        {about}
-      </p>
-    );
-  };
-
   const handleCardExpand = () => {
     if (isExpanded) {
       document.body.style.overflow = 'unset';
@@ -79,8 +70,8 @@ const Card = (props: Props) => {
     } else {
       if (typeof window != 'undefined' && window.document) {
         document.body.style.overflow = 'hidden';
-        setisExpanded(true);
       }
+      setisExpanded(true);
     }
   };
 
@@ -171,7 +162,7 @@ const Card = (props: Props) => {
       return (
         <div
           className="fixed top-16 left-0 z-10 h-full w-full bg-black opacity-90"
-          onClick={() => setisExpanded(false)}
+          onClick={handleCardExpand}
         ></div>
       );
     return null;
@@ -210,7 +201,11 @@ const Card = (props: Props) => {
             <SocialLinks />
           </div>
         </div>
-        <About />
+        <p
+          className={`text-md mt-5 px-3 text-left text-gray-400 lg:text-lg ${lineClamp}`}
+        >
+          {about}
+        </p>
       </article>
       <BackgroundOverlay />
     </>
