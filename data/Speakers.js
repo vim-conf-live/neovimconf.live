@@ -91,7 +91,7 @@ const speakers = [
       website:'https://danielmathiot.tech/notes',
       linkedin:'https://linkedin.com/in/danielmathiot'        
   },
-        {
+    {
     name: 'Olivier Abdesselam',
     imagesrc: '/speaker-images/yazgoospeaker.png',
     about:
@@ -99,6 +99,14 @@ const speakers = [
       github:'https://github.com/yazgoo/',
       website:'https://mastodon.opportunis.me/@oogzay',
       linkedin:'https://www.linkedin.com/in/olivier-abdesselam'        
+  },
+   {
+    name: 'David Kunz',
+    imagesrc: '/speaker-images/davidkuntzspeaker.jpeg',
+    about:
+      'David Kunz (aka DevOnDuty) is a software architect for the Node.js runtime of the Cloud Application Programming Model at SAP. After finishing his PhD in theoretical particle physics, David followed his passion for programming, always striving to gain comprehensive knowledge of emerging technologies. He advocates for superior paradigms and tools for efficient development.',
+      github:'https://github.com/David-Kunz',
+      youtube:'https://www.youtube.com/@devonduty'
   },
 ];
 
