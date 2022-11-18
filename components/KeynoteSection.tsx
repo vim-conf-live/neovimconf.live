@@ -3,18 +3,19 @@ import Image from 'next/future/image';
 
 const KeynoteSection = () => {
   return (
-    <section className="w-full">
-      <h2 className="text-[#0f74d0] sm:mb-4">Keynote</h2>
-      <h3 className="text-gray-300">
+    <section>
+      <h2 className="text-[#0f74d0] sm:mb-6">Keynote</h2>
+      <h3 className="mb-8 text-2xl text-gray-300 text-gray-200">
         State of Neovim
       </h3>
-        <Image
-          src="/justinkeyes.jpeg"
-          alt="Justin Keyes"
-          width={100}
-          height={100}
-        />
-      </div>
+      <Image
+        src="/justinkeyes.jpeg"
+        className="rounded-lg shadow"
+        alt="Justin Keyes"
+        width={300}
+        height={300}
+      />
+      <p>Justin M. Keyes</p>
     </section>
   );
 };
