@@ -108,6 +108,12 @@ const speakers = [
       github:'https://github.com/David-Kunz',
       youtube:'https://www.youtube.com/@devonduty'
   },
+     {
+    name: 'Peter DeVries',
+    imagesrc: '/speaker-images/peterspeaker.jpeg',
+    about:
+      'Collector of Hobbies, IT Professional, Neovim / Keyboard enthusiast.'
+  },
 ];
 
 export default speakers;
