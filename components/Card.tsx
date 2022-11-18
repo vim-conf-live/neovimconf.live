@@ -86,6 +86,76 @@ const Card = (props: Props) => {
     );
   };
 
+  const SocialLinks = () => {
+    return (
+      <ul className="mt-2 flex flex-wrap gap-4">
+        {github && (
+          <li>
+            <a href={github} target={'_blank'} rel={'noreferrer'}>
+              <FaGithub className="text-xl text-gray-400 hover:opacity-70" />
+            </a>
+          </li>
+        )}
+        {mastodon && (
+          <li>
+            <a href={mastodon} target={'_blank'} rel={'noreferrer'}>
+              <FaMastodon className="text-xl text-gray-400 hover:opacity-70" />
+            </a>
+          </li>
+        )}
+        {twitter && (
+          <li>
+            <a href={twitter} target={'_blank'} rel={'noreferrer'}>
+              <FaTwitter className="text-xl text-gray-400 hover:opacity-70" />
+            </a>
+          </li>
+        )}
+        {twitch && (
+          <li>
+            <a href={twitch} target={'_blank'} rel={'noreferrer'}>
+              <FaTwitch className="text-xl text-gray-400 hover:opacity-70" />
+            </a>
+          </li>
+        )}
+        {website && (
+          <li>
+            <a href={website} target={'_blank'} rel={'noreferrer'}>
+              <FaGlobe className="text-xl text-gray-400 hover:opacity-70" />
+            </a>
+          </li>
+        )}
+        {matrix && (
+          <li>
+            <a href={matrix} target={'_blank'} rel={'noreferrer'}>
+              <SiMatrix className="text-xl text-gray-400 hover:opacity-70" />
+            </a>
+          </li>
+        )}
+        {linkedin && (
+          <li>
+            <a href={linkedin} target={'_blank'} rel={'noreferrer'}>
+              <FaLinkedin className="text-xl text-gray-400 hover:opacity-70" />
+            </a>
+          </li>
+        )}
+        {youtube && (
+          <li>
+            <a href={youtube} target={'_blank'} rel={'noreferrer'}>
+              <FaYoutube className="text-xl text-gray-400 hover:opacity-70" />
+            </a>
+          </li>
+        )}
+        {amazon && (
+          <li>
+            <a href={amazon} target={'_blank'} rel={'noreferrer'}>
+              <FaAmazon className="text-xl text-gray-400 hover:opacity-70" />
+            </a>
+          </li>
+        )}
+      </ul>
+    );
+  };
+
   const modalStyle = isExpanded
     ? ' ' +
       'fixed top-16 md:left-4 z-20 h-5/6 md:top-24  md:w-1/2 overflow-y-scroll md:overflow-hidden'
@@ -115,71 +185,7 @@ const Card = (props: Props) => {
             <FaMicrophone className="mr-2 inline-block text-gray-400" />
             {titleCase(name)}
           </h3>
-          <ul className="mt-2 flex flex-wrap gap-4">
-            {github && (
-              <li>
-                <a href={github} target={'_blank'} rel={'noreferrer'}>
-                  <FaGithub className="text-xl text-gray-400 hover:opacity-70" />
-                </a>
-              </li>
-            )}
-            {mastodon && (
-              <li>
-                <a href={mastodon} target={'_blank'} rel={'noreferrer'}>
-                  <FaMastodon className="text-xl text-gray-400 hover:opacity-70" />
-                </a>
-              </li>
-            )}
-            {twitter && (
-              <li>
-                <a href={twitter} target={'_blank'} rel={'noreferrer'}>
-                  <FaTwitter className="text-xl text-gray-400 hover:opacity-70" />
-                </a>
-              </li>
-            )}
-            {twitch && (
-              <li>
-                <a href={twitch} target={'_blank'} rel={'noreferrer'}>
-                  <FaTwitch className="text-xl text-gray-400 hover:opacity-70" />
-                </a>
-              </li>
-            )}
-            {website && (
-              <li>
-                <a href={website} target={'_blank'} rel={'noreferrer'}>
-                  <FaGlobe className="text-xl text-gray-400 hover:opacity-70" />
-                </a>
-              </li>
-            )}
-            {matrix && (
-              <li>
-                <a href={matrix} target={'_blank'} rel={'noreferrer'}>
-                  <SiMatrix className="text-xl text-gray-400 hover:opacity-70" />
-                </a>
-              </li>
-            )}
-            {linkedin && (
-              <li>
-                <a href={linkedin} target={'_blank'} rel={'noreferrer'}>
-                  <FaLinkedin className="text-xl text-gray-400 hover:opacity-70" />
-                </a>
-              </li>
-            )}
-            {youtube && (
-              <li>
-                <a href={youtube} target={'_blank'} rel={'noreferrer'}>
-                  <FaYoutube className="text-xl text-gray-400 hover:opacity-70" />
-                </a>
-              </li>
-            )}
-            {amazon && (
-              <li>
-                <a href={amazon} target={'_blank'} rel={'noreferrer'}>
-                  <FaAmazon className="text-xl text-gray-400 hover:opacity-70" />
-                </a>
-              </li>
-            )}
-          </ul>
+          <SocialLinks />
         </div>
       </div>
       <About />
