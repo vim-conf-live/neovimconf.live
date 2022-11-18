@@ -4,7 +4,7 @@ import Image from 'next/future/image';
 const KeynoteSection = () => {
   return (
     <section>
-      <h2 className="text-[#0f74d0] sm:mb-6">Keynote</h2>
+      <h2 className="sm:mb-6">Keynote</h2>
       <h3 className="mb-8 text-2xl text-gray-300 text-gray-200">
         State of Neovim
       </h3>
