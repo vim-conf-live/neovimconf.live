@@ -91,9 +91,7 @@ const Card = (props: Props) => {
         className="absolute right-3 top-3 cursor-pointer text-gray-400"
       >
         {isExpanded && <MdClose className="text-2xl" />}
-        {!isExpanded && (
-          <CgArrowsExpandRight className="animate-zoom text-xl" />
-        )}
+        {!isExpanded && <CgArrowsExpandRight className="text-xl" />}
       </button>
     );
   };
@@ -181,7 +179,7 @@ const Card = (props: Props) => {
 
   const modalStyle = isExpanded
     ? ' ' +
-      'fixed top-20 md:left-4 z-20 h-5/6 md:top-24  md:w-1/2 overflow-y-scroll md:overflow-hidden'
+      'fixed top-20 md:left-4 z-20 h-5/6 md:top-24  md:w-1/2 overflow-y-auto'
     : ' ' + 'relative md:max-w-sm';
   const style =
     'mx-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0' + modalStyle;
