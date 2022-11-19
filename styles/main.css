@@ -31,7 +31,11 @@ section {
 }
 
 section h2 {
-  @apply text-4xl font-bold sm:text-6xl;
+  @apply text-4xl font-bold sm:text-6xl text-[#21ee4b];
+}
+
+section:nth-child(even) h2 {
+  @apply text-[#0f74d0];
 }
 
 .Countdown {

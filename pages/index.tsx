@@ -6,6 +6,7 @@ import SpeakersSection from 'components/SpeakersSection';
 import SponsorsSection from 'components/SponsorsSection';
 import TwitchSection from 'components/TwitchSection';
 import MCSection from 'components/MCSection';
+import KeynoteSection from 'components/KeynoteSection';
 
 function Home() {
   return (
@@ -25,6 +26,7 @@ function Home() {
           </div>
         </div>
         <MCSection />
+        <KeynoteSection />
         <SpeakersSection />
         <TwitchSection />
         <SponsorsSection />
