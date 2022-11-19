@@ -25,8 +25,8 @@ function Home() {
             <LogoSection />
           </div>
         </div>
-        <MCSection />
         <KeynoteSection />
+        <MCSection />
         <SpeakersSection />
         <TwitchSection />
         <SponsorsSection />
