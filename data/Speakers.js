@@ -114,6 +114,12 @@ const speakers = [
     about:
       'Collector of Hobbies, IT Professional, Neovim / Keyboard enthusiast.'
   },
+       {
+    name: 'Chris Kipp',
+    imagesrc: '/speaker-images/chipspeaker.jpeg',
+    about:
+      'Chris is a software engineer at Lunatech primarily working on Scala open source tooling. Hes a maintainer of Metals, the Scala Language Server, and author of nvim-metals, the Neovim plugin for Metals. Hes also a self-taught programmer with a passion for simplifying things and helping others be more productive.'
+  },
 ];
 
 export default speakers;
