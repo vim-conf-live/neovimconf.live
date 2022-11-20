@@ -24,6 +24,16 @@ interface Props {
   mastodon?: string | null;
 }
 
+const titleCase = (str: string) => {
+  return str
+    .toLowerCase()
+    .split(' ')
+    .map(function (word) {
+      return word.replace(word[0], word[0].toUpperCase());
+    })
+    .join(' ');
+};
+
 const Card = (props: Props) => {
   const {
     name,
@@ -43,16 +53,6 @@ const Card = (props: Props) => {
 
   const [isExpanded, setisExpanded] = useState(false);
 
-  const titleCase = (str: string) => {
-    return str
-      .toLowerCase()
-      .split(' ')
-      .map(function (word) {
-        return word.replace(word[0], word[0].toUpperCase());
-      })
-      .join(' ');
-  };
-
   const handleCardExpand = () => {
     if (isExpanded) {
       document.body.style.overflow = 'unset';
@@ -65,44 +65,47 @@ const Card = (props: Props) => {
     }
   };
 
-  const ModalButton = () => {
-    return (
-      <button
+  let animate = '';
+
+  let lineClamp = 'line-clamp-4';
+
+  let modalStyle = ' ' + 'relative md:max-w-sm';
+
+  let buttonIcon = <CgArrowsExpandRight className="text-xl" />;
+
+  let backgroundOverlay = null;
+
+  if (isExpanded) {
+    animate = 'animate-appear';
+
+    lineClamp = '';
+
+    modalStyle =
+      ' ' +
+      'fixed top-20 md:left-4 z-20 h-5/6 md:top-24  md:w-1/2 overflow-y-auto';
+
+    buttonIcon = <MdClose className="text-2xl" />;
+
+    backgroundOverlay = (
+      <div
+        className="fixed top-16 left-0 z-10 h-full w-full bg-black opacity-90"
         onClick={handleCardExpand}
-        className="absolute right-3 top-3 cursor-pointer text-gray-400"
-      >
-        {isExpanded && <MdClose className="text-2xl" />}
-        {!isExpanded && <CgArrowsExpandRight className="text-xl" />}
-      </button>
+      ></div>
     );
-  };
-
-  const BackgroundOverlay = () => {
-    if (isExpanded)
-      return (
-        <div
-          className="fixed top-16 left-0 z-10 h-full w-full bg-black opacity-90"
-          onClick={handleCardExpand}
-        ></div>
-      );
-    return null;
-  };
-
-  const lineClamp = isExpanded ? '' : 'line-clamp-4';
-
-  const animate = isExpanded ? 'animate-appear' : '';
-
-  const modalStyle = isExpanded
-    ? ' ' +
-      'fixed top-20 md:left-4 z-20 h-5/6 md:top-24  md:w-1/2 overflow-y-auto'
-    : ' ' + 'relative md:max-w-sm';
+  }
 
   return (
     <>
       <article
         className={`mx-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0 ${animate} ${modalStyle}`}
       >
-        <ModalButton />
+        <button
+          onClick={handleCardExpand}
+          className="absolute right-3 top-3 cursor-pointer text-gray-400"
+        >
+          {buttonIcon}
+        </button>
+
         <div className="flex gap-5">
           <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden lg:h-32 lg:w-32">
             <Image
@@ -141,7 +144,7 @@ const Card = (props: Props) => {
           {about}
         </p>
       </article>
-      <BackgroundOverlay />
+      {isExpanded && backgroundOverlay}
     </>
   );
 };
