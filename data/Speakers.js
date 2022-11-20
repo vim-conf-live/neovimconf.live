@@ -123,13 +123,22 @@ const speakers = [
        twitter: 'https://twitter.com/ckipp01',
        github: 'https://github.com/ckipp01 '
   },
-         {
+    {
     name: 'Paul Liferenko',
     imagesrc: '/speaker-images/paulspeaker.jpg',
     about:
       'Average Erlang/Elixir developer, one-backpack life enjoyer. Started in 2013 with WordPress but back in 2018 I was bitten by Erlangists with their "Recursion is the thing!"',
        github: 'github.com/Liferenko',
        linkedin: 'linkedin.com/in/liferenko'
+
+  },
+    {
+    name: 'Anton Kastritskiy',
+    imagesrc: '/speaker-images/antonspeaker.jpeg',
+    about:
+      'Software engineer at Meta, occasional plugin author, excited about developer tooling, static analysis and type systems',
+       github: 'https://github.com/antonk52',
+       twitter: 'https://twitter.com/AntonK52'
 
   },
 ];
