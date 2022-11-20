@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/future/image';
 
 import { FaMicrophone } from 'react-icons/fa';
@@ -43,6 +43,13 @@ const Card = (props: Props) => {
   } = { ...props };
 
   const [isExpanded, setisExpanded] = useState(false);
+
+  useEffect(
+    () => () => {
+      document.body.style.overflow = 'unset';
+    },
+    []
+  );
 
   const handleCardExpand = () => {
     if (isExpanded) {
