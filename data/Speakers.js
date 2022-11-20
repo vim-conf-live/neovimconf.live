@@ -123,6 +123,15 @@ const speakers = [
        twitter: 'https://twitter.com/ckipp01',
        github: 'https://github.com/ckipp01 '
   },
+         {
+    name: 'Paul Liferenko',
+    imagesrc: '/speaker-images/paulspeaker.jpg',
+    about:
+      'Average Erlang/Elixir developer, one-backpack life enjoyer. Started in 2013 with WordPress but back in 2018 I was bitten by Erlangists with their "Recursion is the thing!"',
+       github: 'github.com/Liferenko',
+       linkedin: 'linkedin.com/in/liferenko'
+
+  },
 ];
 
 export default speakers;
