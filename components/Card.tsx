@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import Image from 'next/future/image';
 
-import SocialLinks from './SocialLinks';
-
 import { FaMicrophone } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md';
 import { CgArrowsExpandRight } from 'react-icons/cg';
+
+import SocialLinks from './SocialLinks';
+import titleCase from '../utils/titleCase';
 
 interface Props {
   name: string;
@@ -23,16 +24,6 @@ interface Props {
   matrix?: string | null;
   mastodon?: string | null;
 }
-
-const titleCase = (str: string) => {
-  return str
-    .toLowerCase()
-    .split(' ')
-    .map(function (word) {
-      return word.replace(word[0], word[0].toUpperCase());
-    })
-    .join(' ');
-};
 
 const Card = (props: Props) => {
   const {
