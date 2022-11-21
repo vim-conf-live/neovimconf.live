@@ -1,19 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/future/image';
-import {
-  FaAmazon,
-  FaGithub,
-  FaGlobe,
-  FaLinkedin,
-  FaMicrophone,
-  FaTwitch,
-  FaTwitter,
-  FaYoutube,
-  FaMastodon,
-} from 'react-icons/fa';
-import { SiMatrix } from 'react-icons/si';
+import ReactMarkdown from 'react-markdown';
+
+import { FaMicrophone } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md';
 import { CgArrowsExpandRight } from 'react-icons/cg';
+
+import SocialLinks from './SocialLinks';
+import titleCase from '../utils/titleCase';
 
 interface Props {
   name: string;
@@ -51,15 +45,12 @@ const Card = (props: Props) => {
 
   const [isExpanded, setisExpanded] = useState(false);
 
-  const titleCase = (str: string) => {
-    return str
-      .toLowerCase()
-      .split(' ')
-      .map(function (word) {
-        return word.replace(word[0], word[0].toUpperCase());
-      })
-      .join(' ');
-  };
+  useEffect(
+    () => () => {
+      document.body.style.overflow = 'unset';
+    },
+    []
+  );
 
   const handleCardExpand = () => {
     if (isExpanded) {
@@ -73,114 +64,47 @@ const Card = (props: Props) => {
     }
   };
 
-  const ModalButton = () => {
-    return (
-      <button
+  let animate = '';
+
+  let lineClamp = 'line-clamp-4';
+
+  let modalStyle = ' ' + 'relative md:max-w-sm';
+
+  let buttonIcon = <CgArrowsExpandRight className="text-xl" />;
+
+  let backgroundOverlay = null;
+
+  if (isExpanded) {
+    animate = 'animate-appear';
+
+    lineClamp = '';
+
+    modalStyle =
+      ' ' +
+      'fixed top-20 md:left-4 z-20 h-5/6 md:top-24  md:w-1/2 overflow-y-auto';
+
+    buttonIcon = <MdClose className="text-2xl" />;
+
+    backgroundOverlay = (
+      <div
+        className="fixed top-16 left-0 z-10 h-full w-full bg-black opacity-90"
         onClick={handleCardExpand}
-        className="absolute right-3 top-3 cursor-pointer text-gray-400"
-      >
-        {isExpanded && <MdClose className="text-2xl" />}
-        {!isExpanded && <CgArrowsExpandRight className="text-xl" />}
-      </button>
+      ></div>
     );
-  };
-
-  const SocialLinks = () => {
-    return (
-      <ul className="mt-2 flex flex-wrap gap-4">
-        {github && (
-          <li>
-            <a href={github} target={'_blank'} rel={'noreferrer'}>
-              <FaGithub className="text-xl text-gray-400 hover:opacity-70" />
-            </a>
-          </li>
-        )}
-        {mastodon && (
-          <li>
-            <a href={mastodon} target={'_blank'} rel={'noreferrer'}>
-              <FaMastodon className="text-xl text-gray-400 hover:opacity-70" />
-            </a>
-          </li>
-        )}
-        {twitter && (
-          <li>
-            <a href={twitter} target={'_blank'} rel={'noreferrer'}>
-              <FaTwitter className="text-xl text-gray-400 hover:opacity-70" />
-            </a>
-          </li>
-        )}
-        {twitch && (
-          <li>
-            <a href={twitch} target={'_blank'} rel={'noreferrer'}>
-              <FaTwitch className="text-xl text-gray-400 hover:opacity-70" />
-            </a>
-          </li>
-        )}
-        {website && (
-          <li>
-            <a href={website} target={'_blank'} rel={'noreferrer'}>
-              <FaGlobe className="text-xl text-gray-400 hover:opacity-70" />
-            </a>
-          </li>
-        )}
-        {matrix && (
-          <li>
-            <a href={matrix} target={'_blank'} rel={'noreferrer'}>
-              <SiMatrix className="text-xl text-gray-400 hover:opacity-70" />
-            </a>
-          </li>
-        )}
-        {linkedin && (
-          <li>
-            <a href={linkedin} target={'_blank'} rel={'noreferrer'}>
-              <FaLinkedin className="text-xl text-gray-400 hover:opacity-70" />
-            </a>
-          </li>
-        )}
-        {youtube && (
-          <li>
-            <a href={youtube} target={'_blank'} rel={'noreferrer'}>
-              <FaYoutube className="text-xl text-gray-400 hover:opacity-70" />
-            </a>
-          </li>
-        )}
-        {amazon && (
-          <li>
-            <a href={amazon} target={'_blank'} rel={'noreferrer'}>
-              <FaAmazon className="text-xl text-gray-400 hover:opacity-70" />
-            </a>
-          </li>
-        )}
-      </ul>
-    );
-  };
-
-  const BackgroundOverlay = () => {
-    if (isExpanded)
-      return (
-        <div
-          className="fixed top-16 left-0 z-10 h-full w-full bg-black opacity-90"
-          onClick={handleCardExpand}
-        ></div>
-      );
-    return null;
-  };
-
-  const lineClamp = isExpanded ? '' : 'line-clamp-4';
-
-  const animate = isExpanded ? 'animate-appear' : '';
-
-  const modalStyle = isExpanded
-    ? ' ' +
-      'fixed top-20 md:left-4 z-20 h-5/6 md:top-24  md:w-1/2 overflow-y-auto'
-    : ' ' + 'relative md:max-w-sm';
+  }
 
   return (
     <>
       <article
         className={`mx-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0 ${animate} ${modalStyle}`}
       >
-        <ModalButton />
+        <button
+          onClick={handleCardExpand}
+          className="absolute right-3 top-3 cursor-pointer text-gray-400"
+        >
+          {buttonIcon}
+        </button>
+
         <div className="flex gap-5">
           <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden lg:h-32 lg:w-32">
             <Image
@@ -189,6 +113,7 @@ const Card = (props: Props) => {
               src={src}
               alt="speaker profile image"
               className="rounded-full"
+              sizes="8rem"
             />
           </div>
 
@@ -200,16 +125,26 @@ const Card = (props: Props) => {
               <FaMicrophone className="mr-2 inline-block text-gray-400" />
               {titleCase(name)}
             </h3>
-            <SocialLinks />
+            <SocialLinks
+              github={github}
+              twitter={twitter}
+              twitch={twitch}
+              website={website}
+              linkedin={linkedin}
+              youtube={youtube}
+              amazon={amazon}
+              matrix={matrix}
+              mastodon={mastodon}
+            />
           </div>
         </div>
-        <p
-          className={`text-md mt-5 px-3 text-left text-gray-400 lg:text-lg ${lineClamp}`}
+        <div
+          className={`prose prose-invert mt-5 max-w-none px-3 text-left text-gray-400 lg:prose-lg ${lineClamp}`}
         >
-          {about}
-        </p>
+          <ReactMarkdown>{about}</ReactMarkdown>
+        </div>
       </article>
-      <BackgroundOverlay />
+      {isExpanded && backgroundOverlay}
     </>
   );
 };
