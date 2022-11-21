@@ -113,6 +113,7 @@ const Card = (props: Props) => {
               src={src}
               alt="speaker profile image"
               className="rounded-full"
+              sizes="8rem"
             />
           </div>
 
