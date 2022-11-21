@@ -138,7 +138,7 @@ const Card = (props: Props) => {
           </div>
         </div>
         <div
-          className={`prose prose-invert mt-5 px-3 text-left text-gray-400 lg:prose-lg ${lineClamp}`}
+          className={`prose prose-invert mt-5 max-w-none px-3 text-left text-gray-400 lg:prose-lg ${lineClamp}`}
         >
           <ReactMarkdown>{about}</ReactMarkdown>
         </div>
