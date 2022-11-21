@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/future/image';
+import ReactMarkdown from 'react-markdown';
 
 import { FaMicrophone } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md';
@@ -136,11 +137,11 @@ const Card = (props: Props) => {
             />
           </div>
         </div>
-        <p
-          className={`text-md mt-5 px-3 text-left text-gray-400 lg:text-lg ${lineClamp}`}
+        <div
+          className={`prose prose-invert mt-5 px-3 text-left text-gray-400 lg:prose-lg ${lineClamp}`}
         >
-          {about}
-        </p>
+          <ReactMarkdown>{about}</ReactMarkdown>
+        </div>
       </article>
       {isExpanded && backgroundOverlay}
     </>
