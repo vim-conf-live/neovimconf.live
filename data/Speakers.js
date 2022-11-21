@@ -70,76 +70,74 @@ const speakers = [
     imagesrc: '/speaker-images/jorresspeaker.jpeg',
     about:
       'First year Masters student, DevOps engineer at Yandex. Long-term Neovim fanatic and a learning afficionado who’s working on his next challenge',
-    github:'https://github.com/Jorres',
-    linkedin:'https://www.linkedin.com/in/jorres-tarasov/'
+    github: 'https://github.com/Jorres',
+    linkedin: 'https://www.linkedin.com/in/jorres-tarasov/',
   },
-    {
+  {
     name: 'Benny Powers',
     imagesrc: '/speaker-images/bennyspeaker.jpg',
     about:
       'Principal UX engineer @Red Hat, working on design systems and web components. Atom refugee pining for the good old days of vim-mode-plus and neovim plugin author.',
-      github:'https://github.com/bennypowers',
-      twitter:'https://social.bennypowers.dev/@i',
-      website:'https://bennypowers.dev/'
+    github: 'https://github.com/bennypowers',
+    twitter: 'https://social.bennypowers.dev/@i',
+    website: 'https://bennypowers.dev/',
   },
-      {
+  {
     name: 'Daniel Mathiot',
     imagesrc: '/speaker-images/danielspeaker.jpeg',
     about:
       'Hello ! Im Daniel Mathiot, aka Danymat. Some people know me in the community for creating the Neogen plugin, others for implementing the Getting Things Done methodology in Neorg. Besides that, I graduated this year and Im currently working as a Penetration Tester in my company. Im very grateful to be part of this years Neovim Conf edition, and I will be delighted to welcome you during my first open-source presentation.',
-      github:'https://github.com/danymat',
-      website:'https://danielmathiot.tech/notes',
-      linkedin:'https://linkedin.com/in/danielmathiot'        
+    github: 'https://github.com/danymat',
+    website: 'https://danielmathiot.tech/notes',
+    linkedin: 'https://linkedin.com/in/danielmathiot',
   },
-    {
+  {
     name: 'Olivier Abdesselam',
     imagesrc: '/speaker-images/yazgoospeaker.png',
     about:
       'Hi, Im Olivier Abdesselam aka Yazgoo, senior software engineer in the analytics team in Teads. I like functional programming, realtime streaming. I enjoy using neovim, developping terminal apps, mostly in rust.',
-      github:'https://github.com/yazgoo/',
-      website:'https://mastodon.opportunis.me/@oogzay',
-      linkedin:'https://www.linkedin.com/in/olivier-abdesselam'        
+    github: 'https://github.com/yazgoo/',
+    website: 'https://mastodon.opportunis.me/@oogzay',
+    linkedin: 'https://www.linkedin.com/in/olivier-abdesselam',
   },
-   {
+  {
     name: 'David Kunz',
     imagesrc: '/speaker-images/davidkuntzspeaker.jpeg',
     about:
       'David Kunz (aka DevOnDuty) is a software architect for the Node.js runtime of the Cloud Application Programming Model at SAP. After finishing his PhD in theoretical particle physics, David followed his passion for programming, always striving to gain comprehensive knowledge of emerging technologies. He advocates for superior paradigms and tools for efficient development.',
-      github:'https://github.com/David-Kunz',
-      youtube:'https://www.youtube.com/@devonduty'
+    github: 'https://github.com/David-Kunz',
+    youtube: 'https://www.youtube.com/@devonduty',
   },
-     {
+  {
     name: 'Peter DeVries',
     imagesrc: '/speaker-images/peterspeaker.jpeg',
     about:
-      'Collector of Hobbies, IT Professional, Neovim / Keyboard enthusiast.'
+      'Collector of Hobbies, IT Professional, Neovim / Keyboard enthusiast.',
   },
-       {
+  {
     name: 'Chris Kipp',
     imagesrc: '/speaker-images/chipspeaker.jpeg',
     about:
       'Chris is a software engineer at Lunatech primarily working on Scala open source tooling. Hes a maintainer of Metals, the Scala Language Server, and author of nvim-metals, the Neovim plugin for Metals. Hes also a self-taught programmer with a passion for simplifying things and helping others be more productive.',
-       website: 'https://www.chris-kipp.io/',
-       twitter: 'https://twitter.com/ckipp01',
-       github: 'https://github.com/ckipp01 '
+    website: 'https://www.chris-kipp.io/',
+    twitter: 'https://twitter.com/ckipp01',
+    github: 'https://github.com/ckipp01 ',
   },
-    {
+  {
     name: 'Paul Liferenko',
     imagesrc: '/speaker-images/paulspeaker.jpg',
     about:
       'Average Erlang/Elixir developer, one-backpack life enjoyer. Started in 2013 with WordPress but back in 2018 I was bitten by Erlangists with their "Recursion is the thing!"',
-       github: 'github.com/Liferenko',
-       linkedin: 'linkedin.com/in/liferenko'
-
+    github: 'github.com/Liferenko',
+    linkedin: 'linkedin.com/in/liferenko',
   },
-    {
+  {
     name: 'Anton Kastritskiy',
     imagesrc: '/speaker-images/antonspeaker.jpeg',
     about:
       'Software engineer at Meta, occasional plugin author, excited about developer tooling, static analysis and type systems',
-       github: 'https://github.com/antonk52',
-       twitter: 'https://twitter.com/AntonK52'
-
+    github: 'https://github.com/antonk52',
+    twitter: 'https://twitter.com/AntonK52',
   },
 ];
 

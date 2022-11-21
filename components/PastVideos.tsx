@@ -3,7 +3,7 @@ const PastVideos = () => {
     <section>
       <h2 className="">{`Last year's talks`}</h2>
       <div className="last-years-videos grid w-full content-center items-center p-4 sm:w-2/3 ">
-        <h3 className="mt-4 mb-8 text-xl text-blue-200 font-bold">
+        <h3 className="mt-4 mb-8 text-xl font-bold text-blue-200">
           Watch the conference highlights
         </h3>
         <iframe
@@ -13,7 +13,7 @@ const PastVideos = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
-        <h3 className="mt-24 mb-8 text-xl text-blue-200 font-bold">
+        <h3 className="mt-24 mb-8 text-xl font-bold text-blue-200">
           Or binge watch the video playlist for the 2021 talks
         </h3>
         <iframe

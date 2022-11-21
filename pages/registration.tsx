@@ -36,7 +36,7 @@ function RegistrationPage() {
   );
 
   const buttonContent = loading ? (
-    <FaSpinner className="inline-block animate-spin" />
+    <FaSpinner className="animate-spin inline-block" />
   ) : (
     <span>Register</span>
   );
