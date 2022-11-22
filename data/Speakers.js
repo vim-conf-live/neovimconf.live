@@ -118,7 +118,7 @@ const speakers = [
     name: 'Chris Kipp',
     imagesrc: '/speaker-images/chipspeaker.jpeg',
     about:
-      'Chris is a software engineer at Lunatech primarily working on Scala open source tooling. Hes a maintainer of Metals, the Scala Language Server, and author of nvim-metals, the Neovim plugin for Metals. Hes also a self-taught programmer with a passion for simplifying things and helping others be more productive.',
+      "Chris is a software engineer at Lunatech primarily working on Scala open source tooling. He's a maintainer of Metals, the Scala Language Server, and author of nvim-metals, the Neovim plugin for Metals. He's also a self-taught programmer with a passion for simplifying things and helping others be more productive.",
     website: 'https://www.chris-kipp.io/',
     twitter: 'https://twitter.com/ckipp01',
     github: 'https://github.com/ckipp01 ',
