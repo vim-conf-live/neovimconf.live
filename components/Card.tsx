@@ -61,7 +61,7 @@ const Card = (props: Props) => {
 
   let lineClamp = 'line-clamp-4';
 
-  let modalStyle = ' ' + 'relative md:max-w-sm';
+  let modalStyle = ' ' + 'relative md:max-w-sm rounded-lg mx-5';
 
   let buttonIcon = <CgArrowsExpandRight className="text-xl" />;
 
@@ -73,8 +73,7 @@ const Card = (props: Props) => {
     lineClamp = '';
 
     modalStyle =
-      ' ' +
-      'fixed top-20 md:left-4 z-20 h-5/6 md:top-24  md:w-1/2 overflow-y-auto';
+      ' ' + 'fixed top-0 left-0 z-20 h-full md:w-1/2 overflow-y-auto';
 
     buttonIcon = <MdClose className="text-2xl" />;
 
@@ -89,7 +88,7 @@ const Card = (props: Props) => {
   return (
     <>
       <article
-        className={`mx-5 rounded-lg bg-gray-800 p-5 shadow-lg md:mx-0 ${animate} ${modalStyle}`}
+        className={`bg-gray-800 p-5 shadow-lg md:mx-0 ${animate} ${modalStyle}`}
       >
         <button
           onClick={handleCardExpand}
