@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/future/image';
 import ReactMarkdown from 'react-markdown';
 
@@ -45,13 +45,6 @@ const Card = (props: Props) => {
 
   const [isExpanded, setisExpanded] = useState(false);
 
-  useEffect(
-    () => () => {
-      document.body.style.overflow = 'unset';
-    },
-    []
-  );
-
   const handleCardExpand = () => {
     if (isExpanded) {
       document.body.style.overflow = 'unset';
@@ -87,7 +80,7 @@ const Card = (props: Props) => {
 
     backgroundOverlay = (
       <div
-        className="fixed top-16 left-0 z-10 h-full w-full bg-black opacity-90"
+        className="fixed top-0 left-0 z-10 h-full w-full bg-black opacity-90"
         onClick={handleCardExpand}
       ></div>
     );
