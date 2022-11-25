@@ -1,0 +1,12 @@
+[
+  {
+  "date": "December 9th",
+  "talks": [
+    {
+      "speaker": "Theena Kumaragurunathan",
+      "title": "How Vi Built My Second Brain on Vim",
+      "time": "1pm EST"
+    }
+  ]
+  }
+]
