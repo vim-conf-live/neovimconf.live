@@ -18,9 +18,27 @@ const DayTable = (props:Props) => {
   const tableRows = talks.map(talk => <DayTableRow {...talk} />);
 
   return (
-      <div className="mx-auto">
-      <h3>{date}</h3>
-      <table className="border">
+      <div className="agenda mx-auto text-lg">
+      <style jsx global>{`
+        .agenda table {
+          display: inline-table;
+        }
+
+        .agenda thead {
+          color: yellow;
+          font-weight: bold;
+        }
+
+        .agenda tbody tr {
+          border-top: 1px solid white;
+        }
+
+        .agenda td {
+          padding: 1rem;
+        }
+      `}</style>
+      <h3 className="my-4 text-2xl font-bold">{date}</h3>
+      <table className="">
         <thead>
           <tr>
             <td>Time</td>
