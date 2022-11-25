@@ -32,7 +32,8 @@ const LogoSection = () => {
             className={`flex content-center items-center gap-2 rounded-lg bg-[#42b72a] py-3 px-8
                       text-sm font-bold transition duration-300 hover:bg-[#0f951a] md:text-lg`}
           >
-            Registration <CiCircleCheck className="hidden text-4xl lg:inline" />
+            Registration{' '}
+            <CiCircleCheck className="hidden text-4xl lg:inline" />
           </a>
         </Link>
       </div>

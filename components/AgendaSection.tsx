@@ -2,7 +2,9 @@ import agenda2022 from 'utils/agenda-2022.json';
 import DayTable from 'components/DayTable';
 
 const AgendaSection = () => {
-  const dayTables = agenda2022.map(day => <DayTable {...day} />);
+  const dayTables = agenda2022.map((day) => (
+    <DayTable key={day.date} {...day} />
+  ));
 
   return (
     <section className="w-full">

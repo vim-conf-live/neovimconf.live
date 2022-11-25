@@ -11,26 +11,29 @@ interface Props {
   talks: Talk[];
 }
 
-const DayTable = (props:Props) => {
-  const { talks , date} = props;
-  console.log('props', props);
+const DayTable = (props: Props) => {
+  const { talks, date } = props;
 
-  const tableRows = talks.map(talk => <DayTableRow {...talk} />);
+  const tableRows = talks.map((talk) => (
+    <DayTableRow key={talk.title} {...talk} />
+  ));
 
   return (
-      <div className="agenda mx-auto text-lg">
+    <div className="agenda mx-auto text-lg">
       <style jsx global>{`
         .agenda table {
           display: inline-table;
+          margin: 32px 0;
         }
 
         .agenda thead {
           color: yellow;
           font-weight: bold;
+          border-bottom: 1px solid white;
         }
 
         .agenda tbody tr {
-          border-top: 1px solid white;
+          border-bottom: 1px solid #666;
         }
 
         .agenda td {
@@ -46,11 +49,9 @@ const DayTable = (props:Props) => {
             <td>Talk title</td>
           </tr>
         </thead>
-        <tbody>
-        {tableRows}
-        </tbody>
+        <tbody>{tableRows}</tbody>
       </table>
-      </div>
+    </div>
   );
 };
 
