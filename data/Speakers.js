@@ -149,6 +149,13 @@ const speakers = [
       youtube: 'https://www.youtube.com/@benfrainuk',
       website:'benfrain.com'
   },
+   {
+    name: 'Gustavo Sampaio',
+    imagesrc: '/speaker-images/gustavospeaker.jpg',
+    about:
+      'Long term Neovim user, contributor and plugin author. Always looking for something fun to develop/create, especially if its inside Neovim 🙂 <Insert here the usual Rust propaganda>. Currently working as SE at JetBridge.',
+      github: 'https://github.com/GustavoKatel',
+  },
 ];
 
 export default speakers;
