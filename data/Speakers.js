@@ -156,6 +156,15 @@ const speakers = [
       'Long term Neovim user, contributor and plugin author. Always looking for something fun to develop/create, especially if its inside Neovim 🙂 <Insert here the usual Rust propaganda>. Currently working as SE at JetBridge.',
       github: 'https://github.com/GustavoKatel',
   },
+     {
+    name: 'Jesse Atkinson',
+    imagesrc: '/speaker-images/jessespeaker.jpg',
+    about:
+      'Jesse Atkinson is a software engineer based in San Francisco. Hes passionate about functional programming. Professionally he writes Scala at Credit Karma (using vim of course). Personally he hangs out with his wife & two cats at home in San Francisco.',
+      github: 'https://github.com/jsatk',
+       twitter: 'https://twitter.com/jsatk',
+       website: 'https://sfba.social/@jsatk'
+  },
 ];
 
 export default speakers;
