@@ -165,6 +165,15 @@ const speakers = [
        twitter: 'https://twitter.com/jsatk',
        website: 'https://sfba.social/@jsatk'
   },
+       {
+    name: 'Nicholas Payne',
+    imagesrc: '/speaker-images/Nicholasspeaker.jpeg',
+    about:
+      'Nicholas is primarily an amateur Python developer using Neovim and Google to solve problems in Data Engineering and DevSecOps. When his wife and daughters are asleep he get to homelab and build computers as a hobby to learn new things and bring some hardware experience to the analytics space.',
+      github: 'https://github.com/pypeaday',
+      twitter: 'https://twitter.com/pypeaday',
+      website: 'https://pypeaday.github.io/littlelink/'
+  },
 ];
 
 export default speakers;
