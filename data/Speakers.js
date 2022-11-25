@@ -139,6 +139,16 @@ const speakers = [
     github: 'https://github.com/antonk52',
     twitter: 'https://twitter.com/AntonK52',
   },
+    {
+    name: 'Ben Frain',
+    imagesrc: '/speaker-images/benspeaker.jpg',
+    about:
+      'Ben Frain is a web developer, book author, and content creator from the UK. He works as a UI/UX Technical Lead at bet365.com, speacilising at the front of the stack with HTML, CSS and JavaScript. Find his web development books on Amazon, web related writings on his blog, courses on Udemy or Skillshare and videos on keyboards and Neovim on YouTube.',
+      github: 'https://github.com/benfrain',
+      twitter: 'https://twitter.com/benfrain',
+      youtube: 'https://www.youtube.com/@benfrainuk',
+      website:'benfrain.com'
+  },
 ];
 
 export default speakers;
