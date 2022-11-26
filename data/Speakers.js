@@ -183,6 +183,16 @@ const speakers = [
       twitter: 'https://twitter.com/_waylonwalker',
       website: 'waylonwalker.com'
   },
+           {
+    name: 'Chris Griffing',
+    imagesrc: '/speaker-images/chrisspeaker.png',
+    about:
+      'Chris streams programming way too much on Twitch. On stream, you can see him work through projects showing the whole process. Projects range from fun single-day projects all the way to SaaS projects. He even wrote an nvim plugin. His hobbies include snowboarding, making music, and short walks nowhere near a beach.',
+    twitch: 'https://twitch.tv/cmgriffing',
+    twitter: 'https://twitter.com/cmgriffing',
+    github: 'https://github.com/cmgriffing',
+    website: 'https://chrisgriffing.com'
+  },
 ];
 
 export default speakers;
