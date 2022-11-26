@@ -174,6 +174,15 @@ const speakers = [
       twitter: 'https://twitter.com/pypeaday',
       website: 'https://pypeaday.github.io/littlelink/'
   },
+         {
+    name: 'Waylon Walker',
+    imagesrc: '/speaker-images/waylonspeaker.jpeg',
+    about:
+      'A tmux fiend using Neovim to write python. Creator of the sub popular, plugins all the way down, static site generator markata.',
+      github: 'https://github.com/waylonwalker',
+      twitter: 'https://twitter.com/_waylonwalker',
+      website: 'waylonwalker.com'
+  },
 ];
 
 export default speakers;
