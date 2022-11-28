@@ -114,7 +114,7 @@ const Card = (props: Props) => {
             </h3>
             <h3 className="text-lg text-gray-300 lg:text-xl">
               <FaMicrophone className="mr-2 inline-block text-gray-400" />
-              {titleCase(name)}
+              {name}
             </h3>
             <SocialLinks
               github={github}
