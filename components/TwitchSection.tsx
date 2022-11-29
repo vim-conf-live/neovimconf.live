@@ -34,14 +34,14 @@ const TwitchSection = () => {
           `}
         </style>
         <Link href="https://www.twitch.tv/theprimeagen">
-          <div
-            className={`z-[2] flex cursor-pointer items-center space-x-2 rounded bg-white 
-            p-2 px-4 font-bold 
-            text-gray-800 shadow-lg transition hover:bg-yellow-100`}
+          <a
+            className={`z-10 mx-auto mt-12 inline-flex content-start items-center gap-2 rounded-lg 
+                    bg-[#0f74d0] py-3 px-4 text-sm transition
+                    duration-300 hover:bg-[#0447BF] md:text-base`}
           >
-            <ImTwitch className="text-5xl" />
+            <ImTwitch className="text-2xl" />
             <span>Official conference twitch channel</span>
-          </div>
+          </a>
         </Link>
       </div>
     </section>

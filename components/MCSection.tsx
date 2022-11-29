@@ -1,7 +1,7 @@
 const MCSection = () => {
   return (
     <section className="h-auto">
-      <h2 className="my-4 sm:my-8">Masters of Ceremonies</h2>
+      <h2 className="my-4 sm:my-8 sm:mb-16">Masters of Ceremonies</h2>
       <div className="grid content-center justify-items-center gap-16 md:grid-cols-2">
         <div
           className="mc-card justify-content-center grid justify-items-center"

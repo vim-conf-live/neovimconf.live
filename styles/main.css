@@ -31,7 +31,7 @@ section {
 }
 
 section h2 {
-  @apply text-4xl text-[#21ee4b] sm:text-6xl font-mono;
+  @apply text-4xl text-[#21ee4b] sm:text-5xl lg:text-6xl font-mono;
 }
 
 section:nth-child(even) h2 {
