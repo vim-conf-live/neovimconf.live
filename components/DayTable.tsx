@@ -40,7 +40,7 @@ const DayTable = (props: Props) => {
           padding: 1rem;
         }
       `}</style>
-      <h3 className="my-4 text-2xl font-bold">{date}</h3>
+      <h3 className="mt-16 text-3xl font-bold">{date}</h3>
       <table className="">
         <thead>
           <tr>

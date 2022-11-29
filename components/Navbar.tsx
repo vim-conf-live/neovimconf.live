@@ -78,6 +78,19 @@ const Navbar = (props: NavbarProps) => {
         </a>
       </Link>
 
+      <Link href="/schedule">
+        <a
+          className={`
+          ${
+            activeClass == 'schedule' ? 'active' : ''
+          } navBarLink cursor-pointer transition duration-300 sm:hover:opacity-70
+          `}
+          onClick={() => setActiveClass('schedule')}
+        >
+          Schedule
+        </a>
+      </Link>
+
       <JoinDiscordButton />
       <div className="hidden items-center space-x-2 text-sm">
         <label htmlFor="email">Register:</label>
