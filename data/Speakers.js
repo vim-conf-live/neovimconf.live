@@ -103,7 +103,7 @@ const speakers = [
     name: 'Olivier Abdesselam',
     imagesrc: '/speaker-images/yazgoospeaker.png',
     about:
-      'Hi, Im Olivier Abdesselam aka Yazgoo, senior software engineer in the analytics team in Teads. I like functional programming, realtime streaming. I enjoy using neovim, developping terminal apps, mostly in rust.',
+      'Hi, I\'m Olivier Abdesselam aka Yazgoo, senior software engineer in the analytics team in Teads. I like functional programming, realtime streaming. I enjoy using neovim, developping terminal apps, mostly in rust.',
     github: 'https://github.com/yazgoo/',
     website: 'https://mastodon.opportunis.me/@oogzay',
     linkedin: 'https://www.linkedin.com/in/olivier-abdesselam',
@@ -168,7 +168,7 @@ const speakers = [
     name: 'Jesse Atkinson',
     imagesrc: '/speaker-images/jessespeaker.jpg',
     about:
-      'Jesse Atkinson is a software engineer based in San Francisco. Hes passionate about functional programming. Professionally he writes Scala at Credit Karma (using vim of course). Personally he hangs out with his wife & two cats at home in San Francisco.',
+      'Jesse Atkinson is a software engineer based in San Francisco. He\'s passionate about functional programming. Professionally he writes Scala at Credit Karma (using vim of course). Personally he hangs out with his wife & two cats at home in San Francisco.',
       github: 'https://github.com/jsatk',
        twitter: 'https://twitter.com/jsatk',
        website: 'https://sfba.social/@jsatk'

@@ -3,10 +3,11 @@ import HeroSection from 'components/HeroSection';
 import LogoSection from 'components/LogoSection';
 import PastVideos from 'components/PastVideos';
 import SpeakersSection from 'components/SpeakersSection';
-import SponsorsSection from 'components/SponsorsSection';
+// import SponsorsSection from 'components/SponsorsSection';
 import TwitchSection from 'components/TwitchSection';
 import MCSection from 'components/MCSection';
 import KeynoteSection from 'components/KeynoteSection';
+import AgendaSection from 'components/AgendaSection';
 
 function Home() {
   return (
@@ -28,8 +29,8 @@ function Home() {
         <MCSection />
         <KeynoteSection />
         <SpeakersSection />
+        <AgendaSection />
         <TwitchSection />
-        <SponsorsSection />
         <PastVideos />
       </main>
     </>
