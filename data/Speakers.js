@@ -10,6 +10,14 @@ const speakers = [
     amazon:
       'https://www.amazon.com/First-Utterance-Miragian-Cycles-Book-ebook/dp/B08MBX8GRZ',
   },
+    {
+    name: 'Bashbunni',
+    imagesrc: '/speaker-images/bashspeaker.jpg',
+    about:
+      "Bashbunni is a software developer who builds in public and aims to make development fun for herself and others. She is passionate about Linux, terminals, Go and Open source software. She works as the Head of Developer Relations at Charm and enjoys hanging out and coding with Internet nerds in her spare time. She creates content on Twitch, YouTube, and Twitter.",
+    github: 'https://github.com/bashbunni',
+    website: 'https://www.bashbunni.dev/'
+  },
   {
     name: 'Björn Linse',
     imagesrc: '/speaker-images/bfredl.jpg',
