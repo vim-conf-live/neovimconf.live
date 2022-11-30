@@ -205,7 +205,16 @@ const speakers = [
     name: 'Charlie Cruz',
     imagesrc: '/speaker-images/charliespeaker.png',
     about:
-      'A Math and Linguistics lover who is interested in theoretical Computer Science and Rust! Charlie teaches the Art of Lazy Programming at Rice University and loves optimizing his programming environment to get the maximum efficiency with Vim. ',
+      'A Math and Linguistics lover who is interested in theoretical Computer Science and Rust! Charlie teaches the Art of Lazy Programming at Rice University and loves optimizing his programming environment to get the maximum efficiency with Vim.',
+  },
+    {
+    name: 'Maas Lalani',
+    imagesrc: '/speaker-images/massspeaker.jpeg',
+    about:
+      'Software developer at Charm. Loves to build and use command line tools. Neovim enthusiast that uses Helix.',
+      twitter:'https://twitter.com/maaslalani',
+      github: 'https://github.com/maaslalani',
+      website: 'https://maaslalani.com/'
   },
 ];
 
