@@ -203,7 +203,7 @@ const speakers = [
   },
           {
     name: 'Charlie Cruz',
-    imagesrc: '/speaker-images/chrisspeaker.png',
+    imagesrc: '/speaker-images/charliespeaker.png',
     about:
       'A Math and Linguistics lover who is interested in theoretical Computer Science and Rust! Charlie teaches the Art of Lazy Programming at Rice University and loves optimizing his programming environment to get the maximum efficiency with Vim. ',
   },
