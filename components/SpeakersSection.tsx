@@ -27,7 +27,7 @@ const SpeakersSection = () => {
                 key={index}
                 name={speaker.name}
                 about={speaker.about}
-                src={speaker.profile}
+                profile={speaker.profile}
                 github={speaker.github}
                 twitter={speaker.twitter}
                 twitch={speaker.twitch}

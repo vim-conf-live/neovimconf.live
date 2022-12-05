@@ -7,12 +7,11 @@ import { MdClose } from 'react-icons/md';
 import { CgArrowsExpandRight } from 'react-icons/cg';
 
 import SocialLinks from './SocialLinks';
-import titleCase from '../utils/titleCase';
 
 interface Props {
   name: string;
   about: string;
-  src: string;
+  profile: string;
   // make lecture title optional till all title is added
   lectureTitle?: string;
   github?: string | null;
@@ -30,7 +29,7 @@ const Card = (props: Props) => {
   const {
     name,
     about,
-    src,
+    profile,
     lectureTitle,
     github,
     twitter,
@@ -101,7 +100,7 @@ const Card = (props: Props) => {
           <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden lg:h-32 lg:w-32">
             <Image
               fill
-              src={src}
+              src={profile}
               alt="speaker profile image"
               className="rounded-full object-cover"
               sizes="8rem"
