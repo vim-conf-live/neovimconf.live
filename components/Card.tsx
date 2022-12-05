@@ -2,46 +2,14 @@ import { useState } from 'react';
 import Image from 'next/future/image';
 import ReactMarkdown from 'react-markdown';
 
+import { Speaker } from '../data/speakers';
 import { FaMicrophone } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md';
 import { CgArrowsExpandRight } from 'react-icons/cg';
 
 import SocialLinks from './SocialLinks';
 
-interface Props {
-  name: string;
-  about: string;
-  profile: string;
-  // make lecture title optional till all title is added
-  lectureTitle?: string;
-  github?: string | null;
-  twitter?: string | null;
-  twitch?: string | null;
-  website?: string | null;
-  linkedin?: string | null;
-  youtube?: string | null;
-  amazon?: string | null;
-  matrix?: string | null;
-  mastodon?: string | null;
-}
-
-const Card = (props: Props) => {
-  const {
-    name,
-    about,
-    profile,
-    lectureTitle,
-    github,
-    twitter,
-    twitch,
-    website,
-    linkedin,
-    youtube,
-    amazon,
-    matrix,
-    mastodon,
-  } = { ...props };
-
+const Card = ({ speaker }: { speaker: Speaker }) => {
   const [isExpanded, setisExpanded] = useState(false);
 
   const handleCardExpand = () => {
@@ -100,7 +68,7 @@ const Card = (props: Props) => {
           <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden lg:h-32 lg:w-32">
             <Image
               fill
-              src={profile}
+              src={speaker.profile}
               alt="speaker profile image"
               className="rounded-full object-cover"
               sizes="8rem"
@@ -109,29 +77,29 @@ const Card = (props: Props) => {
 
           <div className="flex flex-col gap-2 text-left">
             <h3 className="text-2xl font-bold text-gray-100 lg:text-2xl">
-              {lectureTitle}
+              {speaker.lectureTitle}
             </h3>
             <h3 className="text-lg text-gray-300 lg:text-xl">
               <FaMicrophone className="mr-2 inline-block text-gray-400" />
-              {name}
+              {speaker.name}
             </h3>
             <SocialLinks
-              github={github}
-              twitter={twitter}
-              twitch={twitch}
-              website={website}
-              linkedin={linkedin}
-              youtube={youtube}
-              amazon={amazon}
-              matrix={matrix}
-              mastodon={mastodon}
+              github={speaker.github}
+              twitter={speaker.twitter}
+              twitch={speaker.twitch}
+              website={speaker.website}
+              linkedin={speaker.linkedin}
+              youtube={speaker.youtube}
+              amazon={speaker.amazon}
+              matrix={speaker.matrix}
+              mastodon={speaker.mastodon}
             />
           </div>
         </div>
         <div
           className={`prose prose-invert mt-5 max-w-none px-3 text-left text-gray-400 lg:prose-lg ${lineClamp}`}
         >
-          <ReactMarkdown>{about}</ReactMarkdown>
+          <ReactMarkdown>{speaker.about}</ReactMarkdown>
         </div>
       </article>
       {isExpanded && backgroundOverlay}

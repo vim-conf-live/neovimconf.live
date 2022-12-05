@@ -23,21 +23,7 @@ const SpeakersSection = () => {
         {hydrated &&
           randomSpeakers.map((speaker, index) => {
             return (
-              <Card
-                key={index}
-                name={speaker.name}
-                about={speaker.about}
-                profile={speaker.profile}
-                github={speaker.github}
-                twitter={speaker.twitter}
-                twitch={speaker.twitch}
-                website={speaker.website}
-                linkedin={speaker.linkedin}
-                youtube={speaker.youtube}
-                amazon={speaker.amazon}
-                matrix={speaker.matrix}
-                mastodon={speaker.mastodon}
-              />
+              <Card key={index} speaker={speaker} />
             );
           })}
       </div>
