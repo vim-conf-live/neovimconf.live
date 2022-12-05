@@ -11,8 +11,8 @@ const SpeakersSection = () => {
   }, []);
 
   const sortedSpeakers = speakers
-    .map(speaker => ({ order: speaker.order ?? 100 + Math.random(), ...speaker }))
-    .sort((a, b) => a.order - b.order);
+    .map(speaker => ({ priority: speaker.priority ?? 100 + Math.random(), ...speaker }))
+    .sort((a, b) => a.priority - b.priority);
 
   return (
     <section className="h-fit">
