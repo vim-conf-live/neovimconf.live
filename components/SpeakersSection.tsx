@@ -1,5 +1,5 @@
 import Card from './Card';
-import speakers from '../data/Speakers.js';
+import speakers from '../data/speakers';
 import { useEffect, useState } from 'react';
 
 const SpeakersSection = () => {
