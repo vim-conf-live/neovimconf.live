@@ -221,6 +221,8 @@ const speakers = [
     imagesrc: '/speaker-images/maxspeaker.jpeg',
     about:
       'Max is one of the founders of Zed, a new code editor designed for speed and team collaboration. He also created the Tree-sitter parsing system, which is used in Neovim, Zed, and several other popular programming tools. In his free time, he goes camping with his wife and two young kids, and plays along to pop songs on his piano.',
+    gitHub: "https://github.com/maxbrunsfeld",
+    twitter: "https://twitter.com/maxbrunsfeld"
   },
 ];
 
