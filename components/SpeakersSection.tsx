@@ -11,7 +11,7 @@ const SpeakersSection = () => {
   }, []);
 
   const sortedSpeakers = speakers
-    .map(speaker => ({ priority: speaker.priority ?? 100 + Math.random(), ...speaker }))
+    .map(speaker => ({ priority: (speaker.priority ?? 100) + Math.random(), ...speaker }))
     .sort((a, b) => a.priority - b.priority);
 
   return (
