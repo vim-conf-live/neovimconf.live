@@ -2,6 +2,7 @@ export interface Speaker {
   name: string;
   about: string;
   profile: string;
+  order?: number;
   lectureTitle?: string;
   github?: string | null;
   twitter?: string | null;
@@ -26,8 +27,9 @@ const speakers: Speaker[] = [
     amazon:
       'https://www.amazon.com/First-Utterance-Miragian-Cycles-Book-ebook/dp/B08MBX8GRZ',
   },
-    {
+  {
     name: 'Bashbunni',
+    order: 1,
     profile: '/speaker-images/bashspeaker.jpg',
     about:
       "Bashbunni is a software developer who builds in public and aims to make development fun for herself and others. She is passionate about Linux, terminals, Go and Open source software. She works as the Head of Developer Relations at Charm and enjoys hanging out and coding with Internet nerds in her spare time. She creates content on Twitch, YouTube, and Twitter.",
@@ -126,6 +128,7 @@ const speakers: Speaker[] = [
   },
   {
     name: 'David Kunz',
+    order: 3,
     profile: '/speaker-images/davidkuntzspeaker.jpeg',
     about:
       'David Kunz (aka DevOnDuty) is a software architect for the Node.js runtime of the Cloud Application Programming Model at SAP. After finishing his PhD in theoretical particle physics, David followed his passion for programming, always striving to gain comprehensive knowledge of emerging technologies. He advocates for superior paradigms and tools for efficient development.',
@@ -207,8 +210,9 @@ const speakers: Speaker[] = [
       twitter: 'https://twitter.com/_waylonwalker',
       website: 'waylonwalker.com'
   },
-           {
+ {
     name: 'Chris Griffing',
+    order: 2,
     profile: '/speaker-images/chrisspeaker.png',
     about:
       'Chris streams programming way too much on Twitch. On stream, you can see him work through projects showing the whole process. Projects range from fun single-day projects all the way to SaaS projects. He even wrote an nvim plugin. His hobbies include snowboarding, making music, and short walks nowhere near a beach.',

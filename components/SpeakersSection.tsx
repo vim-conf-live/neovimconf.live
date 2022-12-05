@@ -10,11 +10,9 @@ const SpeakersSection = () => {
     setHydrated(true);
   }, []);
 
-  // TODO: improve algorithm
   const sortedSpeakers = speakers
-    .map((value) => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
+    .map(speaker => ({ order: speaker.order ?? 100 + Math.random(), ...speaker }))
+    .sort((a, b) => a.order - b.order);
 
   return (
     <section className="h-fit">
