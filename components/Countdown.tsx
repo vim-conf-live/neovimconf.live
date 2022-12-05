@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import {BsTwitch} from 'react-icons/bs';
+import {BsYoutube} from 'react-icons/bs';
+import Link from 'next/link';
 
 const Countdown = () => {
   const [days, setDays] = useState('');
@@ -8,7 +11,7 @@ const Countdown = () => {
   const [evenStarted, setEventStarted] = useState(false);
 
   const calcCountdown = () => {
-    const countDate = new Date('Dec 09 2022 17:00:00 UTC-05:00').getTime();
+    const countDate = new Date('Dec 09 2022 12:00:00 UTC-05:00').getTime();
     const now = new Date().getTime();
 
     const gap = countDate - now;
@@ -60,7 +63,30 @@ const Countdown = () => {
       </div>
     </div>
   ) : (
-    <h1>The event has started</h1>
+    <div className="flex gap-4 justify-center mt-2">
+      <Link href="https://www.twitch.tv/theprimeagen" target="_blank">
+          <a
+            target="_blank"
+            className={`flex content-start items-center gap-2 rounded-lg bg-brand-twitch py-3 px-4
+                      text-sm font-bold  transition duration-300 hover:bg-[#8036dd] md:text-lg`}
+          >
+            
+            <BsTwitch className="hidden text-4xl lg:inline" />
+            Join stream{' '}
+          </a>
+        </Link>
+       <Link href="https://www.youtube.com/@ThePrimeagen" target="_blank">
+          <a
+            target="_blank"
+            className={`flex content-start items-center gap-2 rounded-lg bg-brand-youtube py-3 px-4
+                      text-sm font-bold  transition duration-300 hover:bg-[#bf0c0c] md:text-lg`}
+          >
+            
+            <BsYoutube className="hidden text-4xl lg:inline" />
+            Watch now{' '}
+          </a>
+        </Link> 
+    </div>
   );
 };
 

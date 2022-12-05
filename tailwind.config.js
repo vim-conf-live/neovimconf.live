@@ -13,6 +13,8 @@ module.exports = {
       colors: {
         brand: {
           discord: '#5865F2',
+          twitch:'#9147ff',
+          youtube:'#f00',
         },
       },
       fontFamily: {
