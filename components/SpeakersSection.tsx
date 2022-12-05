@@ -11,7 +11,7 @@ const SpeakersSection = () => {
   }, []);
 
   // TODO: improve algorithm
-  const randomSpeakers = speakers
+  const sortedSpeakers = speakers
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
@@ -20,12 +20,7 @@ const SpeakersSection = () => {
     <section className="h-fit">
       <h2 className="my-4 sm:my-8">Speakers</h2>
       <div className="grid gap-6 md:mx-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-8">
-        {hydrated &&
-          randomSpeakers.map((speaker, index) => {
-            return (
-              <Card key={index} speaker={speaker} />
-            );
-          })}
+        {hydrated && sortedSpeakers.map((speaker, i) => <Card key={i} speaker={speaker} /> )}
       </div>
     </section>
   );
