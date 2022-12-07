@@ -244,6 +244,16 @@ const speakers: Speaker[] = [
     github: "https://github.com/maxbrunsfeld",
     twitter: "https://twitter.com/maxbrunsfeld"
   },
+        {
+    name: 'Jonathan Forrider',
+    profile: '/speaker-images/jonathanspeaker.jpg',
+    about:
+      'Jonathan Forrider is a Senior Software Engineer for CampusWorks Inc. He has been working in tech in the Higher Ed field for 10 years.  He lives with his beautiful wife and 4 kiddos in the great state of Montana',
+    github: "https://github.com/jd4rider",
+     linkedin: "https://www.linkedin.com/in/jonathan-forrider-54a05253/",
+    youtube: "https://youtube.com/@jd4codes",
+    twitter: "https://twitter.com/jd4codes"
+  },
 ];
 
 export default speakers;
