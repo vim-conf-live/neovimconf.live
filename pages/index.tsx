@@ -15,17 +15,27 @@ function Home() {
       <Head>
         <title>Neovim Conf 2022</title>
       </Head>
-
-      <main
-        className="my-16 flex flex-1 flex-col items-center justify-center
+      <div className="circuit-background ">
+        <div className="dim-background flex flex-1 flex-col">
+         <main
+        className="mt-16 flex flex-1 flex-col items-center justify-center
         text-center"
       >
-        <div className="circuit-background">
-          <div className="dim-background grid grid-cols-1 content-center items-center justify-center justify-items-center py-2 sm:grid-cols-2">
-            <HeroSection />
-            <LogoSection />
-          </div>
+          <div className=" grid
+            content-center items-center justify-center justify-items-center 
+            py-2
+            sm:grid-cols-2
+             text-center">
+             <HeroSection />
+             <LogoSection />
+          </div>  
+          </main> 
         </div>
+      </div>
+      <main
+        className="flex flex-1 flex-col items-center justify-center
+        text-center"
+      >
         <MCSection />
         <KeynoteSection />
         <SpeakersSection />

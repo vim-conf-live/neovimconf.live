@@ -27,7 +27,7 @@ body {
 }
 
 section {
-  @apply mt-24;
+  @apply mt-24 first:mt-20;
 }
 
 section h2 {
