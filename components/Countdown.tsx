@@ -11,7 +11,7 @@ const Countdown = () => {
   const [evenStarted, setEventStarted] = useState(false);
 
   const calcCountdown = () => {
-    const countDate = new Date('Dec 09 2022 00:00:00 UTC-05:00').getTime();
+    const countDate = new Date('Dec 09 2022 12:00:00 UTC-05:00').getTime();
     const now = new Date().getTime();
 
     const gap = countDate - now;
@@ -40,7 +40,9 @@ const Countdown = () => {
     setInterval(calcCountdown, 1000);
   }, []);
 
-  return !evenStarted ? (
+  return (
+    <>
+  {/*{!evenStarted ? (
     <div className="Countdown mb-6 sm:m-0">
       <div className="container-day">
         <h3 className="day">{days}</h3>
@@ -62,8 +64,9 @@ const Countdown = () => {
         <h3>Seconds</h3>
       </div>
     </div>
-  ) : (
-    <div className="flex gap-4 justify-center mt-2">
+  ) : null}*/}
+
+    <div className="flex gap-4 justify-center mt-2 sm:mt-4">
       <Link href="https://www.twitch.tv/theprimeagen" target="_blank">
           <a
             target="_blank"
@@ -87,6 +90,7 @@ const Countdown = () => {
           </a>
         </Link> */}
     </div>
+    </>
   );
 };
 
