@@ -79,7 +79,7 @@ const Countdown = () => {
             Join live on twitch{' '}
           </a>
         </Link>
-       <Link href="https://www.youtube.com/@ThePrimeagen" target="_blank">
+       <Link href="https://www.youtube.com/watch?v=z9SuyhSHOWs" target="_blank">
           <a
             target="_blank"
             className={`flex content-start md:mt-6 items-center gap-2 rounded-lg bg-brand-youtube 
