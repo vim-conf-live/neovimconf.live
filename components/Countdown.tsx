@@ -11,7 +11,7 @@ const Countdown = () => {
   const [evenStarted, setEventStarted] = useState(false);
 
   const calcCountdown = () => {
-    const countDate = new Date('Dec 09 2022 12:00:00 UTC-05:00').getTime();
+    const countDate = new Date('Dec 09 2022 00:00:00 UTC-05:00').getTime();
     const now = new Date().getTime();
 
     const gap = countDate - now;
@@ -72,10 +72,10 @@ const Countdown = () => {
           >
             
             <BsTwitch className="hidden text-4xl lg:inline" />
-            Join stream{' '}
+            Join live on twitch{' '}
           </a>
         </Link>
-       <Link href="https://www.youtube.com/@ThePrimeagen" target="_blank">
+     {/*  <Link href="https://www.youtube.com/@ThePrimeagen" target="_blank">
           <a
             target="_blank"
             className={`flex content-start items-center gap-2 rounded-lg bg-brand-youtube py-3 px-4
@@ -85,7 +85,7 @@ const Countdown = () => {
             <BsYoutube className="hidden text-4xl lg:inline" />
             Watch now{' '}
           </a>
-        </Link> 
+        </Link> */}
     </div>
   );
 };
