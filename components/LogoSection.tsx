@@ -5,7 +5,7 @@ import { CiCircleCheck } from 'react-icons/ci';
 
 const LogoSection = () => {
   return (
-    <div className="info grid-hero-info grid content-center justify-items-center gap-16 p-4">
+    <div className="info grid-hero-info grid content-center justify-items-center gap-16 sm:p-4 p-4 pt-8">
       <div className="logo">
         <Image
           src="/neovimconf-logo.svg"

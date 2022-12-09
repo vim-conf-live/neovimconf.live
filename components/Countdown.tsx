@@ -42,7 +42,7 @@ const Countdown = () => {
 
   return (
     <>
-  {/*{!evenStarted ? (
+  {!evenStarted ? (
     <div className="Countdown mb-6 sm:m-0">
       <div className="container-day">
         <h3 className="day">{days}</h3>
@@ -64,17 +64,18 @@ const Countdown = () => {
         <h3>Seconds</h3>
       </div>
     </div>
-  ) : null}*/}
+  ) : null}
 
-    <div className="flex gap-4 justify-center mt-2 sm:mt-4">
+    <div className="flex gap-4 justify-center mt-2 ">
       <Link href="https://www.twitch.tv/theprimeagen" target="_blank">
           <a
             target="_blank"
-            className={`flex content-start items-center gap-2 rounded-lg bg-brand-twitch py-3 px-4
-                      text-sm font-bold  transition duration-300 hover:bg-[#8036dd] md:text-lg`}
+            className={`flex content-start md:mt-6 items-center gap-2 rounded-lg bg-brand-twitch 
+                      py-3 px-4 sm:py-4 sm:px-6
+                      text-sm font-bold  transition duration-300 hover:bg-[#8036dd] sm:text-lg md:text-2xl`}
           >
             
-            <BsTwitch className="hidden text-4xl lg:inline" />
+            <BsTwitch className="text-4xl lg:inline" />
             Join live on twitch{' '}
           </a>
         </Link>
