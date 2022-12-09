@@ -17,7 +17,7 @@ const HeroSection = () => {
         Dec 9th/10th
       </h2>
 
-      <div className="countdown-box h-24">
+      <div className="countdown-box">
         <Countdown />
       </div>
     </div>
