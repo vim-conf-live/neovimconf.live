@@ -42,7 +42,7 @@ const Countdown = () => {
 
   return (
     <>
-  {!evenStarted ? (
+ {/* {!evenStarted ? (
     <div className="Countdown mb-6 sm:m-0">
       <div className="container-day">
         <h3 className="day">{days}</h3>
@@ -64,7 +64,7 @@ const Countdown = () => {
         <h3>Seconds</h3>
       </div>
     </div>
-  ) : null}
+  ) : null}*/}
 
     <div className="flex gap-4 justify-center mt-2 ">
       <Link href="https://www.twitch.tv/theprimeagen" target="_blank">
