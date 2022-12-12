@@ -1,0 +1,30 @@
+Neovim Conf 2022
+
+/* ORGANIZERS */
+
+Adam 'ABD'
+https://twitter.com/abawesomed
+
+/* HOSTS */
+
+ThePrimeagen
+https://twitter.com/ThePrimeagen
+
+TeeJ DeVries
+https://twitter.com/teej_dv
+
+/* SITE DEVELOPERS */
+Belén Vargas
+https://github.com/lahnie
+
+Carles Andres
+https://carlesandres.com
+
+Emiliano Ruiz Carletti
+https://eruizc.dev
+
+Marcos Demetrio
+https://github.com/mvargasmoran
+
+Md Saif
+https://twitter.com/ardzehn
