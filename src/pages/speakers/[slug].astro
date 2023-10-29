@@ -1,0 +1,56 @@
+---
+import SpeakerCard from '@/components/SpeakerCard.astro';
+import App from '@/layouts/App.astro';
+import { getCollection, type CollectionEntry, getEntries, getEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const speakers = await getCollection('speakers');
+  return speakers.map(
+    speaker => ({ params: { slug: speaker.slug }, props: { speaker } })
+  )
+}
+
+export interface Props {
+  speaker: CollectionEntry<'speakers'>
+}
+
+const { speaker } = Astro.props
+const { Content } = await speaker!.render()
+
+const talks = await getCollection('talks', (talk) => talk.data.speaker.slug === speaker.slug);
+
+---
+
+<App title={speaker!.data.name}>
+  <article class="grid grid-cols-4 gap-x-8 vise">
+    <div>
+      <SpeakerCard for={speaker} class="mb-" />
+      <dl class="space-y-2 px-4 text-xs my-8 text-slate-400">
+        {(['terminal', 'os', 'shell', 'colorscheme', 'language'] as const).map(field => (
+        <div class="flex justify-between">
+          <dt>{field}:</dt>
+          <dd>{speaker.data[field]}</dd>
+        </div>
+        ))}
+      </dl>
+    </div>
+
+    <div class="col-span-3">
+      <h1 class="text-5xl font-bold mb-4">{speaker!.data.name}</h1>
+      <div class="font-sans max-w-[60ch] overflow-hidden mb-8">
+        <Content />
+
+        {talks.map((talk) => (
+          <a href={`/talks/${talk.slug}`} class="block border p-4 group rounded-sm border-slate-700 space-y-4 bg-slate-950 hover:bg-slate-800 hover:border-slate-600 mt-8">
+            <h2 class="text-2xl text-teal-500 mb-4">
+              Talk: 
+              <span class="text-teal-300">{talk.data.title}</span>
+            </h2>
+            <p class="font-sans">{talk.data.description}</p>
+            <p class="text-teal-400 text-right">Read more &rarr;</p>
+        </a>
+        ))}
+      </div>
+    </div>
+  </article>
+</App>

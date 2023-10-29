@@ -1,0 +1,9 @@
+
+---
+import { getCollection, getEntry } from "astro:content";
+import Schedule from "@/layouts/Schedule.astro";
+
+const schedules = await getCollection("schedules")
+---
+
+<Schedule for={schedules[1]} />

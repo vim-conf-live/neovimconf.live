@@ -1,0 +1,31 @@
+---
+import TimeSlot from "@/components/TimeSlot.astro";
+import { getEntry, type CollectionEntry, getEntries } from 'astro:content';
+import invariant from "tiny-invariant";
+type Slot = CollectionEntry<"schedules">["data"]["talks"][number];
+export interface Props {
+  on: CollectionEntry<"schedules">,
+  for: Slot
+  class?: string
+}
+
+const { for: slot, on: day } = Astro.props
+invariant(slot.talk, `Slot ${slot} has no talk`)
+const talk = await getEntry(slot.talk)
+const speaker = await getEntry(talk.data.speaker)
+---
+
+<article class="grid grid-cols-4">
+  <div class="text-sky-300">
+    <TimeSlot on={day.id} for={slot.time} />
+  </div>
+  <div class="col-span-3">
+  <header class="mb-4">
+    <h3 transition:animate="initial" transition:name={`talk-title-${talk.id}`} class="font-bold mb-2 text-xl group-hover:text-teal-300">{talk.data.title}</h3>
+    <p class="italic text-sm text-slate-500">
+      by {speaker.data.name}
+    </p>
+  </header>
+  <p class="font-sans text-slate-400">{talk.data.description}</p>
+  </div>
+</article>

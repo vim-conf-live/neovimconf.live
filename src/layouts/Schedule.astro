@@ -1,0 +1,26 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import App from "@/layouts/App.astro";
+import { ChevronRightIcon } from "@heroicons/react/20/solid";
+import TimeTable from "@/components/TimeTable.astro";
+import ScheduleDayLink from "@/components/ScheduleDayLink.astro";
+
+export interface Props {
+  for: CollectionEntry<"schedules">
+}
+const  { for: day } = Astro.props;
+const schedules = await getCollection("schedules")
+---
+
+<App title="Schedule">
+  <main class="my-16 vise">
+    <h1 class="text-6xl leading-tight font-bold mb-8 text-teal-300">Cure <em class="text-amber-300 italic">skill issues</em> with these talks!</h1>
+    <p class="text-lg leading-relaxed font-sans mb-16 max-w-prose">
+      Don't miss these captivating talks that will unveil the true power of Neovim and equip you with invaluable techniques and knowledge to elevate your editing experience.
+      We've gathered some of the finest folks all around the neovim community to talk about something super awesome.
+      [todo].
+    </p>
+
+    <TimeTable for={day} />
+  </main>
+</App>

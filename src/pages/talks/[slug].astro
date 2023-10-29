@@ -1,0 +1,44 @@
+---
+import SpeakerCard from '@/components/SpeakerCard.astro';
+import TimeSlot from '@/components/TimeSlot.astro';
+import App from '@/layouts/App.astro';
+import { getCollection, type CollectionEntry, getEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const talks = await getCollection('talks');
+  return talks.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+export interface Props {
+  entry: CollectionEntry<'talks'>
+}
+
+const talk = Astro.props.entry
+const { Content } = await talk!.render()
+const speaker = await getEntry(talk.data.speaker)
+const schedules = await getCollection("schedules")
+const schedule = schedules.flatMap(
+  day => day.data.talks.find(t => t.talk?.slug === talk.slug)
+)
+---
+
+<App title={talk!.data.title}>
+  <article class="vise space-y-8">
+
+    <header class="relative grid grid-cols-4 gap-8">
+      <SpeakerCard class="-rotate-6 text-lef w-60" for={speaker} />
+      <div class="col-span-3">
+        <h1 class="text-6xl tracking-tight leading-tight font-bold mb-8 text-teal-300" transition:name={`talk-title-${talk.id}`}>{talk!.data.title}</h1>
+        <p>by {speaker.data.name}</p>
+      </div>
+    </header>
+
+    <div class="font-sans prose prose-invert mx-auto">
+      <Content />
+
+        <pre>{JSON.stringify(schedule, null, 2)}</pre>
+    </div>
+  </article>
+</App>

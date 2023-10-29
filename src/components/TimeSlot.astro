@@ -1,0 +1,29 @@
+---
+export interface Props {
+  on: string;
+  for: [string, string];
+}
+
+const { on: input, for: [start, end] } = Astro.props
+const [year, month, day] = input.split("-").map(Number);
+const [hour, minute] = start.split(":").map(Number);
+const date = new Date(Date.UTC(year, month -1, day, hour, minute))
+---
+
+<script>
+const tzOptions = Intl.DateTimeFormat().resolvedOptions();
+for (const el of document.querySelectorAll("time[datetime][data-showlocal]")) {
+  const utc = new Date(el.getAttribute("datetime")!);
+  const local = new Intl.DateTimeFormat('en-US', {
+    timeZone: tzOptions.timeZone,
+    hour: "numeric",
+    hourCycle: "h24",
+    minute: "numeric",
+    }).format(utc);
+  el.innerHTML = `${local} ${tzOptions.timeZone}`
+}
+</script>
+
+<time datetime={date} data-showlocal>
+  {start} UTC
+</time>

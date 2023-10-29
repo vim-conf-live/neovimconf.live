@@ -1,0 +1,16 @@
+---
+import ChevronRightIcon from '@heroicons/react/24/solid/ChevronRightIcon';
+
+export interface Props {
+  class?: string
+  href: string
+}
+
+const {href} = Astro.props
+const isActive = href === Astro.url.pathname
+---
+
+<a href={href} class={`text-2xl p-4 flex items-center justify-between group ${Astro.props.class} ${isActive ? `text-teal-400`: `text-slate-300`}`}>
+  <slot>
+  <ChevronRightIcon className="w-6 text-slate-600 group-hover:text-teal-400" />
+</a>

@@ -1,0 +1,81 @@
+---
+import HomepageHero from '@/components/HomepageHero.astro'
+import SpeakerCard from '@/components/SpeakerCard.astro';
+import App from '@/layouts/App.astro'
+import { getCollection } from 'astro:content';
+
+const speakers = await getCollection("speakers", speaker => speaker.data.type === "speaker");
+const mc = await getCollection("speakers", speaker => speaker.data.type === "mc");
+const [keynote] = await getCollection("speakers", speaker => speaker.data.type === "keynote");
+---
+
+<App title="NeoVimConf2023" class="bg-gradient-to-t from-slate-800 to-slate-950">
+  <section class="my-32">
+    <HomepageHero />
+  </section>
+
+  <section class="mb-48 font-sans vise">
+    <p class="max-w-screen-md text-2xl leading-relaxed ml-auto text-slate-200">
+      We are thrilled to invite you once again to NeovimConf!
+      An immersive gathering of passionate developers, power users, and
+      enthusiasts from around the globe. A celebration for the community, by the community and everyone is invited!
+    </p>
+  </section>
+
+  <section class="vise mb-48 grid grid-cols-12">
+    <div class="col-start-1 col-end-8 [&_p]:font-sans [&_p]:mb-4">
+      <h2 class="text-4xl mb-8 font-bold">Keynote by Justin M. Keyes</h2>
+      <p>
+        Justin has guided the Neovim project as a core maintainer since 2014. Author of vim-sneak, vim-dirvish, and tree-sitter-vimdoc. Working at AWS in Berlin.
+      </p>
+    </div>
+
+    <div class="relative col-start-9 col-end-13">
+      <SpeakerCard for={keynote} class="w-72 relative rotate-6 -top-8 hover:rotate-0 hover:-translate-y-6" randomHover={false} />
+    </div>
+  </section>
+
+  <section class="vise mb-48 grid grid-cols-12">
+    <div class="relative col-span-3">
+      <SpeakerCard for={mc[0]} class="w-72 relative -rotate-12 -top-8 hover:rotate-0 hover:-translate-y-6" randomHover={false} />
+      <SpeakerCard for={mc[1]} class="w-72 absolute left-20 top-16 rotate-12 hover:rotate-0 hover:-translate-y-6 shadow" randomHover={false} />
+    </div>
+
+      <div class="col-start-6 col-end-13 [&_p]:font-sans [&_p]:mb-4">
+        <h2 class="text-4xl mb-8 font-bold">Masters of Ceremony</h2>
+        <p>
+          ThePrimeagen and TJ DeVries, dynamic and influential figures in the world of
+          Neovim, as the exceptional emcees for the Neovim Conference 2023.
+        </p>
+        <p>
+          Impassioned and knowledge-driven, ThePrimeagen has created a substantial
+          following through his captivating YouTube and Twitch channel.
+        </p>
+        <p>
+          TJ DeVries, a prominent Neovim contributor and author of Telescope, has made
+          remarkable contributions to the project, improving its extensibility and
+          empowering the developer community.
+        </p>
+        <p>
+          Together they will engage, educate, and inspire
+          viewers, ensuring an unforgettable conference experience centered around
+          the future of Neovim.
+        </p>
+      </div>
+  </section>
+
+  <section class="vise">
+    <h2 class="text-4xl mb-16 font-bold">The Speakers</h2>
+    <ul class="grid grid-cols-4 gap-4 flex-wrap justify-center">
+      {speakers.slice(0,6).map((speaker) => (
+        <li class="space-y-4">
+          <SpeakerCard for={speaker} />
+        </li>
+      ))}
+
+        <li class="space-y-4">
+          <a href="/speakers" class="flex aspect-card justify-center items-center bg-slate-950 text-teal-300 rounded-lg">view all &rarr;</a>
+        </li>
+    </ul>
+  </section>
+</App>

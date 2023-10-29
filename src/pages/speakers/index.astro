@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import App from "@/layouts/App.astro";
+import SpeakerCard from "@/components/SpeakerCard.astro";
+
+const speakers = await getCollection("speakers")
+---
+
+<App title="Speakers">
+  <main class="my-16 vise">
+      <ul class="grid grid-cols-4 gap-4 flex-wrap justify-center">
+        {speakers.map((speaker) => (
+          <li class="space-y-4">
+            <SpeakerCard for={speaker} />
+          </li>
+        ))}
+      </ul>
+  </main>
+</App>
