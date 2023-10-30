@@ -13,8 +13,7 @@ const randomTextColor = () => {
   if (rand > 0.99) return "text-teal-600";
   if (rand > 0.95) return "text-teal-700";
   if (rand > 0.90) return "text-teal-800";
-  if (rand > 0.80) return "text-slate-900";
-  if (rand > 0.60) return "text-slate-950";
+  if (rand > 0.50) return "text-slate-950";
 
   return "text-teal-900";
 }
@@ -32,7 +31,7 @@ function shuffle(array) {
 document.addEventListener("astro:page-load", () => {
   const el = document.getElementById("header-bg");
   const p = el.innerText.split(" ")
-  setInterval(() => { el.innerHTML = shuffle(p).map(wrapSpan).join(" ") }, 100)
+  setInterval(() => { el.innerHTML = shuffle(p).map(wrapSpan).join(" ") }, 75)
 })
 
 </script>
@@ -41,7 +40,7 @@ document.addEventListener("astro:page-load", () => {
   <div class="relative flex justify-end h-full items-center max-w-screen-lg mx-auto">
     <Logo class="absolute left-20 h-[24rem] text-teal-800 lg:text-teal-500 z-0" />
 
-    <div>
+    <div class="relative z-10">
       <div class="text-right mb-4 drop-shadow-lg" itemscope itemtype="https://schema.org/Event">
         <h1 class="text-6xl text-transparent uppercase font-bold mb-4 tracking-wider bg-gradient-to-r from-amber-200 to-teal-400 bg-clip-text">NeovimConf2023</h1>
         <p class="text-5xl italic text-teal-50 font-bold tracking-wide">
