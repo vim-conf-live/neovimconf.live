@@ -13,9 +13,12 @@ export interface Props {
 
 <script>
 import {install} from '@github/hotkey'
-for (const el of document.querySelectorAll('[data-hotkey]')) {
-  install(el as HTMLElement)
-}
+
+document.addEventListener('astro:page-load', () => {
+  for (const el of document.querySelectorAll('[data-hotkey]')) {
+    install(el as HTMLElement);
+  }
+})
 </script>
 
 <html lang="en">
@@ -29,7 +32,7 @@ for (const el of document.querySelectorAll('[data-hotkey]')) {
     <ViewTransitions />
 	</head>
 	<body class={ `bg-slate-900 text-slate-200 font-mono ${Astro.props.class}` }>
-    <main class="py-8 min-h-screen">
+    <main class="py-8 min-h-screen ">
       <Navigation />
       <slot />
     </main>
