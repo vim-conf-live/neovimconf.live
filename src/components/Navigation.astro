@@ -11,20 +11,20 @@ const link = (opts: {
 }) => ({
   href: opts.href,
   class: `block w-max hover:text-slate-100 aria-current-page:text-slate-50 aria-current-page:underline aria-current-page:decoration-2 aria-current-page:decoration-teal-300 ${opts.class}`,
-  dataHotkey: opts.hotkey,
+  "data-hotkey": opts.hotkey,
   "aria-current": isCurrent(opts.href) ? ("page" as const) : false
 })
 ---
 
 <nav class="mb-16 vise flex justify-between items-center text-slate-400 px-8">
   <div class="flex gap-8 items-center justify-stretch w-full">
-    <a href="/" class="hover:text-teal-500 grow-0 block">
+    <a href="/" class="hover:text-teal-500 grow-0 block" data-hotkey="g h">
       <Logo class="w-10" />
     </a>
 
     <div class="flex space-x-8 w-full flex-grow text-xl text-slate-300">
-      <a {...link({href: "/speakers", hotkey: "g h"})}>Speakers</a>
-      <a {...link({href: "/talks/day-1", hotkey: "g t"})}>Talks</a>
+      <a {...link({href: "/speakers", hotkey: "g s"})}>Speakers</a>
+      <a {...link({href: "/talks/", hotkey: "g t"})}>Talks</a>
     </div>
 
     <div class="flex space-x-4 w-max items-center text-sm">
