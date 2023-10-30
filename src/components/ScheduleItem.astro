@@ -15,17 +15,17 @@ const talk = await getEntry(slot.talk)
 const speaker = await getEntry(talk.data.speaker)
 ---
 
-<article class="grid grid-cols-4">
-  <div class="text-sky-300">
+<article class="grid grid-cols-12">
+  <div class="col-span-2 text-sky-300 flex justify-center items-center text-center">
     <TimeSlot on={day.id} for={slot.time} />
   </div>
-  <div class="col-span-3">
-  <header class="mb-4">
-    <h3 transition:animate="initial" transition:name={`talk-title-${talk.id}`} class="font-bold mb-2 text-xl group-hover:text-teal-300">{talk.data.title}</h3>
-    <p class="italic text-sm text-slate-500">
-      by {speaker.data.name}
-    </p>
-  </header>
-  <p class="font-sans text-slate-400">{talk.data.description}</p>
+  <div class="col-span-8">
+    <header class="mb-2">
+      <p class="italic text-sm text-slate-500">
+        By {speaker.data.name}
+      </p>
+      <h3 transition:animate="initial" transition:name={`talk-title-${talk.id}`} class="font-bold text-xl group-hover:text-teal-300">{talk.data.title}</h3>
+    </header>
+    <p class="font-sans text-slate-400">{talk.data.description}</p>
   </div>
 </article>

@@ -7,8 +7,9 @@
       "talk": "the-builtin-lsp"
     },
     {
-      "time": ["8:30", "9:00"],
-      "talk": "the-power-of-lua"
+      "time": ["10:30", "11:00"],
+      "title": "break",
+      "description": "A short break"
     },
     {
       "time": ["9:00", "9:30"],
@@ -17,15 +18,6 @@
     {
       "time": ["10:00", "10:30"],
       "talk": "something-something"
-    },
-    {
-      "time": ["10:30", "11:00"],
-      "title": "break",
-      "description": "A short break"
-    },
-    {
-      "time": ["11:30", "11:45"],
-      "talk": "the-builtin-lsp"
     }
   ]
 }
