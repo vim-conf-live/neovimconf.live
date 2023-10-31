@@ -10,22 +10,38 @@ export interface Props {
 }
 
 const { for: slot, on: day } = Astro.props
-invariant(slot.talk, `Slot ${slot} has no talk`)
-const talk = await getEntry(slot.talk)
-const speaker = await getEntry(talk.data.speaker)
+const talk = slot.talk ? await getEntry(slot.talk) : null
+const speaker = slot.talk ? await getEntry(talk!.data.speaker) : null
 ---
 
-<article class="grid grid-cols-12">
-  <div class="col-span-2 text-sky-300 flex justify-center items-center text-center">
+{talk ? (
+  <a href={`/talks/${talk.slug}`} class="
+    group
+    block
+    hover:bg-slate-50
+    dark:hover:bg-slate-950
+    px-2
+    py-4
+  ">
+    <article class="grid grid-cols-12">
+      <div class="col-span-2 text-sky-300 flex justify-center items-center text-center">
+        <TimeSlot on={day.id} for={slot.time} />
+      </div>
+      <div class="col-span-8">
+        <header class="mb-2">
+          <p class="italic text-sm text-slate-400 dark:text-slate-500">
+            By {speaker?.data.name}
+          </p>
+          <h3 transition:animate="initial" transition:name={`talk-title-${talk.id}`} class="font-bold text-xl group-hover:text-teal-500 dark:group-hover:text-teal-300">{talk.data.title}</h3>
+        </header>
+        <p class="font-sans text-slate-500 dark:text-slate-400">{talk.data.description}</p>
+      </div>
+    </article>
+  </a>
+) : (
+  <div class="text-center py-8">
     <TimeSlot on={day.id} for={slot.time} />
+    <h3>{slot.title}</h3>
+    <p>{slot.description}</p>
   </div>
-  <div class="col-span-8">
-    <header class="mb-2">
-      <p class="italic text-sm text-slate-500">
-        By {speaker.data.name}
-      </p>
-      <h3 transition:animate="initial" transition:name={`talk-title-${talk.id}`} class="font-bold text-xl group-hover:text-teal-300">{talk.data.title}</h3>
-    </header>
-    <p class="font-sans text-slate-400">{talk.data.description}</p>
-  </div>
-</article>
+)}

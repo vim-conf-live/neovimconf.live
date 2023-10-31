@@ -26,34 +26,45 @@ const randomHoverRotation = () => shuffle([
   transition:name={`speaker-${speaker.slug}`}
   href={`/speakers/${speaker.slug}`} 
   class={`block group transition-transform hover:z-30 ${Astro.props.randomHover === false ? null : randomHoverRotation() } ${Astro.props.class}`}>
-  <article class="relative aspect-card bg-slate-950 text-sm font-sans rounded-2xl p-4 overflow-hidden">
-  <div class="ring ring-slate-800 relative ring-offset-4 ring-offset-slate-950 rounded-md overflow-hidden mb-4">
-    <div class="bg-slate-800 p-1 flex justify-between items-center">
-      <h2>{speaker.data.name}</h2>
-      <div class="flex gap-1">
-        <div class="rounded-full w-3 h-3 bg-amber-500" />
-        <div class="rounded-full w-3 h-3 bg-teal-500" />
-        <div class="rounded-full w-3 h-3 bg-sky-500" />
+  <article class="relative aspect-card shadow-lg bg-slate-200 dark:bg-slate-950 text-sm font-sans rounded-2xl p-4 overflow-hidden">
+    <div class="
+      ring
+      ring-slate-300
+      dark:ring-slate-800
+      relative
+      ring-offset-4
+      ring-offset-slate-200
+      dark:ring-offset-slate-950
+      rounded-md
+      overflow-hidden
+      mb-4
+    ">
+      <div class="bg-slate-300 dark:bg-slate-800 p-1 flex justify-between items-center">
+        <h2>{speaker.data.name}</h2>
+        <div class="flex gap-1">
+          <div class="rounded-full w-3 h-3 bg-amber-500" />
+          <div class="rounded-full w-3 h-3 bg-teal-500" />
+          <div class="rounded-full w-3 h-3 bg-sky-500" />
+        </div>
       </div>
+
+      <div class="rounded overflow-hidden relative bg-sky-100 dark:bg-sky-200">
+        <img src={ `//unsplash.it/seed/${speaker.slug}/640/480`} class="object-fit aspect-[4/3] grayscale mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal transition-all" />
+      </div>
+
+      <p class="p-1 text-xs bg-slate-300 dark:bg-slate-800">
+        {speaker.data.job}
+      </p>
     </div>
 
-    <div class="rounded overflow-hidden relative bg-slate-500">
-      <img src={ `//unsplash.it/seed/${speaker.slug}/640/480`} class="object-fit aspect-[4/3] grayscale mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal transition-all" />
-    </div>
-
-    <p class="p-1 text-xs">
-      {speaker.data.job}
+    <p class="italic text-slate-500 group-hover:text-slate-400">
+      {speaker.data.info}
     </p>
-  </div>
 
-  <p class="italic text-slate-500 group-hover:text-slate-400">
-    {speaker.data.info}
-  </p>
-
-  {Astro.url.pathname === `/speakers/${speaker.slug}` ? null : (
-    <p class="flex gap-2 justify-end items-end text-teal-500 group-hover:underline absolute bottom-0 inset-x-0 p-2 bg-gradient-to-b from-transparent to-slate-950">
-      more <ArrowRightIcon className='w-4' />
-    </p>
-  )}
+    {Astro.url.pathname === `/speakers/${speaker.slug}` ? null : (
+      <p class="flex gap-2 justify-end items-end text-teal-500 group-hover:underline absolute bottom-0 inset-x-0 p-2 bg-gradient-to-b from-transparent to-slate-300 dark:to-slate-950">
+        more <ArrowRightIcon className='w-4' />
+      </p>
+    )}
   </article>
 </div>

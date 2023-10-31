@@ -18,17 +18,20 @@ const isActive = (href:string) => href === Astro.url.pathname
 
 <App title="Schedule">
   <main class="my-16 vise">
-    <h1 class="text-6xl leading-tight font-bold mb-8 text-teal-300">Fix your <em class="text-amber-300 italic">skill issues</em> with these talks!</h1>
+    <h1 class="text-6xl leading-tight font-bold mb-8 text-teal-400 dark:text-teal-300">Fix your <em class="text-amber-400 dark:text-amber-300 italic">skill issues</em> with these talks!</h1>
     <p class="text-lg leading-relaxed font-sans mb-16 max-w-prose">
       [todo] Don't miss these captivating talks that will unveil the true power of Neovim and equip you with invaluable techniques and knowledge to elevate your editing experience.
       We've gathered some of the finest folks all around the neovim community to talk about something super awesome.
     </p>
 
-    <div class="flex gap-8 mb-">
+    <div class="flex gap-8 mb-8 mx-auto max-w-max">
       {schedules.map(day => {
         const href = `/talks/${day.data.slug}`
         return (
-          <a href={href} class={`text-2xl p-4 flex items-center gap-4 justify-between group border-b-2 ${isActive(href) ? `text-teal-400 border-teal-400` : `text-slate-300 hover:text-slate-50 border-transparent`}`}>
+          <a
+            href={href}
+            class={`text-2xl p-4 flex items-center gap-4 justify-between group border-b-2 ${isActive(href) ? `text-teal-400 border-teal-400` : `text-slate-300 hover:text-slate-600 dark:hover:text-slate-50 border-transparent`}`}
+          >
             <h2 class="text-center leading-loose w-full">
               <span class="font-bold text-3xl">
                 {day.data.title}
@@ -37,30 +40,19 @@ const isActive = (href:string) => href === Astro.url.pathname
                 {new Intl.DateTimeFormat('en-US', { dateStyle: "medium" }).format(new Date(Date.parse(day.id)))}
               </time>
             </h2>
-            {isActive(href) ? 
-            <ChevronDownIcon className="h-8 w-8" />
-            :
-            <ChevronRightIcon className="h-8 w-8" />
+            {isActive(href) 
+              ? <ChevronDownIcon className="h-8 w-8" />
+              : <ChevronRightIcon className="h-8 w-8" />
             }
           </a>
         );
         })}
     </div>
 
-    <ol class="divide-y divide-slate-700" transition:name={`timetable-${day.id}`} transition:animate="slide">
+    <ol class="divide-y divide-slate-200 dark:divide-slate-700" transition:name={`timetable-${day.id}`} transition:animate="slide">
       {day.data.talks.map((slot) => (
         <li>
-        {slot.talk ? (
-          <a href={`/talks/${slot.talk.slug}`} class="group block hover:bg-slate-950 px-2 py-4">
-            <ScheduleItem on={day} for={slot} />
-          </a>
-        ) : (
-          <div class="text-center py-8">
-            <TimeSlot on={day.id} for={slot.time} />
-            <h3>{slot.title}</h3>
-            <p>{slot.description}</p>
-          </div>
-        )}
+          <ScheduleItem on={day} for={slot} />
         </li>
       ))}
     </ol>

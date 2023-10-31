@@ -10,12 +10,12 @@ const plugins = "neovim coc.nvim NvChad LunarVim telescope.nvim AstroNvim LazyVi
 const randomTextColor = () => {
   const rand = Math.random()
 
-  if (rand > 0.99) return "text-teal-600";
-  if (rand > 0.95) return "text-teal-700";
-  if (rand > 0.90) return "text-teal-800";
-  if (rand > 0.50) return "text-slate-950";
+  if (rand > 0.99) return "text-teal-400 dark:text-teal-600";
+  if (rand > 0.95) return "text-teal-300 dark:text-teal-700";
+  if (rand > 0.90) return "text-teal-200 dark:text-teal-800";
+  if (rand > 0.50) return "text-slate-200 dark:text-slate-950";
 
-  return "text-teal-900";
+  return "dark:text-teal-900 text-slate-100";
 }
 
 const wrapSpan = (p) => `<span class="${randomTextColor()}">${p}</span>`
@@ -36,18 +36,16 @@ document.addEventListener("astro:page-load", () => {
 
 </script>
 
-<header class="relative h-96 w-screen px-8 overflow-hidden">
+<header class="relative w-screen px-8">
   <div class="relative flex justify-end h-full items-center max-w-screen-lg mx-auto">
-    <Logo class="absolute left-20 h-[24rem] text-teal-800 lg:text-teal-500 z-0" />
-
-    <div class="relative z-10">
-      <div class="text-right mb-4 drop-shadow-lg" itemscope itemtype="https://schema.org/Event">
-        <h1 class="text-6xl text-transparent uppercase font-bold mb-4 tracking-wider bg-gradient-to-r from-amber-200 to-teal-400 bg-clip-text">NeovimConf2023</h1>
-        <p class="text-5xl italic text-teal-50 font-bold tracking-wide">
+    <Logo class="absolute left-20 h-[24rem] text-teal-400 dark:text-teal-800 z-0" />
+    <div class="relative top-24 lg:top-auto lg:bg-transparent z-10">
+      <div class="lg:text-right font-bold p-2 lg:bg-transparent dark:lg:bg-slate-950/50 mb-4" itemscope itemtype="https://schema.org/Event">
+        <h1 class="text-5xl lg:text-6xl tracking-wide uppercase mb-4 text-transparent bg-gradient-to-r from-amber-400 dark:from-amber-200 to-teal-500 dark:to-teal-400 bg-clip-text">NeovimConf2023</h1>
+        <p class="text-5xl italic text-slate-700 dark:text-slate-50 tracking-wide">
           <time datetime="2023-12-09T9:00:00Z" itemprop="startDate">Dec 9<sup>th</sup></time>-<time datetime="2023-12-10T9:00:00Z" itemprop="endDate">10<sup>th</sup></time>
         </p>
       </div>
-
       <nav class="flex gap-4 justify-end items-center text-teal-900">
         <a href="/signup" class="inline-block bg-teal-300 p-2 rounded-sm hover:bg-teal-200">get your free ticket!</a>
         <a href="/neovimconf-2023.cal" class="inline-block bg-teal-500 p-2 rounded-sm hover:bg-teal-200"><CalendarIcon className="w-6" /></a>

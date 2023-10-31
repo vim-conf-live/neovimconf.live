@@ -8,7 +8,15 @@ const speakers = await getCollection("speakers")
 
 <App title="Speakers">
   <main class="my-16 vise">
-      <ul class="grid grid-cols-4 gap-4 flex-wrap justify-center">
+      <ul class="
+        grid
+        grid-cols-2
+        md:grid-cols-3
+        lg:grid-cols-4
+        gap-4
+        flex-wrap
+        justify-center
+      ">
         {speakers.map((speaker) => (
           <li class="space-y-4">
             <SpeakerCard for={speaker} />

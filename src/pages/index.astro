@@ -9,39 +9,57 @@ const mc = await getCollection("speakers", speaker => speaker.data.type === "mc"
 const [keynote] = await getCollection("speakers", speaker => speaker.data.type === "keynote");
 ---
 
-<App title="NeoVimConf2023" class="bg-gradient-to-t from-slate-800 to-slate-950">
-  <section class="my-32">
+<App title="NeoVimConf2023" class="">
+  <section class="my-48">
     <HomepageHero />
   </section>
 
-  <section class="mb-48 font-sans vise">
-    <p class="max-w-screen-md text-2xl leading-relaxed ml-auto text-slate-200">
+  <section class="mb-16 font-sans vise">
+    <p class="max-w-screen-md text-2xl leading-relaxed ml-auto ">
       We are thrilled to invite you once again to NeovimConf!
       An immersive gathering of passionate developers, power users, and
       enthusiasts from around the globe. A celebration for the community, by the community and everyone is invited!
     </p>
   </section>
 
-  <section class="vise mb-48 grid grid-cols-12">
-    <div class="col-start-1 col-end-8 [&_p]:font-sans [&_p]:mb-4">
+  <section class="
+    vise
+    lg:grid
+    lg:grid-cols-12
+    mb-16
+    lg:mb-80
+    relative
+  ">
+    <div class="h-[250px] lg:h-auto overflow-clip lg:overflow-visible border-b border-b-slate-200 lg:border-0 w-full relative mb-8 lg:col-start-8 lg:col-end-12">
+      <SpeakerCard for={keynote} class="w-72 rotate-6 absolute top-4 left-1/2 -translate-x-1/2 hover:rotate-0 hover:-translate-y-4" randomHover={false} />
+    </div>
+    <div class="
+      lg:col-start-1
+      lg:col-end-8
+      font-sans
+      space-y-4
+      leading-relaxed
+    ">
       <h2 class="text-4xl mb-8 font-bold">Keynote by Justin M. Keyes</h2>
-      <p>
+      <p class="text-2xl">
         Justin has guided the Neovim project as a core maintainer since 2014. Author of vim-sneak, vim-dirvish, and tree-sitter-vimdoc. Working at AWS in Berlin.
       </p>
     </div>
-
-    <div class="relative col-start-9 col-end-13">
-      <SpeakerCard for={keynote} class="w-72 relative rotate-6 -top-8 hover:rotate-0 hover:-translate-y-6" randomHover={false} />
-    </div>
   </section>
 
-  <section class="vise mb-48 grid grid-cols-12">
-    <div class="relative col-span-3">
-      <SpeakerCard for={mc[0]} class="w-72 relative -rotate-12 -top-8 hover:rotate-0 hover:-translate-y-6" randomHover={false} />
-      <SpeakerCard for={mc[1]} class="w-72 absolute left-20 top-16 rotate-12 hover:rotate-0 hover:-translate-y-6 shadow" randomHover={false} />
+  <section class="vise vise lg:grid lg:grid-cols-12 mb-16 lg:mb-24 relative">
+    <div class="h-[250px] lg:h-auto overflow-clip lg:overflow-visible border-b lg:border-0 border-b-slate-200 mb-8 w-full relative lg:col-start-1 lg:col-end-4">
+      <SpeakerCard for={mc[0]} class="w-72 absolute left-8 -rotate-6 top-4 lg:-top-8 hover:rotate-0 hover:-translate-y-6" randomHover={false} />
+      <SpeakerCard for={mc[1]} class="w-72 absolute right-12 top-16 rotate-12 hover:rotate-0 hover:-translate-y-6 shadow" randomHover={false} />
     </div>
 
-      <div class="col-start-6 col-end-13 [&_p]:font-sans [&_p]:mb-4">
+      <div class="
+        lg:col-start-6
+        lg:col-end-12
+        font-sans
+        space-y-4
+        leading-relaxed
+      ">
         <h2 class="text-4xl mb-8 font-bold">Masters of Ceremony</h2>
         <p>
           ThePrimeagen and TJ DeVries, dynamic and influential figures in the world of
@@ -66,7 +84,7 @@ const [keynote] = await getCollection("speakers", speaker => speaker.data.type =
 
   <section class="vise">
     <h2 class="text-4xl mb-16 font-bold">The Speakers</h2>
-    <ul class="grid grid-cols-4 gap-4 flex-wrap justify-center">
+    <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 flex-wrap justify-center">
       {speakers.slice(0,6).map((speaker) => (
         <li class="space-y-4">
           <SpeakerCard for={speaker} />
@@ -74,7 +92,22 @@ const [keynote] = await getCollection("speakers", speaker => speaker.data.type =
       ))}
 
         <li class="space-y-4">
-          <a href="/speakers" class="flex aspect-card justify-center items-center bg-slate-950 text-teal-300 rounded-lg">view all &rarr;</a>
+          <a href="/speakers" class="
+            flex
+            aspect-card
+            justify-center
+            items-center
+            border-4
+            border-dashed
+            border-slate-300
+            dark:border-slate-600
+            text-sm
+            text-teal-500
+            dark:text-teal-300
+            rounded-2xl
+            hover:bg-slate-50
+            dark:hover:bg-slate-700
+          ">and many more &rarr;</a>
         </li>
     </ul>
   </section>

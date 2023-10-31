@@ -31,13 +31,36 @@ document.addEventListener('astro:page-load', () => {
     <slot name="head" />
     <ViewTransitions />
 	</head>
-	<body class={ `bg-slate-900 text-slate-200 font-mono ${Astro.props.class}` }>
+	<body class="
+    bg-gradient-to-b
+    from-slate-50
+    to-slate-100
+
+    dark:from-slate-950
+    dark:to-slate-800
+
+    text-slate-800
+    dark:text-slate-200
+
+    font-mono
+  ">
     <main class="py-8 min-h-screen ">
       <Navigation />
       <slot />
     </main>
 
-    <footer class="bg-slate-950 border-t-slate-600 mt-32 py-16 text-center space-y-8 text-slate-500">
+    <footer class="
+      bg-slate-50
+      dark:bg-slate-950
+      border-t
+      border-t-slate-300
+      dark:border-t-slate-600
+      mt-32
+      py-16
+      text-center
+      space-y-8
+      text-slate-400
+    ">
       <p>
         &copy; 2023 Neovimconf
       </p>
