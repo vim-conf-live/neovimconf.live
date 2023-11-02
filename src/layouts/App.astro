@@ -8,7 +8,11 @@ import { ViewTransitions } from 'astro:transitions';
 export interface Props {
   title: string;
   class?: string;
+  user?: object;
 }
+
+const { title, user } = Astro.props as Props;
+const isLoggedIn = !(user == null);
 ---
 
 <script>
@@ -27,45 +31,24 @@ document.addEventListener('astro:page-load', () => {
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{Astro.props.title}</title>
+		<title>{title}</title>
     <slot name="head" />
     <ViewTransitions />
 	</head>
-	<body class="
-    bg-gradient-to-b
-    from-slate-50
-    to-slate-100
-
-    dark:from-slate-950
-    dark:to-slate-800
-
-    text-slate-800
-    dark:text-slate-200
-
-    font-mono
-  ">
-    <main class="py-8 min-h-screen ">
-      <Navigation />
+	<body class="text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-900">
+    <main class="py-2 min-h-screen flex flex-col z-10 relative">
+      <Navigation class="mb-4" />
+      <pre>{JSON.stringify({isLoggedIn}, null, 2)}</pre>
       <slot />
     </main>
 
-    <footer class="
-      bg-slate-50
-      dark:bg-slate-950
-      border-t
-      border-t-slate-300
-      dark:border-t-slate-600
-      mt-32
-      py-16
-      text-center
-      space-y-8
-      text-slate-400
-    ">
+    <footer class="bg-slate-50 dark:bg-slate-950 py-16 text-center space-y-8 text-slate-400 text-xs">
       <p>
         &copy; 2023 Neovimconf
       </p>
-      <nav class="flex gap-8 justify-center">
+      <nav class="flex gap-2 flex-col md:flex-row md:gap-8 md:justify-center">
         <a href="/toc">Terms and Conditions</a>
+        <a href="/code-of-conduct" data-hotkeyt="g c">Code of Conduct</a>
         <a href="/imprint">Imprint & Privacy policy</a>
       </nav>
     </footer>

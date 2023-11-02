@@ -1,0 +1,35 @@
+---import { supabase } from "@/lib/auth";
+
+export const prerender = false;
+const cookies = Astro.cookies
+const accessToken = cookies.get("sb-access-token");
+const refreshToken = cookies.get("sb-refresh-token");
+
+if (!accessToken || !refreshToken) {
+  return redirect("/signin");
+}
+
+const { data, error } = await supabase.auth.setSession({
+  refresh_token: refreshToken.value,
+  access_token: accessToken.value,
+});
+
+if (error) {
+  cookies.delete("sb-access-token", {
+    path: "/",
+  });
+  cookies.delete("sb-refresh-token", {
+    path: "/",
+  });
+
+  return redirect("/signin");
+}
+
+const email = data?.user?.email;
+---
+
+<h1>Welcome {email}</h1>
+<p>We are happy to see you here</p>
+<form action="/api/auth/signout">
+  <button type="submit">Sign out</button>
+</form>

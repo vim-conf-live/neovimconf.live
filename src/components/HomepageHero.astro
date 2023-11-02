@@ -1,11 +1,13 @@
 ---
 import { CalendarIcon } from "@heroicons/react/24/outline"
 import Logo from "./Logo.astro";
+import * as button from "@/styles/button";
+import ClickablePrimary from "./ClickablePrimary.astro";
 
 const plugins = "neovim coc.nvim NvChad LunarVim telescope.nvim AstroNvim LazyVim kickstart.nvim nvim-lspconfig nvim-treesitter lazy.nvim packer.nvim nvim-cmp deoplete.nvim nvim-tree.lua mason.nvim nvim-lua-guide markdown-preview.nvim vscode-neovim Neovim-from-scratch neorg lualine.nvim tokyonight.nvim nvim-dap trouble.nvim gitsigns.nvim null-ls.nvim which-key.nvim nvim leap.nvim indent-blankline.nvim coq_nvim toggleterm.nvim vim-sneak lspsaga.nvim noice.nvim kanagawa.nvim mini.nvim lsp-zero.nvim Comment.nvim nvim-config bufferline.nvim diffview.nvim ChatGPT.nvim awesome-vim-colorschemes nightfox.nvim nvim-autopairs nvim-notify nvimdots hop.nvim goneovim todo-comments.nvim neo-tree.nvim nvim-surround rust-tools.nvim denite.nvim vim-bootstrap refactoring.nvim nvim-lsp-installer vim-be-good plenary.nvim nvim-colorizer.lua nvim barbar.nvim octo.nvim nvim-treesitter-context github-nvim-theme nvim-dap-ui asyncrun.vim Launch.nvim vim-config symbols-outline.nvim gnvim dashboard-nvim lsp_signature.nvim nvim-ufo lightspeed.nvim nvim-treesitter-textobjects mason-lspconfig.nvim chadtree cellular-automaton.nvim neodev.nvim nvim-web-devicons neovim flash.nvim fidget.nvim fzf-lua oil.nvim go.nvim pynvim nvim-spectre nvim-bqf alpha-nvim nvim-compe gruvbox.nvim dressing.nvim telescope-file-browser.nvim impatient.nvim coc-pyright fvim onedark.nvim lush.nvim defx.nvim nvim-navic nui.nvim coc-explorer aerial.nvim zen-mode.nvim wilder.nvim vim-dirvish nvim-ts-autotag lspkind.nvim obsidian.nvim formatter.nvim instant.nvim nvim-lint nyoom.nvim coc-rust-analyzer learn-neovim-lua awesome-dotfiles nvim-lua-guide-zh neoscroll.nvim hologram.nvim telekasten.nvim feline.nvim glow.nvim project.nvim nvim any-jump.vim coc-tsserver CosmicNvim telescope-fzf-native.nvim semshi completion-nvim awesome-streamerrc vim-javacomplete2 neovim-init.vim doom-nvim conform.nvim twilight.nvim distant.nvim coc-snippets neogen nvim-completion-manager nvim-ts-context-commentstring hydra.nvim Nvim-R rest.nvim true-zen.nvim fzf-preview.vim legendary.nvim ThinkVim nvim-ts-rainbow nvim lazygit.nvim CodeArt galaxyline.nvim material.nvim heirline.nvim venn.nvim vim-vsnip oxocarbon.nvim markdown-preview.vim iron.nvim nvim-neoclip.lua cmp-nvim-lsp neovim-lua spaceduck nvim-jdtls ssr.nvim rnvimr nvim-ide CodeGPT.nvim nvim-oxi nvim git-peek mind.nvim flutter-tools.nvim sidebar.nvim nvim-lightbulb coc-clangd nvim-scrollbar vim-nightfly-colors nord.nvim vim-moonfly-colors magma-nvim git-blame.nvim blamer.nvim FTerm.nvim nvim-remote-containers typescript-tools.nvim dial.nvim none-ls.nvim presence.nvim git-conflict.nvim nvim-hlslens nvim-gdb nvim-dap-virtual-text nvim-typescript overseer.nvim"
 ---
 
-<script is:inline>
+<script>
 
 const randomTextColor = () => {
   const rand = Math.random()
@@ -18,9 +20,12 @@ const randomTextColor = () => {
   return "dark:text-teal-900 text-slate-100";
 }
 
-const wrapSpan = (p) => `<span class="${randomTextColor()}">${p}</span>`
+const wrapSpan = (p: string) => `<span class="${randomTextColor()}">${p}</span>`
 
-function shuffle(array) {
+// TODO: do a quick perf check (mostly memory); if necessary a low-hanging
+// fruit would be to run the shuffle algorithm directly on the dom-nodes,
+// instead of throwing away all the elements and recreating them on each frame.
+const shuffle = <T extends any[]>(array: T) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
@@ -30,31 +35,42 @@ function shuffle(array) {
 
 document.addEventListener("astro:page-load", () => {
   const el = document.getElementById("header-bg");
+  if (!el) return;
   const p = el.innerText.split(" ")
-  setInterval(() => { el.innerHTML = shuffle(p).map(wrapSpan).join(" ") }, 75)
+  const doubled = [...p, ...p]
+  const interval = 75;
+  const render = () => {
+    el.innerHTML = shuffle(doubled).map(wrapSpan).join(" ") 
+    setTimeout(() => requestAnimationFrame(render) , interval)
+  }
+  requestAnimationFrame(render);
 })
 
 </script>
 
-<header class="relative w-screen px-8">
-  <div class="relative flex justify-end h-full items-center max-w-screen-lg mx-auto">
-    <Logo class="absolute left-20 h-[24rem] text-teal-400 dark:text-teal-800 z-0" />
-    <div class="relative top-24 lg:top-auto lg:bg-transparent z-10">
-      <div class="lg:text-right font-bold p-2 lg:bg-transparent dark:lg:bg-slate-950/50 mb-4" itemscope itemtype="https://schema.org/Event">
-        <h1 class="text-5xl lg:text-6xl tracking-wide uppercase mb-4 text-transparent bg-gradient-to-r from-amber-400 dark:from-amber-200 to-teal-500 dark:to-teal-400 bg-clip-text">NeovimConf2023</h1>
-        <p class="text-5xl italic text-slate-700 dark:text-slate-50 tracking-wide">
+<header class="relative w-screen">
+  <div class="vise flex flex-col lg:flex-row items-center lg:justify-between">
+    <Logo transition:name="nvimconf-logo" class="h-[10rem] md:h-[10rem] lg:h-[15rem] xl:h-[24rem] text-teal-400 z-0 mb-16 mt-6 lg:mt-0 lg:mb-0 translate-x-4" />
+
+    <div class="overflow-clip h-[12rem] absolute -z-50 inset-x-0 pointer-events-none text-center max-w-screen-2xl lg:top-1/2 lg:-translate-y-1/2 xl:h-[15rem] 2xl:left-1/2 2xl:w-full 2xl:-translate-x-1/2">
+      <div class="absolute -inset-x-20 leading-none text-xs md:text-md text-slate-200 dark:text-slate-800 xl:flex items-center justify-center">
+        <div id="header-bg">
+          {plugins}
+        </div>
+      </div>
+    </div>
+
+    <div class="px-4 lg:px-0 md:max-w-max mx-auto lg:mx-0 ">
+      <div class="lg:text-right font-bold p-2 lg:bg-transparent mb-4" itemscope itemtype="https://schema.org/Event">
+        <h1 class="text-3xl md:text-5xl lg:text-6xl tracking-wide uppercase text-transparent bg-gradient-to-r from-amber-400 dark:from-amber-200 to-teal-500 dark:to-teal-400 bg-clip-text">NeovimConf2023</h1>
+        <p class="text-2xl md:text-4xl italic text-slate-700 dark:text-slate-50 tracking-wide text-right">
           <time datetime="2023-12-09T9:00:00Z" itemprop="startDate">Dec 9<sup>th</sup></time>-<time datetime="2023-12-10T9:00:00Z" itemprop="endDate">10<sup>th</sup></time>
         </p>
       </div>
-      <nav class="flex gap-4 justify-end items-center text-teal-900">
-        <a href="/signup" class="inline-block bg-teal-300 p-2 rounded-sm hover:bg-teal-200">get your free ticket!</a>
+      <nav class="flex gap-4 justify-center lg:justify-end w-full items-center text-teal-900 ">
+        <ClickablePrimary as="a" href="/register">get your free ticket!</ClickablePrimary>
         <a href="/neovimconf-2023.cal" class="inline-block bg-teal-500 p-2 rounded-sm hover:bg-teal-200"><CalendarIcon className="w-6" /></a>
       </nav>
     </div>
   </div>
-
-  <div id="header-bg" class="absolute -left-20 -right-20 text-center -z-10 top-1/2 -translate-y-1/2 overflow-hidden h-[15rem] text-teal-900 leading-tight pointer-events-none">
-    {plugins}
-  </div>
 </header>
-
