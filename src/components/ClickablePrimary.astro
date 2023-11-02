@@ -1,0 +1,12 @@
+---
+export interface Props {
+  as: "a" | "button"
+}
+
+const { as: Tag = "button", ...props } = Astro.props
+
+---
+
+<Tag {...props} class:list={`inline-block text-center bg-teal-300 p-2 rounded-sm hover:bg-teal-200`}>
+  <slot />
+</Tag>

@@ -34,7 +34,7 @@ const speaker = slot.talk ? await getEntry(talk!.data.speaker) : null
           </p>
           <h3 transition:animate="initial" transition:name={`talk-title-${talk.id}`} class="font-bold text-xl group-hover:text-teal-500 dark:group-hover:text-teal-300">{talk.data.title}</h3>
         </header>
-        <p class="font-sans text-slate-500 dark:text-slate-400">{talk.data.description}</p>
+        <p class="text-slate-500 dark:text-slate-400">{talk.data.description}</p>
       </div>
     </article>
   </a>

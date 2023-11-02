@@ -26,7 +26,7 @@ const randomHoverRotation = () => shuffle([
   transition:name={`speaker-${speaker.slug}`}
   href={`/speakers/${speaker.slug}`} 
   class={`block group transition-transform hover:z-30 ${Astro.props.randomHover === false ? null : randomHoverRotation() } ${Astro.props.class}`}>
-  <article class="relative aspect-card shadow-lg bg-slate-200 dark:bg-slate-950 text-sm font-sans rounded-2xl p-4 overflow-hidden">
+  <article class="relative aspect-card shadow-lg bg-slate-200 dark:bg-slate-950 text-sm rounded-2xl p-4 overflow-hidden">
     <div class="
       ring
       ring-slate-300
