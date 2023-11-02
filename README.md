@@ -80,3 +80,12 @@ This makes deep linking etc much easier - eg on Day 2 directly link to Day
 
 Check [the astro documentation](https://docs.astro.build).
 
+## TODOs:
+
+- [ ] favicon
+- [ ] text for about
+- [ ] text for imprint
+- [ ] links to social in header
+- [ ] replace CTA on home with "you're attending or something"
+- [ ] move register-handling to api-route so that the register page can be statically rendered
+- [ ] figure out why supabase is not used the PUBLIC_AUTH_REDIRECT_URL in the magic-link
