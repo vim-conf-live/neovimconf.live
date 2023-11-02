@@ -7,6 +7,9 @@ const { as: Tag = "button", ...props } = Astro.props
 
 ---
 
-<Tag {...props} class:list={`inline-block text-center bg-teal-300 p-2 rounded-sm hover:bg-teal-200`}>
+<Tag {...props} class:list={`inline-block relative text-center bg-teal-300 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-500`}>
   <slot />
+  <span class="htmx-indicator absolute inset-0 bg-teal-300 flex justify-center items-center" aria-role="none">
+    <span class="animate-pulse">&hellip;loading</span>
+  </span>
 </Tag>

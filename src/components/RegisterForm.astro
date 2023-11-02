@@ -1,0 +1,36 @@
+---
+import ClickablePrimary from '@/components/ClickablePrimary.astro';
+import type { SignUp } from '@/lib/attendee';
+
+export interface Props {
+  formData?: SignUp
+  errors?: { email?: string[] }
+}
+
+const {
+  formData = { email: "" },
+  errors,
+} = Astro.props
+
+const hasError = (field: string) => (errors as any)?.[field]?.length > 0;
+---
+
+<form hx-boost hx-post="/api/auth/register" hx-select="main > article" hx-target="main > article" hx-swap="innerHTML" method="post" action="/api/auth/register" class="max-w-sm mx-auto space-y-4">
+  <div class:list={[{ "text-red-500": hasError("email")}]}>
+    <label for="email" class="text-sm font-mono p-1">E-Mail:</label>
+    <input class="block w-full p-2 shadow-inner border rounded-sm placeholder:text-slate-400 dark:bg-slate-800 dark:border-teal-500" placeholder="eg: smart-developer@example.com" id="email" type="email" name="email" value={formData?.email} required />
+    {errors?.email && <p class="text-red-500 text-sm text-right">{errors.email.join(",")}</p>}
+  </div>
+
+  <div>
+    <label for="reminders" class="text-sm p-1 relative pl-5 block">
+      <input type="checkbox" id="reminders" name="reminders" value="yes" class="absolute left-0 top-2" /> (optional) I'm okay with receiving promotional emails concerning neovimconf.
+    </label>
+  </div>
+
+  <div class="text-right">
+    <ClickablePrimary hx-disabled-elt="this" type="submit">
+      sign up!
+    </ClickablePrimary>
+  </div>
+</form>

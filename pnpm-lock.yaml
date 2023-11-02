@@ -68,6 +68,9 @@ dependencies:
   cookie:
     specifier: ^0.5.0
     version: 0.5.0
+  htmx.org:
+    specifier: ^1.9.6
+    version: 1.9.6
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -2726,6 +2729,10 @@ packages:
 
   /html-void-elements@3.0.0:
     resolution: {integrity: sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==}
+    dev: false
+
+  /htmx.org@1.9.6:
+    resolution: {integrity: sha512-4Zebo9nzg8u2ZHuIJmvB/nQS6kIMLIoEfhTg/oRwyCIJhL5MLA/jPU1EPEBtGOmG4ZG0k05Vpd3sab2+zfvteQ==}
     dev: false
 
   /http-cache-semantics@4.1.1:

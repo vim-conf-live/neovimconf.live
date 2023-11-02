@@ -14,4 +14,8 @@
   .aspect-card {
     aspect-ratio: 63 / 88;
   }
+
+  .htmx-indicator {
+    opacity: 0;
+  }
 }
