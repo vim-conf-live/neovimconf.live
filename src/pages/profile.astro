@@ -1,0 +1,13 @@
+---
+import App from '@/layouts/App.astro'
+import { supabase } from '@/lib/auth';
+
+export const prerender = false
+const user = await supabase.auth.getSession()
+---
+
+<App title="profile">
+  <article class="prose dark:prose-invert mx-auto">
+    <h1>{user.data.session?.user.email || "not logged in"}</h1>
+  </article>
+</App >
