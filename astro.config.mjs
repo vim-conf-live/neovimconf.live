@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 
@@ -8,10 +8,15 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   output: "hybrid",
   redirects: {
-    "/talks": "/talks/day-1"
+    "/talks": "/talks/day-1",
   },
-  integrations: [tailwind({
-    applyBaseStyles: false
-  }), react()],
-  adapter: vercel()
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    react(),
+  ],
+  adapter: vercel({
+    edgeMiddleware: true
+  }),
 });
