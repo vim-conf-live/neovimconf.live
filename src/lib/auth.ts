@@ -1,4 +1,5 @@
 import {createClient} from '@supabase/supabase-js'
+import type { AstroCookies } from 'astro';
 import cookie from "cookie"
 
 export const supabase = createClient(
@@ -6,19 +7,29 @@ export const supabase = createClient(
     import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
 )
 
-export async function getUser(req: Request) {
-    const c = cookie.parse(req.headers.get('cookie') ?? "");
-    if (!c.sbat) {
-        return null
-    }
+export async function getUser({cookies}: {cookies: AstroCookies}) {
+  const accessToken = cookies.get("sb-access-token");
+  const refreshToken = cookies.get("sb-refresh-token");
 
-    const { data: { user } } = await supabase.auth.getUser(c.sbat);
-    if (!user || user.role !== "authenticated") {
-        return null
-    }
-    return user
-}
+  if (!accessToken || !refreshToken) {
+    throw new Error("No access token or refresh token");
+  }
 
-export async function isLoggedIn(req: Request) {
-    return await getUser(req) != null
+  const { data, error } = await supabase.auth.setSession({
+    refresh_token: refreshToken.value,
+    access_token: accessToken.value,
+  });
+
+  if (error) {
+    cookies.delete("sb-access-token", {
+      path: "/",
+    });
+    cookies.delete("sb-refresh-token", {
+      path: "/",
+    });
+
+    throw new Error("Error setting session");
+  }
+
+  return data
 }

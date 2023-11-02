@@ -1,11 +1,11 @@
 import { defineMiddleware } from "astro:middleware";
-import { supabase } from "../lib/supabase";
+import { supabase } from "@/lib/auth";
 
-const protectedRoutes = ["/dashboard"];
-const redirectRoutes = ["/signin", "/register", "/auth/confirm"];
+const protectedRoutes = ["/register/complete"];
+const redirectRoutes = ["/signin", "/register"];
 
 export const onRequest = defineMiddleware(
-  async ({ locals, url, cookies, redirect }, next) => {
+  async ({ url, cookies, redirect }, next) => {
     if (protectedRoutes.includes(url.pathname)) {
       const accessToken = cookies.get("sb-access-token");
       const refreshToken = cookies.get("sb-refresh-token");
@@ -29,7 +29,6 @@ export const onRequest = defineMiddleware(
         return redirect("/signin");
       }
 
-      locals.email = data.user?.email!;
       cookies.set("sb-access-token", data?.session?.access_token!, {
         sameSite: "strict",
         path: "/",
@@ -47,7 +46,7 @@ export const onRequest = defineMiddleware(
       const refreshToken = cookies.get("sb-refresh-token");
 
       if (accessToken && refreshToken) {
-        return redirect("/dashboard");
+        return redirect("/register/complete");
       }
     }
     return next();

@@ -42,7 +42,7 @@ export const GET: APIRoute = async ({ request, cookies, redirect }) => {
         path: "/",
         secure: true,
       });
-      return redirect(`/dashboard`)
+      return redirect(`/register/complete`)
     }
   }
 

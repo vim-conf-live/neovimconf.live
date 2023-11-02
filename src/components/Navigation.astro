@@ -1,6 +1,5 @@
 ---
 import Logo from "./Logo.astro";
-import { MoonIcon, PaintBrushIcon } from "@heroicons/react/24/outline"
 
 const isCurrent = (href:string) => Astro.url.pathname.startsWith(`/` + href.split("/")[1])
 
@@ -25,6 +24,11 @@ const link = (opts: {
     "aria-current": isCurrent(opts.href) ? ("page" as const) : false
   })
 ---
+
+<script>
+import { supabase } from "@/lib/auth";
+supabase.auth.getUser().then(console.log)
+</script>
 
 <nav class={`py-2 vise flex gap-4 w-full justify-between items-center px-8 text-slate-500 dark:text-slate-300 flex-grow-0 ${Astro.props.class}`}>
   {Astro.url.pathname == "/" ? null : (

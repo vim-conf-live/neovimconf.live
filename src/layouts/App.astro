@@ -11,8 +11,7 @@ export interface Props {
   user?: object;
 }
 
-const { title, user } = Astro.props as Props;
-const isLoggedIn = !(user == null);
+const { title } = Astro.props as Props;
 ---
 
 <script>
@@ -38,7 +37,6 @@ document.addEventListener('astro:page-load', () => {
 	<body class="text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-900">
     <main class="py-2 min-h-screen flex flex-col z-10 relative">
       <Navigation class="mb-4" />
-      <pre>{JSON.stringify({isLoggedIn}, null, 2)}</pre>
       <slot />
     </main>
 
