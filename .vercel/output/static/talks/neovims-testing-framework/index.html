@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v3.4.0"><title>Neovim&#39;s Testing Framework</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><link rel="stylesheet" href="/_astro/about.0ce9569d.css" />
+<style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0}}@keyframes astroFadeOut{to{opacity:0}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+</style><script type="module" src="/_astro/hoisted.e01d9512.js"></script><style>[data-astro-transition-scope="astro-qdggqdzt-1"] { view-transition-name: talk-title-neovims-testing-framework_md; }@layer astro { ::view-transition-old(talk-title-neovims-testing-framework_md) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(talk-title-neovims-testing-framework_md) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(talk-title-neovims-testing-framework_md) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(talk-title-neovims-testing-framework_md) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-qdggqdzt-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-qdggqdzt-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-qdggqdzt-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-qdggqdzt-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-qdggqdzt-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-qdggqdzt-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-qdggqdzt-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-qdggqdzt-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-la7w7qmq-2"] { view-transition-name: speaker-janeroe; }@layer astro { ::view-transition-old(speaker-janeroe) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(speaker-janeroe) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(speaker-janeroe) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(speaker-janeroe) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-la7w7qmq-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-la7w7qmq-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-la7w7qmq-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-la7w7qmq-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-la7w7qmq-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-la7w7qmq-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-la7w7qmq-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-la7w7qmq-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-ktek7cfd-3"] { view-transition-name: nvimconf-logo; }@layer astro { ::view-transition-old(nvimconf-logo) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(nvimconf-logo) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(nvimconf-logo) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(nvimconf-logo) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-ktek7cfd-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-ktek7cfd-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-ktek7cfd-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-ktek7cfd-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-ktek7cfd-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-ktek7cfd-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-ktek7cfd-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-ktek7cfd-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head><body class="text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-900"><main class="py-2 min-h-screen flex flex-col z-10 relative"><nav class="py-2 vise flex gap-4 w-full justify-between items-center px-8 text-slate-500 dark:text-slate-300 flex-grow-0 mb-4"><a href="/" class="hover:text-teal-500 grow-0 block" data-hotkey="g h" data-astro-transition-scope="astro-ktek7cfd-3"><svg class="w-6 md:w-10" viewBox="0 0 456 450" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M416.272 11.893C419.799 4.63825 427.09 -1.21593e-05 435.087 -1.21593e-05C442.613 -1.21593e-05 449.551 4.16253 453.314 10.8226C458.959 21.0506 455.431 34.0139 445.318 39.7226C435.204 45.4312 422.387 41.8633 416.742 31.6353H273.746L303.615 61.8435C305.615 63.7464 306.673 66.4818 306.555 69.2172C306.438 71.5958 305.379 73.7365 303.498 75.2826L213.302 165.55C214.831 170.07 214.714 174.946 213.185 179.465C209.187 190.526 197.192 196.234 186.256 192.31C175.319 188.266 169.675 176.135 173.555 165.075C177.553 154.014 189.548 148.306 200.485 152.23L283.742 67.9089L244.7 28.4242C242.231 25.6888 241.29 22.002 242.113 18.4341L242.231 17.9584L242.466 17.4827C244.112 14.0337 247.523 11.893 251.286 11.893H416.272ZM34.4403 195.52V53.637L25.2679 41.9819C16.0954 44.0037 6.68784 39.4844 2.33682 31.0403C-2.95496 20.6934 1.04327 7.73009 11.274 2.37825C21.5048 -2.97359 34.2051 1.07002 39.6145 11.4169H152.271C157.68 11.4169 161.913 15.8173 162.031 21.1692V21.6449C161.913 26.9967 157.562 31.1593 152.271 31.0403H40.7904L51.7268 44.7173L51.962 45.3119C52.7851 46.858 53.2555 48.523 53.2555 50.307V195.401V195.52C53.3731 200.753 49.2573 205.154 44.0831 205.273C38.7913 205.273 34.4403 200.872 34.4403 195.52ZM80.0672 137.245V71.4768L71.2476 62.676C69.2485 60.7731 68.1901 58.0377 68.3077 55.3024C68.4253 52.9238 69.4837 50.6641 71.3652 49.118C73.2467 47.2151 75.8338 46.1448 78.5385 46.2637C80.8904 46.3826 83.1247 47.453 84.6534 49.3559L95.825 60.7731C97.4713 62.5571 98.4121 64.9357 98.4121 67.4332V136.769C102.763 138.672 106.291 142.121 108.408 146.284C113.699 156.75 109.701 169.475 99.4704 174.946C89.1221 180.298 76.5394 176.254 71.13 165.907C65.8382 155.441 69.8365 142.716 80.0672 137.245ZM158.856 62.795C160.737 61.249 161.796 58.9893 161.913 56.6107C162.031 53.8753 160.973 51.2588 159.091 49.356C157.562 47.4531 155.328 46.3827 152.976 46.2638C150.271 46.1449 147.567 47.2152 145.685 49.237L128.752 66.9576C127.105 68.7415 126.164 71.1201 126.164 73.6177V194.331C115.934 199.802 111.935 212.528 117.227 222.994C122.519 233.459 135.219 237.384 145.568 232.032C155.916 226.68 159.797 213.836 154.505 203.37C152.388 199.208 148.86 195.759 144.627 193.856V77.1856L158.856 62.795ZM44.2006 231.794C55.7249 231.794 65.1326 241.309 65.1326 253.083C65.1326 260.932 60.6639 268.187 53.8434 271.874V409.476C57.7241 411.497 60.7815 414.59 62.7807 418.514C68.19 428.98 64.1918 441.706 53.8434 447.176C43.4951 452.647 30.9124 448.604 25.503 438.138C20.0936 427.672 24.0919 414.946 34.4402 409.476V271.874C27.5021 268.187 23.1511 260.932 23.1511 252.964C23.1511 241.309 32.5587 231.794 44.2006 231.794ZM389.342 75.2826C387.108 75.2826 384.874 75.6394 382.639 76.353L361.472 55.0645C359.708 53.3995 357.356 52.4481 354.887 52.4481C352.417 52.567 350.066 53.6374 348.302 55.5403L256.46 156.75L99.9408 317.424V213.122C100.058 207.771 95.9425 203.489 90.6507 203.37H90.1804C84.8886 203.489 80.5376 207.771 80.5376 213.122V340.734C80.5376 344.54 82.7719 347.989 86.1821 349.654L86.5349 349.892L87.0053 350.011C90.5331 350.962 94.2962 350.011 96.8833 347.513L269.395 169.594L354.534 75.6394L369.234 90.3867C368.058 94.5493 368.058 98.9497 369.469 103.112L96.4129 379.03C85.359 375.224 73.4819 381.17 69.7188 392.35C65.9558 403.529 71.8355 415.541 82.8895 419.347C93.9434 423.152 105.821 417.206 109.584 406.027C111.112 401.626 111.112 396.869 109.584 392.35L382.639 116.432C393.576 120.119 405.453 114.173 409.216 103.112C412.861 92.0517 406.982 80.0398 396.045 76.2341C393.928 75.6394 391.577 75.2826 389.342 75.2826Z" fill="currentColor"></path></svg></a><div class="flex space-x-4 w-full items-center text-xs md:text-sm justify-end md:justify-end"><a href="/about" class="
+      hover:text-teal-500
+      dark:hover:text-teal-300
+      aria-current-page:text-slate-800
+      dark:aria-current-page:text-slate-50
+      aria-current-page:underline
+      aria-current-page:decoration-2
+      aria-current-page:decoration-teal-400
+      dark:aria-current-page:decoration-teal-300
+      undefined
+    " data-hotkey="g a">About</a><div class="flex space-x-4"><a href="//example.com" class="text-slate-300 hover:text-sky-400"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-4 md:w-6" viewBox="0 0 16 16"><path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"></path></svg></a><a href="https://discord.gg/bV9bJD6R" class="text-slate-300 hover:text-indigo-400"><svg class="w-4 md:w-6" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.0897 1.96024C16.2725 0.497946 13.3978 0.250069 13.2748 0.241152C13.084 0.225102 12.9021 0.3321 12.8236 0.508645C12.8165 0.519345 12.7541 0.663791 12.6845 0.888485C13.8865 1.09178 15.363 1.50015 16.6987 2.32938C16.9127 2.46134 16.9787 2.7431 16.8467 2.9571C16.7593 3.09798 16.6113 3.17466 16.458 3.17466C16.3759 3.17466 16.2921 3.15148 16.2172 3.10511C13.9203 1.68026 11.0528 1.60893 10.5 1.60893C9.94718 1.60893 7.07787 1.68026 4.78278 3.10511C4.56878 3.23886 4.28702 3.17288 4.15506 2.95888C4.02131 2.7431 4.0873 2.46313 4.30129 2.32938C5.63697 1.50194 7.11354 1.09178 8.31547 0.890269C8.24592 0.663791 8.18351 0.521129 8.17816 0.508645C8.09791 0.3321 7.9178 0.221536 7.7252 0.241152C7.60216 0.250069 4.7275 0.497945 2.88536 1.97986C1.92417 2.86972 0 8.06978 0 12.5654C0 12.6457 0.0213994 12.7224 0.060632 12.7919C1.3874 15.1245 5.00926 15.7343 5.83492 15.7611C5.83849 15.7611 5.84383 15.7611 5.84918 15.7611C5.99541 15.7611 6.13273 15.6915 6.21833 15.5739L7.0529 14.4254C4.80061 13.8441 3.65039 12.8561 3.58441 12.7973C3.39538 12.6314 3.37755 12.3425 3.54518 12.1535C3.71102 11.9645 3.99992 11.9466 4.18894 12.1125C4.21569 12.1375 6.33424 13.935 10.5 13.935C14.6729 13.935 16.7914 12.1303 16.8128 12.1125C17.0019 11.9484 17.289 11.9645 17.4566 12.1553C17.6225 12.3443 17.6046 12.6314 17.4156 12.7973C17.3496 12.8561 16.1994 13.8441 13.9471 14.4254L14.7817 15.5739C14.8673 15.6915 15.0046 15.7611 15.1508 15.7611C15.1562 15.7611 15.1615 15.7611 15.1651 15.7611C15.9907 15.7343 19.6126 15.1245 20.9394 12.7919C20.9786 12.7224 21 12.6457 21 12.5654C21 8.06978 19.0758 2.86972 18.0897 1.96024ZM7.53261 10.7394C6.64988 10.7394 5.93478 9.92262 5.93478 8.91328C5.93478 7.90394 6.64988 7.08719 7.53261 7.08719C8.41534 7.08719 9.13043 7.90394 9.13043 8.91328C9.13043 9.92262 8.41534 10.7394 7.53261 10.7394ZM13.4674 10.7394C12.5847 10.7394 11.8696 9.92262 11.8696 8.91328C11.8696 7.90394 12.5847 7.08719 13.4674 7.08719C14.3501 7.08719 15.0652 7.90394 15.0652 8.91328C15.0652 9.92262 14.3501 10.7394 13.4674 10.7394Z" fill="currentColor"></path></svg></a></div></div></nav><article class="vise space-y-8"><header class="relative grid grid-cols-4 gap-8"><a href="/speakers/janeroe" class="block group transition-transform hover:z-30 hover:rotate-3 hover:-translate-y-6 -rotate-6 text-lef w-60" data-astro-transition-scope="astro-la7w7qmq-2"><article class="relative aspect-card shadow-lg bg-slate-200 dark:bg-slate-950 text-sm rounded-2xl p-4 overflow-hidden"><div class="
+      ring
+      ring-slate-300
+      dark:ring-slate-800
+      relative
+      ring-offset-4
+      ring-offset-slate-200
+      dark:ring-offset-slate-950
+      rounded-md
+      overflow-hidden
+      mb-4
+    "><div class="bg-slate-300 dark:bg-slate-800 p-1 flex justify-between items-center"><h2>Jane Smith</h2><div class="flex gap-1"><div class="rounded-full w-3 h-3 bg-amber-500"></div><div class="rounded-full w-3 h-3 bg-teal-500"></div><div class="rounded-full w-3 h-3 bg-sky-500"></div></div></div><div class="rounded overflow-hidden relative bg-sky-100 dark:bg-sky-200"><img src="//unsplash.it/seed/janeroe/640/480" class="object-fit aspect-[4/3] grayscale mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal transition-all"></div><p class="p-1 text-xs bg-slate-300 dark:bg-slate-800">QA Lead at TestMasters</p></div><p class="italic text-slate-500 group-hover:text-slate-400">A QA expert, Jane has been the driving force behind Neovim&#39;s robust testing framework.</p><p class="flex gap-2 justify-end items-end text-teal-500 group-hover:underline absolute bottom-0 inset-x-0 p-2 bg-gradient-to-b from-transparent to-slate-300 dark:to-slate-950">
+more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></p></article></a><div class="col-span-3"><h1 class="text-6xl tracking-tight leading-tight font-bold mb-8 text-teal-300" data-astro-transition-scope="astro-qdggqdzt-1">Neovim&#39;s Testing Framework</h1><p>by Jane Smith</p></div></header><div class="prose prose-invert mx-auto"><p>Neovim comes with a robust testing framework that ensures the reliability of plugins and configurations. This talk will introduce attendees to the framework, guiding them through the process of writing and running tests. By the end, participants will have the knowledge to ensure their Neovim plugins and configurations are bug-free and reliable.</p><pre>[
+  null,
+  {
+    &quot;talk&quot;: {
+      &quot;slug&quot;: &quot;neovims-testing-framework&quot;,
+      &quot;collection&quot;: &quot;talks&quot;
+    },
+    &quot;time&quot;: [
+      &quot;8:30&quot;,
+      &quot;9:00&quot;
+    ]
+  }
+]</pre></div></article></main><footer class="bg-slate-50 dark:bg-slate-950 py-16 text-center space-y-8 text-slate-400 text-xs"><p>
+&copy; 2023 Neovimconf
+</p><nav class="flex gap-2 flex-col md:flex-row md:gap-8 md:justify-center"><a href="/toc">Terms and Conditions</a><a href="/code-of-conduct" data-hotkeyt="g c">Code of Conduct</a><a href="/imprint">Imprint & Privacy policy</a></nav></footer></body></html>
