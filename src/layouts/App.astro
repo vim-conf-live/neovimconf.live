@@ -41,7 +41,7 @@ supabase.auth.onAuthStateChange((event, session) => {
   }
 })
 
-await supabase.auth.getSession();
+console.log(await supabase.auth.getSession())
 
 document.addEventListener('astro:page-load', () => {
   for (const el of document.querySelectorAll('[data-hotkey]')) {
