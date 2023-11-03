@@ -1,13 +1,33 @@
 ---
 import App from '@/layouts/App.astro'
-import { supabase } from '@/lib/auth';
+import { createServerClient, type CookieOptions } from "@supabase/ssr";
 
 export const prerender = false
-const user = await supabase.auth.getSession()
+
+const supabase = createServerClient(
+  import.meta.env.PUBLIC_SUPABASE_URL,
+  import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
+  {
+    cookies: {
+      get(key: string) {
+        return Astro.cookies.get(key)?.value;
+      },
+      set(key: string, value: string, options: CookieOptions) {
+        Astro.cookies.set(key, value, options);
+      },
+      remove(key: string, options) {
+        Astro.cookies.delete(key, options);
+      },
+    },
+  }
+);
+
+const user = await supabase.auth.getUser()
 ---
 
 <App title="profile">
   <article class="prose dark:prose-invert mx-auto">
-    <h1>{user.data.session?.user.email || "not logged in"}</h1>
+    <h1>{user.data.user?.email || "not logged in"}</h1>
+    <pre>{JSON.stringify(user, null, 2)}</pre>
   </article>
 </App >
