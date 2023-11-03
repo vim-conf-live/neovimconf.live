@@ -1,7 +1,7 @@
 import { defineMiddleware } from "astro:middleware";
 import { supabase } from "@/lib/auth";
 
-const protectedRoutes = ["/profile/", "/auth/complete"];
+const protectedRoutes = ["/profile", "/auth/complete"];
 const redirectRoutes = [
   "/register",
   "/register/error",
