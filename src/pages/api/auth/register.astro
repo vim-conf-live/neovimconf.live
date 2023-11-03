@@ -3,7 +3,8 @@ import RegisterForm from "@/components/RegisterForm.astro";
 import App from "@/layouts/App.astro"
 import { SignUpSchema, type SignUp } from "@/lib/attendee";
 import { supabase } from "@/lib/auth";
-export const prerender = true
+
+export const prerender = false
 
 let errors: any = { email: null };
 let formData: SignUp | undefined;
