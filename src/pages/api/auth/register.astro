@@ -3,8 +3,7 @@ import RegisterForm from "@/components/RegisterForm.astro";
 import App from "@/layouts/App.astro"
 import { SignUpSchema, type SignUp } from "@/lib/attendee";
 import { supabase } from "@/lib/auth";
-
-export const prerender = false
+export const prerender = true
 
 let errors: any = { email: null };
 let formData: SignUp | undefined;
@@ -14,21 +13,25 @@ if (Astro.request.method === "POST") {
     const parsedFormData = SignUpSchema.safeParse(formData);
 
     if (parsedFormData.success) {
-      await supabase.auth.signInWithOtp({ 
+      Astro.cookies.set("nvc-formdata", JSON.stringify(formData), {
+        sameSite: "strict",
+        path: "/",
+        secure: true,
+        maxAge: 60 * 60 * 24
+      });
+
+      const {data, error} = await supabase.auth.signInWithOtp({ 
         email: parsedFormData.data.email,
         options: {
-          emailRedirectTo: import.meta.env.PUBLIC_AUTH_REDIRECT_URL
+          emailRedirectTo: import.meta.env.PUBLIC_AUTH_REDIRECT_HOST + "/register/confirm"
         }
       })
-      Astro.response.headers.set("HX-Location", "/register/success")
-      Astro.response.status = 200
-      return new Response(null, {
-        status: 200,
-        headers: {
-          "HX-Redirect": "/register/success",
-          Location: "/register/success" 
-        }
-      })
+
+      if (error) {
+        errors.global = error
+      }
+
+      return Astro.redirect("/register/success");
     }
 
     errors = parsedFormData.error.formErrors.fieldErrors
@@ -39,10 +42,10 @@ const hasErrors = Object.values(errors).some(Boolean)
 
 <App title="Register">
   <article class="vise min-w-max">
-    {hasErrors ? (
-      <RegisterForm formData={formData} errors={errors} />
-    ): (
-      <p>Nice!</p>
-    )}
+    { hasErrors && errors.global 
+      ? (<p class="text-red">{errors.global.message}</p>) 
+      : (<RegisterForm formData={formData} errors={errors} />)
+    }
+    
   </article>
 </App>

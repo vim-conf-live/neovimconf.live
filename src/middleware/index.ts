@@ -1,8 +1,12 @@
 import { defineMiddleware } from "astro:middleware";
 import { supabase } from "@/lib/auth";
 
-const protectedRoutes = ["/profile/"];
-const redirectRoutes = ["/register", "/register/error"];
+const protectedRoutes = ["/profile/", "/auth/complete"];
+const redirectRoutes = [
+  "/register",
+  "/register/error",
+  "/api/auth/signin",
+];
 
 export const onRequest = defineMiddleware(
   async ({ url, cookies, redirect }, next) => {

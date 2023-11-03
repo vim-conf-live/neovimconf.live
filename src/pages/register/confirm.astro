@@ -1,0 +1,40 @@
+---
+import App from "@/layouts/App.astro"
+---
+
+<script>
+import { supabase } from "@/lib/auth";
+import cookie from "cookie"
+
+const {data: {user}, error} = await supabase.auth.getUser()
+
+const message = (m: string, classList) => {
+  const el = document.getElementById("message")
+  el.classList.add(...classList.split(" "))
+  el.innerHTML = m
+}
+
+if (user) {
+  const cookieFormData = await cookieStore.get("nvc-formdata").then((c) => JSON.parse(decodeURIComponent(c?.value ?? "") || "false"))
+  if (cookieFormData) {
+    const {error} = await supabase.from("profiles").upsert({
+      id: user.id,
+      promo_mails: cookieFormData.reminders === "yes",
+    });
+    cookieStore.delete("nvc-formdata")
+  }
+
+  if (error) {
+    console.error(error);
+  } else {
+    message("All set! Thanks for confirming your email!", "text-teal-500 text-xl");
+    window.location.href = "/register/complete";
+  }
+}
+</script>
+
+<App title="confirming">
+  <p id="message" class="flex-grow text-center my-32">
+    Verifying the confirmation link... hang on a sec.
+  </p>
+</App/
