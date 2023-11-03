@@ -17,16 +17,27 @@ const { title } = Astro.props as Props;
 <script>
 import { supabase } from '@/lib/auth'
 import {install} from '@github/hotkey'
+import cookie from "cookie"
 
 supabase.auth.onAuthStateChange((event, session) => {
   if (event === 'SIGNED_OUT') {
-    const expires = new Date(0).toUTCString()
-    document.cookie = `sb-access-token=; path=/; expires=${expires}; SameSite=Lax; secure`
-    document.cookie = `sb-refresh-token=; path=/; expires=${expires}; SameSite=Lax; secure`
+    const expires = new Date(0)
+    document.cookie = cookie.serialize("sb-refresh-token", "", { expires, })
+    document.cookie = cookie.serialize("sb-access-token-token", "", { expires, })
   } else if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
     const maxAge = 100 * 365 * 24 * 60 * 60 // 100 years, never expires
-    document.cookie = `sb-access-token=${session.access_token}; path=/; max-age=${maxAge}; SameSite=Lax; secure`
-    document.cookie = `sb-refresh-token=${session.refresh_token}; path=/; max-age=${maxAge}; SameSite=Lax; secure`
+    document.cookie = cookie.serialize("sb-acces-token", session!.access_token, {
+      maxAge,
+      path: "/",
+      sameSite: "lax",
+      secure: true
+    })
+    document.cookie = cookie.serialize("sb-refresh-token", session!.refresh_token, {
+      maxAge,
+      path: "/",
+      sameSite: "lax",
+      secure: true
+    })
   }
 })
 

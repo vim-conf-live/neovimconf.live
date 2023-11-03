@@ -8,27 +8,28 @@ import cookie from "cookie"
 
 const {data: {user}, error} = await supabase.auth.getUser()
 
-const message = (m: string, classList) => {
-  const el = document.getElementById("message")
+const message = (m: string, classList: string) => {
+  const el = document.getElementById("message")!
   el.classList.add(...classList.split(" "))
   el.innerHTML = m
 }
 
 if (user) {
-  const cookieFormData = await cookieStore.get("nvc-formdata").then((c) => JSON.parse(decodeURIComponent(c?.value ?? "") || "false"))
-  if (cookieFormData) {
+  const cookieData = cookie.parse(document.cookie)
+  if (cookieData["nvc-formdata"]) {
+    document.cookie = cookie.serialize("nvc-formdata", "")
+    const formData = JSON.parse(cookieData["nvc-formdata"]);
     const {error} = await supabase.from("profiles").upsert({
       id: user.id,
-      promo_mails: cookieFormData.reminders === "yes",
+      promo_mails: formData.reminders === "yes",
     });
-    cookieStore.delete("nvc-formdata")
-  }
+  } 
 
   if (error) {
     console.error(error);
   } else {
     message("All set! Thanks for confirming your email!", "text-teal-500 text-xl");
-    window.location.href = "/register/complete";
+    // window.location.href = "/register/complete";
   }
 }
 </script>
