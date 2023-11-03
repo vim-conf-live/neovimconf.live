@@ -1,33 +1,10 @@
 ---
 import App from '@/layouts/App.astro'
-import { createServerClient, type CookieOptions } from "@supabase/ssr";
-
-export const prerender = false
-
-const supabase = createServerClient(
-  import.meta.env.PUBLIC_SUPABASE_URL,
-  import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
-  {
-    cookies: {
-      get(key: string) {
-        return Astro.cookies.get(key)?.value;
-      },
-      set(key: string, value: string, options: CookieOptions) {
-        Astro.cookies.set(key, value, options);
-      },
-      remove(key: string, options) {
-        Astro.cookies.delete(key, options);
-      },
-    },
-  }
-);
-
-const user = await supabase.auth.getUser()
+import ProfileForm from "@/components/Profile"
 ---
 
 <App title="profile">
   <article class="prose dark:prose-invert mx-auto">
-    <h1>{user.data.user?.email || "not logged in"}</h1>
-    <pre>{JSON.stringify(user, null, 2)}</pre>
+  <ProfileForm client:only />
   </article>
 </App >
