@@ -63,6 +63,7 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
     <form className="max-w-sm mx-auto space-y-4" onSubmit={handleSubmit(onSubmit)}>
       <h1>Update your virtual lanyard</h1>
       {message && <p>{message}</p>}
+
       <div>
         <label htmlFor="alias" className="text-sm font-mono p-1">Alias</label>
         <input className={inputClasses} defaultValue={profile.username} placeholder="eg.: leethaxxor42069" id="alias" type="text" {...register("username")}/>
@@ -70,12 +71,12 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
 
       <div>
         <label htmlFor="full_name" className="text-sm font-mono p-1">Full Name</label>
-        <input className={inputClasses} defaultValue={profile.full_name} placeholder="eg.: Bailey Bufferman" id="full_name" type="text" {...register("full_name")}/>
+        <input className={inputClasses} defaultValue={profile.full_name} placeholder="eg.: Bailey Bufferchief" id="full_name" type="text" {...register("full_name")}/>
       </div>
 
       <div>
         <label htmlFor="job_description" className="text-sm font-mono p-1">Job Description</label>
-        <input className={inputClasses} placeholder="eg.: 10x Frontend Developer" id="job_description" type="text" {...register("job_description")} />
+        <input className={inputClasses} placeholder="eg.: 10x Soy Developer" id="job_description" type="text" {...register("job_description")} />
       </div>
 
       <div>

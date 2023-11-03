@@ -1,6 +1,23 @@
 ---
 import RegisterForm from '@/components/RegisterForm.astro';
 import App from '@/layouts/App.astro';
+import { createSBSSR } from '@/lib/server/supabase';
+
+const access_token = Astro.cookies.get("sb-access-token")?.value
+const refresh_token = Astro.cookies.get("sb-refresh-token")?.value
+
+if (access_token && refresh_token) {
+  const supabase = createSBSSR(Astro)
+  const user = await supabase.auth.setSession({
+    refresh_token, access_token
+  })
+  if (user.data.user) {
+    return Astro.redirect("/register/complete")
+  }
+}
+
+export const prerender = false
+
 ---
 
 <script>
