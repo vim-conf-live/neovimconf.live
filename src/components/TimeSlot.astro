@@ -32,7 +32,7 @@ const date = new Date(Date.UTC(year, month - 1, day, hour, minute));
 </script>
 
 <time
-  datetime={date}
+  datetime={date.toUTCString()}
   data-showlocal
   class="[&_span]:text-xs
   [&_span]:block
