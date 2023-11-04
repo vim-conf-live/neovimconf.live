@@ -19,7 +19,7 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
 
   const { error, data: user } = await supabase
     .from("profiles")
-    .select("username, full_name, job_description,id")
+    .select("username, full_name, job_description,id, promo_mails")
     .eq("ticket", id)
     .single();
 
@@ -47,6 +47,9 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
   const val = (value: any) => {
     if (value === "nil") {
       return hiWarning("nil")
+    }
+    if (value === "true") {
+      return hiVar("true")
     }
 
     const type = typeof value;
@@ -100,6 +103,7 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
             user?.full_name && row(indent(comment(`-- aka ${user?.full_name}:`))),
             row(indent(kv("username", "nil"))),
             row(indent(kv("job_description", user?.job_description ?? "nil"))),
+            user?.promo_mails && row(indent(kv("special_treatment", "true"))),
             row(hiConstructor("}"))
           ]
         }

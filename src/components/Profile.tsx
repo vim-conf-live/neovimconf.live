@@ -34,6 +34,7 @@ type ProfileFields = {
   full_name: string;
   username: string;
   job_description: string;
+  promo_mails: boolean;
 };
 
 const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
@@ -42,6 +43,7 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
   const [formState, setFormState] = useState<"idle" | "loading" | "error" | "saving">("loading")
   const [profile, setProfile] = useState<ProfileFields | null>(null);
   const [message, setMessage] = useState<null | string>(null);
+  const [promo, setPromo] = useState<boolean>(false);
   const onSubmit: SubmitHandler<ProfileFields> = (data) => {
     if (formState === "saving") return;
     setFormState("saving")
@@ -49,6 +51,8 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
       id: user.id,
       ...data
     }
+
+    console.log("submit", {updatedData})
 
     supabase
       .from("profiles")
@@ -69,12 +73,13 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
   useEffect(() => {
     supabase
       .from("profiles")
-      .select("full_name, username, job_description")
+      .select("full_name, username, job_description, promo_mails")
       .eq("id", user.id)
       .single()
       .then(({data, error}) => {
         setProfile(data);
         setFormState("idle");
+        setPromo(data.promo_mails);
       });
   }, []);
 
@@ -90,6 +95,7 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
     return <p>Could not load profile</p>;
   }
 
+  console.log(profile)
   return (
     <form
       className="max-w-sm mx-auto space-y-4"
@@ -139,13 +145,15 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
 
       <div className="mt-8">
         <h2>Notifications</h2>
-        <label htmlFor="reminders" className="text-sm p-1 relative pl-5 block">
+        <label htmlFor="promo_mails" className="text-sm p-1 relative pl-5 block">
           <input
             type="checkbox"
-            id="reminders"
-            name="reminders"
-            value="yes"
+            id="promo_mails"
+            name="promo_mails"
             className="absolute left-0 top-2"
+            {...register("promo_mails")}
+            value="true"
+            defaultChecked={profile.promo_mails}
           />{" "}
           I want to receive notifications about this and future neovimconf
           events.
