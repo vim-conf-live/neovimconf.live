@@ -44,6 +44,11 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
   const [message, setMessage] = useState<null | string>(null);
   const onSubmit: SubmitHandler<ProfileFields> = (data) => {
     if (formState === "saving") return;
+    setFormState("saving")
+    const updatedData = {
+      id: user.id,
+      ...data
+    }
 
     supabase
       .from("profiles")
@@ -51,8 +56,13 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
         id: user.id,
         ...data,
       })
-      .then((result) => {
-        setMessage(result.statusText);
+      .then(({data, error}) => {
+        if (error) {
+          setMessage(error.message);
+          setFormState("error");
+        } else {
+          setFormState("idle")
+        }
       });
   };
 
@@ -62,8 +72,9 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
       .select("full_name, username, job_description")
       .eq("id", user.id)
       .single()
-      .then((result) => {
-        return setProfile(result.data ?? "error");
+      .then(({data, error}) => {
+        setProfile(data);
+        setFormState("idle");
       });
   }, []);
 
@@ -71,8 +82,12 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
     return <p className="animate-pulse">loading</p>;
   }
 
-  if (profile === "error") {
-    return <p className="animate-ping">error</p>;
+  if (formState === "error") {
+    return <p className="text-red-500 border border-red-500 text-md p-4 shadow bg-slate-50 dark:bg-slate-950">Something went wrong. Try again later,  we'll look into this.</p>;
+  }
+
+  if (!profile) {
+    return <p>Could not load profile</p>;
   }
 
   return (
@@ -80,9 +95,7 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
       className="max-w-sm mx-auto space-y-4"
       onSubmit={handleSubmit(onSubmit)}
     >
-      {message && <p>{message}</p>}
-
-      <div>
+     <div>
         <label htmlFor="alias" className="text-sm font-mono p-1">
           Alias
         </label>
@@ -118,6 +131,7 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
           className={inputClasses}
           placeholder="eg.: 10x Soy Developer"
           id="job_description"
+          defaultValue={profile.job_description}
           type="text"
           {...register("job_description")}
         />
@@ -139,12 +153,21 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
       </div>
 
       <div className="text-right">
+      {formState ==="idle" ? (
         <button
           className="inline-block relative text-center bg-teal-300 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-50"
           type="submit"
         >
           save
         </button>
+      ) : (
+        <button
+          className="inline-block relative text-center bg-teal-300 opacity-50 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-50 animate-pulse"
+          disabled
+        >
+          saving
+        </button>
+      )}
       </div>
     </form>
   );
