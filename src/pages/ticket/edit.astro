@@ -1,0 +1,11 @@
+---
+import App from "@/layouts/App.astro";
+import ProfileForm from "@/components/Profile";
+---
+
+<App title="profile">
+  <article class="mx-auto">
+    <h1 class="text-5xl text-teal-400">Customize your ticket</h1>
+    <ProfileForm client:only />
+  </article>
+</App>

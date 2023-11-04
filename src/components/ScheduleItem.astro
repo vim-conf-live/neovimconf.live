@@ -1,47 +1,60 @@
 ---
 import TimeSlot from "@/components/TimeSlot.astro";
-import { getEntry, type CollectionEntry, getEntries } from 'astro:content';
+import { getEntry, type CollectionEntry, getEntries } from "astro:content";
 import invariant from "tiny-invariant";
 type Slot = CollectionEntry<"schedules">["data"]["talks"][number];
 export interface Props {
-  on: CollectionEntry<"schedules">,
-  for: Slot
-  class?: string
+  on: CollectionEntry<"schedules">;
+  for: Slot;
+  class?: string;
 }
 
-const { for: slot, on: day } = Astro.props
-const talk = slot.talk ? await getEntry(slot.talk) : null
-const speaker = slot.talk ? await getEntry(talk!.data.speaker) : null
+const { for: slot, on: day } = Astro.props;
+const talk = slot.talk ? await getEntry(slot.talk) : null;
+const speaker = slot.talk ? await getEntry(talk!.data.speaker) : null;
 ---
 
-{talk ? (
-  <a href={`/talks/${talk.slug}`} class="
+{
+  talk ? (
+    <a
+      href={`/talks/${talk.slug}`}
+      class="
     group
     block
     hover:bg-slate-50
     dark:hover:bg-slate-950
     px-2
     py-4
-  ">
-    <article class="grid grid-cols-12">
-      <div class="col-span-2 text-sky-300 flex justify-center items-center text-center">
-        <TimeSlot on={day.id} for={slot.time} />
-      </div>
-      <div class="col-span-8">
-        <header class="mb-2">
-          <p class="italic text-sm text-slate-400 dark:text-slate-500">
-            By {speaker?.data.name}
+  "
+    >
+      <article class="grid grid-cols-12">
+        <div class="col-span-2 text-sky-300 flex justify-center items-center text-center">
+          <TimeSlot on={day.id} for={slot.time} />
+        </div>
+        <div class="col-span-8">
+          <header class="mb-2">
+            <p class="italic text-sm text-slate-400 dark:text-slate-500">
+              By {speaker?.data.name}
+            </p>
+            <h3
+              transition:animate="initial"
+              transition:name={`talk-title-${talk.id}`}
+              class="font-bold text-xl group-hover:text-teal-500 dark:group-hover:text-teal-300"
+            >
+              {talk.data.title}
+            </h3>
+          </header>
+          <p class="text-slate-500 dark:text-slate-400">
+            {talk.data.description}
           </p>
-          <h3 transition:animate="initial" transition:name={`talk-title-${talk.id}`} class="font-bold text-xl group-hover:text-teal-500 dark:group-hover:text-teal-300">{talk.data.title}</h3>
-        </header>
-        <p class="text-slate-500 dark:text-slate-400">{talk.data.description}</p>
-      </div>
-    </article>
-  </a>
-) : (
-  <div class="text-center py-8">
-    <TimeSlot on={day.id} for={slot.time} />
-    <h3>{slot.title}</h3>
-    <p>{slot.description}</p>
-  </div>
-)}
+        </div>
+      </article>
+    </a>
+  ) : (
+    <div class="text-center py-8">
+      <TimeSlot on={day.id} for={slot.time} />
+      <h3>{slot.title}</h3>
+      <p>{slot.description}</p>
+    </div>
+  )
+}

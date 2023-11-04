@@ -1,9 +1,11 @@
 ---
-import Navigation from '@/components/Navigation.astro';
-import "@/styles/global.css"
-import '@fontsource/ibm-plex-mono'
-import '@fontsource/ibm-plex-sans'
-import { ViewTransitions } from 'astro:transitions';
+import Navigation from "@/components/Navigation.astro";
+import Footer from "@/components/Footer.astro";
+import "@/styles/global.css";
+import "@fontsource/ibm-plex-mono";
+import "@fontsource/ibm-plex-sans";
+import { ViewTransitions } from "astro:transitions";
+import { BRAND_NAME } from "@/config";
 
 export interface Props {
   title: string;
@@ -15,74 +17,92 @@ const { title } = Astro.props as Props;
 ---
 
 <script>
-import { supabase } from '@/lib/auth'
-import {install} from '@github/hotkey'
-import cookie from "cookie"
+  import { supabase } from "@/lib/auth";
+  import { install } from "@github/hotkey";
+  import cookie from "cookie";
 
-supabase.auth.onAuthStateChange((event, session) => {
-  if (event === 'SIGNED_OUT') {
-    const expires = new Date(0)
-    document.cookie = cookie.serialize("sb-refresh-token", "", { expires, })
-    document.cookie = cookie.serialize("sb-access-token", "", { expires, })
-  } else if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
-    const maxAge = 100 * 365 * 24 * 60 * 60 // 100 years, never expires
-    document.cookie = cookie.serialize("sb-access-token", session!.access_token, {
-      maxAge,
-      path: "/",
-      sameSite: "lax",
-      secure: true
-    })
-    document.cookie = cookie.serialize("sb-refresh-token", session!.refresh_token, {
-      maxAge,
-      path: "/",
-      sameSite: "lax",
-      secure: true
-    })
-  }
-})
+  supabase.auth.onAuthStateChange((event, session) => {
+    if (event === "SIGNED_OUT") {
+      const expires = new Date(0);
+      document.cookie = cookie.serialize("sb-refresh-token", "", { expires });
+      document.cookie = cookie.serialize("sb-access-token", "", { expires });
+    } else if (event === "SIGNED_IN" || event === "TOKEN_REFRESHED") {
+      const maxAge = 100 * 365 * 24 * 60 * 60; // 100 years, never expires
+      document.cookie = cookie.serialize(
+        "sb-access-token",
+        session!.access_token,
+        {
+          maxAge,
+          path: "/",
+          sameSite: "lax",
+          secure: true,
+        },
+      );
+      document.cookie = cookie.serialize(
+        "sb-refresh-token",
+        session!.refresh_token,
+        {
+          maxAge,
+          path: "/",
+          sameSite: "lax",
+          secure: true,
+        },
+      );
+    }
+  });
 
-supabase.auth.getSession()
-
-document.addEventListener('astro:page-load', () => {
-  for (const el of document.querySelectorAll('[data-hotkey]')) {
-    install(el as HTMLElement);
-  }
-})
+  document.addEventListener("astro:page-load", () => {
+    for (const el of document.querySelectorAll("[data-hotkey]")) {
+      install(el as HTMLElement);
+    }
+  });
 </script>
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/>
-    <link rel="manifest" href="/favicon/site.webmanifest"/>
-    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5"/>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+
     <meta name="msapplication-TileColor" content="#2d89ef" />
     <meta name="theme-color" content="#ffffff" />
 
-		<title>{title} | NEOVIMCONF2023</title>
+    <title>{title} | {BRAND_NAME}</title>
     <slot name="head" />
     <ViewTransitions />
-	</head>
-	<body class="text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-900">
+  </head>
+  <body
+    class="text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-900"
+  >
     <main class="py-2 min-h-screen flex flex-col z-10 relative">
       <Navigation class="mb-4" />
       <slot />
     </main>
 
-    <footer class="bg-slate-50 dark:bg-slate-950 py-16 text-center space-y-8 text-slate-400 text-xs font-mono">
-      <p>
-        &copy; 2023 Neovimconf
-      </p>
-      <nav class="flex gap-2 flex-col md:flex-row md:gap-8 md:justify-center">
-        <a href="/toc">Terms and Conditions</a>
-        <a href="/code-of-conduct" data-hotkeyt="g c">Code of Conduct</a>
-        <a href="/imprint">Imprint & Privacy policy</a>
-      </nav>
-    </footer>
-	</body>
+    <Footer />
+  </body>
 </html>

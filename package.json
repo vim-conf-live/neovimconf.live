@@ -48,6 +48,8 @@
   },
   "devDependencies": {
     "@types/cookie": "^0.5.3",
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.1",
     "vitest": "^0.34.6"
   }
 }

@@ -1,0 +1,62 @@
+<script>
+  import { getCurrentUser, getTicket } from "@/lib/auth";
+
+  class MyTicket extends HTMLImageElement {
+    private ticket: string = "";
+
+    constructor() {
+      super();
+    }
+
+    static get observedAttributes() {
+      return ["ticket"];
+    }
+
+    attributeChangedCallback(
+      name: string,
+      _oldValue: string,
+      newValue: string,
+    ) {
+      if (name === "ticket") {
+        if (newValue) {
+          this.setAttribute("src", `/ticket/${newValue}.png`);
+          this.classList.remove("animate-pulse");
+        }
+      }
+    }
+
+    connectedCallback() {
+      this.width = 1200;
+      this.height = 600;
+      this.classList.add(
+        "bg-slate-500",
+        "animate-pulse",
+        "rounded-lg",
+        "shadow-lg",
+      );
+
+      getCurrentUser().then((user) => {
+        if (user) {
+          const storedTicket = localStorage.getItem("my-ticket");
+          if (storedTicket) {
+            this.setAttribute("ticket", storedTicket);
+            return;
+          }
+
+          getTicket(user).then((ticket) => {
+            if (ticket) {
+              this.setAttribute("ticket", ticket);
+              localStorage.setItem("my-ticket", ticket);
+            }
+          });
+        } else {
+          console.error("No user found");
+        }
+      });
+    }
+  }
+
+  window.customElements.define("my-ticket", MyTicket, { extends: "img" });
+</script>
+
+<img is="my-ticket" />

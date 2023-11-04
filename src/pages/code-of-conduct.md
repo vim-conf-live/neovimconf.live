@@ -77,5 +77,4 @@ All group organizers are required to relay all reports of CoC violations and com
 
 Depending on the severity of the issue, the person may receive a last-chance warning, may be asked to leave the activity/group, or may receive a future ban. In very severe cases, we reserve the right to involve law enforcement should we feel it necessary. Tickets or other participation fees won’t be refunded for people who are removed for CoC violations.
 
-
 <a class="bg-teal-300 text-white p-2 text-xl block w-max mx-auto" href="mailto:coc-support@neovimconf.live">Get help</a>

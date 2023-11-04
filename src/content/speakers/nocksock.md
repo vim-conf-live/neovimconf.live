@@ -1,7 +1,7 @@
 ---
 name: Nils Riedemann
 alias: nocksock
-info: A passionate developer with a keen interest in optimizing the developer experience. 
+info: A passionate developer with a keen interest in optimizing the developer experience.
 job: Lead Developer at NeovimTech
 github: https://github.com/nocksock
 website: https://www.nocksock.dev

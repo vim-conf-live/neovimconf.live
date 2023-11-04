@@ -1,26 +1,27 @@
 ---
-import App from '@/layouts/App.astro';
-import "@/styles/global.css"
-import '@fontsource/ibm-plex-mono'
-import '@fontsource/ibm-plex-sans'
+import App from "@/layouts/App.astro";
+import "@/styles/global.css";
+import "@fontsource/ibm-plex-mono";
+import "@fontsource/ibm-plex-sans";
 
 export interface Props {
   content: {
     title: string;
-  }
+  };
 }
 ---
 
 <script>
-import {install} from '@github/hotkey'
-for (const el of document.querySelectorAll('[data-hotkey]')) {
-  install(el as HTMLElement)
-}
+  import { install } from "@github/hotkey";
+  for (const el of document.querySelectorAll("[data-hotkey]")) {
+    install(el as HTMLElement);
+  }
 </script>
 
 <App title={Astro.props.content.title}>
-  <article class="prose dark:prose-invert prose-headings:font-mono prose-headings:text-teal-400 dark:prose-headings:text-teal-300 mx-auto px-4">
+  <article
+    class="prose dark:prose-invert prose-headings:font-mono prose-headings:text-teal-400 dark:prose-headings:text-teal-300 mx-auto px-4"
+  >
     <slot />
   </article>
 </App>
-

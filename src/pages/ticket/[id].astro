@@ -1,48 +1,72 @@
 ---
-import { supabase } from "@/lib/auth";
 import App from "@/layouts/App.astro";
 import type { GetStaticPaths } from "astro";
 import { createSBSSR } from "@/lib/server/supabase";
 
 export const getStaticPaths = (async () => {
-  return await supabase.from("profiles").select("ticket").then(rows => {
-    if (!rows.data) {
-      throw new Error("Could not create paths for tickets")
-    } 
-    return rows.data.map(row => ({ params: {id: row.ticket }}))
-  })
+  return await supabase
+    .from("profiles")
+    .select("ticket")
+    .then((rows) => {
+      if (!rows.data) {
+        throw new Error("Could not create paths for tickets");
+      }
+      return rows.data.map((row) => ({ params: { id: row.ticket } }));
+    });
 }) satisfies GetStaticPaths;
 
-export const prerender = false
+export const prerender = false;
 
-const access_token = Astro.cookies.get("sb-access-token")?.value
-const refresh_token = Astro.cookies.get("sb-refresh-token")?.value
+const supabase = createSBSSR(Astro);
+const access_token = Astro.cookies.get("sb-access-token")?.value;
+const refresh_token = Astro.cookies.get("sb-refresh-token")?.value;
+
+if (access_token && refresh_token) {
+  await supabase.auth.setSession({
+    refresh_token,
+    access_token,
+  });
+}
+
+const {data: {user}} = await supabase.auth.getUser()
 
 let link = {
   label: "Get your own ticket!",
-  href: "/register"
-}
-let user
+  href: "/register",
+};
 
-if (access_token && refresh_token) {
-  const supabase = createSBSSR(Astro)
-  user = await supabase.auth.setSession({
-    refresh_token, access_token
-  })
-  if (user.data.user) {
+if (user) {
+  const {data: ownedTicket, error} = await supabase.from("profiles").select("ticket").eq("id", user.id).single();
+
+  if(error) {
+    throw new Error("Could not get owned ticket")
+  }
+
+  if (String(ownedTicket?.ticket) === Astro.params.id) {
     link = {
-      label: "Update your details",
-      href: "/profile"
+      label: "That's yours! Customize it",
+      href: "/ticket/edit",
+    };
+  } else {
+    link = {
+      label: "View your own",
+      href: `/ticket/${ownedTicket?.ticket}`
     }
   }
 }
+
 ---
 
 <App title="ticket">
-  <article class="vise flex-grow flex flex-col items-center justify-center">
-    <img src={`/ticket/${Astro.params.id}.png`} width="1200" height="600" />
-    <a href={link.href} class="inline-block relative text-center bg-teal-300 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-50" type="submit">
+  <article class="vise flex-grow flex items-center justify-center flex-col">
+    <img src={`/ticket/${Astro.params.id}.png`} width="1200" height="600" class="mb-8 shadow-lg rounded-xl" />
+    <a
+      href={link.href}
+      class="inline-block relative text-center bg-teal-300 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-50"
+      type="submit"
+    >
       {link.label}
     </a>
   </article>
-</App
+   </App
+</App>

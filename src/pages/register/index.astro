@@ -1,27 +1,27 @@
 ---
-import RegisterForm from '@/components/RegisterForm.astro';
-import App from '@/layouts/App.astro';
-import { createSBSSR } from '@/lib/server/supabase';
+import RegisterForm from "@/components/RegisterForm.astro";
+import App from "@/layouts/App.astro";
+import { createSBSSR } from "@/lib/server/supabase";
 
-const access_token = Astro.cookies.get("sb-access-token")?.value
-const refresh_token = Astro.cookies.get("sb-refresh-token")?.value
+const access_token = Astro.cookies.get("sb-access-token")?.value;
+const refresh_token = Astro.cookies.get("sb-refresh-token")?.value;
 
 if (access_token && refresh_token) {
-  const supabase = createSBSSR(Astro)
+  const supabase = createSBSSR(Astro);
   const user = await supabase.auth.setSession({
-    refresh_token, access_token
-  })
+    refresh_token,
+    access_token,
+  });
   if (user.data.user) {
-    return Astro.redirect("/register/complete")
+    return Astro.redirect("/register/complete");
   }
 }
 
-export const prerender = false
-
+export const prerender = false;
 ---
 
 <script>
-  import "htmx.org"
+  import "htmx.org";
 </script>
 
 <App title="Register">
@@ -29,21 +29,21 @@ export const prerender = false
     <div class="prose dark:prose-invert mx-auto">
       <h1 class="font-mono text-5xl font-bold">Sign up for NEOVIMCONF2023</h1>
       <p>
-        Signing up helps us a lot to organize this event.
-        We're super stoked that you're doing this!
-        After submitting, you'll have to confirm you e-mail address, which only 
-        need to have an indicator of interest and we certainly won't give it 
-        away to third parties or send you further mails without consent.
+        Signing up helps us a lot to organize this event. We're super stoked
+        that you're doing this! After submitting, you'll have to confirm you
+        e-mail address, which only need to have an indicator of interest and we
+        certainly won't give it away to third parties or send you further mails
+        without consent.
       </p>
 
       <p>
-        If you want to receive some promotional reminder emails right before this year's 
-        event, and receive a headsup for next year's neovimconf via email, make
-        sure to tick that second box. Of course you can always opt-out or opt-in later.
+        If you want to receive some promotional reminder emails right before
+        this year's event, and receive a headsup for next year's neovimconf via
+        email, make sure to tick that second box. Of course you can always
+        opt-out or opt-in later.
       </p>
     </div>
 
     <RegisterForm />
-
   </article>
 </App>

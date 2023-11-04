@@ -1,9 +1,17 @@
-Neovim Conf 2022
+NEOVIMCONF 2023
 
 /* ORGANIZERS */
 
 Adam 'ABD'
 https://twitter.com/abawesomed
+
+/* SITE DEVELOPERS */
+
+Nils Riedemann
+https://bleepbloop.studio/
+
+Marcos Demetrio
+https://github.com/mvargasmoran
 
 /* HOSTS */
 
@@ -13,18 +21,10 @@ https://twitter.com/ThePrimeagen
 TeeJ DeVries
 https://twitter.com/teej_dv
 
-/* SITE DEVELOPERS */
-Belén Vargas
-https://github.com/lahnie
+/* TECH */
 
-Carles Andres
-https://carlesandres.com
-
-Emiliano Ruiz Carletti
-https://eruizc.dev
-
-Marcos Demetrio
-https://github.com/mvargasmoran
-
-Md Saif
-https://twitter.com/ardzehn
+- Supabase: https://supabase.com/
+- Astro: https://astro.build/
+- Htmx: https://htmx.org/
+- React: https://reactjs.org/
+- @vercel/og: https://www.npmjs.com/package/@vercel/og

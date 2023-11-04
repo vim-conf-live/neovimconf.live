@@ -6,7 +6,7 @@ Astro truly embraces simplicity. When things in a single component get to
 complex (eg. due to asynchronous data-loading), it's recommended to just split
 the asynchronous parts into components. Astro supports streaming.
 
-A lot of the fundamental *structure* is done. The current design breaks in quite
+A lot of the fundamental _structure_ is done. The current design breaks in quite
 a number of viewport-size/light/dark-combinations (especially mobile needs a lot
 of love).
 
@@ -14,8 +14,8 @@ of love).
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
+| Command                    | Action                                           |
+| :------------------------- | :----------------------------------------------- |
 | `pnpm install`             | Installs dependencies                            |
 | `pnpm run dev`             | Starts local dev server at `localhost:4321`      |
 | `pnpm run build`           | Build your production site to `./dist/`          |
@@ -23,18 +23,16 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm run astro -- --help` | Get help using the Astro CLI                     |
 
-
 ## Content
 
 Astro has `content collections` to structure its content. Speakers, Talks and
 Schedules are each a collection. Collections can reference items in other
-collections. 
+collections.
 
 Collections can be "content" (markdown, mdx) and "data" (yaml, json) and are
 explicitely defined in `src/content/config.ts`. Their schema is defined using
 Zod and Astro makes sure that all references etc are correct at run- and
 build-time.
-
 
 ### Speakers
 
@@ -74,7 +72,6 @@ using something like htmx.
 
 This makes deep linking etc much easier - eg on Day 2 directly link to Day
 2 from the navigation.
-
 
 ## 👀 Want to learn more about astro?
 

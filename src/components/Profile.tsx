@@ -1,97 +1,151 @@
-import { supabase } from '@/lib/auth'
-import type { Session } from '@supabase/supabase-js'
-import { useState, useEffect, type InputHTMLAttributes, forwardRef } from 'react'
-import { useForm, type SubmitHandler } from "react-hook-form"
+import { supabase } from "@/lib/auth";
+import type { Session } from "@supabase/supabase-js";
+import {
+  useState,
+  useEffect,
+  type InputHTMLAttributes,
+  forwardRef,
+} from "react";
+import { useForm, type SubmitHandler } from "react-hook-form";
 
 export default function Profile() {
-  const [session, setSession] = useState<Session | null>(null)
+  const [session, setSession] = useState<Session | null>(null);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session)
-    })
+      setSession(session);
+    });
 
     supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session)
-    })
-  }, [])
+      setSession(session);
+    });
+  }, []);
 
   return (
-    <div className="container" style={{ padding: '50px 0 100px 0' }}>
+    <div className="container" style={{ padding: "50px 0 100px 0" }}>
       {session ? <ProfileForm session={session} /> : "not logged in"}
     </div>
-  )
+  );
 }
 
-const inputClasses = `block w-full p-2 shadow-inner border rounded-sm placeholder:text-slate-400 dark:bg-slate-800 dark:border-teal-500`
+const inputClasses = `block w-full p-2 shadow-inner border rounded-sm placeholder:text-slate-400 dark:bg-slate-800 dark:border-teal-500`;
 
 type ProfileFields = {
   full_name: string;
   username: string;
   job_description: string;
-}
+};
 
 const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
   const { user } = session;
   const { register, handleSubmit } = useForm<ProfileFields>();
-  const [profile, setProfile] = useState<ProfileFields | "loading" | "error">("loading")
-  const [message, setMessage] = useState<null | string>(null)
+  const [formState, setFormState] = useState<"idle" | "loading" | "error" | "saving">("loading")
+  const [profile, setProfile] = useState<ProfileFields | null>(null);
+  const [message, setMessage] = useState<null | string>(null);
   const onSubmit: SubmitHandler<ProfileFields> = (data) => {
-    supabase.from("profiles").upsert({
-      id: user.id,
-      ...data
-      }).then(result => {
-        setMessage(result.statusText)
-        })
-  }
+    if (formState === "saving") return;
+
+    supabase
+      .from("profiles")
+      .upsert({
+        id: user.id,
+        ...data,
+      })
+      .then((result) => {
+        setMessage(result.statusText);
+      });
+  };
 
   useEffect(() => {
-    supabase.from("profiles").select("full_name, username, job_description").eq("id", user.id).single().then(result => {
-      return setProfile(result.data ?? "error")
-    })
-  }, [])
+    supabase
+      .from("profiles")
+      .select("full_name, username, job_description")
+      .eq("id", user.id)
+      .single()
+      .then((result) => {
+        return setProfile(result.data ?? "error");
+      });
+  }, []);
 
-  if (profile === "loading") {
-    return <p className='animate-pulse'>loading</p>
+  if (formState === "loading") {
+    return <p className="animate-pulse">loading</p>;
   }
 
   if (profile === "error") {
-    return <p className='animate-ping'>error</p>
+    return <p className="animate-ping">error</p>;
   }
 
   return (
-    <form className="max-w-sm mx-auto space-y-4" onSubmit={handleSubmit(onSubmit)}>
-      <h1>Update your virtual lanyard</h1>
+    <form
+      className="max-w-sm mx-auto space-y-4"
+      onSubmit={handleSubmit(onSubmit)}
+    >
       {message && <p>{message}</p>}
 
       <div>
-        <label htmlFor="alias" className="text-sm font-mono p-1">Alias</label>
-        <input className={inputClasses} defaultValue={profile.username} placeholder="eg.: leethaxxor42069" id="alias" type="text" {...register("username")}/>
+        <label htmlFor="alias" className="text-sm font-mono p-1">
+          Alias
+        </label>
+        <input
+          className={inputClasses}
+          defaultValue={profile.username}
+          placeholder="eg.: leethaxxor42069"
+          id="alias"
+          type="text"
+          {...register("username")}
+        />
       </div>
 
       <div>
-        <label htmlFor="full_name" className="text-sm font-mono p-1">Full Name</label>
-        <input className={inputClasses} defaultValue={profile.full_name} placeholder="eg.: Bailey Bufferchief" id="full_name" type="text" {...register("full_name")}/>
+        <label htmlFor="full_name" className="text-sm font-mono p-1">
+          Full Name
+        </label>
+        <input
+          className={inputClasses}
+          defaultValue={profile.full_name}
+          placeholder="eg.: Bailey Bufferchief"
+          id="full_name"
+          type="text"
+          {...register("full_name")}
+        />
       </div>
 
       <div>
-        <label htmlFor="job_description" className="text-sm font-mono p-1">Job Description</label>
-        <input className={inputClasses} placeholder="eg.: 10x Soy Developer" id="job_description" type="text" {...register("job_description")} />
+        <label htmlFor="job_description" className="text-sm font-mono p-1">
+          Job Description
+        </label>
+        <input
+          className={inputClasses}
+          placeholder="eg.: 10x Soy Developer"
+          id="job_description"
+          type="text"
+          {...register("job_description")}
+        />
       </div>
 
-      <div>
+      <div className="mt-8">
         <h2>Notifications</h2>
         <label htmlFor="reminders" className="text-sm p-1 relative pl-5 block">
-          <input type="checkbox" id="reminders" name="reminders" value="yes" className="absolute left-0 top-2"/> I want to receive notifications about this and future neovimconf events.
+          <input
+            type="checkbox"
+            id="reminders"
+            name="reminders"
+            value="yes"
+            className="absolute left-0 top-2"
+          />{" "}
+          I want to receive notifications about this and future neovimconf
+          events.
         </label>
       </div>
 
       <div className="text-right">
-        <button className="inline-block relative text-center bg-teal-300 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-50" type="submit">
+        <button
+          className="inline-block relative text-center bg-teal-300 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-50"
+          type="submit"
+        >
           save
         </button>
       </div>
     </form>
-  )
-}
-
+  );
+};

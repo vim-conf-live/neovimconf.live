@@ -4,32 +4,40 @@ export interface Props {
   for: [string, string];
 }
 
-const { on: input, for: [start, end] } = Astro.props
+const {
+  on: input,
+  for: [start, end],
+} = Astro.props;
 const [year, month, day] = input.split("-").map(Number);
 const [hour, minute] = start.split(":").map(Number);
-const date = new Date(Date.UTC(year, month -1, day, hour, minute))
+const date = new Date(Date.UTC(year, month - 1, day, hour, minute));
 ---
 
 <script>
-document.addEventListener('astro:after-swap', () => {
-  const tzOptions = Intl.DateTimeFormat().resolvedOptions();
-  for (const el of document.querySelectorAll("time[datetime][data-showlocal]")) {
-    const utc = new Date(el.getAttribute("datetime")!);
-    const local = new Intl.DateTimeFormat('en-US', {
-      timeZone: tzOptions.timeZone,
-      hour: "numeric",
-      hourCycle: "h24",
-      minute: "numeric",
+  document.addEventListener("astro:after-swap", () => {
+    const tzOptions = Intl.DateTimeFormat().resolvedOptions();
+    for (const el of document.querySelectorAll(
+      "time[datetime][data-showlocal]",
+    )) {
+      const utc = new Date(el.getAttribute("datetime")!);
+      const local = new Intl.DateTimeFormat("en-US", {
+        timeZone: tzOptions.timeZone,
+        hour: "numeric",
+        hourCycle: "h24",
+        minute: "numeric",
       }).format(utc);
-    el.innerHTML = `${local} <span>${tzOptions.timeZone}</span>`
-  }
-})
+      el.innerHTML = `${local} <span>${tzOptions.timeZone}</span>`;
+    }
+  });
 </script>
 
-<time datetime={date} data-showlocal class="
-  [&_span]:text-xs
+<time
+  datetime={date}
+  data-showlocal
+  class="[&_span]:text-xs
   [&_span]:block
-  [&_span]:text-slate-400
-">
-  {start} <span>UTC</span>
+  [&_span]:text-slate-400"
+>
+  {start}
+  <span>UTC</span>
 </time>

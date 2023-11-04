@@ -8,15 +8,12 @@ import node from "@astrojs/node";
 export default defineConfig({
   output: "hybrid",
   redirects: {
-    "/talks": "/talks/day-1"
+    "/talks": "/talks/day-1",
   },
-  integrations: [
-    tailwind({ applyBaseStyles: false }),
-    react(),
-  ] ,
+  integrations: [tailwind({ applyBaseStyles: false }), react()],
   adapter: netlify({
-    edgeMiddleware: true
-  })
+    edgeMiddleware: true,
+  }),
   // adapter: node({
   //   mode: "standalone"
   // })
