@@ -1,0 +1,29 @@
+---
+import { createSBSSR } from "@/lib/server/supabase"
+import satori from 'satori'
+
+export const prerender = false
+
+const access_token = Astro.cookies.get("sb-access-token")?.value
+const refresh_token = Astro.cookies.get("sb-refresh-token")?.value
+
+let user;
+if (access_token && refresh_token) {
+  const supabase = createSBSSR(Astro)
+  user = await supabase.auth.setSession({
+    refresh_token, access_token
+  })
+
+  if (!user.data.user) {
+    return Astro.redirect("/register")
+  } else {
+    const {data, error} = await supabase.from("profiles").select("ticket").eq("id", user.data.user.id).single()
+    if(!error) {
+      return Astro.redirect(`/ticket/${data.ticket}`)
+    }
+  }
+} else {
+  return Astro.redirect("/register")
+}
+---
+
