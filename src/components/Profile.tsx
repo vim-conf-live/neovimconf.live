@@ -1,5 +1,6 @@
 import { supabase } from "@/lib/auth";
 import type { Session } from "@supabase/supabase-js";
+import React from "react";
 import {
   useState,
   useEffect,
@@ -43,7 +44,6 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
   const [formState, setFormState] = useState<"idle" | "loading" | "error" | "saving">("loading")
   const [profile, setProfile] = useState<ProfileFields | null>(null);
   const [message, setMessage] = useState<null | string>(null);
-  const [promo, setPromo] = useState<boolean>(false);
   const onSubmit: SubmitHandler<ProfileFields> = (data) => {
     if (formState === "saving") return;
     setFormState("saving")
@@ -55,7 +55,7 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
     console.log("submit", {updatedData})
 
     supabase
-      .from("profiles")
+      .from("user_profile")
       .upsert({
         id: user.id,
         ...data,
@@ -65,21 +65,21 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
           setMessage(error.message);
           setFormState("error");
         } else {
-          setFormState("idle")
+          window.location.href="/ticket"
         }
       });
   };
 
   useEffect(() => {
     supabase
-      .from("profiles")
+      .from("user_profile")
       .select("full_name, username, job_description, promo_mails")
       .eq("id", user.id)
       .single()
       .then(({data, error}) => {
+        console.error(error)
         setProfile(data);
         setFormState("idle");
-        setPromo(data.promo_mails);
       });
   }, []);
 
@@ -95,12 +95,15 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
     return <p>Could not load profile</p>;
   }
 
-  console.log(profile)
   return (
     <form
       className="max-w-sm mx-auto space-y-4"
       onSubmit={handleSubmit(onSubmit)}
     >
+    {message && (
+      <p className="text-red-500 border border-red-500 text-md p-4 shadow bg-slate-50 dark:bg-slate-950">{message}</p>
+    )}
+
      <div>
         <label htmlFor="alias" className="text-sm font-mono p-1">
           Alias
