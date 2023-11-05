@@ -1,11 +1,13 @@
 ---
 import App from "@/layouts/App.astro";
 import ProfileForm from "@/components/Profile";
+
+export const prerender = true;
 ---
 
 <App title="profile">
   <article class="mx-auto">
     <h1 class="text-5xl text-teal-400">Customize your ticket</h1>
-    <ProfileForm client:only />
+    <ProfileForm client:load />
   </article>
 </App>
