@@ -8,7 +8,7 @@ import { createSBSSR } from "@/lib/server/supabase";
 
 export const prerender = false;
 
-const e = (tag: string, tw: string, children: any[], props?: any) => ({
+const e = (tag: string, tw: string, children: any[] | any, props?: any) => ({
   type: tag,
   props: { children, tw, ...props },
 });
@@ -69,7 +69,7 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
 
   const html = e(
     "div",
-    "w-full h-full flex flex-col text-4xl items-center justify-center relative bg-black text-teal-400 border rounded-2xl",
+    "w-full h-full flex flex-col text-4xl items-center justify-center relative bg-black text-teal-400 p-4 border",
     [
       {
           type: "img",
@@ -89,7 +89,7 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
       {
         type: "pre",
         props: {
-          tw: "text-slate-500 flex flex-col bg-slate-800 p-8 rounded-lg border border-4 border-slate-600",
+          tw: "text-slate-500 flex flex-col bg-slate-800 p-8 rounded-lg border border-4 border-slate-600 max-w-full overflow-hidden",
           children: [
             row(comment(`--- @see https://www.neovimconf.live`)),
             row([
