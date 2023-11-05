@@ -22,17 +22,21 @@ import App from "@/layouts/App.astro";
     if (cookieData["nvc-formdata"]) {
       document.cookie = cookie.serialize("nvc-formdata", "");
       const formData = JSON.parse(cookieData["nvc-formdata"]);
-      const { error } = await supabase.from("profiles").upsert({
+      const { error } = await supabase.from("user_profile").upsert({
         id: user.id,
         promo_mails: formData.reminders === "yes",
       });
+
+      if(error) {
+        console.error(error);
+      }
     }
 
     if (error) {
       console.error(error);
     } else {
       message(
-        "All set! Thanks for confirming your email!",
+        `All set! Thanks for confirming your email! You will be redirected to your virtual ticket, otherwise <a href="/register/complete">click here</a>`,
         "text-teal-500 text-xl",
       );
       window.location.href = "/register/complete";
@@ -44,5 +48,4 @@ import App from "@/layouts/App.astro";
   <p id="message" class="flex-grow text-center my-32">
     Verifying the confirmation link... hang on a sec.
   </p>
-   </App/
 </App>
