@@ -17,7 +17,6 @@ if (access_token && refresh_token) {
   }
 }
 
-export const prerender = false;
 ---
 
 <script>
@@ -25,22 +24,21 @@ export const prerender = false;
 </script>
 
 <App title="Register">
-  <article class="space-y-8">
+  <article class="space-y-8 vise">
     <div class="prose dark:prose-invert mx-auto">
-      <h1 class="font-mono text-5xl font-bold">Sign up for NEOVIMCONF2023</h1>
+      <h1 class="font-mono font-bold">Sign up for NEOVIMCONF2023</h1>
       <p>
         Signing up helps us a lot to organize this event. We're super stoked
-        that you're doing this! After submitting, you'll have to confirm you
-        e-mail address, which only need to have an indicator of interest and we
-        certainly won't give it away to third parties or send you further mails
-        without consent.
+        that you're doing this! After submitting, you need to confirm your
+        e-mail address. We only need it as an indicator of interest and we
+        certainly won't share it with third parties.
       </p>
 
       <p>
-        If you want to receive some promotional reminder emails right before
-        this year's event, and receive a headsup for next year's neovimconf via
-        email, make sure to tick that second box. Of course you can always
-        opt-out or opt-in later.
+        If you want to receive reminder e-mails right before
+        this year's event, and receive a headsup for next year's neovimconf,
+        make sure to tick that second box. Of course you can always
+        opt-out or opt-in later too.
       </p>
     </div>
 
