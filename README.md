@@ -1,5 +1,6 @@
 # NeovimConf 2023
 
+
 This will give you a quick rundown on how this astro project is structured etc.
 
 Astro truly embraces simplicity. When things in a single component get to
