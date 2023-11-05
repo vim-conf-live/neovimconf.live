@@ -15,9 +15,8 @@ if (Astro.request.method === "POST") {
 
   if (parsedFormData.success) {
     Astro.cookies.set("nvc-formdata", JSON.stringify(formData), {
-      sameSite: "strict",
+      sameSite: "lax",
       path: "/",
-      secure: true,
       maxAge: 60 * 60 * 24,
     });
 
