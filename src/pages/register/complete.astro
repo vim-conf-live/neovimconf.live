@@ -1,13 +1,20 @@
 ---
-import MyTicket from "@/components/MyTicket.astro";
+import MyTicket from "@/components/MyTicket";
 import App from "@/layouts/App.astro";
 
-export const prerender = true;
+const access_token = Astro.cookies.get("sb-access-token")?.value;
+const refresh_token = Astro.cookies.get("sb-refresh-token")?.value;
+
+if (!access_token || !refresh_token) {
+  return Astro.redirect("/register")
+}
+
+export const prerender = false;
 ---
 
 <App title="All set!">
   <article class="flex-grow vise">
-    <div class="prose">
+    <div class="prose dark:prose-invert">
       <h1 class="text-5xl text-teal-400">Registration complete!</h1>
       <p>
         Thank you so much for signing up for NeovimConf 2023! Check back real
@@ -16,22 +23,12 @@ export const prerender = true;
       </p>
 
       <h2 class="text-5xl text-teal-400">Here's your ticket!</h2>
-      <MyTicket />
+
+      <MyTicket client:only />
+
       <a 
         href="/ticket/edit"
-        class="
-          inline-block
-          relative
-          text-center
-          bg-teal-300
-          p-2
-          no-underline
-          rounded-sm
-          hover:bg-teal-200
-          dark:text-teal-900
-          font-mono
-          disabled:bg-slate-50
-        ">Customize your ticket</a>
+        class="inline-block relative text-center bg-teal-300 p-2 no-underline rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-50">Customize your ticket</a>
     </div>
   </article>
 </App>
