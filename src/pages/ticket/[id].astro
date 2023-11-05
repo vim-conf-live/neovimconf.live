@@ -3,18 +3,6 @@ import App from "@/layouts/App.astro";
 import type { GetStaticPaths } from "astro";
 import { createSBSSR } from "@/lib/server/supabase";
 
-export const getStaticPaths = (async () => {
-  return await supabase
-    .from("profiles")
-    .select("ticket")
-    .then((rows) => {
-      if (!rows.data) {
-        throw new Error("Could not create paths for tickets");
-      }
-      return rows.data.map((row) => ({ params: { id: row.ticket } }));
-    });
-}) satisfies GetStaticPaths;
-
 export const prerender = false;
 
 const supabase = createSBSSR(Astro);
