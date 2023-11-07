@@ -74,7 +74,7 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
       {
           type: "img",
           props: {
-            src: import.meta.env.PUBLIC_AUTH_REDIRECT_HOST + "/logo.svg",
+            src: "https://neovimconf.live/logo.svg",
             tw: "absolute -top-10 -left-20 opacity-25 -z-10",
             width: 800,
             height: 800,
@@ -91,7 +91,7 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
         props: {
           tw: "text-slate-500 flex flex-col bg-slate-800 p-8 rounded-lg border border-4 border-slate-600 max-w-full overflow-hidden",
           children: [
-            row(comment(`--- @see https://www.neovimconf.live`)),
+            row(comment(`--- @see https://neovimconf.live`)),
             row([
               hiVar("require "),
               hiString('"NEOVIMCONF.live" '),
