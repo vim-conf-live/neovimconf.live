@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/auth";
+import { getTicket, supabase } from "@/lib/auth";
 import type { Session } from "@supabase/supabase-js";
 import React from "react";
 import {
@@ -52,14 +52,16 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
         id: user.id,
         ...data,
       })
-      .then(({error}) => {
+      .then(({ error }) => {
         if (error) {
           setMessage(error.message);
           setFormState("error");
         } else {
-          fetch(`/tickets/refresh/${user.id}`).then(() => {
-            setFormState("purge")
-            window.location.href="/ticket"
+          setFormState("purge")
+          getTicket(user).then(ticket => {
+            fetch(`/tickets/refresh/${ticket}`).then(() => {
+              window.location.href = "/ticket"
+            })
           })
         }
       });
@@ -71,7 +73,7 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
       .select("full_name, username, job_description, promo_mails")
       .eq("id", user.id)
       .single()
-      .then(({data, error}) => {
+      .then(({ data, error }) => {
         console.error(error)
         setProfile(data);
         setFormState("idle");
@@ -95,11 +97,11 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
       className="max-w-sm mx-auto space-y-4"
       onSubmit={handleSubmit(onSubmit)}
     >
-    {message && (
-      <p className="text-red-500 border border-red-500 text-md p-4 shadow bg-slate-50 dark:bg-slate-950">{message}</p>
-    )}
+      {message && (
+        <p className="text-red-500 border border-red-500 text-md p-4 shadow bg-slate-50 dark:bg-slate-950">{message}</p>
+      )}
 
-     <div>
+      <div>
         <label htmlFor="alias" className="text-sm font-mono p-1">
           Alias
         </label>
@@ -158,21 +160,21 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
       </div>
 
       <div className="text-right">
-      {formState ==="idle" ? (
-        <button
-          className="inline-block relative text-center bg-teal-300 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-50"
-          type="submit"
-        >
-          save
-        </button>
-      ) : (
-        <button
-          className="inline-block relative text-center bg-teal-300 opacity-50 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-50 animate-pulse"
-          disabled
-        >
-          {formState === "purge" ? "saving..." : "saving"}
-        </button>
-      )}
+        {formState === "idle" ? (
+          <button
+            className="inline-block relative text-center bg-teal-300 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-50"
+            type="submit"
+          >
+            save
+          </button>
+        ) : (
+          <button
+            className="inline-block relative text-center bg-teal-300 opacity-50 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-50 animate-pulse"
+            disabled
+          >
+            {formState === "purge" ? "saving..." : "saving"}
+          </button>
+        )}
       </div>
     </form>
   );
