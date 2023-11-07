@@ -21,9 +21,7 @@ const { title } = Astro.props as Props;
   import { install } from "@github/hotkey";
 
   supabase.auth.onAuthStateChange((event, session) => {
-    console.log(session)
     if (!session) {
-      console.log("no session")
       return;
     };
 
