@@ -8,9 +8,11 @@ import { createSBSSR } from "@/lib/server/supabase";
 
 export const prerender = false;
 
+let key = 0;
 const e = (tag: string, tw: string, children: any[] | any, props?: any) => ({
   type: tag,
   props: { children, tw, ...props },
+  key: String(key++)
 });
 
 export const GET: APIRoute = async ({ request, params, cookies }) => {
@@ -37,13 +39,13 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
 
   const field = (key: string) => e("span", "text-teal-300", [key])
 
-  const row = (children: any[], classes?: string) => e("div", `flex ${classes}`, children)
+  const row = (children: any[] | any, classes?: string) => e("div", `flex ${classes}`, children)
   const comment = (text: string) => e("span", "text-slate-500", text)
   const hiString = (text: string) => e("span", "text-amber-300", text)
   const hiVar = (text: string) => e("span", "text-orange-200", text)
   const hiWarning = (text: string) => e("span", "text-red-400", text)
   const hiConstructor = (text: string) => e("span", "text-teal-300", text)
-  const indent = (children: any[]) => e("span", "ml-[3rem]", children)
+  const indent = (children: any[] | any) => e("span", "ml-[3rem]", children)
   const val = (value: any) => {
     if (value === "nil") {
       return hiWarning("nil")
@@ -54,7 +56,7 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
 
     const type = typeof value;
 
-    if(type === "number") return e(
+    if (type === "number") return e(
       "span",
       "text-purple-300 inline-block",
       `${value}`,
@@ -72,14 +74,14 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
     "w-full h-full flex flex-col text-4xl items-center justify-center relative bg-black text-teal-400 p-4 border",
     [
       {
-          type: "img",
-          props: {
-            src: "https://neovimconf.live/logo.svg",
-            tw: "absolute -top-10 -left-20 opacity-25 -z-10",
-            width: 800,
-            height: 800,
-          }
-        },
+        type: "img",
+        props: {
+          src: "https://neovimconf.live/logo.svg",
+          tw: "absolute -top-10 -left-20 opacity-25 -z-10",
+          width: 800,
+          height: 800,
+        }
+      },
 
       e(
         "div",
@@ -107,7 +109,7 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
             row(hiConstructor("}"))
           ]
         }
-      }, 
+      },
     ], {
     style: {
       fontFamily: "JetBrains Mono Regular",
@@ -115,8 +117,7 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
   },
   );
 
-  // @ts-ignore
-  return new ImageResponse(html, {
+  const response = new ImageResponse(html, {
     width: 1200,
     height: 600,
     fonts: [
@@ -132,4 +133,10 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
       },
     ],
   });
+
+  response.headers.set("Cache-Tag"         , `ticket-${id}`);
+  response.headers.set("Netlify-Cache-Tag" , `ticket-${id}`);
+  response.headers.set("Cache-Control"     , `public, max-age=${60 * 60 * 24 * 30}`);
+
+  return response
 };

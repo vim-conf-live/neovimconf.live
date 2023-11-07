@@ -4,8 +4,6 @@ import React from "react";
 import {
   useState,
   useEffect,
-  type InputHTMLAttributes,
-  forwardRef,
 } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
 
@@ -41,18 +39,12 @@ type ProfileFields = {
 const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
   const { user } = session;
   const { register, handleSubmit } = useForm<ProfileFields>();
-  const [formState, setFormState] = useState<"idle" | "loading" | "error" | "saving">("loading")
+  const [formState, setFormState] = useState<"idle" | "loading" | "error" | "saving" | "purge">("loading")
   const [profile, setProfile] = useState<ProfileFields | null>(null);
   const [message, setMessage] = useState<null | string>(null);
   const onSubmit: SubmitHandler<ProfileFields> = (data) => {
     if (formState === "saving") return;
     setFormState("saving")
-    const updatedData = {
-      id: user.id,
-      ...data
-    }
-
-    console.log("submit", {updatedData})
 
     supabase
       .from("user_profile")
@@ -60,12 +52,15 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
         id: user.id,
         ...data,
       })
-      .then(({data, error}) => {
+      .then(({error}) => {
         if (error) {
           setMessage(error.message);
           setFormState("error");
         } else {
-          window.location.href="/ticket"
+          fetch(`/tickets/refresh/${user.id}`).then(() => {
+            setFormState("purge")
+            window.location.href="/ticket"
+          })
         }
       });
   };
@@ -152,7 +147,6 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
           <input
             type="checkbox"
             id="promo_mails"
-            name="promo_mails"
             className="absolute left-0 top-2"
             {...register("promo_mails")}
             value="true"
@@ -176,7 +170,7 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
           className="inline-block relative text-center bg-teal-300 opacity-50 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-50 animate-pulse"
           disabled
         >
-          saving
+          {formState === "purge" ? "saving..." : "saving"}
         </button>
       )}
       </div>
