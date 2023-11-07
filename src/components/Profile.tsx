@@ -59,7 +59,7 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
         } else {
           setFormState("purge")
           getTicket(user).then(ticket => {
-            fetch(`/tickets/refresh/${ticket}`).then(() => {
+            fetch(`/ticket/refresh/${ticket}`).then(() => {
               window.location.href = "/ticket"
             })
           })

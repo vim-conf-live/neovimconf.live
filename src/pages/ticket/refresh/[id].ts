@@ -8,8 +8,5 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
     tags: [`ticket-${params.id}`]
   })
 
-  return {
-    body: "Purged!",
-    statusCode: 202
-  }
+  return new Response("Purged!", { status: 202 })
 }
