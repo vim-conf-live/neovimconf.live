@@ -24,6 +24,9 @@ if (access_token && refresh_token) {
       .single();
     if (!error) {
       return Astro.redirect(`/ticket/${data.ticket}`);
+    } else {
+      console.error(error);
+      return Astro.redirect(`/?error=${error.message}`)
     }
   }
 } else {

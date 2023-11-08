@@ -133,13 +133,13 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
         style: "normal",
       },
     ],
-    headers: {
-      "Content-Type": "text/html",
-      "Cache-Control": "public, max-age=0, must-revalidate", // Tell browsers to always revalidate
-      "Netlify-CDN-Cache-Control": "public, max-age=31536000, must-revalidate", // Tell Edge to cache asset for up to a year,
-      "Cache-Tag": `ticket-${id}` // Tag all promotions responses with these tags
-    }
   });
+
+  response.headers.set("Cache-Tag", `ticket-${id}`);
+  response.headers.set("Netlify-Cache-Tag", `ticket-${id}`);
+  response.headers.set("Cache-Control", "public, max-age=0, must-revalidate") // Tell browsers to always revalidate
+  response.headers.set("Netlify-CDN-Cache-Control", "public, max-age=31536000, must-revalidate") // Tell Edge to cache asset for up to a year,
+  response.headers.set("Cache-Control", `public, max-age=${60 * 60 * 24 * 30}`);
 
   return response
 };
