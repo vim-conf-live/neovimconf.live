@@ -1,5 +1,6 @@
 import { getCurrentUser, getTicket } from "@/lib/auth";
 import { useEffect, useState } from "react";
+import { version } from "../../package.json"
 
 export default function Ticket({id: ticketId}: {id: string|number}) {
   const [state, setState] = useState<"loading"|"done">("loading")
@@ -20,6 +21,6 @@ export default function Ticket({id: ticketId}: {id: string|number}) {
   )
 
   return (
-    <img src={`/ticket/${ticketId}.png`} alt="" className="shadow-lg rounded-xl w-full aspect-og" width={1200} height={600}/>
+    <img src={`/ticket/${ticketId}.png?v${version}`} alt="" className="shadow-lg rounded-xl w-full aspect-og" width={1200} height={600}/>
   )
 }
