@@ -52,6 +52,20 @@ if (user) {
 }
 ---
 
+<script>
+
+for (const element of document.querySelectorAll('[data-js="share"]')) {
+  element.addEventListener("click", function () {
+    navigator.share({
+      title: "NeovimConf 2023",
+      text:`The conference for my favorite editor is coming up! It'll be fun. #neovimconf2023`,
+      url: `https://neovimconf.live`,
+    });
+  });
+}
+
+</script>
+
 <App title="ticket">
   <article
     class="vise flex-grow flex items-center justify-center flex-col w-full py-32 space-y-8"
@@ -73,13 +87,9 @@ if (user) {
         >
           copy link to ticket
         </CopyButton>
-        <CopyButton
-          className="hover:underline active:text-teal-500"
-          value={`The conference for my favorite editor is coming up! It'll be fun. Check https://neovimconf.live #neovimconf2023`}
-          client:load
-        >
+        <button data-js="share" class="hover:underline active:text-teal-500" >
           share event
-        </CopyButton>
+        </button>
       </div>
     </div>
   </article>
