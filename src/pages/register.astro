@@ -3,6 +3,8 @@ import RegisterForm from "@/components/RegisterForm.astro";
 import App from "@/layouts/App.astro";
 import { createSBSSR } from "@/lib/server/supabase";
 
+export const prerender = false;
+
 const access_token = Astro.cookies.get("sb-access-token")?.value;
 const refresh_token = Astro.cookies.get("sb-refresh-token")?.value;
 

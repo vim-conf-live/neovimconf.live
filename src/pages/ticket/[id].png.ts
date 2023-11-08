@@ -15,8 +15,40 @@ const e = (tag: string, tw: string, children: any[] | any, props?: any) => ({
   key: String(key++)
 });
 
+const field = (key: string) => e("span", "text-teal-300", [key])
+const row = (children: any[] | any, classes?: string) => e("div", `flex ${classes}`, children)
+const comment = (text: string) => e("span", "text-slate-500", text)
+const hiString = (text: string) => e("span", "text-amber-300", text)
+const hiVar = (text: string) => e("span", "text-orange-200", text)
+const hiWarning = (text: string) => e("span", "text-red-400", text)
+const hiConstructor = (text: string) => e("span", "text-teal-300", text)
+const indent = (children: any[] | any) => e("span", "ml-[3rem]", children)
+const val = (value: any) => {
+  if (value === "nil") {
+    return hiWarning("nil")
+  }
+  if (value === "true") {
+    return hiVar("true")
+  }
+
+  const type = typeof value;
+
+  if (type === "number") return e(
+    "span",
+    "text-purple-300 inline-block",
+    `${value}`,
+  )
+
+  return hiString(`"${value}"`)
+}
+const kv = (key: string, value: string | number) =>
+  e("div", "flex text-slate-500", [
+    field(key), " = ", val(value), ","
+  ])
+
+
 export const GET: APIRoute = async ({ request, params, cookies }) => {
-  const { id } = params;
+  const id = params.id!;
   const supabase = createSBSSR({ cookies });
 
   const { error, data: user } = await supabase
@@ -37,38 +69,6 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
     path.resolve("./src/assets/JetBrainsMono-Medium.ttf"),
   );
 
-  const field = (key: string) => e("span", "text-teal-300", [key])
-
-  const row = (children: any[] | any, classes?: string) => e("div", `flex ${classes}`, children)
-  const comment = (text: string) => e("span", "text-slate-500", text)
-  const hiString = (text: string) => e("span", "text-amber-300", text)
-  const hiVar = (text: string) => e("span", "text-orange-200", text)
-  const hiWarning = (text: string) => e("span", "text-red-400", text)
-  const hiConstructor = (text: string) => e("span", "text-teal-300", text)
-  const indent = (children: any[] | any) => e("span", "ml-[3rem]", children)
-  const val = (value: any) => {
-    if (value === "nil") {
-      return hiWarning("nil")
-    }
-    if (value === "true") {
-      return hiVar("true")
-    }
-
-    const type = typeof value;
-
-    if (type === "number") return e(
-      "span",
-      "text-purple-300 inline-block",
-      `${value}`,
-    )
-
-    return hiString(`"${value}"`)
-  }
-  const kv = (key: string, value: string | number) =>
-    e("div", "flex text-slate-500", [
-      field(key), " = ", val(value), ","
-    ])
-
   const html = e(
     "div",
     "w-full h-full flex flex-col text-4xl items-center justify-center relative bg-black text-teal-400 p-4 border",
@@ -86,6 +86,7 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
       e(
         "div",
         "flex absolute right-4 bottom-4 text-slate-700 text-xl border-b border-b-slate-700",
+        // @ts-ignore
         `verification: ${user.id.split("-").at(0)}-${(2023).toString(16)}-${Number(id).toString(16)}-${(Math.random() * 2000).toFixed(0).toString(16)}`
       ),
       {
@@ -102,9 +103,9 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
             ]),
             row(indent(kv("date", "2023-12-08"))),
             row(indent(kv("ticket_nr", id.padStart(4, "0")))),
-            user?.full_name && row(indent(comment(`-- aka ${user?.full_name}:`))),
-            row(indent(kv("username", "nil"))),
-            row(indent(kv("job_description", user?.job_description ?? "nil"))),
+            user?.full_name && row(indent(comment(`-- aka ${user.full_name}:`))),
+            row(indent(kv("username", user.username))),
+            row(indent(kv("job_description", user.job_description ?? "nil"))),
             user?.promo_mails && row(indent(kv("special_treatment", "true"))),
             row(hiConstructor("}"))
           ]
@@ -134,9 +135,9 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
     ],
   });
 
-  response.headers.set("Cache-Tag"         , `ticket-${id}`);
-  response.headers.set("Netlify-Cache-Tag" , `ticket-${id}`);
-  response.headers.set("Cache-Control"     , `public, max-age=${60 * 60 * 24 * 30}`);
+  response.headers.set("Cache-Tag", `ticket-${id}`);
+  response.headers.set("Netlify-Cache-Tag", `ticket-${id}`);
+  response.headers.set("Cache-Control", `public, max-age=${60 * 60 * 24 * 30}`);
 
   return response
 };

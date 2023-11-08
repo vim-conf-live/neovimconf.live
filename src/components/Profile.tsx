@@ -102,8 +102,8 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
       )}
 
       <div>
-        <label htmlFor="alias" className="text-sm font-mono p-1">
-          Alias
+        <label htmlFor="username" className="text-sm font-mono p-1">
+          Username
         </label>
         <input
           className={inputClasses}
