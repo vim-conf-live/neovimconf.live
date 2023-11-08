@@ -13,6 +13,9 @@ export interface Props {
   user?: object;
 }
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.url);
+const ogImageURL = new URL("/og_image.png", Astro.url);
+
 const { title } = Astro.props as Props;
 ---
 
@@ -51,17 +54,19 @@ const { title } = Astro.props as Props;
     <meta name="generator" content={Astro.generator} />
 
     <meta name="twitter:card" content="The conference about the most admired editor among developers." />
-    <meta name="twitter:image" content="https://neovimconf.live/og_image.png" />
+    <meta name="twitter:image" content={ogImageURL} />
     <meta name="twitter:title" content="NeoVimConf.live 2023" />
     <meta name="twitter:image:alt" content="Neovim Conf 2023, December 8th. Join us @ neovimconf.live" />
 
     <meta property="og:title" content="NeoVimConf.live 2023" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://neovimconf.live/" />
-    <meta property="og:image" content="https://neovimconf.live/og_image.png" />
-    <meta property="og:image:alt" content="Neovim Conf 2023, December 8th. Join us @ neovimconf.live" />
-    <meta property="description" content="The conference about the most admired editor in 2023 among developers!" />
-    <meta property="og:description" content="The conference about the most admired editor in 2023 among developers!" />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:alt" content="Neovim Conf 2023, December 8th. Join us for free @ neovimconf.live" />
+    <meta property="og:description" content="The conference about the most admired editor in 2023 among developers! December 8th, join us for free!" />
+    <meta name="description" content="The conference for the most admired editor in 2023 among developers! December 8th 2023, join us for free!" />
+
+    <link rel="canonical" href={canonicalURL} />
 
     <link
       rel="apple-touch-icon"
