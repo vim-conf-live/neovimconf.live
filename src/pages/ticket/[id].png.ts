@@ -136,10 +136,8 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
   });
 
   response.headers.set("Cache-Tag", `ticket-${id}`);
-  response.headers.set("Netlify-Cache-Tag", `ticket-${id}`);
   response.headers.set("Cache-Control", "public, max-age=0, must-revalidate") // Tell browsers to always revalidate
   response.headers.set("Netlify-CDN-Cache-Control", "public, max-age=31536000, must-revalidate") // Tell Edge to cache asset for up to a year,
-  response.headers.set("Cache-Control", `public, max-age=${60 * 60 * 24 * 30}`);
 
   return response
 };
