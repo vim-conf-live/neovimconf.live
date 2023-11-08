@@ -59,7 +59,8 @@ const ProfileForm: React.FC<{ session: Session }> = ({ session }) => {
         } else {
           setFormState("purge")
           getTicket(user).then(ticket => {
-            fetch(`/api/refresh/?tag=ticket-${ticket}`).then(() => {
+
+            fetch(`/.netlify/functions/refresh?tag=ticket-${ticket}`).then(() => {
               window.location.href = "/ticket"
             })
           })
