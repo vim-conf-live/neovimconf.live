@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "Neovim Conf 2023",
+  "short_name": "nvc2023",
   "icons": [
     {
       "src": "/favicon/android-chrome-192x192.png",
