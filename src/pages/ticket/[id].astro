@@ -47,7 +47,7 @@ if (user) {
 ---
 
 <App title="ticket">
-  <article class="vise flex-grow flex items-center justify-center flex-col w-full">
+  <article class="vise flex-grow flex items-center justify-center flex-col w-full py-32 space-y-8">
     <Ticket id={Astro.params.id!} client:load />
     <a
       href={link.href}
