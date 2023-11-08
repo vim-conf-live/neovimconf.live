@@ -13,8 +13,8 @@ export interface Props {
   user?: object;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.url);
-const ogImageURL = new URL("/og_image.png", Astro.url);
+const canonicalURL = new URL(Astro.url.pathname, "https://neovimconf.live");
+const ogImageURL = new URL("/og_image.png", "https://neovimconf.live");
 
 const { title } = Astro.props as Props;
 ---
