@@ -54,7 +54,13 @@ if (user) {
 
 <script>
 
+const canShare = navigator.canShare;
 for (const element of document.querySelectorAll('[data-js="share"]')) {
+  if (!canShare) {
+    element.remove();
+    continue;
+  }
+
   element.addEventListener("click", function () {
     navigator.share({
       title: "NeovimConf 2023",
