@@ -11,10 +11,14 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
   const cacheTag = url.searchParams.get("tag");
   const tags = cacheTag ? [cacheTag] : undefined;
 
-  await purgeCache({
-    tags,
-    token: import.meta.env.NETLIFY_PURGE_TOKEN
-  });
+  try {
+    await purgeCache({
+      tags,
+      token: import.meta.env.NETLIFY_PURGE_TOKEN
+    });
+  } catch(e) {
+
+  }
 
   return new Response("Purged!", { status: 202 })
 };
