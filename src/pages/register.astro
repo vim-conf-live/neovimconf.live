@@ -1,5 +1,5 @@
 ---
-import RegisterForm from "@/components/RegisterForm.astro";
+import RegisterForm from "@/components/RegisterForm";
 import App from "@/layouts/App.astro";
 import { createSBSSR } from "@/lib/server/supabase";
 
@@ -44,6 +44,6 @@ if (access_token && refresh_token) {
       </p>
     </div>
 
-    <RegisterForm />
+    <RegisterForm client:load />
   </article>
 </App>
