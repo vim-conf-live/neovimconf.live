@@ -1,10 +1,6 @@
 import { Message } from "./messages.ts";
 import { supabase } from "./supabase.ts";
-// @deno-types="npm:@types/lodash"
-import { load } from "https://deno.land/std@0.205.0/dotenv/mod.ts";
 import { Database } from "./types.ts";
-
-const env = await load();
 
 const sleep = (
   waitFor: number,
@@ -50,7 +46,7 @@ const sendMail = async (
   const options = {
     email: mail.email,
     options: {
-      emailRedirectTo: env.PUBLIC_AUTH_REDIRECT_HOST + "/register/confirm",
+      emailRedirectTo: Deno.env.get("PUBLIC_AUTH_REDIRECT_HOST") + "/register/confirm",
     },
   };
 
