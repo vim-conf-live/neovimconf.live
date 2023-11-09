@@ -23,7 +23,7 @@ export const SignUpSchema = z.object({
 export type RegisterFormFields = z.infer<typeof SignUpSchema>;
 
 export default function RegisterForm() {
-  const { register, handleSubmit, formState: { errors }, formState, setError } = useForm<RegisterFormFields>({
+  const { register, handleSubmit, formState: { errors, isValid, isDirty }, formState, setError } = useForm<RegisterFormFields>({
     resolver: zodResolver(SignUpSchema)
   });
 
@@ -63,8 +63,7 @@ export default function RegisterForm() {
             className="block w-full p-2 shadow-inner border rounded-sm placeholder:text-slate-400 dark:bg-slate-800 dark:border-teal-500"
             placeholder="eg: smart-developer@example.com"
             id="email"
-            type="email"
-            defaultValue={"moin@nilsriedemann.de"}
+            type="text"
             {...register("email")}
             required
           />
@@ -100,8 +99,8 @@ export default function RegisterForm() {
           dark:text-teal-900
           font-mono
           disabled:opacity-50
-        " type="submit" disabled={formState.isSubmitting}>
-            sign up!
+        " type="submit" disabled={!isDirty || !isValid}>
+            {formState.isSubmitSuccessful ? "Signing up..." : "Sign up!"}
           </button>
         </div>
       </form>
