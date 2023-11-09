@@ -23,40 +23,39 @@ import App from "@/layouts/App.astro";
       if (cookieData["nvc-formdata"]) {
         document.cookie = cookie.serialize("nvc-formdata", "");
         const formData = JSON.parse(cookieData["nvc-formdata"]);
-        const {
-          data: profile,
-        } = await supabase.from("user_profile").select("*").eq("id", user.id).single();
+        await supabase.from("user_profile").select("*").eq("id", user.id);
 
-        if (profile) {
-          // already has a profile, no need to do anything
-          return;
-        }
-
-        const { error } = await supabase.from("user_profile").upsert({
+        const { error } = await supabase.from("user_profile").insert({
           id: user.id,
-          promo_mails: formData.reminders === "yes",
+          promo_mails: formData.promo_mails === "yes",
         });
 
-        if(error) {
-          console.error(error);
+        if (error) {
+          console.log("profile already present");
         }
       }
 
-      if (error) {
-        console.error(error);
-      } else {
-        message(
-          `All set! Thanks for confirming your email! You will be redirected to your virtual ticket, otherwise <a href="/register/complete">click here</a>`,
-          "text-teal-500 text-xl",
-        );
-        window.location.href = "/register/complete";
-      }
+      message(
+        `All set! Thanks for confirming your email! You will be redirected to your virtual ticket, otherwise <a href="/register/complete">click here</a>`,
+        "text-teal-500 text-xl",
+      );
+      window.location.href = "/register/complete";
     }
-  })()
+
+    if (error) {
+      console.error(error);
+      message(
+        `Hm. Something went wrong. Please try again later. We'll look into this`,
+        "text-teal-500 text-xl",
+      );
+    }
+
+  })();
 </script>
 
 <App title="confirming">
   <p id="message" class="flex-grow text-center my-32">
     Verifying the confirmation link... hang on a sec.
   </p>
+   }
 </App>

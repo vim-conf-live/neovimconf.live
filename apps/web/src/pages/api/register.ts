@@ -4,7 +4,6 @@ import type { APIRoute } from "astro";
 
 export const prerender = false;
 
-
 const supabase = createClient(
   import.meta.env.PUBLIC_SUPABASE_URL,
   import.meta.env.SUPABASE_SERVICE_KEY
@@ -23,8 +22,8 @@ export const POST: APIRoute = async ({request, cookies}) => {
 
     const { data, error } = await supabase
       .from('signup_queue')
-      .upsert([
-        { email: parsedFormData.data.email }
+      .insert([
+        parsedFormData.data 
       ])
           
     if (error) {

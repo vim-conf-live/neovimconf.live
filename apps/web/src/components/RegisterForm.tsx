@@ -17,7 +17,7 @@ type FormStatus = {
 
 export const SignUpSchema = z.object({
   email: z.string().email("Pleaser enter a valid email address"),
-  reminders: z.boolean()
+  promo_mails: z.boolean()
 });
 
 export type RegisterFormFields = z.infer<typeof SignUpSchema>;
@@ -75,12 +75,12 @@ export default function RegisterForm() {
         </div>
 
         <div>
-          <label htmlFor="reminders" className="text-sm p-1 relative pl-5 block">
+          <label htmlFor="promo_mails" className="text-sm p-1 relative pl-5 block">
             <input
               type="checkbox"
-              id="reminders"
+              id="promo_mails"
               className="absolute left-0 top-2"
-              {...register("reminders")}
+              {...register("promo_mails")}
             />{" "}
             I'm okay with receiving announcements about
             neovimconf via email. (optional)
