@@ -13,5 +13,7 @@ Check your inbox, click on the confirmation link and you're all set! As a token
 of gratitude for your confirmation you'll receive a virtual ticket.
 
 <p class="text-sm">
-    Note: make sure to use the same browser as you did to fill out the form.
+    Note: We're having some technical issues with the confirmations emails.
+    So it might take longer than we'd like until you receive that mail. We're 
+    currently investigating it.
 </p>
