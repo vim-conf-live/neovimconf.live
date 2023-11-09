@@ -3,12 +3,15 @@ layout: "@/layouts/MarkdownContent.astro"
 title: Just one more step!
 ---
 
-# Awesome! Just one more step!
+# Thank you!
 
 We're super stoked that you've signed up!
 This really helps us tremendously organizing this event.
 
-To complete your registration, you need to _confirm your e-mail-address_.
-Check your inbox, click on the confirmation link and you're all set!
+To receive announcements about neovimconf, you need to _confirm your e-mail-address_,
+Check your inbox, click on the confirmation link and you're all set! As a token
+of gratitude for your confirmation you'll receive a virtual ticket.
 
-This may take up to a few minutes. 
+<p class="text-sm">
+    Note: make sure to use the same browser as you did to fill out the form.
+</p>
