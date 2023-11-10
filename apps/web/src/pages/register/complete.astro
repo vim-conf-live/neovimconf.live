@@ -1,5 +1,5 @@
 ---
-import MyTicket from "@/components/MyTicket";
+import Ticket from "@/components/Ticket";
 import App from "@/layouts/App.astro";
 
 const access_token = Astro.cookies.get("sb-access-token")?.value;
@@ -24,7 +24,7 @@ export const prerender = false;
 
       <h2 class="text-5xl text-teal-400">Here's your ticket!</h2>
 
-      <MyTicket client:only />
+      <Ticket client:only />
 
       <a 
         href="/ticket/edit"

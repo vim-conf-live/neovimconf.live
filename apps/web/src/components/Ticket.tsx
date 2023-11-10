@@ -1,38 +1,72 @@
 import { getCurrentUser, getTicket } from "@/lib/auth";
-import { useEffect, useState } from "react";
-import { version } from "../../package.json"
+import { useEffect, useReducer, useState } from "react";
 
-export default function Ticket({ id: ticketId }: { id: string | number }) {
-  const [state, setState] = useState<"loading" | "done">("loading")
-  const [error, setError] = useState<string>()
+type Actions =
+  | { type: "timeout" }
+  | { type: "loaded", ticketId: string }
+
+type State =
+  | { state: "loading", error: null, ticketId: null }
+  | { state: "done", ticketId: string, error: null }
+  | { state: "done", ticketId: null, error: string }
+
+
+const reducer = (state: State, action: Actions): State => {
+  if (action.type === "loaded" && state.state === "loading") {
+    return {
+      state: "done",
+      ticketId: action.ticketId,
+      error: null
+    }
+  }
+
+  if (action.type === "timeout" && state.state === "loading") {
+    return {
+      state: "done",
+      error: "Virtual ticket image generation timed out. Your ticket is safe! Please try again later.",
+      ticketId: null
+    }
+  }
+
+  return state
+}
+
+export default function Ticket({ ticketId }: { ticketId?: number | string }) {
+  const [state, dispatch] = useReducer(reducer, { state: "loading", error: null, ticketId: null })
+
 
   useEffect(() => {
-    const img = new Image()
-    img.src = `/ticket/${ticketId}.png`
-    const timeout = setTimeout(() => {
-      if (state === "loading") {
-        setError("Virtual ticket image generation timed out. Your ticket is safe! Please try again later.")
-        setState("done")
-      }
-    }, 1000)
-    img.onload = () => {
-      clearTimeout(timeout)
-      return setState("done")
-    }
+    const chain = ticketId
+      ? Promise.resolve(ticketId)
+      : getCurrentUser().then(getTicket)
+
+    chain
+      .then((ticket) => {
+        const img = new Image()
+        img.src = `/ticket/${ticket}.png`
+
+        const timeout = setTimeout(() => {
+          dispatch({ type: "timeout" })
+        }, 500)
+
+        img.onload = () => {
+          clearTimeout(timeout)
+          dispatch({ type: "loaded", ticketId: String(ticket) })
+        }
+      })
   }, [])
 
-  if (error) return (
-    <div className="aspect-og max-w-full object-contain flex border justify-center items-center mb-8 shadow-lg text-teal-500 bg-slate-500 rounded-lg w-full">
-      <p className="bg-slate-950 p-4 animate-pulse relative rounded-xl shadow">
-        {error}
-        <span className="animate-ping absolute inset-0 border-4 border-black rounded-xl"></span>
+  if (state.error) return (
+    <div className="aspect-og max-w-full object-contain flex justify-center items-center mb-8 shadow-lg text-amber-500 bg-slate-300 dark:bg-slate-800 rounded-lg w-full">
+      <p className="bg-slate-950 p-4 relative rounded-xl shadow m-8">
+        {state.error}
       </p>
     </div>
   )
 
-  if (state === "loading") return (
-    <div className="aspect-og max-w-full object-contain flex border justify-center items-center mb-8 shadow-lg text-teal-500 bg-slate-500 rounded-lg w-full">
-      <p className="bg-slate-950 p-4 animate-pulse relative rounded-xl shadow">
+  if (!state.ticketId) return (
+    <div className="aspect-og max-w-full object-contain flex justify-center items-center mb-8 shadow-inner text-teal-500 bg-slate-300 dark:bg-slate-800 rounded-lg w-full">
+      <p className="bg-slate-950 p-4 animate-pulse relative rounded-xl shadow text-xl">
         generating virtual ticket...
         <span className="animate-ping absolute inset-0 border-4 border-black rounded-xl"></span>
       </p>
@@ -40,6 +74,6 @@ export default function Ticket({ id: ticketId }: { id: string | number }) {
   )
 
   return (
-    <img src={`/ticket/${ticketId}.png?v${version}`} alt="" className="shadow-lg rounded-xl w-full aspect-og" width={1200} height={600} />
+    <img src={`/ticket/${state.ticketId}.png`} width={1200} height={600} alt="" className="shadow-lg rounded-xl" />
   )
 }

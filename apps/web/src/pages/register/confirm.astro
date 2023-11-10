@@ -5,7 +5,7 @@ import App from "@/layouts/App.astro";
 <script>
   import { supabase } from "@/lib/auth";
   import * as Sentry from "@sentry/astro";
-import type { Session, User } from "@supabase/supabase-js";
+  import type { Session } from "@supabase/supabase-js";
   import cookie from "cookie";
 
   const message = (m: string, classList: string) => {
@@ -15,16 +15,14 @@ import type { Session, User } from "@supabase/supabase-js";
   };
 
   const verify = () => {
-    return supabase.auth
-      .getSession()
-      .then(({ data, error }) => {
-        if (data.session) {
-          return data.session;
-        }
+    return supabase.auth.getSession().then(({ data, error }) => {
+      if (data.session) {
+        return data.session;
+      }
 
-        console.error("getSession error", {error})
-        return Promise.reject(error);
-      });
+      console.error("getSession error", { error });
+      return Promise.reject(error);
+    });
   };
 
   const createProfile = async (session: Session) => {
@@ -35,39 +33,44 @@ import type { Session, User } from "@supabase/supabase-js";
       .eq("id", session.user.id);
 
     if (profile) {
-      return profile
+      return profile;
     }
 
     if (cookieData["nvc-formdata"]) {
       document.cookie = cookie.serialize("nvc-formdata", "");
       const formData = JSON.parse(cookieData["nvc-formdata"]);
 
-      const { data: profile, error } = await supabase.from("user_profile").insert({
-        promo_mails: formData.promo_mails === "yes",
-      }).select();
+      const { data: profile, error } = await supabase
+        .from("user_profile")
+        .insert({
+          promo_mails: formData.promo_mails === "yes",
+        })
+        .select();
 
-      if (error){
-        return Promise.reject(error)
+      if (error) {
+        return Promise.reject(error);
       }
 
-      return profile
+      return profile;
     }
-  }
+  };
 
   const confirmedMessage = <T extends Session>(input: T) => {
-    message(`Account confirmed! Creating a profile for you...`, `text-teal-500 text-xl`)
-    Sentry.captureMessage("Account confirmed", { extra: { input } })
-    return input
-  }
-
+    message(
+      `Account confirmed! Creating a profile for you...`,
+      `text-teal-500 text-xl`,
+    );
+    Sentry.captureMessage("Account confirmed", { extra: { input } });
+    return input;
+  };
 
   const successMessage = () => {
-      message(
-        `All set! Thanks for confirming your email! You will be redirected to your virtual ticket, otherwise <a class="underline" href="/register/complete">click here</a>`,
-        "text-teal-500 text-xl",
-      );
-      window.location.href = "/register/complete";
-  }
+    message(
+      `All set! Thanks for confirming your email! You will be redirected to your virtual ticket, otherwise <a class="underline" href="/register/complete">click here</a>`,
+      "text-teal-500 text-xl",
+    );
+    window.location.href = "/register/complete";
+  };
 
   verify()
     .then(confirmedMessage)
@@ -75,7 +78,7 @@ import type { Session, User } from "@supabase/supabase-js";
     .then(successMessage)
     .catch((error) => {
       Sentry.captureException(error);
-      if(error instanceof Error) {
+      if (error instanceof Error) {
         if (error.message?.includes("invalid claim")) {
           return message(
             `Hm. That link seems to have expired. <a href="/register" class="underline">Request a new one</a>`,
@@ -95,5 +98,4 @@ import type { Session, User } from "@supabase/supabase-js";
   <p id="message" class="flex-grow text-center my-32">
     Verifying the confirmation link... hang on a sec.
   </p>
-   }
 </App>
