@@ -1,7 +1,8 @@
+import { Database } from "@/types";
 import { createClient, type User } from "@supabase/supabase-js";
 import cookie from "cookie";
 
-export const supabase = createClient(
+export const supabase = createClient<Database>(
   import.meta.env.PUBLIC_SUPABASE_URL,
   import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
 );

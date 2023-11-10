@@ -30,7 +30,6 @@ export default function RegisterForm() {
   const hasError = (field: string) => (errors as any)?.[field]?.length > 0;
 
   const onSubmit: SubmitHandler<RegisterFormFields> = (data) => {
-    console.log(JSON.stringify(data))
     fetch("/api/register", {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),

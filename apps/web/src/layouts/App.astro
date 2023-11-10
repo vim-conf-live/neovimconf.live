@@ -22,6 +22,7 @@ const { title } = Astro.props as Props;
 <script>
   import { supabase } from "@/lib/auth";
   import { install } from "@github/hotkey";
+import invariant from "tiny-invariant";
 
   supabase.auth.onAuthStateChange((event, session) => {
     if (event === "SIGNED_OUT") {
@@ -30,6 +31,7 @@ const { title } = Astro.props as Props;
       document.cookie = `sb-access-token=; path=/; expires=${expires}; SameSite=Lax;`;
       document.cookie = `sb-refresh-token=; path=/; expires=${expires}; SameSite=Lax;`;
     } else if (event === "SIGNED_IN" || event === "TOKEN_REFRESHED") {
+      invariant(session)
       const maxAge = 100 * 365 * 24 * 60 * 60; // 100 years, never expires
       document.cookie = `sb-access-token=${session.access_token}; path=/; max-age=${maxAge}; SameSite=Lax;`;
       document.cookie = `sb-refresh-token=${session.refresh_token}; path=/; max-age=${maxAge}; SameSite=Lax;`;

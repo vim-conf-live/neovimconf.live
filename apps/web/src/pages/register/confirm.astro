@@ -5,12 +5,9 @@ import App from "@/layouts/App.astro";
 <script>
   import { supabase } from "@/lib/auth";
   import * as Sentry from "@sentry/astro";
+import type { Session, User } from "@supabase/supabase-js";
   import cookie from "cookie";
 
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-
-  console.log("confirming")
   const message = (m: string, classList: string) => {
     const el = document.getElementById("message")!;
     el.classList.add(...classList.split(" "));
@@ -21,20 +18,21 @@ import App from "@/layouts/App.astro";
     return supabase.auth
       .getSession()
       .then(({ data, error }) => {
-        if (error) {
-          console.error("getSession error", {error})
-          return Promise.reject(error);
+        if (data.session) {
+          return data.session;
         }
-        return data;
+
+        console.error("getSession error", {error})
+        return Promise.reject(error);
       });
   };
 
-  const createProfile = async (user) => {
+  const createProfile = async (session: Session) => {
     const cookieData = cookie.parse(document.cookie);
-    const { data: profile, error: profileError } = await supabase
+    const { data: profile } = await supabase
       .from("user_profile")
       .select("id")
-      .eq("id", user.id);
+      .eq("id", session.user.id);
 
     if (profile) {
       return profile
@@ -56,8 +54,8 @@ import App from "@/layouts/App.astro";
     }
   }
 
-  const confirmedMessage = (input) => {
-    message(`Account confirmed! Creating a profile for you...`)
+  const confirmedMessage = <T extends Session>(input: T) => {
+    message(`Account confirmed! Creating a profile for you...`, `text-teal-500 text-xl`)
     Sentry.captureMessage("Account confirmed", { extra: { input } })
     return input
   }
@@ -72,6 +70,7 @@ import App from "@/layouts/App.astro";
   }
 
   verify()
+    .then(confirmedMessage)
     .then(createProfile)
     .then(successMessage)
     .catch((error) => {
