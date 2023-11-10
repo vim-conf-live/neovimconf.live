@@ -1,4 +1,4 @@
-import { Database } from "@/types";
+import { type Database } from "@/types";
 import { createClient, type User } from "@supabase/supabase-js";
 import cookie from "cookie";
 
