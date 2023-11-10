@@ -1,5 +1,5 @@
 import { getCurrentUser, getTicket } from "@/lib/auth";
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer } from "react";
 
 type Actions =
   | { type: "timeout" }
@@ -47,7 +47,7 @@ export default function Ticket({ ticketId }: { ticketId?: number | string }) {
 
         const timeout = setTimeout(() => {
           dispatch({ type: "timeout" })
-        }, 500)
+        }, 8_000)
 
         img.onload = () => {
           clearTimeout(timeout)
