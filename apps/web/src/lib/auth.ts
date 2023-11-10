@@ -1,19 +1,43 @@
 import { createClient, type User } from "@supabase/supabase-js";
+import cookie from "cookie";
 
 export const supabase = createClient(
   import.meta.env.PUBLIC_SUPABASE_URL,
   import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
 );
 
+let currentUser: User | null = null;
 
 export const getCurrentUser = async () => {
+  if (typeof document !== "undefined") {
+    const cookieData = cookie.parse(document.cookie);
+    if (!cookieData["sb-access-token"] || !cookieData["sb-refresh-token"]) {
+      currentUser = null;
+      return Promise.reject(null);
+    }
+  }
+
+  if (currentUser) {
+    return currentUser
+  }
+
   const { data: { user } } = await supabase.auth.getUser()
-  return user ? user : Promise.reject('No user found')
+  if (!user) {
+    await supabase.auth.signOut();
+    return Promise.reject(null)
+  }
+
+  currentUser = user
+
+  return currentUser
 }
 
+
 export const getTicket = async (user: User) => {
-  const ticket = await supabase.from("profiles").select("ticket").eq("id", user.id).single();
-  return ticket.data?.ticket 
-    ? ticket.data.ticket 
-    : Promise.reject('No ticket found');
+  const {data, error} = await supabase.from("profiles").select("ticket").eq("id", user.id).single();
+  if (error) {
+    return Promise.reject('No ticket found');
+  }
+
+  return data.ticket
 }

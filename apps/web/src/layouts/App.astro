@@ -24,10 +24,6 @@ const { title } = Astro.props as Props;
   import { install } from "@github/hotkey";
 
   supabase.auth.onAuthStateChange((event, session) => {
-    if (!session) {
-      return;
-    };
-
     if (event === "SIGNED_OUT") {
       // delete cookies on sign out
       const expires = new Date(0).toUTCString();

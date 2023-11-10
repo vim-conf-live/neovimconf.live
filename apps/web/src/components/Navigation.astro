@@ -1,5 +1,6 @@
 ---
 import Logo from "./Logo.astro";
+import {LogoutButton} from "./LogoutButton";
 
 const isCurrent = (href: string) =>
   Astro.url.pathname.startsWith(`/` + href.split("/")[1]);
@@ -38,9 +39,11 @@ const link = (opts: { href: string; class?: string; hotkey?: string }) => ({
     )
   }
 
+
   <div
     class="flex space-x-4 w-full items-center text-xs md:text-sm justify-end md:justify-end"
   >
+    <LogoutButton client:only />
     <a {...link({ href: "/code-of-conduct", hotkey: "g c" })}>Code of Conduct</a
     >
 

@@ -4,53 +4,91 @@ import App from "@/layouts/App.astro";
 
 <script>
   import { supabase } from "@/lib/auth";
+  import * as Sentry from "@sentry/astro";
   import cookie from "cookie";
 
-  (async () => {
-    const {
-      data: { user },
-      error,
-    } = await supabase.auth.getUser();
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
 
-    const message = (m: string, classList: string) => {
-      const el = document.getElementById("message")!;
-      el.classList.add(...classList.split(" "));
-      el.innerHTML = m;
-    };
+  console.log("confirming")
+  const message = (m: string, classList: string) => {
+    const el = document.getElementById("message")!;
+    el.classList.add(...classList.split(" "));
+    el.innerHTML = m;
+  };
 
-    if (user) {
-      const cookieData = cookie.parse(document.cookie);
-      if (cookieData["nvc-formdata"]) {
-        document.cookie = cookie.serialize("nvc-formdata", "");
-        const formData = JSON.parse(cookieData["nvc-formdata"]);
-        await supabase.from("user_profile").select("*").eq("id", user.id);
-
-        const { error } = await supabase.from("user_profile").insert({
-          id: user.id,
-          promo_mails: formData.promo_mails === "yes",
-        });
-
+  const verify = () => {
+    return supabase.auth
+      .getSession()
+      .then(({ data, error }) => {
         if (error) {
-          console.log("profile already present");
+          console.error("getSession error", {error})
+          return Promise.reject(error);
         }
+        return data;
+      });
+  };
+
+  const createProfile = async (user) => {
+    const cookieData = cookie.parse(document.cookie);
+    const { data: profile, error: profileError } = await supabase
+      .from("user_profile")
+      .select("id")
+      .eq("id", user.id);
+
+    if (profile) {
+      return profile
+    }
+
+    if (cookieData["nvc-formdata"]) {
+      document.cookie = cookie.serialize("nvc-formdata", "");
+      const formData = JSON.parse(cookieData["nvc-formdata"]);
+
+      const { data: profile, error } = await supabase.from("user_profile").insert({
+        promo_mails: formData.promo_mails === "yes",
+      }).select();
+
+      if (error){
+        return Promise.reject(error)
       }
 
+      return profile
+    }
+  }
+
+  const confirmedMessage = (input) => {
+    message(`Account confirmed! Creating a profile for you...`)
+    Sentry.captureMessage("Account confirmed", { extra: { input } })
+    return input
+  }
+
+
+  const successMessage = () => {
       message(
-        `All set! Thanks for confirming your email! You will be redirected to your virtual ticket, otherwise <a href="/register/complete">click here</a>`,
+        `All set! Thanks for confirming your email! You will be redirected to your virtual ticket, otherwise <a class="underline" href="/register/complete">click here</a>`,
         "text-teal-500 text-xl",
       );
       window.location.href = "/register/complete";
-    }
+  }
 
-    if (error) {
-      console.error(error);
-      message(
+  verify()
+    .then(createProfile)
+    .then(successMessage)
+    .catch((error) => {
+      Sentry.captureException(error);
+
+      if (error.message.includes("invalid claim")) {
+        return message(
+          `Hm. That link seems to have expired. <a href="/register" class="underline">Request a new one</a>`,
+          "text-amber-500 text-xl",
+        );
+      }
+
+      return message(
         `Hm. Something went wrong. Please try again later. We'll look into this`,
-        "text-teal-500 text-xl",
+        "text-red-500 text-xl",
       );
-    }
-
-  })();
+    });
 </script>
 
 <App title="confirming">
