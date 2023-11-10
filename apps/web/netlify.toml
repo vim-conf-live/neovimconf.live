@@ -4,6 +4,13 @@
   functions = "netlify/functions"
   publish = "apps/web/dist"
 
+[[plugins]]
+  package = "@sentry/netlify-build-plugin"
+
+  [plugins.inputs]
+    sentryOrg = "bleep-bloop-studio"
+    sentryProject = "neovimconf"
+
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
   #[[redirects]]
