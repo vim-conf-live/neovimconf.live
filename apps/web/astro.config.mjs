@@ -16,6 +16,7 @@ export default defineConfig({
   integrations: [
     sentry({
       dsn: "https://acc5a569e0cde4317688542f3df992a8@o192873.ingest.sentry.io/4506201758171136",
+      environment: env.NODE_ENV,
       sourceMapsUploadOptions: {
         project: "neovimconf",
         authToken: env.SENTRY_AUTH_TOKEN,
