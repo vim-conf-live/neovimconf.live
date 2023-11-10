@@ -1,26 +1,11 @@
 import { Message } from "./messages.ts";
 import { supabase } from "./supabase.ts";
 import { Database } from "./types.ts";
+import { log } from "./logging.ts"
 
 const sleep = (
   waitFor: number,
 ) => new Promise<void>((resolve) => setTimeout(() => resolve(), waitFor));
-
-const log = (
-  scope: string,
-  message: string,
-  payload?: object | string | number,
-) => {
-  console.log({ scope, message, payload });
-};
-
-log.error = (
-  scope: string,
-  message: string,
-  payload?: object | string | number,
-) => {
-  console.error({ scope, message, payload });
-};
 
 async function* getMails(count: number) {
   let lastId = 0;
@@ -120,8 +105,15 @@ const processMails = async () => {
   }
 };
 
+interface Window {
+    onmessage: (message: Message) => void;
+}
+
 self.onmessage = (message: Message) => {
-  log("onmessage", message);
+  if (message !== "new data") {
+    return;
+  }
+
   if (state === "processing") {
     log("onmessage", "already processing, ignoring");
   }

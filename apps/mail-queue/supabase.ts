@@ -1,4 +1,4 @@
-import { createClient } from "npm:@supabase/supabase-js";
+import { createClient } from "./deps.ts";
 import { Database } from "./types.ts";
 
 export const supabase = createClient<Database>(

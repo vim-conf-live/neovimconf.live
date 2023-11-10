@@ -1,0 +1,15 @@
+# fly.toml app configuration file generated for mail-queue on 2023-11-10T01:03:56+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "mail-queue"
+primary_region = "iad"
+
+[build]
+
+[env]
+  PORT = "8080"
+
+[processes]
+  app = "run --allow-net --allow-read --allow-ffi --allow-env main.ts"
