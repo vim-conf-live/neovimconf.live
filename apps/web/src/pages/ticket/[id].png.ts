@@ -49,23 +49,24 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
   const id = params.id!;
   const supabase = createSBSSR({ cookies });
 
+  const fontData = await fetch(
+    new URL('/fonts/jb-mono.ttf', "https://neovimconf.live/"),
+  ).then((res) => res.arrayBuffer());
+
   const { error, data: user } = await supabase
     .from("profiles")
     .select("username, full_name, job_description,id, promo_mails")
     .eq("ticket", id)
-    .single();
+    .maybeSingle();
+
 
   if (error) {
-    throw new Error(error.message);
+    return new Response("error", { status: 500 });
   }
 
-  // using custom font files
-  const JBbold = fs.readFileSync(
-    path.resolve("./src/assets/JetBrainsMono-Bold.ttf"),
-  );
-  const JBregular = fs.readFileSync(
-    path.resolve("./src/assets/JetBrainsMono-Medium.ttf"),
-  );
+  if (!user) {
+    return new Response("not found", { status: 404 })
+  }
 
   const html = e(
     "div",
@@ -121,13 +122,8 @@ export const GET: APIRoute = async ({ request, params, cookies }) => {
     height: 600,
     fonts: [
       {
-        name: "JetBrains Mono Bold",
-        data: JBbold.buffer,
-        style: "normal",
-      },
-      {
         name: "JetBrains Mono Regular",
-        data: JBregular.buffer,
+        data: fontData,
         style: "normal",
       },
     ],
