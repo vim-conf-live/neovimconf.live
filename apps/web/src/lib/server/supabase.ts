@@ -1,10 +1,10 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import type { AstroCookies } from "astro";
 
-export const createSBSSR = ({ cookies }: { cookies: AstroCookies }) =>
-  createServerClient(
+export const createSBSSR = ({ cookies }: { cookies: AstroCookies }) => {
+  return createServerClient(
     import.meta.env.PUBLIC_SUPABASE_URL,
-    import.meta.env.PUBLIC_SUPABASE_ANON_KEY,
+    import.meta.env.SUPABASE_SERVICE_KEY,
     {
       cookies: {
         get(key: string) {
@@ -19,3 +19,4 @@ export const createSBSSR = ({ cookies }: { cookies: AstroCookies }) =>
       },
     },
   );
+}

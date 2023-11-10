@@ -2,6 +2,7 @@ import { useState, type FormEventHandler } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ZodError, z } from "zod";
+import { FormError } from "./FormError";
 
 export interface Props {
   errors?: { email?: string[] };
@@ -50,9 +51,9 @@ export default function RegisterForm() {
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="max-w-sm mx-auto space-y-4" >
         {errors.root?.message && (
-          <p className="text-red-500 text-sm text-right">
+          <FormError>
             {errors.root.message.toString()}
-          </p>
+          </FormError>
         )}
         <div className={[hasError("email") ? "text-red-500" : null].join(" ")}>
           <label htmlFor="email" className="text-sm font-mono p-1">
@@ -87,18 +88,7 @@ export default function RegisterForm() {
         </div>
 
         <div className="text-right">
-          <button className="
-          inline-block
-          relative
-          text-center
-          bg-teal-300
-          p-2
-          rounded-sm
-          hover:bg-teal-200
-          dark:text-teal-900
-          font-mono
-          disabled:opacity-50
-        " type="submit" disabled={!isDirty || !isValid}>
+          <button className="inline-block relative text-center bg-teal-300 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:opacity-50" type="submit" disabled={!isDirty || !isValid}>
             {formState.isSubmitSuccessful ? "Signing up..." : "Sign up!"}
           </button>
         </div>

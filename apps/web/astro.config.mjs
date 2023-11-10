@@ -19,6 +19,7 @@ export default defineConfig({
       environment: env.NODE_ENV,
       sourceMapsUploadOptions: {
         project: "neovimconf",
+        telemetry: env.NODE_ENV === "production",
         authToken: env.SENTRY_AUTH_TOKEN,
       },
     }),

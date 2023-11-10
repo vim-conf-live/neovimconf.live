@@ -1,0 +1,22 @@
+---
+import { LightningForm } from "@/components/LightningForm";
+import App from "@/layouts/App.astro";
+
+---
+
+<App title="Register">
+  <article class="space-y-8 vise">
+    <div class="prose dark:prose-invert mx-auto mb-8">
+      <h1 class="font-mono font-bold">Submit your lightning talk!</h1>
+
+      <p class="max-w-sm mb-8">
+        Got a neat trick you want to share? An interesting plugin? Don't be shy.
+        Show us! We're all friends here.
+      </p>
+    </div>
+
+    <div class="max-w-prose">
+      <LightningForm client:load />
+    </div>
+  </article>
+</App>

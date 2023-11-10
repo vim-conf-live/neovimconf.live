@@ -44,8 +44,8 @@ const link = (opts: { href: string; class?: string; hotkey?: string }) => ({
     class="flex space-x-4 w-full items-center text-xs md:text-sm justify-end md:justify-end"
   >
     <LogoutButton client:only />
-    <a {...link({ href: "/code-of-conduct", hotkey: "g c" })}>Code of Conduct</a
-    >
+
+    <a {...link({ href: "/code-of-conduct", hotkey: "g c" })}>Code of Conduct</a>
 
     <div class="flex space-x-4">
       <a
