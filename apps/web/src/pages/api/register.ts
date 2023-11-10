@@ -1,13 +1,17 @@
 import { SignUpSchema } from "@/components/RegisterForm";
-import { createSBSSR } from "@/lib/server/supabase";
+import { createClient } from '@supabase/supabase-js'
 import type { APIRoute } from "astro";
 
 export const prerender = false;
 
+const supabase = createClient(
+  import.meta.env.PUBLIC_SUPABASE_URL,
+  import.meta.env.SUPABASE_SERVICE_KEY
+);
+
 export const POST: APIRoute = async ({request, cookies}) => {
   const data = await request.json();
   const parsedFormData = SignUpSchema.safeParse(data);
-  const supabase = createSBSSR({ cookies });
 
   if (parsedFormData.success) {
     cookies.set("nvc-formdata", JSON.stringify(parsedFormData.data), {
@@ -16,14 +20,12 @@ export const POST: APIRoute = async ({request, cookies}) => {
       maxAge: 60 * 60 * 24,
     });
 
-    const { error } = await supabase.auth.signInWithOtp({
-      email: parsedFormData.data.email,
-      options: {
-        emailRedirectTo:
-          import.meta.env.PUBLIC_AUTH_REDIRECT_HOST + "/register/confirm",
-      },
-    });
-
+    const { data, error } = await supabase
+      .from('signup_queue')
+      .insert([
+        parsedFormData.data 
+      ])
+          
     if (error) {
       return new Response(JSON.stringify({
         error: error.message
@@ -32,7 +34,6 @@ export const POST: APIRoute = async ({request, cookies}) => {
 
     return new Response(JSON.stringify({
       success: true,
-      data: parsedFormData.data
     }))
   }
 

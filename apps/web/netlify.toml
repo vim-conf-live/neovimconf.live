@@ -1,8 +1,14 @@
 # example netlify.toml
 [build]
-  command = "pnpm run build"
+  command = "pnpm run web:build"
   functions = "netlify/functions"
-  publish = "dist"
+  publish = "apps/web/dist"
+
+# [[plugins]]
+#   package = "@sentry/netlify-build-plugin"
+#   [plugins.inputs]
+#     sentryOrg = "bleep-bloop-studio"
+#     sentryProject = "neovimconf"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.

@@ -8,7 +8,7 @@ const plugins =
 ---
 
 <script>
-  import { supabase } from "@/lib/auth";
+  import { supabase, getCurrentUser } from "@/lib/auth";
 
   const randomTextColor = () => {
     const rand = Math.random();
@@ -48,13 +48,13 @@ const plugins =
     requestAnimationFrame(render);
   });
 
-  supabase.auth.getUser().then(({ error, data }) => {
-    if (!error) {
+  getCurrentUser().then((user) => {
+    if (user) {
       const link = document.querySelector("a[href='/register']")!;
       link.innerHTML = `You're in! 🎉 <span class="hidden md:inline">View your ticket!</span>`;
       link.setAttribute("href", "/ticket");
     }
-  });
+  }).catch(() => {});
 </script>
 
 <header class="relative w-screen font-mono">
