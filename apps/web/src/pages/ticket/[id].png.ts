@@ -4,8 +4,6 @@ import { ImageResponse } from "@vercel/og";
 import type { APIRoute } from "astro";
 import { createSBSSR } from "@/lib/server/supabase";
 
-// export { getStaticPaths } from './[id].astro';
-
 export const prerender = false;
 
 let key = 0;

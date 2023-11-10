@@ -75,12 +75,13 @@ import type { Session, User } from "@supabase/supabase-js";
     .then(successMessage)
     .catch((error) => {
       Sentry.captureException(error);
-
-      if (error.message.includes("invalid claim")) {
-        return message(
-          `Hm. That link seems to have expired. <a href="/register" class="underline">Request a new one</a>`,
-          "text-amber-500 text-xl",
-        );
+      if(error instanceof Error) {
+        if (error.message?.includes("invalid claim")) {
+          return message(
+            `Hm. That link seems to have expired. <a href="/register" class="underline">Request a new one</a>`,
+            "text-amber-500 text-xl",
+          );
+        }
       }
 
       return message(
