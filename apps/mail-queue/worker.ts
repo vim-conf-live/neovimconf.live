@@ -6,12 +6,28 @@ const sleep = (
   waitFor: number,
 ) => new Promise<void>((resolve) => setTimeout(() => resolve(), waitFor));
 
+const log = (
+  scope: string,
+  message: string,
+  payload?: object | string | number,
+) => {
+  console.log({ scope, message, payload });
+};
+
+log.error = (
+  scope: string,
+  message: string,
+  payload?: object | string | number,
+) => {
+  console.error({ scope, message, payload });
+};
+
 async function* getMails(count: number) {
   let lastId = 0;
   let done = false;
 
   while (!done) {
-    console.log({ lastId });
+    log("getMails", "fetching new mails", { lastId, count });
     const { data, error } = await supabase
       .from("signup_queue")
       .select("*")
@@ -21,7 +37,7 @@ async function* getMails(count: number) {
       .limit(count);
 
     if (error) {
-      console.error(error);
+      log.error("getMails", "error fetching new mails", { error });
       done = true;
     }
 
@@ -36,61 +52,82 @@ async function* getMails(count: number) {
   }
 }
 
-console.log("=== scheduled-mail-sender");
+log("main", "starting worker");
 
 const timeout = 2000;
 const sendMail = async (
   mail: Database["public"]["Tables"]["signup_queue"]["Row"],
 ) => {
+  let success: boolean;
   const started = Date.now();
   const options = {
     email: mail.email,
     options: {
-      emailRedirectTo: Deno.env.get("PUBLIC_AUTH_REDIRECT_HOST") + "/register/confirm",
+      emailRedirectTo: Deno.env.get("PUBLIC_AUTH_REDIRECT_HOST") +
+        "/register/confirm",
     },
   };
 
-  const { data, error } = await supabase.auth.signInWithOtp(options);
-  console.log(data.messageId)
+  const { error } = await supabase.auth.signInWithOtp(options);
 
   if (error) {
-    console.error(error);
+    log.error("sendMail", "error sending mail", { error })
+    success = false
   } else {
-    await supabase.from("signup_queue").update({
+    success = true
+    log("sendMail", "mail sent, updating row", { mail })
+    const {error} = await supabase.from("signup_queue").update({
       id: mail.id,
       sent_at: "now()",
     }).eq("id", mail.id);
+    if (error) {
+      log("sendMail", "error updating row", { error })
+    }
   }
 
   // make sure we don't send too many mails at once
   const wait = Math.max(timeout - (Date.now() - started), 0);
+  log("sendMail", "waiting", { wait })
   await sleep(wait);
+
+  return success
 };
 
 let state: "idle" | "processing" = "idle";
 const processMails = async () => {
   state = "processing";
-  console.log("processing mails");
+  log("processMails", "starting")
+  let rerun = false;
   for await (const mails of getMails(2)) {
-    console.log("got mails", mails?.map((m) => m.email));
+    log("processMails", "got mails:", { mails: mails?.map(m => m.email) })
     if (!mails) {
       break;
     }
 
     for (const mail of mails) {
-      await sendMail(mail);
+      if(await sendMail(mail) == false) {
+        log("processMails", "error sending mail, retrying in next iteration")
+        rerun = true;
+      }
     }
   }
   state = "idle";
-  console.log("done processing mails, going to sleep");
+  log("processMails", "done")
+
+  if (rerun) {
+    log("processMails", "rerun")
+    processMails();
+  }
 };
 
 self.onmessage = (message: Message) => {
+  log("onmessage", message);
   if (state === "processing") {
-    console.log("already processing, ignoring");
+    log("onmessage", "already processing, ignoring");
   }
 
   if (state === "idle") {
+    log("onmessage", "starting processMails()")
     processMails();
   }
 };

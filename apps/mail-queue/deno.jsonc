@@ -1,5 +1,6 @@
 {
   "tasks": {
-    "dev": "deno run --watch main.ts"
+    "dev": "deno run --watch main.ts",
+    "start": "env $(cat .env|xargs) deno run --allow-net --allow-read --allow-ffi --allow-env main.ts"
   }
 }
