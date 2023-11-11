@@ -111,7 +111,7 @@ export const LightningForm = () => {
           </p>
         )}
       </div>
-      <pre>{JSON.stringify(errors, null, 2)}</pre>
+
       <div className={["col-span-2 mb-4 md:mb-0", hasError("description") ? "text-red-500" : null].join(" ")}>
         <label htmlFor="description" className="text-sm font-mono p-1">
           What do you want to talk about?
