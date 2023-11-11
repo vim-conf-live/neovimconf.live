@@ -20,7 +20,6 @@ import App from "@/layouts/App.astro";
         return data.session;
       }
 
-      console.error("getSession error", { error });
       return Promise.reject(error);
     });
   };
