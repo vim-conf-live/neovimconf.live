@@ -4,7 +4,7 @@ export const log = (
   message: string,
   payload?: object | string | number,
 ) => {
-  console.log({ scope, message, payload });
+  console.log({ scope, message, payload, at: new Date() })
 };
 
 log.error = (
@@ -12,6 +12,6 @@ log.error = (
   message: string,
   payload?: object | string | number,
 ) => {
-  console.error({ scope, message, payload });
+  console.error({ scope, message, payload, at: new Date() });
 };
 
