@@ -59,7 +59,9 @@ const randomHoverRotation = () =>
       <div class="rounded overflow-hidden relative bg-sky-100 dark:bg-sky-200">
         <img
           src={`//unsplash.it/seed/${speaker.slug}/640/480`}
-          class="object-fit aspect-[4/3] grayscale mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal transition-all"
+          width={640}
+          height={480}
+          class="object-fit aspect-[4/3] bg-slate-950 grayscale mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal transition-all"
         />
       </div>
 

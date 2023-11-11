@@ -25,9 +25,11 @@ const talks = await getCollection(
 ---
 
 <App title={speaker!.data.name}>
-  <article class="grid grid-cols-4 gap-x-8 vise">
-    <div>
-      <SpeakerCard for={speaker} class="mb-" />
+  <article
+    class="grid grid-cols-1 sm:grid-cols-12 md:grid-cols-3 lg:grid-cols-4 gap-x-8 vise relative"
+  >
+    <div class="row-start-2 sm:row-start-auto sm:col-span-5 md:col-span-1">
+      <SpeakerCard for={speaker} class="mb-8" />
       <dl class="space-y-2 px-4 text-xs my-8 text-slate-400">
         {
           (["terminal", "os", "shell", "colorscheme", "language"] as const).map(
@@ -42,25 +44,41 @@ const talks = await getCollection(
       </dl>
     </div>
 
-    <div class="col-span-3">
-      <h1 class="text-5xl font-bold mb-4">{speaker!.data.name}</h1>
+    <div class="sm:col-span-7 md:col-span-2 lg:col-span-3">
+      <h1 class="text-5xl font-bold mb-2 font-mono text-teal-400">
+        {speaker!.data.name}
+      </h1>
+      <p class="mb-4 text-slate-400 italic text-sm">
+        {speaker!.data.job}
+      </p>
       <div class="max-w-[60ch] overflow-hidden mb-8">
-        <Content />
+        <div class="mb-16 prose dark:prose-invert">
+          <Content />
+        </div>
 
         {
-          talks.map((talk) => (
-            <a
-              href={`/talks/${talk.slug}`}
-              class="block border p-4 group rounded-sm border-slate-700 space-y-4 bg-slate-950 hover:bg-slate-800 hover:border-slate-600 mt-8"
-            >
-              <h2 class="text-2xl text-teal-500 mb-4">
-                Talk:
-                <span class="text-teal-300">{talk.data.title}</span>
-              </h2>
-              <p>{talk.data.description}</p>
-              <p class="text-teal-400 text-right">Read more &rarr;</p>
-            </a>
-          ))
+          false &&
+            talks.map((talk) => (
+              <a
+                href={`/talks/${talk.slug}`}
+                data-hotkey="g f"
+                class="block dark:border dark:p-4 group rounded-sm border-slate-200 dark:border-slate-700 space-y-4 dark:bg-slate-950 hover:bg-slate-200 dark:hover:bg-slate-800 hover:border-slate-600 mt-8"
+              >
+                <h2 class="text-2xl text-amber-500 mb-4">
+                  Talk:
+                  <span
+                    class="
+                  text-teal-500
+                  dark:text-teal-300
+                "
+                  >
+                    {talk.data.title}
+                  </span>
+                </h2>
+                <p>{talk.data.description}</p>
+                <p class="text-teal-400 text-right">gf &rarr;</p>
+              </a>
+            ))
         }
       </div>
     </div>

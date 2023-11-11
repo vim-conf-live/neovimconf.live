@@ -22,4 +22,24 @@
   .htmx-indicator {
     opacity: 0;
   }
+
+  .prose h1,
+  h1.prefixed:before {
+    content: "# ";
+  }
+
+  .prose h2,
+  h2.prefixed:before {
+    content: "## ";
+  }
+
+  .prose h3,
+  h3.prefixed:before {
+    content: "### ";
+  }
+
+  .prose h4,
+  h4.prefixed:before {
+    content: "### ";
+  }
 }

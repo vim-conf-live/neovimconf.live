@@ -1,12 +1,113 @@
 ---
 import HomepageHero from "@/components/HomepageHero.astro";
+import SpeakerCard from "@/components/SpeakerCard.astro";
 import App from "@/layouts/App.astro";
+import { getCollection } from "astro:content";
+
+const speakers = await getCollection("speakers", speaker => speaker.data.type === "speaker");
+const mc = await getCollection("speakers", speaker => speaker.data.type === "mc");
+const [keynote] = await getCollection("speakers", speaker => speaker.data.type === "keynote");
 ---
 
-<App title="NeoVimConf2023" class="">
+<App title="NeoVim Conf 2023">
   <section
-    class="flex justify-between items-center flex-grow bg-gradient-to-b dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 -z-10"
+    class="flex justify-between items-center flex-grow min-h-[85vh] bg-gradient-to-b dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 -z-10 mb-12"
   >
     <HomepageHero />
+  </section>
+
+  <section class="mb-48 font-sans vise space-y-2 md:space-y-4 w-full">
+    <h1 class="prefixed text-xl sm:text-2xl lg:text-4xl font-mono prefixed font-bold text-teal-500 before:text-teal-500 dark:text-amber-300 dark:before:text-teal-600">Your favorite editor's conference</h1>
+    <p class="
+      max-w-screen-md
+      text-xl
+      md:text-2xl
+      leading-relaxed
+    ">
+      The annual conference about your favorite editor! 
+      For the third time we invite you to join us for a day of talks and celebration.
+      Sharing our enthusiasm for Neovim and the community around it.
+    </p>
+  </section>
+
+  <section class="vise lg:grid lg:grid-cols-12 mb-16 lg:mb-80 relative">
+    <div class="h-[250px] lg:h-auto overflow-clip lg:overflow-visible border-b border-b-slate-200 dark:border-b-slate-600 lg:border-0 w-full relative mb-8 lg:col-start-8 lg:col-end-12">
+      <SpeakerCard for={keynote} class="w-72 rotate-6 absolute top-4 left-1/2 -translate-x-1/2 hover:rotate-0 hover:-translate-y-4" randomHover={false} />
+    </div>
+    <div class="lg:col-start-1 lg:col-end-8 font-sans space-y-2 md:space-y-4 leading-relaxed">
+      <h2 class="text-lg md:text-3xl font-mono prefixed font-bold text-amber-500 before:text-teal-500 dark:text-amber-300 dark:before:text-teal-600">Keynote by Justin M. Keyes</h2>
+      <p class="md:text-lg">
+        Justin has guided the Neovim project as a core maintainer since 2014. Author of vim-sneak, vim-dirvish, and tree-sitter-vimdoc. Working at AWS in Berlin.
+      </p>
+    </div>
+  </section>
+
+  <section class="vise vise lg:grid lg:grid-cols-12 mb-16 lg:mb-32 relative">
+    <div class="h-[250px] lg:h-auto overflow-clip lg:overflow-visible border-b lg:border-0 border-b-slate-200 dark:border-b-slate-600 mb-8 w-full relative lg:col-start-1 lg:col-end-4">
+      <SpeakerCard for={mc[0]} class="w-72 absolute left-8 -rotate-6 top-4 lg:-top-24 lg:left-0 hover:rotate-0 hover:-translate-y-6" randomHover={false} />
+      <SpeakerCard for={mc[1]} class="w-72 absolute right-12 top-16 rotate-12 hover:rotate-0 lg:bottom-8 lg:left-20 hover:-translate-y-6 shadow" randomHover={false} />
+    </div>
+
+      <div class="lg:col-start-6 lg:col-end-12 font-sans space-y-4 leading-relaxed">
+        <h2 class="text-lg md:text-3xl font-mono prefixed font-bold text-amber-500 before:text-teal-500 dark:text-amber-300 dark:before:text-teal-600">Masters of Ceremony</h2>
+        <p>
+          ThePrimeagen and TJ DeVries, dynamic and influential figures in the world of
+          Neovim, once again do us the favor of hosting the NEOVIMCONF.
+        </p>
+        <p>
+          Passionate and knowledge-driven, <em>ThePrimeagen</em> has created a substantial
+          following through his captivating YouTube and Twitch channel providing 
+          educational commentary and live coding streams. Works at Netflix, btw.
+        </p>
+        <p>
+          TJ DeVries, a prominent Neovim core contributor and author of Telescope, has made
+          remarkable contributions to the project, improving its extensibility and
+          providing valuable guides not just for newcomers to neovim. Pretends to get paid for writing ocaml.
+        </p>
+      </div>
+  </section>
+
+  <section class="vise">
+    <h2 class="text-lg md:text-3xl font-mono prefixed font-bold text-amber-500 before:text-teal-500 dark:text-amber-300 dark:before:text-teal-600 mb-4 md:mb-8">The Speakers</h2>
+
+    <div class="max-w-screen-sm space-y-4 md:space-y-8 mb-8 lg:mb-16">
+      <p>
+        This year we've packed the schedule with a diverse group of speakers from 
+        all over the world and squeezed them into a single day. Here's a taste of 
+        who to expect.
+      </p>
+      
+      <p class="text-sm max-w-md text-slate-400 dark:text-slate-400">
+        Do you have a neat thing to share too? We're excited to hear from as many as we can!
+        Go and <a href="/lightning" class="text-teal-500 underline">submit your application for a lightning talk!</a> 
+      </p>
+      
+    </div>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      {speakers.slice(0,6).map((speaker) => (
+        <li>
+          <SpeakerCard for={speaker} />
+        </li>
+      ))}
+
+        <li>
+          <a href="/speakers" class="
+            flex
+            aspect-card
+            justify-center
+            items-center
+            border-4
+            border-dashed
+            border-slate-300
+            dark:border-slate-600
+            text-sm
+            text-teal-500
+            dark:text-teal-300
+            rounded-2xl
+            hover:bg-slate-50
+            dark:hover:bg-slate-700
+          ">and many more &rarr;</a>
+        </li>
+    </ul>
   </section>
 </App>
