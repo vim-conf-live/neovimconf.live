@@ -41,7 +41,6 @@ export default function RegisterForm() {
           setError("root.serverError", data)
         });
       } else {
-        console.log(response)
         window.location.href="/register/success"
       }
     })
