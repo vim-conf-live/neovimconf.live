@@ -1,4 +1,4 @@
-import { useCallback, useState, type ReactNode, type ButtonHTMLAttributes, type MapHTMLAttributes, useRef } from "react"
+import { useCallback, useState, type ReactNode, type ButtonHTMLAttributes, type MapHTMLAttributes } from "react"
 
 export const CopyButton = ({
   value,
