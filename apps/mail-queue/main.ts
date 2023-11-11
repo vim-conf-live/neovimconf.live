@@ -1,18 +1,26 @@
+import { log } from "./logging.ts";
 import { supabase } from "./supabase.ts";
 
-console.log("=== DENO SERVER ===");
+log("main", "starting main");
 const worker = new Worker(new URL("./worker.ts", import.meta.url), {
   type: "module",
 });
 
-console.log("=== WORKER CREATED ===", worker);
+log("main", "worker created");
+
+setInterval(() => {
+  log("main", "boop")
+  worker.postMessage("boop");
+}, 1000 * 60);
 
 supabase.channel("custom-insert-channel")
   .on(
     "postgres_changes",
-    { event: "INSERT", schema: "public", table: "signup_queue" },
-    () => {
-      worker.postMessage("new data");
+    { event: "*", schema: "public", table: "signup_queue" },
+    (payload: object) => {
+      log("main", "new data received", payload)
+      worker.postMessage("boop");
     },
   )
   .subscribe();
+

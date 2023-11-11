@@ -12,7 +12,7 @@ async function* getMails(count: number) {
   let done = false;
 
   while (!done) {
-    log("getMails", "fetching new mails", { lastId, count });
+    log("getMails", "fetching new mails");
     const { data, error } = await supabase
       .from("signup_queue")
       .select("*")
@@ -105,21 +105,20 @@ const processMails = async () => {
   }
 };
 
-interface Window {
-    onmessage: (message: Message) => void;
-}
-
-self.onmessage = (message: Message) => {
-  if (message !== "new data") {
-    return;
+self.onmessage = (event: MessageEvent<Message>) => {
+  if (event.data !== "boop") {
+    log("onmessage", "ignoring message", { message: event.data })
+    return
   }
 
+  log("onmessage", "boop")
+
   if (state === "processing") {
-    log("onmessage", "already processing, ignoring");
+    log("onmessage", "already processing, ignoring boop");
   }
 
   if (state === "idle") {
-    log("onmessage", "starting processMails()")
+    log("onmessage", "boop before realtime update. starting processMails")
     processMails();
   }
 };
