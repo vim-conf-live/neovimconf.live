@@ -1,17 +1,15 @@
 ---
 name: TJ DeVries
-type: mc
-alias: doejane
-info: With a deep understanding of UI/UX principles, Jane has reshaped Neovim's UI.
-job: UI/UX Designer at PixelPerfect
-github: https://github.com/doejane
-website: https://www.janeroe.dev
-image: ./teej.jpg
-colorscheme: monokai
-shell: Bash
-os: Linux
-terminal: Terminator
-language: JavaScript
+alias: teej_dv
+info: (Is this the talk name? if so -> ) Programmers are actually humans
+job: Software Dev
+github: tjdevries
+Twitter: teej_dv
+colorscheme: custom :) gruvbuddy
+shell: zsh
+os: Pop!_OS
+terminal: wezterm
+language: English / OCaml ;)
 ---
 
 TJ DeVries, a prominent Neovim core contributor and author of Telescope,
