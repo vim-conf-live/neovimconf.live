@@ -1,6 +1,8 @@
 ---
 import SpeakerCard from "@/components/SpeakerCard.astro";
+import SpeakerImage from "@/components/SpeakerImage.astro";
 import App from "@/layouts/App.astro";
+import { Image } from "astro:assets";
 import { getCollection, type CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
@@ -22,64 +24,83 @@ const talks = await getCollection(
   "talks",
   (talk) => talk.data.speaker.slug === speaker.slug,
 );
+
+const metaFields = [
+  "terminal",
+  "os",
+  "shell",
+  "colorscheme",
+  "language",
+] as const;
 ---
 
 <App title={speaker!.data.name}>
-  <article
-    class="grid grid-cols-1 sm:grid-cols-12 md:grid-cols-3 lg:grid-cols-4 gap-x-8 vise relative"
-  >
-    <div class="row-start-2 sm:row-start-auto sm:col-span-5 md:col-span-1">
-      <SpeakerCard for={speaker} class="mb-8" />
-      <dl class="space-y-2 px-4 text-xs my-8 text-slate-400">
-        {
-          (["terminal", "os", "shell", "colorscheme", "language"] as const).map(
-            (field) => (
-              <div class="flex justify-between">
-                <dt>{field}:</dt>
-                <dd>{speaker.data[field]}</dd>
+  <article class="vise my-16">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+      <div class="col-span-2 row-start-2 md:row-start-auto">
+        <Image alt={`portrait of ${speaker.data.name}`} src={speaker.data.image} transition:name={`speaker-image-${speaker.data.slug}`} />
+        <dl
+          class="col-span-2 px-4 leading-relaxed text-xs text-slate-400 p-4 bg-slate-950 font-mono"
+        >
+          <span class="text-cyan-600">local</span>{" "}<span class="text-slate-800 dark:text-slate-200">{speaker.slug}</span>{" "}
+          <span>=</span>{" "}
+          <span class="text-teal-200">{"{"}</span>
+          {
+            metaFields.map((field) => (
+              <div class="flex gap-[1ch] pl-[2ch]">
+                <dt class="text-slate-500">
+                  <span class="text-blue-300">{field}</span>=
+                </dt>
+                <dd>
+                  {" "}
+                  <span class="text-amber-400">"{speaker.data[field]}"</span>
+                </dd>
               </div>
-            ),
-          )
-        }
-      </dl>
-    </div>
+            ))
+          }
+          <span class="text-teal-200">{"}"}</span>
+        </dl>
+      </div>
 
-    <div class="sm:col-span-7 md:col-span-2 lg:col-span-3">
-      <h1 class="text-5xl font-bold mb-2 font-mono text-teal-400">
-        {speaker!.data.name}
-      </h1>
-      <p class="mb-4 text-slate-400 italic text-sm">
-        {speaker!.data.job}
-      </p>
-      <div class="max-w-[60ch] overflow-hidden mb-8">
-        <div class="mb-16 prose dark:prose-invert">
-          <Content />
-        </div>
+      <div class="col-span-3">
+        <h1 class="text-5xl font-bold mb-2 font-mono text-teal-400">
+          {speaker!.data.name}
+        </h1>
 
-        {
-          false &&
-            talks.map((talk) => (
-              <a
-                href={`/talks/${talk.slug}`}
-                data-hotkey="g f"
-                class="block dark:border dark:p-4 group rounded-sm border-slate-200 dark:border-slate-700 space-y-4 dark:bg-slate-950 hover:bg-slate-200 dark:hover:bg-slate-800 hover:border-slate-600 mt-8"
-              >
-                <h2 class="text-2xl text-amber-500 mb-4">
-                  Talk:
-                  <span
-                    class="
+        <p class="mb-4 text-slate-400 italic text-sm">
+          {speaker!.data.job}
+        </p>
+
+        <div class="max-w-[60ch] overflow-hidden mb-4">
+          <div class="prose dark:prose-invert">
+            <Content />
+          </div>
+
+          {
+            false &&
+              talks.map((talk) => (
+                <a
+                  href={`/talks/${talk.slug}`}
+                  data-hotkey="g f"
+                  class="block dark:border dark:p-4 group rounded-sm border-slate-200 dark:border-slate-700 space-y-4 dark:bg-slate-950 hover:bg-slate-200 dark:hover:bg-slate-800 hover:border-slate-600 mt-8"
+                >
+                  <h2 class="text-2xl text-amber-500 mb-4">
+                    Talk:
+                    <span
+                      class="
                   text-teal-500
                   dark:text-teal-300
                 "
-                  >
-                    {talk.data.title}
-                  </span>
-                </h2>
-                <p>{talk.data.description}</p>
-                <p class="text-teal-400 text-right">gf &rarr;</p>
-              </a>
-            ))
-        }
+                    >
+                      {talk.data.title}
+                    </span>
+                  </h2>
+                  <p>{talk.data.description}</p>
+                  <p class="text-teal-400 text-right">gf &rarr;</p>
+                </a>
+              ))
+          }
+        </div>
       </div>
     </div>
   </article>

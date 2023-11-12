@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+  for: CollectionEntry<"speakers">;
+  class?: string;
+}
+
+const { for: speaker } = Astro.props;
+
+---
+
+<div class:list={["relative object-cover w-full", Astro.props.class]}>
+<div
+  class:list={[
+    "bg-gradient-to-b",
+    "from-teal-600",
+    "to-slate-600",
+    "relative,",
+    "overflow-hidden",
+    "h-full",
+    "before:absolute",
+    "before:transition-all",
+    "before:group-hover:opacity-0",
+    "before:inset-0",
+    "before:bg-gradient-to-br",
+    "before:from-sky-400",
+    "before:to-amber-400",
+    "dark:before:from-sky-400",
+    "dark:before:to-amber-400",
+    "before:mix-blend-overlay",
+    "before:z-10",
+    ]}>
+  <Image
+    transition:name={`speaker-image-${speaker.slug}`}
+    src={speaker.data.image}
+    alt={`Portrait of ${speaker.data.name}`}
+    class:list={[
+      "grayscale",
+      "group-hover:grayscale-0",
+      "transition-all",
+      "delay-100",
+      "group-hover:scale-105",
+      "group-hover:-rotate-1",
+      "mix-blend-overlay",
+      "group-hover:mix-blend-normal",
+      "object-cover",
+      "h-full",
+      "relative",
+      "z-0",
+    ]}
+  />
+</div>
+</div>
