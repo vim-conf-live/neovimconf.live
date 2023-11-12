@@ -1,18 +1,14 @@
 ---
 name: ThePrimeagen
-type: mc
-alias: doejane
-info: With a deep understanding of UI/UX principles, Jane has reshaped Neovim's UI.
-job: UI/UX Designer at PixelPerfect
-github: https://github.com/doejane
-website: https://www.janeroe.dev
-image: ./primeagen.jpg
-colorscheme: monokai
-shell: Bash
-os: Linux
-terminal: Terminator
-language: JavaScript
-talk: Neovim's UI Architecture Explained
+info: ThePrimeagen is a twitch streamer and professional shit poster on twitter that enjoys making productivity tools for developers
+job: CEO, The Startup™
+github: https://github.com/ThePrimeagen
+Twitter: https://twitter.com/ThePrimeagen
+colorscheme: rosepine
+shell: zsh
+os: linux
+terminal: xterm-256color
+language: foul
 ---
 
 Passionate and knowledge-driven, <em>ThePrimeagen</em> has created a
