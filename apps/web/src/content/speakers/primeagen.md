@@ -4,6 +4,7 @@ info: ThePrimeagen is a twitch streamer and professional shit poster on twitter 
 job: CEO, The Startup
 github: https://github.com/ThePrimeagen
 Twitter: https://twitter.com/ThePrimeagen
+image: ./primeagen.jpg
 colorscheme: rosepine
 shell: zsh
 os: linux
