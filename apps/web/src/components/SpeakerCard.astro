@@ -40,8 +40,8 @@ const { Content } = await speaker.render();
         }
         {
           ["keynote"].includes(speaker.data.type) && (
-            <div class="flex flex-col h-full space-y-4 @md:py-2 justify-between h-full">
-              <div>
+            <div class="flex flex-col h-full @md:py-2 justify-between">
+              <div class="space-y-4 ">
                 <Tag class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold font-mono">
                   {speaker.data.talk}
                 </Tag>
