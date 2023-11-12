@@ -5,11 +5,11 @@ info: "Björn is a long-term Neovim core developer, currently working full time 
 job: Core maintainer at Neovim
 github: https://github.com/bfredl/
 website: https://www.linkedin.com/in/bj%C3%B6rn-linse-72a42b1b9
-colorscheme: monokai
-shell: Bash
+colorscheme: sitruuna
+shell: zsh
 os: Linux
-terminal: Terminator
-language: JavaScript
+terminal: pangoterm
+language: C, Lua, Zig
 talk: 10 years on, a historic perspective
 ---
 
