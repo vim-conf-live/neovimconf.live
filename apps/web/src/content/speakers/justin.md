@@ -6,7 +6,7 @@ info: Justin has guided the Neovim project as a core maintainer since 2014. Auth
 job: Engineer at AWS
 github: https://github.com/justinmk
 website: https://sink.io/about/
-image: https://cdn.discordapp.com/attachments/731764420744839288/896835473111130152/justin.jpeg
+image: ./justin.jpg
 colorscheme: monokai
 shell: Bash
 os: Linux

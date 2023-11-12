@@ -1,6 +1,5 @@
 ---
 import SpeakerCard from "@/components/SpeakerCard.astro";
-import TimeSlot from "@/components/TimeSlot.astro";
 import App from "@/layouts/App.astro";
 import { getCollection, type CollectionEntry, getEntry } from "astro:content";
 
@@ -31,7 +30,7 @@ const schedule = schedules.flatMap((day) =>
       <SpeakerCard class="-rotate-6 text-lef w-60" for={speaker} />
       <div class="col-span-3">
         <h1
-          class="text-6xl tracking-tight leading-tight font-bold mb-8 text-teal-300"
+          class="text-6xl tracking-tight leading-tight font-bold mb-8 text-teal-300 font-mono"
           transition:name={`talk-title-${talk.id}`}
         >
           {talk!.data.title}

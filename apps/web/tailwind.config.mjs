@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        mono: ['"IBM Plex Mono"', defaultTheme.fontFamily.mono],
-        sans: ['"IBM Plex Sans"', defaultTheme.fontFamily.sans],
+        mono: ['IBM Plex Mono', defaultTheme.fontFamily.mono],
+        sans: ['IBM Plex Sans', defaultTheme.fontFamily.sans],
       },
       aria: {
         "current-page": "current='page'",
@@ -16,6 +16,7 @@ export default {
   },
   plugins: [
     require("@tailwindcss/typography"),
+    require("@tailwindcss/container-queries"),
     require("tailwindcss-animated"),
   ],
 };

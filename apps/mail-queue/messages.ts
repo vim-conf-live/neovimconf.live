@@ -1,1 +1,1 @@
-export type Message = "new data"
+export type Message = "boop"

@@ -1,7 +1,6 @@
 ---
 import TimeSlot from "@/components/TimeSlot.astro";
-import { getEntry, type CollectionEntry, getEntries } from "astro:content";
-import invariant from "tiny-invariant";
+import { getEntry, type CollectionEntry } from "astro:content";
 type Slot = CollectionEntry<"schedules">["data"]["talks"][number];
 export interface Props {
   on: CollectionEntry<"schedules">;
@@ -16,17 +15,7 @@ const speaker = slot.talk ? await getEntry(talk!.data.speaker) : null;
 
 {
   talk ? (
-    <a
-      href={`/talks/${talk.slug}`}
-      class="
-    group
-    block
-    hover:bg-slate-50
-    dark:hover:bg-slate-950
-    px-2
-    py-4
-  "
-    >
+    <a href={`${talk.slug}`} class="group block hover:bg-slate-50 dark:hover:bg-slate-950 px-2 py-4">
       <article class="grid grid-cols-12">
         <div class="col-span-2 text-sky-300 flex justify-center items-center text-center">
           <TimeSlot on={day.id} for={slot.time} />
@@ -34,7 +23,7 @@ const speaker = slot.talk ? await getEntry(talk!.data.speaker) : null;
         <div class="col-span-8">
           <header class="mb-2">
             <p class="italic text-sm text-slate-400 dark:text-slate-500">
-              By {speaker?.data.name}
+              By {speaker?.data}
             </p>
             <h3
               transition:animate="initial"
