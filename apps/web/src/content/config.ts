@@ -46,7 +46,7 @@ const talks = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    // speaker: reference("speakers"),
+    speaker: reference("speakers"),
   }),
 });
 

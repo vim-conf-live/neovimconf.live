@@ -1,5 +1,5 @@
 {
-  "name": "neovimconf-site-2022",
+  "name": "@neovimconf/web",
   "type": "module",
   "version": "0.1.1",
   "scripts": {

@@ -34,7 +34,7 @@ const speaker = slot.talk ? await getEntry(talk!.data.speaker) : null;
         <div class="col-span-8">
           <header class="mb-2">
             <p class="italic text-sm text-slate-400 dark:text-slate-500">
-              By {speaker?.data.name}
+              By {speaker?.data}
             </p>
             <h3
               transition:animate="initial"

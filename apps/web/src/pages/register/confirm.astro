@@ -14,14 +14,12 @@ import App from "@/layouts/App.astro";
     el.innerHTML = m;
   };
 
-  const verify = () => {
-    return supabase.auth.getSession().then(({ data, error }) => {
-      if (data.session) {
-        return data.session;
-      }
-
-      return Promise.reject(error);
-    });
+  const verify = async () => {
+    const { data, error } = await supabase.auth.getSession();
+    if (data.session) {
+      return data.session;
+    }
+    return Promise.reject(error);
   };
 
   const createProfile = async (session: Session) => {

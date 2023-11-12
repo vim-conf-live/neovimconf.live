@@ -1,0 +1,15 @@
+{
+  "title": "Day 1",
+  "slug": "day-1",
+  "talks": [
+    {
+      "time": ["9:00", "10:00"],
+      "talk": "the-state-of-neovim"
+    },
+    {
+      "time": ["10:30", "11:00"],
+      "title": "break",
+      "description": "A short break"
+    }
+  ]
+}
