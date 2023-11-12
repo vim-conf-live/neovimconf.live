@@ -100,7 +100,7 @@ export class HomepageHero extends HTMLElement {
   }
 
   connectedCallback() {
-    window.addEventListener("load", () => this.setup());
+    document.addEventListener("astro:page-load", () => this.setup());
 
     document.addEventListener("mousemove", ({ clientX, clientY }) => {
       const rect = this.canvas.getBoundingClientRect();
