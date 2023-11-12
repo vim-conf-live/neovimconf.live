@@ -23,113 +23,79 @@ const [keynote] = await getCollection(
     <HomepageHero />
   </section>
 
-<div class="vise">
-  <section class="mb-24 font-sans space-y-2 md:space-y-4 w-full">
-    <h1
-      class="
-        text-xl
-        mb-8
-        sm:text-2xl
-        lg:text-5xl
-        font-mono
-        font-bold
-        prefixed
-        tracking-tight
-        text-teal-500
-        before:text-teal-500
-        dark:text-amber-300
-        dark:before:text-teal-600"
-    >
-      Your favorite editor's conference!
-    </h1>
-    <p
-      class="max-w-screen-md
-        mb-8
-        text-xl
-        md:text-2xl
-        lg:text-3xl
-      "
-    >
-      The annual conference about your favorite editor! For the third time we
-      invite you to join us for a day of talks and celebration. Sharing our
-      enthusiasm for Neovim and the community around it.
-    </p>
-  </section>
+  <div class="vise space-y-48">
+    <section class="font-sans space-y-2 md:space-y-4 w-full">
+      <h1 class="text-xl mb-8 sm:text-2xl lg:text-5xl font-mono font-bold text-teal-500 before:text-teal-500 dark:text-teal-300">
+        Your favorite editor's conference!
+      </h1>
+      <p class="max-w-screen-md mb-8 text-xl md:text-2xl lg:text-3xl">
+        The annual conference about your favorite editor! For the third time we
+        invite you to join us for a day of talks and celebration of Neovim and 
+        the community around it.
+      </p>
+    </section>
 
-  <section class="relative mb-32">
-    <h2 class="text-lg md:text-3xl mb-4 font-mono prefixed font-bold text-amber-500 before:text-teal-500 dark:text-amber-300 dark:before:text-teal-600">
-      Keynote by Justin M. Keyes
-    </h2>
+    <section class="relative mb-32">
+      <h2 class="text-lg md:text-3xl mb-4 font-mono font-bold text-amber-500 before:text-teal-500 dark:text-amber-300 dark:before:text-teal-600">
+        Keynote by Justin M. Keyes
+      </h2>
 
-    <p class="md:text-lg mb-4 md:mb-8 max-w-screen-sm">
-      Justin has guided the Neovim project as a core maintainer since 2014.
-      Author of vim-sneak, vim-dirvish, and tree-sitter-vimdoc. Working at AWS
-      in Berlin.
-    </p>
-
-    <SpeakerCard for={keynote} />
-  </section>
-
-  <section class=" relative space-y-4 md:space-y-6 mb-16">
-    <h2 class="text-lg md:text-3xl font-mono prefixed font-bold text-amber-500 before:text-teal-500 dark:text-amber-300 dark:before:text-teal-600">
-      Masters of Ceremony
-    </h2>
-    <p class="md:text-lg max-w-screen-sm">
-      ThePrimeagen and TJ DeVries, dynamic and influential figures in the world
-      of Neovim, once again do us the favor of hosting the NEOVIMCONF.
-    </p>
-    <div class="
-      lg:grid
-      grid-cols-2
-      gap-4
-      flex
-      flex-col
-    ">
-      <SpeakerCard for={mc[0]} level="3" />
-      <SpeakerCard for={mc[1]} level="3" />
-    </div>
-  </section>
-
-  <section class="">
-    <h2
-      class="text-lg md:text-3xl font-mono prefixed font-bold text-amber-500 before:text-teal-500 dark:text-amber-300 dark:before:text-teal-600 mb-4 md:mb-8"
-    >
-      The Speakers
-    </h2>
-
-    <div class="max-w-screen-sm space-y-4 md:space-y-8 mb-8 lg:mb-16">
-      <p>
-        This year we've packed the schedule with a diverse group of speakers
-        from all over the world and squeezed them into a single day. Here's a
-        taste of who to expect. We'll announce more speakers as we approach the
-        conference date.
+      <p class="md:text-lg mb-4 md:mb-8 max-w-screen-sm">
+        Justin has guided the Neovim project as a core maintainer since 2014.
+        Author of vim-sneak, vim-dirvish, and tree-sitter-vimdoc. Working at AWS
+        in Berlin.
       </p>
 
-      <p class="text-sm max-w-md text-slate-400 dark:text-slate-400">
-        Do you have a neat thing to share too? We're excited to hear from as
-        many as we can! Go and <a
-          href="/lightning"
-          class="text-teal-500 underline"
-          >submit your application for a lightning talk!</a
-        >
-      </p>
-    </div>
-    <ul class="
-      grid
-      grid-cols-1
-      md:grid-cols-2
-      gap-2
-      md:gap-4
-    ">
-      {
-        speakers.slice(0, 6).map((speaker) => (
-          <li>
-            <SpeakerCard for={speaker} />
-          </li>
-        ))
-      }
-    </ul>
-  </section>
-</div>
+      <SpeakerCard for={keynote} />
+    </section>
 
+    <section class=" relative space-y-4 md:space-y-8 mb-16">
+      <h2 class="text-lg md:text-3xl font-mono font-bold text-amber-500 before:text-teal-500 dark:text-amber-300 dark:before:text-teal-600">
+        Masters of Ceremony
+      </h2>
+      <p class="md:text-lg max-w-screen-sm">
+        ThePrimeagen and TJ DeVries, dynamic and influential figures in the world
+        of Neovim, once again do us the favor of hosting the NEOVIMCONF.
+      </p>
+      <div class="
+        lg:grid
+        grid-cols-2
+        gap-4
+        flex
+        flex-col
+      ">
+        <SpeakerCard for={mc[0]} level="3" />
+        <SpeakerCard for={mc[1]} level="3" />
+      </div>
+    </section>
+
+    <section class="">
+      <h2 class="text-lg md:text-3xl font-mono font-bold text-amber-500 before:text-teal-500 dark:text-amber-300 dark:before:text-teal-600 mb-4 md:mb-8">
+        The Speakers
+      </h2>
+
+      <div class="max-w-screen-sm space-y-4 md:space-y-8 mb-8 lg:mb-16">
+        <p>
+          This year we've packed the schedule with a diverse group of speakers
+          from all over the world and squeezed them into a single day. Here's a
+          taste of who to expect. We'll announce more speakers as we approach the
+          conference date.
+        </p>
+
+        <p class="text-sm max-w-md text-slate-400 dark:text-slate-400">
+          Do you have a neat thing to share too? We're excited to hear from as
+          many as we can! Go and <a href="/lightning" class="text-teal-500 underline">submit your application for a lightning talk!</a>
+        </p>
+      </div>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+        {
+          speakers.slice(0, 6).map((speaker) => (
+            <li>
+              <SpeakerCard for={speaker} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
 </App>

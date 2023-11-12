@@ -25,13 +25,7 @@ const speakers = await getCollection("speakers");
       
     </div>
       
-    <ul
-      class="grid
-        grid-cols-1
-        gap-4
-        flex-wrap
-        justify-center"
-    >
+    <ul class="grid grid-cols-1 gap-4 flex-wrap justify-center">
       {
         speakers.map((speaker) => (
           <li class="space-y-4">

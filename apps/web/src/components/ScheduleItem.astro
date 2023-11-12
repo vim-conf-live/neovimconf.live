@@ -15,17 +15,7 @@ const speaker = slot.talk ? await getEntry(talk!.data.speaker) : null;
 
 {
   talk ? (
-    <a
-      href={`/talks/${talk.slug}`}
-      class="
-    group
-    block
-    hover:bg-slate-50
-    dark:hover:bg-slate-950
-    px-2
-    py-4
-  "
-    >
+    <a href={`${talk.slug}`} class="group block hover:bg-slate-50 dark:hover:bg-slate-950 px-2 py-4">
       <article class="grid grid-cols-12">
         <div class="col-span-2 text-sky-300 flex justify-center items-center text-center">
           <TimeSlot on={day.id} for={slot.time} />
