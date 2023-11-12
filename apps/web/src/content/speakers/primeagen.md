@@ -6,7 +6,7 @@ info: With a deep understanding of UI/UX principles, Jane has reshaped Neovim's 
 job: UI/UX Designer at PixelPerfect
 github: https://github.com/doejane
 website: https://www.janeroe.dev
-image: https://unsplash.it/500
+image: ./primeagen.jpg
 colorscheme: monokai
 shell: Bash
 os: Linux
@@ -15,4 +15,7 @@ language: JavaScript
 talk: Neovim's UI Architecture Explained
 ---
 
-Jane Roe's sessions are a blend of design principles and technical know-how. Her deep dive into Neovim's UI architecture offers attendees a unique perspective on how design and functionality can coexist harmoniously in a powerful editor like Neovim.
+Passionate and knowledge-driven, <em>ThePrimeagen</em> has created a
+substantial following through his captivating YouTube and Twitch channel
+providing educational commentary and live coding streams. Works at
+Netflix, btw.

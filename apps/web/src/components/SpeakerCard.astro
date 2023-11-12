@@ -1,85 +1,88 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import shuffle from "lodash/shuffle";
-import { MoonIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import { Image } from "astro:assets";
 export interface Props {
   for: CollectionEntry<"speakers">;
   randomHover?: boolean;
   class?: string;
+  level?: "2" | "3";
 }
 
-const { for: speaker } = Astro.props;
+const { for: speaker, level = "2" } = Astro.props;
 
-const randomHoverRotation = () =>
-  shuffle([
-    `hover:-rotate-1 hover:-translate-y-3 `,
-    `hover:-rotate-2 hover:-translate-y-2 `,
-    `hover:-rotate-3 hover:-translate-y-2 `,
-    `hover:-rotate-6 hover:-translate-y-2 `,
-    `hover:rotate-1 hover:-translate-y-4`,
-    `hover:rotate-2 hover:-translate-y-3`,
-    `hover:rotate-3 hover:-translate-y-6`,
-    `hover:rotate-6 hover:-translate-y-4`,
-  ])[0];
+const Tag = `h${level}` as unknown as AstroComponentFactory;
+
+const { Content } = await speaker.render();
 ---
 
-<a
-  transition:name={`speaker-${speaker.slug}`}
-  href={`/speakers/${speaker.slug}`}
-  class={`block group transition-transform hover:z-30 ${
-    Astro.props.randomHover === false ? null : randomHoverRotation()
-  } ${Astro.props.class}`}
->
-  <article
-    class="relative aspect-card shadow-lg bg-slate-200 dark:bg-slate-950 text-sm rounded-2xl p-4 overflow-hidden"
-  >
-    <div
-      class="ring
-      ring-slate-300
-      dark:ring-slate-800
+<article class="@container h-full dark:bg-slate-950">
+<div class="relative dark:bg-slate-950 @md:grid gap-4 grid-cols-3 h-full">
+  <div
+    class="
+      bg-gradient-to-b
+      from-teal-600
+      to-emerald-600
       relative
-      ring-offset-4
-      ring-offset-slate-200
-      dark:ring-offset-slate-950
-      rounded-md
       overflow-hidden
-      mb-4"
-    >
-      <div
-        class="bg-slate-300 dark:bg-slate-800 p-1 flex justify-between items-center"
-      >
-        <h2>{speaker.data.name}</h2>
-        <div class="flex gap-1">
-          <div class="rounded-full w-3 h-3 bg-amber-500"></div>
-          <div class="rounded-full w-3 h-3 bg-teal-500"></div>
-          <div class="rounded-full w-3 h-3 bg-sky-500"></div>
-        </div>
-      </div>
-
-      <div class="rounded overflow-hidden relative bg-sky-100 dark:bg-sky-200">
-        <img
-          src={`//unsplash.it/seed/${speaker.slug}/640/480`}
-          width={640}
-          height={480}
-          class="object-fit aspect-[4/3] bg-slate-950 grayscale mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal transition-all"
-        />
-      </div>
-
-      <p class="p-1 text-xs bg-slate-300 dark:bg-slate-800">
-        {speaker.data.job}
-      </p>
-    </div>
-
-    <p class="italic text-slate-500 group-hover:text-slate-400">
-      {speaker.data.info}
-    </p>
-
+      before:absolute
+      before:inset-0
+      before:bg-gradient-to-br
+      before:from-sky-400
+      before:to-amber-400
+      before:mix-blend-overlay
+      before:z-10"
+  >
+    <Image
+      src={speaker.data.image}
+      alt={`Portrait of ${speaker.data.name}`}
+      class="grayscale mix-blend-overlay object-cover h-full relative z-0"
+    />
+  </div>
+  <div class="flex flex-col col-span-2 p-4 @md:p-0">
     {
-      Astro.url.pathname === `/speakers/${speaker.slug}` ? null : (
-        <p class="flex gap-2 justify-end items-end text-teal-500 group-hover:underline absolute bottom-0 inset-x-0 p-2 bg-gradient-to-b from-transparent to-slate-300 dark:to-slate-950">
-          more <ArrowRightIcon className="w-4" />
-        </p>
+      ["speaker"].includes(speaker.data.type) && (
+        <div class="flex flex-col h-full space-y-4 @md:py-2 justify-between">
+          <h2 class="text-md @md:lg:text-xl font-mono">
+            {speaker.data.talk}
+          </h2>
+          <div class="text-sm text-slate-400 text-right">
+            <p>
+              by <em class="italic">{speaker.data.name}</em>
+            </p>
+            <p>{speaker.data.job}</p>
+          </div>
+        </div>
       )
     }
-  </article>
-</a>
+    {
+      ["keynote"].includes(speaker.data.type) && (
+        <div class="flex flex-col h-full space-y-4 @md:py-2">
+          <Tag class="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold font-mono">
+            {speaker.data.talk}
+          </Tag>
+          <div class="text-sm text-slate-400">
+            <p>
+              by <em class="italic">{speaker.data.name}</em>
+            </p>
+            <p>{speaker.data.job}</p>
+          </div>
+          <div class="lg:text-xl">
+            <Content />
+          </div>
+        </div>
+      )
+    }
+    {
+      ["mc"].includes(speaker.data.type) && (
+        <div class="text-sm md:text-md leading-relaxed text-slate-500 dark:text-slate-400 @md:pt-2 @md:pb-4">
+          <Tag class="text-slate-800 dark:text-slate-300 text-xl sm:text-2xl font-bold font-mono mb-4">
+            {speaker.data.name}
+          </Tag>
+          <Content />
+        </div>
+      )
+    }
+  </div>
+  </div>
+</article>

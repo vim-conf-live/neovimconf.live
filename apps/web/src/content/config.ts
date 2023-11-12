@@ -2,8 +2,9 @@ import { z, defineCollection, reference } from "astro:content";
 
 const speakers = defineCollection({
   type: "content",
-  schema: z.object({
+  schema: ({image}) => (z.object({
     name: z.string(),
+    talk: z.string().optional(),
     type: z
       .union([z.literal("speaker"), z.literal("keynote"), z.literal("mc")])
       .default("speaker"),
@@ -11,13 +12,13 @@ const speakers = defineCollection({
     github: z.string().optional(),
     info: z.string(),
     website: z.string().optional(),
-    image: z.string().optional(),
+    image: image(),
     terminal: z.string(),
     os: z.string(),
     shell: z.string(),
     colorscheme: z.string(),
     language: z.string(),
-  }),
+  })),
 });
 
 const schedules = defineCollection({
@@ -45,7 +46,7 @@ const talks = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    speaker: reference("speakers"),
+    // speaker: reference("speakers"),
   }),
 });
 

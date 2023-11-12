@@ -4,6 +4,7 @@ alias: famiu
 info: "Famiu is currently a student aspiring to be a software developer. He has contributed to Neovim since 2021 and has implemented various popular features such as global statusline, winbar, user inccommand, nvim_cmd, among other things."
 job: Neovim contributor
 github: https://github.com/famiu
+image: ./famiu.jpg
 Twitter: https://twitter.com/FamiuHaque
 Twitch: https://twitch.tv/fam1u
 YouTube: https://youtube.com/@fam1u 
