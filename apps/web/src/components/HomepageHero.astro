@@ -1,9 +1,7 @@
 ---
 import { START } from "@/config";
 import Logo from "./Logo.astro";
-import ClickablePrimary from "./ClickablePrimary.astro";
 import { BoltIcon } from "@heroicons/react/24/outline"
-
 ---
 
 <script>
@@ -44,9 +42,9 @@ import { BoltIcon } from "@heroicons/react/24/outline"
         </p>
       </div>
       <nav class="flex gap-4 justify-center lg:justify-end w-full items-center text-teal-900">
-        <ClickablePrimary as="a" href="/register">
+        <a class="inline-block relative text-center bg-teal-300 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-500" href="/register">
           get your free ticket!
-        </ClickablePrimary>
+        </a>
 
         <a href="/lightning" class="text-center bg-teal-600 dark:bg-teal-800 hover:bg-teal-300 dark:hover:bg-teal-600 text-amber-400 dark:text-amber-300 p-2 rounded-sm font-mono relative group overflow-hidden flex" title="submit a lightning talk!">
           <BoltIcon className="w-6 animate-wiggle-more animate-infinite" />
