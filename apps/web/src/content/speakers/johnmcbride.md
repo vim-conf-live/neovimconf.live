@@ -5,6 +5,7 @@ info: John is a Software Engineer, cyber-security enthusiast, and Lua config con
 job: Sr Software Engineer at OpenSauced
 github: jpmcb
 Twitter: johncodezzz
+image: ./johnmcbride.jpg
 colorscheme: tokyonight-moon
 shell: zsh
 os: MacOS workstation, PopOS home desktop, Fedora cloud workstation
