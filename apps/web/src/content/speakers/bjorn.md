@@ -1,5 +1,6 @@
 ---
 name: Björn Linse
+type: speaker
 alias: bfredl
 info: "Björn is a long-term Neovim core developer, currently working full time for the project."
 job: Core maintainer at Neovim
