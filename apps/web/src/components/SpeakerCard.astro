@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
-import { Image } from "astro:assets";
 import SpeakerImage from "./SpeakerImage.astro";
 
 export interface Props {
@@ -56,7 +55,7 @@ const { Content } = await speaker.render();
                 </div>
               </div>
 
-              <p class="text-right text-teal-300 font-mono group-hover:underline">gf &rarr;</p>
+              <p class="text-right text-teal-300 font-mono group-hover:underline" aria-hidden="true">gf &rarr;</p>
             </div>
           )
         }
@@ -71,7 +70,7 @@ const { Content } = await speaker.render();
                 <Content />
               </div>
 
-              <p class="text-right text-teal-300 font-mono group-hover:underline">gf &rarr;</p>
+              <p class="text-right text-teal-300 font-mono group-hover:underline" aria-hidden="true">gf &rarr;</p>
             </div>
           )
         }
