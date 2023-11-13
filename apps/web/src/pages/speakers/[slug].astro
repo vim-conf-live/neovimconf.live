@@ -84,7 +84,7 @@ const metaFields = [
             <Content />
           </div>
           {
-            speaker.data.links.length && (
+            speaker.data.links?.length && (
             <div>
               <ul class="text-teal-500 dark:text-teal-300 text-sm space-y-2">
                 {speaker.data.links?.map((link) => {
