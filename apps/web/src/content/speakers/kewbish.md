@@ -4,7 +4,6 @@ alias: kewbish
 info: https://kewbi.sh/
 job: Honours CS Student at the University of British Columbia
 github: https://github.com/kewbish
-Twitter: 
 colorscheme: https://github.com/kewbish/dotfiles/blob/master/.vim/colors/monocode.vim
 shell: bash
 os: Manjaro Linux
