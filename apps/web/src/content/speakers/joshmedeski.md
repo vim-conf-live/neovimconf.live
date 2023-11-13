@@ -8,6 +8,7 @@ Twitter: joshmedeski
 colorscheme: Catppuccin
 shell: fish
 os: macOS
+image: ./joshmedeski.jpg
 terminal: Wezterm
 language: English
 talk: The underrated square bracket
