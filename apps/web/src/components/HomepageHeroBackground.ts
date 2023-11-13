@@ -100,24 +100,26 @@ export class HomepageHero extends HTMLElement {
   }
 
   connectedCallback() {
-    document.addEventListener("astro:page-load", () => this.setup());
+    document.addEventListener("astro:page-load", () => {
+      this.setup()
 
-    document.addEventListener("mousemove", ({ clientX, clientY }) => {
-      const rect = this.canvas.getBoundingClientRect();
-      this.mouse = {
-        mouseX: clientX - rect.left,
-        mouseY: clientY - rect.top,
-      };
-    });
+      document.addEventListener("mousemove", ({ clientX, clientY }) => {
+        const rect = this.canvas.getBoundingClientRect();
+        this.mouse = {
+          mouseX: clientX - rect.left,
+          mouseY: clientY - rect.top,
+        };
+      });
 
-    const darkModeMediaQuery = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    );
-    darkModeMediaQuery.addEventListener("change", () => {
-      clearInterval(this.nextTick);
-      setTimeout(() => {
-        requestAnimationFrame(this.setup.bind(this));
-      }, 16);
+      const darkModeMediaQuery = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      );
+      darkModeMediaQuery.addEventListener("change", () => {
+        clearInterval(this.nextTick);
+        setTimeout(() => {
+          requestAnimationFrame(this.setup.bind(this));
+        }, 16);
+      });
     });
   }
 }
