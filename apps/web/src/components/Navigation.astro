@@ -24,7 +24,8 @@ const link = (opts: { href: string; class?: string; hotkey?: string }) => ({
 ---
 
 <nav
-  class={`py-2 vise flex gap-4 w-full justify-between items-center px-8 text-slate-500 dark:text-slate-300 flex-grow-0 ${Astro.props.class}`}
+  class={`py-2 vise flex gap-4 w-full justify-between items-center px-8 text-slate-700 dark:text-slate-300 flex-grow-0 ${Astro.props.class}`}
+  aria-label="Main navigation"
 >
   {
     Astro.url.pathname == "/" ? null : (
@@ -51,6 +52,7 @@ const link = (opts: { href: string; class?: string; hotkey?: string }) => ({
       <a
         href="https://discord.gg/Cz9J4ZD"
         class="text-slate-300 hover:text-indigo-400"
+        aria-label="Join the Discord server"
       >
         <svg
           class="w-4 md:w-6"
