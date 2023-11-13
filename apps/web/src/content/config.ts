@@ -6,7 +6,7 @@ const speakers = defineCollection({
     name: z.string(),
     talk: z.string().optional(),
     links: z.array(z.string().url()).optional(),
-    type: z.union([z.literal("speaker"), z.literal("keynote"), z.literal("mc")]),
+    type: z.union([z.literal("speaker"), z.literal("keynote"), z.literal("mc")]).optional(),
     job: z.string(),
     github: z.string().optional(),
     info: z.string(),

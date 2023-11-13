@@ -6,7 +6,7 @@ import { getCollection } from "astro:content";
 
 const speakers = await getCollection(
   "speakers",
-  (speaker) => speaker.data.type === "speaker",
+  (speaker) => speaker.data.type === "speaker" || !speaker.data.type,
 );
 const mc = await getCollection(
   "speakers",
