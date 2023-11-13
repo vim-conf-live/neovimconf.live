@@ -10,6 +10,6 @@ image: ./kewbish.jpg
 os: Manjaro Linux
 terminal: XFCE Terminal
 language: English
-talk: Plaintext Notes: Using Vim + FZF + RG to build a personal notetaking system
+talk: "Plaintext Notes: Using Vim + FZF + RG to build a personal notetaking system"
 ---
 
