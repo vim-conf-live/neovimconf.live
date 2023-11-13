@@ -38,11 +38,17 @@ const metaFields = [
   <article class="vise my-16">
     <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
       <div class="col-span-2 row-start-2 md:row-start-auto">
-        <Image alt={`portrait of ${speaker.data.name}`} src={speaker.data.image} transition:name={`speaker-image-${speaker.slug}`} />
+        <Image
+          alt={`portrait of ${speaker.data.name}`}
+          src={speaker.data.image}
+          transition:name={`speaker-image-${speaker.slug}`}
+        />
         <dl
-          class="col-span-2 px-4 leading-relaxed text-xs text-slate-400 p-4 bg-slate-950 font-mono"
+          class="col-span-2 px-4 leading-relaxed text-xs text-slate-400 p-4 bg-slate-950 font-mono overflow-scroll"
         >
-          <span class="text-cyan-600">local</span>{" "}<span class="text-slate-800 dark:text-slate-200">{speaker.slug}</span>{" "}
+          <span class="text-cyan-600">local</span>{" "}<span
+            class="text-slate-800 dark:text-slate-200">{speaker.slug}</span
+          >{" "}
           <span>=</span>{" "}
           <span class="text-teal-200">{"{"}</span>
           {
@@ -53,7 +59,9 @@ const metaFields = [
                 </dt>
                 <dd>
                   {" "}
-                  <span class="text-amber-400">"{speaker.data[field]}"</span>
+                  <span class="text-amber-400 whitespace-nowrap">
+                    "{speaker.data[field]}"
+                  </span>
                 </dd>
               </div>
             ))
@@ -72,9 +80,22 @@ const metaFields = [
         </p>
 
         <div class="max-w-[60ch] overflow-hidden mb-4">
-          <div class="prose dark:prose-invert">
+          <div class="prose dark:prose-invert mb-16">
             <Content />
           </div>
+          {
+            speaker.data.links.length && (
+            <div>
+              <ul class="text-teal-500 dark:text-teal-300 text-sm space-y-2">
+                {speaker.data.links?.map((link) => {
+                  return (
+                    <li><a class="text-teal-500 underline dark:text-teal-300" href={link}>{link.replace("https://", "")}</a></li>
+                  );
+                })}
+              </ul>
+              </div>
+            )
+          }
 
           {
             false &&

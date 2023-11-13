@@ -5,6 +5,7 @@ const speakers = defineCollection({
   schema: ({image}) => (z.object({
     name: z.string(),
     talk: z.string().optional(),
+    links: z.array(z.string().url()).optional(),
     type: z
       .union([z.literal("speaker"), z.literal("keynote"), z.literal("mc")])
       .default("speaker"),
