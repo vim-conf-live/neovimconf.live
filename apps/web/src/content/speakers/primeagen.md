@@ -1,7 +1,8 @@
 ---
 name: ThePrimeagen
 info: ThePrimeagen is a twitch streamer and professional shit poster on twitter that enjoys making productivity tools for developers
-job: CEO, The Startup™
+job: CEO, The Startup
+image: ./primeagen.jpg
 colorscheme: rosepine
 shell: zsh
 os: linux

@@ -5,6 +5,7 @@ info: (Is this the talk name? if so -> ) Programmers are actually humans
 job: Software Dev
 github: tjdevries
 Twitter: teej_dv
+image: ./teej.jpg
 colorscheme: custom :) gruvbuddy
 shell: zsh
 os: Pop!_OS
