@@ -25,6 +25,5 @@ https://twitter.com/teej_dv
 
 - Supabase: https://supabase.com/
 - Astro: https://astro.build/
-- Htmx: https://htmx.org/
 - React: https://reactjs.org/
 - @vercel/og: https://www.npmjs.com/package/@vercel/og

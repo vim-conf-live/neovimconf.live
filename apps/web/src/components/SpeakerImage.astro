@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import placeholder from "../../public/placeholder.png"
 
 export interface Props {
   for: CollectionEntry<"speakers">;
@@ -8,7 +9,6 @@ export interface Props {
 }
 
 const { for: speaker } = Astro.props;
-
 ---
 
 <div class:list={["relative object-cover w-full", Astro.props.class]}>
@@ -34,7 +34,7 @@ const { for: speaker } = Astro.props;
     ]}>
   <Image
     transition:name={`speaker-image-${speaker.slug}`}
-    src={speaker.data.image}
+    src={speaker.data.image || placeholder}
     alt={`Portrait of ${speaker.data.name}`}
     class:list={[
       "grayscale",

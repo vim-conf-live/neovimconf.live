@@ -1,6 +1,5 @@
 ---
-import SpeakerCard from "@/components/SpeakerCard.astro";
-import SpeakerImage from "@/components/SpeakerImage.astro";
+import placeholder from "../../../public/placeholder.png"
 import App from "@/layouts/App.astro";
 import { Image } from "astro:assets";
 import { getCollection, type CollectionEntry } from "astro:content";
@@ -40,7 +39,7 @@ const metaFields = [
       <div class="col-span-2 row-start-2 md:row-start-auto">
         <Image
           alt={`portrait of ${speaker.data.name}`}
-          src={speaker.data.image}
+          src={speaker.data.image || placeholder}
           transition:name={`speaker-image-${speaker.slug}`}
         />
         <dl
