@@ -6,6 +6,7 @@ job: "Honours CS Student at the University of British Columbia"
 github: https://github.com/kewbish
 colorscheme: https://github.com/kewbish/dotfiles/blob/master/.vim/colors/monocode.vim
 shell: bash
+image: ./kewbish.jpg
 os: Manjaro Linux
 terminal: XFCE Terminal
 language: English
