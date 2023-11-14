@@ -9,7 +9,7 @@ website: https://sink.io/
 image: ./justin.jpg
 shell: Bash
 os: Linux
-terminal: Terminal.app
+terminal: Kitty
 language: C
 talk: State of Neovim 
 ---
