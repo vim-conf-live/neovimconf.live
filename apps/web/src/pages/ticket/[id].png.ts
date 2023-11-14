@@ -1,5 +1,3 @@
-import fs from "fs";
-import path from "path";
 import { ImageResponse } from "@vercel/og";
 import type { APIRoute } from "astro";
 import { createSBSSR } from "@/lib/server/supabase";
@@ -45,7 +43,7 @@ const kv = (key: string, value: string | number) =>
   ])
 
 
-export const GET: APIRoute = async ({ request, params, cookies }) => {
+export const GET: APIRoute = async ({ params, cookies }) => {
   const id = params.id!;
   const supabase = createSBSSR({ cookies });
 
