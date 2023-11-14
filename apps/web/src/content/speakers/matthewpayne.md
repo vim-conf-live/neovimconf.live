@@ -5,6 +5,7 @@ info: "Mathew is a security specialist with a love for developing code."
 job: "Principal Field Security Specialist at GitHub"
 github: geekmasher
 Twitter: geekmasher
+image: ./matthewpayne.jpg
 colorscheme: tokionight
 shell: zsh
 os: Pop!_OS
