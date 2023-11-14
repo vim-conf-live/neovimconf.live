@@ -2,6 +2,7 @@
 import { START } from "@/config";
 import Logo from "./Logo.astro";
 import { BoltIcon } from "@heroicons/react/24/outline"
+import { CountDown } from "./CountDown";
 ---
 
 <script>
@@ -19,7 +20,7 @@ import { BoltIcon } from "@heroicons/react/24/outline"
 
 <header class="relative w-screen font-mono">
   <div class="vise flex flex-col lg:flex-row items-center lg:justify-between">
-    <Logo transition:name="nvimconf-logo" class="h-[10rem] md:h-[10rem] lg:h-[15rem] xl:h-[24rem] text-teal-400 z-0 mb-16 mt-4 lg:mt-0 lg:mb-0 translate-x-4" />
+    <Logo transition:name="nvimconf-logo" class="h-[10rem] md:h-[10rem] lg:h-[15rem] xl:h-[24rem] aspect-square flex-grow-0 z-0 mb-16 mt-4 lg:mt-0 lg:mb-0 lg:-ml-28" />
 
     <div class="overflow-clip h-[12rem] absolute -z-50 inset-x-0 pointer-events-none text-center max-w-screen-2xl lg:top-1/2 lg:-translate-y-1/2 xl:h-[15rem] 2xl:left-1/2 2xl:w-full 2xl:-translate-x-1/2">
       <homepage-hero class="absolute -inset-x-20 inset-y-0 border border-teal-300 dark:border-teal-900">
@@ -33,15 +34,18 @@ import { BoltIcon } from "@heroicons/react/24/outline"
     </div>
 
     <div class="px-4 lg:px-0 md:max-w-max mx-auto lg:mx-0">
-      <div class="lg:text-right font-bold lg:bg-transparent mb-4" itemscope itemtype="https://schema.org/Event">
-        <h1 class="text-3xl md:text-5xl lg:text-6xl tracking-wide uppercase text-transparent bg-gradient-to-r from-amber-400 dark:from-amber-200 to-teal-500 dark:to-teal-400 bg-clip-text">
+      <div class="space-y-3 lg:text-right font-bold lg:bg-transparent" itemscope itemtype="https://schema.org/Event">
+        <h1 class="text-3xl md:text-5xl lg:text-6xl tracking-wide uppercase text-transparent bg-gradient-to-r from-sky-400 dark:from-amber-200 to-teal-500 dark:to-teal-400 bg-clip-text">
           NeovimConf2023
         </h1>
-        <p class="text-2xl md:text-4xl italic text-slate-700 dark:text-slate-50 tracking-wide text-right">
-          <time datetime={START} itemprop="startDate">Dec 8<sup>th</sup></time>
+        <p class="text-2xl md:text-4xl  text-slate-700 dark:text-slate-50 tracking-wide text-right flex gap-2 flex-wrap sm:gap-8 justify-end">
+          <CountDown className={`
+            lg:text-4xl
+            font-mono
+          `} client:load />
+          <time datetime={START} itemprop="startDate">Dec 8<sup class="text-xs align-super md:translate-x-1 inline-block">th</sup></time>
         </p>
-      </div>
-      <nav class="flex gap-4 justify-center lg:justify-end w-full items-center text-teal-900">
+      <div class="flex gap-4 justify-center lg:justify-end w-full items-center text-teal-900">
         <a class="inline-block relative text-center bg-teal-300 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-500" href="/register">
           get your free ticket!
         </a>
@@ -49,7 +53,8 @@ import { BoltIcon } from "@heroicons/react/24/outline"
         <a href="/lightning" class="text-center bg-teal-600 dark:bg-teal-800 hover:bg-teal-300 dark:hover:bg-teal-600 text-amber-400 dark:text-amber-300 p-2 rounded-sm font-mono relative group overflow-hidden flex" title="submit a lightning talk!">
           <BoltIcon className="w-6 animate-wiggle-more animate-infinite" />
         </a>
-      </nav>
+      </div>
+      </div>
     </div>
   </div>
 </header>
