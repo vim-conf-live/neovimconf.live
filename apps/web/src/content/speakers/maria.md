@@ -9,6 +9,7 @@ Mastodon: https://fosstodon.org/@mariasolos
 LinkedIn: https://www.linkedin.com/in/mariasolano151822/
 colorscheme: dracula
 shell: Fish
+image: ./maria.jpg
 os: MacOS (but I'm currently exploring ArchLinux btw)
 terminal: Wezterm
 language: TypeScript
