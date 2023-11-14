@@ -1,14 +1,14 @@
-<svg width="524" height="524" viewBox="0 0 524 524" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="mask0_84_2" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="197" y="80" width="259" height="417">
-<path d="M197.426 80.5637H455.641V496.216H197.426V80.5637Z" fill="white"/>
-</mask>
-<g mask="url(#mask0_84_2)">
-<path d="M387.909 366.313L198.036 256.692V346.483L456.086 495.471V80.5637H387.909V366.313Z" fill="#649F3E"/>
-</g>
-<mask id="mask1_84_2" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="69" y="27" width="259" height="415">
-<path d="M69 27H327.688V441.993H69V27Z" fill="white"/>
-</mask>
-<g mask="url(#mask1_84_2)">
-<path d="M69.0073 26.9644V441.864H137.184V156.115L327.065 265.743V175.952L69.0073 26.9644Z" fill="#427EC5"/>
-</g>
+<svg
+  viewBox="0 0 524 524"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path class="
+    fill-sky-500
+    dark:fill-sky-600
+  " d="M69.0073 26.9644V441.864H137.184V156.115L327.065 265.743V175.952L69.0073 26.9644Z" fill="#427EC5"></path>
+  <path class="
+    fill-teal-500
+    dark:fill-teal-300
+  " d="M387.909 366.313L198.036 256.692V346.483L456.086 495.471V80.5637H387.909V366.313Z" fill="#649F3E"></path>
 </svg>

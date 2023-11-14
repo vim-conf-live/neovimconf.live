@@ -74,7 +74,7 @@ export const GET: APIRoute = async ({ params, cookies }) => {
         type: "img",
         props: {
           src: "https://neovimconf.live/logo.svg",
-          tw: "absolute -top-10 -left-20 opacity-25 -z-10",
+          tw: "absolute -top-20 -left-20 opacity-25",
           width: 800,
           height: 800,
         }
