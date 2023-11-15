@@ -1,6 +1,5 @@
 # NeovimConf 2023
 
-
 This will give you a quick rundown on how this astro project is structured etc.
 
 Astro truly embraces simplicity. When things in a single component get to
@@ -23,6 +22,8 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run preview`         | Preview your build locally, before deploying     |
 | `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm run astro -- --help` | Get help using the Astro CLI                     |
+
+See [Supabase Docs - Local Development](https://supabase.com/docs/guides/cli/local-development?access-method=postgres) for Supabase.
 
 ## Content
 

@@ -7,6 +7,7 @@
     "start": "astro dev",
     "check": "astro check",
     "build": "astro check && astro build",
+    "lint": "eslint 'src/**/*.{js,astro}'",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -58,6 +59,10 @@
   "devDependencies": {
     "@types/cookie": "^0.5.3",
     "@types/stats.js": "^0.17.3",
+    "@typescript-eslint/parser": "^6.11.0",
+    "eslint": "^8.53.0",
+    "eslint-plugin-astro": "^0.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.1",
     "vite": "^4.5.0",
