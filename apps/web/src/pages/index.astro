@@ -3,10 +3,19 @@ import HomepageHero from "@/components/HomepageHero.astro";
 import SpeakerCard from "@/components/SpeakerCard.astro";
 import App from "@/layouts/App.astro";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 
 const speakers = await getCollection(
   "speakers",
   (speaker) => speaker.data.type === "speaker" || !speaker.data.type,
+);
+const paladiumSponsors = await getCollection(
+  "sponsors",
+  ({ data: { section } }) => section === "paladium",
+);
+const communitySponsors = await getCollection(
+  "sponsors",
+  ({ data: { section } }) => section === "community",
 );
 const mc = await getCollection(
   "speakers",
@@ -19,24 +28,30 @@ const [keynote] = await getCollection(
 ---
 
 <App title="NeoVim Conf 2023">
-  <section class="flex justify-between items-center flex-grow min-h-[85vh] bg-gradient-to-b dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 -z-10 mb-12">
+  <section
+    class="flex justify-between items-center flex-grow min-h-[85vh] bg-gradient-to-b dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 -z-10 mb-12"
+  >
     <HomepageHero />
   </section>
 
   <div class="vise space-y-48">
     <section class="font-sans space-y-2 md:space-y-4 w-full">
-      <h1 class="text-3xl mb-8 sm:text-5xl font-mono font-bold text-teal-500 dark:text-teal-300">
+      <h1
+        class="text-3xl mb-8 sm:text-5xl font-mono font-bold text-teal-500 dark:text-teal-300"
+      >
         Your favorite editor's conference!
       </h1>
       <p class="max-w-screen-md mb-8 text-xl md:text-2xl lg:text-3xl">
         The annual conference about your favorite editor! For the third time we
-        invite you to join us for a day of talks and celebration of Neovim and 
+        invite you to join us for a day of talks and celebration of Neovim and
         the community around it.
       </p>
     </section>
 
     <section class="relative mb-32">
-      <h2 class="text-lg md:text-3xl mb-4 font-mono font-bold text-amber-500 dark:text-amber-300 ">
+      <h2
+        class="text-lg md:text-3xl mb-4 font-mono font-bold text-amber-500 dark:text-amber-300"
+      >
         Keynote by Justin M. Keyes
       </h2>
 
@@ -49,28 +64,96 @@ const [keynote] = await getCollection(
       <SpeakerCard for={keynote} />
     </section>
 
-    <section class=" relative space-y-4 md:space-y-8 mb-16">
-      <h2 class="text-lg md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300">
-        Masters of Ceremony
+    <section class="relative space-y-4 md:space-y-8 mb-16">
+      <h2
+        class="text-lg md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300"
+      >
+        Sponsors
       </h2>
       <p class="md:text-lg max-w-screen-sm">
-        ThePrimeagen and TJ DeVries, dynamic and influential figures in the world
-        of Neovim, once again do us the favor of hosting the NEOVIMCONF.
+        We're so thankful for our sponsors that help us make this event
+        possible.
       </p>
-      <div class="
-        lg:grid
+      <div
+        class="lg:grid
         grid-cols-2
         gap-4
         flex
-        flex-col
-      ">
+        flex-col"
+      >
+        {
+          paladiumSponsors.map((sponsor) => (
+            <div>
+              <a href={sponsor.data.url}>
+                <Image
+                  src={sponsor.data.image}
+                  alt={sponsor.data.slug + " sponsor logo"}
+                  class="mb-2 w-full md:mb-8"
+                  transition:name={`post-${sponsor.data.slug}-thumb`}
+                />
+              </a>
+              <p>{sponsor.data.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <h3
+        class="md:text-xl font-mono font-bold text-amber-500 dark:text-amber-300"
+      >
+        Community sponsors
+      </h3>
+      <div
+        class="lg:grid
+        grid-cols-4
+        gap-4
+        flex
+        flex-col"
+      >
+        {
+          communitySponsors.map((sponsor) => (
+            <div>
+              <a href={sponsor.data.url} target="_blank" rel="nofollow">
+                <Image
+                  src={sponsor.data.image}
+                  alt={sponsor.data.slug + " sponsor logo"}
+                  class="mb-2 w-full md:mb-8"
+                  transition:name={`post-${sponsor.data.slug}-thumb`}
+                />
+              </a>
+              <p>{sponsor.data.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="relative space-y-4 md:space-y-8 mb-16">
+      <h2
+        class="text-lg md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300"
+      >
+        Masters of Ceremony
+      </h2>
+      <p class="md:text-lg max-w-screen-sm">
+        ThePrimeagen and TJ DeVries, dynamic and influential figures in the
+        world of Neovim, once again do us the favor of hosting the NEOVIMCONF.
+      </p>
+      <div
+        class="lg:grid
+        grid-cols-2
+        gap-4
+        flex
+        flex-col"
+      >
         <SpeakerCard for={mc[0]} level="3" />
         <SpeakerCard for={mc[1]} level="3" />
       </div>
     </section>
 
     <section class="">
-      <h2 class="text-lg md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-4 md:mb-8">
+      <h2
+        class="text-lg md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-4 md:mb-8"
+      >
         The Speakers
       </h2>
 
@@ -78,13 +161,17 @@ const [keynote] = await getCollection(
         <p>
           This year we've packed the schedule with a diverse group of speakers
           from all over the world and squeezed them into a single day. Here's a
-          taste of who to expect. We'll announce more speakers as we approach the
-          conference date.
+          taste of who to expect. We'll announce more speakers as we approach
+          the conference date.
         </p>
 
         <p class="text-sm max-w-md text-slate-400 dark:text-slate-400">
           Do you have a neat thing to share too? We're excited to hear from as
-          many as we can! Go and <a href="/lightning" class="text-teal-500 underline">submit your application for a lightning talk!</a>
+          many as we can! Go and <a
+            href="/lightning"
+            class="text-teal-500 underline"
+            >submit your application for a lightning talk!</a
+          >
         </p>
       </div>
       <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
