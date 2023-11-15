@@ -4,18 +4,11 @@ import SpeakerCard from "@/components/SpeakerCard.astro";
 import App from "@/layouts/App.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import SponsorsGrid from "@/components/SponsorsGrid.astro";
 
 const speakers = await getCollection(
   "speakers",
   (speaker) => speaker.data.type === "speaker" || !speaker.data.type,
-);
-const paladiumSponsors = await getCollection(
-  "sponsors",
-  ({ data: { section } }) => section === "paladium",
-);
-const communitySponsors = await getCollection(
-  "sponsors",
-  ({ data: { section } }) => section === "community",
 );
 const mc = await getCollection(
   "speakers",
@@ -64,69 +57,7 @@ const [keynote] = await getCollection(
       <SpeakerCard for={keynote} />
     </section>
 
-    <section class="relative space-y-4 md:space-y-8 mb-16">
-      <h2
-        class="text-lg md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300"
-      >
-        Sponsors
-      </h2>
-      <p class="md:text-lg max-w-screen-sm">
-        We're so thankful for our sponsors that help us make this event
-        possible.
-      </p>
-      <div
-        class="lg:grid
-        grid-cols-2
-        gap-4
-        flex
-        flex-col"
-      >
-        {
-          paladiumSponsors.map((sponsor) => (
-            <div>
-              <a href={sponsor.data.url}>
-                <Image
-                  src={sponsor.data.image}
-                  alt={sponsor.data.slug + " sponsor logo"}
-                  class="mb-2 w-full md:mb-8"
-                  transition:name={`post-${sponsor.data.slug}-thumb`}
-                />
-              </a>
-              <p>{sponsor.data.desc}</p>
-            </div>
-          ))
-        }
-      </div>
-
-      <h3
-        class="md:text-xl font-mono font-bold text-amber-500 dark:text-amber-300"
-      >
-        Community sponsors
-      </h3>
-      <div
-        class="lg:grid
-        grid-cols-4
-        gap-4
-        flex
-        flex-col"
-      >
-        {
-          communitySponsors.map((sponsor) => (
-            <div>
-              <a href={sponsor.data.url} target="_blank" rel="nofollow">
-                <Image
-                  src={sponsor.data.image}
-                  alt={sponsor.data.slug + " sponsor logo"}
-                  class="mb-2 w-full md:mb-8"
-                  transition:name={`post-${sponsor.data.slug}-thumb`}
-                />
-              </a>
-              <p>{sponsor.data.desc}</p>
-            </div>
-          ))
-        }
-      </div>
-    </section>
+    <SponsorsGrid />
 
     <section class="relative space-y-4 md:space-y-8 mb-16">
       <h2
