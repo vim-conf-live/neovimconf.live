@@ -6,17 +6,33 @@ interface Props {
   sponsor: CollectionEntry<"sponsors">;
 }
 
-const { sponsor } = Astro.props;
+const {
+  sponsor: {
+    data: { name, image, slug, desc, url },
+  },
+} = Astro.props;
 ---
 
 <div>
-  <a href={sponsor.data.url} target="_blank" rel="nofollow">
+  <a href={url} target="_blank" rel="nofollow">
     <Image
-      src={sponsor.data.image}
-      alt={sponsor.data.slug + " sponsor logo"}
-      class="mb-2 w-full md:mb-8"
-      transition:name={`post-${sponsor.data.slug}-thumb`}
+      src={image}
+      alt={slug + " sponsor logo"}
+      transition:name={`post-${slug}-thumb`}
     />
   </a>
-  <p>{sponsor.data.desc}</p>
+  <div class="bg-white dark:bg-slate-950 p-4">
+    <p class="text-sm mb-2">
+      <strong class="font-mono font-bold">{name}:</strong>{" "}
+      {desc}
+    </p>
+    <a
+      href={url}
+      target="_blank"
+      rel="nofollow"
+      class="text-teal-500 underline"
+    >
+      View {name}
+    </a>
+  </div>
 </div>

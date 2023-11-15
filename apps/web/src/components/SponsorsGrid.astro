@@ -18,29 +18,20 @@ const communitySponsors = await getCollection(
   >
     Sponsors
   </h2>
+
   <p class="md:text-lg max-w-screen-sm">
     We're so thankful for our sponsors that help us make this event possible.
   </p>
-  <div
-    class="lg:grid
-        grid-cols-2
-        gap-4
-        flex
-        flex-col"
-  >
+
+  <div class="sm:grid sm:grid-cols-2 md:grid-cols-2 gap-4 flex flex-col">
     {paladiumSponsors.map((sponsor) => <SponsorCard sponsor={sponsor} />)}
   </div>
 
   <h3 class="md:text-xl font-mono font-bold text-amber-500 dark:text-amber-300">
     Community sponsors
   </h3>
-  <div
-    class="lg:grid
-        grid-cols-4
-        gap-4
-        flex
-        flex-col"
-  >
+
+  <div class="sm:grid sm:grid-cols-3 md:grid-cols-4 gap-4 flex flex-col">
     {communitySponsors.map((sponsor) => <SponsorCard sponsor={sponsor} />)}
   </div>
 </section>
