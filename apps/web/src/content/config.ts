@@ -13,7 +13,7 @@ const speakers = defineCollection({
       job: z.string(),
       alias: z.string().optional(),
       github: z.string().optional(),
-      info: z.string(),
+      info: z.string().optional(),
       website: z.string().optional(),
       image: image().optional(),
       terminal: z.string().optional(),
