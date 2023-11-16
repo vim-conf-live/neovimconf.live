@@ -18,5 +18,6 @@ export default {
     require("@tailwindcss/typography"),
     require("@tailwindcss/container-queries"),
     require("tailwindcss-animated"),
+    require("tailwind-scrollbar")({ nocompatible: true }),
   ],
 };
