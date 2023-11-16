@@ -3,8 +3,9 @@
   "version": "2023.0.0",
   "description": "",
   "scripts": {
-    "build": "pnpm -r --filter='./apps/*' run build",
-    "web:build": "pnpm -r --filter='./apps/web' run build"
+    "web:build": "pnpm -r --filter='./apps/web' run build",
+    "web:start": "pnpm -r --filter='./apps/web' run start",
+    "web:dev": "pnpm -r --filter='./apps/web' run dev"
   },
   "keywords": [],
   "author": "neovimconf.live"
