@@ -3,8 +3,9 @@ name: Josh Medeski
 alias: joshmedeski
 info: Josh is a dev by day and a content creator by night. He maintains multiple tmux plugins and teaches developers how to be more productive with tmux, Neovim, and macOS on his YouTube channel. He also loves collecting vinyls and mechanical keyboards.
 job: Full Stack Software Engineer
-github: joshmedeski
-Twitter: joshmedeski
+links:
+- https://github.com/joshmedeski
+- https://twitter.com/joshmedeski
 colorscheme: Catppuccin
 shell: fish
 os: macOS
