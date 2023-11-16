@@ -3,13 +3,14 @@ name: Mathew Payne
 alias: GeekMasher
 info: "Mathew is a security specialist with a love for developing code."
 job: "Principal Field Security Specialist at GitHub"
-github: geekmasher
-Twitter: geekmasher
 image: ./matthewpayne.jpg
 colorscheme: tokionight
 shell: zsh
 os: Pop!_OS
 terminal: gnome-terminal
+links:
+- https://github.com/geekmasher
+- https://twitter.com/geekmasher
 language: English
 talk: Using Neovim to help write secure code
 ---
