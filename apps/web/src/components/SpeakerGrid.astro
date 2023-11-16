@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import SpeakerCard from './SpeakerCard.astro';
+export interface Props {
+  of: CollectionEntry<"speakers">[]
+}
+
+const { of: speakers } = Astro.props;
+---
+
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8">
+  {
+    speakers.map((speaker) => (
+      <li>
+        <SpeakerCard for={speaker} />
+      </li>
+    ))
+  }
+</ul>
