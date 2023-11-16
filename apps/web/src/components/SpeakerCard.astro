@@ -16,16 +16,16 @@ const Tag = `h${level}` as unknown as AstroComponentFactory;
 
 const isSpeaker = !speaker.data.type || speaker.data.type === "speaker";
 const isKeynote = speaker.data.type === "keynote";
-const isHost = speaker.data.type === "mc"
+const isHost = speaker.data.type === "mc";
 
 const { Content } = await speaker.render();
 ---
 
 <a href={`/speakers/${speaker.slug}`} class="group" transition:name={`speaker-card:${speaker.slug}`}>
   <article class="@container h-full dark:bg-slate-950 pr-2 @md:pr-8">
-    <div class="relative dark:bg-slate-950 @md:grid gap-4 grid-cols-3 h-full">
-    <SpeakerImage for={speaker} />
-      <div class="flex flex-col col-span-2 p-4 @md:p-0">
+    <div class="relative dark:bg-slate-950 flex flex-col @md:grid gap-4 grid-cols-3 h-full">
+      <SpeakerImage class="aspect-square" for={speaker} />
+      <div class="col-span-2 p-4 flex-grow @md:p-0">
         {
           isSpeaker && (
             <div class="flex flex-col h-full space-y-4 @md:py-2 justify-between">
@@ -34,7 +34,10 @@ const { Content } = await speaker.render();
               </Tag>
               <div class="text-sm text-slate-400 text-right">
                 <p>
-                  by <em class="italic dark:text-teal-300 text-teal-600">{speaker.data.name}</em>
+                  by{" "}
+                  <em class="italic dark:text-teal-300 text-teal-600">
+                    {speaker.data.name}
+                  </em>
                 </p>
                 <p>{speaker.data.job}</p>
               </div>
@@ -59,7 +62,12 @@ const { Content } = await speaker.render();
                 </div>
               </div>
 
-              <p class="text-right text-teal-300 font-mono group-hover:underline" aria-hidden="true">gf &rarr;</p>
+              <p
+                class="text-right text-teal-300 font-mono group-hover:underline"
+                aria-hidden="true"
+              >
+                gf &rarr;
+              </p>
             </div>
           )
         }
@@ -74,7 +82,12 @@ const { Content } = await speaker.render();
                 <Content />
               </div>
 
-              <p class="text-right text-teal-300 font-mono group-hover:underline" aria-hidden="true">gf &rarr;</p>
+              <p
+                class="text-right text-teal-300 font-mono group-hover:underline"
+                aria-hidden="true"
+              >
+                gf &rarr;
+              </p>
             </div>
           )
         }
