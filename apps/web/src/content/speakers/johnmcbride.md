@@ -3,8 +3,9 @@ name: John McBride
 alias: jpmcb
 info: John is a Software Engineer, cyber-security enthusiast, and Lua config conjurer.
 job: Sr Software Engineer at OpenSauced
-github: jpmcb
-Twitter: johncodezzz
+links:
+- https://github.com/jpmcb
+- https://twitter.com/johncodezzz
 image: ./johnmcbride.jpg
 colorscheme: tokyonight-moon
 shell: zsh
