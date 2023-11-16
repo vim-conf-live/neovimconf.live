@@ -1,13 +1,13 @@
 ---
 import { getCollection } from "astro:content";
 import App from "@/layouts/App.astro";
-import SpeakerCard from "@/components/SpeakerCard.astro";
+import SpeakerGrid from "@/components/SpeakerGrid.astro";
 
-const speakers = await getCollection("speakers");
+const speakers = await getCollection("speakers").then(speakers => speakers.filter(s => s.data.type !== "mc"));
 ---
 
 <App title="Speakers">
-  <main class="my-16 vise">
+  <div class="my-16 vise">
 
     <h1 class="text-lg md:text-3xl font-mono prefixed font-bold text-amber-500 before:text-teal-500 dark:text-amber-300 dark:before:text-teal-600 mb-4 md:mb-8">The Speakers</h1>
 
@@ -25,14 +25,6 @@ const speakers = await getCollection("speakers");
       
     </div>
       
-    <ul class="grid grid-cols-1 gap-4 flex-wrap justify-center">
-      {
-        speakers.map((speaker) => (
-          <li class="space-y-4">
-            <SpeakerCard for={speaker} />
-          </li>
-        ))
-      }
-    </ul>
-  </main>
+    <SpeakerGrid of={speakers} />
+  </div>
 </App>
