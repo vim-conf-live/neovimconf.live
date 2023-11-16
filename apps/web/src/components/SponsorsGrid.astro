@@ -13,25 +13,23 @@ const communitySponsors = await getCollection(
 ---
 
 <section class="relative space-y-4 md:space-y-8 mb-16">
-  <h2
-    class="text-lg md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300"
-  >
-    Sponsors
-  </h2>
+<h2 class="text-2xl md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-2" >
+  Sponsors
+</h2>
 
-  <p class="md:text-lg max-w-screen-sm">
-    We're so thankful for our sponsors that help us make this event possible.
-  </p>
+<p class="md:text-lg max-w-screen-sm mb-8">
+  We're so thankful for our sponsors that help us make this event possible.
+</p>
 
-  <div class="sm:grid sm:grid-cols-2 md:grid-cols-2 gap-4 flex flex-col">
-    {paladiumSponsors.map((sponsor) => <SponsorCard sponsor={sponsor} />)}
-  </div>
+<div class="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-2 gap-4 mb-16">
+  {paladiumSponsors.map((sponsor) => <SponsorCard sponsor={sponsor} />)}
+</div>
 
-  <h3 class="md:text-xl font-mono font-bold text-amber-500 dark:text-amber-300">
-    Community sponsors
-  </h3>
+<h3 class="text-xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-4">
+  Community sponsors
+</h3>
 
-  <div class="sm:grid sm:grid-cols-3 md:grid-cols-4 gap-4 flex flex-col">
-    {communitySponsors.map((sponsor) => <SponsorCard sponsor={sponsor} />)}
-  </div>
 </section>
+<div class="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 flex flex-col">
+  {communitySponsors.map((sponsor) => <SponsorCard sponsor={sponsor} />)}
+</div>
