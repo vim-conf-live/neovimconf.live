@@ -3,10 +3,11 @@ name: Maria José Solano
 alias: mariasolos
 info: "¡Hola! I'm Maria and I just like code editors. My day job revolves around TypeScript and LSP tools for Visual Studio and VS Code, and when I'm not debugging mysterious code I didn't write I like to give my 2 cents to my favourite Neovim plugins (including the editor itself!)"
 job: Software Engineer @ Microsoft
-github: https://github.com/MariaSolOs
-Twitter: https://twitter.com/MariaSolanoOs
-Mastodon: https://fosstodon.org/@mariasolos
-LinkedIn: https://www.linkedin.com/in/mariasolano151822/
+links:
+- https://github.com/MariaSolOs
+- https://twitter.com/MariaSolanoOs
+- https://fosstodon.org/@mariasolos
+- https://www.linkedin.com/in/mariasolano151822/
 colorscheme: dracula
 shell: Fish
 image: ./maria.jpg
