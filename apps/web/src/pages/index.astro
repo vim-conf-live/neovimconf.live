@@ -30,9 +30,7 @@ const [keynote] = await getCollection(
 
   <div class="vise space-y-48">
     <section class="font-sans space-y-2 md:space-y-4 w-full">
-      <h1
-        class="text-3xl mb-8 sm:text-5xl font-mono font-bold text-teal-500 dark:text-teal-300"
-      >
+      <h1 class="text-3xl mb-8 sm:text-5xl font-mono font-bold text-teal-500 dark:text-teal-300" >
         Your favorite editor's conference!
       </h1>
       <p class="max-w-screen-md mb-8 text-xl md:text-2xl lg:text-3xl">
@@ -43,9 +41,7 @@ const [keynote] = await getCollection(
     </section>
 
     <section class="relative mb-32">
-      <h2
-        class="text-lg md:text-3xl mb-4 font-mono font-bold text-amber-500 dark:text-amber-300"
-      >
+      <h2 class="text-2xl sm:text-3xl mb-4 font-mono font-bold text-amber-500 dark:text-amber-300" >
         Keynote by Justin M. Keyes
       </h2>
 
@@ -58,7 +54,9 @@ const [keynote] = await getCollection(
       <SpeakerCard for={keynote} />
     </section>
 
-    <SponsorsGrid />
+    <section class="relative mb-16">
+      <SponsorsGrid />
+    </section>
 
     <section class="relative space-y-4 md:space-y-8 mb-16">
       <h2
