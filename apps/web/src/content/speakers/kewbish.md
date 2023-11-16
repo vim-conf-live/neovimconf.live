@@ -1,9 +1,10 @@
 ---
 name: Emilie Ma
 alias: kewbish
-info: https://kewbi.sh/
 job: "Honours CS Student @ UBC"
-github: https://github.com/kewbish
+links:
+- https://github.com/kewbish
+- https://kewbi.sh/
 colorscheme: https://github.com/kewbish/dotfiles/blob/master/.vim/colors/monocode.vim
 shell: bash
 image: ./kewbish.jpg
