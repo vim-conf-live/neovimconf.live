@@ -7,6 +7,7 @@ links:
 - https://github.com/mikesmithgh
 colorscheme: gruvsquirrel (https://github.com/mikesmithgh/gruvsquirrel.nvim)
 shell: bash
+image: ./mikesmith.jpg
 os: macOS
 terminal: kitty
 language: Lua
