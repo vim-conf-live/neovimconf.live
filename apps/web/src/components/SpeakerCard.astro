@@ -21,7 +21,7 @@ const isHost = speaker.data.type === "mc"
 const { Content } = await speaker.render();
 ---
 
-<a href={`/speakers/${speaker.slug}`} class="group">
+<a href={`/speakers/${speaker.slug}`} class="group" transition:name={`speaker-card:${speaker.slug}`}>
   <article class="@container h-full dark:bg-slate-950 pr-2 @md:pr-8">
     <div class="relative dark:bg-slate-950 @md:grid gap-4 grid-cols-3 h-full">
     <SpeakerImage for={speaker} />
@@ -29,7 +29,7 @@ const { Content } = await speaker.render();
         {
           isSpeaker && (
             <div class="flex flex-col h-full space-y-4 @md:py-2 justify-between">
-              <Tag class="text-xl @md:sm:text-2xl font-mono text-teal-500 dark:text-teal-300">
+              <Tag class="text-xl font-semibold leading-snug text-teal-500 dark:text-teal-300">
                 {speaker.data.talk}
               </Tag>
               <div class="text-sm text-slate-400 text-right">

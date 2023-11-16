@@ -1,6 +1,7 @@
 ---
 import HomepageHero from "@/components/HomepageHero.astro";
 import SpeakerCard from "@/components/SpeakerCard.astro";
+import SpeakerGrid from "@/components/SpeakerGrid.astro";
 import App from "@/layouts/App.astro";
 import { getCollection } from "astro:content";
 
@@ -87,15 +88,8 @@ const [keynote] = await getCollection(
           many as we can! Go and <a href="/lightning" class="text-teal-500 underline">submit your application for a lightning talk!</a>
         </p>
       </div>
-      <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
-        {
-          speakers.map((speaker) => (
-            <li>
-              <SpeakerCard for={speaker} />
-            </li>
-          ))
-        }
-      </ul>
+
+      <SpeakerGrid of={speakers} />
     </section>
   </div>
 </App>

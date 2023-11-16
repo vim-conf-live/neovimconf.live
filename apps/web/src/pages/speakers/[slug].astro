@@ -1,5 +1,7 @@
 ---
-import placeholder from "../../../public/placeholder.png"
+import SpeakerGrid from "@/components/SpeakerGrid.astro";
+import placeholder from "../../../public/placeholder.png";
+import SpeakerCard from "@/components/SpeakerCard.astro";
 import App from "@/layouts/App.astro";
 import { Image } from "astro:assets";
 import { getCollection, type CollectionEntry } from "astro:content";
@@ -24,6 +26,12 @@ const talks = await getCollection(
   (talk) => talk.data.speaker.slug === speaker.slug,
 );
 
+const additionalSpeakers = await getCollection(
+  "speakers",
+  ({ slug, data: { type } }) =>
+    (type === "speaker" || !type) && slug !== speaker.slug,
+);
+
 const metaFields = [
   "terminal",
   "os",
@@ -41,31 +49,8 @@ const metaFields = [
           alt={`portrait of ${speaker.data.name}`}
           src={speaker.data.image || placeholder}
           transition:name={`speaker-image-${speaker.slug}`}
+          class="mb-4"
         />
-        <dl
-          class="col-span-2 px-4 leading-relaxed text-xs text-slate-400 p-4 bg-slate-950 font-mono overflow-scroll"
-        >
-          <span class="text-cyan-600">local</span>{" "}
-          <span class="text-slate-200">{speaker.data.alias || speaker.slug}</span>{" "}
-          <span>=</span>{" "}
-          <span class="text-teal-200">{"{"}</span>
-          {
-            metaFields.map((field) => (
-              <div class="flex gap-[1ch] pl-[2ch]">
-                <dt class="text-slate-500">
-                  <span class="text-blue-300">{field}</span>=
-                </dt>
-                <dd>
-                  {" "}
-                  <span class="text-amber-400 whitespace-nowrap">
-                    "{speaker.data[field]}"
-                  </span>
-                </dd>
-              </div>
-            ))
-          }
-          <span class="text-teal-200">{"}"}</span>
-        </dl>
       </div>
 
       <div class="col-span-3">
@@ -77,23 +62,58 @@ const metaFields = [
           {speaker!.data.job}
         </p>
 
-        <div class="max-w-[60ch] overflow-hidden mb-4">
-          <div class="prose dark:prose-invert mb-16">
+        <div class="max-w-[60ch] overflow-hidden mb-16">
+          <div class="prose dark:prose-invert mb-6">
             <Content />
           </div>
+
           {
             speaker.data.links?.length && (
-            <div>
-              <ul class="text-teal-500 dark:text-teal-300 text-sm space-y-2">
-                {speaker.data.links?.map((link) => {
-                  return (
-                    <li><a class="text-teal-500 underline dark:text-teal-300" href={link}>{link.replace("https://", "")}</a></li>
-                  );
-                })}
-              </ul>
+              <div>
+                <ul class="text-teal-500 dark:text-teal-300 text-sm space-y-2">
+                  {speaker.data.links?.map((link) => {
+                    return (
+                      <li>
+                        <a
+                          class="text-teal-500 underline dark:text-teal-300"
+                          href={link}
+                        >
+                          {link.replace("https://", "")}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             )
           }
+
+          <dl
+            class="col-span-2 px-4 leading-relaxed text-xs text-slate-400 p-4 bg-slate-950 font-mono overflow-scroll"
+          >
+            <span class="text-cyan-600">local</span>{" "}
+            <span class="text-slate-200"
+              >{speaker.data.alias || speaker.slug}</span
+            >{" "}
+            <span>=</span>{" "}
+            <span class="text-teal-200">{"{"}</span>
+            {
+              metaFields.map((field) => (
+                <div class="flex gap-[1ch] pl-[2ch]">
+                  <dt class="text-slate-500">
+                    <span class="text-blue-300">{field}</span>=
+                  </dt>
+                  <dd>
+                    {" "}
+                    <span class="text-amber-400 whitespace-nowrap">
+                      "{speaker.data[field]}"
+                    </span>
+                  </dd>
+                </div>
+              ))
+            }
+            <span class="text-teal-200">{"}"}</span>
+          </dl>
 
           {
             false &&
@@ -105,11 +125,7 @@ const metaFields = [
                 >
                   <h2 class="text-2xl text-amber-500 mb-4">
                     Talk:
-                    <span
-                      class="
-                        text-teal-500
-                        dark:text-teal-300
-                      ">
+                    <span class="text-teal-500 dark:text-teal-300" >
                       {talk.data.title}
                     </span>
                   </h2>
@@ -121,5 +137,13 @@ const metaFields = [
         </div>
       </div>
     </div>
+
+    <footer class="vise my-16">
+      <h2 class="text-lg md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-4 md:mb-8">
+        Additional Speakers
+      </h2>
+
+      <SpeakerGrid of={additionalSpeakers} />
+    </footer>
   </article>
 </App>
