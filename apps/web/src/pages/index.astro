@@ -51,7 +51,7 @@ const [keynote] = await getCollection(
         in Berlin.
       </p>
 
-      <SpeakerCard for={keynote} />
+      <SpeakerCard for={keynote} style="keynote" />
     </section>
 
     <section class="relative mb-16">
@@ -75,8 +75,8 @@ const [keynote] = await getCollection(
         flex
         flex-col"
       >
-        <SpeakerCard for={mc[0]} level="3" />
-        <SpeakerCard for={mc[1]} level="3" />
+        <SpeakerCard for={mc[0]} level="3" style="mc" />
+        <SpeakerCard for={mc[1]} level="3" style="mc" />
       </div>
     </section>
 
