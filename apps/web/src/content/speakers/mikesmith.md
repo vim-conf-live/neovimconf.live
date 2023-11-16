@@ -13,4 +13,4 @@ language: Lua
 talk: "Developing kitty-scrollback.nvim"
 ---
 
-As we approach the 10 year anniversary of the neovim project, Björn will take us on a journey back through the years to gain some historical perspective on the project; its impact and its future.
+kitty-scrollback.nvim is a Neovim plugin/Kitty kitten that allows you to navigate your Kitty scrollback buffer to quickly search, copy, and execute commands in Neovim. In this lightning talk, we'll explore the step-by-step process of creating kitty-scrollback.nvim and delve into the lessons learned during its development.
