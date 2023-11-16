@@ -3,11 +3,12 @@ name: Famiu Haque
 alias: famiu
 info: "Famiu is currently a student aspiring to be a software developer. He has contributed to Neovim since 2021 and has implemented various popular features such as global statusline, winbar, user inccommand, nvim_cmd, among other things."
 job: Neovim contributor
-github: https://github.com/famiu
+links:
+- https://github.com/famiu
+- https://twitter.com/FamiuHaque
+- https://twitch.tv/fam1u
+- https://youtube.com/@fam1u 
 image: ./famiu.jpg
-Twitter: https://twitter.com/FamiuHaque
-Twitch: https://twitch.tv/fam1u
-YouTube: https://youtube.com/@fam1u 
 colorscheme: carbonfox
 shell: Fish
 os: Linux
