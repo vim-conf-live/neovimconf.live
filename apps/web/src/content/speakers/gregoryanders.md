@@ -2,6 +2,7 @@
 name: Gregory Anders
 alias: gpanders
 info: "Neovim core member"
+image: ./gregoryanders.jpg
 links:
 - https://github.com/gpanders
 colorscheme: fakedonalds
