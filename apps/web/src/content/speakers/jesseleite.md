@@ -3,6 +3,7 @@ name: Jesse Leite
 alias: Elwin Ransom / JerseyMilker
 info: I use Neovim BTW
 job: YAML Dev @ Statamic
+image: ./jesseleite.jpg
 links:
 - https://github.com/jesseleite
 - https://twitter.com/jesseleite85
