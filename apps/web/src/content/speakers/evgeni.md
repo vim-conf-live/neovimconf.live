@@ -5,7 +5,6 @@ info: "Seasoned Plugin Author"
 links:
 - https://github.com/echasnovski
 colorscheme: randomhue
-image: 
 shell: zsh
 os: EndeavourOS
 terminal: st
