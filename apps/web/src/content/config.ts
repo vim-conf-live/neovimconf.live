@@ -10,7 +10,7 @@ const speakers = defineCollection({
       type: z
         .union([z.literal("speaker"), z.literal("keynote"), z.literal("mc")])
         .optional(),
-      job: z.string(),
+      job: z.string().optional(),
       alias: z.string().optional(),
       github: z.string().optional(),
       info: z.string().optional(),
