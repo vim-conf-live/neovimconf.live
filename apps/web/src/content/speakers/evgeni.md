@@ -2,10 +2,10 @@
 name: Evgeni Chasnovski
 alias: echasnovski
 info: "Seasoned Plugin Author"
-job:
-github: echasnovski
-Twitter:
+links:
+- https://github.com/echasnovski
 colorscheme: randomhue
+image: 
 shell: zsh
 os: EndeavourOS
 terminal: st
