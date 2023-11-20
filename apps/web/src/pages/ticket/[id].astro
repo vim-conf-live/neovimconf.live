@@ -1,57 +1,28 @@
 ---
 import App from "@/layouts/App.astro";
 import Ticket from "@/components/Ticket";
-import { createSBSSR } from "@/lib/server/supabase";
 import { CopyButton } from "@/components/CopyButton";
 
-export const prerender = false;
-
-const supabase = createSBSSR(Astro);
-const access_token = Astro.cookies.get("sb-access-token")?.value;
-const refresh_token = Astro.cookies.get("sb-refresh-token")?.value;
-
-if (access_token && refresh_token) {
-  await supabase.auth.setSession({
-    refresh_token,
-    access_token,
-  });
-}
-
-const {
-  data: { user },
-} = await supabase.auth.getUser();
-
-let link = {
-  label: "Get your own ticket!",
-  href: "/register",
-};
-
-if (user) {
-  const { data: ownedTicket, error } = await supabase
-    .from("profiles")
-    .select("ticket")
-    .eq("id", user.id)
-    .single();
-
-  if (error) {
-    throw new Error("Could not get owned ticket");
-  }
-
-  if (String(ownedTicket?.ticket) === Astro.params.id) {
-    link = {
-      label: "That's yours! Customize it",
-      href: "/ticket/edit",
-    };
-  } else {
-    link = {
-      label: "View your own",
-      href: `/ticket/${ownedTicket?.ticket}`,
-    };
-  }
-}
+export const prerender = false
 ---
 
-<script>
+<script>import { getCurrentUser, getTicket } from "@/lib/auth";
+
+const link = document.querySelector<HTMLAnchorElement>('[data-js="ticket-link"]')
+
+const updateLink = (link: HTMLAnchorElement) => getCurrentUser().then(getTicket).then (ticket => {
+  if (!ticket) return;
+
+  if (String(ticket) === Astro.params.id) {
+    link.textContent = "That's yours! Customize it";
+    link.href = "/ticket/edit";
+  } else {
+    link.textContent = "View your own";
+    link.href = `/ticket/${ticket}`;
+  }
+});
+
+link && updateLink(link);
 
 const canShare = navigator.canShare;
 for (const element of document.querySelectorAll('[data-js="share"]')) {
@@ -75,14 +46,15 @@ for (const element of document.querySelectorAll('[data-js="share"]')) {
   <article
     class="vise flex-grow flex items-center justify-center flex-col w-full py-32 space-y-8"
   >
-    <Ticket ticketId={Astro.params.id!} client:load />
+    <Ticket ticketId={Astro.params.id} client:only />
     <div class="flex flex-col md:flex-row gap-8 justify-between w-full md:items-center">
       <a
-        href={link.href}
+        data-js="ticket-link"
+        href="."
         class="inline-block relative text-center bg-teal-300 p-2 rounded-sm hover:bg-teal-200 dark:text-teal-900 font-mono disabled:bg-slate-50"
         type="submit"
       >
-        {link.label}
+        Customize your ticket
       </a>
       <div class="flex flex-col md:flex-row gap-4 items-start dark:text-slate-400">
         <CopyButton
