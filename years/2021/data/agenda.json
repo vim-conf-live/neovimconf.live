@@ -1,0 +1,9 @@
+{
+  "agenda": [
+    {
+      "speaker": "ThePrimeagen",
+      "title": "How to VIM",
+      "desc": "A classic spirited talk on speed and mastery of Vim movements. Also some data on key strokes and speed. Is the shortest amount of keystrokes always the fastest way to interact with vim? What does (limited) data suggest about speed of keystrokes?      "
+    }
+  ]
+}
