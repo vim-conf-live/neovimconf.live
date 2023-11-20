@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+# Assumes you're in a git repository
+export SENTRY_AUTH_TOKEN=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
+export SENTRY_ORG=bleep-bloop-studio
+VERSION=$(sentry-cli releases propose-version)
+
+# Create a release
+sentry-cli releases new -p neovimconf $VERSION
+
+# Associate commits with the release
+sentry-cli releases set-commits --auto $VERSION

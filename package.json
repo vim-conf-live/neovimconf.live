@@ -1,11 +1,10 @@
 {
   "name": "neovimconf.live",
-  "version": "2023.0.0",
-  "description": "",
+  "description": "monorepo of neovimconf",
   "scripts": {
-    "web:build": "pnpm -r --filter='./apps/web' run build",
-    "web:start": "pnpm -r --filter='./apps/web' run start",
-    "web:dev": "pnpm -r --filter='./apps/web' run dev"
+    "build": "pnpm -r --filter='./year/2023' run build",
+    "start": "pnpm -r --filter='./year/2023' run start",
+    "dev": "pnpm -r --filter='./year/2023' run dev"
   },
   "keywords": [],
   "author": "neovimconf.live"
