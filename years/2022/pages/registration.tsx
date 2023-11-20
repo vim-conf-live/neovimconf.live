@@ -8,15 +8,6 @@ import { GetStaticProps } from 'next';
 
 const NEOVIM_CONF_2022_ID = 'adc031c3-9a8b-409c-b487-1ae56b470eb6';
 
-export const getStaticProps: GetStaticProps = () => {
-  return {
-    redirect: {
-      permanent: true,
-      destination: "https://www.neovimconf.live/register"
-    }
-  }
-}
-
 function RegistrationPage() {
   const [email, setEmail] = useState('');
   const [success, setSuccess] = useState(false);
