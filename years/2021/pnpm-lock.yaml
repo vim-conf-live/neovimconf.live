@@ -1,0 +1,6 @@
+lockfileVersion: '6.0'
+
+dependencies:
+  '@neovimconf.live/2021':
+    specifier: 'link:'
+    version: 'link:'

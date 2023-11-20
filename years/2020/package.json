@@ -1,6 +1,6 @@
 {
-    "name": "Vimconf.live",
-    "version": "1.0.0",
+    "name": "@neovimconf/2020",
+    "version": "2020",
     "description": "Vimconf.Live - The virtual vim conference",
     "author": "Layerdrops",
     "private": true,

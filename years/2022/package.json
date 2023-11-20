@@ -1,6 +1,6 @@
 {
-  "name": "project-template",
-  "version": "0.1.0",
+  "name": "@neovimconf/2022",
+  "version": "2022",
   "repository": "github:carlesandres/project-template",
   "private": true,
   "scripts": {

@@ -1,7 +1,7 @@
 {
-  "name": "@neovimconf/web",
+  "name": "@neovimconf/2023",
   "type": "module",
-  "version": "0.1.1",
+  "version": "2023.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

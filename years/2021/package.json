@@ -1,6 +1,6 @@
 {
-  "name": "vimconf-live",
-  "version": "1.0.0",
+  "name": "@neovimconf/2021",
+  "version": "2021",
   "private": true,
   "scripts": {
     "dev": "nuxt",
