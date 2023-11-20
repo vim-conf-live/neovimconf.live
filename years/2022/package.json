@@ -1,6 +1,6 @@
 {
   "name": "@neovimconf/2022",
-  "version": "2022",
+  "version": "2022.0.0",
   "repository": "github:carlesandres/project-template",
   "private": true,
   "scripts": {
@@ -9,8 +9,7 @@
     "start": "next start",
     "csslint": "npx stylelint \"**/*.css\"",
     "prettify": "npx prettier --write .",
-    "lint": "tsc --noEmit && next lint --fix",
-    "prepare": "husky install"
+    "lint": "tsc --noEmit && next lint --fix"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.1.1",
@@ -31,7 +30,6 @@
     "eslint": "8.28.0",
     "eslint-config-next": "12.3.0",
     "eslint-plugin-react": "7.31.11",
-    "husky": "8.0.2",
     "postcss": "^8.4.19",
     "prettier": "^2.8.0",
     "prettier-plugin-tailwindcss": "^0.1.13",
