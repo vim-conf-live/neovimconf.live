@@ -16,7 +16,7 @@ const LogoSection = () => {
         <div className="blur"></div>
       </div>
       <div className="flex gap-4">
-        <Link href="https://forms.gle/hU18jSEWL2r9xmqP9" target="_blank">
+        <Link href="https://neovimconf.live/lightning">
           <a
             target="_blank"
             className={`flex content-start items-center gap-2 rounded-lg bg-[#42b72a] py-3 px-4
@@ -27,7 +27,7 @@ const LogoSection = () => {
           </a>
         </Link>
 
-        <Link href="/registration">
+        <Link href="https://neovimconf.live/register">
           <a
             className={`flex content-center items-center gap-2 rounded-lg bg-[#42b72a] py-3 px-8
                       text-sm font-bold transition duration-300 hover:bg-[#0f951a] md:text-lg`}

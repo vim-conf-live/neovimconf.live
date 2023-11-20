@@ -4,8 +4,18 @@ import RegistrationSuccessMsg from 'components/RegistrationSuccessMsg';
 import RegistrationErrorMsg from 'components/RegistrationErrorMsg';
 import { FaSpinner } from 'react-icons/fa';
 import registerToConf from 'utils/registerToConf';
+import { GetStaticProps } from 'next';
 
 const NEOVIM_CONF_2022_ID = 'adc031c3-9a8b-409c-b487-1ae56b470eb6';
+
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    redirect: {
+      permanent: true,
+      destination: "https://www.neovimconf.live/register"
+    }
+  }
+}
 
 function RegistrationPage() {
   const [email, setEmail] = useState('');
@@ -23,16 +33,17 @@ function RegistrationPage() {
       setError(false);
       setSuccess(false);
 
-      const error = await registerToConf(email, NEOVIM_CONF_2022_ID);
-      if (error) {
-        setError(true);
-        setLoading(false);
-        return;
-      }
+      // const error = await registerToConf(email, NEOVIM_CONF_2022_ID);
+      // if (error) {
+      //   setError(true);
+      //   setLoading(false);
+      //   return;
+      // }
+
       setSuccess(true);
       setLoading(false);
     },
-    [email]
+    []
   );
 
   const buttonContent = loading ? (
