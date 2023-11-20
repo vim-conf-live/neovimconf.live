@@ -1,0 +1,8 @@
+[build]
+  command = "pnpm run build:2021"
+  functions = "netlify/functions"
+  publish = "years/2021/dist"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF years/2021"
+
+[dev]
+  command = "pnpm run dev:2021"

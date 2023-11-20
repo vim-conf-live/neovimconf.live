@@ -2,9 +2,14 @@
   "name": "neovimconf.live",
   "description": "monorepo of neovimconf",
   "scripts": {
-    "build": "pnpm -r --filter='./year/2023' run build",
-    "start": "pnpm -r --filter='./year/2023' run start",
-    "dev": "pnpm -r --filter='./year/2023' run dev"
+    "build:2023": "pnpm -r --filter='./years/2023' run build",
+    "build:2022": "pnpm -r --filter='./years/2022' run build",
+    "build:2021": "pnpm -r --filter='./years/2021' run build",
+    "build:2020": "pnpm -r --filter='./years/2020' run build",
+    "dev:2023": "pnpm -r --filter='./years/2023' run dev",
+    "dev:2022": "pnpm -r --filter='./years/2022' run dev",
+    "dev:2021": "pnpm -r --filter='./years/2021' run dev",
+    "dev:2020": "pnpm -r --filter='./years/2020' run dev"
   },
   "keywords": [],
   "author": "neovimconf.live"

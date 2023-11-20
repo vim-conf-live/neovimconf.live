@@ -1,0 +1,14 @@
+[build]
+  command = "pnpm run build:2022"
+  functions = "netlify/functions"
+  publish = "years/2022/dist"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF years/2022"
+
+[dev]
+  command = "pnpm run dev:2022"
+
+[[redirects]]
+  from = "/registration"
+  to = "https://neovimconf.live/register"
+  status = 302
+  force = true
