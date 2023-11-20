@@ -57,9 +57,11 @@ const metaFields = [
           {speaker!.data.name}
         </h1>
 
-        <p class="mb-4 text-slate-400 italic text-sm">
-          {speaker!.data.job}
-        </p>
+        {
+          !!speaker.data.job && (
+            <p class="mb-4 text-slate-400 italic text-sm">{speaker.data.job}</p>
+          )
+        }
 
         <div class="max-w-[60ch] overflow-hidden mb-16">
           <div class="prose dark:prose-invert mb-6">
