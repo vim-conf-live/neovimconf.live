@@ -2,6 +2,7 @@
 name: Evgeni Chasnovski
 alias: echasnovski
 info: "Seasoned Plugin Author"
+image: ./evgeni.jpg
 links:
 - https://github.com/echasnovski
 colorscheme: randomhue
