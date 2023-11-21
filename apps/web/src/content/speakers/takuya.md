@@ -3,6 +3,7 @@ name: Takuya Matsuyama
 alias: devaslife
 info: "Maker of inkdrop.app and YouTuber @devaslife"
 job: Indie developer
+image: ./takuya.jpg
 links:
 - https://github.com/craftzdog
 - https://twitter.com/inkdrop_app
