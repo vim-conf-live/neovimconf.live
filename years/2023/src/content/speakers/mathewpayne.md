@@ -12,7 +12,7 @@ links:
 - https://github.com/geekmasher
 - https://twitter.com/geekmasher
 language: English
-talk: Using Neovim to help write secure code
+talk: Using Neovim to Help Develop Secure Code
 ---
 
 Neovim is my text editor of choice, and as someone that works in security I want to use my editor to help me write better code that is more secure. This talk is on how I wrote a Neovim plugin to add security tools seamlessly into my developer experience.
