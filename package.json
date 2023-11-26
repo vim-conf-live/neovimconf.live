@@ -9,7 +9,8 @@
     "dev:2023": "pnpm -r --filter='./years/2023' run dev",
     "dev:2022": "pnpm -r --filter='./years/2022' run dev",
     "dev:2021": "pnpm -r --filter='./years/2021' run dev",
-    "dev:2020": "pnpm -r --filter='./years/2020' run dev"
+    "dev:2020": "pnpm -r --filter='./years/2020' run dev",
+    "dev:emails" : "pnpm -r --filter='./services/emails/' run dev"
   },
   "keywords": [],
   "author": "neovimconf.live"
