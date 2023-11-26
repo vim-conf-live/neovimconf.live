@@ -42,55 +42,53 @@ const metaFields = [
 
 <App title={speaker!.data.name}>
   <article class="vise my-16">
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
-      <div class="col-span-2 row-start-2 md:row-start-auto">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8">
+      <div class="md:col-span-2">
         <Image
           alt={`portrait of ${speaker.data.name}`}
           src={speaker.data.image || placeholder}
           transition:name={`speaker-image-${speaker.slug}`}
-          class="mb-4"
         />
       </div>
 
-      <div class="col-span-3">
-        <h1 class="text-5xl font-bold mb-2 font-mono text-teal-400">
-          {speaker!.data.name}
-        </h1>
+      <div class="md:col-span-3">
+        <div class="mb-4">
+          <h1 class="text-5xl font-bold mb-2 font-mono text-teal-400">
+            {speaker!.data.name}
+          </h1>
+          {
+            !!speaker.data.job && (
+              <p class="text-slate-400 italic text-sm">{speaker.data.job}</p>
+            )
+          }
+        </div>
 
-        {
-          !!speaker.data.job && (
-            <p class="mb-4 text-slate-400 italic text-sm">{speaker.data.job}</p>
-          )
-        }
-
-        <div class="max-w-[60ch] overflow-hidden mb-16">
-          <div class="prose dark:prose-invert mb-6">
+        <div class="max-w-[60ch] overflow-hidden mb-16 space-y-6">
+          <div class="prose dark:prose-invert">
             <Content />
           </div>
 
           {
             speaker.data.links?.length && (
               <div>
-                <ul class="text-teal-500 dark:text-teal-300 text-sm space-y-2">
-                  {speaker.data.links?.map((link) => {
-                    return (
-                      <li>
-                        <a
-                          class="text-teal-500 underline dark:text-teal-300"
-                          href={link}
-                        >
-                          {link.replace("https://", "")}
-                        </a>
-                      </li>
-                    );
-                  })}
+                <ul class="space-y-2 list-disc list-inside">
+                  {speaker.data.links?.map((link) => (
+                    <li>
+                      <a
+                        class="text-teal-500 underline dark:text-teal-300"
+                        href={link}
+                      >
+                        {link.replace("https://", "")}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             )
           }
 
-          <dl class="
-            col-span-2
+          <dl
+            class="col-span-2
             leading-relaxed
             text-sm
             text-slate-400
@@ -103,8 +101,8 @@ const metaFields = [
             scrollbar-thumb-slate-700
             scrollbar-track-slate-600
             scrollbar-thumb-rounded-full
-            scrollbar-track-rounded-full
-          ">
+            scrollbar-track-rounded-full"
+          >
             <span class="text-cyan-600">local</span>{" "}
             <span class="text-slate-200"
               >{speaker.data.alias || speaker.slug}</span
@@ -139,7 +137,7 @@ const metaFields = [
                 >
                   <h2 class="text-2xl text-amber-500 mb-4">
                     Talk:
-                    <span class="text-teal-500 dark:text-teal-300" >
+                    <span class="text-teal-500 dark:text-teal-300">
                       {talk.data.title}
                     </span>
                   </h2>
@@ -153,7 +151,9 @@ const metaFields = [
     </div>
 
     <footer class="vise my-16">
-      <h2 class="text-lg md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-4 md:mb-8">
+      <h2
+        class="text-2xl md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-4 md:mb-8"
+      >
         Additional Speakers
       </h2>
 
