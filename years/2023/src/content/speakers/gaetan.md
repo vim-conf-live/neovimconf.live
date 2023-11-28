@@ -3,6 +3,7 @@ name: Gaétan Lepage
 alias: glepage
 info: "I love to tinker around with software and trying to build the best development environment. I contribute to the Nix ecosystem to make it even better !"
 job: PhD student in Deep Reinforcement Learning for Robotics @Inria
+image: ./gaetan.jpeg
 links:
 - https://github.com/GaetanLepage
 - https://twitter.com/GaetanLepage_
