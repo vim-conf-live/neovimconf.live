@@ -6,6 +6,7 @@ import App from "@/layouts/App.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import SponsorsGrid from "@/components/SponsorsGrid.astro";
+import StreamInfoPanel from "../assets/stream-info-panel.jpeg";
 
 const speakers = await getCollection(
   "speakers",
@@ -38,6 +39,15 @@ const [keynote] = await getCollection(
         invite you to join us for a day of talks and celebration of Neovim and
         the community around it.
       </p>
+    </section>
+
+    <section>
+      <Image
+        src={StreamInfoPanel}
+        alt="Twitch Live Stream"
+        width={992}
+        height={496}
+      />
     </section>
 
     <section class="relative mb-32">
