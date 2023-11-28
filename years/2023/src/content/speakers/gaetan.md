@@ -1,4 +1,4 @@
---
+---
 name: Gaétan Lepage
 alias: glepage
 info: "I love to tinker around with software and trying to build the best development environment. I contribute to the Nix ecosystem to make it even better !"
