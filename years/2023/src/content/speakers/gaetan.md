@@ -7,6 +7,7 @@ image: ./gaetan.jpeg
 links:
 - https://github.com/GaetanLepage
 - https://twitter.com/GaetanLepage_
+- https://glepage.com/
 colorscheme: gruvbox
 shell: zsh
 os: NixOS
