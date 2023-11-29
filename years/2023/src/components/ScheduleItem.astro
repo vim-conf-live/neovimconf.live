@@ -1,5 +1,6 @@
 ---
 import TimeSlot from "@/components/TimeSlot.astro";
+import { BoltIcon } from "@heroicons/react/24/outline";
 import { getEntry, type CollectionEntry } from "astro:content";
 type Slot = CollectionEntry<"schedules">["data"]["talks"][number];
 export interface Props {
@@ -32,19 +33,29 @@ const speaker = slot.speaker ? await getEntry(slot.speaker) : null;
             >
               {speaker.data.talk}
             </h3>
+            {slot.type === "lightning"
+              ? <span class="inline-flex gap-1 text-xs rounded-full text-amber-600 dark:text-amber-200/50"><BoltIcon className="w-3" />Lightning Talk</span>
+              : <span class="text-xs px-1.5 py-0.5 bg-teal-600 rounded-full text-teal-200">Live Talk</span>
+            }
           </header>
         </div>
       </article>
     </a>
   ) : (
-    <div class="text-center px-2 py-4">
+    <div class="text-center px-2 py-4 rounded bg-slate-950">
       <article class="grid grid-cols-12">
         <div class="col-span-2 text-sky-300 flex justify-center items-center text-center">
           <TimeSlot on={day.id} for={slot.time} />
         </div>
-        <div class="col-span-8">
-          <header class=" flex items-center justify-center">
-            <h3 class="font-bold text-xl italic text-teal-500 group-hover:text-teal-500 dark:group-hover:text-teal-300">
+        <div class="col-span-8  flex items-center justify-center">
+          <header>
+            <h3 class="
+              font-bold
+              text-2xl
+              text-teal-400
+              group-hover:text-teal-500
+              dark:group-hover:text-teal-300
+            ">
               {slot.title}
             </h3>
           </header>

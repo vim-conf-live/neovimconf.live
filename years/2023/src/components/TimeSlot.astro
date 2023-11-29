@@ -1,22 +1,27 @@
 ---
+import "@/components/LocalTime.astro"
+
+import { formatInTimeZone, zonedTimeToUtc } from "date-fns-tz";
+
 export interface Props {
   on: string;
   for: [string, string];
 }
 
-const {
-  on: input,
-  for: [start, end],
-} = Astro.props;
+const pad = (num: number) => String(num).padStart(2, "0");
+
+const { on: input, for: [start] } = Astro.props;
 const [year, month, day] = input.split("-").map(Number);
 const [hour, minute] = start.split(":").map(Number);
-const date = new Date(`${year}-${month}-${day}Z${hour}:${minute}`)
+const str = `${year}-${month}-${pad(day)}T${pad(hour)}:${pad(minute)}Z`
+const date = new Date(str)
+const zoned = zonedTimeToUtc(date, 'America/Boise')
 ---
 
 <local-time
-  datetime={date.toUTCString()}
+  datetime={zoned.toUTCString()}
   class="[&_span]:text-xs [&_span]:block [&_span]:text-slate-400"
 >
-  {start}
+  {pad(zoned.getUTCHours())}:{pad(zoned.getUTCMinutes())} 
   <span>UTC</span>
 </local-time>

@@ -35,10 +35,10 @@ const schedules = defineCollection({
 
         // if no talk referenced, use these (eg. for breaks)
         title: z.string().optional(),
-        description: z.string().optional(),
 
         text: z.string().optional(),
         time: z.tuple([z.string(), z.string()]),
+        type: z.string().optional(),
       }),
     ),
   }),

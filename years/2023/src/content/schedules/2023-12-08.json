@@ -3,50 +3,65 @@
   "slug": "schedule",
   "talks": [
     {
-      "title": "intro",
-      "time": ["1:30", "2:00"]
+      "title": "Intro",
+      "time": ["8:30", "9:00"]
+    }, {
+      "speaker": "justin",
+      "time": ["9:00", "9:30"]
     }, {
       "speaker": "takuya",
-      "time": ["2:00", "2:30"]
+      "time": ["9:35", "9:45"],
+      "type": "lightning"
     }, {
       "speaker": "bjorn",
-      "time": ["2:50", "3:20"]
+      "time": ["9:50", "10:20"]
     }, {
       "speaker": "hao",
-      "time": ["3:25", "3:35"]
+      "time": ["10:25", "10:35"],
+      "type": "lightning"
     }, {
       "speaker": "maria",
-      "time": ["3:40", "4:10"]
+      "time": ["10:40", "11:10"]
     }, {
       "speaker": "evgeni",
-      "time": ["4:15", "4:25"]
+      "time": ["11:15", "11:25"],
+      "type": "lightning"
     }, {
       "speaker": "famiu",
-      "time": ["4:30", "5:00"]
+      "time": ["11:30", "12:00"]
     }, {
       "speaker": "joshmedeski",
-      "time": ["5:05", "5:10"]
+      "time": ["12:05", "12:10"],
+      "type": "lightning"
     }, {
       "speaker": "gregoryanders",
-      "time": ["5:10", "5:28"]
+      "time": ["12:10", "12:28"]
     }, {
       "speaker": "mikesmith",
-      "time": ["5:30", "5:40"]
+      "time": ["12:30", "12:40"],
+      "type": "lightning"
     }, {
       "speaker": "teej",
-      "time": ["5:45", "6:15"]
+      "time": ["12:45", "13:15"]
     }, {
       "speaker": "johnmcbride",
-      "time": ["6:15", "6:25"]
+      "time": ["13:15", "13:25"],
+      "type": "lightning"
+    }, {
+      "speaker": "mathewpayne",
+      "time": ["13:25", "13:35"],
+      "type": "lightning"
     }, {
       "speaker" : "kewbish",
-      "time": ["6:35", "6:25"]
+      "time": ["13:35", "13:25"],
+      "type": "lightning"
     }, {
       "speaker": "jesseleite",
-      "time": ["6:45", "6:55"]
+      "time": ["13:45", "13:55"],
+      "type": "lightning"
     }, {
-      "time": ["6:50", "7:35"],
-      "title": "fireside chat with teej and prime"
+      "time": ["13:50", "14:35"],
+      "title": "Fireside chat with TeeJ and The Primeagen"
     }
   ]
 }
