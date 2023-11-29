@@ -8,6 +8,7 @@ links:
 - https://twitter.com/2KAbhishek
 - https://www.youtube.com/@2KAbhishek
 colorscheme: "Onedark"
+image: ./abhishek.jpg
 shell: "zsh | powershell"
 os: "Manjaro Linux | macOS | Windows"
 terminal: "foot | iterm | Windows Terminal"
