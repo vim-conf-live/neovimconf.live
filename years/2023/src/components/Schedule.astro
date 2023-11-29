@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import ScheduleItem from "@/components/ScheduleItem.astro";
+import "@/components/LocalTime.astro";
+
+const [day] = await getCollection("schedules");
+---
+
+<ol
+  class="divide-y divide-slate-200 dark:divide-slate-700"
+  transition:name={`timetable-${day.id}`}
+  transition:animate="slide"
+>
+  {
+    day.data.talks.map((slot) => (
+      <li>
+        <ScheduleItem on={day} for={slot} />
+      </li>
+    ))
+  }
+</ol>
