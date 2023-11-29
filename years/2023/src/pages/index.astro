@@ -1,12 +1,11 @@
 ---
 import HomepageHero from "@/components/HomepageHero.astro";
 import SpeakerCard from "@/components/SpeakerCard.astro";
-import SpeakerGrid from "@/components/SpeakerGrid.astro";
 import App from "@/layouts/App.astro";
 import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
 import SponsorsGrid from "@/components/SponsorsGrid.astro";
 import Schedule from "@/components/Schedule.astro";
+import SpeakerGrid from "@/components/SpeakerGrid.astro";
 
 const speakers = await getCollection(
   "speakers",
@@ -87,21 +86,26 @@ const [keynote] = await getCollection(
 
     <section class="relative mb-16">
       <h2
-        class="text-lg md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-4"
+        class="text-xl md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-6"
       >
-        <a href="#schedule" id="schedule"> Schedule</a>
+        <a href="#schedule" id="schedule">Schedule</a>
       </h2>
 
-      <p class="mb-8">
-        Times are adjusted to your local timezone. Detected: <local-timezone
-          >UTC</local-timezone
-        >
-      </p>
+      <div class="mb-6">
+        <p class="md:text-lg max-w-screen-sm mb-4">
+          This year we've packed the schedule with a diverse group of speakers
+          from all over the world and squeezed them into a single day. Times are
+          adjusted to your local timezone.
+        </p>
+        <p class="text-xl sm:text-2xl leading-none">
+          Detected your timezone: <em><local-timezone>UTC</local-timezone></em>
+        </p>
+      </div>
 
       <Schedule />
     </section>
 
-    <section class="">
+    <section>
       <h2
         class="text-lg md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-4 md:mb-8"
       >

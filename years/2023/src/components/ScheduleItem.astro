@@ -1,7 +1,9 @@
 ---
 import TimeSlot from "@/components/TimeSlot.astro";
-import { BoltIcon } from "@heroicons/react/24/outline";
+import { BoltIcon, VideoCameraIcon } from "@heroicons/react/24/outline";
 import { getEntry, type CollectionEntry } from "astro:content";
+import SpeakerImage from "./SpeakerImage.astro";
+import ScheduleSpeakerImage from "./ScheduleSpeakerImage.astro";
 type Slot = CollectionEntry<"schedules">["data"]["talks"][number];
 export interface Props {
   on: CollectionEntry<"schedules">;
@@ -17,48 +19,51 @@ const speaker = slot.speaker ? await getEntry(slot.speaker) : null;
   speaker ? (
     <a
       href={`/speakers/${speaker.slug}`}
-      class="group block hover:bg-slate-50 dark:hover:bg-slate-950 px-2 py-4"
+      class="group block hover:bg-slate-50 dark:hover:bg-slate-950"
     >
-      <article class="grid grid-cols-12">
-        <div class="col-span-2 text-sky-300 flex justify-center items-center text-center">
+      <article class="grid sm:grid-cols-12">
+        <div class="col-span-2 text-sky-300 flex justify-center items-center text-center px-2 py-4">
           <TimeSlot on={day.id} for={slot.time} />
         </div>
-        <div class="col-span-8">
-          <header class="mb-2">
-            <p class="italic text-sm text-slate-400 dark:text-slate-500">
-              By {speaker.data.name}
-            </p>
-            <h3
-              class="font-bold text-xl group-hover:text-teal-500 dark:group-hover:text-teal-300"
-            >
-              {speaker.data.talk}
-            </h3>
-            {slot.type === "lightning"
-              ? <span class="inline-flex gap-1 text-xs rounded-full text-amber-600 dark:text-amber-200/50"><BoltIcon className="w-3" />Lightning Talk</span>
-              : <span class="text-xs px-1.5 py-0.5 bg-teal-600 rounded-full text-teal-200">Live Talk</span>
-            }
-          </header>
+        <div class="col-span-10">
+          <div class="flex items-center flex-wrap">
+            <ScheduleSpeakerImage
+              class="aspect-square w-[90px] h-[90px] mr-4"
+              for={speaker}
+            />
+            <header class="px-2 py-4">
+              <h3 class="font-bold text-xl group-hover:text-teal-500 dark:group-hover:text-teal-300 mb-1">
+                {speaker.data.talk}
+              </h3>
+              <div class="flex items-center flex-wrap align-cener gap-2">
+                {slot.type === "lightning" ? (
+                  <span class="inline-flex gap-1 text-xs rounded-full text-amber-600 dark:text-amber-400">
+                    <BoltIcon className="w-3" />
+                    Lightning Talk
+                  </span>
+                ) : (
+                  <span class="inline-flex gap-1 text-xs rounded-full text-rose-600 dark:text-rose-400">
+                    <VideoCameraIcon className="w-3" />
+                    Live Talk
+                  </span>
+                )}
+                <p class="italic text-sm text-slate-600 dark:text-slate-400">
+                  by {speaker.data.name}
+                </p>
+              </div>
+            </header>
+          </div>
         </div>
       </article>
     </a>
   ) : (
-    <div class="text-center px-2 py-4 rounded bg-slate-950">
-      <article class="grid grid-cols-12">
+    <div class="px-2 py-4 rounded bg-slate-950">
+      <article class="grid grid-cols-12 text-center items-center">
         <div class="col-span-2 text-sky-300 flex justify-center items-center text-center">
           <TimeSlot on={day.id} for={slot.time} />
         </div>
-        <div class="col-span-8  flex items-center justify-center @container">
-          <header>
-            <h3 class="
-              font-bold
-              text-2xl
-              text-teal-400
-              group-hover:text-teal-500
-              dark:group-hover:text-teal-300
-            ">
-              {slot.title}
-            </h3>
-          </header>
+        <div class="col-span-8 text-left @container px-2 py-4">
+          <h3 class="font-bold text-2xl">{slot.title}</h3>
         </div>
       </article>
     </div>
