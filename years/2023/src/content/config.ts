@@ -31,7 +31,7 @@ const schedules = defineCollection({
     slug: z.string(),
     talks: z.array(
       z.object({
-        talk: reference("talks").optional(),
+        speaker: reference("speakers").optional(),
 
         // if no talk referenced, use these (eg. for breaks)
         title: z.string().optional(),

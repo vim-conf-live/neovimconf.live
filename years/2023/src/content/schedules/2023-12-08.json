@@ -1,15 +1,52 @@
 {
-  "title": "Day 1",
-  "slug": "day-1",
+  "title": "Schedule",
+  "slug": "schedule",
   "talks": [
     {
-      "time": ["9:00", "10:00"],
-      "talk": "the-state-of-neovim"
-    },
-    {
-      "time": ["10:30", "11:00"],
-      "title": "break",
-      "description": "A short break"
+      "title": "intro",
+      "time": ["1:30", "2:00"]
+    }, {
+      "speaker": "takuya",
+      "time": ["2:00", "2:30"]
+    }, {
+      "speaker": "bjorn",
+      "time": ["2:50", "3:20"]
+    }, {
+      "speaker": "hao",
+      "time": ["3:25", "3:35"]
+    }, {
+      "speaker": "maria",
+      "time": ["3:40", "4:10"]
+    }, {
+      "speaker": "evgeni",
+      "time": ["4:15", "4:25"]
+    }, {
+      "speaker": "famiu",
+      "time": ["4:30", "5:00"]
+    }, {
+      "speaker": "joshmedeski",
+      "time": ["5:05", "5:10"]
+    }, {
+      "speaker": "gregoryanders",
+      "time": ["5:10", "5:28"]
+    }, {
+      "speaker": "mikesmith",
+      "time": ["5:30", "5:40"]
+    }, {
+      "speaker": "teej",
+      "time": ["5:45", "6:15"]
+    }, {
+      "speaker": "johnmcbride",
+      "time": ["6:15", "6:25"]
+    }, {
+      "speaker" : "kewbish",
+      "time": ["6:35", "6:25"]
+    }, {
+      "speaker": "jesseleite",
+      "time": ["6:45", "6:55"]
+    }, {
+      "time": ["6:50", "7:35"],
+      "title": "fireside chat with teej and prime"
     }
   ]
 }

@@ -40,6 +40,12 @@ const link = (opts: { href: string; class?: string; hotkey?: string }) => ({
     )
   }
 
+  <div>
+    <a {...link({ href: "/schedule", hotkey: "g h" })}>
+      Schedule
+    </a>
+  </div>
+
 
   <div
     class="flex space-x-4 w-full items-center text-xs md:text-sm justify-end md:justify-end"

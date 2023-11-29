@@ -2,7 +2,7 @@
 name: TJ DeVries
 type: mc
 alias: teej_dv
-info: (Is this the talk name? if so -> ) Programmers are actually humans
+talk: Programmers are actually humans
 job: Software Dev
 github: tjdevries
 Twitter: teej_dv

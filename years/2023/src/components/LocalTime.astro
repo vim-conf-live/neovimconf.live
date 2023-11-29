@@ -1,0 +1,27 @@
+<script>
+  customElements.define(
+    "local-time",
+    class extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        const datetime = Date.parse(this.getAttribute("datetime")!);
+        console.log(this.getAttribute("datetime")!)
+        const tzOptions = Intl.DateTimeFormat().resolvedOptions();
+        const local = new Intl.DateTimeFormat("en-US", {
+          timeZone: tzOptions.timeZone,
+          hour: "numeric",
+          hourCycle: "h24",
+          minute: "numeric",
+          timeZoneName: "short",
+        }).format(datetime);
+
+        const [time, timeZone] = local.split(" ");
+
+        this.innerHTML = `${time} <span>${timeZone}</span>`;
+      }
+    },
+  );
+</script>
