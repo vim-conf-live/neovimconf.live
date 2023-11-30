@@ -6,9 +6,10 @@ import placeholder from "../../public/placeholder.png"
 export interface Props {
   for: CollectionEntry<"speakers">;
   class?: string;
+  noTransition?: boolean;
 }
 
-const { for: speaker } = Astro.props;
+const { for: speaker, noTransition } = Astro.props;
 ---
 
 <div class:list={["relative object-cover", Astro.props.class]}>
@@ -34,7 +35,7 @@ const { for: speaker } = Astro.props;
     Astro.props.class
     ]}>
   <Image
-    transition:name={`speaker-image-${speaker.slug}`}
+    transition:name={noTransition === true ? false : `speaker-image-${speaker.slug}`}
     src={speaker.data.image || placeholder}
     alt={`Portrait of ${speaker.data.name}`}
     class:list={[

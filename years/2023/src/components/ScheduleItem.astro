@@ -3,7 +3,6 @@ import TimeSlot from "@/components/TimeSlot.astro";
 import { BoltIcon, VideoCameraIcon } from "@heroicons/react/24/outline";
 import { getEntry, type CollectionEntry } from "astro:content";
 import SpeakerImage from "./SpeakerImage.astro";
-import ScheduleSpeakerImage from "./ScheduleSpeakerImage.astro";
 type Slot = CollectionEntry<"schedules">["data"]["talks"][number];
 export interface Props {
   on: CollectionEntry<"schedules">;
@@ -56,7 +55,7 @@ const speaker = slot.speaker ? await getEntry(slot.speaker) : null;
               </p>
             </div>
           </header>
-          <SpeakerImage for={speaker} class="w-[64px] aspect-square grow-0 hidden @md:block" />
+          <SpeakerImage noTransition for={speaker} class="w-[64px] aspect-square grow-0 hidden @md:block" />
         </div>
       </article>
     </a>
