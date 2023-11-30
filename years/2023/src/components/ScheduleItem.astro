@@ -55,7 +55,7 @@ const speaker = slot.speaker ? await getEntry(slot.speaker) : null;
               </p>
             </div>
           </header>
-          <SpeakerImage noTransition for={speaker} class="w-[64px] aspect-square grow-0 hidden @md:block" />
+          <SpeakerImage noTransition={["teej", "justin"].includes(speaker.slug)} for={speaker} class="w-[64px] aspect-square grow-0 hidden @md:block" />
         </div>
       </article>
     </a>
