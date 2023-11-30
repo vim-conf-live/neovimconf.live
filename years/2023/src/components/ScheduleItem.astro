@@ -19,51 +19,54 @@ const speaker = slot.speaker ? await getEntry(slot.speaker) : null;
   speaker ? (
     <a
       href={`/speakers/${speaker.slug}`}
-      class="group block hover:bg-slate-50 dark:hover:bg-slate-950"
+      class="group block hover:bg-slate-50 dark:hover:bg-slate-950 px-4 py-2"
     >
-      <article class="grid sm:grid-cols-12">
-        <div class="col-span-2 text-sky-300 flex justify-center items-center text-center px-2 py-4">
-          <TimeSlot on={day.id} for={slot.time} />
-        </div>
-        <div class="col-span-10">
-          <div class="flex items-center flex-wrap">
-            <ScheduleSpeakerImage
-              class="aspect-square w-[90px] h-[90px] mr-4"
-              for={speaker}
-            />
-            <header class="px-2 py-4">
-              <h3 class="font-bold text-xl group-hover:text-teal-500 dark:group-hover:text-teal-300 mb-1">
-                {speaker.data.talk}
-              </h3>
-              <div class="flex items-center flex-wrap align-cener gap-2">
-                {slot.type === "lightning" ? (
-                  <span class="inline-flex gap-1 text-xs rounded-full text-amber-600 dark:text-amber-400">
-                    <BoltIcon className="w-3" />
-                    Lightning Talk
-                  </span>
-                ) : (
-                  <span class="inline-flex gap-1 text-xs rounded-full text-rose-600 dark:text-rose-400">
-                    <VideoCameraIcon className="w-3" />
-                    Live Talk
-                  </span>
-                )}
-                <p class="italic text-sm text-slate-600 dark:text-slate-400">
-                  by {speaker.data.name}
-                </p>
-              </div>
-            </header>
-          </div>
+      <article class="flex w-full gap-4 items-center">
+        <TimeSlot on={day.id} for={slot.time} />
+        <div class="grow flex items-center justify-between gap-16 @container">
+          <header class="grow">
+            <h3 class="
+              font-bold
+              text-sm
+              sm:text-lg
+              lg:text-xl
+              2xl:text-2xl
+              group-hover:text-teal-500
+              dark:group-hover:text-teal-300
+              mb-1
+              grow
+            ">
+              {speaker.data.talk}
+            </h3>
+
+            <div class="flex items-center flex-wrap align-cener gap-2">
+              {slot.type === "lightning" ? (
+                <span class="inline-flex gap-1 text-xs rounded-full text-amber-600 dark:text-amber-400">
+                  <BoltIcon className="w-3" />
+                  Lightning Talk
+                </span>
+              ) : (
+                <span class="inline-flex gap-1 text-xs rounded-full text-rose-600 dark:text-rose-400">
+                  <VideoCameraIcon className="w-4 text-white rounded-full bg-rose-600 p-0.5" />
+                  Live Talk
+                </span>
+              )}
+              <p class="italic text-sm text-slate-600 dark:text-slate-400">
+                by {speaker.data.name}
+              </p>
+            </div>
+          </header>
+          <SpeakerImage for={speaker} class="w-[64px] aspect-square grow-0 hidden @md:block" />
         </div>
       </article>
     </a>
   ) : (
-    <div class="px-2 py-4 rounded bg-slate-950">
-      <article class="grid grid-cols-12 text-center items-center">
-        <div class="col-span-2 text-sky-300 flex justify-center items-center text-center">
-          <TimeSlot on={day.id} for={slot.time} />
-        </div>
-        <div class="col-span-8 text-left @container px-2 py-4">
-          <h3 class="font-bold text-2xl">{slot.title}</h3>
+    <div class="px-4 py-2">
+      <article class="flex gap-4 items-center min-h-[64px]">
+        <TimeSlot on={day.id} for={slot.time} />
+
+        <div class="w-full grow text-left">
+          <h3 class="font-bold text-sm sm:text-lg lg:text-xl 2xl:text-2xl">{slot.title}</h3>
         </div>
       </article>
     </div>

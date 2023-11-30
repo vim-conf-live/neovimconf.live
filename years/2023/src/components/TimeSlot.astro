@@ -20,7 +20,7 @@ const zoned = zonedTimeToUtc(date, 'America/Boise')
 
 <local-time
   datetime={zoned.toUTCString()}
-  class="[&_span]:text-xs [&_span]:block [&_span]:text-slate-400"
+  class="text-sky-300 [&_span]:text-xs [&_span]:block [&_span]:text-slate-400 font-mono text-center"
 >
   {pad(zoned.getUTCHours())}:{pad(zoned.getUTCMinutes())} 
   <span>UTC</span>
