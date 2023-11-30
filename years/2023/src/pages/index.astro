@@ -5,12 +5,7 @@ import App from "@/layouts/App.astro";
 import { getCollection } from "astro:content";
 import SponsorsGrid from "@/components/SponsorsGrid.astro";
 import Schedule from "@/components/Schedule.astro";
-import SpeakerGrid from "@/components/SpeakerGrid.astro";
 
-const speakers = await getCollection(
-  "speakers",
-  (speaker) => speaker.data.type === "speaker" || !speaker.data.type,
-);
 const mc = await getCollection(
   "speakers",
   (speaker) => speaker.data.type === "mc",
@@ -97,40 +92,13 @@ const [keynote] = await getCollection(
           from all over the world and squeezed them into a single day. Times are
           adjusted to your local timezone.
         </p>
+
         <p class="text-xl sm:text-2xl leading-none">
           Detected your timezone: <em><local-timezone>UTC</local-timezone></em>
         </p>
       </div>
 
       <Schedule />
-    </section>
-
-    <section>
-      <h2
-        class="text-lg md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-4 md:mb-8"
-      >
-        The Speakers
-      </h2>
-
-      <div class="max-w-screen-sm space-y-4 md:space-y-8 mb-8 lg:mb-16">
-        <p>
-          This year we've packed the schedule with a diverse group of speakers
-          from all over the world and squeezed them into a single day. Here's a
-          taste of who to expect. We'll announce more speakers as we approach
-          the conference date.
-        </p>
-
-        <p class="text-sm max-w-md text-slate-400 dark:text-slate-400">
-          Do you have a neat thing to share too? We're excited to hear from as
-          many as we can! Go and <a
-            href="/lightning"
-            class="text-teal-500 underline"
-            >submit your application for a lightning talk!</a
-          >
-        </p>
-      </div>
-
-      <SpeakerGrid of={speakers} />
     </section>
   </div>
 </App>
