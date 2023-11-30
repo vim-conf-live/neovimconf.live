@@ -35,7 +35,7 @@ const { for: speaker, noTransition } = Astro.props;
     Astro.props.class
     ]}>
   <Image
-    transition:name={noTransition === true ? false : `speaker-image-${speaker.slug}`}
+    transition:name={noTransition === true ? '' : `speaker-image-${speaker.slug}`}
     src={speaker.data.image || placeholder}
     alt={`Portrait of ${speaker.data.name}`}
     class:list={[
