@@ -1,0 +1,6 @@
+name: "Turso"
+slug: "turso"
+url: "https://turso.tech/neovimconf"
+image: ./turso.png
+section: "paladium"
+desc: Deploy anywhere in the world and get up to microsecond latency. Free Starter plan with up to 500 databases and up to 10,000 databases with the Scaler plan for only $29 a month.
