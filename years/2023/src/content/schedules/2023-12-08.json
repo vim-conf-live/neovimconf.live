@@ -57,14 +57,13 @@
     }, {
       "speaker": "gregoryanders",
       "time": ["12:55", "13:14"]
-    }, 
-    , {
+    }, {
       "speaker": "mikesmith",
       "time": ["13:14", "13:24"],
       "type": "lightning"
     }, {
       "speaker": "teej",
-      "time": ["13:24", "13:54"],
+      "time": ["13:24", "13:54"]
     }, {
       "speaker": "mathewpayne",
       "time": ["14:00", "14:10"],
