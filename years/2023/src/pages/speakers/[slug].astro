@@ -20,11 +20,6 @@ export interface Props {
 const { speaker } = Astro.props;
 const { Content } = await speaker!.render();
 
-const talks = await getCollection(
-  "talks",
-  (talk) => talk.data.speaker.slug === speaker.slug,
-);
-
 const additionalSpeakers = await getCollection(
   "speakers",
   ({ slug, data: { type } }) =>
@@ -62,6 +57,14 @@ const metaFields = [
             )
           }
         </div>
+
+        {
+          speaker.data.talk ? (
+            <h2 class="text-2xl text-teal-500 dark:text-teal-300 mb-4">
+              {speaker.data.talk}
+            </h2>
+          ) : null
+        }
 
         <div class="max-w-[60ch] overflow-hidden mb-16 space-y-6">
           <div class="prose dark:prose-invert">
@@ -126,34 +129,12 @@ const metaFields = [
             }
             <span class="text-teal-200">{"}"}</span>
           </dl>
-
-          {
-            false &&
-              talks.map((talk) => (
-                <a
-                  href={`/talks/${talk.slug}`}
-                  data-hotkey="g f"
-                  class="block dark:border dark:p-4 group rounded-sm border-slate-200 dark:border-slate-700 space-y-4 dark:bg-slate-950 hover:bg-slate-200 dark:hover:bg-slate-800 hover:border-slate-600 mt-8"
-                >
-                  <h2 class="text-2xl text-amber-500 mb-4">
-                    Talk:
-                    <span class="text-teal-500 dark:text-teal-300">
-                      {talk.data.title}
-                    </span>
-                  </h2>
-                  <p>{talk.data.description}</p>
-                  <p class="text-teal-400 text-right">gf &rarr;</p>
-                </a>
-              ))
-          }
         </div>
       </div>
     </div>
 
     <footer class="vise my-16">
-      <h2
-        class="text-2xl md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-4 md:mb-8"
-      >
+      <h2 class="text-2xl md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-4 md:mb-8">
         Additional Speakers
       </h2>
 

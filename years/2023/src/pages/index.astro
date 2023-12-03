@@ -1,16 +1,11 @@
 ---
 import HomepageHero from "@/components/HomepageHero.astro";
 import SpeakerCard from "@/components/SpeakerCard.astro";
-import SpeakerGrid from "@/components/SpeakerGrid.astro";
 import App from "@/layouts/App.astro";
 import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
 import SponsorsGrid from "@/components/SponsorsGrid.astro";
+import Schedule from "@/components/Schedule.astro";
 
-const speakers = await getCollection(
-  "speakers",
-  (speaker) => speaker.data.type === "speaker" || !speaker.data.type,
-);
 const mc = await getCollection(
   "speakers",
   (speaker) => speaker.data.type === "mc",
@@ -30,7 +25,9 @@ const [keynote] = await getCollection(
 
   <div class="vise space-y-48">
     <section class="font-sans space-y-2 md:space-y-4 w-full">
-      <h1 class="text-3xl mb-8 sm:text-5xl font-mono font-bold text-teal-500 dark:text-teal-300" >
+      <h1
+        class="text-3xl mb-8 sm:text-5xl font-mono font-bold text-teal-500 dark:text-teal-300"
+      >
         Your favorite editor's conference!
       </h1>
       <p class="max-w-screen-md mb-8 text-xl md:text-2xl lg:text-3xl">
@@ -41,7 +38,9 @@ const [keynote] = await getCollection(
     </section>
 
     <section class="relative mb-32">
-      <h2 class="text-2xl sm:text-3xl mb-4 font-mono font-bold text-amber-500 dark:text-amber-300" >
+      <h2
+        class="text-2xl sm:text-3xl mb-4 font-mono font-bold text-amber-500 dark:text-amber-300"
+      >
         Keynote by Justin M. Keyes
       </h2>
 
@@ -80,32 +79,26 @@ const [keynote] = await getCollection(
       </div>
     </section>
 
-    <section class="">
+    <section class="relative mb-16">
       <h2
-        class="text-lg md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-4 md:mb-8"
+        class="text-xl md:text-3xl font-mono font-bold text-amber-500 dark:text-amber-300 mb-6"
       >
-        The Speakers
+        <a href="#schedule" id="schedule">Schedule</a>
       </h2>
 
-      <div class="max-w-screen-sm space-y-4 md:space-y-8 mb-8 lg:mb-16">
-        <p>
+      <div class="mb-6">
+        <p class="md:text-lg max-w-screen-sm mb-4">
           This year we've packed the schedule with a diverse group of speakers
-          from all over the world and squeezed them into a single day. Here's a
-          taste of who to expect. We'll announce more speakers as we approach
-          the conference date.
+          from all over the world and squeezed them into a single day. Times are
+          adjusted to your local timezone.
         </p>
 
-        <p class="text-sm max-w-md text-slate-400 dark:text-slate-400">
-          Do you have a neat thing to share too? We're excited to hear from as
-          many as we can! Go and <a
-            href="/lightning"
-            class="text-teal-500 underline"
-            >submit your application for a lightning talk!</a
-          >
+        <p class="text-xl sm:text-2xl leading-none">
+          Detected your timezone: <em><local-timezone>UTC</local-timezone></em>
         </p>
       </div>
 
-      <SpeakerGrid of={speakers} />
+      <Schedule />
     </section>
   </div>
 </App>
