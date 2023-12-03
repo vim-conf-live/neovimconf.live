@@ -20,48 +20,66 @@
       "time": ["10:25", "10:35"],
       "type": "lightning"
     }, {
+      "speaker": "gaetan",
+      "time": ["10:35", "10:45"],
+      "type": "lightning"
+    },
+    {
       "speaker": "maria",
-      "time": ["10:40", "11:10"]
-    }, {
+      "time": ["10:50", "11:20"]
+    }, 
+    {
+      "speaker": "jesseleite",
+      "time": ["11:25", "11:35"],
+      "type": "lightning"
+    },
+    {
+      "speaker": "abhishek",
+      "time": ["11:35", "11:45"],
+      "type": "lightning"
+    },
+    {
       "speaker": "evgeni",
-      "time": ["11:15", "11:25"],
+      "time": ["11:45", "11:55"],
       "type": "lightning"
     }, {
       "speaker": "famiu",
-      "time": ["11:30", "12:00"]
-    }, {
+      "time": ["12:00", "12:30"]
+    }, 
+    {
+      "speaker": "kewbish",
+      "time": ["12:35", "12:45"],
+      "type": "lightning"
+    },{
       "speaker": "joshmedeski",
-      "time": ["12:05", "12:10"],
+      "time": ["12:50", "12:53"],
       "type": "lightning"
     }, {
       "speaker": "gregoryanders",
-      "time": ["12:10", "12:28"]
-    }, {
+      "time": ["12:55", "13:14"]
+    }, 
+    , {
       "speaker": "mikesmith",
-      "time": ["12:30", "12:40"],
+      "time": ["13:14", "13:24"],
       "type": "lightning"
     }, {
       "speaker": "teej",
-      "time": ["12:45", "13:15"]
-    }, {
-      "speaker": "johnmcbride",
-      "time": ["13:15", "13:25"],
-      "type": "lightning"
+      "time": ["13:24", "13:54"],
     }, {
       "speaker": "mathewpayne",
-      "time": ["13:25", "13:35"],
+      "time": ["14:00", "14:10"],
       "type": "lightning"
     }, {
-      "speaker" : "kewbish",
-      "time": ["13:35", "13:25"],
+      "speaker" : "johnmcbride",
+      "time": ["14:10", "14:20"],
       "type": "lightning"
     }, {
-      "speaker": "jesseleite",
-      "time": ["13:45", "13:55"],
-      "type": "lightning"
-    }, {
-      "time": ["13:50", "14:35"],
+      "time": ["14:20", "14:50"],
       "title": "Fireside chat with TeeJ and The Primeagen"
+    },
+    {
+      "title": "Outro",
+      "time": ["15:10", "15:25"]
     }
   ]
 }
