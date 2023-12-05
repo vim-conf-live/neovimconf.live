@@ -4,7 +4,9 @@ import SpeakerCard from "@/components/SpeakerCard.astro";
 import App from "@/layouts/App.astro";
 import { getCollection } from "astro:content";
 import SponsorsGrid from "@/components/SponsorsGrid.astro";
+import StreamInfoPanel from "../assets/stream-info-panel.jpeg";
 import Schedule from "@/components/Schedule.astro";
+import { Image } from "astro:assets";
 
 const mc = await getCollection(
   "speakers",
@@ -35,6 +37,24 @@ const [keynote] = await getCollection(
         invite you to join us for a day of talks and celebration of Neovim and
         the community around it.
       </p>
+    </section>
+
+    <section>
+      <a
+        href="https://www.twitch.tv/ThePrimeagen"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          src={StreamInfoPanel}
+          alt="Twitch Live Stream"
+          width={992}
+          height={496}
+        />
+        <p class="mt-2 text-teal-500 underline text-center">
+          Go to Twitch page
+        </p>
+      </a>
     </section>
 
     <section class="relative mb-32">
