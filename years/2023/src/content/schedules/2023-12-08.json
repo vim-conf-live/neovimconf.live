@@ -1,15 +1,84 @@
 {
-  "title": "Day 1",
-  "slug": "day-1",
+  "title": "Schedule",
+  "slug": "schedule",
   "talks": [
     {
-      "time": ["9:00", "10:00"],
-      "talk": "the-state-of-neovim"
+      "title": "Intro",
+      "time": ["8:30", "9:00"]
+    }, {
+      "speaker": "justin",
+      "time": ["9:00", "9:30"]
+    }, {
+      "speaker": "takuya",
+      "time": ["9:35", "9:45"],
+      "type": "lightning"
+    }, {
+      "speaker": "bjorn",
+      "time": ["9:50", "10:20"]
+    }, {
+      "speaker": "hao",
+      "time": ["10:25", "10:35"],
+      "type": "lightning"
+    }, {
+      "speaker": "gaetan",
+      "time": ["10:35", "10:45"],
+      "type": "lightning"
     },
     {
-      "time": ["10:30", "11:00"],
-      "title": "break",
-      "description": "A short break"
+      "speaker": "maria",
+      "time": ["10:50", "11:20"]
+    }, 
+    {
+      "speaker": "jesseleite",
+      "time": ["11:25", "11:35"],
+      "type": "lightning"
+    },
+    {
+      "speaker": "abhishek",
+      "time": ["11:35", "11:45"],
+      "type": "lightning"
+    },
+    {
+      "speaker": "evgeni",
+      "time": ["11:45", "11:55"],
+      "type": "lightning"
+    }, {
+      "speaker": "famiu",
+      "time": ["12:00", "12:30"]
+    }, 
+    {
+      "speaker": "kewbish",
+      "time": ["12:35", "12:45"],
+      "type": "lightning"
+    },{
+      "speaker": "joshmedeski",
+      "time": ["12:50", "12:53"],
+      "type": "lightning"
+    }, {
+      "speaker": "gregoryanders",
+      "time": ["12:55", "13:14"]
+    }, {
+      "speaker": "mikesmith",
+      "time": ["13:14", "13:24"],
+      "type": "lightning"
+    }, {
+      "speaker": "teej",
+      "time": ["13:24", "13:54"]
+    }, {
+      "speaker": "mathewpayne",
+      "time": ["14:00", "14:10"],
+      "type": "lightning"
+    }, {
+      "speaker" : "johnmcbride",
+      "time": ["14:10", "14:20"],
+      "type": "lightning"
+    }, {
+      "time": ["14:20", "14:50"],
+      "title": "Fireside chat with TeeJ and The Primeagen"
+    },
+    {
+      "title": "Outro",
+      "time": ["15:10", "15:25"]
     }
   ]
 }
