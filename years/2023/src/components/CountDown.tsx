@@ -1,6 +1,6 @@
 import { useEffect, useRef, type TimeHTMLAttributes } from "react";
 
-const START_DATE = new Date('2023-12-08T10:00:00.000Z');
+const START_DATE = new Date('2023-12-08T15:30:00.000Z');
 
 const msLeft = (now: Date, target = START_DATE) => {
   return START_DATE.getTime() - now.getTime();
