@@ -2,5 +2,5 @@ name: "Graphite"
 slug: "graphite"
 url: "https://graphite.dev/docs/intro-to-graphite"
 image: ./graphite.png
-section: "community"
+section: "paladium"
 desc: Graphite is the way to create stacked PRs on GitHub, allowing you to ship code as fast as you write it. Submit "stacks" of small, focused changes right from your terminal, keeping you moving & unblocked on code review.
