@@ -1,0 +1,33 @@
+@layer components {
+  .btn {
+    --_btn-border-color: var(--btn-border-color, var(--color-border));
+    --_btn-border-shadow: var(--btn-border-shadow, var(--color-border));
+    --_btn-bg: var(--btn-bg, var(--color-sheet));
+
+    padding: var(--balspc-3);
+
+    background: var(--_btn-bg);
+    border: 2px solid var(--_btn-border-color);
+    translate: 0 -5px;
+    transition: 
+      box-shadow 125ms ease-in-out,
+      translate 125ms ease-in-out;
+    box-shadow: 
+      1px 1px 0 var(--_btn-border-shadow),
+      1px 2px 0 var(--_btn-border-shadow),
+      2px 3px 0 var(--_btn-border-shadow),
+      2px 4px 0 var(--_btn-border-shadow)
+    ;
+
+    &:focus,
+    &:hover {
+      box-shadow: 
+        0px 0px 0 var(--_btn-border-shadow),
+        0px 0px 0 var(--_btn-border-shadow),
+        0px 0px 0 var(--_btn-border-shadow),
+        0px 0px 0 var(--_btn-border-shadow)
+      ;
+      translate: 0 0px;
+    }
+  }
+}
