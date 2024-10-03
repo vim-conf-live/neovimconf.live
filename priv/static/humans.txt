@@ -1,0 +1,20 @@
+NEOVIMCONF 2024
+
+/* ORGANIZERS */
+
+Adam 'ABD'
+https://twitter.com/abawesomed
+
+/* SITE TEAM */
+
+Nils Riedemann
+https://bleepbloop.studio/
+
+TODO: add contributors
+
+/* TECH */
+
+- Phoenix: http://phoenixframework.org
+- Supabase: https://supabase.com/
+- Postmark: http://postmarkapp.com
+- Hosted on Fly: https://fly.io

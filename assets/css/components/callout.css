@@ -1,0 +1,33 @@
+@import "../vendors/osc.css";
+
+@layer components {
+  .callout {
+    --_callout-border: var(--callout-border, var(--color-surface));
+    --_callout-border-fg: var(--callout-border, var(--color-surface-fg));
+    --_callout-spacing: var(--callout-spacing, 0.5rem);
+    --_callout-bg: var(--callout-bg, var(--color-sheet));
+
+    border: 2px solid var(--_callout-border);
+    padding: var(--_callout-spacing);
+    box-shadow: 
+      2px 2px 0 var(--_callout-bg),
+      5px 5px 0 var(--_callout-border)
+    ;
+    background: var(--_callout-bg);
+    max-width: 640px;
+
+    header {
+      background: var(--_callout-border);
+      color: var(--_callout-border-fg);
+      margin: calc(var(--_callout-spacing) * -1);
+      margin-bottom: var(--_callout-spacing);
+      padding: calc(var(--_callout-spacing))
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: var(--_callout-spacing);
+    }
+  }
+}

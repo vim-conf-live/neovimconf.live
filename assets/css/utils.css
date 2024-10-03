@@ -1,0 +1,33 @@
+@layer utilities {
+  .debug {
+    outline: 1px solid var(--color-accent);
+  }
+
+  .debug>* {
+    outline: 1px dashed var(--color-accent);
+  }
+
+  .dark-only {
+    @media (prefers-color-scheme: light) {
+      display: none;
+    }
+  }
+
+  .vise {
+    --_vise-width: var(--vise-width, 800px);
+    --_vise-gutter: var(--vise-gutter, 2rem);
+
+    max-width: min(var(--_vise-width), calc(100svw - var(--_vise-gutter)));
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .splash {
+    display: grid;
+    @media (min-width: 800px) {
+      min-height: 100svh;
+      place-content: center;
+    }
+  }
+}
+

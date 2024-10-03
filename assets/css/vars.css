@@ -1,0 +1,95 @@
+:where(html) {
+  /* colors {{{*/
+  --color-brand-blue: theme("colors.sky.500");
+  --color-brand-green: theme("colors.teal.500");
+  --color-bg: theme('colors.slate.50');
+  --color-fg: theme('colors.slate.950');
+
+  --color-accent: theme('colors.teal.500');
+
+  --color-sheet: theme('colors.slate.100');
+  --color-sheet-fg: theme('colors.slate.900');
+
+  --color-surface: theme('colors.slate.700');
+  --color-surface-fg: theme('colors.slate.200');
+
+  --color-muted: theme('colors.slate.500');
+
+  --color-highlight-low: theme('colors.slate.300');
+  --color-highlight-mid: theme('colors.slate.600');
+  --color-highlight-high: theme('colors.slate.800');
+
+  --color-primary: var(--color-brand-blue);
+  --color-destructive: theme('colors.red.500');
+  --color-secondary: var(--color-brand-green);
+  --color-border: var(--color-surface);
+  --color-border-shadow: hsl(from var(--color-surface) h s 80%);
+
+  @media (prefers-color-scheme: dark) {
+    --color-fg: theme('colors.slate.50');
+    --color-bg: theme('colors.slate.950');
+    --color-brand-blue: theme("colors.sky.400");
+    --color-brand-green: theme("colors.teal.400");
+
+    --color-accent: theme('colors.teal.400');
+    --color-primary: var(--color-brand-blue);
+    --color-secondary: var(--color-brand-green);
+
+    --color-sheet: theme('colors.slate.900');
+    --color-sheet-fg: theme('colors.slate.200');
+
+    --color-surface: theme('colors.slate.800');
+    --color-surface-fg: theme('colors.slate.200');
+    --color-border-shadow: theme('colors.slate.700');
+
+    --color-muted: theme('colors.slate.300');
+  }
+
+  /*}}}*/
+  /* type {{{*/
+  --font-size-root: 22px;
+
+  --font-size-sm:  calc(var(--font-size-root) * 0.5);
+  --font-size-md:  calc(var(--font-size-root) * 1);
+  --font-size-lg:  calc(var(--font-size-root) * 1);
+  --font-size-xl:  calc(var(--font-size-root) * 1);
+  --font-size-2xl: calc(var(--font-size-root) * 1);
+  --font-size-3xl: calc(var(--font-size-root) * 2);
+
+  @media (min-width: 800px) {
+    --font-size-sm:  calc(var(--font-size-root) * 0.5);
+    --font-size-md:  calc(var(--font-size-root) * 1);
+    --font-size-lg:  calc(var(--font-size-root) * 1);
+    --font-size-xl:  calc(var(--font-size-root) * 2);
+    --font-size-2xl: calc(var(--font-size-root) * 2);
+    --font-size-3xl: calc(var(--font-size-root) * 2);
+  }
+
+  @media (min-width: 800px) {
+    --font-size-sm:  calc(var(--font-size-root) * 0.5);
+    --font-size-md:  calc(var(--font-size-root) * 1);
+    --font-size-lg:  calc(var(--font-size-root) * 2);
+    --font-size-xl:  calc(var(--font-size-root) * 3);
+    --font-size-2xl: calc(var(--font-size-root) * 4);
+    --font-size-3xl: calc(var(--font-size-root) * 6);
+  }
+
+
+  /*}}}*/
+  /* balanced spacings {{{*/
+  --balspc-1: 0.125rem 0.25rem;
+  --balspc-2: 0.25rem 0.5rem;
+  --balspc-3: 0.375rem 0.75rem;
+  --balspc-4: 0.5rem 1rem;
+  /*}}}*/
+
+  --altcha-border-width: 1px;
+  --altcha-border-radius: 0;
+  --altcha-color-base: var(--color-bg);
+  --altcha-color-border: var(--color-border);
+  --altcha-color-text: var(--color-fg);
+  --altcha-color-border-focus: var(--color-primary);
+  --altcha-color-error-text: var(--color-destructive);
+  --altcha-color-footer-bg: var(--color-sheet);
+  --altcha-max-width: 260px;
+}
