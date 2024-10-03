@@ -50,7 +50,7 @@ defmodule Nvc.Accounts.UserNotifier do
     this, you can safely ignore this email. Or if you just forgot it already,
     check https://neovimconf.live/
 
-    We're stoked to see you in december; it's gonna be a whole lot of fun!
+    We're stoked to see you in november; it's gonna be a whole lot of fun!
 
     Your team at NeovimConf.
 
