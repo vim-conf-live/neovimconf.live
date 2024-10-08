@@ -1,18 +1,17 @@
 # NeovimConf 2024
 
-It's Elixir this year!
-
-If you're not familiar, I recommend starting with these two videos that give
-a great intro to the language. I promise, it'll be worth it.
+It's Elixir this year! If you're not familiar with it at all, I recommend 
+starting with these two videos that give a great intro to the language. I 
+promise, they are worth a watch.
 
 - [Erlang: The Movie, 11:31](https://www.youtube.com/watch?v=xrIjfIjssLE)
 - [The Soul of Erlang and Elixir, 42:02](https://www.youtube.com/watch?v=JvBT4XBdoUE)
 
 And to get into the language itself, these are great starting points:
 
-- [https://hexdocs.pm/elixir/introduction.html]
-- [https://hexdocs.pm/phoenix/overview.html]
-- [https://elixirschool.com]
+- https://hexdocs.pm/elixir/introduction.html
+- https://hexdocs.pm/phoenix/overview.html
+- https://elixirschool.com
 
 I know some were hoping for Astro/Next.js, in order to be able to contribute
 with something they're familiar with. However I promise that if you can handle
@@ -29,9 +28,9 @@ focus on frontend parts.
 ### With devenv
 
 There's a [devenv.nix](./devenv.nix) file provided. It's a really nice way to
-set up local development environments with [devenv.sh]. It uses [nix], but you
-don't have to be familiar with `nix` to be able to use it here - or to be able
-to set your own projects up; it's almost like just using JSON.
+set up local development environments with [devenv.sh]. It's build on [nix], 
+but you don't have to be familiar with `nix` to be able to use it here - or to
+be able to set your own projects up; it's almost like just using JSON.
 
 [Follow their guide][Devenv Guide] to install it, and I highly recommend to also
 set up [Automatic Shell Activation]. This way the environment will automatically
