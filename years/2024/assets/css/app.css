@@ -1,0 +1,68 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./vars.css";
+@import "./animations.css";
+@import "./utils.css";
+
+@import "./components/logo.css";
+@import "./components/btn.css";
+@import "./components/forms.css";
+@import "./components/callout.css";
+@import "./components/break-box.css";
+
+:root {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+
+  font-family: "Departure Mono";
+  font-size: var(--font-size-root);
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  :where(p) {
+    a:link { text-decoration: underline; }
+    a:focus,
+    a:hover { 
+      color: var(--color-primary);
+      text-decoration: none; 
+    }
+
+    strong {
+      color: var(--color-accent);
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+}
+
+@font-face {
+  font-family: "Departure Mono";
+  src:
+    url("/fonts/DepartureMono-Regular.otf") format("opentype"),
+    url("/fonts/DepartureMono-Regular.woff2") format("woff2"),
+    url("/fonts/DepartureMono-Regular.woff") format("woff");
+}
+
+@layer base {
+  .content {
+    display: grid;
+    gap: theme(spacing.6);
+    h2 {
+      font-size: var(--font-size-lg);
+      color: var(--color-primary);
+    }
+
+    ul {
+      margin-left: theme(spacing.4);
+      display: grid;
+      list-style: disc;
+      gap: theme(spacing.4);
+    }
+  }
+}

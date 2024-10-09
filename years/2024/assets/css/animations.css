@@ -1,0 +1,21 @@
+@layer utils {
+  .appear {
+    animation: 
+      var(--osc),
+      500ms ease-in-out 1500ms forwards fade-in
+    ;
+
+    --osc-delay: 2;
+    --osc-attack: 0;
+    opacity: 0;
+    transform-origin: center top;
+    transform:
+      translatey(calc(-10px * sqrt(pow(var(--osc-sin),2)) * var(--osc-amp)))
+    ;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

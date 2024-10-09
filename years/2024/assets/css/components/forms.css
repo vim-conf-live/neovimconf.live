@@ -1,0 +1,52 @@
+@layer components { 
+  .input-field {
+    --_input-space: var(--input-space, var(--balspc-3));
+    --_input-bg: var(--input-bg, var(--color-sheet));
+    --_input-border-color: var(--input-border, var(--color-border));
+    --_input-border-shadow: var(--input-border, var(--color-border));
+    --_input-prefix-color: var(--input-prefix, var(--color-muted));
+
+    display: flex;
+    align-items: center;
+
+    transition: outline ease-in-out 200ms;
+    background-color: var(--input-bg, var(--color-sheet));
+    backdrop-filter: blur(4px);
+
+    &:has(:focus) {
+      --_input-border-color: var(--color-brand-blue);
+      --background-color: var(--color-base-80);
+      --input-border-color: var(--color-brand-blue);
+    }
+
+    span:has(+ input) {
+      padding-left: var(--_input-space);
+      color: var(--_input-prefix-color);
+    }
+
+    input[type="email"],
+    input[type="text"] {
+      padding: var(--_input-space);
+      font-size: var(--font-size-md);
+      outline: 0;
+      width: 100%;
+      border: 0;
+      background: transparent;
+
+      .input-field:has(&) {
+        border: 2px solid var(--_input-border-color);
+        box-shadow: 
+          inset 1px 1px 0 var(--color-border-shadow),
+          inset 2px 2px 0 var(--color-border-shadow),
+          inset 3px 4px 0 var(--color-border-shadow)
+        ;
+      }
+    }
+
+    label svg {
+      width: 1rem;
+      height: 1rem;
+      color: var(--color-30);
+    }
+  }
+}
