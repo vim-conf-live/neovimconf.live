@@ -5,6 +5,7 @@ defmodule Nvc.Accounts.User do
   schema "users" do
     field :email, :string
     field :confirmed_at, :naive_datetime
+    field :role, Ecto.Enum, values: [:guest, :mod, :admin]
 
     timestamps(type: :utc_datetime)
   end
