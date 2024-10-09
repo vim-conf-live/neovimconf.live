@@ -5,7 +5,7 @@ defmodule Nvc.MixProject do
     [
       app: :nvc,
       version: "0.1.1",
-      elixir: "~> 1.16.2",
+      elixir: "~> 1.17.2",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),

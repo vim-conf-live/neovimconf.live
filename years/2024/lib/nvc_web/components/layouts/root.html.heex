@@ -32,6 +32,10 @@
     <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
   </head>
   <body>
+    <%= if @current_user != nil and @current_user.role === :admin do %>
+      <.admin-navigation {assigns} />
+    <% end  %>
+
     <%= @inner_content %>
 
     <footer class="bg-bg py-16 text-muted text-center grid gap-4 bg-gradient-to-b from-transparent dark:to-black to-slate-300">
