@@ -33,6 +33,8 @@ module.exports = {
         sheet: 'var(--color-sheet)',
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
+        sheet: 'var(--color-sheet)',
+        'sheet-fg': 'var(--color-sheet-fg)',
       },
     },
   },

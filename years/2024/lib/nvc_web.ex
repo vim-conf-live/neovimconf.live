@@ -85,6 +85,7 @@ defmodule NvcWeb do
       import Phoenix.HTML
       # Core UI components and translation
       import NvcWeb.CoreComponents
+      import NvcWeb.ViewHelper
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS

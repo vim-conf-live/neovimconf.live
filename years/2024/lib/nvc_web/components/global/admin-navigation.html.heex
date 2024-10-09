@@ -1,3 +1,25 @@
-<nav class="fixed top-1 right-1">
-  Logged in as <%= @current_user.email %>
-</nav>
+<div class="fixed bottom-8 inset-x-0">
+  <nav class="rounded-full bg-surface shadow text-surface-fg px-4 py-2 mx-auto max-w-max">
+    <menu class="flex gap-4">
+      <li class="text-accent uppercase font-bold bg-bg px-2 rounded-full">
+        Admin
+      </li>
+      <li>
+        <.link
+          href={~p"/speakers/"}
+          >
+          Speakers
+        </.link>
+      </li>
+      <li>
+        <.link
+          href={~p"/users/log_out"}
+          method="delete"
+          class=""
+          >
+          <.icon name="hero-x-mark-solid" />
+        </.link>
+      </li>
+    </menu>
+  </nav>
+</div>

@@ -1,0 +1,32 @@
+<.simple_form :let={f} for={@changeset} action={@action} multipart>
+  <.input field={f[:id]} type="hidden" />
+
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:name]} type="text" label="Name" />
+
+  <div class="grid gap-2">
+  <.input field={f[:handle]} type="text" label="Handle" />
+    <p class="text-muted">
+      used in the url, eg.:
+      <code>/speakers/tj</code>
+    </p>
+  </div>
+
+  <.input name="photo_upload" value="" type="file" label="Photo" />
+
+  <div class="grid gap-2">
+    <div class="flex gap-4">
+      <.input field={f[:start]} type="datetime-local" label="Start" />
+      <.input field={f[:end]} type="datetime-local" label="End" />
+    </div>
+  </div>
+
+  <.input field={f[:talk]} type="text" label="Talk" />
+  <.input field={f[:socials]} type="textarea" label="socials" />
+
+  <:actions>
+    <.button>Save Speaker</.button>
+  </:actions>
+</.simple_form>
