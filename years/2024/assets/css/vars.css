@@ -45,6 +45,8 @@
     --color-muted: theme('colors.slate.300');
   }
 
+  --font-family: "Departure Mono";
+
   /*}}}*/
   /* type {{{*/
   --font-size-root: 22px;

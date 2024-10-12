@@ -16,7 +16,7 @@
   background-color: var(--color-bg);
   color: var(--color-fg);
 
-  font-family: "Departure Mono";
+  font-family: var(--font-family);
   font-size: var(--font-size-root);
   font-synthesis: none;
   text-rendering: geometricPrecision;
@@ -35,6 +35,9 @@
 
     strong {
       color: var(--color-accent);
+    }
+    code {
+      font-family: var(--font-family);
     }
   }
 

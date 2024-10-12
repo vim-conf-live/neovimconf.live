@@ -156,8 +156,7 @@ defmodule NvcWeb.CoreComponents do
         phx-connected={hide("#client-error")}
         hidden
       >
-        Attempting to reconnect
-        <.icon name="hero-arrow-path" class="ml-1 h-3 w-3 animate-spin" />
+        Attempting to reconnect <.icon name="hero-arrow-path" class="ml-1 h-3 w-3 animate-spin" />
       </.flash>
 
       <.flash
@@ -200,7 +199,7 @@ defmodule NvcWeb.CoreComponents do
 
   def simple_form(assigns) do
     ~H"""
-    <.form :let={f} for={@for} as={@as} {@rest}>
+    <.form :let={f} for={@for} as={@as} {@rest} class="grid gap-8">
       <%= render_slot(@inner_block, f) %>
       <div :for={action <- @actions} class="mt-2 flex items-center justify-between gap-6">
         <%= render_slot(action, f) %>
@@ -226,17 +225,23 @@ defmodule NvcWeb.CoreComponents do
 
   def button(%{size: size} = assigns) do
     assigns = case size do
-      "xs" -> assign(assigns, variant: "rounded px-2 py-1 text-xs font-semibold shadow-sm ")
-      "sm" -> assign(assigns, variant: "rounded px-2 py-1 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600")
-      "md" -> assign(assigns, variant: "rounded-md px-2.5 py-1.5 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600")
-      "lg" -> assign(assigns, variant: "rounded-md px-3 py-2 text-lg font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600")
-      "xl" -> assign(assigns, variant: "rounded-md px-3.5 py-2.5 text-lg font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600")
+      "xs" -> assign(assigns, variant: "btn btn--xs")
+      "sm" -> assign(assigns, variant: "btn btn--sm")
+      "md" -> assign(assigns, variant: "btn")
+      "lg" -> assign(assigns, variant: "btn btn--md")
+      "xl" -> assign(assigns, variant: "btn btn--xl")
     end
     ~H"""
-
-    <button type={@type} class={["font-semibold bg-03 text-fg-01 hover:bg-02 hover:text-fg-03",
-      "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-0D",
-      @variant, @class]} {@rest}>
+    <button
+      type={@type}
+      class={[
+        "font-semibold bg-03 text-fg-01 hover:bg-02 hover:text-fg-03",
+        "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-0D",
+        @variant,
+        @class
+      ]}
+      {@rest}
+    >
       <%= render_slot(@inner_block) %>
     </button>
     """
@@ -351,20 +356,12 @@ defmodule NvcWeb.CoreComponents do
 
   def input(%{type: "textarea"} = assigns) do
     ~H"""
-    <div phx-feedback-for={@name}>
+    <div class={["w-full", @class]}>
       <.label for={@id}><%= @label %></.label>
-      <textarea
-        id={@id}
-        name={@name}
-        class={[
-          "mt-2 block w-full rounded-lg text-zinc-900 focus:ring-0 sm:leading-6",
-          "min-h-[6rem] phx-no-feedback:border-zinc-300 phx-no-feedback:focus:border-zinc-400",
-          @errors == [] && "border-zinc-300 focus:border-zinc-400",
-          @errors != [] && "border-rose-400 focus:border-rose-400"
-        ]}
-        {@rest}
-      ><%= Phoenix.HTML.Form.normalize_value("textarea", @value) %></textarea>
-      <.error :for={msg <- @errors}><%= msg %></.error>
+      <div phx-feedback-for={@name} class="input-field">
+        <textarea id={@id} name={@name} {@rest}><%= Phoenix.HTML.Form.normalize_value("textarea", @value) %></textarea>
+        <.error :for={msg <- @errors}><%= msg %></.error>
+      </div>
     </div>
     """
   end
@@ -372,7 +369,7 @@ defmodule NvcWeb.CoreComponents do
   # All other inputs text, datetime-local, url, password, etc. are handled here...
   def input(assigns) do
     ~H"""
-    <div class={[ "w-full", @class ]}>
+    <div class={["w-full", @class]}>
       <.label :if={@label} for={@id}>
         <%= @label %>
       </.label>
@@ -437,9 +434,20 @@ defmodule NvcWeb.CoreComponents do
     <header class={["relative grid gap-8", @class]}>
       <div class="flex items-center">
         <figure class="logo">
-          <svg viewBox="0 0 524 524" fill="none" xmlns="http://www.w3.org/2000/svg" >
-            <path id="logo-path-l" d="M387.909 366.313L198.036 256.692V346.483L456.086 495.471V80.5637H387.909V366.313Z" fill="#649F3E"></path>
-            <path id="logo-path-r" class="fill-sky-500 dark:fill-sky-600 " d="M69.0073 26.9644V441.864H137.184V156.115L327.065 265.743V175.952L69.0073 26.9644Z" fill="#427EC5"></path>
+          <svg viewBox="0 0 524 524" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              id="logo-path-l"
+              d="M387.909 366.313L198.036 256.692V346.483L456.086 495.471V80.5637H387.909V366.313Z"
+              fill="#649F3E"
+            >
+            </path>
+            <path
+              id="logo-path-r"
+              class="fill-sky-500 dark:fill-sky-600 "
+              d="M69.0073 26.9644V441.864H137.184V156.115L327.065 265.743V175.952L69.0073 26.9644Z"
+              fill="#427EC5"
+            >
+            </path>
           </svg>
         </figure>
 
@@ -450,26 +458,28 @@ defmodule NvcWeb.CoreComponents do
             <p class="text-lg">NeovimConf</p>
           </a>
         <% end %>
-
       </div>
-      <h1 :if={@title != []} class="text-lg bg-bg">
+      <h1 :if={@title != []} class="text-lg">
         <%= render_slot(@title) %>
       </h1>
       <p :if={@subtitle != []} class="text-lg">
         <%= render_slot(@subtitle) %>
       </p>
+
+      <div :if={@actions != []}>
+        <%= render_slot(@actions) %>
+      </div>
     </header>
     """
   end
 
-  
   attr :class, :string, default: nil
   slot :inner_block, required: true
 
   def main(assigns) do
     ~H"""
     <main class={["vise pt-4 md:pt-8 flex flex-col justify-start gap-4 md:gap-8 min-h-svh", @class]}>
-        <%= render_slot(@inner_block) %>
+      <%= render_slot(@inner_block) %>
     </main>
     """
   end

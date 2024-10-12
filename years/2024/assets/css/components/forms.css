@@ -24,8 +24,8 @@
       color: var(--_input-prefix-color);
     }
 
-    input[type="email"],
-    input[type="text"] {
+    textarea,
+    input {
       padding: var(--_input-space);
       font-size: var(--font-size-md);
       outline: 0;
