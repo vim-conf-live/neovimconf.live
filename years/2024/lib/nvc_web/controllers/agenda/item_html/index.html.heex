@@ -1,0 +1,27 @@
+<.header>
+  <:title>Agenda</:title>
+
+  <:actions :if={is_admin?(@current_user)}>
+    <.link href={~p"/agenda/new"}>
+      <.button>New Item</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<ol class="agenda">
+  <li :for={item <- @agenda_items}>
+    <.link href={~p"/agenda/#{item}/edit"}>
+      <article class={item.type}>
+        <time-local datetime={item.start}>
+          <%= Calendar.strftime(item.start, "%H:%M") %> UTC
+        </time-local>
+        <header>
+          <h3><%= item.title %></h3>
+          <p :if={item.speaker}>
+            <span class="text-type"><%= item.type %></span> by <%= item.speaker.name %>
+          </p>
+        </header>
+      </article>
+    </.link>
+  </li>
+</ol>

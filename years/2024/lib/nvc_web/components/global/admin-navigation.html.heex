@@ -1,23 +1,22 @@
-<div class="fixed bottom-8 inset-x-0">
-  <nav class="rounded-full bg-surface shadow text-surface-fg px-4 py-2 mx-auto max-w-max">
-    <menu class="flex gap-4">
-      <li class="text-accent uppercase font-bold bg-bg px-2 rounded-full">
-        Admin
+<div class="fixed bottom-4 inset-x-0">
+  <nav class="bg-sheet shadow text-sheet-fg mx-auto max-w-max">
+    <menu class="admin-nav flex gap-4 items-center px-4">
+      <li class="text-accent uppercase font-bold bg-bg p-4 -ml-4 flex items-center gap-2">
+        ADMIN
       </li>
       <li>
-        <.link
-          href={~p"/speakers/"}
-          >
+        <.link href={~p"/agenda/"}>
+          Agenda
+        </.link>
+      </li>
+      <li>
+        <.link href={~p"/speakers/"}>
           Speakers
         </.link>
       </li>
       <li>
-        <.link
-          href={~p"/users/log_out"}
-          method="delete"
-          class=""
-          >
-          <.icon name="hero-x-mark-solid" />
+        <.link href={~p"/users/log_out"} method="delete" class="hover:text-red-500">
+          Logout
         </.link>
       </li>
     </menu>

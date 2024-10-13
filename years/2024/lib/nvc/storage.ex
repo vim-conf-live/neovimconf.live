@@ -6,14 +6,13 @@ defmodule Nvc.Storage do
   def upload(
         %Plug.Upload{
           path: path,
-          filename: filename,
           content_type: content_type
         },
-        folder
+        save_to
       ) do
     path
     |> S3.Upload.stream_file()
-    |> S3.upload(@bucket, "#{folder}/#{filename}", content_type: content_type)
+    |> S3.upload(@bucket, save_to, content_type: content_type)
     |> ExAws.request!()
   end
 

@@ -105,13 +105,15 @@ defmodule Nvc.Speakers do
   end
 
   def save_photo!(%Plug.Upload{} = photo, %Speaker{} = speaker) do
-    photo 
-    |> Nvc.Storage.upload("speakers/#{speaker.id}")
+    filename = "#{speaker.id}#{Path.extname(photo.filename)}"
 
-    {:ok, _ } = update_speaker(speaker, %{"photo" => photo.filename})
+    photo 
+    |> Nvc.Storage.upload("speakers/#{filename}")
+
+    {:ok, _ } = update_speaker(speaker, %{"photo" => filename})
   end
 
-  def photo_url(%Speaker{photo: photo}) do
-    dbg Nvc.Storage.public_url("speakers/#{photo}")
+  def photo_url(%Speaker{photo: photo, id: id}) do
+    Nvc.Storage.public_url("speakers/#{id}#{Path.extname(photo)}")
   end
 end

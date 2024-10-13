@@ -42,7 +42,11 @@
     --color-surface-fg: theme('colors.slate.200');
     --color-border-shadow: theme('colors.slate.700');
 
-    --color-muted: theme('colors.slate.300');
+    --color-muted: theme('colors.slate.600');
+
+  --color-highlight-high: theme('colors.slate.200');
+  --color-highlight-mid: theme('colors.slate.400');
+  --color-highlight-low: theme('colors.slate.800');
   }
 
   --font-family: "Departure Mono";

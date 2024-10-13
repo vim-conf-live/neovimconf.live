@@ -6,11 +6,10 @@ defmodule Nvc.Speakers.Speaker do
   schema "speakers" do
     field :handle, :string
     field :name, :string
-    field :start, :utc_datetime, default: ~U<2024-11-19 09:30:00Z>
-    field :end, :utc_datetime, default: ~U<2024-11-19 09:30:00Z>
     field :talk, :string
     field :photo, :string
     field :socials, :string
+    has_many :talks, Nvc.Agenda.Item
 
     timestamps(type: :utc_datetime)
   end
@@ -18,8 +17,8 @@ defmodule Nvc.Speakers.Speaker do
   @doc false
   def changeset(speaker, attrs) do
     speaker
-    |> cast(attrs, [:name, :handle, :start, :end, :talk, :socials, :photo])
-    |> validate_required([:name, :handle, :start, :end, :talk])
+    |> cast(attrs, [:name, :handle, :socials, :photo])
+    |> validate_required([:name, :handle])
     |> unique_constraint(:handle)
   end
 end

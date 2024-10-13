@@ -1,5 +1,6 @@
 <.header>
-  Listing Speakers
+  <:title>Speakers</:title>
+
   <:actions :if={@current_user && @current_user.role === :admin}>
     <.link href={~p"/speakers/new"} class="btn">
       Add Speaker
@@ -7,21 +8,19 @@
   </:actions>
 </.header>
 
-<.table id="speakers" rows={@speakers} row_click={&JS.navigate(~p"/speakers/#{&1}")}>
-  <:col :let={speaker} label="Start"><%= speaker.start %></:col>
-  <:col :let={speaker} label="End"><%= speaker.end %></:col>
-  <:col :let={speaker} label="Name"><%= speaker.name %></:col>
-  <:col :let={speaker} label="Handle"><%= speaker.handle %></:col>
-  <:col :let={speaker} label="Talk"><%= speaker.talk %></:col>
-  <:action :let={speaker}>
-    <div class="sr-only">
-      <.link navigate={~p"/speakers/#{speaker}"}>Show</.link>
-    </div>
-    <.link navigate={~p"/speakers/#{speaker}/edit"}>Edit</.link>
-  </:action>
-  <:action :let={speaker}>
-    <.link href={~p"/speakers/#{speaker}"} method="delete" data-confirm="Are you sure?">
-      Delete
+<ul class="grid grid-cols-4 gap-4">
+  <li :for={speaker <- @speakers}>
+    <.link href={~p"/speakers/#{speaker}/edit"} class="grid gap-2">
+      <figure>
+        <img
+          src={Nvc.Speakers.photo_url(speaker)}
+          alt={"Photo of #{speaker.name}"}
+          height="200"
+          class="object-cover aspect-square"
+        />
+      </figure>
+
+      <p><%= speaker.name %></p>
     </.link>
-  </:action>
-</.table>
+  </li>
+</ul>

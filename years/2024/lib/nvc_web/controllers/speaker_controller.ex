@@ -22,7 +22,7 @@ defmodule NvcWeb.SpeakerController do
 
         conn
         |> put_flash(:info, "Speaker created successfully.")
-        |> redirect(to: ~p"/speakers/#{speaker}")
+        |> redirect(to: ~p"/speakers")
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, :new, changeset: changeset)
@@ -51,17 +51,20 @@ defmodule NvcWeb.SpeakerController do
     render(conn, :edit, speaker: speaker, changeset: changeset)
   end
 
-  def update(conn, %{"speaker" => speaker_params, "photo_upload" => %Plug.Upload{} = photo}) do
+  def update(conn, %{"speaker" => speaker_params} = form_data) do
     speaker = Speakers.get_speaker!(speaker_params["id"])
 
     case Speakers.update_speaker(speaker, speaker_params) do
       {:ok, speaker} ->
-        photo
-        |> Speakers.save_photo!(speaker)
+        case form_data do
+          %{"photo_upload" => %Plug.Upload{} = photo} ->
+            photo |> Speakers.save_photo!(speaker)
+          _ -> nil
+        end
 
         conn
         |> put_flash(:info, "Speaker updated successfully.")
-        |> redirect(to: ~p"/speakers/#{speaker}")
+        |> redirect(to: ~p"/speakers")
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, :edit, speaker: speaker, changeset: changeset)
@@ -76,4 +79,5 @@ defmodule NvcWeb.SpeakerController do
     |> put_flash(:info, "Speaker deleted successfully.")
     |> redirect(to: ~p"/speakers")
   end
+
 end

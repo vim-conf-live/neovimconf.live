@@ -1,8 +1,10 @@
 <.header>
-  Edit Speaker <%= @speaker.id %>
-  <:subtitle>Use this form to manage speaker records in your database.</:subtitle>
+  <:title>
+    Edit Speaker
+  </:title>
 </.header>
+
+<.back navigate={~p"/speakers"}>Back to speakers</.back>
 
 <.speaker_form changeset={@changeset} action={~p"/speakers/#{@speaker}"} />
 
-<.back navigate={~p"/speakers"}>Back to speakers</.back>

@@ -1,0 +1,13 @@
+<.header>
+  <:actions>
+    <.link href={~p"/agenda/#{@item}/edit"}>
+      <.button>Edit this talk</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<pre>
+  <%= inspect @item, pretty: true %>
+</pre>
+
+<.back navigate={~p"/agenda"}>Back to agenda_items</.back>

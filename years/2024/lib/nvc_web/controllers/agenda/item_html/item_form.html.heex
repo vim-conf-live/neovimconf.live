@@ -1,0 +1,44 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+
+  <.input field={f[:title]} type="text" label="Title" />
+
+  <fieldset class="grid border p-4 -mx-4">
+    <legend>Time</legend>
+
+    <div class="flex gap-4">
+      <.input field={f[:start]} type="datetime-local" label="Start">
+        <p class="text-muted">UTC!</p>
+      </.input>
+
+      <.input field={f[:end]} type="datetime-local" label="End">
+        <p class="text-muted">UTC!</p>
+      </.input>
+    </div>
+  </fieldset>
+
+  <div class="flex gap-4">
+    <.input
+      field={f[:type]}
+      type="select"
+      label="Type"
+      options={[
+        {"Keynote", :keynote},
+        {"Talk", :talk},
+        {"Lightning Talk", :lightning},
+        {"Chat", :chat},
+        {"Break", :break}
+      ]}
+    />
+
+    <.input field={f[:speaker_id]} type="select" label="Speaker" options={@speakers} />
+  </div>
+
+  <.input field={f[:description]} type="textarea" label="Description" />
+
+  <:actions>
+    <.button>Save Item</.button>
+  </:actions>
+</.simple_form>

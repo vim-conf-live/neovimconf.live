@@ -49,7 +49,7 @@ defmodule NvcWeb.CoreComponents do
       data-cancel={JS.exec(@on_cancel, "phx-remove")}
       class="relative z-50 hidden"
     >
-      <div id={"#{@id}-bg"} class="bg-zinc-50/90 fixed inset-0 transition-opacity" aria-hidden="true" />
+      <div id={"#{@id}-bg"} class="bg-bg fixed inset-0 transition-opacity" aria-hidden="true" />
       <div
         class="fixed inset-0 overflow-y-auto"
         aria-labelledby={"#{@id}-title"}
@@ -65,7 +65,7 @@ defmodule NvcWeb.CoreComponents do
               phx-window-keydown={JS.exec("data-cancel", to: "##{@id}")}
               phx-key="escape"
               phx-click-away={JS.exec("data-cancel", to: "##{@id}")}
-              class="shadow-zinc-700/10 ring-zinc-700/10 relative hidden rounded-2xl bg-white p-14 shadow-lg ring-1 transition"
+              class="relative hidden bg-sheet p-14 shadow-lg ring-1 transition"
             >
               <div class="absolute top-6 right-5">
                 <button
@@ -224,13 +224,15 @@ defmodule NvcWeb.CoreComponents do
   slot :inner_block, required: true
 
   def button(%{size: size} = assigns) do
-    assigns = case size do
-      "xs" -> assign(assigns, variant: "btn btn--xs")
-      "sm" -> assign(assigns, variant: "btn btn--sm")
-      "md" -> assign(assigns, variant: "btn")
-      "lg" -> assign(assigns, variant: "btn btn--md")
-      "xl" -> assign(assigns, variant: "btn btn--xl")
-    end
+    assigns =
+      case size do
+        "xs" -> assign(assigns, variant: "btn btn--xs")
+        "sm" -> assign(assigns, variant: "btn btn--sm")
+        "md" -> assign(assigns, variant: "btn")
+        "lg" -> assign(assigns, variant: "btn btn--md")
+        "xl" -> assign(assigns, variant: "btn btn--xl")
+      end
+
     ~H"""
     <button
       type={@type}
@@ -337,31 +339,30 @@ defmodule NvcWeb.CoreComponents do
 
   def input(%{type: "select"} = assigns) do
     ~H"""
-    <div phx-feedback-for={@name}>
+    <div phx-feedback-for={@name}  class={["w-full", @class]}>
       <.label for={@id}><%= @label %></.label>
-      <select
-        id={@id}
-        name={@name}
-        class="mt-2 block w-full rounded-md border border-gray-300 bg-base-4 shadow-sm focus:border-zinc-400 focus:ring-0 sm:text-sm"
-        multiple={@multiple}
-        {@rest}
-      >
-        <option :if={@prompt} value=""><%= @prompt %></option>
-        <%= Phoenix.HTML.Form.options_for_select(@options, @value) %>
-      </select>
+      <div class="input-field">
+        <select calss="w-full" id={@id} name={@name} multiple={@multiple} {@rest} >
+          <option :if={@prompt} value=""><%= @prompt %></option>
+          <%= Phoenix.HTML.Form.options_for_select(@options, @value) %>
+        </select>
+      </div>
+      <div>
       <.error :for={msg <- @errors}><%= msg %></.error>
+      </div>
     </div>
     """
   end
 
   def input(%{type: "textarea"} = assigns) do
     ~H"""
-    <div class={["w-full", @class]}>
+    <div class={["w-full flex flex-col gap-2", @class]}>
       <.label for={@id}><%= @label %></.label>
       <div phx-feedback-for={@name} class="input-field">
-        <textarea id={@id} name={@name} {@rest}><%= Phoenix.HTML.Form.normalize_value("textarea", @value) %></textarea>
+        <textarea id={@id} name={@name} {@rest} rows="4"><%= Phoenix.HTML.Form.normalize_value("textarea", @value) %></textarea>
         <.error :for={msg <- @errors}><%= msg %></.error>
       </div>
+      <%= render_slot(@inner_block) %>
     </div>
     """
   end
@@ -369,7 +370,7 @@ defmodule NvcWeb.CoreComponents do
   # All other inputs text, datetime-local, url, password, etc. are handled here...
   def input(assigns) do
     ~H"""
-    <div class={["w-full", @class]}>
+    <div class={["w-full flex flex-col gap-2", @class]}>
       <.label :if={@label} for={@id}>
         <%= @label %>
       </.label>
@@ -382,10 +383,12 @@ defmodule NvcWeb.CoreComponents do
           type={@type}
           name={@name}
           id={@id}
+          class="w-full outline"
           value={Phoenix.HTML.Form.normalize_value(@type, @value)}
           {@rest}
         />
       </div>
+      <%= render_slot(@inner_block) %>
       <.error :for={msg <- @errors}><%= msg %></.error>
     </div>
     """
@@ -518,9 +521,9 @@ defmodule NvcWeb.CoreComponents do
     ~H"""
     <div class="overflow-y-auto px-4 sm:overflow-visible sm:px-0">
       <table class="w-[40rem] mt-11 sm:w-full">
-        <thead class="text-sm text-left leading-6 text-zinc-500">
+        <thead class="">
           <tr>
-            <th :for={col <- @col} class="p-0 pb-4 pr-6 font-normal"><%= col[:label] %></th>
+            <th :for={col <- @col} class="p-0 pb-4 pr-6"><%= col[:label] %></th>
             <th :if={@action != []} class="relative p-0 pb-4">
               <span class="sr-only">Actions</span>
             </th>
@@ -529,17 +532,17 @@ defmodule NvcWeb.CoreComponents do
         <tbody
           id={@id}
           phx-update={match?(%Phoenix.LiveView.LiveStream{}, @rows) && "stream"}
-          class="relative divide-y divide-zinc-100 border-t border-zinc-200 text-sm leading-6 text-zinc-700"
+          class=""
         >
-          <tr :for={row <- @rows} id={@row_id && @row_id.(row)} class="group hover:bg-zinc-50">
+          <tr :for={row <- @rows} id={@row_id && @row_id.(row)} class="group hover:bg-surface">
             <td
               :for={{col, i} <- Enum.with_index(@col)}
               phx-click={@row_click && @row_click.(row)}
               class={["relative p-0", @row_click && "hover:cursor-pointer"]}
             >
               <div class="block py-4 pr-6">
-                <span class="absolute -inset-y-px right-0 -left-4 group-hover:bg-zinc-50 sm:rounded-l-xl" />
-                <span class={["relative", i == 0 && "font-semibold text-zinc-900"]}>
+                <span class="absolute -inset-y-px right-0 -left-4 group-hover:bg-surface sm:rounded-l-xl" />
+                <span class={["relative", i == 0 && ""]}>
                   <%= render_slot(col, @row_item.(row)) %>
                 </span>
               </div>
@@ -602,10 +605,7 @@ defmodule NvcWeb.CoreComponents do
   def back(assigns) do
     ~H"""
     <div class="mt-16">
-      <.link
-        navigate={@navigate}
-        class="text-sm font-semibold leading-6 text-zinc-900 hover:text-zinc-700"
-      >
+      <.link navigate={@navigate}>
         <.icon name="hero-arrow-left-solid" class="h-3 w-3" />
         <%= render_slot(@inner_block) %>
       </.link>

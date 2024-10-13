@@ -25,22 +25,26 @@
     }
 
     textarea,
+    select,
     input {
       padding: var(--_input-space);
       font-size: var(--font-size-md);
       outline: 0;
       width: 100%;
-      border: 0;
       background: transparent;
+    }
 
-      .input-field:has(&) {
-        border: 2px solid var(--_input-border-color);
-        box-shadow: 
-          inset 1px 1px 0 var(--color-border-shadow),
-          inset 2px 2px 0 var(--color-border-shadow),
-          inset 3px 4px 0 var(--color-border-shadow)
-        ;
-      }
+    select {
+      height: var(--font-size-lg);
+    }
+
+    &:has(:where(input, select, textarea)) {
+      border: 2px solid var(--_input-border-color);
+      box-shadow: 
+        inset 1px 1px 0 var(--color-border-shadow),
+        inset 2px 2px 0 var(--color-border-shadow),
+        inset 3px 4px 0 var(--color-border-shadow)
+      ;
     }
 
     label svg {
