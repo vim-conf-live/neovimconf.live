@@ -29,6 +29,7 @@ defmodule NvcWeb.Router do
 
     get    "/privacy", PageController, :privacy
     get    "/coc", PageController, :coc
+    get "/speakers/:slug", PageController, :speaker
 
   end
 

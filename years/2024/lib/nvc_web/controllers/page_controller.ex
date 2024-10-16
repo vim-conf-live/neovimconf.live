@@ -6,4 +6,5 @@ defmodule NvcWeb.PageController do
 
   def coc(conn, _params), do:
     render(conn, :coc)
+  def speaker(conn, _params), do: render(conn, :speaker)
 end
