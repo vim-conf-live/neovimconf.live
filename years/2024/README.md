@@ -88,6 +88,27 @@ website].
 > [./config/dev.exs] by adjusting the postgres url; same goes for the username
 > and password; which are both to be expected `postgres`.
 
+#### Docker Compose
+
+If you don't want to install Postgres locally, you can also use Docker Compose to spin up a Postgres databse for local development.
+
+Start the postgres container with the following command:
+
+```sh
+docker compose up -d
+```
+
+Stop the postgres container with the following command:
+
+```sh
+docker compose down
+```
+
+> [!NOTE]
+> The database will automatically forward it's port to 5432, which is what the server is expecting.
+
+See the [Docker Compose docs](https://docs.docker.com/compose/) for instructions for use Docker Compose.
+
 ## More Resources
 
 If you're intrigued and want to really get into Elixir and Phoenix, here are
