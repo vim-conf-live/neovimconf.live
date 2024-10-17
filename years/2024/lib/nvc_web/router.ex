@@ -35,7 +35,6 @@ defmodule NvcWeb.Router do
 
     get    "/privacy", PageController, :privacy
     get    "/coc", PageController, :coc
-    get "/speakers/:slug", PageController, :speaker
 
     resources "/speakers", SpeakerController, only: [:index, :show]
     resources "/agenda", Agenda.ItemController, only: [:index, :show]

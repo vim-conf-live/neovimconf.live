@@ -455,17 +455,17 @@ defmodule NvcWeb.CoreComponents do
         </figure>
 
         <%= if @title == [] do %>
-          <h1 class="text-lg"><a href="/">NeovimConf</a></h1>
+          <h1 class="text-lg "><a href="/">NeovimConf</a></h1>
         <% else %>
           <a href="/">
-            <p class="text-lg">NeovimConf</p>
+            <p class="text-md">NeovimConf</p>
           </a>
         <% end %>
       </div>
-      <h1 :if={@title != []} class="text-lg">
+      <h1 :if={@title != []} class="text-lg text-pretty">
         <%= render_slot(@title) %>
       </h1>
-      <p :if={@subtitle != []} class="text-lg">
+      <p :if={@subtitle != []} class="text-lg text-pretty">
         <%= render_slot(@subtitle) %>
       </p>
 
@@ -481,7 +481,7 @@ defmodule NvcWeb.CoreComponents do
 
   def main(assigns) do
     ~H"""
-    <main class={["vise pt-4 md:pt-8 flex flex-col justify-start gap-4 md:gap-8 min-h-svh", @class]}>
+    <main class={["vise pt-4 w-full md:pt-8 flex flex-col justify-start gap-4 md:gap-8 min-h-svh", @class]}>
       <%= render_slot(@inner_block) %>
     </main>
     """

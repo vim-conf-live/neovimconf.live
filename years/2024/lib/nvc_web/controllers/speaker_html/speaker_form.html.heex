@@ -5,24 +5,24 @@
     Oops, something went wrong! Please check the errors below.
   </.error>
 
-  <div class="grid grid-cols-[1fr_15ch] gap-4">
+  <div class="grid grid-cols-[1fr_15ch] gap-4 -mb-8">
     <.input field={f[:name]} type="text" label="Name" />
-
-    <div class="">
-      <.input field={f[:handle]} type="text" label="Handle" >
-        <p class="text-muted text-sm">
-          used in the url, eg.: <code>/speakers/tj</code>
-        </p>
-      </.input>
-    </div>
+    <.input field={f[:handle]} type="text" label="Handle" >
+      <p class="text-muted text-sm">
+        This is used as the slug in the url
+      </p>
+    </.input>
   </div>
+
+  <.input field={f[:job]} type="text" label="Job" />
+  <.input field={f[:description]} type="textarea" label="About" />
 
   <details open={!f[:photo].value} >
     <summary>Add/Edit update photo </summary>
     <.input name="photo_upload" value="" type="file" label="Photo" />
   </details>
 
-  <.input field={f[:socials]} type="textarea" label="Contact" placeholder="eg.: https://github.com/teej">
+  <.input field={f[:socials]} type="textarea" label="Contact and Socials" placeholder="eg.: https://github.com/teej">
     <p class="text-muted">
       Put each link on a new line.
     </p>
