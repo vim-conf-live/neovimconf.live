@@ -1,16 +1,10 @@
 <.header>
   <:title>Agenda</:title>
-
-  <:actions :if={is_admin?(@current_user)}>
-    <.link href={~p"/agenda/new"}>
-      <.button>New Item</.button>
-    </.link>
-  </:actions>
 </.header>
 
 <ol class="agenda">
   <li :for={item <- @agenda_items}>
-    <.link href={~p"/agenda/#{item}/edit"}>
+    <.link href={~p"/agenda/#{item}"}>
       <article class={item.type}>
         <time-local datetime={item.start}>
           <%= Calendar.strftime(item.start, "%H:%M") %> UTC

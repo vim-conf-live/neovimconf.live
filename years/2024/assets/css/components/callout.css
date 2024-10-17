@@ -2,6 +2,7 @@
 
 @layer components {
   .callout {
+    --_callout-max-width: var(--callout-max-width, 640px);
     --_callout-border: var(--callout-border, var(--color-surface));
     --_callout-border-fg: var(--callout-border, var(--color-surface-fg));
     --_callout-spacing: var(--callout-spacing, 0.5rem);
@@ -14,7 +15,7 @@
       5px 5px 0 var(--_callout-border)
     ;
     background: var(--_callout-bg);
-    max-width: 640px;
+    max-width: var(--_callout-max-width);
 
     header {
       background: var(--_callout-border);
@@ -29,5 +30,9 @@
       flex-direction: column;
       gap: var(--_callout-spacing);
     }
+  }
+
+  .callout.w-full {
+    --callout-max-width: 100%;
   }
 }

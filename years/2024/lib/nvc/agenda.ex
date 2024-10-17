@@ -18,8 +18,7 @@ defmodule Nvc.Agenda do
 
   """
   def list_agenda_items do
-
-    Item 
+    Item
     |> preload(:speaker)
     |> order_by(:start)
     |> Repo.all()
@@ -39,7 +38,15 @@ defmodule Nvc.Agenda do
       ** (Ecto.NoResultsError)
 
   """
-  def get_item!(id), do: Repo.get!(Item, id)
+  def get_item!(id) do
+    query =
+      from i in Item,
+        where: i.id == ^id,
+        preload: :speaker
+
+    query
+    |> Repo.one!()
+  end
 
   @doc """
   Creates a item.

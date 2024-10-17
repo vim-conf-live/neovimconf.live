@@ -1,11 +1,5 @@
 <.header>
   <:title>Speakers</:title>
-
-  <:actions :if={@current_user && @current_user.role === :admin}>
-    <.link href={~p"/speakers/new"} class="btn">
-      Add Speaker
-    </.link>
-  </:actions>
 </.header>
 
 <ul class="grid grid-cols-4 gap-4">

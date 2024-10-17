@@ -37,7 +37,15 @@ defmodule Nvc.Speakers do
   """
   def get_speaker!(id), do: Repo.get!(Speaker, id)
 
-  def get_speaker_by_handle!(handle), do: Repo.get_by!(Speaker, handle: handle)
+  def get_speaker_by_handle!(handle) do
+    query =
+      from s in Speaker,
+        where: s.handle == ^handle,
+        preload: :talks
+
+    query
+    |> Repo.one()
+  end
 
   @doc """
   Creates a speaker.
@@ -107,13 +115,27 @@ defmodule Nvc.Speakers do
   def save_photo!(%Plug.Upload{} = photo, %Speaker{} = speaker) do
     filename = "#{speaker.id}#{Path.extname(photo.filename)}"
 
-    photo 
+    photo
     |> Nvc.Storage.upload("speakers/#{filename}")
 
-    {:ok, _ } = update_speaker(speaker, %{"photo" => filename})
+    {:ok, _} = update_speaker(speaker, %{"photo" => filename})
+  end
+
+  def photo_url(%Speaker{photo: nil, handle: handle}) do
+    "https://placehold.co/600x400?text=#{handle}"
   end
 
   def photo_url(%Speaker{photo: photo, id: id}) do
     Nvc.Storage.public_url("speakers/#{id}#{Path.extname(photo)}")
   end
+
+  def social_links(%Speaker{socials: socials}) when is_binary(socials) do
+    socials
+    |> String.trim()
+    |> String.split("\n")
+    |> Enum.map(fn link ->
+      {link, URI.parse(link)}
+    end)
+  end
+  def social_links(_), do: []
 end

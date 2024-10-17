@@ -1,13 +1,57 @@
-<.header>
-  <:actions>
-    <.link href={~p"/agenda/#{@item}/edit"}>
-      <.button>Edit this talk</.button>
-    </.link>
-  </:actions>
-</.header>
+<.main>
+  <.header>
+    <:title>
+      <span class="break-box">
+        <%= @talk.title %>
+      </span>
+    </:title>
+  </.header>
 
-<pre>
-  <%= inspect @item, pretty: true %>
-</pre>
+  <.link href="/agenda" class="underline absolute top-4">← back</.link>
 
-<.back navigate={~p"/agenda"}>Back to agenda_items</.back>
+  <article class="callout w-full grid gap-2">
+    <header>
+      <dl class="prop-list">
+        <div>
+          <dt>Time:</dt>
+          <dd>10:00am</dd>
+        </div>
+        <div>
+          <dt>Duration:</dt>
+          <dd>30mins</dd>
+        </div>
+      </dl>
+    </header>
+
+    <p><%= @talk.description %></p>
+  </article>
+
+  <article :if={assigns.speaker} class="grid gap-2">
+    <h2 class="text-lg text-secondary">About <%= @speaker.name %></h2>
+
+    <section>
+      <img
+        src={Nvc.Speakers.photo_url(@speaker)}
+        alt={"Photo of #{@speaker.name}"}
+        class="w-32 aspect-square float-right object-cover"
+        style="clip-path: circle(50%); shape-outside: circle(50%);"
+      />
+
+      <p>
+        <%= @speaker.description %>
+      </p>
+    </section>
+
+    <section :if={length(@socials) > 0}>
+      <h3 class="text-secondary">Connect with <%= @speaker.handle %></h3>
+      <ul class="list-disc list-inside">
+        <li :for={{url, link} <- @socials}>
+          <a href={url} class="underline">
+            <%= link.authority %><%= if String.trim(link.path || "") != "/", do: link.path %>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </article>
+</.main>
+

@@ -1,0 +1,18 @@
+.prop-list {
+  max-width: min-content;
+  gap: theme(spacing.4);
+
+  &,
+  >div {
+    display: flex;
+    display: flex;
+  }
+
+  > div {
+    gap: theme(spacing.2);
+  }
+
+  dt {
+    color: var(--color-accent);
+  }
+}
