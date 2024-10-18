@@ -17,8 +17,14 @@ defmodule Nvc.Speakers do
       [%Speaker{}, ...]
 
   """
-  def list_speakers do
-    Repo.all(Speaker)
+  def list_speakers(type \\ :speaker) do
+    q =
+      from s in Speaker,
+        where: s.type == ^type,
+        where: s.public == true
+
+    q
+    |> Repo.all()
   end
 
   @doc """
@@ -137,5 +143,6 @@ defmodule Nvc.Speakers do
       {link, URI.parse(link)}
     end)
   end
+
   def social_links(_), do: []
 end

@@ -1,7 +1,5 @@
 # fly.toml app configuration file generated for nvc on 2024-06-09T10:43:12+02:00
-#
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
 
 app = 'nvc'
 primary_region = 'ams'
@@ -32,4 +30,5 @@ kill_signal = 'SIGTERM'
     soft_limit = 1000
 
 [[vm]]
+  memory = 512
   size = 'shared-cpu-1x'

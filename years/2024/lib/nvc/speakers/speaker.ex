@@ -9,9 +9,12 @@ defmodule Nvc.Speakers.Speaker do
 
     field :job, :string
     field :description, :string
+    field :public, :boolean
 
     field :photo, :string
     field :socials, :string
+    field :type, Ecto.Enum, values: [:mc, :keynote, :speaker],
+      default: :speaker
 
     has_many :talks, Nvc.Agenda.Item
 
@@ -21,7 +24,7 @@ defmodule Nvc.Speakers.Speaker do
   @doc false
   def changeset(speaker, attrs) do
     speaker
-    |> cast(attrs, [:name, :handle, :socials, :photo, :job, :description])
+    |> cast(attrs, [:name, :handle, :socials, :photo, :job, :description, :type, :public])
     |> validate_required([:name, :handle])
     |> unique_constraint(:handle)
   end

@@ -1,17 +1,30 @@
 <ul class="grid md:grid-cols-4 gap-6">
-  <li :for={speaker <- @speakers}>
-    <.link href={~p"/speakers/#{speaker}/edit"} class="callout grid grid-rows-[min-content_1fr] gap-2" style="--callout-spacing: 0">
+  <li :for={speaker <- @speakers} class="grid gap-6 h-full relative">
+    <.link
+      href={~p"/speakers/#{speaker}"}
+      class="callout grid grid-rows-[min-content_1fr] gap-2"
+      style="--callout-spacing: 0"
+    >
       <header>
         <img
+          :if={speaker.photo != ""}
           src={Nvc.Speakers.photo_url(speaker)}
           alt={"Photo of #{speaker.name}"}
-          class="object-cover aspect-square"
+          class="object-cover aspect-square w-full"
         />
+        <div :if={speaker.photo == ""} class="object-cover aspect-square w-full"></div>
       </header>
-
       <section class="content p-2">
         <p><%= speaker.name %></p>
       </section>
+    </.link>
+
+    <.link
+      :if={is_admin?(@current_user)}
+      href={~p"/speakers/#{speaker}/edit"}
+      class="btn absolute top-2 left-2"
+    >
+      <.icon name="hero-pencil" title={"Edit #{speaker.name}"} class="size-4" />
     </.link>
   </li>
 </ul>

@@ -37,12 +37,7 @@ defmodule NvcWeb.Agenda.ItemController do
 
   def show(conn, %{"id" => id}) do
     item = Agenda.get_item!(id)
-
-    render(conn, :show,
-      talk: item,
-      speaker: item.speaker,
-      socials: Speakers.social_links(item.speaker)
-    )
+    redirect(conn, to: ~p"/speakers/#{item.speaker}")
   end
 
   def edit(conn, %{"id" => id}) do
@@ -66,7 +61,9 @@ defmodule NvcWeb.Agenda.ItemController do
         |> redirect(to: ~p"/agenda")
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, :edit, item: item, changeset: changeset)
+        render(conn, :edit, item: item, changeset: changeset,
+      speakers: speaker_options()
+        )
     end
   end
 

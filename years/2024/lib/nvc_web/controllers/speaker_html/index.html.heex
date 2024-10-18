@@ -2,11 +2,11 @@
   Speakers
 
   <:actions>
-    <.link href={~p"/speakers/new"}>
+    <.link href={~p"/speakers/new"} :if={is_admin?(@current_user)}>
       <.button>New Speaker</.button>
     </.link>
   </:actions>
 </.header>
 
-<.speaker_list speakers={@speakers} />
+<.speaker_list {assigns} />
 

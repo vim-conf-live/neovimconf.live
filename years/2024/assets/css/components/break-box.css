@@ -1,7 +1,12 @@
 @layer components {
   .break-box {
-    --_slice-bg: var(--slice-bg, var(--color-surface));
-    --_slice-fg: var(--slice-fg, var(--color-surface-fg));
+    --_slice-bg: var(--slice-bg, theme(colors.slate.200));
+    --_slice-fg: var(--slice-fg, theme(colors.slate.800));
+
+    @media (prefers-color-scheme: dark) {
+      --_slice-bg: var(--slice-bg, var(--color-surface));
+      --_slice-fg: var(--slice-fg, var(--color-surface-fg));
+    }
 
     background-color: var(--_slice-bg);
     text-wrap: pretty;
@@ -11,20 +16,5 @@
     box-decoration-break: clone;
     box-shadow: 0 0 0 4px var(--_slice-bg);
     outline: 2px splid var(--_slice-bg);
-
-    /* --osc-saw-frequency: 0.5; */
-    /* --_shine-fg: hsl(from var(--_slice-fg) h s calc(l * 0.5)); */
-    /* --_shine-width: calc(var(--osc-SAW) * 50%); */
-    /* --_shine-angle: 60deg;  */
-    /* --_shine-start: calc(var(--osc-SAW) * 500%); */
-    /* --_shine-end: calc(var(--_shine-start) + var(--_shine-width)); */
-    /**/
-    /* background: no-repeat linear-gradient( */
-    /*   var(--_shine-angle), */
-    /*   var(--_slice-bg) var(--_shine-start),  */
-    /*   var(--_shine-fg) var(--_shine-start), */
-    /*   var(--_shine-fg) var(--_shine-end), */
-    /*   var(--_slice-bg) var(--_shine-end) */
-    /* ); */
   }
 }

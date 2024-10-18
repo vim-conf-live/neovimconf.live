@@ -5,8 +5,12 @@ defmodule NvcWeb.SpeakerController do
   alias Nvc.Speakers.Speaker
 
   def index(conn, _params) do
-    speakers = Speakers.list_speakers()
-    render(conn, :index, speakers: speakers)
+    render(conn, :index, 
+      keynote: Nvc.Speakers.list_speakers(:keynote),
+      mcs: Nvc.Speakers.list_speakers(:mc),
+      sponsors: Nvc.Sponsors.list_sponsors(),
+      speakers: Nvc.Speakers.list_speakers()
+    )
   end
 
   def new(conn, _params) do
@@ -35,7 +39,10 @@ defmodule NvcWeb.SpeakerController do
       speaker
       |> maybe_split_socials()
 
-      render(conn, :show, speaker: speaker)
+      render(conn, :show, 
+          speaker: speaker,
+          socials: Speakers.social_links(speaker)
+        )
       _ -> 
         conn
         |> put_flash(:error, "Speaker not found.")

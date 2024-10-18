@@ -18,7 +18,6 @@ defmodule NvcWeb.Router do
 
   scope "/", NvcWeb do
     pipe_through  [:browser, :require_authenticated_user, :require_admin_role]
-    get "/home", PageController, :home
     resources "/speakers", SpeakerController, except: [:index, :show]
     resources "/agenda", Agenda.ItemController, except: [:index, :show]
     resources "/sponsors", SponsorController, except: [:show]
@@ -27,19 +26,18 @@ defmodule NvcWeb.Router do
   scope "/", NvcWeb do
     pipe_through :browser
 
-    get    "/", SignupController, :new
-    post   "/signup", SignupController, :create
-    get    "/signup/ok", SignupController, :create_ok
-    get    "/signup/confirm/:token", SignupController, :confirm
+    get       "/",                      SignupController,      :new
+    post      "/signup",                SignupController,      :create
+    get       "/signup/ok",             SignupController,      :create_ok
+    get       "/signup/confirm/:token", SignupController,      :confirm
+    get       "/home",                  PageController,        :home
+    delete    "/users/log_out",         UserSessionController, :delete
+    get       "/users/log_out",         UserSessionController, :delete
+    get       "/privacy",               PageController,        :privacy
+    get       "/coc",                   PageController,        :coc
+    resources "/speakers",              SpeakerController,     only: [:index, :show]
+    resources "/agenda",                Agenda.ItemController, only: [:index, :show]
 
-    delete "/users/log_out", UserSessionController, :delete
-    get    "/users/log_out", UserSessionController, :delete
-
-    get    "/privacy", PageController, :privacy
-    get    "/coc", PageController, :coc
-
-    resources "/speakers", SpeakerController, only: [:index, :show]
-    resources "/agenda", Agenda.ItemController, only: [:index, :show]
   end
 
   scope "/api", NvcWeb do

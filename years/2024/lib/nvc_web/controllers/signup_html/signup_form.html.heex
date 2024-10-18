@@ -1,6 +1,12 @@
-<.simple_form :let={f} id="waitlist_form" for={@changeset} action={@action} class="grid gap-6 w-full mb-8">
-
-  <altcha-widget auto="onsubmit" floating="bottom" hidelogo challengeurl="/api/altcha"></altcha-widget>
+<.simple_form
+  :let={f}
+  id="waitlist_form"
+  for={@changeset}
+  action={@action}
+  class="grid gap-6 w-full mb-8"
+>
+  <altcha-widget auto="onsubmit" floating="bottom" hidelogo challengeurl="/api/altcha">
+  </altcha-widget>
 
   <p class="text-md text-pretty" for="email" id="email-description">
     Enter your email and we'll notify you once we announce the date, speakers and sponsors!
@@ -9,10 +15,16 @@
   <div class="flex gap-4">
     <div class="grid gap-2 ">
       <label for="email" class="sr-only">Email</label>
-      <.input field={f[:email]} aria-describedby="email-description" type="text" id="email" placeholder={"e.g.: #{get_placeholder()}"} />
+      <.input
+        field={f[:email]}
+        aria-describedby="email-description"
+        type="text"
+        id="email"
+        placeholder={"e.g.: #{get_placeholder()}"}
+      />
       <p class="text-muted max-w-prose text-sm">
-        We will only send you a couple of emails, all directly related to 
-        the conference and of course we won't give your address away. 
+        We will only send you a couple of emails, all directly related to
+        the conference and of course we won't give your address away.
       </p>
     </div>
 

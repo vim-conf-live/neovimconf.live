@@ -2,7 +2,7 @@
   Edit Sponsor <%= @sponsor.name %>
 
   <:actions>
-    <.link href={~p"/sponsor/#{@sponsor}"} method="delete" data-confirm={"Really delete #{@sponsor.name}?"}>
+    <.link href={~p"/sponsors/#{@sponsor}"} method="delete" data-confirm={"Really delete #{@sponsor.name}?"}>
       <.button>Delete Sponsor</.button>
     </.link>
   </:actions>

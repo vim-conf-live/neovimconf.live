@@ -471,7 +471,7 @@ defmodule NvcWeb.CoreComponents do
         <%= render_slot(@subtitle) %>
       </p>
 
-      <div :if={@actions != []}>
+      <div :if={@actions != []} class="flex gap-4 items-center">
         <%= render_slot(@actions) %>
       </div>
     </header>

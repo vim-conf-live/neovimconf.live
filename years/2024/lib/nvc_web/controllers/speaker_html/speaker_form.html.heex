@@ -14,6 +14,11 @@
     </.input>
   </div>
 
+  <.input field={f[:type]} type="select" label="Type" options={[
+    {"Speaker", :speaker},
+    {"MC", :mc},
+    {"Keynote", :keynote}
+  ]} />
   <.input field={f[:job]} type="text" label="Job" />
   <.input field={f[:description]} type="textarea" label="About" />
 
@@ -27,6 +32,8 @@
       Put each link on a new line.
     </p>
   </.input>
+
+  <.input field={f[:public]} type="checkbox" label="Show on site?" />
 
   <:actions>
     <.button>Save Speaker</.button>

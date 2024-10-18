@@ -2,7 +2,7 @@
   Agenda
 
   <:actions>
-    <.link href={~p"/agenda/new"}>
+    <.link href={~p"/agenda/new"} :if={is_admin?(@current_user)}>
       <.button>New Agenda Item</.button>
     </.link>
   </:actions>

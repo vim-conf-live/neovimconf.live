@@ -7,19 +7,69 @@
   </:subtitle>
 </.header>
 
+
 <div class="grid gap-24">
+  <NvcWeb.SignupHTML.signup_form changeset={@changeset} action={~p"/"} />
+
   <section class="grid gap-2">
+    <h2 class="text-lg">Your favorite editor's conference!</h2>
+    <p class="text-pretty">
+      The annual conference about your favorite editor! For the fourth time we invite you to join us for a day of talks and celebration of Neovim and the community around it.
+    </p>
+  </section>
+
+  <section class="grid gap-2">
+    <article class="callout w-full">
+      <header><h2 class="text-lg">Keynote by Justin. M. Keyes</h2></header>
+      <div class="flex gap-4">
+        <img
+          src={Nvc.Speakers.photo_url(@justin)}
+          alt={"Photo of #{@justin.name}"}
+          class="w-32 aspect-square object-cover"
+        />
+        <div class="grid gap-2">
+          <p>
+            <%= @justin.description %>
+          </p>
+          <p class="text-right">
+            <.link href={~p"/speakers/#{@justin}"} class="btn">
+              Details <.icon name="hero-arrow-right" />
+            </.link>
+          </p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <%
+  # <section class="grid gap-2">
+  #   <h2 class="text-lg">Hosts</h2>
+  #   <p>
+  #     ThePrimeagen and TJ DeVries, dynamic and influential figures in the world of Neovim, once again do us the favor of hosting the NEOVIMCONF.
+  #   </p>
+  #   <div class="bg-red-500 p-8">
+  #     <p>TODO</p>
+  #   </div>
+  # </section>
+  %>
+
+  <section class="grid gap-2" :if={length(@sponsors) > 0}>
     <h2 class="text-lg">Sponsors</h2>
     <.sponsor_list current_user={@current_user} sponsors={@sponsors} />
   </section>
 
-  <section class="grid gap-2">
-    <h2 class="text-lg">Agenda</h2>
-    <.agenda_item_list agenda_items={@agenda_items} />
-  </section>
+  <% 
+  # <section class="grid gap-2">
+  #   <h2 class="text-lg">Agenda</h2>
+  #   <p>
+  #     This year we've packed the schedule with a diverse group of speakers from all over the world and squeezed them into a single day. Times are adjusted to your local timezone.
+  #   </p>
+  #   <.agenda_item_list current_user={@current_user} agenda_items={@agenda_items} />
+  # </section>
+  %>
 
-  <section class="grid gap-2">
+  <section class="grid gap-2" :if={length(@speakers) > 0}>
     <h2 class="text-lg">Speakers</h2>
-    <.speaker_list speakers={@speakers} />
+    <.speaker_list current_user={@current_user} speakers={@speakers} />
   </section>
 </div>

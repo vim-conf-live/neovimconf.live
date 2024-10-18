@@ -1,0 +1,69 @@
+<.main class="gap-12">
+  <.header>
+    <span class="break-box">
+      <%= @speaker.name %>
+    </span>
+
+    <:actions>
+      <.link href="/agenda" class="underline">← back</.link>
+
+      <.link href={~p"/speakers/#{@speaker}/edit"} :if={is_admin?(@current_user)}>
+        <.button>Edit Speaker</.button>
+      </.link>
+    </:actions>
+  </.header>
+
+
+  <section class="grid gap-2 mb-8">
+    <article :for={talk <- @speaker.talks} class="callout w-full grid gap-2 -mx-2">
+      <header>
+        <h2 class="text-lg"><%= talk.title %></h2>
+      </header>
+
+      <!-- TODO -->
+      <!-- <dl class="prop-list"> -->
+      <!--   <div> -->
+      <!--     <dt>Time:</dt> -->
+      <!--     <dd>10:00am</dd> -->
+      <!--   </div> -->
+      <!--   <div> -->
+      <!--     <dt>Duration:</dt> -->
+      <!--     <dd><%= talk.duration || "30" %>min</dd> -->
+      <!--   </div> -->
+      <!-- </dl> -->
+
+      <p><%= talk.description %></p>
+
+      <.link :if={is_admin?(@current_user)} href={~p"/agenda/#{talk}/edit"}>
+        <.button>Edit Talk</.button>
+      </.link>
+    </article>
+  </section>
+
+  <article :if={assigns.speaker} class="grid gap-4">
+    <h2 class="text-lg text-secondary">About <%= @speaker.name %></h2>
+
+    <section>
+      <img
+        src={Nvc.Speakers.photo_url(@speaker)}
+        alt={"Photo of #{@speaker.name}"}
+        class="w-32 aspect-square float-right object-cover ml-4 mb-4"
+        style="clip-path: circle(50%); shape-outside: circle(50%);"
+      />
+      <p>
+        <%= @speaker.description %>
+      </p>
+    </section>
+
+    <section :if={length(@socials) > 0} class="grid gap-4">
+      <h3 class="text-secondary">Connect with <%= @speaker.handle %></h3>
+      <ul class="list-disc list-inside">
+        <li :for={{url, link} <- @socials}>
+          <a href={url} class="underline">
+            <%= link.authority %><%= if String.trim(link.path || "") != "/", do: link.path %>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </article>
+</.main>

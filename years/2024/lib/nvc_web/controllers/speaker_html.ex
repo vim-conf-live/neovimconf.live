@@ -1,7 +1,5 @@
 defmodule NvcWeb.SpeakerHTML do
-  alias Nvc.Speakers
   use NvcWeb, :html
-  alias Speakers
 
   embed_templates "speaker_html/*"
 

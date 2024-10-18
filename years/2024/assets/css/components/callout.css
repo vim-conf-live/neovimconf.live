@@ -3,8 +3,8 @@
 @layer components {
   .callout {
     --_callout-max-width: var(--callout-max-width, 640px);
-    --_callout-border: var(--callout-border, var(--color-surface));
-    --_callout-border-fg: var(--callout-border, var(--color-surface-fg));
+    --_callout-border: var(--callout-border, var(--color-highlight-low));
+    --_callout-border-fg: var(--callout-border-fg, var(--color-higlight-low));
     --_callout-spacing: var(--callout-spacing, 0.5rem);
     --_callout-bg: var(--callout-bg, var(--color-sheet));
 
@@ -35,6 +35,7 @@
     &[href]:hover,
     &:has(a:hover) {
       --callout-border: var(--color-primary);
+      --callout-border-fg: var(--color-surface);
     }
   }
 }
