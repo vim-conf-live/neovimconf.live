@@ -31,3 +31,13 @@
   }
 }
 
+.harsh-blend {
+  filter: brightness(1.1) contrast(5) grayscale(1) ;
+  transition: filter 200ms ease-out;
+  mix-blend-mode: screen;
+
+  [href]:hover & {
+    filter: brightness(1) contrast(1) grayscale(0);
+    mix-blend-mode: normal;
+  }
+}
