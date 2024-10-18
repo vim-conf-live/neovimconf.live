@@ -1,9 +1,8 @@
 <.header>
-  <:title>
     Add New Speaker
-  </:title>
 </.header>
+
+<.back navigate={~p"/speakers"}>Back to speakers</.back>
 
 <.speaker_form changeset={@changeset} action={~p"/speakers"} />
 
-<.back navigate={~p"/speakers"}>Back to speakers</.back>

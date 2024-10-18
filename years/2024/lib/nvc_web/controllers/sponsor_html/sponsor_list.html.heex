@@ -1,0 +1,32 @@
+<ul class="grid md:grid-cols-2 gap-6">
+  <li :for={sponsor <- @sponsors} class="relative content">
+    <div class="callout grid grid-rows-[min-content_1fr] gap-2" style="--callout-spacing: 0">
+      <header>
+        <img
+          src={Nvc.Sponsors.image_url(sponsor)}
+          alt={sponsor.name}
+          class="object-cover w-full aspect-video"
+        />
+      </header>
+
+      <section class="content p-2" style="">
+        <p class="text-sm">
+          <strong class="text-primary"><%= sponsor.name %>:</strong>
+          <%= sponsor.description %>
+          <%= sponsor.description %>
+        </p>
+
+        <a class="block btn max-w-max place-self-end" href={sponsor.website}>
+          <span class="text-accent">GOTO</span> <%= sponsor.name %>
+        </a>
+      </section>
+    </div>
+    <.link
+      :if={is_admin?(@current_user)}
+      class="absolute top-2 left-4 inline-block mt-4 btn"
+      href={~p"/sponsors/#{sponsor.id}/edit"}
+    >
+      <span class="text-accent">EDIT</span> <%= sponsor.name %>
+    </.link>
+  </li>
+</ul>

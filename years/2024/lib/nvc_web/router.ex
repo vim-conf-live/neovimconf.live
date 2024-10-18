@@ -18,6 +18,7 @@ defmodule NvcWeb.Router do
 
   scope "/", NvcWeb do
     pipe_through  [:browser, :require_authenticated_user, :require_admin_role]
+    get "/home", PageController, :home
     resources "/speakers", SpeakerController, except: [:index, :show]
     resources "/agenda", Agenda.ItemController, except: [:index, :show]
     resources "/sponsors", SponsorController, except: [:show]

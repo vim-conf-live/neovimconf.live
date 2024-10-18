@@ -1,10 +1,14 @@
 <.main>
   <.header>
-    <:title>
-      <span class="break-box">
-        <%= @talk.title %>
-      </span>
-    </:title>
+    <span class="break-box">
+      <%= @talk.title %>
+    </span>
+
+    <:actions>
+      <.link href={~p"/agenda/#{@talk}/edit"}>
+        <.button>Edit Agenda Item</.button>
+      </.link>
+    </:actions>
   </.header>
 
   <.link href="/agenda" class="underline absolute top-4">← back</.link>

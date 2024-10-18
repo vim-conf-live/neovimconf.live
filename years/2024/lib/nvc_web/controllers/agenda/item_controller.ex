@@ -8,15 +8,7 @@ defmodule NvcWeb.Agenda.ItemController do
   def index(conn, _params) do
     agenda_items = Agenda.list_agenda_items()
 
-    render(conn, :index,
-      agenda_items: agenda_items,
-      admin_actions: [
-        %{
-          href: ~p"/agenda/new",
-          label: "Add Talk"
-        }
-      ]
-    )
+    render(conn, :index, agenda_items: agenda_items)
   end
 
   def new(conn, _params) do
@@ -49,20 +41,9 @@ defmodule NvcWeb.Agenda.ItemController do
     render(conn, :show,
       talk: item,
       speaker: item.speaker,
-      socials: Speakers.social_links(item.speaker),
-      admin_actions: [
-        %{
-          href: ~p"/agenda/#{item}/edit",
-          label: "Edit talk"
-        },
-        %{
-          href: ~p"/speakers/#{item.speaker}/edit",
-          label: "Edit speaker"
-        }
-      ]
+      socials: Speakers.social_links(item.speaker)
     )
   end
-
 
   def edit(conn, %{"id" => id}) do
     item = Agenda.get_item!(id)
@@ -71,15 +52,7 @@ defmodule NvcWeb.Agenda.ItemController do
     render(conn, :edit,
       item: item,
       changeset: changeset,
-      speakers: speaker_options(),
-      admin_actions: [
-        %{
-          href: ~p"/agenda/#{item}",
-          method: "delete",
-          label: "Delete this talk",
-          class: "bg-red-500"
-        }
-      ]
+      speakers: speaker_options()
     )
   end
 

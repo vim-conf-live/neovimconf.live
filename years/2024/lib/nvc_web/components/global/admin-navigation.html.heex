@@ -1,37 +1,32 @@
-<nav class="fixed bottom-0 inset-x-0 bg-sheet border-b-4 border-primary z-50 font-mono text-[12pt] flex">
-  <menu class="flex gap-4 items-center px-4">
-    <li class="text-accent bg-bg p-2 -ml-4 flex items-center gap-2">
-      <.link href={~p"/users/log_out"} method="delete" class="hover:text-red-500">
-        <.icon name="hero-x-mark" class="size-4" />
-      </.link>
-      ADMIN: <%= @current_user.email %>
-    </li>
-    <li>
-      <.link href={~p"/agenda/"}>
-        Agenda
-      </.link>
-    </li>
-    <li>
-      <.link href={~p"/speakers/"}>
-        Speakers
-      </.link>
-    </li>
-    <li>
-      <.link href={~p"/sponsors/"}>
-        Sponsors
-      </.link>
-    </li>
-  </menu>
+<nav class="sticky top-0 bg-sheet border-b-4 border-primary font-mono text-[12pt] z-50">
+  <div class="vise flex flex-col gap-1 py-2 justify-between">
 
-  <%= case assigns do %>
-    <% %{admin_actions: actions} -> %>
-      <menu class="flex gap-4 items-center">
-        <li :for={action <- @admin_actions} class="">
-          <.link {action} class="text-accent block p-2 bg-black/20">
-            <%= action.label %>
-          </.link>
-        </li>
-      </menu>
-    <% _ -> %>
-  <% end %>
+    <div class="text-accent flex items-center gap-2 justify-between w-full">
+      <span class="truncate">ADMIN: <%= @current_user.email %></span>
+      <.link href={~p"/users/log_out"} method="delete" class="hover:text-red-500">
+        :qa!
+      </.link>
+    </div>
+
+    <div class="flex gap-2">
+      Manage:
+    <menu class="flex gap-4 items-center">
+      <li>
+        <.link href={~p"/agenda/"}>
+          Agenda
+        </.link>
+      </li>
+      <li>
+        <.link href={~p"/speakers/"}>
+          Speakers
+        </.link>
+      </li>
+      <li>
+        <.link href={~p"/sponsors/"}>
+          Sponsors
+        </.link>
+      </li>
+    </menu>
+    </div>
+  </div>
 </nav>

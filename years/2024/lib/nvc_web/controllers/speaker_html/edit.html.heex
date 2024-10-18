@@ -1,8 +1,13 @@
 <.header>
-  <:title>
-    Edit Speaker
-  </:title>
+  Edit Speaker
+  <:actions>
+    <.link href={~p"/speakers/#{@speaker}"} method="delete" data-confirm={"Really delete #{@speaker.handle} including all of their talks?"}>
+      <.button>Delete Speaker</.button>
+    </.link>
+  </:actions>
 </.header>
+
+<.back navigate={~p"/speakers"}>Back to speakers</.back>
 
 <.speaker_form changeset={@changeset} action={~p"/speakers/#{@speaker}"} />
 

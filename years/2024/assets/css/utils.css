@@ -14,7 +14,7 @@
   }
 
   .vise {
-    --_vise-width: var(--vise-width, 800px);
+    --_vise-width: var(--vise-width, theme(maxWidth.xl));
     --_vise-gutter: var(--vise-gutter, 2rem);
 
     max-width: min(var(--_vise-width), calc(100svw - var(--_vise-gutter)));
@@ -32,9 +32,12 @@
 }
 
 .harsh-blend {
-  filter: brightness(1.1) contrast(5) grayscale(1) ;
-  transition: filter 200ms ease-out;
-  mix-blend-mode: screen;
+  filter: brightness(0.8) contrast(2) grayscale(1);
+  transition: 
+    filter 200ms ease-out,
+    opacity 200ms ease-out
+  ;
+  mix-blend-mode: hard-light;
 
   [href]:hover & {
     filter: brightness(1) contrast(1) grayscale(0);

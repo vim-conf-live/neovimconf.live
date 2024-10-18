@@ -1,8 +1,8 @@
 <.header>
-  New Item
+  New Agenda Item
   <:subtitle>Use this form to manage item records in your database.</:subtitle>
 </.header>
 
-<.item_form speakers={@speakers} changeset={@changeset} action={~p"/agenda"} />
-
 <.back navigate={~p"/agenda"}>Back to agenda_items</.back>
+
+<.item_form speakers={@speakers} changeset={@changeset} action={~p"/agenda"} />

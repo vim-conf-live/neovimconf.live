@@ -4,7 +4,7 @@ defmodule NvcWeb.SignupController do
   use NvcWeb, :controller
 
   def new(%{assigns: %{current_user: %User{}}} = conn, _params) do
-    render(conn, :done)
+    redirect(conn, to: ~p"/home")
   end
 
   def new(conn, _params) do

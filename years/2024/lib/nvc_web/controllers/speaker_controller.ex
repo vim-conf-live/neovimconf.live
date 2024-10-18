@@ -6,15 +6,7 @@ defmodule NvcWeb.SpeakerController do
 
   def index(conn, _params) do
     speakers = Speakers.list_speakers()
-    render(conn, :index, 
-      speakers: speakers,
-      admin_actions: [
-        %{
-          href: ~p"/speakers/new",
-          label: "Add Speaker"
-        }
-      ]
-    )
+    render(conn, :index, speakers: speakers)
   end
 
   def new(conn, _params) do
@@ -61,17 +53,7 @@ defmodule NvcWeb.SpeakerController do
   def edit(conn, %{"id" => handle}) do
     speaker = Speakers.get_speaker_by_handle!(handle)
     changeset = Speakers.change_speaker(speaker)
-    render(conn, :edit, speaker: speaker, 
-      changeset: changeset,
-      admin_actions: [
-        %{
-          href: ~p"/speakers/#{handle}",
-          method: "delete",
-          "data-confirm": "Are you sure?",
-          label: "Delete Speaker"
-        }
-      ]
-    )
+    render(conn, :edit, speaker: speaker, changeset: changeset)
   end
 
   def update(conn, %{"speaker" => speaker_params} = form_data) do

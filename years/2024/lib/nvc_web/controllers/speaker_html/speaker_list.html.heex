@@ -1,0 +1,17 @@
+<ul class="grid md:grid-cols-4 gap-6">
+  <li :for={speaker <- @speakers}>
+    <.link href={~p"/speakers/#{speaker}/edit"} class="callout grid grid-rows-[min-content_1fr] gap-2" style="--callout-spacing: 0">
+      <header>
+        <img
+          src={Nvc.Speakers.photo_url(speaker)}
+          alt={"Photo of #{speaker.name}"}
+          class="object-cover aspect-square"
+        />
+      </header>
+
+      <section class="content p-2">
+        <p><%= speaker.name %></p>
+      </section>
+    </.link>
+  </li>
+</ul>

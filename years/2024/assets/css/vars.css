@@ -35,18 +35,18 @@
     --color-primary: var(--color-brand-blue);
     --color-secondary: var(--color-brand-green);
 
-    --color-sheet: theme('colors.slate.900');
+    --color-sheet: theme('colors.slate.950');
     --color-sheet-fg: theme('colors.slate.200');
 
-    --color-surface: theme('colors.slate.800');
+    --color-surface: theme('colors.slate.900');
     --color-surface-fg: theme('colors.slate.200');
-    --color-border-shadow: theme('colors.slate.700');
+    --color-border-shadow: theme('colors.slate.950');
 
     --color-muted: theme('colors.slate.600');
 
-  --color-highlight-high: theme('colors.slate.200');
-  --color-highlight-mid: theme('colors.slate.400');
-  --color-highlight-low: theme('colors.slate.800');
+    --color-highlight-high: theme('colors.slate.200');
+    --color-highlight-mid: theme('colors.slate.400');
+    --color-highlight-low: theme('colors.slate.800');
   }
 
   --font-family: "Departure Mono";

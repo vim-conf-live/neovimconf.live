@@ -77,7 +77,6 @@ defmodule NvcWeb.SponsorController do
   end
 
   defp maybe_save_image(form_data, %Sponsor{} = sponsor) do
-    dbg {form_data, sponsor}
     case form_data do
       %{"image_upload" => %Plug.Upload{} = image} ->
         image |> Sponsors.save_image!(sponsor)

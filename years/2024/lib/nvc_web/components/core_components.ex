@@ -339,16 +339,16 @@ defmodule NvcWeb.CoreComponents do
 
   def input(%{type: "select"} = assigns) do
     ~H"""
-    <div phx-feedback-for={@name}  class={["w-full", @class]}>
+    <div phx-feedback-for={@name} class={["w-full", @class]}>
       <.label for={@id}><%= @label %></.label>
       <div class="input-field">
-        <select calss="w-full" id={@id} name={@name} multiple={@multiple} {@rest} >
+        <select calss="w-full" id={@id} name={@name} multiple={@multiple} {@rest}>
           <option :if={@prompt} value=""><%= @prompt %></option>
           <%= Phoenix.HTML.Form.options_for_select(@options, @value) %>
         </select>
       </div>
       <div>
-      <.error :for={msg <- @errors}><%= msg %></.error>
+        <.error :for={msg <- @errors}><%= msg %></.error>
       </div>
     </div>
     """
@@ -454,7 +454,7 @@ defmodule NvcWeb.CoreComponents do
           </svg>
         </figure>
 
-        <%= if @title == [] do %>
+        <%= if @inner_block == [] do %>
           <h1 class="text-lg "><a href="/">NeovimConf</a></h1>
         <% else %>
           <a href="/">
@@ -462,9 +462,11 @@ defmodule NvcWeb.CoreComponents do
           </a>
         <% end %>
       </div>
-      <h1 :if={@title != []} class="text-lg text-pretty">
-        <%= render_slot(@title) %>
+
+      <h1 :if={@inner_block != []} class="text-lg text-pretty">
+        <h1 class="text-lg"><%= render_slot(@inner_block) %></h1>
       </h1>
+
       <p :if={@subtitle != []} class="text-lg text-pretty">
         <%= render_slot(@subtitle) %>
       </p>
@@ -481,7 +483,10 @@ defmodule NvcWeb.CoreComponents do
 
   def main(assigns) do
     ~H"""
-    <main class={["vise pt-4 w-full md:pt-8 flex flex-col justify-start gap-4 md:gap-8 min-h-svh", @class]}>
+    <main class={[
+      "vise grid gap-4 pt-4 w-full md:pt-8 min-h-svh",
+      @class
+    ]}>
       <%= render_slot(@inner_block) %>
     </main>
     """

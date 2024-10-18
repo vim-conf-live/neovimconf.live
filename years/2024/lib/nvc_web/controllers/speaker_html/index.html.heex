@@ -1,20 +1,12 @@
 <.header>
   Speakers
+
+  <:actions>
+    <.link href={~p"/speakers/new"}>
+      <.button>New Speaker</.button>
+    </.link>
+  </:actions>
 </.header>
 
-<ul class="grid grid-cols-2 md:grid-cols-3 gap-4">
-  <li :for={speaker <- @speakers}>
-    <.link href={~p"/speakers/#{speaker}/edit"} class="grid callout p-0">
-      <header>
-        <img
-          src={Nvc.Speakers.photo_url(speaker)}
-          alt={"Photo of #{speaker.name}"}
-          height="200"
-          class="object-cover aspect-square harsh-blend"
-        />
-      </header>
+<.speaker_list speakers={@speakers} />
 
-      <p class="p-2"><%= speaker.name %></p>
-    </.link>
-  </li>
-</ul>

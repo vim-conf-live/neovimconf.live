@@ -1,8 +1,13 @@
 <.header>
-  Edit Sponsor <%= @sponsor.id %>
-  <:subtitle>Use this form to manage sponsor records in your database.</:subtitle>
+  Edit Sponsor <%= @sponsor.name %>
+
+  <:actions>
+    <.link href={~p"/sponsor/#{@sponsor}"} method="delete" data-confirm={"Really delete #{@sponsor.name}?"}>
+      <.button>Delete Sponsor</.button>
+    </.link>
+  </:actions>
 </.header>
 
-<.sponsor_form changeset={@changeset} action={~p"/sponsors/#{@sponsor}"} />
-
 <.back navigate={~p"/sponsors"}>Back to sponsors</.back>
+
+<.sponsor_form changeset={@changeset} action={~p"/sponsors/#{@sponsor}"} />

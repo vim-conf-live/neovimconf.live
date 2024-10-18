@@ -1,11 +1,14 @@
 <.header>
-  <:title>
-    Edit Agenda-Item
-  </:title>
+  Edit Agenda-Item
+
   <:actions>
-    <.back navigate={~p"/agenda"}>Back to agenda</.back>
+    <.link href={~p"/items/#{@item}"} method="delete" data-confirm="Are you sure?" class="btn">
+      Delete Agenda Item
+    </.link>
   </:actions>
 </.header>
+
+<.back navigate={~p"/agenda"}>Back to agenda</.back>
 
 <.item_form speakers={@speakers} changeset={@changeset} action={~p"/agenda/#{@item}"} />
 

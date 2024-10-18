@@ -1,9 +1,25 @@
 <.header>
   <:subtitle>
     <span class="break-box">
-      Your favorite editor's conference returns <span class="text-teal-400 dark:text-teal-300">November&nbsp;19th&nbsp;2024!</span>
+      Your favorite editor's conference returns
+      <span class="text-teal-400 dark:text-teal-300">November&nbsp;19th&nbsp;2024!</span>
     </span>
   </:subtitle>
 </.header>
 
+<div class="grid gap-24">
+  <section class="grid gap-2">
+    <h2 class="text-lg">Sponsors</h2>
+    <.sponsor_list current_user={@current_user} sponsors={@sponsors} />
+  </section>
 
+  <section class="grid gap-2">
+    <h2 class="text-lg">Agenda</h2>
+    <.agenda_item_list agenda_items={@agenda_items} />
+  </section>
+
+  <section class="grid gap-2">
+    <h2 class="text-lg">Speakers</h2>
+    <.speaker_list speakers={@speakers} />
+  </section>
+</div>
