@@ -25,14 +25,14 @@
       padding: calc(var(--_callout-spacing))
     }
 
-    section {
-      display: flex;
-      flex-direction: column;
-      gap: var(--_callout-spacing);
-    }
   }
 
   .callout.w-full {
     --callout-max-width: 100%;
   }
+
 }
+  .callout:has(a:hover) {
+    --callout-border: var(--color-primary);
+  }
+

@@ -25,11 +25,7 @@ defmodule NvcWeb.SpeakerController do
   def create(conn, %{"speaker" => speaker_params} = form_data) do
     case Speakers.create_speaker(speaker_params) do
       {:ok, speaker} ->
-        case form_data do
-          %{"photo_upload" => %Plug.Upload{} = photo} ->
-            photo |> Speakers.save_photo!(speaker)
-          _ -> nil
-        end
+        maybe_save_photo(form_data, speaker)
 
         conn
         |> put_flash(:info, "Speaker created successfully.")
@@ -83,11 +79,7 @@ defmodule NvcWeb.SpeakerController do
 
     case Speakers.update_speaker(speaker, speaker_params) do
       {:ok, speaker} ->
-        case form_data do
-          %{"photo_upload" => %Plug.Upload{} = photo} ->
-            photo |> Speakers.save_photo!(speaker)
-          _ -> nil
-        end
+        maybe_save_photo(form_data, speaker)
 
         conn
         |> put_flash(:info, "Speaker updated successfully.")
@@ -105,5 +97,13 @@ defmodule NvcWeb.SpeakerController do
     conn
     |> put_flash(:info, "Speaker deleted successfully.")
     |> redirect(to: ~p"/speakers")
+  end
+
+  defp maybe_save_photo(form_data, %Speaker{} = speaker) do
+    case form_data do
+      %{"photo_upload" => %Plug.Upload{} = photo} ->
+        photo |> Speakers.save_photo!(speaker)
+      _ -> nil
+    end
   end
 end

@@ -1,0 +1,17 @@
+<.header>
+  Listing Sponsors
+  <:actions>
+    <.link href={~p"/sponsors/new"}>
+      <.button>New Sponsor</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<ul class="grid md:grid-cols-2 gap-6">
+  <li class="relative content" :for={sponsor <- @sponsors}>
+    <.sponsor_view  sponsor={sponsor} />
+    <.link class="absolute top-2 left-4 inline-block mt-4 btn" :if={is_admin?(@current_user)} href={~p"/sponsors/#{sponsor.id}/edit"}>
+      <span class="text-accent">EDIT</span> <%= sponsor.name %>
+    </.link>
+  </li>
+</ul>

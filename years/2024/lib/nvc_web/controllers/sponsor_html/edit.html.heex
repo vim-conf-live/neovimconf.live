@@ -1,0 +1,8 @@
+<.header>
+  Edit Sponsor <%= @sponsor.id %>
+  <:subtitle>Use this form to manage sponsor records in your database.</:subtitle>
+</.header>
+
+<.sponsor_form changeset={@changeset} action={~p"/sponsors/#{@sponsor}"} />
+
+<.back navigate={~p"/sponsors"}>Back to sponsors</.back>

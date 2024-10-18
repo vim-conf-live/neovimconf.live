@@ -4,15 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content={get_csrf_token()} />
-    <meta name="description" content="Your favorite editor's conference!">
-    <link rel="canonical" href="https://neovimconf.live">
+    <meta name="description" content="Your favorite editor's conference!" />
+    <link rel="canonical" href="https://neovimconf.live" />
 
     <meta property="og:title" content="NeoVimConf.live 2024" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://neovimconf.live/" />
     <meta property="og:site_name" content="neovimconf.live" />
-    <meta property="og:description" content="Your favorite editor's conference returns November 19th 2024! Sign up now!" />
-    <meta name="description" content="Your favorite editor's conference returns November 19th 2024! Sign up now!" />
+    <meta
+      property="og:description"
+      content="Your favorite editor's conference returns November 19th 2024! Sign up now!"
+    />
+    <meta
+      name="description"
+      content="Your favorite editor's conference returns November 19th 2024! Sign up now!"
+    />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
@@ -27,14 +33,16 @@
     </.live_title>
 
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
-    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}> </script>
-    <script defer data-domain="neovimconf.live" src="https://plausible.io/js/script.js"></script>
-    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
+    </script>
+    <script defer data-domain="neovimconf.live" src="https://plausible.io/js/script.js">
+    </script>
+    <script>
+      window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+    </script>
   </head>
   <body>
-    <%= if @current_user != nil and @current_user.role === :admin do %>
-      <.admin-navigation {assigns} />
-    <% end  %>
+    <.admin-navigation :if={is_admin?(@current_user)} {assigns} />
 
     <%= @inner_content %>
 
@@ -49,10 +57,9 @@
           <.link href={~p"/coc"}>code of conduct</.link>
         </p>
         <p class="text-muted">
-          Previous years:
-            <a href="https://2023.neovimconf.live">2023</a>
-            <a href="https://2022.neovimconf.live">2022</a>
-            <!-- Defunct: <a href="https://2021.neovimconf.live">2021</a> -->
+          Previous years: <a href="https://2023.neovimconf.live">2023</a>
+          <a href="https://2022.neovimconf.live">2022</a>
+          <!-- Defunct: <a href="https://2021.neovimconf.live">2021</a> -->
         </p>
       </nav>
     </footer>
