@@ -11,4 +11,5 @@ defmodule NvcWeb.Layouts do
   use NvcWeb, :html
 
   embed_templates "layouts/*"
+  embed_templates "global/*"
 end

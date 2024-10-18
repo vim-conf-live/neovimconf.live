@@ -4,9 +4,9 @@
     --_slice-fg: var(--slice-fg, var(--color-surface-fg));
 
     background-color: var(--_slice-bg);
-    text-wrap: balance;
+    text-wrap: pretty;
     color: var(--_slice-fg);
-    display: inline;
+    display: inline block;
     line-height: 1.8;
     box-decoration-break: clone;
     box-shadow: 0 0 0 4px var(--_slice-bg);

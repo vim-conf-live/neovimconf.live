@@ -25,9 +25,6 @@ defmodule NvcWeb.SignupController do
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, :new, changeset: changeset)
-
-      {:error, :already_confirmed} ->
-        redirect(conn, to: ~p"/signup/ok")
     end
   end
 

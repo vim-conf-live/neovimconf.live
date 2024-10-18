@@ -7,8 +7,10 @@
 @import "./utils.css";
 
 @import "./components/logo.css";
+@import "./components/agenda.css";
 @import "./components/btn.css";
 @import "./components/forms.css";
+@import "./components/prop-table.css";
 @import "./components/callout.css";
 @import "./components/break-box.css";
 
@@ -16,7 +18,7 @@
   background-color: var(--color-bg);
   color: var(--color-fg);
 
-  font-family: "Departure Mono";
+  font-family: var(--font-family);
   font-size: var(--font-size-root);
   font-synthesis: none;
   text-rendering: geometricPrecision;
@@ -35,6 +37,9 @@
 
     strong {
       color: var(--color-accent);
+    }
+    code {
+      font-family: var(--font-family);
     }
   }
 
@@ -63,6 +68,12 @@
       display: grid;
       list-style: disc;
       gap: theme(spacing.4);
+    }
+  }
+
+  menu {
+    a:hover {
+      color: var(--color-highlight-mid);
     }
   }
 }

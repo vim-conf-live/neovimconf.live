@@ -17,6 +17,13 @@ defmodule NvcWeb.Router do
   end
 
   scope "/", NvcWeb do
+    pipe_through  [:browser, :require_authenticated_user, :require_admin_role]
+    resources "/speakers", SpeakerController, except: [:index, :show]
+    resources "/agenda", Agenda.ItemController, except: [:index, :show]
+    resources "/sponsors", SponsorController, except: [:show]
+  end
+
+  scope "/", NvcWeb do
     pipe_through :browser
 
     get    "/", SignupController, :new
@@ -30,6 +37,8 @@ defmodule NvcWeb.Router do
     get    "/privacy", PageController, :privacy
     get    "/coc", PageController, :coc
 
+    resources "/speakers", SpeakerController, only: [:index, :show]
+    resources "/agenda", Agenda.ItemController, only: [:index, :show]
   end
 
   scope "/api", NvcWeb do

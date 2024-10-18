@@ -196,6 +196,22 @@ defmodule NvcWeb.UserAuth do
   end
 
   @doc """
+  Used for routes that require the user to be authenticated and
+  have an admin role.
+  """
+  def require_admin_role(conn, _opts) do
+    if conn.assigns[:current_user].role == :admin do
+      conn
+    else
+      conn
+      |> put_flash(:error, "Access denied")
+      |> maybe_store_return_to()
+      |> redirect(to: ~p"/")
+      |> halt()
+    end
+  end
+
+  @doc """
   Used for routes that require the user to be authenticated.
 
   If you want to enforce the user email is confirmed before
@@ -206,9 +222,9 @@ defmodule NvcWeb.UserAuth do
       conn
     else
       conn
-      |> put_flash(:error, "You must log in to access this page.")
+      |> put_flash(:error, "Access denied")
       |> maybe_store_return_to()
-      |> redirect(to: ~p"/users/log_in")
+      |> redirect(to: ~p"/")
       |> halt()
     end
   end

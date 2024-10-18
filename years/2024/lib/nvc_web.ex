@@ -17,7 +17,7 @@ defmodule NvcWeb do
   those modules here.
   """
 
-  def static_paths, do: ~w(assets fonts images favicon favicon.ico robots.txt)
+  def static_paths, do: ~w(assets fonts images favicon elements favicon.ico robots.txt)
 
   def router do
     quote do
@@ -85,6 +85,7 @@ defmodule NvcWeb do
       import Phoenix.HTML
       # Core UI components and translation
       import NvcWeb.CoreComponents
+      import NvcWeb.ViewHelper
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS

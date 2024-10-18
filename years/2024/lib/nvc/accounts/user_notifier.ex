@@ -1,10 +1,13 @@
 defmodule Nvc.Accounts.UserNotifier do
   import Swoosh.Email
 
+  require Logger
   alias Nvc.Mailer
 
   # Delivers the email using the application mailer.
   defp deliver(recipient, subject, body) do
+    Logger.info("sending #{subject} to #{recipient}")
+
     email =
       new()
       |> to(recipient)

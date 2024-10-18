@@ -1,0 +1,20 @@
+<.header>
+  <:title>Speakers</:title>
+</.header>
+
+<ul class="grid grid-cols-4 gap-4">
+  <li :for={speaker <- @speakers}>
+    <.link href={~p"/speakers/#{speaker}/edit"} class="grid gap-2">
+      <figure>
+        <img
+          src={Nvc.Speakers.photo_url(speaker)}
+          alt={"Photo of #{speaker.name}"}
+          height="200"
+          class="object-cover aspect-square"
+        />
+      </figure>
+
+      <p><%= speaker.name %></p>
+    </.link>
+  </li>
+</ul>

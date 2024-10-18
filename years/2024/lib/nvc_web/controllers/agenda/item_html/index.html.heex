@@ -1,0 +1,21 @@
+<.header>
+  <:title>Agenda</:title>
+</.header>
+
+<ol class="agenda">
+  <li :for={item <- @agenda_items}>
+    <.link href={~p"/agenda/#{item}"}>
+      <article class={item.type}>
+        <time-local datetime={item.duration}>
+          TODO
+        </time-local>
+        <header>
+          <h3><%= item.title %></h3>
+          <p :if={item.speaker}>
+            <span class="text-type"><%= item.type %></span> by <%= item.speaker.name %>
+          </p>
+        </header>
+      </article>
+    </.link>
+  </li>
+</ol>

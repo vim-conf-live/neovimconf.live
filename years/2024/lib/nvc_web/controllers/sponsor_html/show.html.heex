@@ -1,0 +1,17 @@
+<.header>
+  Sponsor <%= @sponsor.id %>
+  <:subtitle>This is a sponsor record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/sponsors/#{@sponsor}/edit"}>
+      <.button>Edit sponsor</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Name"><%= @sponsor.name %></:item>
+  <:item title="Description"><%= @sponsor.description %></:item>
+  <:item title="Image"><%= @sponsor.image %></:item>
+</.list>
+
+<.back navigate={~p"/sponsors"}>Back to sponsors</.back>

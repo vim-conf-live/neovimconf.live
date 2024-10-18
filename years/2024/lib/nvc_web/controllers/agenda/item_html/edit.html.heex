@@ -1,0 +1,11 @@
+<.header>
+  <:title>
+    Edit Agenda-Item
+  </:title>
+  <:actions>
+    <.back navigate={~p"/agenda"}>Back to agenda</.back>
+  </:actions>
+</.header>
+
+<.item_form speakers={@speakers} changeset={@changeset} action={~p"/agenda/#{@item}"} />
+

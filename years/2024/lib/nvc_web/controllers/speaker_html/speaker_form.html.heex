@@ -1,0 +1,34 @@
+<.simple_form :let={f} for={@changeset} action={@action} multipart>
+  <.input field={f[:id]} type="hidden" />
+
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+
+  <div class="grid grid-cols-[1fr_15ch] gap-4 -mb-8">
+    <.input field={f[:name]} type="text" label="Name" />
+    <.input field={f[:handle]} type="text" label="Handle" >
+      <p class="text-muted text-sm">
+        This is used as the slug in the url
+      </p>
+    </.input>
+  </div>
+
+  <.input field={f[:job]} type="text" label="Job" />
+  <.input field={f[:description]} type="textarea" label="About" />
+
+  <details open={!f[:photo].value} >
+    <summary>Add/Edit update photo </summary>
+    <.input name="photo_upload" value="" type="file" label="Photo" />
+  </details>
+
+  <.input field={f[:socials]} type="textarea" label="Contact and Socials" placeholder="eg.: https://github.com/teej">
+    <p class="text-muted">
+      Put each link on a new line.
+    </p>
+  </.input>
+
+  <:actions>
+    <.button>Save Speaker</.button>
+  </:actions>
+</.simple_form>
