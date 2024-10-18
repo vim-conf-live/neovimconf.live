@@ -10,10 +10,9 @@
 
     border: 2px solid var(--_callout-border);
     padding: var(--_callout-spacing);
-    box-shadow: 
+    box-shadow:
       2px 2px 0 var(--_callout-bg),
-      5px 5px 0 var(--_callout-border)
-    ;
+      5px 5px 0 var(--_callout-border);
     background: var(--_callout-bg);
     max-width: var(--_callout-max-width);
 
@@ -25,14 +24,17 @@
       padding: calc(var(--_callout-spacing))
     }
 
-  }
+    &.w-full {
+      --callout-max-width: 100%;
+    }
 
-  .callout.w-full {
-    --callout-max-width: 100%;
-  }
+    &.p-0 {
+      --callout-spacing: 0;
+    }
 
+    &[href]:hover,
+    &:has(a:hover) {
+      --callout-border: var(--color-primary);
+    }
+  }
 }
-  .callout:has(a:hover) {
-    --callout-border: var(--color-primary);
-  }
-

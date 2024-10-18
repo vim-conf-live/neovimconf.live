@@ -2,9 +2,9 @@
   <:title>Speakers</:title>
 </.header>
 
-<ul class="grid grid-cols-4 gap-4">
+<ul class="grid grid-cols-2 md:grid-cols-3 gap-4">
   <li :for={speaker <- @speakers}>
-    <.link href={~p"/speakers/#{speaker}/edit"} class="grid gap-2">
+    <.link href={~p"/speakers/#{speaker}/edit"} class="grid callout p-0">
       <figure>
         <img
           src={Nvc.Speakers.photo_url(speaker)}
@@ -14,7 +14,7 @@
         />
       </figure>
 
-      <p><%= speaker.name %></p>
+      <p class="p-2"><%= speaker.name %></p>
     </.link>
   </li>
 </ul>
