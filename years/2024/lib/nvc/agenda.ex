@@ -20,7 +20,7 @@ defmodule Nvc.Agenda do
   def list_agenda_items do
     Item
     |> preload(:speaker)
-    |> order_by(:start)
+    |> order_by(:position)
     |> Repo.all()
   end
 

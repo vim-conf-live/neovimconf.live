@@ -6,8 +6,8 @@
   <li :for={item <- @agenda_items}>
     <.link href={~p"/agenda/#{item}"}>
       <article class={item.type}>
-        <time-local datetime={item.start}>
-          <%= Calendar.strftime(item.start, "%H:%M") %> UTC
+        <time-local datetime={item.duration}>
+          TODO
         </time-local>
         <header>
           <h3><%= item.title %></h3>

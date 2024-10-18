@@ -5,19 +5,12 @@
 
   <.input field={f[:title]} type="text" label="Title" />
 
-  <fieldset class="grid border p-4 -mx-4">
-    <legend>Time</legend>
-
-    <div class="flex gap-4">
-      <.input field={f[:start]} type="datetime-local" label="Start">
-        <p class="text-muted">UTC!</p>
-      </.input>
-
-      <.input field={f[:end]} type="datetime-local" label="End">
-        <p class="text-muted">UTC!</p>
-      </.input>
-    </div>
-  </fieldset>
+  <div class="grid grid-cols-[1fr_10ch] gap-4 -mb-4">
+    <.input field={f[:duration]} type="number" step="5" min="1" label="Duration">
+      <p class="text-muted">in full minutes</p>
+    </.input>
+    <.input field={f[:position]} type="text" label="Position"/>
+  </div>
 
   <div class="flex gap-4">
     <.input

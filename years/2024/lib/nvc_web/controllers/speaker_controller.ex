@@ -42,11 +42,17 @@ defmodule NvcWeb.SpeakerController do
 
   def show(conn, %{"id" => handle}) do
     speaker = Speakers.get_speaker_by_handle!(handle)
+    case speaker do
+      %Speaker{} -> 
+      speaker
+      |> maybe_split_socials()
 
-    speaker
-    |> maybe_split_socials()
-
-    render(conn, :show, speaker: speaker)
+      render(conn, :show, speaker: speaker)
+      _ -> 
+        conn
+        |> put_flash(:error, "Speaker not found.")
+        |> redirect(to: ~p"/speakers")
+    end
   end
 
   defp maybe_split_socials(%Speaker{socials: nil} = speaker), do: speaker
@@ -65,6 +71,7 @@ defmodule NvcWeb.SpeakerController do
         %{
           href: ~p"/speakers/#{handle}",
           method: "delete",
+          "data-confirm": "Are you sure?",
           label: "Delete Speaker"
         }
       ]
@@ -91,13 +98,12 @@ defmodule NvcWeb.SpeakerController do
     end
   end
 
-  def delete(conn, %{"id" => id}) do
-    speaker = Speakers.get_speaker!(id)
+  def delete(conn, %{"id" => handle}) do
+    speaker = Speakers.get_speaker_by_handle!(handle)
     {:ok, _speaker} = Speakers.delete_speaker(speaker)
 
     conn
     |> put_flash(:info, "Speaker deleted successfully.")
     |> redirect(to: ~p"/speakers")
   end
-
 end

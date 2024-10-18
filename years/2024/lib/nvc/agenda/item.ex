@@ -3,8 +3,8 @@ defmodule Nvc.Agenda.Item do
   import Ecto.Changeset
 
   schema "agenda_items" do
-    field :start, :utc_datetime, default: ~U<2024-11-19 09:30:00Z>
-    field :end, :utc_datetime, default: ~U<2024-11-19 09:30:00Z>
+    field :duration, :float, default: 30.0
+    field :position, :integer
     field :type, :string, default: "talk"
     field :description, :string
     field :title, :string
@@ -16,9 +16,9 @@ defmodule Nvc.Agenda.Item do
   @doc false
   def changeset(item, attrs) do
     item
-    |> cast(attrs, [:title, :start, :end, :description, :type, :speaker_id])
+    |> cast(attrs, [:title, :duration, :position, :description, :type, :speaker_id])
     |> validate_type()
-    |> validate_required([:title, :start, :end, :description, :type])
+    |> validate_required([:title, :type])
   end
 
   defp validate_type(changeset) do
