@@ -12,7 +12,7 @@ defmodule NvcWeb.PageController do
       mcs: Nvc.Speakers.list_speakers(:mc),
       sponsors: Nvc.Sponsors.list_sponsors(),
       agenda_items: Nvc.Agenda.list_agenda_items(),
-      speakers: Nvc.Speakers.list_speakers()
+      speakers: Nvc.Speakers.list_speakers(:public_speakers)
     )
   end
 

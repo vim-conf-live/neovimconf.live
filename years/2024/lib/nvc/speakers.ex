@@ -17,15 +17,31 @@ defmodule Nvc.Speakers do
       [%Speaker{}, ...]
 
   """
-  def list_speakers(type \\ :speaker) do
+  def list_speakers(type \\ :speaker)
+  def list_speakers(:all) do
+    q = from s in Speaker
+    q
+    |> Repo.all()
+  end
+
+  def list_speakers(:public_speakers) do
     q =
       from s in Speaker,
-        where: s.type == ^type,
+        where: s.type == :speaker,
         where: s.public == true
 
     q
     |> Repo.all()
   end
+
+  def list_speakers(type) do
+    q =
+      from s in Speaker,
+        where: s.type == ^type
+    q
+    |> Repo.all()
+  end
+
 
   @doc """
   Gets a single speaker.

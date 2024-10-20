@@ -6,10 +6,7 @@ defmodule NvcWeb.SpeakerController do
 
   def index(conn, _params) do
     render(conn, :index, 
-      keynote: Nvc.Speakers.list_speakers(:keynote),
-      mcs: Nvc.Speakers.list_speakers(:mc),
-      sponsors: Nvc.Sponsors.list_sponsors(),
-      speakers: Nvc.Speakers.list_speakers()
+      speakers: Nvc.Speakers.list_speakers(:all)
     )
   end
 
