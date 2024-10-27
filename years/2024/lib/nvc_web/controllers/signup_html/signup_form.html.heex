@@ -2,14 +2,15 @@
   :let={f}
   id="waitlist_form"
   for={@changeset}
-  action={@action}
-  class="grid gap-6 w-full mb-8"
+  action="/signup"
+  class="grid gap-6 w-full"
 >
-  <altcha-widget auto="onsubmit" floating="bottom" hidelogo challengeurl="/api/altcha">
+  <altcha-widget auto="onsubmit" floating="bottom" hidelogo challengeurl="/api/altcha" class="contents">
   </altcha-widget>
 
   <p class="text-md text-pretty" for="email" id="email-description">
-    Enter your email and we'll notify you once we announce the date, speakers and sponsors!
+    Enter your email and we'll send you speaker announcements and a reminder
+    when the date is approaching!
   </p>
 
   <div class="flex gap-4">

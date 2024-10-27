@@ -26,11 +26,10 @@ defmodule NvcWeb.Router do
   scope "/", NvcWeb do
     pipe_through :browser
 
-    get       "/",                      SignupController,      :new
+    get       "/",                      PageController,        :home
     post      "/signup",                SignupController,      :create
     get       "/signup/ok",             SignupController,      :create_ok
     get       "/signup/confirm/:token", SignupController,      :confirm
-    get       "/home",                  PageController,        :home
     delete    "/users/log_out",         UserSessionController, :delete
     get       "/users/log_out",         UserSessionController, :delete
     get       "/privacy",               PageController,        :privacy

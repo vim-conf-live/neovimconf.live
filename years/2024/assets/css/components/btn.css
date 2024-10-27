@@ -4,6 +4,10 @@
     --_btn-border-shadow: var(--btn-border-shadow, var(--color-border));
     --_btn-bg: var(--btn-bg, var(--color-sheet));
 
+
+    display: flex;
+
+    gap: theme('spacing.2');
     padding: var(--balspc-3);
 
     background: var(--_btn-bg);

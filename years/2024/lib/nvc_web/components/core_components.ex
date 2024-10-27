@@ -434,10 +434,27 @@ defmodule NvcWeb.CoreComponents do
 
   def header(assigns) do
     ~H"""
-    <header class={["relative grid gap-8", @class]}>
-      <div class="flex items-center">
+    <header class={["relative grid gap-8 @container/header", @class]}>
+      <div class="flex items-center ">
+        <.logo />
+        <%= render_slot(@inner_block) %>
+      </div>
+
+      <p :if={@subtitle != []} class="text-lg text-pretty">
+        <%= render_slot(@subtitle) %>
+      </p>
+
+      <div :if={@actions != []} class="flex gap-4 items-center">
+        <%= render_slot(@actions) %>
+      </div>
+    </header>
+    """
+  end
+
+  def logo(assigns) do
+   ~H"""
         <figure class="logo">
-          <svg viewBox="0 0 524 524" fill="none" xmlns="http://www.w3.org/2000/svg">
+     <svg viewBox="0 0 524 524" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               id="logo-path-l"
               d="M387.909 366.313L198.036 256.692V346.483L456.086 495.471V80.5637H387.909V366.313Z"
@@ -453,29 +470,7 @@ defmodule NvcWeb.CoreComponents do
             </path>
           </svg>
         </figure>
-
-        <%= if @inner_block == [] do %>
-          <h1 class="text-lg "><a href="/">NeovimConf</a></h1>
-        <% else %>
-          <a href="/">
-            <p class="text-md">NeovimConf</p>
-          </a>
-        <% end %>
-      </div>
-
-      <h1 :if={@inner_block != []} class="text-lg text-pretty">
-        <h1 class="text-lg"><%= render_slot(@inner_block) %></h1>
-      </h1>
-
-      <p :if={@subtitle != []} class="text-lg text-pretty">
-        <%= render_slot(@subtitle) %>
-      </p>
-
-      <div :if={@actions != []} class="flex gap-4 items-center">
-        <%= render_slot(@actions) %>
-      </div>
-    </header>
-    """
+   """ 
   end
 
   attr :class, :string, default: nil

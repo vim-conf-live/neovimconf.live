@@ -1,11 +1,11 @@
-<.main class="gap-12">
+<.main class="gap-12 mb-12">
   <.header>
     <span class="break-box">
       <%= @speaker.name %>
     </span>
 
     <:actions>
-      <.link href="/agenda" class="underline">← back</.link>
+      <.link href="/" class="underline">← back</.link>
 
       <.link href={~p"/speakers/#{@speaker}/edit"} :if={is_admin?(@current_user)}>
         <.button>Edit Speaker</.button>
