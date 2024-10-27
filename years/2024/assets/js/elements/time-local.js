@@ -18,9 +18,23 @@ class LocalTimeElement extends HTMLElement {
 
     this.innerHTML = `
       <span class="time">${time}</span>
-      <span class="zone">${zone}</span>
+      <span class="zone text-muted">${zone}</span>
     `
   }
 }
 
 customElements.define('time-local', LocalTimeElement)
+
+customElements.define(
+  'time-zone',
+  class extends HTMLElement {
+    constructor() {
+      super()
+      const local = convertToLocal(Date.now())
+      const [_, zone] = local.split(' ')
+      this.innerHTML = `
+      <span class="text-accent">${zone}</span>
+    `
+    }
+  }
+)

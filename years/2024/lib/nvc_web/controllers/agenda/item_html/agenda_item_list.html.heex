@@ -6,21 +6,30 @@
   }
 </style>
 
+<p class="text-muted">
+  Times are adjusted to your time zone, which has been detected as <time-zone>UTC</time-zone>.
+</p>
+
 <ol class="agenda grid divide-y-2 divide-highlight-low">
-  <li :for={item <- @agenda_items}>
+  <li :for={{start, item} <- @agenda_items}>
     <%= case item.type do %>
       <% "break" -> %>
-        <h3 class="text-lg text-muted bg-surface py-2 h-full flex items-center justify-center"><%= item.title %></h3>
+        <h3 class="text-lg text-muted bg-surface py-2 h-full flex items-center justify-center">
+          <%= item.title %>
+        </h3>
       <% _ -> %>
-        <.link href={~p"/speakers/#{item.speaker}"} class="hover:bg-surface block py-4 h-full items-center">
+        <.link
+          href={~p"/speakers/#{item.speaker}"}
+          class="hover:bg-surface block py-4 h-full items-center"
+        >
           <article class={"grid grid-cols-[min-content_1fr] gap-4 --#{item.type}"}>
-            <time datetime={item.duration}>
-      <%= item.duration %>
-            </time>
+            <time-local datetime={start}>
+              <%= Calendar.strftime(start, "%H:%M") %>
+            </time-local>
             <header>
               <h3><%= item.title %></h3>
               <p :if={item.speaker}>
-                <span class="text-fg"><%= item.type %></span> by <%= item.speaker.name %>
+                <span class="text-fg bg-bg inline-block"><%= item.type %></span> by <%= item.speaker.name %>
               </p>
             </header>
           </article>

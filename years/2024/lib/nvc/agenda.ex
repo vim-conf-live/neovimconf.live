@@ -20,7 +20,7 @@ defmodule Nvc.Agenda do
   def list_agenda_items do
     Item
     |> preload(:speaker)
-    |> order_by(:position)
+    |> order_by(asc: :position)
     |> Repo.all()
   end
 
@@ -111,5 +111,19 @@ defmodule Nvc.Agenda do
   """
   def change_item(%Item{} = item, attrs \\ %{}) do
     Item.changeset(item, attrs)
+  end
+
+  def calculate_start_times(items, %NaiveDateTime{} = start_time) do
+    {_end_time, items} =
+      items
+      |> Enum.reduce(
+        {start_time, []},
+        fn %Item{} = item, {start_time, prev_slots} ->
+          slot = {start_time, item}
+          {NaiveDateTime.add(start_time, round(item.duration), :minute), prev_slots ++ [slot]}
+        end
+      )
+
+    items
   end
 end

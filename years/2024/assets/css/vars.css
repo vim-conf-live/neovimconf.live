@@ -1,7 +1,10 @@
 :where(html) {
-  /* colors {{{*/
+  /** colors palette */
   --color-brand-blue: theme("colors.sky.500");
   --color-brand-green: theme("colors.teal.500");
+  --color-yellow: theme("colors.amber.500");
+
+  /** semantic colors */
   --color-bg: theme('colors.slate.50');
   --color-fg: theme('colors.slate.950');
 
@@ -51,7 +54,7 @@
 
   --font-family: "Departure Mono";
 
-  /*}}}*/
+  
   /* type {{{*/
   --font-size-root: 22px;
 
