@@ -11,6 +11,11 @@ config :nvc,
   ecto_repos: [Nvc.Repo],
   generators: [timestamp_type: :utc_datetime]
 
+config :nvc, Oban,
+  engine: Oban.Engines.Basic,
+  queues: [default: 10, mailer: 10],
+  repo: Nvc.Repo
+
 # Configures the endpoint
 config :nvc, NvcWeb.Endpoint,
   url: [host: "localhost"],

@@ -15,6 +15,7 @@ defmodule Nvc.Application do
         skip: skip_migrations?()},
       {DNSCluster, query: Application.get_env(:nvc, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Nvc.PubSub},
+      {Oban, Application.fetch_env!(:nvc, Oban)},
       # Start the Finch HTTP client for sending emails
       {Finch, name: Nvc.Finch},
       # Start a worker by calling: Nvc.Worker.start_link(arg)

@@ -46,13 +46,7 @@ defmodule Nvc.MixProject do
       {:phoenix_live_dashboard, "~> 0.8.3"},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
       {:tailwind, "~> 0.2", runtime: Mix.env() == :dev},
-      {:heroicons,
-       github: "tailwindlabs/heroicons",
-       tag: "v2.1.1",
-       sparse: "optimized",
-       app: false,
-       compile: false,
-       depth: 1},
+      {:heroicons, github: "tailwindlabs/heroicons", tag: "v2.1.1", sparse: "optimized", app: false, compile: false, depth: 1},
       {:swoosh, "~> 1.5"},
       {:finch, "~> 0.13"},
       {:telemetry_metrics, "~> 1.0"},
@@ -64,7 +58,8 @@ defmodule Nvc.MixProject do
       {:ex_aws, "~> 2.0"},
       {:ex_aws_s3, "~> 2.0"},
       {:poison, "~> 3.0"},
-      {:sweet_xml, "~> 0.6.6"}
+      {:sweet_xml, "~> 0.6.6"},
+      {:oban, "~> 2.18.3"}
     ]
   end
 
