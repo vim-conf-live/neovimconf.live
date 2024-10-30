@@ -479,7 +479,7 @@ defmodule NvcWeb.CoreComponents do
   def main(assigns) do
     ~H"""
     <main class={[
-      "vise grid gap-4 pt-4 w-full md:pt-8 min-h-svh",
+      "vise flex flex-col gap-4 pt-4 w-full md:pt-8 min-h-svh",
       @class
     ]}>
       <%= render_slot(@inner_block) %>
@@ -523,8 +523,8 @@ defmodule NvcWeb.CoreComponents do
       <table class="w-[40rem] mt-11 sm:w-full">
         <thead class="">
           <tr>
-            <th :for={col <- @col} class="p-0 pb-4 pr-6"><%= col[:label] %></th>
-            <th :if={@action != []} class="relative p-0 pb-4">
+            <th :for={col <- @col} class="p-0 pb-4 pr-6 text-left text-muted w-min"><%= col[:label] %></th>
+            <th :if={@action != []} class="relative text-left p-0 pb-4">
               <span class="sr-only">Actions</span>
             </th>
           </tr>
@@ -548,7 +548,7 @@ defmodule NvcWeb.CoreComponents do
               </div>
             </td>
             <td :if={@action != []} class="relative w-14 p-0">
-              <div class="relative whitespace-nowrap py-4 text-right text-sm font-medium">
+              <div class="relative whitespace-nowrap py-4 text-right font-medium">
                 <span class="absolute -inset-y-px -right-4 left-0 group-hover:bg-zinc-50 sm:rounded-r-xl" />
                 <span
                   :for={action <- @action}
@@ -583,7 +583,7 @@ defmodule NvcWeb.CoreComponents do
     ~H"""
     <div class="mt-14">
       <dl class="-my-4 divide-y divide-zinc-100">
-        <div :for={item <- @item} class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+        <div :for={item <- @item} class="flex gap-4 py-4 leading-6 sm:gap-8">
           <dt class="w-1/4 flex-none text-zinc-500"><%= item.title %></dt>
           <dd class="text-zinc-700"><%= render_slot(item) %></dd>
         </div>

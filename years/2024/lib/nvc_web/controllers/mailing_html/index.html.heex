@@ -1,0 +1,24 @@
+<.header>
+  Listing Mailings
+  <:actions>
+    <.link href={~p"/mailings/new"}>
+      <.button>New Mailing</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<ul class="grid gap-12">
+  <li :for={mailing <- @mailings}>
+    <article class={"callout grid gap-2"}>
+      <div>
+        <p class="bg-fg text-bg py-1 px-3 rounded-full inline-block"><%= mailing.status %></p>
+      </div>
+      <h2 class="text-lg"><%= mailing.subject %></h2>
+      <div class="flex gap-4 items-center">
+        <.link class="btn" :if={mailing.status == :draft} navigate={~p"/mailings/#{mailing}/edit"}>Edit</.link>
+        <.link class="btn" :if={mailing.status == :draft} navigate={~p"/mailings/#{mailing}"}>Preview and broadcast</.link>
+        <.link class="btn" :if={mailing.status != :draft} navigate={~p"/mailings/#{mailing}"}>View</.link>
+      </div>
+    </article>
+  </li>
+</ul>
