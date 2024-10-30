@@ -1,0 +1,11 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:subject]} type="text" label="Subject" />
+  <.input field={f[:body]} type="textarea" label="Body" rows="20" />
+
+  <:actions>
+    <.button name="submit_type" value="save">Save Mailing</.button>
+  </:actions>
+</.simple_form>

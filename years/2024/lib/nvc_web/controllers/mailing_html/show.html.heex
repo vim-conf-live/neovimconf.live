@@ -1,0 +1,36 @@
+<.header>
+  Preview for Mailing #<%= @mailing.id %>
+  <:actions>
+    <.link href={~p"/mailings/#{@mailing}/edit"}>
+      <.button>Edit mailing</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.back navigate={~p"/mailings"}>Back to mailings</.back>
+
+<.mailing_preview mailing={@mailing} />
+
+<details class="bg-sheet my-4 p-4" :if={@mailing.status == :draft}>
+  <summary class="cursor-pointer underline">
+    Mail looks good. Give me the launch button
+  </summary>
+
+    <div class="flex flex-col gap-4 py-8">
+      <div class="flex flex-col gap-2 border-amber-500 text-amber-500 border p-2 bg-sheet items-start">
+        <p>
+          <.icon name="hero-exclamation-circle" class="size-6" /> WARNING
+        </p>
+        <p>
+          This will create the queue and immediately start delivering the emails.
+          Last chance to cop out.
+        </p>
+      </div>
+
+      <.simple_form for={@changeset} action={~p"/mailings/#{@mailing}/send"} method="POST">
+        <div class="text-right">
+          <button class="btn inline hover:text-fg hover:bg-amber-500 self-end">LGTM! Ship it!</button>
+        </div>
+      </.simple_form>
+    </div>
+</details>

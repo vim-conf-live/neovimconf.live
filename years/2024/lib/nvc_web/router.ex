@@ -21,6 +21,9 @@ defmodule NvcWeb.Router do
     resources "/speakers", SpeakerController, except: [:index, :show]
     resources "/agenda", Agenda.ItemController, except: [:index, :show]
     resources "/sponsors", SponsorController, except: [:show]
+    resources "/mailings", MailingController
+    post "/mailings/:id/send", MailingController, :send
+    get "/mailings/:id/sending", MailingController, :sending
   end
 
   scope "/", NvcWeb do

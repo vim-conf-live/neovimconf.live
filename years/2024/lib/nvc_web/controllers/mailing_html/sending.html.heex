@@ -1,0 +1,12 @@
+<.header>
+
+  Sending <%= @mailing.subject %>
+</.header>
+
+<.back navigate={~p"/mailings"}>Back to mailings</.back>
+
+<div class="callout mt-16 w-full">
+  Things were queued up and the workers are doing their thing.
+</div>
+
+<.mailing_preview mailing={@mailing} />
