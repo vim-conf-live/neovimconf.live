@@ -1,19 +1,18 @@
+<.header>
+  <span class="break-box text-lg">
+    <%= @speaker.name %>
+  </span>
+
+  <:actions>
+    <.link href="/#speakers" class="underline">← back</.link>
+
+    <.link href={~p"/speakers/#{@speaker}/edit"} :if={is_admin?(@current_user)}>
+      <.button>Edit Speaker</.button>
+    </.link>
+  </:actions>
+</.header>
+
 <.main class="gap-12 mb-12">
-  <.header>
-    <span class="break-box">
-      <%= @speaker.name %>
-    </span>
-
-    <:actions>
-      <.link href="/" class="underline">← back</.link>
-
-      <.link href={~p"/speakers/#{@speaker}/edit"} :if={is_admin?(@current_user)}>
-        <.button>Edit Speaker</.button>
-      </.link>
-    </:actions>
-  </.header>
-
-
   <section class="grid gap-2 mb-8">
     <article :for={talk <- @speaker.talks} class="callout w-full grid gap-2 -mx-2">
       <header>
