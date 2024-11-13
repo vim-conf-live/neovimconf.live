@@ -118,13 +118,14 @@ defmodule Nvc.Broadcasts do
       Enum.each(jobs, &Oban.insert!/1)
 
       mailing
-      |> Ecto.Changeset.change(%{status: :sending})
+      |> Ecto.Changeset.change(%{status: :sent})
       |> Repo.update!()
-    end)
+    end, timeout: :infinity)
   end
 
   def list_recipients() do
-    from(u in User, where: not is_nil(u.confirmed_at))
+    from(u in User, 
+      where: (not is_nil(u.confirmed_at)) or u.source == :import)
     |> Repo.all()
   end
 end

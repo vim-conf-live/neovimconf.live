@@ -6,6 +6,7 @@ defmodule Nvc.Accounts.User do
     field :email, :string
     field :confirmed_at, :naive_datetime
     field :role, Ecto.Enum, values: [:guest, :mod, :admin]
+    field :source, Ecto.Enum, values: [:import, :signup], default: :signup
 
     timestamps(type: :utc_datetime)
   end
@@ -25,7 +26,14 @@ defmodule Nvc.Accounts.User do
   """
   def registration_changeset(user, attrs, opts \\ []) do
     user
-    |> cast(attrs, [:email])
+    |> cast(attrs, [:email, :source])
+    |> validate_email(opts)
+  end
+
+  def import_changeset(user, attrs, opts \\ []) do
+    user
+    |> cast(attrs, [:email, :source])
+    |> validate_required([:email, :source])
     |> validate_email(opts)
   end
 

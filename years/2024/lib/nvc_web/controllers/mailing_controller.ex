@@ -42,8 +42,8 @@ defmodule NvcWeb.MailingController do
     changeset = Broadcasts.change_mailing(mailing)
 
     case mailing.status do
-      :draft -> conn |> render(:edit, mailing: mailing, changeset: changeset)
-      :sending -> conn 
+      :draft -> conn |> render(:show, mailing: mailing, changeset: changeset)
+      :sent -> conn 
         |> redirect(to: ~p"/mailings/#{mailing}/sending")
 
       status -> conn 
@@ -58,7 +58,7 @@ defmodule NvcWeb.MailingController do
 
     case mailing.status do
       :draft -> conn |> render(:edit, mailing: mailing, changeset: changeset)
-      :sending -> conn 
+      :sent -> conn 
         |> redirect(to: ~p"/mailings/#{mailing}/sending")
 
       status -> conn 

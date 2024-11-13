@@ -3,7 +3,7 @@ defmodule Nvc.Broadcasts.Mailing do
   import Ecto.Changeset
 
   schema "mailings" do
-    field :status, Ecto.Enum, values: [:draft, :scheduled, :sending, :completed], default: :draft
+    field :status, Ecto.Enum, values: [:draft, :sent, :processing], default: :draft
     field :body, :string
     field :subject, :string
     field :scheduled_for, :utc_datetime
