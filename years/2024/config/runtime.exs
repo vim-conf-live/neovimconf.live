@@ -32,8 +32,9 @@ if config_env() == :prod do
 
   config :nvc, Nvc.Repo,
     ssl: false,
+    prepare: :unnamed,  # Disable prepared statements
     url: database_url,
-    pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+    pool_size: String.to_integer(System.get_env("POOL_SIZE") || "30"),
     socket_options: []
 
   # The secret key base is used to sign/encrypt cookies and other secrets.
