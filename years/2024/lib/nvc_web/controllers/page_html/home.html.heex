@@ -16,12 +16,12 @@
   </:subtitle>
 </.header>
 
-
 <div class="grid gap-24 my-12">
   <NvcWeb.SignupHTML.signup_form changeset={@changeset} action={~p"/"} />
 
   <section class="grid gap-2">
     <h2 class="text-lg">Your favorite editor's conference!</h2>
+
     <p class="text-pretty">
       The annual conference about your favorite editor! For the fourth time we invite you to join us for a day of talks and celebration of Neovim and the community around it.
     </p>
@@ -77,7 +77,7 @@
   # </section>
   %>
 
-  <section class="grid gap-2" :if={length(@speakers) > 0}>
+  <section class="grid gap-2" :if={length(@speakers) > 0} id="speakers">
     <h2 class="text-lg">Speakers</h2>
     <.speaker_list current_user={@current_user} speakers={@speakers} />
   </section>

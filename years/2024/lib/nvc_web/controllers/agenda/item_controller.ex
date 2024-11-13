@@ -6,10 +6,10 @@ defmodule NvcWeb.Agenda.ItemController do
   alias Nvc.Agenda.Item
 
   def index(conn, _params) do
-    agenda_items = Agenda.list_agenda_items()
-      |> Agenda.calculate_start_times(~N[2024-11-19 10:00:00])
+    # agenda_items = Agenda.list_agenda_items()
+    #   |> Agenda.calculate_start_times(~N[2024-11-19 10:00:00])
 
-    render(conn, :index, agenda_items: agenda_items)
+    redirect(conn, to: "/#speakers")
   end
 
   def new(conn, _params) do
