@@ -2,15 +2,15 @@ defmodule Nvc.Repo.Migrations.CreateUsersAuthTables do
   use Ecto.Migration
 
   def change do
-    execute "CREATE EXTENSION IF NOT EXISTS citext", ""
-
     create table(:users) do
-      add :email, :citext, null: false
+      add :email, :string, null: false
       add :confirmed_at, :naive_datetime
+      add :source, :string, default: "signup"
+      add :imported_at, :utc_datetime
       timestamps(type: :utc_datetime)
     end
 
-    create unique_index(:users, [:email])
+    create unique_index(:users, ["lower(email)"])
 
     create table(:users_tokens) do
       add :user_id, references(:users, on_delete: :delete_all), null: false
