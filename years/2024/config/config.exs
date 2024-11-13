@@ -12,7 +12,7 @@ config :nvc,
   generators: [timestamp_type: :utc_datetime]
 
 config :nvc, Oban,
-  engine: Oban.Engines.Basic,
+  engine: Oban.Engines.Lite,
   queues: [default: 10, mailer: 10],
   repo: Nvc.Repo
 

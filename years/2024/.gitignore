@@ -52,3 +52,5 @@ devenv.local.nix
 .DS_Store
 process-compose.yml
 .env
+.elixir-tools
+.elixir_ls
