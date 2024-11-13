@@ -4,8 +4,8 @@
     width: 50px;
     max-width: 66%;
     position: relative;
-    z-index: -1;
     margin-right: 10px;
+    pointer-events: none;
 
     #logo-path-l { fill: var(--color-brand-blue); }
     #logo-path-r { fill: var(--color-brand-green); }
