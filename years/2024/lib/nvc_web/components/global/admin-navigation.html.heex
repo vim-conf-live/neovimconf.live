@@ -9,29 +9,28 @@
     </div>
 
     <div class="flex gap-2">
-      Manage:
-    <menu class="flex gap-4 items-center">
-      <li>
-        <.link href={~p"/agenda/"}>
-          Agenda
-        </.link>
-      </li>
-      <li>
-        <.link href={~p"/speakers/"}>
-          Speakers
-        </.link>
-      </li>
-      <li>
-        <.link href={~p"/sponsors/"}>
-          Sponsors
-        </.link>
-      </li>
-      <li>
-        <.link href={~p"/mailings/"}>
-          Mailings
-        </.link>
-      </li>
-    </menu>
+      <menu class="flex gap-4 items-center">
+        <li>
+          <.link href={~p"/agenda/"}>
+            Agenda
+          </.link>
+        </li>
+        <li>
+          <.link href={~p"/speakers/"}>
+            Speakers
+          </.link>
+        </li>
+        <li>
+          <span class="line-through text-muted">
+            Sponsors
+          </span>
+        </li>
+        <li>
+          <.link href={~p"/mailings/"}>
+            Mailings
+          </.link>
+        </li>
+      </menu>
     </div>
   </div>
 </nav>
