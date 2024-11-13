@@ -21,8 +21,10 @@ ARG RUNNER_IMAGE="debian:${DEBIAN_VERSION}"
 FROM ${BUILDER_IMAGE} as builder
 
 # install build dependencies
-RUN apt-get update -y && apt-get install -y build-essential git \
-    && apt-get clean && rm -f /var/lib/apt/lists/*_*
+RUN apt-get update -y                                                       \
+    && apt-get install -y build-essential git ca-certificates fuse3 sqlite3 \
+    && apt-get clean                                                        \
+    && rm -f /var/lib/apt/lists/*_*
 
 # prepare build dir
 WORKDIR /app
@@ -30,6 +32,8 @@ WORKDIR /app
 # install hex + rebar
 RUN mix local.hex --force && \
     mix local.rebar --force
+
+COPY --from=flyio/litefs:0.5 /usr/local/bin/litefs /usr/local/bin/litefs
 
 # set build ENV
 ENV MIX_ENV="prod"
@@ -94,4 +98,4 @@ USER nobody
 # above and adding an entrypoint. See https://github.com/krallin/tini for details
 # ENTRYPOINT ["/tini", "--"]
 
-CMD ["/app/bin/server"]
+CMD ["/usr/local/bin/litefs", "mount"]

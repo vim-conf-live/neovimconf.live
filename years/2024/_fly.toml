@@ -1,9 +1,7 @@
-# fly.toml app configuration file generated for neovimconfite on 2024-11-13T23:12:07Z
-#
+# fly.toml app configuration file generated for nvc on 2024-06-09T10:43:12+02:00
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
 
-app = 'neovimconfite'
+app = 'sqlitenvc'
 primary_region = 'ams'
 kill_signal = 'SIGTERM'
 
@@ -13,13 +11,15 @@ kill_signal = 'SIGTERM'
   release_command = '/app/bin/migrate'
 
 [env]
-  PHX_HOST = 'neovimconfite.fly.dev'
+  PHX_SERVER = "true"
+  LOG_LEVEL = "info"
+  PHX_HOST = 'sqlitenvc.fly.dev'
   PORT = '8080'
 
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = 'stop'
+  auto_stop_machines = false
   auto_start_machines = true
   min_machines_running = 0
   processes = ['app']
@@ -30,10 +30,5 @@ kill_signal = 'SIGTERM'
     soft_limit = 1000
 
 [[vm]]
-  memory = '512mb'
-  cpu_kind = 'shared'
-  cpus = 1
-
-[mounts]
-  source = "litefs"
-  destination = "/var/lib/litefs"
+  memory = 512
+  size = 'shared-cpu-1x'
