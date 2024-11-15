@@ -6,8 +6,9 @@
   }
 </style>
 
-<p class="text-muted">
-  Times are adjusted to your time zone, which has been detected as <time-zone>UTC</time-zone>.
+<p>
+  Neovimconf starts at 10:00 am EST, aka 15:00 UTC.
+  Times are adjusted to your time zone, which has been detected as <time-zone>UTC</time-zone>. 
 </p>
 
 <ol class="agenda grid divide-y-2 divide-highlight-low">
@@ -23,7 +24,7 @@
           class="hover:bg-surface block py-4 h-full items-center"
         >
           <article class={"grid grid-cols-[min-content_1fr] gap-4 --#{item.type}"}>
-            <time-local datetime={start}>
+            <time-local datetime={"#{start}Z"}>
               <%= Calendar.strftime(start, "%H:%M") %>
             </time-local>
             <header>
