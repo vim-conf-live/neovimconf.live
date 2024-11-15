@@ -3,6 +3,7 @@
 // import "./user_socket.js"
 import '../vendor/altcha.min.js'
 import './elements/time-local.js'
+import './elements/back-link.js'
 import 'phoenix_html'
 
 // Establish Phoenix Socket and LiveView configuration.
@@ -14,6 +15,10 @@ let csrfToken = document
   .querySelector("meta[name='csrf-token']")
   .getAttribute('content')
 
+window.historyBack = e => {
+  e.preventDefault()
+  history.back()
+}
 // let liveSocket = new LiveSocket('/live', Socket, {
 //   longPollFallbackMs: 2500,
 //   params: { _csrf_token: csrfToken },
