@@ -67,15 +67,10 @@
     <.sponsor_list current_user={@current_user} sponsors={@sponsors} />
   </section>
 
-  <% 
-  # <section class="grid gap-2">
-  #   <h2 class="text-lg">Agenda</h2>
-  #   <p>
-  #     This year we've packed the schedule with a diverse group of speakers from all over the world and squeezed them into a single day. Times are adjusted to your local timezone.
-  #   </p>
-  #   <.agenda_item_list current_user={@current_user} agenda_items={@agenda_items} />
-  # </section>
-  %>
+  <section class="grid gap-2">
+    <h2 class="text-lg">Agenda</h2>
+    <NvcWeb.Agenda.ItemHTML.agenda_item_list current_user={@current_user} agenda_items={@agenda_items} />
+  </section>
 
   <section class="grid gap-2" :if={length(@speakers) > 0} id="speakers">
     <h2 class="text-lg">Speakers</h2>
