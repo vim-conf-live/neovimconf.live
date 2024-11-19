@@ -1,7 +1,7 @@
 class BackLink extends HTMLElement {
   connectedCallback() {
     const link = this.querySelector('a')
-    if (link) {
+    if (link && history.length > 1) {
       link.addEventListener('click', this.handleClick)
     }
   }
