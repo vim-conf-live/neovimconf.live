@@ -38,11 +38,11 @@ defmodule Nvc.Accounts.UserNotifier do
   Deliver instructions to confirm account.
   """
   def deliver_confirmation_instructions(user, url) do
-    deliver(user.email, "Confirm your signup for NeovimConf 2024!", """
+    deliver(user.email, "Confirm your signup for NeovimConf Notifications", """
     Hello there!
 
-    We really appreciate that you signed up for NeovimConf 2024! Open the
-    following URL to complete your signup:
+    We really appreciate that you signed up to receive notifications about 
+    NeovimConf. Open the following URL to complete your signup:
 
     #{url}
 
@@ -53,10 +53,9 @@ defmodule Nvc.Accounts.UserNotifier do
     this, you can safely ignore this email. Or if you just forgot it already,
     check https://neovimconf.live/
 
-    We're stoked to see you in november; it's gonna be a whole lot of fun!
+    We're stoked to see you in some time end of 2025; it's gonna be a whole lot of fun!
 
-    Your team at NeovimConf.
-
+    Your team at NeovimConf,
     :x
 
     --
