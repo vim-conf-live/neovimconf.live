@@ -1,20 +1,26 @@
-NEOVIMCONF 2024
+# NeovimConf 2024
 
-/* ORGANIZERS */
+## Team
 
-Adam 'ABD'
+Organiser: Adam 'ABD'
 https://twitter.com/abawesomed
 
-/* SITE TEAM */
-
-Nils Riedemann
+Site Admin: Nils Riedemann
 https://bleepbloop.studio/
 
-TODO: add contributors
+## Hosts
 
-/* TECH */
+ThePrimeagen
+https://twitter.com/ThePrimeagen
 
-- Phoenix: http://phoenixframework.org
+TeeJ DeVries
+https://twitter.com/teej_dv
+
+## Tech
+
+- Phoenix: https://phoenixframework.org
 - Supabase: https://supabase.com/
-- Postmark: http://postmarkapp.com
-- Hosted on Fly: https://fly.io
+- Postmark: https://postmarkapp.com/
+- Tailwind: https://tailwindcss.com/
+- Hosted on Fly: https://fly.io/
+- Source: https://github.com/vim-conf-live/neovimconf.live
