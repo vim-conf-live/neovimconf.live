@@ -14,12 +14,27 @@
 
   <p class="text-lg text-pretty">
     <span class="break-box">
-      Your favorite editor's conference returns
-      <count-down class="text-accent dark:text-teal-300 sm:inline-block" start-date="2024-11-19T15:00:00.000Z" frequency="0.050">
-        November 19th 2024!
-      </count-down>
+      Your favorite editor's conference returns <span class="text-accent">2025</span>
     </span>
   </p>
+
+  <p class="text-lg text-brand-green">
+    NeovimConf 2024 is over
+  </p>
+
+  <p class="text-balance">
+    Thanks to everyone submitting and presenting talks, hanging around in chats and making this day as fun as it was!
+  </p>
+
+  <p class="text-balance">
+    As usual, the talks will be available <span class="text-primary">on YouTube in a playlist soon.</span>
+  </p>
+
+  <p class="text-md text-balance" id="email-description">
+    Enter your email below to receive future announcements about NeovimConf:
+  </p>
+
+  <NvcWeb.SignupHTML.signup_form changeset={@changeset} action={~p"/"} />
 </header>
 
 <div class="grid gap-24 my-12">
@@ -30,8 +45,6 @@
       The annual conference about your favorite editor!
       For the fourth time we invite you to join us for a day of talks and celebration of Neovim and the community around it.
     </p>
-
-    <NvcWeb.SignupHTML.signup_form changeset={@changeset} action={~p"/"} />
   </section>
 
   <section class="grid gap-2 ">

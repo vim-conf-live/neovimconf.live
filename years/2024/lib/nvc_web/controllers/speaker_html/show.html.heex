@@ -4,9 +4,7 @@
   </span>
 
   <:actions>
-    <back-link>
-      <a href="/#agenda" class="underline">← back</a>
-    </back-link>
+    <a href="/#agenda" class="underline">← back</a>
 
     <.link href={~p"/speakers/#{@speaker}/edit"} :if={is_admin?(@current_user)}>
       <.button>Edit Speaker</.button>
