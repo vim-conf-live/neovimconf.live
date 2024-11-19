@@ -1,30 +1,49 @@
-<.header>
-  <h1 class="text-lg "><a href="/">NeovimConf</a></h1>
+<header class={["relative grid gap-8 @container/header"]}>
+  <div class="flex items-center ">
+    <.logo />
+    <h1 class="text-lg "><a href="/">NeovimConf</a></h1>
 
-  <div class="ml-auto block">
-    <a href="https://discord.gg/J8aRHhupzP" class="justify-self-end text-purple-500 flex gap-2">
-      <span class="hidden @sm/header:block">Join the Discord!</span>
-      <svg class="w-6" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.0897 1.96024C16.2725 0.497946 13.3978 0.250069 13.2748 0.241152C13.084 0.225102 12.9021 0.3321 12.8236 0.508645C12.8165 0.519345 12.7541 0.663791 12.6845 0.888485C13.8865 1.09178 15.363 1.50015 16.6987 2.32938C16.9127 2.46134 16.9787 2.7431 16.8467 2.9571C16.7593 3.09798 16.6113 3.17466 16.458 3.17466C16.3759 3.17466 16.2921 3.15148 16.2172 3.10511C13.9203 1.68026 11.0528 1.60893 10.5 1.60893C9.94718 1.60893 7.07787 1.68026 4.78278 3.10511C4.56878 3.23886 4.28702 3.17288 4.15506 2.95888C4.02131 2.7431 4.0873 2.46313 4.30129 2.32938C5.63697 1.50194 7.11354 1.09178 8.31547 0.890269C8.24592 0.663791 8.18351 0.521129 8.17816 0.508645C8.09791 0.3321 7.9178 0.221536 7.7252 0.241152C7.60216 0.250069 4.7275 0.497945 2.88536 1.97986C1.92417 2.86972 0 8.06978 0 12.5654C0 12.6457 0.0213994 12.7224 0.060632 12.7919C1.3874 15.1245 5.00926 15.7343 5.83492 15.7611C5.83849 15.7611 5.84383 15.7611 5.84918 15.7611C5.99541 15.7611 6.13273 15.6915 6.21833 15.5739L7.0529 14.4254C4.80061 13.8441 3.65039 12.8561 3.58441 12.7973C3.39538 12.6314 3.37755 12.3425 3.54518 12.1535C3.71102 11.9645 3.99992 11.9466 4.18894 12.1125C4.21569 12.1375 6.33424 13.935 10.5 13.935C14.6729 13.935 16.7914 12.1303 16.8128 12.1125C17.0019 11.9484 17.289 11.9645 17.4566 12.1553C17.6225 12.3443 17.6046 12.6314 17.4156 12.7973C17.3496 12.8561 16.1994 13.8441 13.9471 14.4254L14.7817 15.5739C14.8673 15.6915 15.0046 15.7611 15.1508 15.7611C15.1562 15.7611 15.1615 15.7611 15.1651 15.7611C15.9907 15.7343 19.6126 15.1245 20.9394 12.7919C20.9786 12.7224 21 12.6457 21 12.5654C21 8.06978 19.0758 2.86972 18.0897 1.96024ZM7.53261 10.7394C6.64988 10.7394 5.93478 9.92262 5.93478 8.91328C5.93478 7.90394 6.64988 7.08719 7.53261 7.08719C8.41534 7.08719 9.13043 7.90394 9.13043 8.91328C9.13043 9.92262 8.41534 10.7394 7.53261 10.7394ZM13.4674 10.7394C12.5847 10.7394 11.8696 9.92262 11.8696 8.91328C11.8696 7.90394 12.5847 7.08719 13.4674 7.08719C14.3501 7.08719 15.0652 7.90394 15.0652 8.91328C15.0652 9.92262 14.3501 10.7394 13.4674 10.7394Z" fill="currentColor"></path></svg>
-    </a>
+    <div class="ml-auto block">
+      <a href="https://discord.gg/J8aRHhupzP" class="justify-self-end text-purple-500 flex gap-2">
+        <span class="hidden @sm/header:block">Join the Discord!</span>
+        <svg class="w-6" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.0897 1.96024C16.2725 0.497946 13.3978 0.250069 13.2748 0.241152C13.084 0.225102 12.9021 0.3321 12.8236 0.508645C12.8165 0.519345 12.7541 0.663791 12.6845 0.888485C13.8865 1.09178 15.363 1.50015 16.6987 2.32938C16.9127 2.46134 16.9787 2.7431 16.8467 2.9571C16.7593 3.09798 16.6113 3.17466 16.458 3.17466C16.3759 3.17466 16.2921 3.15148 16.2172 3.10511C13.9203 1.68026 11.0528 1.60893 10.5 1.60893C9.94718 1.60893 7.07787 1.68026 4.78278 3.10511C4.56878 3.23886 4.28702 3.17288 4.15506 2.95888C4.02131 2.7431 4.0873 2.46313 4.30129 2.32938C5.63697 1.50194 7.11354 1.09178 8.31547 0.890269C8.24592 0.663791 8.18351 0.521129 8.17816 0.508645C8.09791 0.3321 7.9178 0.221536 7.7252 0.241152C7.60216 0.250069 4.7275 0.497945 2.88536 1.97986C1.92417 2.86972 0 8.06978 0 12.5654C0 12.6457 0.0213994 12.7224 0.060632 12.7919C1.3874 15.1245 5.00926 15.7343 5.83492 15.7611C5.83849 15.7611 5.84383 15.7611 5.84918 15.7611C5.99541 15.7611 6.13273 15.6915 6.21833 15.5739L7.0529 14.4254C4.80061 13.8441 3.65039 12.8561 3.58441 12.7973C3.39538 12.6314 3.37755 12.3425 3.54518 12.1535C3.71102 11.9645 3.99992 11.9466 4.18894 12.1125C4.21569 12.1375 6.33424 13.935 10.5 13.935C14.6729 13.935 16.7914 12.1303 16.8128 12.1125C17.0019 11.9484 17.289 11.9645 17.4566 12.1553C17.6225 12.3443 17.6046 12.6314 17.4156 12.7973C17.3496 12.8561 16.1994 13.8441 13.9471 14.4254L14.7817 15.5739C14.8673 15.6915 15.0046 15.7611 15.1508 15.7611C15.1562 15.7611 15.1615 15.7611 15.1651 15.7611C15.9907 15.7343 19.6126 15.1245 20.9394 12.7919C20.9786 12.7224 21 12.6457 21 12.5654C21 8.06978 19.0758 2.86972 18.0897 1.96024ZM7.53261 10.7394C6.64988 10.7394 5.93478 9.92262 5.93478 8.91328C5.93478 7.90394 6.64988 7.08719 7.53261 7.08719C8.41534 7.08719 9.13043 7.90394 9.13043 8.91328C9.13043 9.92262 8.41534 10.7394 7.53261 10.7394ZM13.4674 10.7394C12.5847 10.7394 11.8696 9.92262 11.8696 8.91328C11.8696 7.90394 12.5847 7.08719 13.4674 7.08719C14.3501 7.08719 15.0652 7.90394 15.0652 8.91328C15.0652 9.92262 14.3501 10.7394 13.4674 10.7394Z" fill="currentColor"></path></svg>
+      </a>
+    </div>
+
   </div>
 
-  <:subtitle>
+  <p class="text-lg text-pretty">
     <span class="break-box">
       Your favorite editor's conference returns
-      <span class="text-teal-400 dark:text-teal-300 sm:inline-block">November 19th 2024!</span>
+      <count-down class="text-accent dark:text-teal-300 sm:inline-block" start-date="2024-11-19T15:00:00.000Z" frequency="0.050">
+        November 19th 2024!
+      </count-down>
     </span>
-  </:subtitle>
-</.header>
+  </p>
+</header>
 
 <div class="grid gap-24 my-12">
-  <NvcWeb.SignupHTML.signup_form changeset={@changeset} action={~p"/"} />
-
-  <section class="grid gap-2">
+  <section class="grid gap-6">
     <h2 class="text-lg">Your favorite editor's conference!</h2>
 
-    <p class="text-pretty">
-      The annual conference about your favorite editor! For the fourth time we invite you to join us for a day of talks and celebration of Neovim and the community around it.
+    <p class="text-balance">
+      The annual conference about your favorite editor!
+      For the fourth time we invite you to join us for a day of talks and celebration of Neovim and the community around it.
     </p>
+
+    <NvcWeb.SignupHTML.signup_form changeset={@changeset} action={~p"/"} />
+  </section>
+
+  <section class="grid gap-2 ">
+    <h2 class="text-lg">Hosted by ThePrimeagen and TJ DeVries</h2>
+
+    <div class="callout w-full grid gap-2 -mx-2">
+      <img src="https://2023.neovimconf.live/_astro/stream-info-panel.8bf9af66_IVLui.webp" alt="Image of ThePrimeagen and TJ DeVries"/>
+      <p class="text-balance">
+        ThePrimeagen and TJ DeVries once again do us the favor of hosting NeovimConf on
+        <a href="http://twitch.tv/theprimeagen" class="text-accent">ThePrimeagens's Twitch channel</a>
+      </p>
+    </div>
   </section>
 
   <section class="grid gap-2">
@@ -50,24 +69,17 @@
     </article>
   </section>
 
-  <%
-  # <section class="grid gap-2">
-  #   <h2 class="text-lg">Hosts</h2>
-  #   <p>
-  #     ThePrimeagen and TJ DeVries, dynamic and influential figures in the world of Neovim, once again do us the favor of hosting the NEOVIMCONF.
-  #   </p>
-  #   <div class="bg-red-500 p-8">
-  #     <p>TODO</p>
-  #   </div>
-  # </section>
-  %>
+  <section class="flex flex-col gap-8 text-center">
+    <p class="text-lg uppercase">Sponsored by</p>
+    <img src="/images/twitch-wordmark-extruded.svg" />
+  </section>
 
   <section class="grid gap-2" :if={length(@sponsors) > 0}>
     <h2 class="text-lg">Sponsors</h2>
     <.sponsor_list current_user={@current_user} sponsors={@sponsors} />
   </section>
 
-  <section class="grid gap-2">
+  <section class="grid gap-2" id="agenda">
     <h2 class="text-lg">Agenda</h2>
     <NvcWeb.Agenda.ItemHTML.agenda_item_list current_user={@current_user} agenda_items={@agenda_items} />
   </section>
@@ -76,10 +88,4 @@
     <h2 class="text-lg">Speakers</h2>
     <.speaker_list current_user={@current_user} speakers={@speakers} />
   </section>
-
-  <section class="flex flex-col gap-8 text-center">
-    <p class="text-lg uppercase">Sponsored by</p>
-    <img src="/images/twitch-wordmark-extruded.svg" />
-  </section>
-
 </div>

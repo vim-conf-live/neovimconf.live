@@ -4,6 +4,7 @@
 import '../vendor/altcha.min.js'
 import './elements/time-local.js'
 import './elements/back-link.js'
+import './elements/count-down.js'
 import 'phoenix_html'
 
 // Establish Phoenix Socket and LiveView configuration.

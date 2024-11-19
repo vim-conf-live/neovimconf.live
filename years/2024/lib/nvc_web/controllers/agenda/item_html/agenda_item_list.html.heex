@@ -11,17 +11,17 @@
   Times are adjusted to your time zone, which has been detected as <time-zone>UTC</time-zone>. 
 </p>
 
-<ol class="agenda grid divide-y-2 divide-highlight-low">
+<ol  class="agenda grid divide-y-2 divide-highlight-low">
   <li :for={{start, item} <- @agenda_items}>
     <%= case item.type do %>
       <% "break" -> %>
-        <h3 class="text-lg text-muted bg-surface py-2 h-full flex items-center justify-center">
+        <h3 class="text-lg text-muted bg-sheet py-2 h-full flex items-center justify-center">
           <%= item.title %>
         </h3>
       <% _ -> %>
         <.link
           href={~p"/speakers/#{item.speaker}"}
-          class="hover:bg-surface block py-4 h-full items-center"
+          class="hover:bg-sheet dark:hover:bg-surface block py-4 h-full items-center px-2 -mx-2"
         >
           <article class={"grid grid-cols-[min-content_1fr] gap-4 --#{item.type}"}>
             <time-local datetime={"#{start}Z"}>
