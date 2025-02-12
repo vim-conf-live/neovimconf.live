@@ -1,5 +1,3 @@
-@import "../vendors/osc.css";
-
 @layer components {
   .callout {
     --_callout-max-width: var(--callout-max-width, 640px);

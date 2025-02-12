@@ -1,6 +1,5 @@
 <.header>
-  Sponsor <%= @sponsor.id %>
-  <:subtitle>This is a sponsor record from your database.</:subtitle>
+  Sponsor <%= @sponsor.name %>
   <:actions>
     <.link href={~p"/sponsors/#{@sponsor}/edit"}>
       <.button>Edit sponsor</.button>

@@ -6,10 +6,11 @@ defmodule NvcWeb.Agenda.ItemController do
   alias Nvc.Agenda.Item
 
   def index(conn, _params) do
-    # agenda_items = Agenda.list_agenda_items()
-    #   |> Agenda.calculate_start_times(~N[2024-11-19 10:00:00])
+    agenda_items = Agenda.list_agenda_items()
+      |> Agenda.calculate_start_times(~N[2024-11-19 15:00:00])
 
-    redirect(conn, to: "/#speakers")
+    conn
+    |> render(agenda_items: agenda_items)
   end
 
   def new(conn, _params) do
@@ -78,7 +79,7 @@ defmodule NvcWeb.Agenda.ItemController do
   end
 
   defp speaker_options do
-    Speakers.list_speakers()
+    Speakers.list_speakers(:all)
     |> Enum.map(fn speaker -> {speaker.name, speaker.id} end)
     |> Enum.concat([{" - none - ", nil}])
     |> Enum.reverse()

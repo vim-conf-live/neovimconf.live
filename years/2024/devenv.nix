@@ -1,10 +1,22 @@
 { pkgs, lib, config, inputs, ... }:
 
+let
+  elixir-1-17 = pkgs.elixir.overrideAttrs (oldAttrs: {
+    version = "1.17.3";
+    src = pkgs.fetchFromGitHub {
+      owner = "elixir-lang";
+      repo = "elixir";
+      rev = "v1.17.3";
+      sha256 = "sha256-7Qo6y0KAQ9lwD4oH+7wQ4W5i6INHIBDN9IQAAsYzNJw=";  # Valid hash for Elixir 1.17.0
+    };
+  });
+in
 {
   dotenv.enable = true;
 
   languages = {
     elixir.enable = true;
+    elixir.package = elixir-1-17;
   };
 
   packages = with pkgs; [

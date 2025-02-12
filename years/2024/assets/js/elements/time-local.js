@@ -32,9 +32,7 @@ customElements.define(
       super()
       const local = convertToLocal(Date.now())
       const [_, zone] = local.split(' ')
-      this.innerHTML = `
-      <span class="text-accent">${zone}</span>
-    `
+      this.innerHTML = `<span class="text-accent">${zone}</span>`
     }
   }
 )
